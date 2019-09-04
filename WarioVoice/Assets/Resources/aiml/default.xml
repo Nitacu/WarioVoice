@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!-- DEFAULT: Categoría por defecto -->
+<aiml version="1.0">
+ 
+<!-- BOX BARREL STATUE CANDLE ROCK ROPE ELECTRIC STATION BOAT CHEST TORCH -->
+<category><pattern>SHOW ME MORE</pattern><template>SHOW_ME_MORE</template></category>
+
+
+<category><pattern>BIGGER IS BETTER BOX</pattern><template>BIGGER_IS_BETTER#*#BOX </template></category>
+<category><pattern>BIGGER IS BETTER BARREL</pattern><template>BIGGER_IS_BETTER#*#BARREL </template></category>
+<category><pattern>BIGGER IS BETTER STATUE</pattern><template>BIGGER_IS_BETTER#*#STATUE </template></category>
+<category><pattern>BIGGER IS BETTER CANDLE</pattern><template>BIGGER_IS_BETTER#*#CANDLE </template></category>
+<category><pattern>BIGGER IS BETTER ROCK</pattern><template>BIGGER_IS_BETTER#*#ROCK </template></category>
+<category><pattern>BIGGER IS BETTER ROPE</pattern><template>BIGGER_IS_BETTER#*#ROPE </template></category>
+<category><pattern>BIGGER IS BETTER ELECTRIC STATION</pattern><template>BIGGER_IS_BETTER#*#ELECTRIC_STATION </template></category>
+<category><pattern>BIGGER IS BETTER BOAT</pattern><template>BIGGER_IS_BETTER#*#BOAT </template></category>
+<category><pattern>BIGGER IS BETTER CHEST</pattern><template>BIGGER_IS_BETTER#*#CHEST </template></category>
+<category><pattern>BIGGER IS BETTER TORCH</pattern><template>BIGGER_IS_BETTER#*#TORCH </template></category>
+
+<category><pattern>BIGGER IS BETTER * BOX</pattern><template>BIGGER_IS_BETTER#*#BOX </template></category>
+<category><pattern>BIGGER IS BETTER * BARREL</pattern><template>BIGGER_IS_BETTER#*#BARREL </template></category>
+<category><pattern>BIGGER IS BETTER * STATUE</pattern><template>BIGGER_IS_BETTER#*#STATUE </template></category>
+<category><pattern>BIGGER IS BETTER * CANDLE</pattern><template>BIGGER_IS_BETTER#*#CANDLE </template></category>
+<category><pattern>BIGGER IS BETTER * ROCK</pattern><template>BIGGER_IS_BETTER#*#ROCK </template></category>
+<category><pattern>BIGGER IS BETTER * ROPE</pattern><template>BIGGER_IS_BETTER#*#ROPE </template></category>
+<category><pattern>BIGGER IS BETTER * ELECTRIC STATION</pattern><template>BIGGER_IS_BETTER#*#ELECTRIC_STATION </template></category>
+<category><pattern>BIGGER IS BETTER * BOAT</pattern><template>BIGGER_IS_BETTER#*#BOAT </template></category>
+<category><pattern>BIGGER IS BETTER * CHEST</pattern><template>BIGGER_IS_BETTER#*#CHEST </template></category>
+<category><pattern>BIGGER IS BETTER * TORCH</pattern><template>BIGGER_IS_BETTER#*#TORCH </template></category>
+
+<category><pattern>SMALLER IS CUTER BOX</pattern><template>SMALLER_IS_CUTER#*#BOX </template></category>
+<category><pattern>SMALLER IS CUTER BARREL</pattern><template>SMALLER_IS_CUTER#*#BARREL </template></category>
+<category><pattern>SMALLER IS CUTER STATUE</pattern><template>SMALLER_IS_CUTER#*#STATUE </template></category>
+<category><pattern>SMALLER IS CUTER CANDLE</pattern><template>SMALLER_IS_CUTER#*#CANDLE </template></category>
+<category><pattern>SMALLER IS CUTER ROCK</pattern><template>SMALLER_IS_CUTER#*#ROCK </template></category>
+<category><pattern>SMALLER IS CUTER ROPE</pattern><template>SMALLER_IS_CUTER#*#ROPE </template></category>
+<category><pattern>SMALLER IS CUTER ELECTRIC STATION</pattern><template>SMALLER_IS_CUTER#*#ELECTRIC_STATION </template></category>
+<category><pattern>SMALLER IS CUTER BOAT</pattern><template>SMALLER_IS_CUTER#*#BOAT </template></category>
+<category><pattern>SMALLER IS CUTER CHEST</pattern><template>SMALLER_IS_CUTER#*#CHEST </template></category>
+<category><pattern>SMALLER IS CUTER TORCH</pattern><template>SMALLER_IS_CUTER#*#TORCH </template></category>
+
+<category><pattern>SMALLER IS CUTER * BOX</pattern><template>SMALLER_IS_CUTER#*#BOX </template></category>
+<category><pattern>SMALLER IS CUTER * BARREL</pattern><template>SMALLER_IS_CUTER#*#BARREL </template></category>
+<category><pattern>SMALLER IS CUTER * STATUE</pattern><template>SMALLER_IS_CUTER#*#STATUE </template></category>
+<category><pattern>SMALLER IS CUTER * CANDLE</pattern><template>SMALLER_IS_CUTER#*#CANDLE </template></category>
+<category><pattern>SMALLER IS CUTER * ROCK</pattern><template>SMALLER_IS_CUTER#*#ROCK </template></category>
+<category><pattern>SMALLER IS CUTER * ROPE</pattern><template>SMALLER_IS_CUTER#*#ROPE </template></category>
+<category><pattern>SMALLER IS CUTER * ELECTRIC STATION</pattern><template>SMALLER_IS_CUTER#*#ELECTRIC_STATION </template></category>
+<category><pattern>SMALLER IS CUTER * BOAT</pattern><template>SMALLER_IS_CUTER#*#BOAT </template></category>
+<category><pattern>SMALLER IS CUTER * CHEST</pattern><template>SMALLER_IS_CUTER#*#CHEST </template></category>
+<category><pattern>SMALLER IS CUTER * TORCH</pattern><template>SMALLER_IS_CUTER#*#TORCH </template></category>
+
+<category><pattern>* SMALLER IS CUTER * BOX</pattern><template>SMALLER_IS_CUTER#*#BOX </template></category>
+<category><pattern>* SMALLER IS CUTER * BARREL</pattern><template>SMALLER_IS_CUTER#*#BARREL </template></category>
+<category><pattern>* SMALLER IS CUTER * STATUE</pattern><template>SMALLER_IS_CUTER#*#STATUE </template></category>
+<category><pattern>* SMALLER IS CUTER * CANDLE</pattern><template>SMALLER_IS_CUTER#*#CANDLE </template></category>
+<category><pattern>* SMALLER IS CUTER * ROCK</pattern><template>SMALLER_IS_CUTER#*#ROCK </template></category>
+<category><pattern>* SMALLER IS CUTER * ROPE</pattern><template>SMALLER_IS_CUTER#*#ROPE </template></category>
+<category><pattern>* SMALLER IS CUTER * ELECTRIC STATION</pattern><template>SMALLER_IS_CUTER#*#ELECTRIC_STATION </template></category>
+<category><pattern>* SMALLER IS CUTER * BOAT</pattern><template>SMALLER_IS_CUTER#*#BOAT </template></category>
+<category><pattern>* SMALLER IS CUTER * CHEST</pattern><template>SMALLER_IS_CUTER#*#CHEST </template></category>
+<category><pattern>* SMALLER IS CUTER * TORCH</pattern><template>SMALLER_IS_CUTER#*#TORCH </template></category>
+
+<category><pattern>GRAVITY BREAKS BOX</pattern><template>GRAVITY_BREAKS#*#BOX </template></category>
+<category><pattern>GRAVITY BREAKS BARREL</pattern><template>GRAVITY_BREAKS#*#BARREL </template></category>
+<category><pattern>GRAVITY BREAKS STATUE</pattern><template>GRAVITY_BREAKS#*#STATUE </template></category>
+<category><pattern>GRAVITY BREAKS CANDLE</pattern><template>GRAVITY_BREAKS#*#CANDLE </template></category>
+<category><pattern>GRAVITY BREAKS ROCK</pattern><template>GRAVITY_BREAKS#*#ROCK </template></category>
+<category><pattern>GRAVITY BREAKS ROPE</pattern><template>GRAVITY_BREAKS#*#ROPE </template></category>
+<category><pattern>GRAVITY BREAKS ELECTRIC STATION</pattern><template>GRAVITY_BREAKS#*#ELECTRIC_STATION </template></category>
+<category><pattern>GRAVITY BREAKS BOAT</pattern><template>GRAVITY_BREAKS#*#BOAT </template></category>
+<category><pattern>GRAVITY BREAKS CHEST</pattern><template>GRAVITY_BREAKS#*#CHEST </template></category>
+<category><pattern>GRAVITY BREAKS TORCH</pattern><template>GRAVITY_BREAKS#*#TORCH </template></category>
+
+<category><pattern>GRAVITY BREAKS * BOX</pattern><template>GRAVITY_BREAKS#*#BOX </template></category>
+<category><pattern>GRAVITY BREAKS * BARREL</pattern><template>GRAVITY_BREAKS#*#BARREL </template></category>
+<category><pattern>GRAVITY BREAKS * STATUE</pattern><template>GRAVITY_BREAKS#*#STATUE </template></category>
+<category><pattern>GRAVITY BREAKS * CANDLE</pattern><template>GRAVITY_BREAKS#*#CANDLE </template></category>
+<category><pattern>GRAVITY BREAKS * ROCK</pattern><template>GRAVITY_BREAKS#*#ROCK </template></category>
+<category><pattern>GRAVITY BREAKS * ROPE</pattern><template>GRAVITY_BREAKS#*#ROPE </template></category>
+<category><pattern>GRAVITY BREAKS * ELECTRIC STATION</pattern><template>GRAVITY_BREAKS#*#ELECTRIC_STATION </template></category>
+<category><pattern>GRAVITY BREAKS * BOAT</pattern><template>GRAVITY_BREAKS#*#BOAT </template></category>
+<category><pattern>GRAVITY BREAKS * CHEST</pattern><template>GRAVITY_BREAKS#*#CHEST </template></category>
+<category><pattern>GRAVITY BREAKS * TORCH</pattern><template>GRAVITY_BREAKS#*#TORCH </template></category>
+
+<category><pattern>GRAVITY BRAKES BOX</pattern><template>GRAVITY_BREAKS#*#BOX </template></category>
+<category><pattern>GRAVITY BRAKES BARREL</pattern><template>GRAVITY_BREAKS#*#BARREL </template></category>
+<category><pattern>GRAVITY BRAKES STATUE</pattern><template>GRAVITY_BREAKS#*#STATUE </template></category>
+<category><pattern>GRAVITY BRAKES CANDLE</pattern><template>GRAVITY_BREAKS#*#CANDLE </template></category>
+<category><pattern>GRAVITY BRAKES ROCK</pattern><template>GRAVITY_BREAKS#*#ROCK </template></category>
+<category><pattern>GRAVITY BRAKES ROPE</pattern><template>GRAVITY_BREAKS#*#ROPE </template></category>
+<category><pattern>GRAVITY BRAKES ELECTRIC STATION</pattern><template>GRAVITY_BREAKS#*#ELECTRIC_STATION </template></category>
+<category><pattern>GRAVITY BRAKES BOAT</pattern><template>GRAVITY_BREAKS#*#BOAT </template></category>
+<category><pattern>GRAVITY BRAKES CHEST</pattern><template>GRAVITY_BREAKS#*#CHEST </template></category>
+<category><pattern>GRAVITY BRAKES TORCH</pattern><template>GRAVITY_BREAKS#*#TORCH </template></category>
+
+<category><pattern>GRAVITY BRAKES * BOX</pattern><template>GRAVITY_BREAKS#*#BOX </template></category>
+<category><pattern>GRAVITY BRAKES * BARREL</pattern><template>GRAVITY_BREAKS#*#BARREL </template></category>
+<category><pattern>GRAVITY BRAKES * STATUE</pattern><template>GRAVITY_BREAKS#*#STATUE </template></category>
+<category><pattern>GRAVITY BRAKES * CANDLE</pattern><template>GRAVITY_BREAKS#*#CANDLE </template></category>
+<category><pattern>GRAVITY BRAKES * ROCK</pattern><template>GRAVITY_BREAKS#*#ROCK </template></category>
+<category><pattern>GRAVITY BRAKES * ROPE</pattern><template>GRAVITY_BREAKS#*#ROPE </template></category>
+<category><pattern>GRAVITY BRAKES * ELECTRIC STATION</pattern><template>GRAVITY_BREAKS#*#ELECTRIC_STATION </template></category>
+<category><pattern>GRAVITY BRAKES * BOAT</pattern><template>GRAVITY_BREAKS#*#BOAT </template></category>
+<category><pattern>GRAVITY BRAKES * CHEST</pattern><template>GRAVITY_BREAKS#*#CHEST </template></category>
+<category><pattern>GRAVITY BRAKES * TORCH</pattern><template>GRAVITY_BREAKS#*#TORCH </template></category>
+
+<category><pattern>IGNITE SPARK * BOX</pattern><template>IGNITE_SPARK#*#BOX </template></category>
+<category><pattern>IGNITE SPARK * BARREL</pattern><template>IGNITE_SPARK#*#BARREL </template></category>
+<category><pattern>IGNITE SPARK * STATUE</pattern><template>IGNITE_SPARK#*#STATUE </template></category>
+<category><pattern>IGNITE SPARK * CANDLE</pattern><template>IGNITE_SPARK#*#CANDLE </template></category>
+<category><pattern>IGNITE SPARK * ROCK</pattern><template>IGNITE_SPARK#*#ROCK </template></category>
+<category><pattern>IGNITE SPARK * ROPE</pattern><template>IGNITE_SPARK#*#ROPE </template></category>
+<category><pattern>IGNITE SPARK * ELECTRIC STATION</pattern><template>IGNITE_SPARK#*#ELECTRIC_STATION </template></category>
+<category><pattern>IGNITE SPARK * BOAT</pattern><template>IGNITE_SPARK#*#BOAT </template></category>
+<category><pattern>IGNITE SPARK * CHEST</pattern><template>IGNITE_SPARK#*#CHEST </template></category>
+<category><pattern>IGNITE SPARK * TORCH</pattern><template>IGNITE_SPARK#*#TORCH </template></category>  
+
+<category><pattern>IGNITE SPARK BOX</pattern><template>IGNITE_SPARK#*#BOX </template></category>
+<category><pattern>IGNITE SPARK BOX</pattern><template>IGNITE_SPARK#*#BOX </template></category>
+<category><pattern>IGNITE SPARK BARREL</pattern><template>IGNITE_SPARK#*#BARREL </template></category>
+<category><pattern>IGNITE SPARK STATUE</pattern><template>IGNITE_SPARK#*#STATUE </template></category>
+<category><pattern>IGNITE SPARK CANDLE</pattern><template>IGNITE_SPARK#*#CANDLE </template></category>
+<category><pattern>IGNITE SPARK ROCK</pattern><template>IGNITE_SPARK#*#ROCK </template></category>
+<category><pattern>IGNITE SPARK ROPE</pattern><template>IGNITE_SPARK#*#ROPE </template></category>
+<category><pattern>IGNITE SPARK ELECTRIC STATION</pattern><template>IGNITE_SPARK#*#ELECTRIC_STATION </template></category>
+<category><pattern>IGNITE SPARK BOAT</pattern><template>IGNITE_SPARK#*#BOAT </template></category>
+<category><pattern>IGNITE SPARK CHEST</pattern><template>IGNITE_SPARK#*#CHEST </template></category>
+<category><pattern>IGNITE SPARK TORCH</pattern><template>IGNITE_SPARK#*#TORCH </template></category>
+
+
+<category><pattern>IGNITE * SPARK * BOX</pattern><template>IGNITE_SPARK#*#BOX </template></category>
+<category><pattern>IGNITE * SPARK * BOX</pattern><template>IGNITE_SPARK#*#BOX </template></category>
+<category><pattern>IGNITE * SPARK * BARREL</pattern><template>IGNITE_SPARK#*#BARREL </template></category>
+<category><pattern>IGNITE * SPARK * STATUE</pattern><template>IGNITE_SPARK#*#STATUE </template></category>
+<category><pattern>IGNITE * SPARK * CANDLE</pattern><template>IGNITE_SPARK#*#CANDLE </template></category>
+<category><pattern>IGNITE * SPARK * ROCK</pattern><template>IGNITE_SPARK#*#ROCK </template></category>
+<category><pattern>IGNITE * SPARK * ROPE</pattern><template>IGNITE_SPARK#*#ROPE </template></category>
+<category><pattern>IGNITE * SPARK * ELECTRIC STATION</pattern><template>IGNITE_SPARK#*#ELECTRIC_STATION </template></category>
+<category><pattern>IGNITE * SPARK * BOAT</pattern><template>IGNITE_SPARK#*#BOAT </template></category>
+<category><pattern>IGNITE * SPARK * CHEST</pattern><template>IGNITE_SPARK#*#CHEST </template></category>
+<category><pattern>IGNITE * SPARK * TORCH</pattern><template>IGNITE_SPARK#*#TORCH </template></category>
+
+<category><pattern>WALK</pattern><template>WALK#*#OCELOT </template></category>
+<category><pattern>JUMP</pattern><template>JUMP#*#OCELOT</template></category>
+<category><pattern>RUN</pattern><template>RUN#*#OCELOT</template></category>
+<category><pattern>STAY PUT</pattern><template>STAY_PUT#*#OCELOT</template></category>
+<category><pattern>WALK BACKWARDS</pattern><template>WALK_BACKWARDS#*#OCELOT</template></category>
+<category><pattern>TAKE</pattern><template>GRAB#*#OCELOT</template></category>
+
+
+<category><pattern>WALK *</pattern><template>WALK#*#OCELOT </template></category>
+<category><pattern>JUMP *</pattern><template>JUMP#*#OCELOT</template></category>
+<category><pattern>RUN *</pattern><template>RUN#*#OCELOT</template></category>
+<category><pattern>STAY PUT *</pattern><template>STAY_PUT#*#OCELOT</template></category>
+<category><pattern>WALK BACKWARDS *</pattern><template>WALK_BACKWARDS#*#OCELOT</template></category>
+<category><pattern>TAKE *</pattern><template>GRAB#*#OCELOT</template></category>
+
+ 
+</aiml>

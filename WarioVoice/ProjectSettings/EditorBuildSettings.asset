@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Incantum/MainMenu.unity
+    guid: e91bbc221335a5e4da15161f6406dc52
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Ending.unity
+    guid: 5003619b74b5d3e48a618d7fd799793d
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Level_1.unity
+    guid: fac76218f9579354eaebb5f3068b10d8
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Level_4.unity
+    guid: 58c4d07071d55684e83bd74f65663626
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Level_2.unity
+    guid: e3c71a27987c8bd44b2229d5fbb6e99c
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Level_3.unity
+    guid: bab51c8f82fdebb4590dc6300036fa6a
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Level_5.unity
+    guid: 13098caffeaa1614fa65218c71d79199
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Credits.unity
+    guid: aaf39b25d73939743b84f91e4f80025c
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Tutorial_1.unity
+    guid: dcc0eae7aaad35d418214e47287189f5
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Tutorial_2.unity
+    guid: 384797741beafdb4db2bfdefc474e8ef
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Tutorial_3.unity
+    guid: fb7b7cdbf73e30949a286f3bdb160670
+  - enabled: 1
+    path: Assets/Scenes/Incantum/Levels_Incantum/Tutorial_4.unity
+    guid: a22652ce2a845854c8445f1fada397ef
+  m_configObjects: {}

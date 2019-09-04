@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!-- DEFAULT: Categoría por defecto -->
+<aiml version="1.0">
+ 
+<!-- Free software Copyright © ALICE A.I. Foundation. --> 
+<!-- This program is open source code released under --> 
+<!-- the terms of the GNU General Public License --> 
+<!-- as published by the Free Software Foundation. --> 
+<!-- Complies with AIML 1.01 Tag Set Specification --> 
+<!-- as adopted by the ALICE A.I. Foundation. --> 
+<!-- Default.aiml: Default categories --> 
+<!-- Created by Adam Codony aka XGargoyle, October 24th, 2005 --> 
+<!-- Revision Default-0.02 --> 
+<!-- Last Modified March 15th, 2006 -->
+ 
+<!-- Software Libre Copyright © ALICE A.I. Foundation. --> 
+<!-- Este programa es de código abierto y publicado bajo --> 
+<!-- los términos de la licencia "GNU General Public License" --> 
+<!-- tal como establece la Free Software Foundation. --> 
+<!-- Cumple con la especificación de AIML 1.01 --> 
+<!-- adoptada por la ALICE A.I. Foundation. --> 
+<!-- Default.aiml: Categoría por defecto --> 
+<!-- Creado por Adam Codony aka XGargoyle, Octubre 24, 2005 --> 
+<!-- Versión Default-0.02 --> 
+<!-- Última Modificación Marzo 15, 2006 -->
+ 
+
+  <category>
+    <pattern>Hello</pattern>
+   
+    <template> 
+      hola como estas
+    </template>
+  </category>
+ 
+</aiml>
