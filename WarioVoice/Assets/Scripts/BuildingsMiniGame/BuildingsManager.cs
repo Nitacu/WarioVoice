@@ -64,6 +64,7 @@ public class BuildingsManager : CommandParser
 
     [SerializeField] private List<Level> _levels = new List<Level>();
     [SerializeField] private int _currentLevel = 0;
+    private int _pairsMatched = 0;
 
     private GameObject _firstSelection;
     private GameObject _secondSelection;
@@ -84,28 +85,94 @@ public class BuildingsManager : CommandParser
 
         if (_firstSelection != null && _secondSelection != null)
         {
+            Debug.Log("Two items selected");
             checkPair();
+        }
+
+        if (_pairsMatched >= _levels[_currentLevel].NumberOfPairs)
+        {
+            Debug.Log("NIVEL COMPLETADO");
+            _currentLevel++;
+            resetLevel();
         }
 
         base.parseCommand(command);
     }
 
+    //simulación sin voz
+    public void parseCommandSimulation(string command)
+    {
+
+
+        findItemOnBuilds(command);
+        findItemOnChars(command);
+
+        if (_firstSelection != null && _secondSelection != null)
+        {
+            Debug.Log("Two items selected");
+
+            checkPair();
+        }
+
+        if (_pairsMatched >= _levels[_currentLevel].NumberOfPairs)
+        {
+            Debug.Log("NIVEL COMPLETADO");
+            //_currentLevel++;
+            resetLevel();
+        }
+    }
+
+
+    public void resetLevel()
+    {
+        BuildPairItem[] _allItems = FindObjectsOfType<BuildPairItem>();
+        int _itemsCount = _allItems.Length;
+
+        Debug.Log("Items Finded: " + _itemsCount);
+        for (int i = 0; i < _itemsCount; i++)
+        {
+            Destroy(_allItems[i].gameObject);
+        }
+
+        Debug.Log("ResetLevel");
+        generateLevel(_currentLevel);
+    }
+
     public void generateLevel(int level)
     {
         //Asignar que parejas se crearán
+        int count = 0;
         List<Pairs> _scenePairs = new List<Pairs>();
+        _scenePairs.Clear();
 
-        for (int i = 0; i < _levels[level].NumberOfPairs; i++)
+
+        List<int> _usedIndexes = new List<int>();
+        _usedIndexes.Clear();
+
+
+        while (count < _levels[level].NumberOfPairs)
+        {
+            int _indexRandom = Random.Range(0, _levels[level].Pairs.Count);
+            if (!_usedIndexes.Contains(_indexRandom))
+            {
+                _scenePairs.Add(_levels[level].Pairs[_indexRandom]);
+                _usedIndexes.Add(_indexRandom);
+                count++;
+            }
+        }
+
+        /*for (int i = 0; i < _levels[level].NumberOfPairs; i++)
         {
             int _indexRandom = Random.Range(0, _levels[level].Pairs.Count);
             _scenePairs.Add(_levels[level].Pairs[_indexRandom]);
             _levels[level].Pairs.RemoveAt(_indexRandom);
 
-        }
+        }*/
 
-        int count = 0;//saber cuántos se han creado
-        List<int> _usedIndexes = new List<int>();
-        
+        count = 0;//saber cuántos se han creado
+        _usedIndexes = new List<int>();
+        _usedIndexes.Clear();
+
         //create builds
         while (count < _scenePairs.Count)
         {
@@ -114,6 +181,7 @@ public class BuildingsManager : CommandParser
             {
                 GameObject _newBuild = Instantiate(_scenePairs[count].BuildPrefab);
                 _newBuild.transform.position = _buildTransforms[_randomBuildTransform].position;
+                _usedIndexes.Add(_randomBuildTransform);
                 count++;
             }
         }
@@ -130,27 +198,17 @@ public class BuildingsManager : CommandParser
             {
                 GameObject _newBuild = Instantiate(_scenePairs[count].CharPrefab);
                 _newBuild.transform.position = _charTransforms[_randomCharTransform].position;
+                _usedIndexes.Add(_randomCharTransform);
                 count++;
             }
         }
     }
 
-    //simulación sin voz
-    public void parseCommandSimulation(string command)
-    {
-        findItemOnBuilds(command);
-        findItemOnChars(command);
 
-        if (_firstSelection != null && _secondSelection != null)
-        {
-            checkPair();
-        }
-    }
 
     private void checkPair()
     {
-        Debug.Log("1st selection type: " + _firstSelection.name);
-        Debug.Log("2nd selection type: " + _secondSelection.name);
+
 
         if (_firstSelection.GetComponent<BuildPairItem>().Type == _secondSelection.GetComponent<BuildPairItem>().Type)
         {
@@ -158,14 +216,20 @@ public class BuildingsManager : CommandParser
             _firstSelection.GetComponent<BuildPairItem>().PairedUp = _secondSelection.GetComponent<BuildPairItem>().PairedUp = true;
 
             Debug.Log("Correcto");
-            _firstSelection = _secondSelection = null;
+            _pairsMatched++;
 
         }
         else
         {
+            _firstSelection.GetComponent<SpriteRenderer>().color = _secondSelection.GetComponent<SpriteRenderer>().color = Color.white;
+
             Debug.Log("Incorecto");
 
         }
+
+        _firstSelection = _secondSelection = null;
+        _itemSelected = false;
+
     }
 
     private void setGreyGameObject(GameObject go)
@@ -179,11 +243,9 @@ public class BuildingsManager : CommandParser
 
         foreach (var item in _charItem)
         {
+
             if (item.RecognitionName == commandName && !item.PairedUp)
             {
-                Debug.Log("Finded: " + item.RecognitionName + " = " + commandName);
-
-
                 if (_itemSelected)
                 {
                     if (item.gameObject != _firstSelection)
@@ -205,12 +267,12 @@ public class BuildingsManager : CommandParser
 
     private void findItemOnBuilds(string commandName)
     {
+
         BuildItem[] _buildItem = FindObjectsOfType<BuildItem>();
         foreach (var item in _buildItem)
         {
             if (item.RecognitionName == commandName && !item.PairedUp)
             {
-                Debug.Log("Finded: " + item.RecognitionName + " = " + commandName);
 
                 if (_itemSelected)
                 {

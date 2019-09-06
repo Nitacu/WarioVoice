@@ -24,5 +24,6 @@ public class CharItem : BuildPairItem
             default:
                 break;
         }
+
     }
 }
