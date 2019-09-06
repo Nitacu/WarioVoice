@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class SimulationCheck : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private BuildingsManager _buildManager;
-    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private Text _text;
 
     public void OnPointerDown(PointerEventData eventData)
     {

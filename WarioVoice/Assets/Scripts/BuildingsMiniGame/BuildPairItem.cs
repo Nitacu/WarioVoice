@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class BuildPairItem : MonoBehaviour
 {
-    [SerializeField] private string _recognitionName;
+    private bool _pairedUp;
+    public bool PairedUp
+    {
+        get { return _pairedUp;  }
+        set { _pairedUp = value;  }
+    }
+
+    protected string _recognitionName;
     public string RecognitionName
     {
         get { return _recognitionName; }
     }
 
-    [SerializeField] private BuildingsManager.PairType _type;
-    public BuildingsManager.PairType Type
+    [SerializeField] protected BuildingVocabulary.PairType _type;
+    public BuildingVocabulary.PairType Type
     {
         get { return _type; }
     }
