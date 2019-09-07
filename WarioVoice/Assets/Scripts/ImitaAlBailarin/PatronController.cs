@@ -216,6 +216,13 @@ public class PatronController : MonoBehaviour
 
     public void checkVoice(CrystalController.Colors color)
     {
+
+        foreach (Transform child in activeCrystals.transform)
+        {
+            child.gameObject.GetComponent<CrystalController>().isOn = false;
+        }
+
+
         if (!showingPattern)
         {
             if(color == patronList[currentPatron - 1][contChecking])
@@ -229,6 +236,8 @@ public class PatronController : MonoBehaviour
                     
                 }
                 contChecking++;
+                
+                
                 if(contChecking > patronList[currentPatron - 1].Length - 1)
                 {
                     //Muy bien, ganaste

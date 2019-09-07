@@ -14,8 +14,13 @@ public class DancerController : MonoBehaviour
     private const string SILVERDANCE = "eigthDance";
     private const string MAGENTADANCE = "nineDance";
     private const string WHITEDANCE = "TenthDance";
+    private const string TURQUOISEDANCE = "TURQUOISE";
+    private const string BLACKDANCE = "BLACK";
+    private const string INDIGODANCE = "INDIGO";
+    private const string REDDANCE = "RED";
+    private const string FUCHSIADANCE = "FUCHSIA";
 
-    
+
 
     public void dancePlayer(CrystalController.Colors crystal)
     {
@@ -50,6 +55,21 @@ public class DancerController : MonoBehaviour
                 break;
             case CrystalController.Colors.WHITE:    
                 GetComponent<Animator>().Play(Animator.StringToHash(WHITEDANCE));
+                break;
+            case CrystalController.Colors.TURQUOISE:
+                GetComponent<Animator>().Play(Animator.StringToHash(TURQUOISEDANCE));
+                break;
+            case CrystalController.Colors.BLACK:
+                GetComponent<Animator>().Play(Animator.StringToHash(BLACKDANCE));
+                break;
+            case CrystalController.Colors.INDIGO:
+                GetComponent<Animator>().Play(Animator.StringToHash(INDIGODANCE));
+                break;
+            case CrystalController.Colors.RED:
+                GetComponent<Animator>().Play(Animator.StringToHash(REDDANCE));
+                break;
+            case CrystalController.Colors.FUCHSIA:
+                GetComponent<Animator>().Play(Animator.StringToHash(FUCHSIADANCE));
                 break;
         }
     }

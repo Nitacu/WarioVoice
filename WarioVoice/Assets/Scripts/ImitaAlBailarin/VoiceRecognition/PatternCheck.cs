@@ -56,6 +56,21 @@ public class PatternCheck : CommandParser
             case "WHITE":
                 enumColor = CrystalController.Colors.WHITE;
                 break;
+            case "TURQUOISE":
+                enumColor = CrystalController.Colors.TURQUOISE;
+                break;
+            case "BLACK":
+                enumColor = CrystalController.Colors.BLACK;
+                break;
+            case "INDIGO":
+                enumColor = CrystalController.Colors.INDIGO;
+                break;
+            case "RED":
+                enumColor = CrystalController.Colors.RED;
+                break;
+            case "FUCHSIA":
+                enumColor = CrystalController.Colors.FUCHSIA;
+                break;
         }
 
         patternController.checkVoice(enumColor);

@@ -14,6 +14,12 @@ public class CrystalController : MonoBehaviour
     private const string SILVER = "SILVER";
     private const string MAGENTA = "MAGENTA";
     private const string WHITE = "WHITE";
+    private const string TURQUOISE = "TURQUOISE";
+    private const string BLACK = "BLACK";
+    private const string INDIGO = "INDIGO";
+    private const string RED = "RED";
+    private const string FUCHSIA = "FUCHSIA";
+
 
     public Sprite blueCrystal;
     public Sprite greenCrystal;
@@ -25,6 +31,12 @@ public class CrystalController : MonoBehaviour
     public Sprite silverCrystal;
     public Sprite magentaCrystal;
     public Sprite whiteCrystal;
+    public Sprite turquoiseCrystal;
+    public Sprite blackCrystal;
+    public Sprite indigoCrystal;
+    public Sprite redCrystal;
+    public Sprite fuchsiaCrystal;
+
 
     public enum Colors
     {
@@ -37,7 +49,12 @@ public class CrystalController : MonoBehaviour
         LIME,
         SILVER,
         MAGENTA,
-        WHITE
+        WHITE,
+        TURQUOISE,
+        BLACK,
+        INDIGO,
+        RED,
+        FUCHSIA
     };
 
     
@@ -120,6 +137,21 @@ public class CrystalController : MonoBehaviour
                 break;
             case Colors.WHITE:
                 GetComponent<SpriteRenderer>().sprite = whiteCrystal;
+                break;
+            case Colors.TURQUOISE:
+                GetComponent<SpriteRenderer>().sprite = turquoiseCrystal;
+                break;
+            case Colors.BLACK:
+                GetComponent<SpriteRenderer>().sprite = blackCrystal;
+                break;
+            case Colors.INDIGO:
+                GetComponent<SpriteRenderer>().sprite = indigoCrystal;
+                break;
+            case Colors.RED:
+                GetComponent<SpriteRenderer>().sprite = redCrystal;
+                break;
+            case Colors.FUCHSIA:
+                GetComponent<SpriteRenderer>().sprite = fuchsiaCrystal;
                 break;
         }
     }
