@@ -9,7 +9,7 @@ public class SimulationCheck : MonoBehaviour, IPointerDownHandler
 {
     public enum SimulationAction
     {
-        RESET, CHECK
+        RESET, CHECK, RESETALL
     }
 
     public SimulationAction _action;
@@ -27,11 +27,13 @@ public class SimulationCheck : MonoBehaviour, IPointerDownHandler
                 break;
             case SimulationAction.CHECK:
                 string _name = _text.text.Remove(_text.text.Length - 1);
-
                 _buildManager.parseCommandSimulation(_name);
                 break;
+            case SimulationAction.RESETALL:
+                _buildManager.resetAll();
+                break;
         }
-        
+
     }
 
     // Start is called before the first frame update

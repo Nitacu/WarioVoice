@@ -9,6 +9,9 @@ public class CharItem : BuildPairItem
     private bool _moveToTarget;
     private float _timeToGetBuild;
 
+    private float _refVelocityX;
+    private float _refVelocityY;
+
     private void Start()
     {
         _pairItemType = PairType.CHAR;
@@ -64,7 +67,10 @@ public class CharItem : BuildPairItem
     {
         if (_moveToTarget && _buildTargetPosition != null)
         {
-            transform.position = Vector3.Lerp(_startPosition.position, _buildTargetPosition.position, _timeToGetBuild* Time.deltaTime);
+            Vector3 _smoothPosition = new Vector3( Mathf.SmoothDamp(_startPosition.position.x, _buildTargetPosition.position.x, ref _refVelocityX, _timeToGetBuild)
+                , Mathf.SmoothDamp(_startPosition.position.y, _buildTargetPosition.position.y, ref _refVelocityY, _timeToGetBuild )
+                , transform.position.z);
+            transform.position = _smoothPosition;
         }
     }
 
