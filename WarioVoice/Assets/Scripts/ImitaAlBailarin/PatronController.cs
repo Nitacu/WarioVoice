@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PatronController : MonoBehaviour
 {
@@ -248,12 +249,14 @@ public class PatronController : MonoBehaviour
                 {
                     //Muy bien, ganaste
                     Debug.Log("Ganaste");
+                    SceneManager.LoadScene("WarioVoiceMenu");
                 }
             }
             else
             {
                 //Decir que le quedó mal
                 Debug.Log("Perdiste");
+                SceneManager.LoadScene("DanceScene");
                 foreach (Transform child in activeCrystals.transform)
                 {
                     if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)

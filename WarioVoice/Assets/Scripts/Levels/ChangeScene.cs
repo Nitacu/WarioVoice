@@ -20,7 +20,7 @@ public class ChangeScene : MonoBehaviour
 
     private const string WARIOVOICEMENU = "WarioVoiceMenu";
     private const string MATCHBUILDINGS = "Buildings";
-    private const string IMITA_AL_BAILARIN = "";
+    private const string IMITA_AL_BAILARIN = "DanceScene";
     private const string LOVE_SCENE = "LoveScene";
     private const string RPG = "RPg_adventure";
 

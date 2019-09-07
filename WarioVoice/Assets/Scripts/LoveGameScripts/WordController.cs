@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WordController : MonoBehaviour
 {
@@ -107,11 +108,13 @@ public class WordController : MonoBehaviour
                 else
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
+                    SceneManager.LoadScene("WarioVoiceMenu");
                 }
             }
             else
             {
                 Debug.Log("Perdiste");
+                SceneManager.LoadScene("LoveScene");
             }
         }
     }

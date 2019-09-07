@@ -1594,7 +1594,7 @@ MonoBehaviour:
   threeCrystals: {fileID: 275234647}
   fourCrystals: {fileID: 1076385334}
   fiveCrystals: {fileID: 1493919187}
-  difficulty: 3
+  difficulty: 7
   numberOfPatterns: 1
   crystalList:
   - {fileID: 11400000, guid: 309a22e65b893fd459b78a7c5e28d565, type: 2}
