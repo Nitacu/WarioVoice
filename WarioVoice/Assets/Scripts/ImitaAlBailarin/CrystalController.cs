@@ -21,22 +21,7 @@ public class CrystalController : MonoBehaviour
     private const string FUCHSIA = "FUCHSIA";
 
 
-    public Sprite blueCrystal;
-    public Sprite greenCrystal;
-    public Sprite yellowCrystal;
-    public Sprite pinkCrystal;
-    public Sprite brownCrystal;
-    public Sprite orangeCrystal;
-    public Sprite limeCrystal;
-    public Sprite silverCrystal;
-    public Sprite magentaCrystal;
-    public Sprite whiteCrystal;
-    public Sprite turquoiseCrystal;
-    public Sprite blackCrystal;
-    public Sprite indigoCrystal;
-    public Sprite redCrystal;
-    public Sprite fuchsiaCrystal;
-
+ 
 
     public enum Colors
     {

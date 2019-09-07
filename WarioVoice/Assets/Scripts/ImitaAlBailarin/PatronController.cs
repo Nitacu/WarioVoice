@@ -33,14 +33,11 @@ public class PatronController : MonoBehaviour
 
     #region Colors List
     //List that has all the existent colors (this will be used to create the crystals in scene)
-    /*private List<CrystalController.Colors> allColors = new List<CrystalController.Colors>() {
-        CrystalController.Colors.BLUE, CrystalController.Colors.GREEN, CrystalController.Colors.YELLOW, CrystalController.Colors.PINK, CrystalController.Colors.ORANGE,
-        CrystalController.Colors.BROWN, CrystalController.Colors.SILVER, CrystalController.Colors.WHITE, CrystalController.Colors.MAGENTA,CrystalController.Colors.LIME
-    };*/
+   
     public List<Crystal> crystalList = new List<Crystal>();
     private List<Crystal> crystalInScene = new List<Crystal>();
     //This list is used to know what are the crystals in scene, this list will be sent to the pattern creator to know what collors to use
-    //private List<CrystalController.Colors> colorsInScene = new List<CrystalController.Colors>();
+    
     
     #endregion
 
