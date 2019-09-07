@@ -353,11 +353,14 @@ public class BuildingsManager : CommandParser
     {
         yield return new WaitForSeconds(_charTimeToGetBuild * 2);
 
+
+
         _currentLevel++;
 
         if (_currentLevel >= _levels.Count)
         {
             Debug.Log("MINIJUEGO TERMINADO");
+            FindObjectOfType<ChangeScene>().chanceScene();
             //FEEDBACK NIVEL TERMINADO + VOLVER AL MENU
         }
         else
