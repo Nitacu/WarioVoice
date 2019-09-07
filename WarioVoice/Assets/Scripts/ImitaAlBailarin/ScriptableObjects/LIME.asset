@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715bf50eba9b066459bc862f518df05d, type: 3}
+  m_Name: LIME
+  m_EditorClassIdentifier: 
+  crystalSprite: {fileID: 4106014720672065491, guid: 04a33b14b6e6d1c4391dbd7b735b2317,
+    type: 3}
+  crystalColor: 6
+  danceClip: {fileID: 7400000, guid: 26ca600d99ff82d4897f1fa5ef01901c, type: 2}

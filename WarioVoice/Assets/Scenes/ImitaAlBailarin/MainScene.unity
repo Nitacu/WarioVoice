@@ -393,7 +393,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: BLUE
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1510,8 +1510,19 @@ MonoBehaviour:
   threeCrystals: {fileID: 275234647}
   fourCrystals: {fileID: 1076385334}
   fiveCrystals: {fileID: 1493919187}
-  difficulty: 10
+  difficulty: 3
   numberOfPatterns: 1
+  crystalList:
+  - {fileID: 11400000, guid: 309a22e65b893fd459b78a7c5e28d565, type: 2}
+  - {fileID: 11400000, guid: 2ad49f389fb64b241a66fff81fd486c9, type: 2}
+  - {fileID: 11400000, guid: a01a176c5dddbf14fb5485fd95804e20, type: 2}
+  - {fileID: 11400000, guid: 5add45194d398174aa5154c3f721b1d6, type: 2}
+  - {fileID: 11400000, guid: 678482da03a74114fbe608face8a80da, type: 2}
+  - {fileID: 11400000, guid: a83e5d852ef2777418b07e054e4811bc, type: 2}
+  - {fileID: 11400000, guid: 67f732558958ff14db8c34bf80509d96, type: 2}
+  - {fileID: 11400000, guid: e8c63977017e96048b3de3d30004605c, type: 2}
+  - {fileID: 11400000, guid: d86687a8bd8dd114ea0aa542e3e6e66f, type: 2}
+  - {fileID: 11400000, guid: dd05cd410ebe2ac44929ea76e2e347fc, type: 2}
 --- !u!4 &1500797825
 Transform:
   m_ObjectHideFlags: 0

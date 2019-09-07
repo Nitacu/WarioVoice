@@ -85,7 +85,7 @@ public class CrystalController : MonoBehaviour
         }
     }
 
-    public void changeCrystal(bool power, Colors crystal)
+    public void changeCrystal(bool power, Crystal crystal)
     {
         isOn = power;
         dancingPlayer.GetComponent<DancerController>().dancePlayer(crystal);
@@ -102,57 +102,9 @@ public class CrystalController : MonoBehaviour
         dancingPlayer.GetComponent<Animator>().Play(Animator.StringToHash("Idle"));
     }
 
-    public void changeCrystalColor(Colors color)
+    public void changeCrystalColor(Crystal crystal)
     {
-        crystalColor = color;
-
-        switch (color)
-        {
-            case Colors.BLUE:
-                GetComponent<SpriteRenderer>().sprite = blueCrystal;
-                break;
-            case Colors.GREEN:
-                GetComponent<SpriteRenderer>().sprite = greenCrystal;
-                break;
-            case Colors.YELLOW:
-                GetComponent<SpriteRenderer>().sprite = yellowCrystal;
-                break;
-            case Colors.PINK:
-                GetComponent<SpriteRenderer>().sprite = pinkCrystal;
-                break;
-            case Colors.ORANGE:
-                GetComponent<SpriteRenderer>().sprite = orangeCrystal;
-                break;
-            case Colors.BROWN:
-                GetComponent<SpriteRenderer>().sprite = brownCrystal;
-                break;
-            case Colors.LIME:
-                GetComponent<SpriteRenderer>().sprite = limeCrystal;
-                break;
-            case Colors.SILVER:
-                GetComponent<SpriteRenderer>().sprite = silverCrystal;
-                break;
-            case Colors.MAGENTA:
-                GetComponent<SpriteRenderer>().sprite = magentaCrystal;
-                break;
-            case Colors.WHITE:
-                GetComponent<SpriteRenderer>().sprite = whiteCrystal;
-                break;
-            case Colors.TURQUOISE:
-                GetComponent<SpriteRenderer>().sprite = turquoiseCrystal;
-                break;
-            case Colors.BLACK:
-                GetComponent<SpriteRenderer>().sprite = blackCrystal;
-                break;
-            case Colors.INDIGO:
-                GetComponent<SpriteRenderer>().sprite = indigoCrystal;
-                break;
-            case Colors.RED:
-                GetComponent<SpriteRenderer>().sprite = redCrystal;
-                break;
-            case Colors.FUCHSIA:
-                GetComponent<SpriteRenderer>().sprite = fuchsiaCrystal;
-                break;
-        }
+        GetComponent<SpriteRenderer>().sprite = crystal.crystalSprite;
+        crystalColor = crystal.crystalColor;
     }
 }

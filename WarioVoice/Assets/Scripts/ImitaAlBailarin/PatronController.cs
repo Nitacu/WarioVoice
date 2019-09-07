@@ -23,23 +23,25 @@ public class PatronController : MonoBehaviour
     #endregion
 
     //List that will be used to play and check patrons 
-    private List<CrystalController.Colors[]> patronList = new List<CrystalController.Colors[]>();
+    private List<Crystal[]> patronList = new List<Crystal[]>();
     private int countPatrons;
     private int currentPatron = 0;
     private int contColor = 0;
-    private CrystalController.Colors[] checkPattern;
+    private Crystal[] checkPattern;
     private bool showingPattern = false;
     private GameObject activeCrystals;
 
     #region Colors List
     //List that has all the existent colors (this will be used to create the crystals in scene)
-    private List<CrystalController.Colors> allColors = new List<CrystalController.Colors>() {
+    /*private List<CrystalController.Colors> allColors = new List<CrystalController.Colors>() {
         CrystalController.Colors.BLUE, CrystalController.Colors.GREEN, CrystalController.Colors.YELLOW, CrystalController.Colors.PINK, CrystalController.Colors.ORANGE,
         CrystalController.Colors.BROWN, CrystalController.Colors.SILVER, CrystalController.Colors.WHITE, CrystalController.Colors.MAGENTA,CrystalController.Colors.LIME
-    };
+    };*/
+    public List<Crystal> crystalList = new List<Crystal>();
+    private List<Crystal> crystalInScene = new List<Crystal>();
     //This list is used to know what are the crystals in scene, this list will be sent to the pattern creator to know what collors to use
-    private List<CrystalController.Colors> colorsInScene = new List<CrystalController.Colors>();
-    private int randomNumber = 0;
+    //private List<CrystalController.Colors> colorsInScene = new List<CrystalController.Colors>();
+    
     #endregion
 
     private int contChecking = 0;
@@ -53,9 +55,14 @@ public class PatronController : MonoBehaviour
         
         for(int i = 0; i < numberOfPatterns; i++)
         {
-            patronList.Add(patronCreator.patternCreator(numberOfCrystals,patternDuration, colorsInScene));
+            //patronList.Add(patronCreator.patternCreator(numberOfCrystals,patternDuration, colorsInScene));
+            patronList.Add(patronCreator.patternCreatorCrystal(numberOfCrystals, patternDuration, crystalInScene));
         }
 
+      /*  foreach(Crystal crystal in patronList[0])
+        {
+            Debug.Log(crystal.crystalColor.ToString());
+        }*/
         
 
         showPatron();
@@ -78,20 +85,19 @@ public class PatronController : MonoBehaviour
 
     private void showPatron()
     {
-        
         countPatrons = patronList[currentPatron].Length;
         showingPattern = true;
         checkPattern = patronList[currentPatron];
         StartCoroutine(LightCrystal(0.2f, patronList[currentPatron][contColor])); //Turns de current color in the pattern
     }
 
-    IEnumerator LightCrystal(float delayTime, CrystalController.Colors crystal)
+    IEnumerator LightCrystal(float delayTime, Crystal crystal)
     {
         yield return new WaitForSeconds(delayTime);
 
         foreach(Transform child in activeCrystals.transform)
         {
-            if(child.gameObject.GetComponent<CrystalController>().crystalColor == crystal)
+            if(child.gameObject.GetComponent<CrystalController>().crystalColor == crystal.crystalColor)
             {
                 child.gameObject.GetComponent<CrystalController>().changeCrystal(true, crystal);
             }
@@ -100,7 +106,7 @@ public class PatronController : MonoBehaviour
         StartCoroutine(turnOffCrystal(1.2f, crystal));
     }
 
-    IEnumerator turnOffCrystal(float delayTime, CrystalController.Colors crystal)
+    IEnumerator turnOffCrystal(float delayTime, Crystal crystal)
     {
         contColor++;
 
@@ -108,7 +114,7 @@ public class PatronController : MonoBehaviour
 
         foreach (Transform child in activeCrystals.transform)
         {
-            if (child.gameObject.GetComponent<CrystalController>().crystalColor == crystal)
+            if (child.gameObject.GetComponent<CrystalController>().crystalColor == crystal.crystalColor)
             {
                 child.gameObject.GetComponent<CrystalController>().changeCrystal(false, crystal);
                 if (contColor >= countPatrons) //Este indica que es el ultimo
@@ -199,17 +205,20 @@ public class PatronController : MonoBehaviour
     private void crystalCreator()
     {
         int cont = 0;
+        int randomNumber2 = 0;
 
         for(int i = 0; i < numberOfCrystals; i++)
         {
-            randomNumber = Random.Range(0, allColors.Count);
-            colorsInScene.Add(allColors[randomNumber]);
-            allColors.RemoveAt(randomNumber);
+            
+            randomNumber2 = Random.Range(0, crystalList.Count);
+            crystalInScene.Add(crystalList[randomNumber2]);
+            crystalList.RemoveAt(randomNumber2);
+            
         }
 
         foreach (Transform child in activeCrystals.transform)
         {
-            child.gameObject.GetComponent<CrystalController>().changeCrystalColor(colorsInScene[cont]);
+            child.gameObject.GetComponent<CrystalController>().changeCrystalColor(crystalInScene[cont]);
             cont++;
         }
     }
@@ -225,13 +234,13 @@ public class PatronController : MonoBehaviour
 
         if (!showingPattern)
         {
-            if(color == patronList[currentPatron - 1][contChecking])
+            if(color == patronList[currentPatron - 1][contChecking].crystalColor)
             {
                 foreach (Transform child in activeCrystals.transform)
                 {
                     if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)
                     {
-                        child.gameObject.GetComponent<CrystalController>().changeCrystal(true, color);
+                        child.gameObject.GetComponent<CrystalController>().changeCrystal(true, patronList[currentPatron - 1][contChecking]);
                     }
                     
                 }
