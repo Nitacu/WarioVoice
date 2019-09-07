@@ -139,6 +139,7 @@ public class BuildingsManager : CommandParser
 
     public void resetLevel(int currentLevel)
     {
+        _pairsMatched = 0;
         _currentLevel = currentLevel;
 
         BuildPairItem[] _allItems = FindObjectsOfType<BuildPairItem>();
