@@ -40,7 +40,7 @@ public class HeroProperties : MonoBehaviour
             IsLive = false;
             FindObjectOfType<ControlShifts>().dieCharacter();
         }
-
+        _PanelData.GetComponent<CharacterStatistics>().changeColor(Color.red);
         _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(_life, _mana);
     }
 

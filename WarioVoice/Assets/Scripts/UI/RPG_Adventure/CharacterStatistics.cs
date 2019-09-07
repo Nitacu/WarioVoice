@@ -15,4 +15,16 @@ public class CharacterStatistics : MonoBehaviour
         _mana.text = mana.ToString();
     }
 
+    public void changeColor(Color color)
+    {
+        _life.color = color;
+        _mana.color = color;
+        Invoke("restColor",3);
+    }
+
+    public void restColor()
+    {
+        changeColor(Color.white);
+    }
+
 }

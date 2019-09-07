@@ -71,7 +71,8 @@ public class ConfigureRPG : MonoBehaviour
 
     public void configurateLevel()
     {
-
+        _difficultyLevel = AttackGlossary.GetInstance()._difficultyLevel;
+        Debug.Log(_difficultyLevel);
         switch (_difficultyLevel)
         {
             case 1:

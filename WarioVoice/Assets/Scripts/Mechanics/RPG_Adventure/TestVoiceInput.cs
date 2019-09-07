@@ -9,7 +9,6 @@ public class TestVoiceInput : MonoBehaviour
 
     public void testVoice()
     {
-        Debug.Log ("as");
         switch (text.value)
         {
             case 0:

@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 7313950891300914739}
   - component: {fileID: 7313950891300914736}
   - component: {fileID: 6262967557089269839}
+  - component: {fileID: 7786929664849009418}
   m_Layer: 5
   m_Name: Panel character
   m_TagString: Untagged
@@ -424,9 +425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44827986511d5a84ea1f7ed73d6efe8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacks: []
-  _life: 500
-  _mana: 3
   _PanelData: {fileID: 7313950891300914741}
   _icon: {fileID: 7313950891334266074}
 --- !u!114 &6262967557089269839
@@ -485,6 +483,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!95 &7786929664849009418
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313950891300914741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c8b6d7cfb70cf1458cd9047ef6c7bdc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7313950891334266074
 GameObject:
   m_ObjectHideFlags: 0
