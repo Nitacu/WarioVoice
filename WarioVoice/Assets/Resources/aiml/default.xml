@@ -149,7 +149,6 @@
 <category><pattern>WALK BACKWARDS</pattern><template>WALK_BACKWARDS#*#OCELOT</template></category>
 <category><pattern>TAKE</pattern><template>GRAB#*#OCELOT</template></category>
 
-
 <category><pattern>WALK *</pattern><template>WALK#*#OCELOT </template></category>
 <category><pattern>JUMP *</pattern><template>JUMP#*#OCELOT</template></category>
 <category><pattern>RUN *</pattern><template>RUN#*#OCELOT</template></category>
@@ -157,5 +156,14 @@
 <category><pattern>WALK BACKWARDS *</pattern><template>WALK_BACKWARDS#*#OCELOT</template></category>
 <category><pattern>TAKE *</pattern><template>GRAB#*#OCELOT</template></category>
 
- 
+<category><pattern>DOCTOR</pattern><template>DOCTOR</template></category>
+<category><pattern>HOSPITAL</pattern><template>HOSPITAL</template></category>
+<category><pattern>POLICE STATION</pattern><template>POLICE STATION</template></category>
+<category><pattern>POLICEMAN</pattern><template>POLICEMAN</template></category>
+<category><pattern>CLOWN</pattern><template>CLOWN</template></category>
+<category><pattern>CIRCUS</pattern><template>CIRCUS</template></category>
+<category><pattern>SCHOOL</pattern><template>SCHOOL</template></category>
+<category><pattern>STUDENT</pattern><template>STUDENT</template></category>
+  
+  
 </aiml>

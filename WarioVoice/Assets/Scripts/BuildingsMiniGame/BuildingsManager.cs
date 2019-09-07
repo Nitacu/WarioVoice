@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using TMPro;
 
 public static class BuildingVocabulary
 {
@@ -10,6 +11,15 @@ public static class BuildingVocabulary
     public const string DOCTOR = "DOCTOR";
     public const string STUDENT = "STUDENT";
     public const string CLOWN = "CLOWN";
+    public const string FIREMAN = "FIREMAN";
+    public const string CHEF = "CHEF";
+    public const string PILOT = "PILOT";
+    public const string NUN = "NUN";
+    public const string SECRETARY = "SECRETARY";
+    public const string FOOTBALLER = "FOOTBALLER";
+    public const string ACTRESS = "ACTRESS";
+    public const string MUSICIAN = "MUSICIAN";
+
     #endregion
 
     #region VOCABULARIOBUILDS
@@ -17,11 +27,20 @@ public static class BuildingVocabulary
     public const string HOSPITAL = "HOSPITAL";
     public const string SCHOOL = "SCHOOL";
     public const string CIRCUS = "CIRCUS";
+    public const string FIRESTATION = "FIRESTATION";
+    public const string RESTAURANT = "RESTAURANT";
+    public const string AIRPORT = "AIRPORT";
+    public const string CHURCH = "CHURCH";
+    public const string OFFICE = "OFFICE";
+    public const string STADIUM = "STADIUM";
+    public const string CINEMA = "CINEMA";
+    public const string MUSICSTAGE = "MUSIC STAGE";
+
     #endregion
 
     public enum PairType
     {
-        POLICE, STUDENT, DOCTOR, CLOWN
+        POLICE, STUDENT, DOCTOR, CLOWN, FIREMAN, CHEF, PILOT, NUN, SECRETARY, FOOTBALLER, ACTRESS, MUSICIAN
     }
 }
 
@@ -63,12 +82,15 @@ public class BuildingsManager : CommandParser
     [SerializeField] private List<Transform> _buildTransforms = new List<Transform>();
 
     [SerializeField] private List<Level> _levels = new List<Level>();
-    [SerializeField] private int _currentLevel = 0;
+    private int _currentLevel = 0;
     private int _pairsMatched = 0;
 
     private GameObject _firstSelection;
     private GameObject _secondSelection;
     private bool _itemSelected;
+
+    [SerializeField] private float _charTimeToGetBuild;
+    [SerializeField] private TextMeshProUGUI _text;
 
     private BuildingVocabulary.PairType _currentType;
 
@@ -80,23 +102,22 @@ public class BuildingsManager : CommandParser
 
     public override void parseCommand(string command)
     {
+        _text.text = "Comando: " + command + " , Comando Lenght: " + command.Length;
+
         findItemOnBuilds(command);
         findItemOnChars(command);
 
         if (_firstSelection != null && _secondSelection != null)
         {
-            Debug.Log("Two items selected");
             checkPair();
         }
 
         if (_pairsMatched >= _levels[_currentLevel].NumberOfPairs)
         {
-            Debug.Log("NIVEL COMPLETADO");
             _currentLevel++;
             resetLevel();
         }
 
-        base.parseCommand(command);
     }
 
     //simulación sin voz
@@ -109,15 +130,13 @@ public class BuildingsManager : CommandParser
 
         if (_firstSelection != null && _secondSelection != null)
         {
-            Debug.Log("Two items selected");
 
             checkPair();
         }
 
         if (_pairsMatched >= _levels[_currentLevel].NumberOfPairs)
         {
-            Debug.Log("NIVEL COMPLETADO");
-            //_currentLevel++;
+            _currentLevel++;
             resetLevel();
         }
     }
@@ -128,7 +147,6 @@ public class BuildingsManager : CommandParser
         BuildPairItem[] _allItems = FindObjectsOfType<BuildPairItem>();
         int _itemsCount = _allItems.Length;
 
-        Debug.Log("Items Finded: " + _itemsCount);
         for (int i = 0; i < _itemsCount; i++)
         {
             Destroy(_allItems[i].gameObject);
@@ -161,14 +179,7 @@ public class BuildingsManager : CommandParser
             }
         }
 
-        /*for (int i = 0; i < _levels[level].NumberOfPairs; i++)
-        {
-            int _indexRandom = Random.Range(0, _levels[level].Pairs.Count);
-            _scenePairs.Add(_levels[level].Pairs[_indexRandom]);
-            _levels[level].Pairs.RemoveAt(_indexRandom);
-
-        }*/
-
+    
         count = 0;//saber cuántos se han creado
         _usedIndexes = new List<int>();
         _usedIndexes.Clear();
@@ -190,7 +201,7 @@ public class BuildingsManager : CommandParser
         _usedIndexes = new List<int>();
         _usedIndexes.Clear();
 
-        //create builds
+        //create chars
         while (count < _scenePairs.Count)
         {
             int _randomCharTransform = Random.Range(0, _charTransforms.Count);
@@ -212,6 +223,23 @@ public class BuildingsManager : CommandParser
 
         if (_firstSelection.GetComponent<BuildPairItem>().Type == _secondSelection.GetComponent<BuildPairItem>().Type)
         {
+            GameObject _theChar;
+            GameObject _theBuild;
+
+            //mover char hasta build
+            if (_firstSelection.GetComponent<BuildPairItem>().PairItemType == BuildPairItem.PairType.BUILD)
+            {
+                _theBuild = _firstSelection;
+                _theChar = _secondSelection;
+            }
+            else
+            {
+                _theBuild = _secondSelection;
+                _theChar = _firstSelection;
+            }
+
+            _theChar.GetComponent<CharItem>().moveToBuild(_theBuild.transform, _charTimeToGetBuild);
+
             _firstSelection.GetComponent<SpriteRenderer>().color = _secondSelection.GetComponent<SpriteRenderer>().color = Color.red;
             _firstSelection.GetComponent<BuildPairItem>().PairedUp = _secondSelection.GetComponent<BuildPairItem>().PairedUp = true;
 
@@ -244,7 +272,7 @@ public class BuildingsManager : CommandParser
         foreach (var item in _charItem)
         {
 
-            if (item.RecognitionName == commandName && !item.PairedUp)
+            if (item.RecognitionName.Equals(commandName, System.StringComparison.OrdinalIgnoreCase) && !item.PairedUp)
             {
                 if (_itemSelected)
                 {
@@ -271,7 +299,7 @@ public class BuildingsManager : CommandParser
         BuildItem[] _buildItem = FindObjectsOfType<BuildItem>();
         foreach (var item in _buildItem)
         {
-            if (item.RecognitionName == commandName && !item.PairedUp)
+            if (item.RecognitionName.Equals(commandName, System.StringComparison.OrdinalIgnoreCase) && !item.PairedUp)
             {
 
                 if (_itemSelected)
@@ -290,31 +318,5 @@ public class BuildingsManager : CommandParser
                 }
             }
         }
-    }
-}
-
-//GUIPROPERTY
-public class NamedLevesArrayAttribute : PropertyAttribute
-{
-    public readonly string[] names;
-    public NamedLevesArrayAttribute(string[] names) { this.names = names; }
-}
-
-[CustomPropertyDrawer(typeof(NamedLevesArrayAttribute))]
-public class NamedLevesArrayDrawer : PropertyDrawer
-{
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-    {
-        try
-        {
-            int pos = int.Parse(property.propertyPath.Split('[', ']')[1]);
-            EditorGUI.ObjectField(position, property, new GUIContent(((NamedLevesArrayAttribute)attribute).names[pos]));
-        }
-        catch
-        {
-            EditorGUI.ObjectField(position, property, label);
-
-        }
-        base.OnGUI(position, property, label);
     }
 }
