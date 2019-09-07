@@ -87,6 +87,11 @@ public class BuildingsManager : CommandParser
 
     [SerializeField] private List<Level> _levels = new List<Level>();
     private int _currentLevel = 0;
+    public int CurrentLevel
+    {
+        get { return _currentLevel; }
+        set { _currentLevel = value; }
+    }
     private int _pairsMatched = 0;
 
     private GameObject _firstSelection;
@@ -132,8 +137,10 @@ public class BuildingsManager : CommandParser
     }
 
 
-    public void resetLevel()
+    public void resetLevel(int currentLevel)
     {
+        _currentLevel = currentLevel;
+
         BuildPairItem[] _allItems = FindObjectsOfType<BuildPairItem>();
         int _itemsCount = _allItems.Length;
 
@@ -141,24 +148,12 @@ public class BuildingsManager : CommandParser
         {
             Destroy(_allItems[i].gameObject);
         }
-
-        generateLevel(_currentLevel);
 
         _text.text = "Level: " + (_currentLevel + 1);
-    }
 
-    public void resetAll()
-    {
-        BuildPairItem[] _allItems = FindObjectsOfType<BuildPairItem>();
-        int _itemsCount = _allItems.Length;
-
-        for (int i = 0; i < _itemsCount; i++)
-        {
-            Destroy(_allItems[i].gameObject);
-        }
-
-        _currentLevel = 0;
         generateLevel(_currentLevel);
+
+       
     }
 
     public void generateLevel(int level)
@@ -166,7 +161,7 @@ public class BuildingsManager : CommandParser
         List<Pairs> _posiblePairs = new List<Pairs>();
         _posiblePairs.Clear();
       
-        for (int i = 0; i < _currentLevel+1; i++)
+        for (int i = 0; i < level + 1; i++)
         {
             for (int j = 0; j < _levels[i].Pairs.Count; j++)
             {
@@ -365,7 +360,7 @@ public class BuildingsManager : CommandParser
         }
         else
         {
-            resetLevel();
+            resetLevel(_currentLevel);
         }
     }
 
