@@ -18,6 +18,12 @@ public class ChangeScene : MonoBehaviour
     private const string ENDING = "Ending";
     private const string CREDITS = "Credits";
 
+    private const string WARIOVOICEMENU = "WarioVoiceMenu";
+    private const string MATCHBUILDINGS = "Buildings";
+    private const string IMITA_AL_BAILARIN = "";
+    private const string LOVE_SCENE = "LoveScene";
+    private const string RPG = "RPg_adventure";
+
     [SerializeField] private nameScenes _nameScenes;
 
     public enum nameScenes
@@ -33,7 +39,12 @@ public class ChangeScene : MonoBehaviour
         TUTORIAL_4,
         LEVEL_5,
         ENDING,
-        CREDITS
+        CREDITS,
+        WARIOVOICEMENU,
+        MATCHBUILDINGS,
+        IMITA_AL_BAILARIN,
+        LOVE_SCENE,
+        RPG
     }    
 
     public void chanceScene()
@@ -86,6 +97,26 @@ public class ChangeScene : MonoBehaviour
 
             case nameScenes.LEVEL_5:
                 SceneManager.LoadScene(LEVEL_5);
+                break;
+
+            case nameScenes.WARIOVOICEMENU:
+                SceneManager.LoadScene(WARIOVOICEMENU);
+                break;
+
+            case nameScenes.MATCHBUILDINGS:
+                SceneManager.LoadScene(MATCHBUILDINGS);
+                break;
+
+            case nameScenes.IMITA_AL_BAILARIN:
+                SceneManager.LoadScene(IMITA_AL_BAILARIN);
+                break;
+
+            case nameScenes.LOVE_SCENE:
+                SceneManager.LoadScene(LOVE_SCENE);
+                break;
+
+            case nameScenes.RPG:
+                SceneManager.LoadScene(RPG);
                 break;
         }
     }

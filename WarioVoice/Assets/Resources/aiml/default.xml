@@ -160,10 +160,42 @@
 <category><pattern>HOSPITAL</pattern><template>HOSPITAL</template></category>
 <category><pattern>POLICE STATION</pattern><template>POLICE STATION</template></category>
 <category><pattern>POLICEMAN</pattern><template>POLICEMAN</template></category>
-<category><pattern>CLOWN</pattern><template>CLOWN</template></category>
-<category><pattern>CIRCUS</pattern><template>CIRCUS</template></category>
 <category><pattern>SCHOOL</pattern><template>SCHOOL</template></category>
 <category><pattern>STUDENT</pattern><template>STUDENT</template></category>
-  
+<category><pattern>CLOWN</pattern><template>CLOWN</template></category>
+<category><pattern>CIRCUS</pattern><template>CIRCUS</template></category>
+<category><pattern>FIREMAN</pattern><template>FIREMAN</template></category>
+<category><pattern>FIRE STATION</pattern><template>FIRE STATION</template></category>
+<category><pattern>CHEF</pattern><template>CHEF</template></category>
+<category><pattern>RESTAURANT</pattern><template>RESTAURANT</template></category>
+<category><pattern>PILOT</pattern><template>PILOT</template></category>
+<category><pattern>AIRPORT</pattern><template>AIRPORT</template></category>
+<category><pattern>NUN</pattern><template>NUN</template></category>
+<category><pattern>CHURCH</pattern><template>CHURCH</template></category>
+<category><pattern>SECRETARY</pattern><template>SECRETARY</template></category>
+<category><pattern>OFFICE</pattern><template>OFFICE</template></category>
+<category><pattern>FOOTBALLER</pattern><template>FOOTBALLER</template></category>
+<category><pattern>STADIUM</pattern><template>STADIUM</template></category>
+<category><pattern>ACTRESS</pattern><template>ACTRESS</template></category>
+<category><pattern>CINEMA</pattern><template>CINEMA</template></category>
+<category><pattern>MUSICIAN</pattern><template>MUSICIAN</template></category>
+<category><pattern>MUSIC STAGE</pattern><template>MUSIC STAGE</template></category>
+
+<category><pattern>THROW</pattern><template>THROW</template></category>
+<category><pattern>DOWNGRADE</pattern><template>DOWNGRADE</template></category>
+<category><pattern>LAUGH</pattern><template>LAUGH</template></category>
+<category><pattern>SHOOT</pattern><template>SHOOT</template></category>
+<category><pattern>BURN</pattern><template>BURN</template></category>
+<category><pattern>ACCUSE</pattern><template>ACCUSE</template></category>
+<category><pattern>EAT</pattern><template>EAT</template></category>
+<category><pattern>GIVE AWAY</pattern><template>GIVE_AWAY</template></category>
+<category><pattern>LOOK</pattern><template>LOOK</template></category>
+<category><pattern>SHOUT</pattern><template>SHOUT</template></category>
+<category><pattern>BLOW</pattern><template>BLOW</template></category>
+<category><pattern>TELL</pattern><template>TELL</template></category>
+<category><pattern>FLY</pattern><template>FLY</template></category>
+<category><pattern>SCRATCH</pattern><template>SCRATCH</template></category>
+<category><pattern>PASTE</pattern><template>PASTE</template></category>
+<category><pattern>HIT</pattern><template>HIT</template></category>
   
 </aiml>
