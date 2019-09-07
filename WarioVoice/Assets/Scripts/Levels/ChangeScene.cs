@@ -22,7 +22,7 @@ public class ChangeScene : MonoBehaviour
     private const string MATCHBUILDINGS = "Buildings";
     private const string IMITA_AL_BAILARIN = "";
     private const string LOVE_SCENE = "LoveScene";
-    private const string RPG = "";
+    private const string RPG = "RPg_adventure";
 
     [SerializeField] private nameScenes _nameScenes;
 
