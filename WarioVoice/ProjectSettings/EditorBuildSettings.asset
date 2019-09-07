@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/WarioVoice/WarioVoiceMenu.unity
+    guid: f1b222f8fd67ac44f888d9fe2e1d9971
+  - enabled: 1
     path: Assets/Scenes/WarioVoice/RPG_Adventure/RPg_adventure.unity
     guid: 8c5103e2da3420045877da28b2d676a3
   - enabled: 1
