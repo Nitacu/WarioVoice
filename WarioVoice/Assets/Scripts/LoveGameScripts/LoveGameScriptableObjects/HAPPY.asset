@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signSprite: {fileID: 21300000, guid: 918fafe4ed9883b4998ff02b4a260710, type: 3}
   item: 3
+  possibleAnswers: 03000000

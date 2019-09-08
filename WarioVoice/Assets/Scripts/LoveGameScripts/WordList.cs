@@ -22,6 +22,7 @@ public class WordList : MonoBehaviour
         CHARMING,
         SWEET,
         FRIENDLY,
-        SMART
+        SMART,
+        HEART
     }
 }

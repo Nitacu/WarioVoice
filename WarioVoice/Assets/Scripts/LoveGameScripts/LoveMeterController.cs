@@ -21,7 +21,7 @@ public class LoveMeterController : MonoBehaviour
         if (contSigns < numberOfSigns)
         {
             loveBar.fillAmount = contSigns / numberOfSigns;
-            Debug.Log(contSigns + " " + numberOfSigns);
+            
         }
         else
         {

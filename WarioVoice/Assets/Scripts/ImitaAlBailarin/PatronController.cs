@@ -260,7 +260,7 @@ public class PatronController : MonoBehaviour
                     //Muy bien, ganaste
                     Debug.Log("Ganaste");
                     GameManager.GetInstance().increaseDifficulty();
-                    SceneManager.LoadScene("WarioVoiceMenu");
+                    messageInScreen.GetComponent<ScreenMessage>().winScreen();
                 }
             }
             else

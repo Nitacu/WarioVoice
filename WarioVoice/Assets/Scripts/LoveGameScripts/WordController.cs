@@ -64,23 +64,32 @@ public class WordController : MonoBehaviour
     private void turnSignOn()
     {
         //Turn Everything ON again
+        
         player.GetComponent<Animator>().Play(Animator.StringToHash("ShowingSign"));
-        playerSign.SetActive(true);
+        
         isShowingSign = true;
-
+        
 
         //Show current sign
         if(signsInGame[currentSign].signSprite == null) //If has a sprite, set it to the one of the scriptable object, else, enable Text and write the ENUM word
         {
-            playerSign.GetComponent<SpriteRenderer>().sprite = null;
-            signText.enabled = true;
-            signText.text = signsInGame[currentSign].item.ToString();
+            Invoke("waitTimeSprite", 0.02f); //time it has to wait for the position of the player to update, if it doesnt wait, the word will
+                                            //be in the air for some miliseconds before clamping to the player sign
         }
         else
         {
             playerSign.GetComponent<SpriteRenderer>().sprite = signsInGame[currentSign].signSprite;
         }
+        playerSign.SetActive(true);
+        player.GetComponent<PositionController>().setPosition();
 
+    }
+
+    private void waitTimeSprite() //Sets sign to the corresponding TEXT
+    {
+        playerSign.GetComponent<SpriteRenderer>().sprite = null;
+        signText.enabled = true;
+        signText.text = signsInGame[currentSign].item.ToString();
     }
 
     private void setDifficulty() //Sets the number of signs that will be used in the minigame and what signs will be shown
@@ -102,9 +111,20 @@ public class WordController : MonoBehaviour
 
     public void checkAnswer(string answer)
     {
+
+        bool correctAnswer = false;
+
         if (isShowingSign)
         {
-            if (answer == signsInGame[currentSign].item.ToString())
+            foreach(WordList.itemNames possibleAnswer in signsInGame[currentSign].possibleAnswers) //Checks all possible answers for the word or image in sign
+            {
+                if (answer == possibleAnswer.ToString())
+                {
+                    correctAnswer = true;
+                }
+            }
+
+            if (correctAnswer)
             {
                 currentSign++;
                 if (currentSign < signsInGame.Count) //Checks cont of how many words has the player said, to know if he won or he should keep going.

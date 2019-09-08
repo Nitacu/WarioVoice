@@ -67,6 +67,14 @@ public class ScreenMessage : MonoBehaviour
         }
 
     }
+
+    public void winScreen()
+    {
+        textPro.text = "YOU WON!";
+        textPro.color = Color.green;
+        lostPanel.SetActive(true);
+        speechCanvas.SetActive(false);
+    }
   
 
 

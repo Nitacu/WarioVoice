@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signSprite: {fileID: 0}
   item: 8
+  possibleAnswers: 08000000
