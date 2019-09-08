@@ -209,10 +209,18 @@
 <category><pattern>MAGENTA</pattern><template>MAGENTA</template></category>
 <category><pattern>WHITE</pattern><template>WHITE</template></category>
 
-<category><pattern>HEART</pattern><template>HEART</template></category>
+<category><pattern>LOVE</pattern><template>LOVE</template></category>
 <category><pattern>HAPPY</pattern><template>HAPPY</template></category>
 <category><pattern>BEAUTIFUL</pattern><template>BEAUTIFUL</template></category>
 <category><pattern>PRETTY</pattern><template>PRETTY</template></category>  
+<category><pattern>ELEGANT</pattern><template>ELEGANT</template></category>
+<category><pattern>KIND</pattern><template>KIND</template></category>
+<category><pattern>FUNNY</pattern><template>FUNNY</template></category>
+<category><pattern>CHARMING</pattern><template>CHARMING</template></category>  
+ <category><pattern>SWEET</pattern><template>SWEET</template></category>
+<category><pattern>FRIENDLY</pattern><template>FRIENDLY</template></category>
+<category><pattern>SMART</pattern><template>SMART</template></category>
+
   
   
 </aiml>

@@ -12,9 +12,16 @@ public class WordList : MonoBehaviour
 
     public enum itemNames
     {
-        HEART,
+        LOVE,
         BEAUTIFUL,
         PRETTY,
-        HAPPY
+        HAPPY,
+        ELEGANT,
+        KIND,
+        FUNNY,
+        CHARMING,
+        SWEET,
+        FRIENDLY,
+        SMART
     }
 }

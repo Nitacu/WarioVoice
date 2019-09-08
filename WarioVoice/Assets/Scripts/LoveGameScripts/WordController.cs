@@ -18,6 +18,9 @@ public class WordController : MonoBehaviour
     public GameObject playerSign;
     public GameObject player;
     public TextMeshProUGUI signText;
+    public GameObject women;
+    private GameObject loveMetter;
+    public GameObject finalScreen;
     #endregion
 
     private bool isShowingSign = true;
@@ -26,6 +29,7 @@ public class WordController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        loveMetter = FindObjectOfType<LoveMeterController>().gameObject;
         setDifficulty();
         turnSignOn();
     }
@@ -81,8 +85,9 @@ public class WordController : MonoBehaviour
 
     private void setDifficulty() //Sets the number of signs that will be used in the minigame and what signs will be shown
     {
+        gameDifficulty = GameManager.GetInstance().getGameDifficulty();
         numberOfSigns = gameDifficulty + 1;
-
+        loveMetter.GetComponent<LoveMeterController>().numberOfSigns = numberOfSigns;
         int randomNumber = 0;
 
         for (int i = 0; i < numberOfSigns; i++)
@@ -91,6 +96,7 @@ public class WordController : MonoBehaviour
             signsInGame.Add(signs[randomNumber]);
             signs.RemoveAt(randomNumber);
         }
+
 
     }
 
@@ -104,17 +110,24 @@ public class WordController : MonoBehaviour
                 if (currentSign < signsInGame.Count) //Checks cont of how many words has the player said, to know if he won or he should keep going.
                 {
                     nextSign();
+                    women.GetComponent<WomanController>().playLoveAnimation();
+                    loveMetter.GetComponent<LoveMeterController>().updateLoveBar();
                 }
                 else
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
-                    SceneManager.LoadScene("WarioVoiceMenu");
+                    finalScreen.SetActive(true);
+                    GameManager.GetInstance().increaseDifficulty();
+                    FindObjectOfType<FinalScreenController>().winScreenImage();
+                   
                 }
             }
             else
             {
+                finalScreen.SetActive(true);
+                FindObjectOfType<FinalScreenController>().loseScreenImage();
                 Debug.Log("Perdiste");
-                SceneManager.LoadScene("LoveScene");
+                
             }
         }
     }
