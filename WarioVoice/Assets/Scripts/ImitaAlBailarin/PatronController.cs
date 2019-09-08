@@ -11,8 +11,10 @@ public class PatronController : MonoBehaviour
     public GameObject threeCrystals;
     public GameObject fourCrystals;
     public GameObject fiveCrystals;
-    
+
     #endregion
+
+    private GameObject messageInScreen;
 
     #region Difficulty variables
     public int difficulty = 0; //goes from 1 to 10 
@@ -47,6 +49,8 @@ public class PatronController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        difficulty = GameManager.GetInstance().getGameDifficulty();
+        messageInScreen = FindObjectOfType<ScreenMessage>().gameObject;
         patronCreator = GetComponent<PatronsScript>();
         selectDifficulty();
         crystalCreator();
@@ -62,7 +66,10 @@ public class PatronController : MonoBehaviour
             Debug.Log(crystal.crystalColor.ToString());
         }*/
         
+    }
 
+    public void startGame()
+    {
         showPatron();
     }
 
@@ -100,7 +107,7 @@ public class PatronController : MonoBehaviour
                 child.gameObject.GetComponent<CrystalController>().changeCrystal(true, crystal);
             }
         }
-        
+        messageInScreen.GetComponent<ScreenMessage>().showTextColor(crystal);
         StartCoroutine(turnOffCrystal(1.2f, crystal));
     }
 
@@ -120,7 +127,8 @@ public class PatronController : MonoBehaviour
             }
         }
 
-        
+        messageInScreen.GetComponent<ScreenMessage>().turnOffText();
+
         if (contColor < countPatrons)
         {
             showPatron();
@@ -130,6 +138,7 @@ public class PatronController : MonoBehaviour
             contColor = 0;
             currentPatron++;
             showingPattern = false;
+            messageInScreen.GetComponent<ScreenMessage>().repeatPattern();
         }
     }
 
@@ -243,20 +252,25 @@ public class PatronController : MonoBehaviour
                     
                 }
                 contChecking++;
-                
+
+                messageInScreen.GetComponent<ScreenMessage>().goodOrBad(true);
                 
                 if(contChecking > patronList[currentPatron - 1].Length - 1)
                 {
                     //Muy bien, ganaste
                     Debug.Log("Ganaste");
+                    GameManager.GetInstance().increaseDifficulty();
                     SceneManager.LoadScene("WarioVoiceMenu");
                 }
             }
             else
             {
+
+                messageInScreen.GetComponent<ScreenMessage>().goodOrBad(false);
+
                 //Decir que le quedó mal
                 Debug.Log("Perdiste");
-                SceneManager.LoadScene("DanceScene");
+                
                 foreach (Transform child in activeCrystals.transform)
                 {
                     if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)
