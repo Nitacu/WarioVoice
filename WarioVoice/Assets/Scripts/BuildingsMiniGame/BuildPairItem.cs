@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class BuildPairItem : MonoBehaviour
 {
+
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            
+        }
+    }
+
     public enum PairType
     {
         BUILD, CHAR
