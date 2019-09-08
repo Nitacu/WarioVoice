@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1bc8e5ab65c9843b696ebefe6b977e, type: 3}
+  m_Name: Hero5
+  m_EditorClassIdentifier: 
+  _standing: {fileID: -3384993323365649788, guid: e8bfd1ff1258d394780d88d86f3cc772,
+    type: 3}
+  _icon: {fileID: 776558168461322927, guid: e8bfd1ff1258d394780d88d86f3cc772, type: 3}
+  _animator: {fileID: 0}

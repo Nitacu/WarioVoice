@@ -10,6 +10,7 @@ public class ControlShifts : MonoBehaviour
     private LevelInformationPanel _informationPanel;
     private int numberCharacterLive = 0;
     private LamiaController _lamia;
+    private HeroProperties[] _heroes = new HeroProperties[0];
 
     public bool TurnEnemy { get => turnEnemy; set => turnEnemy = value; }
     public bool TurnPlayer { get => turnPlayer; set => turnPlayer = value; }
@@ -22,13 +23,35 @@ public class ControlShifts : MonoBehaviour
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _informationPanel.activeDialogue("Que la pelea comience");
 
-        Invoke("playerTurn", 2);
+        Invoke("playerTurn", 3);
     }
 
     public void playerTurn()
     {
         turnEnemy = false;
         TurnPlayer = true;
+
+        if (_heroes.Length<=0)
+        {
+            _heroes = FindObjectsOfType<HeroProperties>();
+        }
+
+        Invoke("newChallenge", 1.5f);
+
+    }
+
+    public bool newChallenge()
+    {
+        while (true)
+        {
+            int numberRandom = Random.Range(0, _heroes.Length);
+            if (_heroes[numberRandom].IsLive)
+            {
+                _heroes[numberRandom].showAttacks();
+                return true;
+            }
+        }
+
     }
 
     public void playerEnemy()
@@ -36,17 +59,13 @@ public class ControlShifts : MonoBehaviour
         turnEnemy = true;
         TurnPlayer = false;
         _informationPanel.activeDialogue("");
-
-
-        //ataca el bicho
-        _lamia.Invoke("attack", 3);
     }
 
     public void dieCharacter()
     {
-        numberCharacterLive--;
+        numberCharacterLive++;
 
-        if (numberCharacterLive <= FindObjectOfType<CharacterBuilder>().NumberCharacters)
+        if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
         {
             SceneManager.LoadScene("WarioVoiceMenu");
         }

@@ -8,6 +8,7 @@ public class LevelInformationPanel : MonoBehaviour
     [SerializeField] private List<GameObject> _attacks;
     [SerializeField] private GameObject _text;
     [SerializeField] private GameObject _panelAttacks;
+    [SerializeField] private TMP_Text _puzzle;
     private ControlShifts _controlShifts;
 
     private void Start()
@@ -17,22 +18,19 @@ public class LevelInformationPanel : MonoBehaviour
 
     public void activeDialogue(string text)
     {
-        if (ControlShifts.TurnEnemy)
-        {
-            _panelAttacks.SetActive(false);
-            _text.SetActive(true);
-            _text.GetComponent<TMP_Text>().text = text;
-        }
+
+        _panelAttacks.SetActive(false);
+        _text.SetActive(true);
+        _text.GetComponent<TMP_Text>().text = text;
 
     }
 
-    public void activePanelAttacks()
+    public void activePanelAttacks(string puzzle)
     {
-        if (ControlShifts.TurnPlayer)
-        {
-            _panelAttacks.SetActive(true);
-            _text.SetActive(false);
-        }
+
+        _panelAttacks.SetActive(true);
+        _text.SetActive(false);
+        _puzzle.text = puzzle;
 
     }
 

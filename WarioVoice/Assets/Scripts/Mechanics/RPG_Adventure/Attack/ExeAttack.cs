@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ExeAttack : MonoBehaviour
 {
-    private AttackGlossary.attack _typeAttack;
+    [Header("acertijos")]
+    private List<VoiceAttacks> _riddle;
+    private AttackGlossary.attack _typeAttack; //lo masnda el comanparse 
+    [SerializeField] private AttackGlossary.attack _correctAttack; //es el que tiene el que se tiene que usar
     private LamiaController _lamia;
     private List<VoiceAttacks> _listAttacks = new List<VoiceAttacks>();
     private HeroProperties _hero;
-    private VoiceAttacks _currentAttack;
+    [SerializeField] private VoiceAttacks _currentAttack;
     private ControlShifts _controlShifts;
-
+    [SerializeField] private VisualDamage _visualDamage;
     private void Start()
     {
         _lamia = FindObjectOfType<LamiaController>();
@@ -19,7 +22,6 @@ public class ExeAttack : MonoBehaviour
 
     public void prepareAttack(List<VoiceAttacks> listAttacks, HeroProperties hero)
     {
-        _listAttacks.Clear();
         _listAttacks = listAttacks;
         _hero = hero;
     }
@@ -38,100 +40,32 @@ public class ExeAttack : MonoBehaviour
         return false;
     }
 
-    public void selectAttack( )
+    public void selectAttack()
     {
-        
-        if (characterContainsAttack() )
+
+        if (characterContainsAttack() && CorrectAttack == _typeAttack)
         {
-            switch (_typeAttack)
-            {
-                case AttackGlossary.attack.ACCUSE:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
 
-                case AttackGlossary.attack.BLOW:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.BURN:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.DOWNGRADE:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.EAT:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.FLY:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.GIVE_AWAY:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.HIT:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.LAUGH:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.LOOK:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.PASTE:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.SCRATCH:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.SHOOT:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.SHOUT:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.TELL:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-                case AttackGlossary.attack.THROW:
-                    _lamia.lostLife(_currentAttack._damage);
-                    _hero.getCharacterStastic(0, _currentAttack._cost);
-                    break;
-
-            }
-            FindObjectOfType<ControlShifts>().playerEnemy();
+            //aplcia el daño
+            if (_lamia.lostLife(_currentAttack._damage))
+                FindObjectOfType<ControlShifts>().playerTurn();
+            // visual
+            _visualDamage.gameObject.transform.position = _lamia.transform.position;
+            _visualDamage.gameObject.SetActive(true);
+            _visualDamage.showDamage(_currentAttack._damage);
+            //frase del ataque
             FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+            _hero.GetComponent<MoveHeroe>().changeDirection();
+
         }
-  
+        else
+        {
+            _lamia.attack(_hero);
+        }
+
     }
 
 
     public AttackGlossary.attack TypeAttack { get => _typeAttack; set => _typeAttack = value; }
+    public AttackGlossary.attack CorrectAttack { get => _correctAttack; set => _correctAttack = value; }
 }

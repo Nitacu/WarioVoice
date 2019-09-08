@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConfigureRPG : MonoBehaviour
 {
-    [SerializeField]private int _difficultyLevel;
+    private int _difficultyLevel;
     private CharacterBuilder _characterBuilder;
     private LamiaController _lamiaController;
 
@@ -18,11 +18,11 @@ public class ConfigureRPG : MonoBehaviour
 
     public float configurationCharacters()
     {
-        _difficultyLevel = AttackGlossary.GetInstance()._difficultyLevel;
+        _difficultyLevel = GameManager.GetInstance().getGameDifficulty();
         switch (_difficultyLevel)
         {
             case 1:
-                return Random.Range(510,560);
+                return Random.Range(510, 560);
                 break;
 
             case 2:
@@ -71,58 +71,68 @@ public class ConfigureRPG : MonoBehaviour
 
     public void configurateLevel()
     {
-        _difficultyLevel = AttackGlossary.GetInstance()._difficultyLevel;
-        Debug.Log(_difficultyLevel);
+        _difficultyLevel = GameManager.GetInstance().getGameDifficulty();
+
         switch (_difficultyLevel)
         {
             case 1:
                 _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = Random.Range(30,40);
+                _lamiaController.Life = 10;
+                _lamiaController.Damage = 200;
                 break;
 
             case 2:
                 _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = Random.Range(40, 53);
+                _lamiaController.Life = 20;
+                _lamiaController.Damage = 250;
                 break;
 
             case 3:
                 _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = Random.Range(50, 66);
+                _lamiaController.Life = 30;
+                _lamiaController.Damage = 300;
                 break;
 
             case 4:
                 _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = Random.Range(60, 78);
+                _lamiaController.Life = 35;
+                _lamiaController.Damage = 200;
                 break;
 
             case 5:
                 _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = Random.Range(70, 92);
+                _lamiaController.Life = 36;
+                _lamiaController.Damage = 250;
                 break;
 
             case 6:
                 _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = Random.Range(80, 105);
+                _lamiaController.Life = 40;
+                _lamiaController.Damage = 300;
                 break;
 
             case 7:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = Random.Range(90, 118);
+                _lamiaController.Life = 43;
+                _lamiaController.Damage = 300;
                 break;
 
             case 8:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = Random.Range(100, 131);
+                _lamiaController.Life = 45;
+                _lamiaController.Damage = 350;
                 break;
 
             case 9:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = Random.Range(110, 144);
+                _lamiaController.Life = 46;
+                _lamiaController.Damage = 400;
                 break;
 
             case 10:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = Random.Range(120, 157);
+                _lamiaController.Life = 50;
+                _lamiaController.Damage = 600;
                 break;
 
 

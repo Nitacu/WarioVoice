@@ -6,100 +6,52 @@ using UnityEngine.SceneManagement;
 
 public class LamiaController : MonoBehaviour
 {
-    [SerializeField]private float life;
+    [SerializeField] private float life;
+    [SerializeField] private GameObject _visualDamage;
+    private HeroProperties _characters;
+    [SerializeField] private float _damage;
+    [SerializeField] private GameObject _cofetti;
 
-    private HeroProperties[] _characters;
-
-    public void lostLife(float damage)
+    public bool lostLife(float damage)
     {
         Life -= damage;
+
         // animacion batalla
-        GetComponent<Animator>().Play(Animator.StringToHash("Damage Lamia"));
+        //GetComponent<Animator>().Play(Animator.StringToHash("Damage Lamia"));
 
         if (Life <= 0)
         {
-            AttackGlossary.GetInstance()._difficultyLevel++;
-            SceneManager.LoadScene("RPg_adventure");
-            Debug.Log("ganaste wey");
+            GetComponent<SpriteRenderer>().enabled = false;
+            GameManager.GetInstance().increaseDifficulty();
+            Instantiate(_cofetti);
+            Invoke("loadMenu", 1.5f);
+            return false;
         }
+        return true;
     }
 
-    public void findCharacters()
+    public void loadMenu()
     {
-        _characters = FindObjectsOfType<HeroProperties>();
+        SceneManager.LoadScene("WarioVoiceMenu");
     }
 
-    public void attack()
+    public void attack(HeroProperties hero)
     {
-        Debug.Log("ataque");
-        float numberRandom = Random.Range(1, 5);
+        _characters = hero;
 
-        switch (numberRandom)
-        {
-            case 1:
-                weakAttack();
-                break;
-
-            case 2:
-                normalAttack();
-                break;
-
-            case 3:
-                normalAttack();
-                break;
-
-            case 4:
-                strongAttack();
-                break;
-        }
-
+        //daño
+        _visualDamage.SetActive(true);
+        _visualDamage.transform.position = _characters.transform.position;
+        _visualDamage.GetComponent<VisualDamage>().showDamage(_damage);
+        _characters.getDamage(_damage);
+        //siguiente accion
+        _characters.GetComponent<MoveHeroe>().changeDirection();
         FindObjectOfType<ControlShifts>().playerTurn();
-    }
 
-    public bool weakAttack()
-    {
-        while (true)
-        {
-            int numberRandom = Random.Range(0, _characters.Length - 2);
-
-            if (_characters[numberRandom].IsLive)
-            {
-                _characters[numberRandom].getDamage(70);
-                return true;
-            }
-
-        }
-    }
-
-    public bool normalAttack()
-    {
-        while (true)
-        {
-            int numberRandom = Random.Range(0, _characters.Length - 2);
-
-            if (_characters[numberRandom].IsLive)
-            {
-                _characters[numberRandom].getDamage(100);
-                return true;
-            }
-
-        }
-    }
-
-    public bool strongAttack()
-    {
-        while (true)
-        {
-            int numberRandom = Random.Range(0, _characters.Length - 2);
-
-            if (_characters[numberRandom].IsLive)
-            {
-                _characters[numberRandom].getDamage(200);
-                return true;
-            }
-
-        }
+        FindObjectOfType<LevelInformationPanel>().activeDialogue("Te regreso el ataque");
     }
 
     public float Life { get => life; set => life = value; }
+    public HeroProperties Characters { get => _characters; set => _characters = value; }
+    public float Damage { get => _damage; set => _damage = value; }
 }

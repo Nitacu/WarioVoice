@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AttackGlossary 
 {
-    public int _difficultyLevel = 1;
-
     // Palabras que tiene que decir
     public const string THROW = "THROW";
     public const string DOWNGRADE = "DOWNGRADE";

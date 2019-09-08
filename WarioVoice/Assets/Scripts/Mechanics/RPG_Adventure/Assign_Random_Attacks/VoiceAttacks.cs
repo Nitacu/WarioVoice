@@ -12,4 +12,6 @@ public class VoiceAttacks : ScriptableObject
     public float _cost;
     [TextArea]
     public string _sentenceToCompleteAttack;
+    [TextArea]
+    public string _riddle;
 }
