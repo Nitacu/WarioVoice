@@ -97,24 +97,33 @@ public class BuildingsManager : CommandParser
     private GameObject _firstSelection;
     private GameObject _secondSelection;
     private bool _itemSelected;
+    private bool _itemFinded;
 
     [SerializeField] private float _charTimeToGetBuild;
-    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _LevelText;
+    [SerializeField] private TextMeshProUGUI _itemTapGuide;
+    [SerializeField] private TextMeshProUGUI _matchingText;
+
 
     private BuildingVocabulary.PairType _currentType;
 
 
     private void Start()
     {
-        _text.text = "Level: " + (_currentLevel + 1);
+        _LevelText.text = "Level: " + (_currentLevel + 1);
 
         generateLevel(_currentLevel);
     }
 
     public override void parseCommand(string command)
     {
+
+        bool _itemFinded = false;
+
         findItemOnBuilds(command);
         findItemOnChars(command);
+
+        
 
         if (_firstSelection != null && _secondSelection != null)
         {
@@ -126,10 +135,12 @@ public class BuildingsManager : CommandParser
     //simulación sin voz
     public void parseCommandSimulation(string command)
     {
+        bool _itemFinded = false;
+
 
         findItemOnBuilds(command);
         findItemOnChars(command);
-
+        
         if (_firstSelection != null && _secondSelection != null)
         {
             checkPair();
@@ -150,18 +161,21 @@ public class BuildingsManager : CommandParser
             Destroy(_allItems[i].gameObject);
         }
 
-        _text.text = "Level: " + (_currentLevel + 1);
+        _LevelText.text = "Level: " + (_currentLevel + 1);
+        _matchingText.text = "Say an occupation or a place to match a pair.";
+        _itemTapGuide.text = "Tap on an occupation or a place to know how to say it.";
 
         generateLevel(_currentLevel);
 
-       
+
     }
 
     public void generateLevel(int level)
     {
+
         List<Pairs> _posiblePairs = new List<Pairs>();
         _posiblePairs.Clear();
-      
+
         for (int i = 0; i < level + 1; i++)
         {
             for (int j = 0; j < _levels[i].Pairs.Count; j++)
@@ -310,8 +324,7 @@ public class BuildingsManager : CommandParser
 
             StartCoroutine(markPairAsPaired(_firstSelection, _secondSelection));
 
-
-
+            _matchingText.text = "Great Match!";
             Debug.Log("Correcto");
             _pairsMatched++;
 
@@ -320,6 +333,7 @@ public class BuildingsManager : CommandParser
         {
             _firstSelection.GetComponent<SpriteRenderer>().color = _secondSelection.GetComponent<SpriteRenderer>().color = Color.white;
 
+            _matchingText.text = "Incorrect! \n" + _firstSelection.GetComponent<BuildPairItem>().RecognitionName + " can't be paired with " + _secondSelection.GetComponent<BuildPairItem>().RecognitionName + ". \n Try a new match";
             Debug.Log("Incorecto");
 
         }
@@ -385,6 +399,8 @@ public class BuildingsManager : CommandParser
                     {
                         _secondSelection = item.gameObject;
                         setGreyGameObject(item.gameObject);
+                        _itemFinded = true;
+
                     }
                 }
                 else
@@ -392,6 +408,40 @@ public class BuildingsManager : CommandParser
                     _firstSelection = item.gameObject;
                     _itemSelected = true;
                     setGreyGameObject(item.gameObject);
+                    _itemFinded = true;
+
+                }
+            }
+        }
+
+        if (!_itemFinded)
+        {
+            if (_itemSelected)
+            {
+                Debug.Log("wrong try to match with");
+
+                _matchingText.text = commandName + " can not be found \n Try to match " + _firstSelection.GetComponent<BuildPairItem>().RecognitionName + " again.";
+            }
+            else
+            {
+                _matchingText.text = commandName + " can not be found \n Try again!";
+            }
+        }
+        else
+        {
+            if (_firstSelection != null)
+            {
+                if (_firstSelection.GetComponent<BuildPairItem>().PairItemType == BuildPairItem.PairType.CHAR)
+                {
+                    _matchingText.text = "Say a place to match " + _firstSelection.GetComponent<BuildPairItem>().RecognitionName;
+
+                }
+                else
+                {
+                    if (_firstSelection.GetComponent<BuildPairItem>().PairItemType == BuildPairItem.PairType.BUILD)
+                    {
+                        _matchingText.text = "Say an occupation to match " + _firstSelection.GetComponent<BuildPairItem>().RecognitionName;
+                    }
 
                 }
             }
@@ -400,7 +450,6 @@ public class BuildingsManager : CommandParser
 
     private void findItemOnBuilds(string commandName)
     {
-
         BuildItem[] _buildItem = FindObjectsOfType<BuildItem>();
         foreach (var item in _buildItem)
         {
@@ -413,6 +462,7 @@ public class BuildingsManager : CommandParser
                     {
                         _secondSelection = item.gameObject;
                         setGreyGameObject(item.gameObject);
+                        _itemFinded = true;
                     }
                 }
                 else
@@ -420,8 +470,47 @@ public class BuildingsManager : CommandParser
                     _firstSelection = item.gameObject;
                     _itemSelected = true;
                     setGreyGameObject(item.gameObject);
+                    _itemFinded = true;
+                }
+            }            
+        }
+        
+        if (!_itemFinded)
+        {
+            if (_itemSelected)
+            {
+                Debug.Log("wrong try to match with");
+                _matchingText.text = commandName + " can not be found \n Try to match " + _firstSelection.GetComponent<BuildPairItem>().RecognitionName + " again.";
+
+            }
+            else
+            {
+                _matchingText.text = commandName + " can not be found \n Try again!";
+            }
+        }
+        else
+        {
+            if (_firstSelection != null)
+            {
+                if (_firstSelection.GetComponent<BuildPairItem>().PairItemType == BuildPairItem.PairType.CHAR)
+                {
+                    _matchingText.text = "Say a place to match " + _firstSelection.GetComponent<BuildPairItem>().RecognitionName;
+
+                }
+                else
+                {
+                    if (_firstSelection.GetComponent<BuildPairItem>().PairItemType == BuildPairItem.PairType.BUILD)
+                    {
+                        _matchingText.text = "Say an occupation to match " + _firstSelection.GetComponent<BuildPairItem>().RecognitionName;
+                    }
+
                 }
             }
         }
+    }
+
+    public void showItemName(string itemName)
+    {
+        _itemTapGuide.text = itemName;
     }
 }

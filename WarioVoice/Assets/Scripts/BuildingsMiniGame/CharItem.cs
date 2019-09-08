@@ -63,16 +63,19 @@ public class CharItem : BuildPairItem
         }
     }
 
-    private void Update()
+    public override void Update()
     {
+        base.Update();
+
         if (_moveToTarget && _buildTargetPosition != null)
         {
-            Vector3 _smoothPosition = new Vector3( Mathf.SmoothDamp(_startPosition.position.x, _buildTargetPosition.position.x, ref _refVelocityX, _timeToGetBuild)
-                , Mathf.SmoothDamp(_startPosition.position.y, _buildTargetPosition.position.y, ref _refVelocityY, _timeToGetBuild )
+            Vector3 _smoothPosition = new Vector3(Mathf.SmoothDamp(_startPosition.position.x, _buildTargetPosition.position.x, ref _refVelocityX, _timeToGetBuild)
+                , Mathf.SmoothDamp(_startPosition.position.y, _buildTargetPosition.position.y, ref _refVelocityY, _timeToGetBuild)
                 , transform.position.z);
             transform.position = _smoothPosition;
         }
     }
+
 
     public void moveToBuild(Transform buildTarget, float timeToGetBuild)
     {
