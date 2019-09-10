@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PatternCheck : CommandParser
 {
     private PatronController patternController;
     private CrystalController.Colors enumColor;
+    
 
     private void Start()
     {
@@ -77,5 +79,7 @@ public class PatternCheck : CommandParser
 
         
     }
+
+   
 
 }

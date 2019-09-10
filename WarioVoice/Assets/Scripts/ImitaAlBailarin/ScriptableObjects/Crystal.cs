@@ -8,5 +8,6 @@ public class Crystal :ScriptableObject
     public Sprite crystalSprite;
     public CrystalController.Colors crystalColor;
     public AnimationClip danceClip;
+    public AudioClip clip;
 
 }

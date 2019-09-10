@@ -33,10 +33,13 @@ public class PatronController : MonoBehaviour
     private Crystal[] checkPattern;
     private bool showingPattern = false;
     private GameObject activeCrystals;
+    private PatternPanelController panelCrystals;
+    private List<Transform> GUICrystals = new List<Transform>();
+    
 
     #region Colors List
     //List that has all the existent colors (this will be used to create the crystals in scene)
-   
+
     public List<Crystal> crystalList = new List<Crystal>();
     private List<Crystal> crystalInScene = new List<Crystal>();
     //This list is used to know what are the crystals in scene, this list will be sent to the pattern creator to know what collors to use
@@ -49,6 +52,7 @@ public class PatronController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panelCrystals = FindObjectOfType<PatternPanelController>();
         difficulty = GameManager.GetInstance().getGameDifficulty();
         messageInScreen = FindObjectOfType<ScreenMessage>().gameObject;
         patronCreator = GetComponent<PatronsScript>();
@@ -71,6 +75,14 @@ public class PatronController : MonoBehaviour
     public void startGame()
     {
         showPatron();
+        panelCrystals.patternCreator(patronList[currentPatron]);
+
+        foreach (Transform child in panelCrystals.transform)
+        {
+            GUICrystals.Add(child);
+        }
+
+        
     }
 
     // Update is called once per frame
@@ -228,6 +240,8 @@ public class PatronController : MonoBehaviour
             child.gameObject.GetComponent<CrystalController>().changeCrystalColor(crystalInScene[cont]);
             cont++;
         }
+
+        
     }
 
     public void checkVoice(CrystalController.Colors color)
@@ -235,7 +249,10 @@ public class PatronController : MonoBehaviour
 
         foreach (Transform child in activeCrystals.transform)
         {
-            child.gameObject.GetComponent<CrystalController>().isOn = false;
+            if (!child.gameObject.GetComponent<CrystalController>().GUICrystal)
+            {
+                child.gameObject.GetComponent<CrystalController>().isOn = false;
+            }
         }
 
 
@@ -251,6 +268,10 @@ public class PatronController : MonoBehaviour
                     }
                     
                 }
+
+                GUICrystals[contChecking].gameObject.GetComponent<CrystalController>().changeCrystal(true, patronList[currentPatron - 1][contChecking]);
+
+                
                 contChecking++;
 
                 messageInScreen.GetComponent<ScreenMessage>().goodOrBad(true);
@@ -284,5 +305,15 @@ public class PatronController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool getShowingPattern()
+    {
+        return showingPattern;
+    }
+
+    public GameObject getActiveCrystals()
+    {
+        return activeCrystals;
     }
 }

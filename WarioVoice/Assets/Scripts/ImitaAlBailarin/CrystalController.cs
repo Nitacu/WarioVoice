@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrystalController : MonoBehaviour
 {
@@ -20,7 +21,9 @@ public class CrystalController : MonoBehaviour
     private const string RED = "RED";
     private const string FUCHSIA = "FUCHSIA";
 
-
+    [HideInInspector]
+    public AudioClip clip;
+    public bool GUICrystal = false;
  
 
     public enum Colors
@@ -48,6 +51,7 @@ public class CrystalController : MonoBehaviour
     public Colors crystalColor;
     private SpriteRenderer spriteRender;
     private GameObject dancingPlayer;
+    private Image image;
     
 
     // Start is called before the first frame update
@@ -55,6 +59,7 @@ public class CrystalController : MonoBehaviour
     {
         dancingPlayer = FindObjectOfType<DancerController>().gameObject;
         spriteRender = GetComponent<SpriteRenderer>();
+        image = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -62,18 +67,37 @@ public class CrystalController : MonoBehaviour
     {
         if (isOn)
         {
-            spriteRender.color = Color.white;
+            if (!GUICrystal)
+            {
+                spriteRender.color = Color.white;
+            }
+            else
+            {
+                image.color = Color.white;
+            }
         }
         else
         {
-            spriteRender.color = Color.grey;
+            if (!GUICrystal)
+            {
+                spriteRender.color = new Color(0.75f, 0.75f, 0.75f, 1);
+            }
+            else
+            {
+                image.color = Color.black;
+            }
         }
     }
+
+    
 
     public void changeCrystal(bool power, Crystal crystal)
     {
         isOn = power;
-        dancingPlayer.GetComponent<DancerController>().dancePlayer(crystal);
+        if (!GUICrystal)
+        {
+            dancingPlayer.GetComponent<DancerController>().dancePlayer(crystal);
+        }
     }
 
     public void idleAnimation()
@@ -84,12 +108,29 @@ public class CrystalController : MonoBehaviour
     public void lostPattern()
     {
         isOn = false;
-        dancingPlayer.GetComponent<Animator>().Play(Animator.StringToHash("Idle"));
+        if (!GUICrystal)
+        {
+            dancingPlayer.GetComponent<Animator>().Play(Animator.StringToHash("Idle"));
+        }
     }
 
     public void changeCrystalColor(Crystal crystal)
     {
-        GetComponent<SpriteRenderer>().sprite = crystal.crystalSprite;
+        if (!GUICrystal)
+        {
+            GetComponent<SpriteRenderer>().sprite = crystal.crystalSprite;
+            crystalColor = crystal.crystalColor;
+            clip = crystal.clip;
+        }
+        else
+        {
+            changeCrystalUI(crystal);
+        }
+    }
+
+    public void changeCrystalUI(Crystal crystal)
+    {
+        GetComponent<Image>().sprite = crystal.crystalSprite;
         crystalColor = crystal.crystalColor;
     }
 }

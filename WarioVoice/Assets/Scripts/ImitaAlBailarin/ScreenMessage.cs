@@ -57,6 +57,7 @@ public class ScreenMessage : MonoBehaviour
         {
             textPro.text = "GOOD JOB!";
             animator.Play(Animator.StringToHash(GOODORBAD),-1,0f);
+            Invoke("turnOffText", 1);
         }
         else
         {
