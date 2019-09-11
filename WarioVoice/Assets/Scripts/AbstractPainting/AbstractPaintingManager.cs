@@ -46,6 +46,8 @@ public class AbstractPaintingManager : CommandParser
         BLUE, RED, GREEN, ORANGE, YELLOW, PINK, PURPLE
     }
 
+    [SerializeField] private List<GameObject> _paintedSplahes = new List<GameObject>();
+
     [SerializeField] private List<PaintingLevel> _levels = new List<PaintingLevel>();
 
     [SerializeField] private GameObject _brush;
@@ -125,7 +127,6 @@ public class AbstractPaintingManager : CommandParser
         {
             if (commandColor.Equals(availableSplash._colorName, System.StringComparison.OrdinalIgnoreCase))
             {
-                Debug.Log("Colro finded");
                 _currentSplashColorSelected = availableSplash;
                 _brush.GetComponent<SpriteRenderer>().color = _currentSplashColorSelected._brushColor;
             }
@@ -139,5 +140,16 @@ public class AbstractPaintingManager : CommandParser
         _newSplash.transform.localScale = new Vector3(_levels[_currentLevel].SplashSizeScale, _levels[_currentLevel].SplashSizeScale, 1);
         Vector3 _newposition = new Vector3(_position.x, _position.y, 0);
         _newSplash.transform.position = _newposition;
+        _newSplash.GetComponent<PaintSplash>().MySplashColorType = _currentSplashColorSelected;
+        _paintedSplahes.Add(_newSplash);
+    }
+
+    public void deleteLastSplash()
+    {
+        if (_paintedSplahes.Count > 0)
+        {
+            Destroy(_paintedSplahes[_paintedSplahes.Count -1]);
+            _paintedSplahes.RemoveAt(_paintedSplahes.Count - 1);
+        }
     }
 }

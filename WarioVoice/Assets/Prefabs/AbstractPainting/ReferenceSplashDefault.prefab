@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1694144561325191164}
   - component: {fileID: 1694144561325191167}
+  - component: {fileID: -2572016587788918783}
   m_Layer: 0
-  m_Name: Blue
+  m_Name: ReferenceSplashDefault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +82,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2572016587788918783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694144561325191166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bd7b70a76fff54daa1b2e79676b12f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mySplashColorType: {fileID: 0}

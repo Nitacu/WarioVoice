@@ -16,4 +16,4 @@ MonoBehaviour:
   _splashImage: {fileID: 5627140899447397344, guid: caafb876ff54ecd4083eb23d26d56156,
     type: 3}
   _splasColorType: 0
-  _brushColor: {r: 0.16862746, g: 0.22352943, b: 0.5686275, a: 1}
+  _brushColor: {r: 0, g: 0.38039216, b: 1, a: 1}

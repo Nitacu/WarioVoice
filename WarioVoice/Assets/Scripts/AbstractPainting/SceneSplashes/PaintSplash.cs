@@ -10,6 +10,7 @@ public class PaintSplash : MonoBehaviour
     public PaintSplashColor MySplashColorType
     {
         get { return _mySplashColorType; }
+        set { _mySplashColorType = value; }
     }
 
     private void Start()

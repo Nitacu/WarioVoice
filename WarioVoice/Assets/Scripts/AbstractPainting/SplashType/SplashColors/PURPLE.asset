@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a6d1c9ee54c9d842af6527d3bc6a0bc, type: 3}
-  m_Name: RED
+  m_Name: PURPLE
   m_EditorClassIdentifier: 
-  _colorName: RED
-  _splashImage: {fileID: 5798493625265239674, guid: caafb876ff54ecd4083eb23d26d56156,
+  _colorName: PURPLE
+  _splashImage: {fileID: 9097756742785441464, guid: caafb876ff54ecd4083eb23d26d56156,
     type: 3}
-  _splasColorType: 1
-  _brushColor: {r: 1, g: 0.17254902, b: 0, a: 1}
+  _splasColorType: 6
+  _brushColor: {r: 0.40000004, g: 0.18039216, b: 0.5686275, a: 1}
