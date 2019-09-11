@@ -22,6 +22,8 @@ TagManager:
   - TORCH
   - WOOD
   - CHEST
+  - PaintCanvas
+  - ReferenceSplash
   layers:
   - Default
   - TransparentFX
