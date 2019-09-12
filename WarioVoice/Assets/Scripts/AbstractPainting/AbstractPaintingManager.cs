@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 
 [System.Serializable]
 public class PaintingLevel
@@ -42,6 +42,16 @@ public class PaintingLevel
 
 public class AbstractPaintingManager : CommandParser
 {
+    #region HelpDialogs
+    const string FIRSTDIALOG = "Say a color to set your brush";
+    const string SAYACOLORFIRST = "Say a color first";
+    const string PAINTONCANVAS = "Know paint on your canvas";
+    const string ANALYZING = "Analyzing Art...";
+    const string WIN = "Mother of da Vinci\nPerfect Paint";
+    const string LOSE = "BULLSHIT\nTryAgain";
+    const string ALREADYANALYZING = "Al ready Analyzing, keep waiting";
+    #endregion
+
     #region ColorCommands
     public const string BLUE = "Blue";
     public const string RED = "Red";
@@ -64,10 +74,14 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private GameObject _splashBasePrefab;
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
+    [SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
+    [SerializeField] private TextMeshProUGUI _guideText;
 
     [Header("Win Parameters")]
     [SerializeField] private float _minCoincidencesPercentage;
     [SerializeField] private int _paintedSplashMargin;
+    [SerializeField] private int _analyzingTime;
+    [SerializeField] private GameObject _analyzerBand;
 
 
     #region LevelControl
@@ -76,6 +90,7 @@ public class AbstractPaintingManager : CommandParser
     private List<GameObject> _paintedSplahes = new List<GameObject>();
 
     private Vector2 _offsetBetweenCanvas;
+    private bool _isAnalyzing;
     #endregion
 
     private void Start()
@@ -111,6 +126,7 @@ public class AbstractPaintingManager : CommandParser
                     }
                     else
                     {
+                        _guideText.text = SAYACOLORFIRST;
                         Debug.Log("Select a color");
                     }
                 }
@@ -118,8 +134,28 @@ public class AbstractPaintingManager : CommandParser
         }
     }
 
+    private void setHelpButtons()
+    {
+        foreach (var item in _helpButtons)
+        {
+            item.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < _levels[_currentLevel].AvailableColors.Count; i++)
+        {
+            _helpButtons[i].gameObject.SetActive(true);
+            _helpButtons[i].Sprite.sprite = _levels[_currentLevel].AvailableColors[i]._splashImage;
+            _helpButtons[i].Text.text = _levels[_currentLevel].AvailableColors[i]._colorName;
+            _helpButtons[i].AudioClip = _levels[_currentLevel].AvailableColors[i]._audioClip;
+        }
+
+
+    }
+
     private void setLevel(int currentLevel)
     {
+        _guideText.text = FIRSTDIALOG;
+
         GameObject _newReferencePaint = Instantiate(_levels[currentLevel].ReferencePaint);
         _newReferencePaint.transform.position = _referenceCanvasTransform.position;
 
@@ -137,6 +173,8 @@ public class AbstractPaintingManager : CommandParser
 
             _levels[currentLevel].SplashesInReferencePaint.Add(item.gameObject);
         }
+
+        setHelpButtons();
     }
 
     public override void parseCommand(string command)
@@ -187,6 +225,20 @@ public class AbstractPaintingManager : CommandParser
 
     public void evaluatePaint()
     {
+        if (_isAnalyzing)
+        {
+            _guideText.text = ALREADYANALYZING;
+            return;
+        }
+
+        _isAnalyzing = true;
+
+        GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
+
+        bool _playerWin = false;
+
+        _guideText.text = ANALYZING;
+
         //EVALUAR CANTIDAD DE SPLASHES
 
         //EVALUAR SIMILITUD ENTRE SPLASHES
@@ -213,8 +265,10 @@ public class AbstractPaintingManager : CommandParser
             //AHORA EVLUAR SI ESTÁ CERCA DE OTRA MANCHA
             if (_copyReferenceSplash.GetComponent<ReferencePaintSplash>().evaluateSimilarSplashAround())
             {
-                splashCoincidencesCount++;   
+                splashCoincidencesCount++;
             }
+
+            Destroy(_copyReferenceSplash);
         }
 
         float coindencePercentage = (splashCoincidencesCount * 100) / _levels[_currentLevel].SplashesInReferencePaint.Count;
@@ -226,13 +280,32 @@ public class AbstractPaintingManager : CommandParser
 
         if (coindencePercentage >= _minCoincidencesPercentage)
         {
-            if (_paintedSplahes.Count >= (_levels[_currentLevel].SplashesInReferencePaint.Count - _paintedSplashMargin) &&   _paintedSplahes.Count <= (_levels[_currentLevel].SplashesInReferencePaint.Count + _paintedSplashMargin))
+            if (_paintedSplahes.Count >= (_levels[_currentLevel].SplashesInReferencePaint.Count - _paintedSplashMargin) && _paintedSplahes.Count <= (_levels[_currentLevel].SplashesInReferencePaint.Count + _paintedSplashMargin))
             {
                 Debug.Log("Win");
-                return;
+                _playerWin = true;
             }
         }
 
-        Debug.Log("Lose");
+        StartCoroutine(setWinOrLose(_playerWin, _newAnalyzerBand));
+
+
+    }
+
+    IEnumerator setWinOrLose(bool playerWin, GameObject analyzerBandToDestroy)
+    {
+        yield return new WaitForSeconds(_analyzingTime);
+
+        if (playerWin)
+        {
+            _guideText.text = WIN;
+        }
+        else
+        {
+            _guideText.text = LOSE;
+        }
+
+        _isAnalyzing = false;
+        Destroy(analyzerBandToDestroy);
     }
 }

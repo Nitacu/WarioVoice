@@ -9,5 +9,5 @@ public class PaintSplashColor : ScriptableObject
     public Sprite _splashImage;
     public AbstractPaintingManager.SplashColor _splasColorType;
     public Color _brushColor;
-    
+    public AudioClip _audioClip;
 }

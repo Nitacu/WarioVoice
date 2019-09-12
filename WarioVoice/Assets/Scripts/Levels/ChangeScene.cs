@@ -23,6 +23,8 @@ public class ChangeScene : MonoBehaviour
     private const string IMITA_AL_BAILARIN = "DanceScene";
     private const string LOVE_SCENE = "LoveScene";
     private const string RPG = "RPg_adventure";
+    private const string ABSTRACTPAINTING = "AbstractPainting";
+
 
     [SerializeField] private nameScenes _nameScenes;
 
@@ -44,7 +46,8 @@ public class ChangeScene : MonoBehaviour
         MATCHBUILDINGS,
         IMITA_AL_BAILARIN,
         LOVE_SCENE,
-        RPG
+        RPG,
+        PAINTING
     }    
 
     public void chanceScene()
@@ -117,6 +120,10 @@ public class ChangeScene : MonoBehaviour
 
             case nameScenes.RPG:
                 SceneManager.LoadScene(RPG);
+                break;
+            case nameScenes.PAINTING:
+                SceneManager.LoadScene(ABSTRACTPAINTING);
+
                 break;
         }
     }

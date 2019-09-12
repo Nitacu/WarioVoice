@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class ChangeColorTest : MonoBehaviour, IPointerDownHandler
+public class SceneButtons : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private TextMeshProUGUI _text;
 

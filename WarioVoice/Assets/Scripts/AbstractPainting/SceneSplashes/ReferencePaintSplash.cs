@@ -27,14 +27,19 @@ public class ReferencePaintSplash : PaintSplash
 
         if (_hit.Length > 0)
         {
-            if (_hit[0].gameObject.GetComponent<SelfPaintSplash>().MySplashColorType == MySplashColorType)
+            foreach (var item in _hit)
             {
-                if (!_hit[0].gameObject.GetComponent<SelfPaintSplash>().Matched)
+                if (item.gameObject.GetComponent<SelfPaintSplash>().MySplashColorType == MySplashColorType)
                 {
-                    _hit[0].gameObject.GetComponent<SelfPaintSplash>().Matched = true;
-                    return true;
+                    if (!item.gameObject.GetComponent<SelfPaintSplash>().Matched)
+                    {
+                        item.gameObject.GetComponent<SelfPaintSplash>().Matched = true;
+                        return true;
+                    }
                 }
             }
+
+            
         }
 
 

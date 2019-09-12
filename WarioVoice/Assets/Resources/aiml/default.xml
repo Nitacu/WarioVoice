@@ -208,6 +208,9 @@
 <category><pattern>SILVER</pattern><template>SILVER</template></category>
 <category><pattern>MAGENTA</pattern><template>MAGENTA</template></category>
 <category><pattern>WHITE</pattern><template>WHITE</template></category>
+<category><pattern>PURPLE</pattern><template>PURPLE</template></category>
+<category><pattern>RED</pattern><template>RED</template></category>
+
 
 <category><pattern>LOVE</pattern><template>LOVE</template></category>
 <category><pattern>HAPPY</pattern><template>HAPPY</template></category>

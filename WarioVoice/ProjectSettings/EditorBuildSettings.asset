@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/RPG_Adventure/RPg_adventure.unity
     guid: 8c5103e2da3420045877da28b2d676a3
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/ImitaAlBailarin/DanceScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/LoveGameScenes/LoveScene.unity
+    guid: 0ddb484fef63861409276f5bcefe83aa
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Buildings/Buildings.unity
+    guid: 783633944c784cf4893563149c588a41
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/AbstractPainting/AbstractPainting.unity
+    guid: da25af7633a84174b9a3a864670dbf65
   - enabled: 0
     path: Assets/Scenes/Incantum/MainMenu.unity
     guid: e91bbc221335a5e4da15161f6406dc52
@@ -47,13 +59,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Incantum/Levels_Incantum/Tutorial_4.unity
     guid: a22652ce2a845854c8445f1fada397ef
-  - enabled: 1
-    path: Assets/Scenes/WarioVoice/ImitaAlBailarin/DanceScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/WarioVoice/LoveGameScenes/LoveScene.unity
-    guid: 0ddb484fef63861409276f5bcefe83aa
-  - enabled: 1
-    path: Assets/Scenes/WarioVoice/Buildings/Buildings.unity
-    guid: 783633944c784cf4893563149c588a41
   m_configObjects: {}
