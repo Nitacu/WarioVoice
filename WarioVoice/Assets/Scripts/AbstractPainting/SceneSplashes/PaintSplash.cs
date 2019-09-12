@@ -13,7 +13,7 @@ public class PaintSplash : MonoBehaviour
         set { _mySplashColorType = value; }
     }
 
-    private void Start()
+    public virtual void Start()
     {
         GetComponent<SpriteRenderer>().sprite = _mySplashColorType._splashImage;
     }

@@ -9,6 +9,9 @@ public class SelfPaintSplash : PaintSplash
 
     [SerializeField] private float _speedScale;
 
+    private bool _matched;
+    public bool Matched { get => _matched; set => _matched = value; }
+
     // Start is called before the first frame update
     void Start()
     {

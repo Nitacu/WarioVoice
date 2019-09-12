@@ -84,4 +84,6 @@ public class CharItem : BuildPairItem
         _timeToGetBuild = timeToGetBuild;
         _startPosition = transform;
     }
+
+  
 }

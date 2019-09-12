@@ -8,10 +8,27 @@ public class ChangeColorTest : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private TextMeshProUGUI _text;
 
+    public enum ButtonAction
+    {
+        CHANGECOLOR, CHECKPAINT
+    }
+
+    [SerializeField] private ButtonAction _buttonAction;
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        string color = _text.text.Remove(_text.text.Length - 1);
-
-        FindObjectOfType<AbstractPaintingManager>().parseCommand(color);
+        switch (_buttonAction)
+        {
+            case ButtonAction.CHANGECOLOR:
+                string color = _text.text.Remove(_text.text.Length - 1);
+                FindObjectOfType<AbstractPaintingManager>().parseCommand(color);
+                break;
+            case ButtonAction.CHECKPAINT:
+                FindObjectOfType<AbstractPaintingManager>().evaluatePaint();
+                break;
+            default:
+                break;
+        }
+       
     }
 }
