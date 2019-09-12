@@ -10,7 +10,7 @@ public class SceneButtons : MonoBehaviour, IPointerDownHandler
 
     public enum ButtonAction
     {
-        CHANGECOLOR, CHECKPAINT
+        CHANGECOLOR, CHECKPAINT, LAUNCHNEXTLEVEL
     }
 
     [SerializeField] private ButtonAction _buttonAction;
@@ -26,9 +26,12 @@ public class SceneButtons : MonoBehaviour, IPointerDownHandler
             case ButtonAction.CHECKPAINT:
                 FindObjectOfType<AbstractPaintingManager>().evaluatePaint();
                 break;
+            case ButtonAction.LAUNCHNEXTLEVEL:
+                FindObjectOfType<AbstractPaintingManager>().setLevel(FindObjectOfType<AbstractPaintingManager>().CurrentLevel);
+                break;
             default:
                 break;
         }
-       
+
     }
 }

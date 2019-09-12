@@ -50,6 +50,8 @@ public class AbstractPaintingManager : CommandParser
     const string WIN = "Mother of da Vinci\nPerfect Paint";
     const string LOSE = "BULLSHIT\nTryAgain";
     const string ALREADYANALYZING = "Al ready Analyzing, keep waiting";
+    const string LEVEL = "Level ";
+    const string GAMECOMPLETEDE = "Game Complete, Back to Menu";
     #endregion
 
     #region ColorCommands
@@ -75,7 +77,12 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
     [SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
+
+    [Header("UI Control")]
+    [SerializeField] private TextMeshProUGUI _level;
     [SerializeField] private TextMeshProUGUI _guideText;
+    [SerializeField] private GameObject _finishPaintButton;
+    [SerializeField] private GameObject _nextLevelButton;
 
     [Header("Win Parameters")]
     [SerializeField] private float _minCoincidencesPercentage;
@@ -87,10 +94,16 @@ public class AbstractPaintingManager : CommandParser
     #region LevelControl
     private PaintSplashColor _currentSplashColorSelected;
     private int _currentLevel;
+    public int CurrentLevel
+    {
+        get { return _currentLevel; }
+        //set { _currentLevel = value; }
+    }
     private List<GameObject> _paintedSplahes = new List<GameObject>();
 
     private Vector2 _offsetBetweenCanvas;
     private bool _isAnalyzing;
+    private GameObject _currentRerefencePaint;
     #endregion
 
     private void Start()
@@ -100,6 +113,11 @@ public class AbstractPaintingManager : CommandParser
 
     private void Update()
     {
+        if (_isAnalyzing)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos;
@@ -152,14 +170,38 @@ public class AbstractPaintingManager : CommandParser
 
     }
 
-    private void setLevel(int currentLevel)
+    public void setLevel(int currentLevel)
     {
+        //CAMBIAR BOTONES DE CHECK Y NIVEL
+        _finishPaintButton.SetActive(true);
+        _nextLevelButton.SetActive(false);
+
+        //RESETEAR COLOR Y BRUSH
+        _currentSplashColorSelected = null;
+        _brush.GetComponent<SpriteRenderer>().color = Color.white;
+
+        //BORRAR PINTURA DE REFERENCIA ANTERIOR
+        if (_currentRerefencePaint != null)
+        {
+            Destroy(_currentRerefencePaint);
+            _currentRerefencePaint = null;
+        }
+
+        //RESETEAR MI CANVAS
+        foreach (var item in _paintedSplahes)
+        {
+            Destroy(item);
+        }
+        _paintedSplahes.Clear();
+
+        //TEXTS
         _guideText.text = FIRSTDIALOG;
+        _level.text = LEVEL + (currentLevel+1);
 
-        GameObject _newReferencePaint = Instantiate(_levels[currentLevel].ReferencePaint);
-        _newReferencePaint.transform.position = _referenceCanvasTransform.position;
+        _currentRerefencePaint = Instantiate(_levels[currentLevel].ReferencePaint);
+        _currentRerefencePaint.transform.position = _referenceCanvasTransform.position;
 
-        PaintSplash[] _splashReferences = _newReferencePaint.GetComponentsInChildren<PaintSplash>();
+        PaintSplash[] _splashReferences = _currentRerefencePaint.GetComponentsInChildren<PaintSplash>();
         _levels[currentLevel].NumberOfSplashes = _splashReferences.Length;
 
 
@@ -296,16 +338,39 @@ public class AbstractPaintingManager : CommandParser
     {
         yield return new WaitForSeconds(_analyzingTime);
 
+
+        _isAnalyzing = false;
+        Destroy(analyzerBandToDestroy);
+
         if (playerWin)
         {
             _guideText.text = WIN;
+
+
+            if (_currentLevel+2 <= _levels.Count)
+            {
+                _currentLevel++;
+                _finishPaintButton.SetActive(false);
+                _nextLevelButton.SetActive(true);
+            }
+            else
+            {
+                _guideText.text = GAMECOMPLETEDE;
+                _finishPaintButton.SetActive(false);
+                _nextLevelButton.SetActive(false);
+            }
         }
         else
         {
             _guideText.text = LOSE;
         }
 
-        _isAnalyzing = false;
-        Destroy(analyzerBandToDestroy);
+    }
+
+    IEnumerator setNextLevel(int currenLevelToLaunch, float timeToLaunchNextLevel)
+    {
+        yield return new WaitForSeconds(2);
+
+        setLevel(currenLevelToLaunch);
     }
 }
