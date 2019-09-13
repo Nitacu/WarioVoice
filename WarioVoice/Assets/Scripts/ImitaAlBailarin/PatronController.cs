@@ -244,66 +244,70 @@ public class PatronController : MonoBehaviour
         
     }
 
-    public void checkVoice(CrystalController.Colors color)
+    public void checkVoice(CrystalController.Colors color, bool colorWord)
     {
-
-        foreach (Transform child in activeCrystals.transform)
+        if (colorWord)
         {
-            if (!child.gameObject.GetComponent<CrystalController>().GUICrystal)
+            foreach (Transform child in activeCrystals.transform)
             {
-                child.gameObject.GetComponent<CrystalController>().isOn = false;
+                if (!child.gameObject.GetComponent<CrystalController>().GUICrystal)
+                {
+                    child.gameObject.GetComponent<CrystalController>().isOn = false;
+                }
+            }
+            if (!showingPattern)
+            {
+                if (color == patronList[currentPatron - 1][contChecking].crystalColor)
+                {
+                    foreach (Transform child in activeCrystals.transform)
+                    {
+                        if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)
+                        {
+                            child.gameObject.GetComponent<CrystalController>().changeCrystal(true, patronList[currentPatron - 1][contChecking]);
+                        }
+
+                    }
+
+                    GUICrystals[contChecking].gameObject.GetComponent<CrystalController>().changeCrystal(true, patronList[currentPatron - 1][contChecking]);
+
+
+                    contChecking++;
+
+                    messageInScreen.GetComponent<ScreenMessage>().goodOrBad(true);
+
+                    if (contChecking > patronList[currentPatron - 1].Length - 1)
+                    {
+                        //Muy bien, ganaste
+                        Debug.Log("Ganaste");
+                        GameManager.GetInstance().increaseDifficulty();
+                        messageInScreen.GetComponent<ScreenMessage>().winScreen();
+                    }
+                }
+                else
+                {
+
+                    messageInScreen.GetComponent<ScreenMessage>().goodOrBad(false);
+
+                    //Decir que le quedó mal
+                    Debug.Log("Perdiste");
+
+                    foreach (Transform child in activeCrystals.transform)
+                    {
+                        if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)
+                        {
+                            child.gameObject.GetComponent<CrystalController>().lostPattern();
+                        }
+                        else
+                        {
+                            child.gameObject.GetComponent<CrystalController>().isOn = false;
+                        }
+                    }
+                }
             }
         }
-
-
-        if (!showingPattern)
+        else
         {
-            if(color == patronList[currentPatron - 1][contChecking].crystalColor)
-            {
-                foreach (Transform child in activeCrystals.transform)
-                {
-                    if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)
-                    {
-                        child.gameObject.GetComponent<CrystalController>().changeCrystal(true, patronList[currentPatron - 1][contChecking]);
-                    }
-                    
-                }
 
-                GUICrystals[contChecking].gameObject.GetComponent<CrystalController>().changeCrystal(true, patronList[currentPatron - 1][contChecking]);
-
-                
-                contChecking++;
-
-                messageInScreen.GetComponent<ScreenMessage>().goodOrBad(true);
-                
-                if(contChecking > patronList[currentPatron - 1].Length - 1)
-                {
-                    //Muy bien, ganaste
-                    Debug.Log("Ganaste");
-                    GameManager.GetInstance().increaseDifficulty();
-                    messageInScreen.GetComponent<ScreenMessage>().winScreen();
-                }
-            }
-            else
-            {
-
-                messageInScreen.GetComponent<ScreenMessage>().goodOrBad(false);
-
-                //Decir que le quedó mal
-                Debug.Log("Perdiste");
-                
-                foreach (Transform child in activeCrystals.transform)
-                {
-                    if (child.gameObject.GetComponent<CrystalController>().crystalColor == color)
-                    {
-                        child.gameObject.GetComponent<CrystalController>().lostPattern();
-                    }
-                    else
-                    {
-                        child.gameObject.GetComponent<CrystalController>().isOn = false;
-                    }
-                }
-            }
         }
     }
 

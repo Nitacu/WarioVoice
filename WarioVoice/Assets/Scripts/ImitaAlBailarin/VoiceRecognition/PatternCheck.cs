@@ -7,7 +7,7 @@ public class PatternCheck : CommandParser
 {
     private PatronController patternController;
     private CrystalController.Colors enumColor;
-    
+    private bool colorWord = false;
 
     private void Start()
     {
@@ -26,6 +26,14 @@ public class PatternCheck : CommandParser
 
     private void getColor(string color)
     {
+        foreach (Crystal crystal in patternController.crystalList)
+        {
+            if (color == crystal.crystalColor.ToString())
+            {
+                colorWord = true;
+            }
+        }
+
         switch (color)
         {
             case "BLUE":
@@ -73,13 +81,14 @@ public class PatternCheck : CommandParser
             case "FUCHSIA":
                 enumColor = CrystalController.Colors.FUCHSIA;
                 break;
+
         }
 
-        patternController.checkVoice(enumColor);
+        patternController.checkVoice(enumColor, colorWord);
 
-        
+
     }
 
-   
+
 
 }

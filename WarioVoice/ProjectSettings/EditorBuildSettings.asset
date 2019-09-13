@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Incantum/Levels_Incantum/Tutorial_4.unity
     guid: a22652ce2a845854c8445f1fada397ef
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/OrquestaScene/Orquesta.unity
+    guid: 0a09bd7ce61b21348817c097ec699525
   m_configObjects: {}

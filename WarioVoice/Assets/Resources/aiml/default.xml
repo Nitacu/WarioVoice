@@ -223,6 +223,15 @@
  <category><pattern>SWEET</pattern><template>SWEET</template></category>
 <category><pattern>FRIENDLY</pattern><template>FRIENDLY</template></category>
 <category><pattern>SMART</pattern><template>SMART</template></category>
+  
+<category><pattern>HARMONICA</pattern><template>HARMONICA</template></category>
+<category><pattern>DRUMS</pattern><template>DRUMS</template></category>
+<category><pattern>HARP</pattern><template>HARP</template></category>
+<category><pattern>PIANO</pattern><template>PIANO</template></category>  
+<category><pattern>SAXOPHONE</pattern><template>SAXOPHONE</template></category>
+<category><pattern>TRUMPET</pattern><template>TRUMPET</template></category>
+<category><pattern>TUBA</pattern><template>TUBA</template></category>
+<category><pattern>VIOLIN</pattern><template>VIOLIN</template></category>  
 
   
 </aiml>
