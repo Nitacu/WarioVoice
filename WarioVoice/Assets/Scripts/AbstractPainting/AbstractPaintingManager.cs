@@ -119,6 +119,13 @@ public class AbstractPaintingManager : CommandParser
 
     private void Start()
     {
+        _currentLevel = GameManager.GetInstance().getGameDifficulty();
+        _currentLevel--;
+        if (_currentLevel+1 > _levels.Count)
+        {
+            _currentLevel = _levels.Count - 1;
+        }
+
         setLevel(_currentLevel);
     }
 

@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager 
+public class GameManager
 {
     private static GameManager _instance;
 
     private int currentGameDifficulty = 1;
-    
+
     public int getGameDifficulty()
     {
         return currentGameDifficulty;
+    }
+
+    public void setGameDifficulty(int gameDifficulty)
+    {
+        currentGameDifficulty = gameDifficulty;
     }
 
     public void increaseDifficulty()
