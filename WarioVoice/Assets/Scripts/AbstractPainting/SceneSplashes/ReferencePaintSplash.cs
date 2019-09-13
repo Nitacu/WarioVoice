@@ -19,11 +19,16 @@ public class ReferencePaintSplash : PaintSplash
 
     public bool evaluateSimilarSplashAround()
     {
-        if (_evaluatorSplash)
-        { }
-
 
         Collider2D[] _hit = Physics2D.OverlapCircleAll(transform.position, _evaluateRadius, _mask);
+
+
+        List<float> _hitDistances = new List<float>();
+        List<GameObject> _unMatchedSplashes = new List<GameObject>();
+        _hitDistances.Clear();
+        _unMatchedSplashes.Clear();
+
+        int _indexMostLowerDistance = 0;
 
         if (_hit.Length > 0)
         {
@@ -33,10 +38,27 @@ public class ReferencePaintSplash : PaintSplash
                 {
                     if (!item.gameObject.GetComponent<SelfPaintSplash>().Matched)
                     {
-                        item.gameObject.GetComponent<SelfPaintSplash>().Matched = true;
-                        return true;
+                        _hitDistances.Add(Vector2.Distance(transform.position, item.gameObject.transform.position));
+                        _unMatchedSplashes.Add(item.gameObject);
+                        //item.gameObject.GetComponent<SelfPaintSplash>().Matched = true;
+                        //return true;
                     }
                 }
+            }
+
+            if (_unMatchedSplashes.Count > 0)
+            {
+                for (int i = 1; i < _hitDistances.Count; i++)
+                {
+                    if (_hitDistances[_indexMostLowerDistance] > _hitDistances[i])
+                    {
+                        _indexMostLowerDistance = i;
+                    }
+                }
+
+                _unMatchedSplashes[_indexMostLowerDistance].GetComponent<SelfPaintSplash>().Matched = true;
+
+                return true;
             }
 
             
@@ -47,11 +69,10 @@ public class ReferencePaintSplash : PaintSplash
         return false;
     }
 
-   /* void OnDrawGizmosSelected()
-    {
-        // Draw a yellow sphere at the transform's position
+    void OnDrawGizmosSelected()
+    {        
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(transform.position, _evaluateRadius);
-    }*/
+    }
 
 }

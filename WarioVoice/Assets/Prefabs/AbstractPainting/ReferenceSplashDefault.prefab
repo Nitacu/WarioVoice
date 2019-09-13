@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mySplashColorType: {fileID: 0}
-  _evaluateRadius: 0.9
+  _evaluateRadius: 0.2
   _mask:
     serializedVersion: 2
     m_Bits: 1024
