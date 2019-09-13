@@ -95,7 +95,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private int _paintedSplashMargin;
     [SerializeField] private int _analyzingTime;
     [SerializeField] private GameObject _analyzerBand;
-    [SerializeField] private GameObject _paintCritique;
+    [SerializeField] private GameObject _paintCritique;    
     [SerializeField] private GameObject _critiqueSpeechBublle;
     [SerializeField] private TextMeshProUGUI _analyzeResultText;
     private float _coindencePercentage;
@@ -296,9 +296,9 @@ public class AbstractPaintingManager : CommandParser
         GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
         _guideText.text = ANALYZING;
         _paintCritique.SetActive(true);
-        _critiqueSpeechBublle.SetActive(true);
+        //_critiqueSpeechBublle.SetActive(true);
 
-        _currentRerefencePaint.SetActive(false);
+        //_currentRerefencePaint.SetActive(false);
         _speechButton.SetActive(false);
         _removeAllButton.SetActive(false);
         _removeLastButton.SetActive(false);
@@ -365,6 +365,8 @@ public class AbstractPaintingManager : CommandParser
     IEnumerator setWinOrLose(bool playerWin, GameObject analyzerBandToDestroy)
     {
         yield return new WaitForSeconds(_analyzingTime);
+
+        _critiqueSpeechBublle.SetActive(true);
 
         foreach (var item in _paintedSplahes)
         {
