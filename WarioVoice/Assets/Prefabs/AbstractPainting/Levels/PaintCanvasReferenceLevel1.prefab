@@ -160,11 +160,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
@@ -186,11 +181,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 728178612321666999}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: _mySplashColorType
-      value: 
-      objectReference: {fileID: 11400000, guid: 15621a8c77ee61e489c039f6e28bdf7c,
-        type: 2}
     - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_Name
@@ -260,11 +250,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
@@ -356,11 +341,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}

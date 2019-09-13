@@ -199,17 +199,30 @@
 <category><pattern>HIT</pattern><template>HIT</template></category>
   
 <category><pattern>BLUE</pattern><template>BLUE</template></category>
+ <category><pattern>COLOR BLUE</pattern><template>BLUE</template></category>
 <category><pattern>GREEN</pattern><template>GREEN</template></category>
+   <category><pattern>COLOR GREEN</pattern><template>GREEN</template></category>
 <category><pattern>YELLOW</pattern><template>YELLOW</template></category>
+  <category><pattern>COLOR YELLOW</pattern><template>YELLOW</template></category>
 <category><pattern>PINK</pattern><template>PINK</template></category>
+  <category><pattern>COLOR PINK</pattern><template>PINK</template></category>
 <category><pattern>ORANGE</pattern><template>ORANGE</template></category>
+  <category><pattern>COLOR ORANGE</pattern><template>ORANGE</template></category>
 <category><pattern>BROWN</pattern><template>BROWN</template></category>
+  <category><pattern>COLOR BROWN</pattern><template>BROWN</template></category>
 <category><pattern>LIME</pattern><template>LIME</template></category>
+  <category><pattern>COLOR LIME</pattern><template>LIME</template></category>
 <category><pattern>SILVER</pattern><template>SILVER</template></category>
+  <category><pattern>COLOR SILVER</pattern><template>SILVER</template></category>
 <category><pattern>MAGENTA</pattern><template>MAGENTA</template></category>
+  <category><pattern>COLOR MAGENTA</pattern><template>MAGENTA</template></category>
 <category><pattern>WHITE</pattern><template>WHITE</template></category>
+  <category><pattern>COLOR WHITE</pattern><template>WHITE</template></category>
 <category><pattern>PURPLE</pattern><template>PURPLE</template></category>
+  <category><pattern>COLOR PURPLE</pattern><template>PURPLE</template></category>
 <category><pattern>RED</pattern><template>RED</template></category>
+  <category><pattern>COLOR RED</pattern><template>RED</template></category>
+
 
 
 <category><pattern>LOVE</pattern><template>LOVE</template></category>

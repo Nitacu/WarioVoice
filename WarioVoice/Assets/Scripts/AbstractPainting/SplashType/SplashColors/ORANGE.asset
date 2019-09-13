@@ -17,3 +17,4 @@ MonoBehaviour:
     type: 3}
   _splasColorType: 3
   _brushColor: {r: 1, g: 0.34963012, b: 0, a: 1}
+  _audioClip: {fileID: 8300000, guid: b2c14a8fea83ecd4ca17a7d1f31d4d09, type: 3}

@@ -192,7 +192,7 @@ public class AbstractPaintingManager : CommandParser
     {
         //CAMBIAR BOTONES DE CHECK Y NIVEL
         _finishPaintButton.SetActive(true);
-        _speechButton.SetActive(true);
+            //_speechButton.SetActive(true);
         _removeAllButton.SetActive(true);
         _removeLastButton.SetActive(true);
 
@@ -304,9 +304,10 @@ public class AbstractPaintingManager : CommandParser
         _guideText.text = ANALYZING;
         _paintCritique.SetActive(true);
         //_critiqueSpeechBublle.SetActive(true);
-
         //_currentRerefencePaint.SetActive(false);
-        _speechButton.SetActive(false);
+
+        //_speechButton.SetActive(false);
+        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(false);
         _removeAllButton.SetActive(false);
         _removeLastButton.SetActive(false);
 
@@ -438,7 +439,9 @@ public class AbstractPaintingManager : CommandParser
         _finishPaintButton.SetActive(true);
         _nextLevelButton.SetActive(false);
 
-        _speechButton.SetActive(true);
+        //_speechButton.SetActive(true);
+        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
+
         _removeAllButton.SetActive(true);
         _removeLastButton.SetActive(true);
 

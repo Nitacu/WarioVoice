@@ -16,15 +16,12 @@ public class HelpButton : MonoBehaviour, IPointerDownHandler
     private AudioClip _audioClip;
     public AudioClip AudioClip { get => _audioClip; set => _audioClip = value; }
 
-
-    private void OnEnable()
-    {        
-    }
-
     public void OnPointerDown(PointerEventData eventData)
     {
-        GetComponent<AudioSource>().clip = _audioClip;
-        GetComponent<AudioSource>().Play();
-
+        if (!GetComponent<AudioSource>().isPlaying)
+        {
+            GetComponent<AudioSource>().clip = _audioClip;
+            GetComponent<AudioSource>().Play();
+        }      
     }
 }

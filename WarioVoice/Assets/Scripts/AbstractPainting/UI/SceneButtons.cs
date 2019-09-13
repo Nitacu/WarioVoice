@@ -21,6 +21,7 @@ public class SceneButtons : MonoBehaviour, IPointerDownHandler
         {
             case ButtonAction.CHANGECOLOR:
                 string color = _text.text.Remove(_text.text.Length - 1);
+                //string color = _text.text;
                 FindObjectOfType<AbstractPaintingManager>().parseCommand(color);
                 break;
             case ButtonAction.CHECKPAINT:
