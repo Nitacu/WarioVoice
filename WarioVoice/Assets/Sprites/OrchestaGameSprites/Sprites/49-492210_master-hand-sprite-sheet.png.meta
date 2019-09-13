@@ -1,0 +1,979 @@
+fileFormatVersion: 2
+guid: 436d6ef7d19e77144b24f73c877669b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4164195034319894414
+    second: 49-492210_master-hand-sprite-sheet_0
+  - first:
+      213: 1115577538255937110
+    second: 49-492210_master-hand-sprite-sheet_1
+  - first:
+      213: 4822730582616193134
+    second: 49-492210_master-hand-sprite-sheet_2
+  - first:
+      213: -2580532435597295763
+    second: 49-492210_master-hand-sprite-sheet_3
+  - first:
+      213: -2341616029303080850
+    second: 49-492210_master-hand-sprite-sheet_4
+  - first:
+      213: 1111469511236210694
+    second: 49-492210_master-hand-sprite-sheet_5
+  - first:
+      213: -6654652895366862553
+    second: 49-492210_master-hand-sprite-sheet_6
+  - first:
+      213: 1897774248541145540
+    second: 49-492210_master-hand-sprite-sheet_7
+  - first:
+      213: 1537258324567980700
+    second: 49-492210_master-hand-sprite-sheet_8
+  - first:
+      213: -1397685178015916460
+    second: 49-492210_master-hand-sprite-sheet_9
+  - first:
+      213: -5049020167837229821
+    second: 49-492210_master-hand-sprite-sheet_10
+  - first:
+      213: 6229763154471990436
+    second: 49-492210_master-hand-sprite-sheet_11
+  - first:
+      213: -5819838980800207737
+    second: 49-492210_master-hand-sprite-sheet_12
+  - first:
+      213: 8873271686446772202
+    second: 49-492210_master-hand-sprite-sheet_13
+  - first:
+      213: 57265705780504795
+    second: 49-492210_master-hand-sprite-sheet_14
+  - first:
+      213: -2440541056391966855
+    second: 49-492210_master-hand-sprite-sheet_15
+  - first:
+      213: 6298225895366418227
+    second: 49-492210_master-hand-sprite-sheet_16
+  - first:
+      213: 3674822343609264733
+    second: 49-492210_master-hand-sprite-sheet_17
+  - first:
+      213: -6793745257613730295
+    second: 49-492210_master-hand-sprite-sheet_18
+  - first:
+      213: 2613086723714130993
+    second: 49-492210_master-hand-sprite-sheet_19
+  - first:
+      213: 2634803136909819027
+    second: 49-492210_master-hand-sprite-sheet_20
+  - first:
+      213: 8543896181756529825
+    second: 49-492210_master-hand-sprite-sheet_21
+  - first:
+      213: -5962651672403158282
+    second: 49-492210_master-hand-sprite-sheet_22
+  - first:
+      213: 4827998435091425934
+    second: 49-492210_master-hand-sprite-sheet_23
+  - first:
+      213: 87482142631501917
+    second: 49-492210_master-hand-sprite-sheet_24
+  - first:
+      213: 5196806782418938215
+    second: 49-492210_master-hand-sprite-sheet_25
+  - first:
+      213: 9056150482767947241
+    second: 49-492210_master-hand-sprite-sheet_26
+  - first:
+      213: -3354457438005291992
+    second: 49-492210_master-hand-sprite-sheet_27
+  - first:
+      213: 3349683994860357804
+    second: 49-492210_master-hand-sprite-sheet_28
+  - first:
+      213: -3987077305192479168
+    second: 49-492210_master-hand-sprite-sheet_29
+  - first:
+      213: 5112697957525759594
+    second: 49-492210_master-hand-sprite-sheet_30
+  - first:
+      213: -6797458539217343468
+    second: 49-492210_master-hand-sprite-sheet_31
+  - first:
+      213: -1870899692603890522
+    second: 49-492210_master-hand-sprite-sheet_32
+  - first:
+      213: -3146460576496049122
+    second: 49-492210_master-hand-sprite-sheet_33
+  - first:
+      213: -7539733312319932231
+    second: 49-492210_master-hand-sprite-sheet_34
+  - first:
+      213: 6584738950187035669
+    second: 49-492210_master-hand-sprite-sheet_35
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 288
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa426049e3a23694998e370b33af92fa
+      internalID: 4164195034319894414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 288
+        width: 60
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec899bebbb903b04d876eae10f64dd5f
+      internalID: 1115577538255937110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 285
+        width: 55
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a0c4212883e444ab15ad625c266ca4
+      internalID: 4822730582616193134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 284
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e0df23dca9b0645ac1ad6872207865
+      internalID: -2580532435597295763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 285
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9662586d83f5b9747a12d13e91ebb914
+      internalID: -2341616029303080850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 285
+        width: 57
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b783db1559309dc4d9ea8640a1771268
+      internalID: 1111469511236210694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 287
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0d0de1c9b963d4a9bfa09e4f5f30ae
+      internalID: -6654652895366862553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 291
+        width: 62
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a0abbdf76a7624aa16cefb11bea4c8
+      internalID: 1897774248541145540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 217
+        width: 51
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c52982767d9323429bff5be29953c83
+      internalID: 1537258324567980700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 217
+        width: 51
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64d2a1ae9f07a84ba1eaa4f33a56dd0
+      internalID: -1397685178015916460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 220
+        width: 55
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009f7973f888b7d458b9e1a93f0236c7
+      internalID: -5049020167837229821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 149
+        width: 61
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676f3652bc9691b4ea4c907bf4015c4d
+      internalID: 6229763154471990436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 149
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868e1920c866de54b97fddc5f267179b
+      internalID: -5819838980800207737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 152
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611aed16b98b9984eb2c35eda0d49b65
+      internalID: 8873271686446772202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 153
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d95a572e963d74aa2647e415d7e895
+      internalID: 57265705780504795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 156
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d25641066e39114caa3efb1afbe89cb
+      internalID: -2440541056391966855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_16
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 153
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b3d4b0b626b4d4a9ec8bb1d3847bf3
+      internalID: 6298225895366418227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_17
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 154
+        width: 51
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d395626f430a1249811e6992f6fd38e
+      internalID: 3674822343609264733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_18
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 158
+        width: 55
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538063d224c810a43a8201b7eb03870d
+      internalID: -6793745257613730295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_19
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 78
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d516d80eb5531c24d9dff961cdb5edb0
+      internalID: 2613086723714130993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 78
+        width: 71
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c8ebd5ed71ff9418bbcb49193c1d84
+      internalID: 2634803136909819027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_21
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 73
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1741f8e7b997e4caa73c6068668e18
+      internalID: 8543896181756529825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_22
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 84
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effa63d498cb7d54f974790966180e04
+      internalID: -5962651672403158282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_23
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 84
+        width: 40
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b8a6554d6af7e4faa253380d9ee8a7
+      internalID: 4827998435091425934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_24
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 85
+        width: 43
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d65adb49613514587d2f365817d587
+      internalID: 87482142631501917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063a79958cf43804595203dd97d375e4
+      internalID: 5196806782418938215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_26
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e32205a2308464983fd5693fb2b487
+      internalID: 9056150482767947241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_27
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 0
+        width: 55
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e179e4ada7b26f4a80458713fa37ff0
+      internalID: -3354457438005291992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_28
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 103
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fced35c77977c02449ed81838782d576
+      internalID: 3349683994860357804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_29
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 16
+        width: 75
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c40ec9614b7c904d90e44c6417f468a
+      internalID: -3987077305192479168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_30
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 16
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cff4558b6063dd4dbb6dd08e2ce7197
+      internalID: 5112697957525759594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_31
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 16
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dddf74d51e93ea42abc675bad309738
+      internalID: -6797458539217343468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_32
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 34
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a0aa61a17a4a147bc6cf7d00631987
+      internalID: -1870899692603890522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_33
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 14
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a63637e1578d64abc647c872761ef5
+      internalID: -3146460576496049122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_34
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 16
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954dd4942e11b414d92d07df0a844ae9
+      internalID: -7539733312319932231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 49-492210_master-hand-sprite-sheet_35
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 14
+        width: 41
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98012fdf5c5004b4aa4fc92feac24f2a
+      internalID: 6584738950187035669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
