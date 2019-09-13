@@ -38,7 +38,6 @@ public class HeroProperties : MonoBehaviour
     public void getDamage(float damage)
     {
         _life -= damage;
-        _PanelData.GetComponent<CharacterStatistics>().changeColor(Color.red);
         _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(_life);
 
         if (_life <= 0)

@@ -25,7 +25,7 @@ public class ChangeScene : MonoBehaviour
     private const string RPG = "RPg_adventure";
     private const string ABSTRACTPAINTING = "AbstractPainting";
     private const string ORCHESTA = "Orquesta";
-
+    private const string WORMS = "Worms";
 
     [SerializeField] private nameScenes _nameScenes;
 
@@ -49,7 +49,8 @@ public class ChangeScene : MonoBehaviour
         LOVE_SCENE,
         RPG,
         PAINTING,
-        ORCHESTA
+        ORCHESTA,
+        WORMS
     }    
 
     public void chanceScene()
@@ -129,6 +130,10 @@ public class ChangeScene : MonoBehaviour
                 break;
             case nameScenes.ORCHESTA:
                 SceneManager.LoadScene(ORCHESTA);
+                break;
+
+            case nameScenes.WORMS:
+                SceneManager.LoadScene(WORMS);
                 break;
         }
     }

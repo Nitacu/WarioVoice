@@ -15,8 +15,7 @@ MonoBehaviour:
   _verb: Accuse
   _attack: 5
   _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
-  _damage: 14
-  _cost: 0
+  _damage: 1
   _sentenceToCompleteAttack: "Tu mam\xE1 te llama, tienes que terminar de hacer tus
     tareas"
   _riddle: Este es el accuse

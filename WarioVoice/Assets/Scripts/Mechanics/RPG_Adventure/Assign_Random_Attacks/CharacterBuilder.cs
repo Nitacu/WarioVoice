@@ -30,7 +30,7 @@ public class CharacterBuilder : MonoBehaviour
         //crea cada tarjeta de persona
         for (int i = 0; i < NumberCharacters; i++)
         {
-            aux = Instantiate(_character, _contentCharacters[NumberCharacters - 2].GetComponentsInChildren<Transform>()[i+1].position,Quaternion.identity);
+            aux = Instantiate(_character, _contentCharacters[NumberCharacters - 1].GetComponentsInChildren<Transform>()[i+1].position,Quaternion.identity);
            
             // se le agrega un icono
             numberRandom = Random.Range(0, _listHeroes.Count - 1);

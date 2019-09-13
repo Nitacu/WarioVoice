@@ -81,6 +81,10 @@ public class speechContoller : MonoBehaviour {
 
     public void settext(string speechText){
         speechReturned.text= speechText;
+        if (FindObjectOfType<CommandParser>())
+        {
+            FindObjectOfType<CommandParser>().parseCommand(speechText);
+        }
     }
 	
 	// Update is called once per frame

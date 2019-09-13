@@ -9,7 +9,6 @@ public class VoiceAttacks : ScriptableObject
     public AttackGlossary.attack _attack;
     public AudioClip _pronunciation;
     public float _damage;
-    public float _cost;
     [TextArea]
     public string _sentenceToCompleteAttack;
     [TextArea]

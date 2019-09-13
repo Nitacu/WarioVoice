@@ -24,6 +24,7 @@ TagManager:
   - CHEST
   - PaintCanvas
   - ReferenceSplash
+  - ROCKET
   layers:
   - Default
   - TransparentFX

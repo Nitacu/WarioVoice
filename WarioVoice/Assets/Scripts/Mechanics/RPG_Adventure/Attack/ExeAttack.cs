@@ -52,7 +52,6 @@ public class ExeAttack : MonoBehaviour
             // visual
             _visualDamage.gameObject.transform.position = _lamia.transform.position;
             _visualDamage.gameObject.SetActive(true);
-            _visualDamage.showDamage(_currentAttack._damage);
             //frase del ataque
             FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
             _hero.GetComponent<MoveHeroe>().changeDirection();

@@ -7,10 +7,6 @@ public class VisualDamage : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
 
-    public void showDamage(float damage)
-    {
-        _text.text = damage.ToString();
-    }
 
     public void desactiveSelf()
     {

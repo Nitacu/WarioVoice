@@ -15,7 +15,6 @@ MonoBehaviour:
   _verb: Blow
   _attack: 10
   _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
-  _damage: 13
-  _cost: 0
+  _damage: 1
   _sentenceToCompleteAttack: Le sopla pimienta en la cara
   _riddle: Este es el blow

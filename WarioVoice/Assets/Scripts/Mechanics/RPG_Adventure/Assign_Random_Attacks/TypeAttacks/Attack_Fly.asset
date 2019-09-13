@@ -15,7 +15,6 @@ MonoBehaviour:
   _verb: Fly
   _attack: 12
   _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
-  _damage: 12
-  _cost: 0
+  _damage: 1
   _sentenceToCompleteAttack: 'Lanza un avion que al volar imparta en el ojo '
   _riddle: Este es el fly

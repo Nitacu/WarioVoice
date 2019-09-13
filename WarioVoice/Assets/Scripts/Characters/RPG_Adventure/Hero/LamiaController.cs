@@ -42,7 +42,6 @@ public class LamiaController : MonoBehaviour
         //daño
         _visualDamage.SetActive(true);
         _visualDamage.transform.position = _characters.transform.position;
-        _visualDamage.GetComponent<VisualDamage>().showDamage(_damage);
         _characters.getDamage(_damage);
         //siguiente accion
         _characters.GetComponent<MoveHeroe>().changeDirection();

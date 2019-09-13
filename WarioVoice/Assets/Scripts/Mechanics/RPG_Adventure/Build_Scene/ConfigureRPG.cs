@@ -16,55 +16,56 @@ public class ConfigureRPG : MonoBehaviour
         _characterBuilder.createdCharacters();
     }
 
+    // la vida de cada personaje
     public float configurationCharacters()
     {
         _difficultyLevel = GameManager.GetInstance().getGameDifficulty();
         switch (_difficultyLevel)
         {
             case 1:
-                return Random.Range(510, 560);
+                return 1;
                 break;
 
             case 2:
-                return Random.Range(490, 560);
+                return 1;
                 break;
 
             case 3:
-                return Random.Range(470, 560);
+                return 1;
                 break;
 
             case 4:
-                return Random.Range(450, 560);
+                return 1;
                 break;
 
             case 5:
-                return Random.Range(430, 560);
+                return 1;
                 break;
 
             case 6:
-                return Random.Range(410, 560);
+                return 1;
                 break;
 
             case 7:
-                return Random.Range(390, 560);
+                return 1;
                 break;
 
             case 8:
-                return Random.Range(370, 560);
+                return 1;
                 break;
 
             case 9:
-                return Random.Range(350, 560);
+                return 1;
                 break;
 
             case 10:
-                return Random.Range(330, 560);
+                return 1;
                 break;
 
 
             default:
                 Debug.Log("no cuadran los niveles de dificultad");
-                return 300;
+                return 1;
                 break;
         }
     }
@@ -76,63 +77,63 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = 10;
-                _lamiaController.Damage = 200;
+                _characterBuilder.NumberCharacters = 1;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 2:
-                _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = 20;
-                _lamiaController.Damage = 250;
+                _characterBuilder.NumberCharacters = 1;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 3:
-                _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = 30;
-                _lamiaController.Damage = 300;
+                _characterBuilder.NumberCharacters = 2;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 4:
-                _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = 35;
-                _lamiaController.Damage = 200;
+                _characterBuilder.NumberCharacters = 2;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 5:
-                _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = 36;
-                _lamiaController.Damage = 250;
+                _characterBuilder.NumberCharacters = 2;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 6:
                 _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = 40;
-                _lamiaController.Damage = 300;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 7:
-                _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 43;
-                _lamiaController.Damage = 300;
+                _characterBuilder.NumberCharacters = 3;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 8:
-                _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 45;
-                _lamiaController.Damage = 350;
+                _characterBuilder.NumberCharacters = 4;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 9:
-                _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 46;
-                _lamiaController.Damage = 400;
+                _characterBuilder.NumberCharacters = 4;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
             case 10:
-                _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 50;
-                _lamiaController.Damage = 600;
+                _characterBuilder.NumberCharacters = 4;
+                _lamiaController.Life = 1;
+                _lamiaController.Damage = 1;
                 break;
 
 

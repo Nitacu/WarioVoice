@@ -15,7 +15,6 @@ MonoBehaviour:
   _verb: Hit
   _attack: 15
   _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
-  _damage: 17
-  _cost: 0
+  _damage: 1
   _sentenceToCompleteAttack: 'Mide su cara con su mama y en eso lo golpeamos '
   _riddle: Este es el hit
