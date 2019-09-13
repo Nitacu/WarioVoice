@@ -1636,6 +1636,36 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2100570624}
+    - target: {fileID: 1199924327386953930, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199924327386953930, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199924327386953930, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726275167674502936, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726275167674502936, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726275167674502936, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 336816a9fb2d5bc46b2db89d7069222a, type: 3}
 --- !u!1 &1361974203 stripped
