@@ -49,63 +49,63 @@ public class ConfigurationWorms : MonoBehaviour
         switch (GameManager.GetInstance().getGameDifficulty())
         {
             case 1:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 2:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 3:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 4:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 5:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 6:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 7:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 8:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 9:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             case 10:
-                FindObjectOfType<Ammunition>().getAmmunition(5);
-                _numberAmunition = 5;
-                activeEnemys(2);
+                FindObjectOfType<Ammunition>().getAmmunition(6);
+                _numberAmunition = 6;
+                activeEnemys(3);
                 break;
 
             default:

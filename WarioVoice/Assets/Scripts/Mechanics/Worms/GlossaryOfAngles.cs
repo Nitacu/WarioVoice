@@ -8,7 +8,7 @@ public class GlossaryOfAngles : MonoBehaviour
     public const string DEGREES = "degrees";
     public const string SYMBOL_GRADES = "°";
     public const string PERCENT = "percent";
-
+    public const string SYMBOL_PERCENT = "%";
     private static GlossaryOfAngles _instance;
 
     public static GlossaryOfAngles GetInstance()

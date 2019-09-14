@@ -54,11 +54,16 @@ public class Ammunition : MonoBehaviour
         }
         Amnunition--;
 
-        if (Amnunition == 0)
+        if (Amnunition >= 0)
         {
-            FindObjectOfType<ConfigurationWorms>().lostGame();
+            Debug.Log("entyro");
             _power.SetActive(false);
             _angle.SetActive(true);
+        }
+        else
+        {
+            _power.SetActive(false);
+            _angle.SetActive(false);
         }
     }
 

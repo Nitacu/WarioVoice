@@ -12,8 +12,6 @@ public class PointingGun : MonoBehaviour
     [SerializeField] private bool _allowShoot = false;
     [SerializeField] private GameObject _explotion;
     [SerializeField] private SpriteRenderer[] _sp;
-    [SerializeField] private GameObject _imageAngle;
-    [SerializeField] private GameObject _imagepower;
     void Update()
     {
         if (transform.localEulerAngles.z != _angle)
@@ -30,8 +28,6 @@ public class PointingGun : MonoBehaviour
             (_angle - transform.eulerAngles.z <= 1 && _angle - transform.eulerAngles.z > 0))
         {
             transform.eulerAngles = new Vector3(0,0,_angle);
-            _imageAngle.SetActive(false);
-            _imagepower.SetActive(true);
         }
 
 
