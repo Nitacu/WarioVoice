@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ORANGE
   m_EditorClassIdentifier: 
   _colorName: ORANGE
-  _splashImage: {fileID: -4274051472841485391, guid: caafb876ff54ecd4083eb23d26d56156,
+  _splashImage: {fileID: -4274051472841485391, guid: 312bada487ebe67489b00e591e14f5fe,
     type: 3}
   _splasColorType: 3
-  _brushColor: {r: 1, g: 0.34963012, b: 0, a: 1}
+  _brushColor: {r: 1, g: 0.40000004, b: 0, a: 1}
   _audioClip: {fileID: 8300000, guid: b2c14a8fea83ecd4ca17a7d1f31d4d09, type: 3}

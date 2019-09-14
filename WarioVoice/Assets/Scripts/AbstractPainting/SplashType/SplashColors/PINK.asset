@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PINK
   m_EditorClassIdentifier: 
   _colorName: PINK
-  _splashImage: {fileID: 4753302071356348453, guid: caafb876ff54ecd4083eb23d26d56156,
+  _splashImage: {fileID: 4753302071356348453, guid: 312bada487ebe67489b00e591e14f5fe,
     type: 3}
   _splasColorType: 5
-  _brushColor: {r: 1, g: 0.042452812, b: 0.6067218, a: 1}
+  _brushColor: {r: 0.9921569, g: 0.42352945, b: 0.61960787, a: 1}
   _audioClip: {fileID: 8300000, guid: 2ce97408e48356a4c8f14588fce49f65, type: 3}

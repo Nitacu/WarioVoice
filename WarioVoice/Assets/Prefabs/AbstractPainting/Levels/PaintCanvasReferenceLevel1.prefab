@@ -255,7 +255,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _mySplashColorType
       value: 
-      objectReference: {fileID: 11400000, guid: 15621a8c77ee61e489c039f6e28bdf7c,
+      objectReference: {fileID: 11400000, guid: 823cfb74be32c4c4798387c5f99dc592,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa45ca0126c1616469fcc9350b740718, type: 3}

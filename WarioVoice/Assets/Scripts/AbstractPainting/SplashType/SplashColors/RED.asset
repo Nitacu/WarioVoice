@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RED
   m_EditorClassIdentifier: 
   _colorName: RED
-  _splashImage: {fileID: 5798493625265239674, guid: caafb876ff54ecd4083eb23d26d56156,
+  _splashImage: {fileID: 5798493625265239674, guid: 312bada487ebe67489b00e591e14f5fe,
     type: 3}
   _splasColorType: 1
-  _brushColor: {r: 1, g: 0.17254902, b: 0, a: 1}
+  _brushColor: {r: 1, g: 0, b: 0, a: 1}
   _audioClip: {fileID: 8300000, guid: 7e5ebbb0ccfe89c49abfdea5c08bcbc8, type: 3}

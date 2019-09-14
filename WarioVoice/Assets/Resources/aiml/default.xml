@@ -199,32 +199,68 @@
 <category><pattern>HIT</pattern><template>HIT</template></category>
   
 <category><pattern>BLUE</pattern><template>BLUE</template></category>
- <category><pattern>COLOR BLUE</pattern><template>BLUE</template></category>
+ <category><pattern>COLOR BLUE</pattern><template>BLUE</template></category>  
+<category><pattern>RED</pattern><template>RED</template></category>
+  <category><pattern>COLOR RED</pattern><template>RED</template></category>
 <category><pattern>GREEN</pattern><template>GREEN</template></category>
    <category><pattern>COLOR GREEN</pattern><template>GREEN</template></category>
+<category><pattern>ORANGE</pattern><template>ORANGE</template></category>
+  <category><pattern>COLOR ORANGE</pattern><template>ORANGE</template></category>
 <category><pattern>YELLOW</pattern><template>YELLOW</template></category>
   <category><pattern>COLOR YELLOW</pattern><template>YELLOW</template></category>
 <category><pattern>PINK</pattern><template>PINK</template></category>
   <category><pattern>COLOR PINK</pattern><template>PINK</template></category>
-<category><pattern>ORANGE</pattern><template>ORANGE</template></category>
-  <category><pattern>COLOR ORANGE</pattern><template>ORANGE</template></category>
+<category><pattern>PURPLE</pattern><template>PURPLE</template></category>
+  <category><pattern>COLOR PURPLE</pattern><template>PURPLE</template></category>
 <category><pattern>BROWN</pattern><template>BROWN</template></category>
   <category><pattern>COLOR BROWN</pattern><template>BROWN</template></category>
 <category><pattern>LIME</pattern><template>LIME</template></category>
   <category><pattern>COLOR LIME</pattern><template>LIME</template></category>
 <category><pattern>SILVER</pattern><template>SILVER</template></category>
-  <category><pattern>COLOR SILVER</pattern><template>SILVER</template></category>
+  <category><pattern>COLOR SILVER</pattern><template>SILVER</template></category>  
 <category><pattern>MAGENTA</pattern><template>MAGENTA</template></category>
   <category><pattern>COLOR MAGENTA</pattern><template>MAGENTA</template></category>
 <category><pattern>WHITE</pattern><template>WHITE</template></category>
   <category><pattern>COLOR WHITE</pattern><template>WHITE</template></category>
-<category><pattern>PURPLE</pattern><template>PURPLE</template></category>
-  <category><pattern>COLOR PURPLE</pattern><template>PURPLE</template></category>
-<category><pattern>RED</pattern><template>RED</template></category>
-  <category><pattern>COLOR RED</pattern><template>RED</template></category>
-
-
-
+<category><pattern>BLACK</pattern><template>BLACK</template></category>
+  <category><pattern>COLOR BLACK</pattern><template>BLACK</template></category>
+<category><pattern>GRAY</pattern><template>GRAY</template></category>
+  <category><pattern>COLOR GRAY</pattern><template>GRAY</template></category>
+<category><pattern>COFFEE</pattern><template>COFFEE</template></category>
+  <category><pattern>COLOR COFFEE</pattern><template>COFFEE</template></category>
+<category><pattern>RUBY</pattern><template>RUBY</template></category>
+  <category><pattern>COLOR RUBY</pattern><template>RUBY</template></category>
+<category><pattern>BRONZE</pattern><template>BRONZE</template></category>
+  <category><pattern>COLOR BRONZE</pattern><template>BRONZE</template></category>
+<category><pattern>GOLD</pattern><template>GOLD</template></category>
+  <category><pattern>COLOR GOLD</pattern><template>GOLD</template></category>
+<category><pattern>SCARLET</pattern><template>SCARLET</template></category>
+  <category><pattern>COLOR SCARLET</pattern><template>SCARLET</template></category>
+<category><pattern>OLIVE</pattern><template>OLIVE</template></category>
+  <category><pattern>COLOR OLIVE</pattern><template>OLIVE</template></category>
+<category><pattern>CHOCOLATE</pattern><template>CHOCOLATE</template></category>
+  <category><pattern>COLOR CHOCOLATE</pattern><template>CHOCOLATE</template></category>  
+<category><pattern>SANGRIA</pattern><template>SANGRIA</template></category>
+  <category><pattern>COLOR SANGRIA</pattern><template>SANGRIA</template></category>  
+<category><pattern>TURQUOISE</pattern><template>TURQUOISE</template></category>
+  <category><pattern>COLOR TURQUOISE</pattern><template>TURQUOISE</template></category> 
+<category><pattern>AMETHYST</pattern><template>AMETHYST</template></category>
+  <category><pattern>COLOR AMETHYST</pattern><template>AMETHYST</template></category> 
+<category><pattern>TEAL</pattern><template>TEAL</template></category>
+  <category><pattern>COLOR TEAL</pattern><template>TEAL</template></category>  
+<category><pattern>JADE</pattern><template>JADE</template></category>
+  <category><pattern>COLOR JADE</pattern><template>JADE</template></category>  
+<category><pattern>BEIGE</pattern><template>BEIGE</template></category>
+  <category><pattern>COLOR BEIGE</pattern><template>BEIGE</template></category>    
+<category><pattern>PEACH</pattern><template>PEACH</template></category>
+  <category><pattern>COLOR PEACH</pattern><template>PEACH</template></category>     
+<category><pattern>TAN</pattern><template>TAN</template></category>
+  <category><pattern>COLOR TAN</pattern><template>TAN</template></category>      
+<category><pattern>AZURE</pattern><template>AZURE</template></category>
+  <category><pattern>COLOR AZURE</pattern><template>AZURE</template></category>      
+  
+  
+  
 <category><pattern>LOVE</pattern><template>LOVE</template></category>
 <category><pattern>HAPPY</pattern><template>HAPPY</template></category>
 <category><pattern>BEAUTIFUL</pattern><template>BEAUTIFUL</template></category>

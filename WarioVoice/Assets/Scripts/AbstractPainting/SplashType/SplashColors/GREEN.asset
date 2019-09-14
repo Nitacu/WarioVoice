@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GREEN
   m_EditorClassIdentifier: 
   _colorName: GREEN
-  _splashImage: {fileID: 4022400322290192599, guid: caafb876ff54ecd4083eb23d26d56156,
+  _splashImage: {fileID: 4022400322290192599, guid: 312bada487ebe67489b00e591e14f5fe,
     type: 3}
   _splasColorType: 2
-  _brushColor: {r: 0.0082166195, g: 1, b: 0, a: 1}
+  _brushColor: {r: 0, g: 0.5019608, b: 0, a: 1}
   _audioClip: {fileID: 8300000, guid: 990fcf3676cdc6b4f805fe9a5712fcff, type: 3}

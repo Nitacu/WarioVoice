@@ -43,15 +43,15 @@ public class PaintingLevel
 public class AbstractPaintingManager : CommandParser
 {
     #region HelpDialogs
-    const string FIRSTDIALOG = "Say a color to set your brush";
-    const string SAYACOLORFIRST = "Say a color first";
-    const string PAINTONCANVAS = "Know paint on your canvas";
-    const string ANALYZING = "Analyzing Paint...";
-    const string WIN = "Mother of da Vinci\nPerfect Paint";
-    const string LOSE = "BULLSHIT\nTryAgain";
-    const string ALREADYANALYZING = "Al ready Analyzing, keep waiting";
+    const string FIRSTDIALOG = "Say a color to set your brush\nDi un color";
+    const string SAYACOLORFIRST = "Say a color first\nDebes decir un color primero";
+    const string PAINTONCANVAS = "Now, paint on your canvas\nAhora, dibuja en tu lienzo";
+    const string ANALYZING = "Analyzing Paint...\nAnalizando el cuadro";
+    const string WIN = "Mother of DaVinci\n Bien hecho";
+    const string LOSE = "BULLSHIT\nIntenta de nuevo";
+    const string ALREADYANALYZING = "Al ready Analyzing, keep waiting\nAun se está analizando el cuadro";
     const string LEVEL = "Level ";
-    const string GAMECOMPLETEDE = "Game Complete, Back to Menu";
+    const string GAMECOMPLETEDE = "Game Complete, Back to Menu\nJuego completado, vuelve al menu";
     #endregion
 
     #region ColorCommands
@@ -66,7 +66,37 @@ public class AbstractPaintingManager : CommandParser
 
     public enum SplashColor
     {
-        BLUE, RED, GREEN, ORANGE, YELLOW, PINK, PURPLE
+        BLUE,
+        RED,
+        GREEN,
+        ORANGE,
+        YELLOW,
+        PINK,
+        PURPLE,
+        BLACK,
+        BROWN,
+        MAGENTA,
+        GRAY,
+        SILVER,
+        COFFEE,
+        RUBY,
+        BRONZE,
+        GOLD,
+        SCARLET,
+        OLIVE,
+        CHOCOLATE,
+        LIME,
+        SANGRIA,
+        TURQUOISE,
+        AMETHYST,
+        TEAL,
+        JADE,
+        BEIGE,
+        PEACH,
+        TAN,
+        AZURE,
+        HARLEQUIN
+
     }
 
     [SerializeField] private List<PaintingLevel> _levels = new List<PaintingLevel>();
@@ -87,7 +117,8 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private GameObject _speechButton;
     [SerializeField] private GameObject _removeLastButton;
     [SerializeField] private GameObject _removeAllButton;
-
+    [SerializeField] private GameObject _initPanel;
+    [SerializeField] private float _timeToDeactivateInitPanel;
 
 
     [Header("Win Parameters")]
@@ -127,6 +158,8 @@ public class AbstractPaintingManager : CommandParser
         }
 
         setLevel(_currentLevel);
+        _initPanel.SetActive(true);
+        StartCoroutine(deactivateInitPanel(_timeToDeactivateInitPanel));
     }
 
     private void Update()
@@ -172,6 +205,7 @@ public class AbstractPaintingManager : CommandParser
 
     private void setHelpButtons()
     {
+
         foreach (var item in _helpButtons)
         {
             item.gameObject.SetActive(false);
@@ -192,7 +226,8 @@ public class AbstractPaintingManager : CommandParser
     {
         //CAMBIAR BOTONES DE CHECK Y NIVEL
         _finishPaintButton.SetActive(true);
-            //_speechButton.SetActive(true);
+        //_speechButton.SetActive(true);
+        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
         _removeAllButton.SetActive(true);
         _removeLastButton.SetActive(true);
 
@@ -425,6 +460,14 @@ public class AbstractPaintingManager : CommandParser
         yield return new WaitForSeconds(2);
 
         setLevel(currenLevelToLaunch);
+    }
+
+    IEnumerator deactivateInitPanel(float timeToDeactivate)
+    {
+        yield return new WaitForSeconds(timeToDeactivate);
+
+        _initPanel.SetActive(false);
+        
     }
 
     public void keepTrying()

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PURPLE
   m_EditorClassIdentifier: 
   _colorName: PURPLE
-  _splashImage: {fileID: 9097756742785441464, guid: caafb876ff54ecd4083eb23d26d56156,
+  _splashImage: {fileID: 9097756742785441464, guid: 312bada487ebe67489b00e591e14f5fe,
     type: 3}
   _splasColorType: 6
-  _brushColor: {r: 0.40000004, g: 0.18039216, b: 0.5686275, a: 1}
+  _brushColor: {r: 0.5019608, g: 0, b: 0.5019608, a: 1}
   _audioClip: {fileID: 8300000, guid: f04a77b367c8bc6498f4c255e0bdd589, type: 3}

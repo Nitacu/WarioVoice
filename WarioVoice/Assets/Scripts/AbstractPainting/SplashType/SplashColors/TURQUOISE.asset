@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6d1c9ee54c9d842af6527d3bc6a0bc, type: 3}
+  m_Name: TURQUOISE
+  m_EditorClassIdentifier: 
+  _colorName: TURQUOISE
+  _splashImage: {fileID: 4955178320066359833, guid: 312bada487ebe67489b00e591e14f5fe,
+    type: 3}
+  _splasColorType: 21
+  _brushColor: {r: 0.2509804, g: 0.87843144, b: 0.81568635, a: 1}
+  _audioClip: {fileID: 8300000, guid: 4d7b88339f3f1544e84cadd4a6369a27, type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: YELLOW
   m_EditorClassIdentifier: 
   _colorName: YELLOW
-  _splashImage: {fileID: 4447050848804264991, guid: caafb876ff54ecd4083eb23d26d56156,
+  _splashImage: {fileID: 4447050848804264991, guid: 312bada487ebe67489b00e591e14f5fe,
     type: 3}
   _splasColorType: 4
-  _brushColor: {r: 1, g: 0.9454185, b: 0, a: 1}
+  _brushColor: {r: 1, g: 1, b: 0, a: 1}
   _audioClip: {fileID: 8300000, guid: 485e047ee5b93334dbd223bb42bb991f, type: 3}
