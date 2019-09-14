@@ -11,7 +11,9 @@ public class Ammunition : MonoBehaviour
     private List<GameObject> _rockets = new List<GameObject>();
     private PointingGun _pointingGun;
     private EnemyWorms[] _enemys;
-
+    private const float FORCE_SHOOT = 15;
+    [SerializeField] private GameObject _power;
+    [SerializeField] private GameObject _angle;
     private void Start()
     {
         _pointingGun = FindObjectOfType<PointingGun>();
@@ -28,7 +30,7 @@ public class Ammunition : MonoBehaviour
         }
     }
 
-    public void useWeapon()
+    public void useWeapon(float percent)
     {
         if (Amnunition == 0)
         {
@@ -45,9 +47,19 @@ public class Ammunition : MonoBehaviour
             }
 
             _rockets.RemoveAt(0);
-            _pointingGun.shoot();
+
+            float force = (percent * FORCE_SHOOT) / 100;
+            
+            _pointingGun.shoot(force);
         }
         Amnunition--;
+
+        if (Amnunition == 0)
+        {
+            FindObjectOfType<ConfigurationWorms>().lostGame();
+            _power.SetActive(false);
+            _angle.SetActive(true);
+        }
     }
 
     public int Amnunition { get => _amnunition; set => _amnunition = value; }

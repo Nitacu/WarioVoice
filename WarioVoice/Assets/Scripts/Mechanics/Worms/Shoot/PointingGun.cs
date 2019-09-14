@@ -11,6 +11,9 @@ public class PointingGun : MonoBehaviour
     [SerializeField] private Transform _positionShoot;
     [SerializeField] private bool _allowShoot = false;
     [SerializeField] private GameObject _explotion;
+    [SerializeField] private SpriteRenderer[] _sp;
+    [SerializeField] private GameObject _imageAngle;
+    [SerializeField] private GameObject _imagepower;
     void Update()
     {
         if (transform.localEulerAngles.z != _angle)
@@ -27,15 +30,14 @@ public class PointingGun : MonoBehaviour
             (_angle - transform.eulerAngles.z <= 1 && _angle - transform.eulerAngles.z > 0))
         {
             transform.eulerAngles = new Vector3(0,0,_angle);
+            _imageAngle.SetActive(false);
+            _imagepower.SetActive(true);
         }
 
-        if (transform.eulerAngles.z == _angle)
-        {
-            GetComponent<Ammunition>().useWeapon();
-        }
+
     }
 
-    public void shoot()
+    public void shoot(float force)
     {
         if (AllowShoot)
         {
@@ -46,7 +48,9 @@ public class PointingGun : MonoBehaviour
 
             Vector3 vec = aux.transform.position - transform.position;
             vec.Normalize();
-            aux.GetComponent<MoveForward>().Direction = vec;
+
+            aux.GetComponent<Rigidbody2D>().AddForce(vec * force,ForceMode2D.Impulse);
+
 
             AllowShoot = false;
         }
@@ -59,7 +63,12 @@ public class PointingGun : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Instantiate(_explotion,transform.position,Quaternion.identity);
-            Destroy(gameObject.GetComponent<SpriteRenderer>());
+
+            foreach (SpriteRenderer spriteRenderer in _sp)
+            {
+                Destroy(spriteRenderer);
+            }
+
             Invoke("exitScene", 2);
         }
     }

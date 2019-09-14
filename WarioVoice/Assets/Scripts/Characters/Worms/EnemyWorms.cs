@@ -8,8 +8,7 @@ public class EnemyWorms : MonoBehaviour
     private PointingGun _pointingGun;
     [SerializeField] private GameObject _proyectile;
     [SerializeField] private Transform _positionShoot;
-    [SerializeField] private GameObject _explotion;
-
+    [SerializeField] private GameObject _myFather;
     public int TimeToShoot { get => _timeToShoot; set => _timeToShoot = value; }
 
     private void Start()
@@ -61,8 +60,7 @@ public class EnemyWorms : MonoBehaviour
         {
             FindObjectOfType<ConfigurationWorms>().destroyEnemy();
             Destroy(collision.gameObject);
-            Instantiate(_explotion, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Destroy(_myFather);
         }
 
     }

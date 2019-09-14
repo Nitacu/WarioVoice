@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4821,12 +4821,12 @@ GameObject:
   m_Component:
   - component: {fileID: 567237876046802553}
   - component: {fileID: 567237876046802552}
-  - component: {fileID: 1496415388}
   - component: {fileID: 7233156488398683580}
   - component: {fileID: 2663965070395724346}
   - component: {fileID: 6082770205444702101}
   - component: {fileID: 6323262615614208918}
   - component: {fileID: -4764567693175827481}
+  - component: {fileID: 7703944783636127315}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: ROCKET
@@ -4898,19 +4898,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1496415388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567237876046802555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f486a03e985f654193f7201ab0a7d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!61 &7233156488398683580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4953,7 +4940,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 1
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9670,7 +9657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6443b249d9078dc4887adf9bcd8893ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 3
+  _time: 3.5
 --- !u!114 &-4764567693175827481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9683,3 +9670,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a769ce192548234cb29dd5f35bfb0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplotion: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+    type: 3}
+--- !u!50 &7703944783636127315
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567237876046802555}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

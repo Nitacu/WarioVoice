@@ -51,7 +51,7 @@ public class ConfigurationWorms : MonoBehaviour
             case 1:
                 FindObjectOfType<Ammunition>().getAmmunition(5);
                 _numberAmunition = 5;
-                activeEnemys(1);
+                activeEnemys(2);
                 break;
 
             case 2:
@@ -61,51 +61,51 @@ public class ConfigurationWorms : MonoBehaviour
                 break;
 
             case 3:
-                FindObjectOfType<Ammunition>().getAmmunition(6);
-                _numberAmunition = 6;
-                activeEnemys(3);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             case 4:
                 FindObjectOfType<Ammunition>().getAmmunition(5);
                 _numberAmunition = 5;
-                activeEnemys(4);
+                activeEnemys(2);
                 break;
 
             case 5:
-                FindObjectOfType<Ammunition>().getAmmunition(6);
-                _numberAmunition = 6;
-                activeEnemys(5);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             case 6:
-                FindObjectOfType<Ammunition>().getAmmunition(7);
-                _numberAmunition = 7;
-                activeEnemys(6);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             case 7:
-                FindObjectOfType<Ammunition>().getAmmunition(8);
-                _numberAmunition = 8;
-                activeEnemys(7);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             case 8:
-                FindObjectOfType<Ammunition>().getAmmunition(7);
-                _numberAmunition = 7;
-                activeEnemys(7);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             case 9:
-                FindObjectOfType<Ammunition>().getAmmunition(9);
-                _numberAmunition = 9;
-                activeEnemys(8);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             case 10:
-                FindObjectOfType<Ammunition>().getAmmunition(8);
-                _numberAmunition = 8;
-                activeEnemys(8);
+                FindObjectOfType<Ammunition>().getAmmunition(5);
+                _numberAmunition = 5;
+                activeEnemys(2);
                 break;
 
             default:
@@ -122,9 +122,9 @@ public class ConfigurationWorms : MonoBehaviour
         for (int i = 0; i< numberEnemys; i++)
         {
             int aux = Random.Range(0,_enemys.Count);
-            _enemys[aux].SetActive(true);
+            //_enemys[aux].SetActive(true);
             //_enemys[aux].GetComponentInChildren<ClampText>().nameLable.text = _numberAmunition.ToString();
-            _enemys.RemoveAt(aux);
+            //_enemys.RemoveAt(aux);
             _numberAmunition--;
         }
     }
