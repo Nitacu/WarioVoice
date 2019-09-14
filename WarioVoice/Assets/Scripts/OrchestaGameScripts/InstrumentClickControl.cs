@@ -8,32 +8,36 @@ public class InstrumentClickControl : MonoBehaviour
     public bool isClicking = false;
     private InstrumentController iController;
     private TextScreenControl text;
+    private MasterAudioController audioC;
 
     // Start is called before the first frame update
     void Start()
     {
         iController = GetComponent<InstrumentController>();
         text = FindObjectOfType<TextScreenControl>();
+        audioC = FindObjectOfType<MasterAudioController>();
     }
 
     private void OnMouseDown()
     {
-        if (!isClicking)
+
+        if (!audioC.isPlayingSound)
         {
-            isClicking = true;
+            audioC.isPlayingSound = true;
             showInstrumentData();
         }
     }
 
     private void showInstrumentData()
     {
-        text.showInstrument(iController._instrument.ToString());
-        Invoke("clearBoolean", 1.5f);
+        text.showInstrument(iController._instrument.ToString(), iController.getNameTime());
+        iController.playName();
+        Invoke("clearBoolean", iController.getNameTime());
     }
 
     private void clearBoolean()
     {
-        isClicking = false;
+        audioC.isPlayingSound = false;
     }
 
     // Update is called once per frame

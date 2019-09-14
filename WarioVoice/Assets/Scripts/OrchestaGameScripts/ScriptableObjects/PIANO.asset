@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ddfc0f229c13945bf2169fb2564d65, type: 3}
   m_Name: PIANO
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clipSound: {fileID: 8300000, guid: 3c3970384789d8641b47c368a16506d4, type: 3}
+  clipName: {fileID: 8300000, guid: 805b676e2e2fa2345916ad0b43dbabfc, type: 3}
   sprite: {fileID: 21300000, guid: b88eb4677ade0c54a883f255fa059769, type: 3}
   directorPlaying: {fileID: 21300000, guid: 1da9a3a3ea3c5484ea0a38fe5dcffedd, type: 3}
   memberPlaying: {fileID: 21300000, guid: 31a05bfd660d3ca4c845cbd47fe8b594, type: 3}

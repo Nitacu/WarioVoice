@@ -11,6 +11,9 @@ public class InstrumentController : MonoBehaviour
     private Sprite instrumentQuiet;
     private Sprite directorPlaying;
     private Sprite memberPlaying;
+    private AudioSource _audio;
+    private AudioClip _instrumentSound;
+    private AudioClip _instrumentNameSound;
 
     public bool isOn = false;
 
@@ -33,6 +36,7 @@ public class InstrumentController : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        _audio = GetComponent<AudioSource>();
         setInstrument(instrumentObject);
         setMemberPlaying();
     }
@@ -43,6 +47,8 @@ public class InstrumentController : MonoBehaviour
         instrumentQuiet = instrument.sprite;
         directorPlaying = instrument.directorPlaying;
         memberPlaying = instrument.memberPlaying;
+        _instrumentNameSound = instrument.clipName;
+        _instrumentSound = instrument.clipSound;
     }
 
     public void setMemberPlaying()
@@ -55,6 +61,18 @@ public class InstrumentController : MonoBehaviour
         spriteRenderer.sprite = directorPlaying;
     }
 
+    public void playSound()
+    {
+        _audio.clip = _instrumentSound;
+        _audio.Play();
+    }
+
+    public void playName()
+    {
+        _audio.clip = _instrumentNameSound;
+        _audio.Play();
+    }
+
     public void setQuietInstrument()
     {
         spriteRenderer.sprite = instrumentQuiet;
@@ -64,6 +82,16 @@ public class InstrumentController : MonoBehaviour
     public void changeInstrument(bool boolean, Instrument _newInstrument)
     {
         isOn = boolean;
+    }
+
+    public float getSoundTime()
+    {
+        return _instrumentSound.length;
+    }
+
+    public float getNameTime()
+    {
+        return _instrumentNameSound.length;
     }
 
     // Update is called once per frame

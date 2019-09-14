@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ddfc0f229c13945bf2169fb2564d65, type: 3}
   m_Name: HARP
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clipSound: {fileID: 8300000, guid: 7349a36b0f2d89249ae50c73d68d6b42, type: 3}
+  clipName: {fileID: 8300000, guid: 0b940a25ca0b0a8469c200b0dac4b701, type: 3}
   sprite: {fileID: 21300000, guid: db6a44954894b5c4aa7cc00a4d2f5ee4, type: 3}
   directorPlaying: {fileID: 21300000, guid: ee07cfc3a29c2f140b76f2a074a7d26d, type: 3}
   memberPlaying: {fileID: 21300000, guid: 7a75b5050fd89f04a99b11ca4d2c5b82, type: 3}

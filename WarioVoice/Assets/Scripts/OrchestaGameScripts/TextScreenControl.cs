@@ -21,7 +21,7 @@ public class TextScreenControl : MonoBehaviour
     private void warning()
     {
         intro = true;
-        text.text = "PAY ATTENTION";
+        text.text = "LISTEN AND REPEAT";
         Invoke("startGame", 3);
     }
 
@@ -38,12 +38,12 @@ public class TextScreenControl : MonoBehaviour
 
     }
 
-    public void showInstrument(string instrument)
+    public void showInstrument(string instrument, float time)
     {
         if (!intro)
         {
             text.text = instrument;
-            Invoke("clearText", 2);
+            Invoke("clearText", time);
         }
     }
 

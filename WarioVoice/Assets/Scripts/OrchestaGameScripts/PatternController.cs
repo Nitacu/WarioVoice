@@ -33,6 +33,7 @@ public class PatternController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        disableColliders();
         patternPanel = FindObjectOfType<PatternPanelController>();
         partiture = FindObjectOfType<PartitureController>();
         fade = FindObjectOfType<FadeController>();
@@ -60,7 +61,24 @@ public class PatternController : MonoBehaviour
     {
         patternPanel.musicPatternCreator(patronList[currentPatron]);
         patternPanel.gameObject.SetActive(false);
+        
         showPatron();
+    }
+
+    private void disableColliders()
+    {
+        foreach(Transform child in instrumentsGameObject.transform)
+        {
+            child.GetComponent<BoxCollider2D>().enabled = false;
+        }
+    }
+
+    private void activateColliders()
+    {
+        foreach (Transform child in instrumentsGameObject.transform)
+        {
+            child.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
 
     private void selectDifficulty()
@@ -133,8 +151,10 @@ public class PatternController : MonoBehaviour
     }
 
     IEnumerator ShowInstrument(float delayTime, Instrument newInstrument)
-    {
+    {     
         yield return new WaitForSeconds(delayTime);
+
+        float clipDuration = 0;
 
         partiture.playAnimation();
 
@@ -143,10 +163,12 @@ public class PatternController : MonoBehaviour
             if (child.gameObject.GetComponent<InstrumentController>().instrumentObject == newInstrument)
             {
                 child.gameObject.GetComponent<InstrumentController>().changeInstrument(true, newInstrument);
+                child.gameObject.GetComponent<InstrumentController>().playSound();
+                clipDuration = child.gameObject.GetComponent<InstrumentController>().getSoundTime();
             }
         }
 
-        StartCoroutine(turnOffInstrument(1.2f, newInstrument));
+        StartCoroutine(turnOffInstrument(clipDuration, newInstrument));
     }
 
     IEnumerator turnOffInstrument(float delayTime, Instrument newInstrument)
@@ -249,6 +271,7 @@ public class PatternController : MonoBehaviour
     {
         //patternPanel.gameObject.SetActive(true); 
         partiture.gameObject.SetActive(false);
+        activateColliders();
         director.SetActive(true);
         
         audience.SetActive(true);

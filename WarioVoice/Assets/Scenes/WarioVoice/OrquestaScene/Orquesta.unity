@@ -1483,6 +1483,7 @@ GameObject:
   - component: {fileID: 1264144575}
   - component: {fileID: 1264144574}
   - component: {fileID: 1264144576}
+  - component: {fileID: 1264144577}
   m_Layer: 0
   m_Name: PatternController
   m_TagString: Untagged
@@ -1555,6 +1556,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tutorialMode: 0
+--- !u!114 &1264144577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264144572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb020e60877ae44ab812bc385910063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1361974202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2489,11 +2502,11 @@ RectTransform:
   m_Father: {fileID: 976503949}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 343.8, y: 263.9}
-  m_SizeDelta: {x: 94.24, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -9.080078, y: -5.1000366}
+  m_SizeDelta: {x: 94.23999, y: 30}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1843860598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2550,12 +2563,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1843860596}
-        m_MethodName: 
+      - m_Target: {fileID: 1843860598}
+        m_MethodName: chanceScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
