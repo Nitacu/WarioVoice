@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InstrumentController : MonoBehaviour
 {
-
+    [HideInInspector]
     public Instrument instrumentObject;
-
+    public int numberspawn;
     private SpriteRenderer spriteRenderer;
     private Sprite instrumentQuiet;
     private Sprite directorPlaying;
@@ -35,10 +35,11 @@ public class InstrumentController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instrumentObject = null;
         spriteRenderer = GetComponent<SpriteRenderer>();
         _audio = GetComponent<AudioSource>();
-        setInstrument(instrumentObject);
-        setMemberPlaying();
+        //setInstrument(instrumentObject);
+        //setMemberPlaying();
     }
 
     public void setInstrument(Instrument instrument)

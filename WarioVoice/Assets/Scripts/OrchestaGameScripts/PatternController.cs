@@ -18,13 +18,14 @@ public class PatternController : MonoBehaviour
     private int numberOfPatterns = 1;
     private FadeController fade;
     public GameObject confetti;
-    
+    private int contInstrumentCreator = 0;
+
     //List that will be used to play and check patrons 
     private List<Instrument[]> patronList = new List<Instrument[]>();
     private Instrument[] checkPattern;
 
     private bool showingPattern = false;
-
+    private bool isPlaying = false;
     private int countPatrons = 0;
     private int currentPatron = 0;
     private int contInstrument = 0;
@@ -33,13 +34,14 @@ public class PatternController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        disableColliders();
+        difficulty = GameManager.GetInstance().getGameDifficulty();
+        selectDifficulty();
+        
         patternPanel = FindObjectOfType<PatternPanelController>();
         partiture = FindObjectOfType<PartitureController>();
         fade = FindObjectOfType<FadeController>();
         patternCreator = FindObjectOfType<PatternCreator>();
-        difficulty = GameManager.GetInstance().getGameDifficulty();
-        selectDifficulty();
+        
         instrumentCreator();
 
         for (int i = 0; i < numberOfPatterns; i++)
@@ -47,14 +49,52 @@ public class PatternController : MonoBehaviour
             patronList.Add(patternCreator.patternCreatorCrystal(numberOfInstruments, patternDuration, instrumentsInScene));
         }
 
+        setInstruments();
+        disableInstruments();
+        disableColliders();
+
         //startGame();
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void setInstruments()
     {
+        for (int i = 0; i < numberOfInstruments; i++)
+        {
+            foreach (Transform child in instrumentsGameObject.transform)
+            {
+                if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
+                {
+                    child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
+                    child.gameObject.GetComponent<InstrumentController>().setInstrument(patronList[currentPatron][contInstrumentCreator]);
+                    child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
+                }
+            }
+            contInstrumentCreator++;
+        }
+        contInstrumentCreator = 0;
+    }
 
+    private void disableInstruments() //this method deactivates all unused instruments in the pattern
+    {
+        
+        foreach (Transform child in instrumentsGameObject.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < numberOfInstruments; i++)
+        {      
+            foreach (Transform child in instrumentsGameObject.transform)
+            {
+                if (child.gameObject.GetComponent<InstrumentController>().instrumentObject == patronList[currentPatron][contInstrumentCreator])
+                {
+                    child.gameObject.SetActive(true);
+                }        
+            }
+            contInstrumentCreator++;
+        }
+        contInstrumentCreator = 0;
     }
 
     public void startGame()
@@ -211,6 +251,7 @@ public class PatternController : MonoBehaviour
 
     public void checkInstrument(InstrumentController.ENUMINSTRUMENT _enumInstrument, bool instrumentWord)
     {
+        isPlaying = false;
 
         if (instrumentWord)
         {
@@ -226,9 +267,11 @@ public class PatternController : MonoBehaviour
                 {
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
-                        if (child.gameObject.GetComponent<InstrumentController>()._instrument == _enumInstrument)
+                        if (child.gameObject.GetComponent<InstrumentController>()._instrument == _enumInstrument && !isPlaying)
                         {
                             child.gameObject.GetComponent<InstrumentController>().setDirectorPlaying();
+                            child.gameObject.GetComponent<InstrumentController>().playSound();
+                            isPlaying = true;
                         }
                     }
                     patternPanel.turnOnNote(contChecking);
