@@ -15,3 +15,4 @@ MonoBehaviour:
   signSprite: {fileID: 0}
   item: 2
   possibleAnswers: 02000000
+  pronunciation: {fileID: 8300000, guid: 9e3f8b74a07cabf449ddcabc0042d714, type: 3}

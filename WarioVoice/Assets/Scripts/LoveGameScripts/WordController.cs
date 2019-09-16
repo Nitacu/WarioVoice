@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class WordController : MonoBehaviour
 {
     public List<Sign> signs = new List<Sign>(); //List of all signs in the game (place them in inspector)
-    private List<Sign> signsInGame = new List<Sign>(); //Empty list that will be filled with a certain random number of signs of the main Signs list
+    [HideInInspector]
+    public List<Sign> signsInGame = new List<Sign>(); //Empty list that will be filled with a certain random number of signs of the main Signs list
 
     public int gameDifficulty; //Difficulty of the game, this goes from 1 to 10, there must be at least 1 sign per difficulty level to make it work.
     private int numberOfSigns; //This determines the number of signs that the player will 
@@ -20,16 +21,19 @@ public class WordController : MonoBehaviour
     public TextMeshProUGUI signText;
     public GameObject women;
     private GameObject loveMetter;
+    private GameObject wtfBar;
     public GameObject finalScreen;
     #endregion
 
     private bool isShowingSign = true;
-    private int currentSign = 0; //Cont variable that determines the sign that will be shown
+    [HideInInspector]
+    public int currentSign = 0; //Cont variable that determines the sign that will be shown
 
     // Start is called before the first frame update
     void Start()
     {
         loveMetter = FindObjectOfType<LoveMeterController>().gameObject;
+        wtfBar = FindObjectOfType<WTFBarController>().gameObject;
         setDifficulty();
         turnSignOn();
     }
@@ -44,6 +48,12 @@ public class WordController : MonoBehaviour
                 
             }
         }
+    }
+
+    public void loseScene()
+    {
+        finalScreen.SetActive(true);
+        FindObjectOfType<FinalScreenController>().loseScreenImage();
     }
 
     private void nextSign()
@@ -111,7 +121,7 @@ public class WordController : MonoBehaviour
 
     public void checkAnswer(string answer)
     {
-
+        Sign tempSign;
         bool correctAnswer = false;
 
         if (isShowingSign)
@@ -144,10 +154,17 @@ public class WordController : MonoBehaviour
             }
             else
             {
-                finalScreen.SetActive(true);
-                FindObjectOfType<FinalScreenController>().loseScreenImage();
-                Debug.Log("Perdiste");
-                
+                tempSign = signsInGame[currentSign];
+                signsInGame.RemoveAt(currentSign);
+                signsInGame.Add(tempSign);
+                women.GetComponent<WomanController>().playWTFAnimation();
+                //Add wtf bar and check tries to see if loses
+                wtfBar.GetComponent<WTFBarController>().updateWTFbar();
+                nextSign();
+                //finalScreen.SetActive(true);
+                //FindObjectOfType<FinalScreenController>().loseScreenImage();
+                //Debug.Log("Perdiste");
+
             }
         }
     }

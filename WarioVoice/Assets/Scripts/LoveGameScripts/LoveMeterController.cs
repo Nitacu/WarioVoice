@@ -20,8 +20,7 @@ public class LoveMeterController : MonoBehaviour
         contSigns++;
         if (contSigns < numberOfSigns)
         {
-            loveBar.fillAmount = contSigns / numberOfSigns;
-            
+            loveBar.fillAmount = contSigns / numberOfSigns;            
         }
         else
         {

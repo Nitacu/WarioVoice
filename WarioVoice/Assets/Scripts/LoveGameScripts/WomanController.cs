@@ -6,6 +6,7 @@ public class WomanController : MonoBehaviour
 {
     private const string IDLEANIMATION = "Idle";
     private const string LOVEANIMATION = "Loved";
+    private const string WTFANIMATION = "Wtf";
 
     private Animator _animator;
 
@@ -23,6 +24,12 @@ public class WomanController : MonoBehaviour
     {
         _animator.Play(Animator.StringToHash(LOVEANIMATION), -1, 0f);
         Invoke("playIdle", GetAnimationClip(LOVEANIMATION).length);
+    }
+
+    public void playWTFAnimation()
+    {
+        _animator.Play(Animator.StringToHash(WTFANIMATION), -1, 0f);
+        Invoke("playIdle", GetAnimationClip(WTFANIMATION).length);
     }
 
 
