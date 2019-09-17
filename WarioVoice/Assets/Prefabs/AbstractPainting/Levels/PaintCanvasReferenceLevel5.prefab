@@ -163,6 +163,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6306496086427281703, guid: 312bada487ebe67489b00e591e14f5fe,
+        type: 3}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
@@ -254,6 +260,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3971458433131603532, guid: 312bada487ebe67489b00e591e14f5fe,
+        type: 3}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
@@ -345,6 +357,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8881735678822551105, guid: 312bada487ebe67489b00e591e14f5fe,
+        type: 3}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
@@ -436,6 +454,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8881735678822551105, guid: 312bada487ebe67489b00e591e14f5fe,
+        type: 3}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
@@ -527,6 +551,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6306496086427281703, guid: 312bada487ebe67489b00e591e14f5fe,
+        type: 3}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
@@ -618,6 +648,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4955178320066359833, guid: 312bada487ebe67489b00e591e14f5fe,
+        type: 3}
     - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: _mySplashColorType
