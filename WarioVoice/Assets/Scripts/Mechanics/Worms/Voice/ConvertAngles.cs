@@ -10,14 +10,15 @@ public class ConvertAngles : CommandParser
     private string[] _sentenses;
     private PointingGun _pointingGun;
     private Ammunition _ammunition;
+    private GuideControlWorm _controlWorm;
     private bool _allowPoint = true;
     private bool _allowShoot = false;
     [SerializeField] private string _a;
-    [SerializeField] private GameObject _power;
-    [SerializeField] private GameObject _angles;
+    [SerializeField] private TMP_InputField _inputField;
 
     private void Start()
     {
+        _controlWorm = FindObjectOfType<GuideControlWorm>();
         _pointingGun = FindObjectOfType<PointingGun>();
         _ammunition = FindObjectOfType<Ammunition>();
     }
@@ -28,6 +29,12 @@ public class ConvertAngles : CommandParser
         {
             parseCommand(_a);
         }
+    }
+
+    public void angle()
+    {
+        Debug.Log(_inputField.text);
+        parseCommand(_inputField.text);
     }
 
     public override void parseCommand(string command)
@@ -49,8 +56,8 @@ public class ConvertAngles : CommandParser
                         _pointingGun.AllowShoot = true;
                         _allowShoot = true;
                         _allowPoint = false;
-                        _angles.SetActive(false);
-                        _power.SetActive(true);
+                        _controlWorm.desactiveAll();
+                        _controlWorm.Invoke("activePower",2);
                     }
                     catch (FormatException)
                     {
@@ -73,8 +80,8 @@ public class ConvertAngles : CommandParser
                         _pointingGun.AllowShoot = true;
                         _allowShoot = true;
                         _allowPoint = false;
-                        _angles.SetActive(false);
-                        _power.SetActive(true);
+                        _controlWorm.desactiveAll();
+                        _controlWorm.Invoke("activePower", 2);
                     }
                     catch (FormatException)
                     {
@@ -99,6 +106,7 @@ public class ConvertAngles : CommandParser
                             _ammunition.useWeapon(result);
                             _allowShoot = false;
                             _allowPoint = true;
+                            _controlWorm.desactiveAll();
                         }
 
                     }
@@ -124,6 +132,7 @@ public class ConvertAngles : CommandParser
                             _ammunition.useWeapon(result);
                             _allowShoot = false;
                             _allowPoint = true;
+                            _controlWorm.desactiveAll();
                         }
                     }
                     catch (FormatException)

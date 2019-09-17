@@ -9,6 +9,7 @@ public class EnemyWorms : MonoBehaviour
     [SerializeField] private GameObject _proyectile;
     [SerializeField] private Transform _positionShoot;
     [SerializeField] private GameObject _myFather;
+    [SerializeField] private GameObject _turret;
     public int TimeToShoot { get => _timeToShoot; set => _timeToShoot = value; }
 
     private void Start()
@@ -25,7 +26,7 @@ public class EnemyWorms : MonoBehaviour
         Vector2 vector = _pointingGun.transform.position - transform.position;
         angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
 
-        transform.eulerAngles = new Vector3(0,0,angle);
+        _turret.transform.eulerAngles = new Vector3(0,0,angle);
     }
 
     public void prepareShoot()

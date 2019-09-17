@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class PointingGun : MonoBehaviour
 {
-    [SerializeField] private float _angle;
+     private float _angle;
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _proyectile;
     [SerializeField] private Transform _positionShoot;
-    [SerializeField] private bool _allowShoot = false;
+    private bool _allowShoot = false;
     [SerializeField] private GameObject _explotion;
     [SerializeField] private SpriteRenderer[] _sp;
+    private GuideControlWorm _guideControlWorm;
+
+    private void Start()
+    {
+        _guideControlWorm = FindObjectOfType<GuideControlWorm>();
+    }
+
     void Update()
     {
         if (transform.localEulerAngles.z != _angle)
@@ -20,16 +27,23 @@ public class PointingGun : MonoBehaviour
 
     public void point(float angle)
     {
-
         _angle = angle;
-        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, angle), Time.deltaTime);
+        
 
-        if ((transform.eulerAngles.z - _angle <=1 && transform.eulerAngles.z - _angle >= 0) ||
-            (_angle - transform.eulerAngles.z <= 1 && _angle - transform.eulerAngles.z > 0))
+        if (transform.eulerAngles.z != _angle)
         {
-            transform.eulerAngles = new Vector3(0,0,_angle);
-        }
+            if ((transform.eulerAngles.z - _angle <= 1 && transform.eulerAngles.z - _angle >= 0) ||
+            (_angle - transform.eulerAngles.z <= 1 && _angle - transform.eulerAngles.z > 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, _angle);
+                
+            }
+            else
+            {
+                transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0, 0, angle), Time.deltaTime);
+            }
 
+        }
 
     }
 
@@ -45,7 +59,7 @@ public class PointingGun : MonoBehaviour
             Vector3 vec = aux.transform.position - transform.position;
             vec.Normalize();
 
-            aux.GetComponent<Rigidbody2D>().AddForce(vec * force,ForceMode2D.Impulse);
+            aux.GetComponent<Rigidbody2D>().AddForce(vec * force, ForceMode2D.Impulse);
 
 
             AllowShoot = false;
@@ -58,7 +72,7 @@ public class PointingGun : MonoBehaviour
         if (collision.CompareTag("Finish"))
         {
             Destroy(collision.gameObject);
-            Instantiate(_explotion,transform.position,Quaternion.identity);
+            Instantiate(_explotion, transform.position, Quaternion.identity);
 
             foreach (SpriteRenderer spriteRenderer in _sp)
             {

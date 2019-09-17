@@ -152,10 +152,10 @@ RectTransform:
   m_Father: {fileID: 1867629156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: -Infinity, y: -0.07692308}
-  m_AnchorMax: {x: Infinity, y: 0.2769231}
+  m_AnchorMin: {x: NaN, y: -0.07692308}
+  m_AnchorMax: {x: NaN, y: 0.2769231}
   m_AnchoredPosition: {x: NaN, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: NaN, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6723878
 MonoBehaviour:
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4070,7 +4070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1311826740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6104,7 +6104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2054985813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6122,10 +6122,10 @@ RectTransform:
   m_Father: {fileID: 1772496570}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -199.4, y: -138.10004}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.019097036, y: 0.22891247}
+  m_AnchorMax: {x: 0.29448506, y: 0.30848807}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054985814
 MonoBehaviour:
@@ -6265,7 +6265,7 @@ PrefabInstance:
     - target: {fileID: 2093025805226651633, guid: 336816a9fb2d5bc46b2db89d7069222a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5499331425331273108, guid: 336816a9fb2d5bc46b2db89d7069222a,
         type: 3}
@@ -6322,11 +6322,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3119585906706733073, guid: 336816a9fb2d5bc46b2db89d7069222a,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1276990977}
     - target: {fileID: 1199924327386953930, guid: 336816a9fb2d5bc46b2db89d7069222a,
         type: 3}
       propertyPath: m_fontColor.r
@@ -6417,6 +6412,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0.16724591
       objectReference: {fileID: 0}
+    - target: {fileID: 3119585906706733073, guid: 336816a9fb2d5bc46b2db89d7069222a,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1276990977}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 336816a9fb2d5bc46b2db89d7069222a, type: 3}
 --- !u!1 &2058277979

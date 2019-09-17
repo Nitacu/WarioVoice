@@ -12,10 +12,10 @@ public class Ammunition : MonoBehaviour
     private PointingGun _pointingGun;
     private EnemyWorms[] _enemys;
     private const float FORCE_SHOOT = 15;
-    [SerializeField] private GameObject _power;
-    [SerializeField] private GameObject _angle;
+    private GuideControlWorm _guideControlWorm;
     private void Start()
     {
+        _guideControlWorm = FindObjectOfType<GuideControlWorm>();
         _pointingGun = FindObjectOfType<PointingGun>();
     }
 
@@ -53,18 +53,7 @@ public class Ammunition : MonoBehaviour
             _pointingGun.shoot(force);
         }
         Amnunition--;
-
-        if (Amnunition >= 0)
-        {
-            Debug.Log("entyro");
-            _power.SetActive(false);
-            _angle.SetActive(true);
-        }
-        else
-        {
-            _power.SetActive(false);
-            _angle.SetActive(false);
-        }
+        
     }
 
     public int Amnunition { get => _amnunition; set => _amnunition = value; }
