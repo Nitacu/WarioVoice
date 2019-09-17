@@ -48,7 +48,7 @@ public class AbstractPaintingManager : CommandParser
     const string PAINTONCANVAS = "Now, paint on your canvas\nAhora, dibuja en tu lienzo";
     const string ANALYZING = "Analyzing Paint...\nAnalizando el cuadro";
     const string WIN = "Mother of DaVinci\n Bien hecho";
-    const string LOSE = "BULLSHIT\nIntenta de nuevo";
+    const string LOSE = "BULLSHIT\n Sigue intentando";
     const string ALREADYANALYZING = "Al ready Analyzing, keep waiting\nAun se está analizando el cuadro";
     const string LEVEL = "Level ";
     const string GAMECOMPLETEDE = "Game Complete, Back to Menu\nJuego completado, vuelve al menu";
