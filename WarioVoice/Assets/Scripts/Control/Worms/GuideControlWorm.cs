@@ -15,7 +15,7 @@ public class GuideControlWorm : MonoBehaviour
 
     public void activeAngle()
     {
-        Debug.Log("angulo");
+
         _speechButton.setButton(true);
         _imageAngle.SetActive(true);
         _imagePower.SetActive(false);
@@ -23,7 +23,7 @@ public class GuideControlWorm : MonoBehaviour
 
     public void activePower()
     {
-        Debug.Log("poder");
+
         _speechButton.setButton(true);
         _imageAngle.SetActive(false);
         _imagePower.SetActive(true);
@@ -31,7 +31,7 @@ public class GuideControlWorm : MonoBehaviour
 
     public void desactiveAll()
     {
-        Debug.Log("bye todo");
+
         _speechButton.setButton(false);
         _imageAngle.SetActive(false);
         _imagePower.SetActive(false);
