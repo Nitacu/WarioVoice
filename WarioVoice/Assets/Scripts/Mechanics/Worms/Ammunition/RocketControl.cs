@@ -26,7 +26,16 @@ public class RocketControl : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<GuideControlWorm>().activeKeepAction();
+            if (FindObjectOfType<ConvertAngles>().TutorialMode)
+            {
+                FindObjectOfType<ConvertAngles>().TutorialMode = false;
+                FindObjectOfType<GuideControlWorm>().desactiveAction();
+            }
+            else
+            {
+                FindObjectOfType<GuideControlWorm>().activeKeepAction();
+            }
+
         }
 
     }

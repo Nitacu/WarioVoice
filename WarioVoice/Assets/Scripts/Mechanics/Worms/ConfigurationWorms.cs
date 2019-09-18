@@ -16,7 +16,6 @@ public class ConfigurationWorms : MonoBehaviour
     // todos los personajes le disparan al player
     public void lostGame()
     {
-        Debug.Log("asss");
         if (_numberEnemys > 0)
         {
             

@@ -14,6 +14,10 @@ public class GuideControlWorm : MonoBehaviour
     {
         _speechButton = FindObjectOfType<SetActiveSpeechButton>();
         _convertAngles = FindObjectOfType<ConvertAngles>();
+        if (_convertAngles.TutorialMode)
+        {
+            _convertAngles.allowPoint();
+        }
     }
 
     public void desactiveAction()
@@ -29,7 +33,15 @@ public class GuideControlWorm : MonoBehaviour
 
     public void activeKeepAction()
     {
-        _boxHelp.SetActive(true);
+        if (!_convertAngles.TutorialMode)
+        {
+            _boxHelp.SetActive(true);
+            _speechButton.setButton(true);
+        }
+        else
+        {
+            activePower();
+        }
     }
 
     public void activeAngle()
