@@ -11,10 +11,14 @@ public class ConvertAngles : CommandParser
     private PointingGun _pointingGun;
     private Ammunition _ammunition;
     private GuideControlWorm _controlWorm;
-    private bool _allowPoint = true;
+    private bool _allowPoint = false;
     private bool _allowShoot = false;
     [SerializeField] private string _a;
     [SerializeField] private TMP_InputField _inputField;
+    [SerializeField] private TMP_Text _text;
+    private int a =0 ;
+    public bool AllowPoint { get => _allowPoint; set => _allowPoint = value; }
+    public bool AllowShoot { get => _allowShoot; set => _allowShoot = value; }
 
     private void Start()
     {
@@ -33,12 +37,29 @@ public class ConvertAngles : CommandParser
 
     public void angle()
     {
-        Debug.Log(_inputField.text);
         parseCommand(_inputField.text);
+    }
+
+    public void allowPower()
+    {
+        _allowShoot = true;
+        _allowPoint = false;
+        //cambio visual
+        FindObjectOfType<GuideControlWorm>().activePower();
+    }
+
+    public void allowPoint()
+    {
+        _allowShoot = false;
+        _allowPoint = true;
+        //cambio visual
+        FindObjectOfType<GuideControlWorm>().activeKeepAction();
     }
 
     public override void parseCommand(string command)
     {
+        a++;
+        _text.text = a.ToString();
         command = command.Replace(' ', '_');
         _sentenses = command.Split("_".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
@@ -53,9 +74,6 @@ public class ConvertAngles : CommandParser
                     {
                         int result = Int32.Parse(_sentenses[0]);
                         _pointingGun.point(result);
-                        _pointingGun.AllowShoot = true;
-                        _allowShoot = true;
-                        _allowPoint = false;
                         _controlWorm.desactiveAll();
                         _controlWorm.Invoke("activePower",2);
                     }
@@ -77,9 +95,6 @@ public class ConvertAngles : CommandParser
                     {
                         int result = Int32.Parse(_sentenses[0]);
                         _pointingGun.point(result);
-                        _pointingGun.AllowShoot = true;
-                        _allowShoot = true;
-                        _allowPoint = false;
                         _controlWorm.desactiveAll();
                         _controlWorm.Invoke("activePower", 2);
                     }
@@ -92,11 +107,13 @@ public class ConvertAngles : CommandParser
         }
         else if (_allowShoot)
         {
+            
             if (_sentenses.Length == 2)
             {
 
                 if (string.Equals(_sentenses[1], GlossaryOfAngles.PERCENT))
                 {
+                    
                     try
                     {
                         int result = Int32.Parse(_sentenses[0]);
@@ -104,8 +121,6 @@ public class ConvertAngles : CommandParser
                         if (result <= 100)
                         {
                             _ammunition.useWeapon(result);
-                            _allowShoot = false;
-                            _allowPoint = true;
                             _controlWorm.desactiveAll();
                         }
 
@@ -121,7 +136,7 @@ public class ConvertAngles : CommandParser
 
                 if (_sentenses[0][_sentenses[0].Length - 1] == GlossaryOfAngles.SYMBOL_PERCENT.ToCharArray()[0])
                 {
-
+                    
                     _sentenses = _sentenses[0].Split("%".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
                     try
@@ -129,9 +144,8 @@ public class ConvertAngles : CommandParser
                         int result = Int32.Parse(_sentenses[0]);
                         if (result <= 100)
                         {
+                            
                             _ammunition.useWeapon(result);
-                            _allowShoot = false;
-                            _allowPoint = true;
                             _controlWorm.desactiveAll();
                         }
                     }

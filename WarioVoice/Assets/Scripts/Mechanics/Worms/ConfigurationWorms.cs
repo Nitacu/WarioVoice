@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ConfigurationWorms : MonoBehaviour
 {
-    private int _numberEnemys = 0;
+    [SerializeField]private int _numberEnemys = 0;
     private int _numberAmunition = 0;
     [SerializeField] private GameObject _conffeti;
     void Start()
@@ -16,8 +16,10 @@ public class ConfigurationWorms : MonoBehaviour
     // todos los personajes le disparan al player
     public void lostGame()
     {
+        Debug.Log("asss");
         if (_numberEnemys > 0)
         {
+            
             EnemyWorms[] enemyWorms =  FindObjectsOfType<EnemyWorms>();
 
             foreach(EnemyWorms enemy in enemyWorms)

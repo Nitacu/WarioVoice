@@ -19,13 +19,14 @@ public class RocketControl : MonoBehaviour
     {
         Instantiate(_smallExplotion,transform.position,Quaternion.identity);
 
+        
         if (FindObjectOfType<Ammunition>().Amnunition == 0)
         {
             FindObjectOfType<ConfigurationWorms>().lostGame();
         }
         else
         {
-            FindObjectOfType<GuideControlWorm>().activeAngle();
+            FindObjectOfType<GuideControlWorm>().activeKeepAction();
         }
 
     }

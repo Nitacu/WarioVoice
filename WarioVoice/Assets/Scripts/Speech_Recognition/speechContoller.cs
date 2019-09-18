@@ -81,9 +81,10 @@ public class speechContoller : MonoBehaviour {
 
     public void settext(string speechText){
         speechReturned.text= speechText;
-        if (FindObjectOfType<CommandParser>())
+
+        if (FindObjectOfType<ConvertAngles>())
         {
-            FindObjectOfType<CommandParser>().parseCommand(speechText);
+            FindObjectOfType<ConvertAngles>().parseCommand(speechText);
         }
     }
 	
