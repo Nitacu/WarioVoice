@@ -110,6 +110,8 @@ public class BuildingsManager : CommandParser
 
     private void Start()
     {
+        _currentLevel = GameManager.GetInstance().getGameDifficulty();
+        _currentLevel--;
         _LevelText.text = "Level: " + (_currentLevel + 1);
 
         generateLevel(_currentLevel);
@@ -335,6 +337,8 @@ public class BuildingsManager : CommandParser
 
             _matchingText.text = "Incorrect! \n" + _firstSelection.GetComponent<BuildPairItem>().RecognitionName + " can't be paired with " + _secondSelection.GetComponent<BuildPairItem>().RecognitionName + ". \n Try a new match";
             Debug.Log("Incorecto");
+            GameManager.GetInstance().launchMinigame(false);
+
 
         }
 
@@ -363,8 +367,6 @@ public class BuildingsManager : CommandParser
     {
         yield return new WaitForSeconds(_charTimeToGetBuild * 2);
 
-
-
         _currentLevel++;
 
         if (_currentLevel >= _levels.Count)
@@ -375,7 +377,8 @@ public class BuildingsManager : CommandParser
         }
         else
         {
-            resetLevel(_currentLevel);
+            //resetLevel(_currentLevel);
+            GameManager.GetInstance().launchMinigame(true);
         }
     }
 

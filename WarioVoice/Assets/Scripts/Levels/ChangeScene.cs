@@ -22,7 +22,7 @@ public class ChangeScene : MonoBehaviour
     private const string MATCHBUILDINGS = "Buildings";
     private const string IMITA_AL_BAILARIN = "DanceScene";
     private const string LOVE_SCENE = "LoveScene";
-    private const string RPG = "RPg_adventure";
+    public const string RPG = "RPg_adventure";
     private const string ABSTRACTPAINTING = "AbstractPainting";
     private const string ORCHESTA = "Orquesta";
     private const string WORMS = "Worms";
@@ -52,6 +52,14 @@ public class ChangeScene : MonoBehaviour
         ORCHESTA,
         WORMS
     }    
+
+    public enum EspikinglishMinigames
+    {
+        MATCHBUILDINGS,
+        PAINTING,
+        /*ORCHESTA,
+        WORMS*/
+    }
 
     public void chanceScene()
     {
@@ -134,6 +142,29 @@ public class ChangeScene : MonoBehaviour
 
             case nameScenes.WORMS:
                 SceneManager.LoadScene(WORMS);
+                break;
+        }
+    }
+
+    public static void ChangeSceneProgression(EspikinglishMinigames _miniGameScene)        
+    {
+        switch (_miniGameScene)
+        {
+
+            case EspikinglishMinigames.PAINTING:
+                SceneManager.LoadScene(ABSTRACTPAINTING);
+                break;
+            /*case EspikinglishMinigames.ORCHESTA:
+                SceneManager.LoadScene(ORCHESTA);
+                break;
+            case EspikinglishMinigames.WORMS:
+                SceneManager.LoadScene(WORMS);
+                break;*/
+            case EspikinglishMinigames.MATCHBUILDINGS:
+                SceneManager.LoadScene(MATCHBUILDINGS);
+
+                break;
+            default:
                 break;
         }
     }

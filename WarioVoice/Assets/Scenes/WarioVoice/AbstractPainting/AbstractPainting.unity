@@ -1390,6 +1390,7 @@ GameObject:
   - component: {fileID: 497026215}
   - component: {fileID: 497026214}
   - component: {fileID: 497026213}
+  - component: {fileID: 497026216}
   - component: {fileID: 497026212}
   m_Layer: 5
   m_Name: NextLevel
@@ -1427,11 +1428,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 497026210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d73afbb1888ff34f9c8a6a1290befed, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 183569935}
-  _buttonAction: 2
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 497026216}
+          m_MethodName: LaunchNextMiniGame
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &497026213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1487,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 497026214}
   m_OnClick:
     m_PersistentCalls:
@@ -1515,6 +1532,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497026210}
   m_CullTransparentMesh: 0
+--- !u!114 &497026216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497026210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddcb0e3925e2ed43b01416769b71897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &551740370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5841,6 +5870,7 @@ GameObject:
   - component: {fileID: 1967490636}
   - component: {fileID: 1967490635}
   - component: {fileID: 1967490634}
+  - component: {fileID: 1967490638}
   - component: {fileID: 1967490637}
   - component: {fileID: 1967490633}
   m_Layer: 5
@@ -5887,9 +5917,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1967490637}
-          m_MethodName: chanceScene
-          m_Mode: 1
+        - m_Target: {fileID: 1967490638}
+          m_MethodName: LaunchNextMiniGame
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5996,6 +6026,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nameScenes: 12
+--- !u!114 &1967490638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967490631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddcb0e3925e2ed43b01416769b71897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2030674446
 GameObject:
   m_ObjectHideFlags: 0
