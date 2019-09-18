@@ -11,30 +11,39 @@ public class ConvertAngles : CommandParser
     private PointingGun _pointingGun;
     private Ammunition _ammunition;
     private GuideControlWorm _controlWorm;
-    private bool _allowPoint = true;
+    private bool _allowPoint = false;
     private bool _allowShoot = false;
-    [SerializeField] private string _a;
     [SerializeField] private TMP_InputField _inputField;
+    public bool AllowPoint { get => _allowPoint; set => _allowPoint = value; }
+    public bool AllowShoot { get => _allowShoot; set => _allowShoot = value; }
 
     private void Start()
     {
         _controlWorm = FindObjectOfType<GuideControlWorm>();
         _pointingGun = FindObjectOfType<PointingGun>();
         _ammunition = FindObjectOfType<Ammunition>();
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            parseCommand(_a);
-        }
     }
 
     public void angle()
     {
-        Debug.Log(_inputField.text);
         parseCommand(_inputField.text);
+    }
+
+    public void allowPower()
+    {
+        _allowShoot = true;
+        _allowPoint = false;
+        //cambio visual
+        FindObjectOfType<GuideControlWorm>().activePower();
+    }
+
+    public void allowPoint()
+    {
+        _allowShoot = false;
+        _allowPoint = true;
+        //cambio visual
+        FindObjectOfType<GuideControlWorm>().activeAngle();
     }
 
     public override void parseCommand(string command)
@@ -52,12 +61,20 @@ public class ConvertAngles : CommandParser
                     try
                     {
                         int result = Int32.Parse(_sentenses[0]);
-                        _pointingGun.point(result);
-                        _pointingGun.AllowShoot = true;
-                        _allowShoot = true;
-                        _allowPoint = false;
-                        _controlWorm.desactiveAll();
-                        _controlWorm.Invoke("activePower",2);
+
+                        if (result <=180 && result>=0)
+                        {
+                            _pointingGun.point(result);
+                            _controlWorm.desactiveAll();
+                            if (TutorialMode)
+                            {
+                                Invoke("allowPower", 2);
+                            }
+                            else
+                            {
+                                _controlWorm.Invoke("activeKeepAction", 2);
+                            }
+                        }
                     }
                     catch (FormatException)
                     {
@@ -76,12 +93,21 @@ public class ConvertAngles : CommandParser
                     try
                     {
                         int result = Int32.Parse(_sentenses[0]);
-                        _pointingGun.point(result);
-                        _pointingGun.AllowShoot = true;
-                        _allowShoot = true;
-                        _allowPoint = false;
-                        _controlWorm.desactiveAll();
-                        _controlWorm.Invoke("activePower", 2);
+
+                        if (result <= 180 && result >= 0)
+                        {
+                            _pointingGun.point(result);
+                            _controlWorm.desactiveAll();
+                            if (TutorialMode)
+                            {
+                                Invoke("allowPower", 2);
+                            }
+                            else
+                            {
+                                _controlWorm.Invoke("activeKeepAction", 2);
+                            }
+                        }
+
                     }
                     catch (FormatException)
                     {
@@ -92,11 +118,13 @@ public class ConvertAngles : CommandParser
         }
         else if (_allowShoot)
         {
+            
             if (_sentenses.Length == 2)
             {
 
                 if (string.Equals(_sentenses[1], GlossaryOfAngles.PERCENT))
                 {
+                    
                     try
                     {
                         int result = Int32.Parse(_sentenses[0]);
@@ -104,8 +132,6 @@ public class ConvertAngles : CommandParser
                         if (result <= 100)
                         {
                             _ammunition.useWeapon(result);
-                            _allowShoot = false;
-                            _allowPoint = true;
                             _controlWorm.desactiveAll();
                         }
 
@@ -121,7 +147,7 @@ public class ConvertAngles : CommandParser
 
                 if (_sentenses[0][_sentenses[0].Length - 1] == GlossaryOfAngles.SYMBOL_PERCENT.ToCharArray()[0])
                 {
-
+                    
                     _sentenses = _sentenses[0].Split("%".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
                     try
@@ -129,9 +155,8 @@ public class ConvertAngles : CommandParser
                         int result = Int32.Parse(_sentenses[0]);
                         if (result <= 100)
                         {
+                            
                             _ammunition.useWeapon(result);
-                            _allowShoot = false;
-                            _allowPoint = true;
                             _controlWorm.desactiveAll();
                         }
                     }

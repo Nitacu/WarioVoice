@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PatternCheckOrchesta : CommandParser
 {
     private PatternController patternControl;
     private InstrumentController.ENUMINSTRUMENT _enumInstrument;
     private bool instrumentWord = false;
+    public bool canTalk = true;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +19,9 @@ public class PatternCheckOrchesta : CommandParser
 
     public override void parseCommand(string command)
     {
-        getInstrument(command);
+        
+       getInstrument(command);
+
     }
 
     public void getInstrument(string _instrument)
@@ -25,42 +30,52 @@ public class PatternCheckOrchesta : CommandParser
 
         foreach (Transform musicInstrument in patternControl.instrumentsGameObject.transform)
         {
-            if ( _instrument == musicInstrument.gameObject.GetComponent<InstrumentController>()._instrument.ToString())
+            if (_instrument.Equals(musicInstrument.gameObject.GetComponent<InstrumentController>()._instrument.ToString(), System.StringComparison.OrdinalIgnoreCase))
             {
                 instrumentWord = true;
             }
         }
 
-
-
-        switch (_instrument)
-        {
-            case "TUBA":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.TUBA;
-                break;
-            case "HARMONICA":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.HARMONICA;
-                break;
-            case "DRUMS":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.DRUMS;
-                break;
-            case "HARP":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.HARP;
-                break;
-            case "PIANO":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.PIANO;
-                break;
-            case "SAXOPHONE":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.SAXOPHONE;
-                break;
-            case "TRUMPET":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.TRUMPET;
-                break;
-            case "VIOLIN":
-                _enumInstrument = InstrumentController.ENUMINSTRUMENT.VIOLIN;
-                break;
-        }
+        getEnum(_instrument);
 
         patternControl.checkInstrument(_enumInstrument, instrumentWord);
+    }
+
+    private void getEnum(string _instrument)
+    {
+        if (_instrument.Equals("TUBA", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.TUBA;
+        }
+        if (_instrument.Equals("HARMONICA", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.HARMONICA;
+        }
+        if (_instrument.Equals("DRUMS", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.DRUMS;
+        }
+        if (_instrument.Equals("HARP", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.HARP;
+        }
+        if (_instrument.Equals("PIANO", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.PIANO;
+        }
+        if (_instrument.Equals("SAXOPHONE", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.SAXOPHONE;
+        }
+        if (_instrument.Equals("TRUMPET", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.TRUMPET;
+        }
+        if (_instrument.Equals("VIOLIN", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.VIOLIN;
+        }
+
+
     }
 }

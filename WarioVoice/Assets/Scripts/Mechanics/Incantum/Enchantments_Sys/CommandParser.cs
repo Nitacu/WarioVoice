@@ -12,6 +12,9 @@ public class CommandParser : MonoBehaviour
     private EnchantableObjTags.Tags _tagEnchantableObj;
     private string[] _partsEnchantment;
     [SerializeField] private bool _tutorialMode = false;
+
+    public bool TutorialMode { get => _tutorialMode; set => _tutorialMode = value; }
+
     public enum enchantmentResponse
     {
         FAIL,
@@ -25,7 +28,7 @@ public class CommandParser : MonoBehaviour
 
         if (FindObjectOfType<TutorialManager>())
         {
-            _tutorialMode = true;
+            TutorialMode = true;
             _tutorialManager = FindObjectOfType<TutorialManager>();
         }
 
@@ -67,49 +70,49 @@ public class CommandParser : MonoBehaviour
         switch (command)
         {
             case PlayerGrimoire.WALK:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.move();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.WALK);
                 break;
 
             case PlayerGrimoire.RUN:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.run();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.RUN);
                 break;
 
             case PlayerGrimoire.JUMP:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.jump();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.JUMP);
                 break;
 
             case PlayerGrimoire.STAY_PUT:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.idle();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.STAY_PUT);
                 break;
 
             case PlayerGrimoire.WALK_FORWARD:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.walkForward();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.WALK_FORWARD);
                 break;
 
             case PlayerGrimoire.WALK_BACKWARDS:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.walkBackwards();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.WALK_BACKWARDS);
                 break;
 
             case PlayerGrimoire.GRAB:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _ocelotMovements.grab();
                 else
                     _tutorialManager.tutorialCommadExe(PlayerGrimoire.commands.GRAB);
@@ -123,7 +126,7 @@ public class CommandParser : MonoBehaviour
         switch (enchantment)
         {
             case PlayerGrimoire.SHOW_ME_MORE:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _enchantmentsExe.showTags();
                 else
                     _tutorialManager.tutorialEnchantmentExe(PlayerGrimoire.enchantment.SHOW_ME_MORE, _tagEnchantableObj);
@@ -202,28 +205,28 @@ public class CommandParser : MonoBehaviour
         switch (enchantment)
         {
             case PlayerGrimoire.BIGGER_IS_BETTER:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _enchantmentsExe.makeBigger(_tagEnchantableObj);
                 else
                     _tutorialManager.tutorialEnchantmentExe(PlayerGrimoire.enchantment.BIGGER_IS_BETTER, _tagEnchantableObj);
                 break;
 
             case PlayerGrimoire.SMALLER_IS_CUTE:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _enchantmentsExe.makeSmaller(_tagEnchantableObj);
                 else
                     _tutorialManager.tutorialEnchantmentExe(PlayerGrimoire.enchantment.SMALLER_IS_CUTE, _tagEnchantableObj);
                 break;
 
             case PlayerGrimoire.GRAVITY_BREAKS:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _enchantmentsExe.gravityInvert(_tagEnchantableObj);
                 else
                     _tutorialManager.tutorialEnchantmentExe(PlayerGrimoire.enchantment.GRAVITY_BREAKS, _tagEnchantableObj);
                 break;
 
             case PlayerGrimoire.IGNITE_SPARK:
-                if (!_tutorialMode)
+                if (!TutorialMode)
                     _enchantmentsExe.spark(_tagEnchantableObj);
                 else
                     _tutorialManager.tutorialEnchantmentExe(PlayerGrimoire.enchantment.IGNITE_SPARK, _tagEnchantableObj);

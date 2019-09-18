@@ -128,7 +128,8 @@ public class WordController : MonoBehaviour
         {
             foreach(WordList.itemNames possibleAnswer in signsInGame[currentSign].possibleAnswers) //Checks all possible answers for the word or image in sign
             {
-                if (answer == possibleAnswer.ToString())
+                //answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase)
+                if (answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase))
                 {
                     correctAnswer = true;
                 }

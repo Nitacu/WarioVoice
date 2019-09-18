@@ -32,6 +32,11 @@ public class InstrumentController : MonoBehaviour
     [HideInInspector]
     public ENUMINSTRUMENT _instrument;
 
+    private void Awake()
+    {
+       
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,18 +47,34 @@ public class InstrumentController : MonoBehaviour
         //setMemberPlaying();
     }
 
-    public void setInstrument(Instrument instrument)
+    private void OnEnable()
     {
-        _instrument = instrument.instrument;
-        instrumentQuiet = instrument.sprite;
-        directorPlaying = instrument.directorPlaying;
-        memberPlaying = instrument.memberPlaying;
-        _instrumentNameSound = instrument.clipName;
-        _instrumentSound = instrument.clipSound;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        _audio = GetComponent<AudioSource>();
+        setInstrument();
+    }
+
+    public void setInstrument()
+    {
+        _instrument = instrumentObject.instrument;
+        instrumentQuiet = instrumentObject.sprite;
+        directorPlaying = instrumentObject.directorPlaying;
+        memberPlaying = instrumentObject.memberPlaying;
+        _instrumentNameSound = instrumentObject.clipName;
+        _instrumentSound = instrumentObject.clipSound;
     }
 
     public void setMemberPlaying()
     {
+        /*if (memberPlaying == null)
+        {
+            Debug.Log("No tengo sprite de member playing");
+        }
+        if (spriteRenderer == null)
+        {
+            Debug.Log("No tengo sprite renderer wey");
+        }*/
+      
         spriteRenderer.sprite = memberPlaying;
     }
 
@@ -64,14 +85,14 @@ public class InstrumentController : MonoBehaviour
 
     public void playSound()
     {
-        _audio.clip = _instrumentSound;
-        _audio.Play();
+        GetComponent<AudioSource>().clip = _instrumentSound;
+        GetComponent<AudioSource>().Play();
     }
 
     public void playName()
     {
-        _audio.clip = _instrumentNameSound;
-        _audio.Play();
+        GetComponent<AudioSource>().clip = _instrumentNameSound;
+        GetComponent<AudioSource>().Play();
     }
 
     public void setQuietInstrument()
@@ -80,7 +101,7 @@ public class InstrumentController : MonoBehaviour
         isOn = true;
     }
 
-    public void changeInstrument(bool boolean, Instrument _newInstrument)
+    public void changeInstrument(bool boolean)
     {
         isOn = boolean;
     }
@@ -100,11 +121,11 @@ public class InstrumentController : MonoBehaviour
     {
         if (isOn)
         {
-            spriteRenderer.color = Color.white;
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
         else
         {
-            spriteRenderer.color = new Color(0.2f, 0.2f, 0.2f, 1);
+            GetComponent<SpriteRenderer>().color = new Color(0.2f, 0.2f, 0.2f, 1);
         }
 
     }

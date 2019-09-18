@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ConfigurationWorms : MonoBehaviour
 {
-    private int _numberEnemys = 0;
+    [SerializeField]private int _numberEnemys = 0;
     private int _numberAmunition = 0;
-    [SerializeField]private List<GameObject> _enemys = new List<GameObject>();
     [SerializeField] private GameObject _conffeti;
     void Start()
     {
@@ -19,6 +18,7 @@ public class ConfigurationWorms : MonoBehaviour
     {
         if (_numberEnemys > 0)
         {
+            
             EnemyWorms[] enemyWorms =  FindObjectsOfType<EnemyWorms>();
 
             foreach(EnemyWorms enemy in enemyWorms)
@@ -51,61 +51,61 @@ public class ConfigurationWorms : MonoBehaviour
             case 1:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+            
                 break;
 
             case 2:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+             
                 break;
 
             case 3:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+             
                 break;
 
             case 4:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+
                 break;
 
             case 5:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+   
                 break;
 
             case 6:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+  
                 break;
 
             case 7:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+
                 break;
 
             case 8:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+
                 break;
 
             case 9:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+
                 break;
 
             case 10:
                 FindObjectOfType<Ammunition>().getAmmunition(6);
                 _numberAmunition = 6;
-                activeEnemys(3);
+
                 break;
 
             default:
@@ -115,17 +115,5 @@ public class ConfigurationWorms : MonoBehaviour
         }
     }
 
-    public void activeEnemys(int numberEnemys)
-    {
-        _numberEnemys = numberEnemys;
 
-        for (int i = 0; i< numberEnemys; i++)
-        {
-            int aux = Random.Range(0,_enemys.Count);
-            //_enemys[aux].SetActive(true);
-            //_enemys[aux].GetComponentInChildren<ClampText>().nameLable.text = _numberAmunition.ToString();
-            //_enemys.RemoveAt(aux);
-            _numberAmunition--;
-        }
-    }
 }

@@ -49,7 +49,8 @@ public class Ammunition : MonoBehaviour
             _rockets.RemoveAt(0);
 
             float force = (percent * FORCE_SHOOT) / 100;
-            
+
+
             _pointingGun.shoot(force);
         }
         Amnunition--;

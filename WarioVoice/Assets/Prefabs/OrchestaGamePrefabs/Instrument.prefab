@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrumentObject: {fileID: 0}
+  numberspawn: 0
   isOn: 0
   _instrument: 0
 --- !u!61 &5580144246130499582

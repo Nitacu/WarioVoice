@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PatternController : MonoBehaviour
 {
@@ -30,6 +32,8 @@ public class PatternController : MonoBehaviour
     private int currentPatron = 0;
     private int contInstrument = 0;
     private int contChecking = 0;
+    private bool isChecking = false;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -59,14 +63,18 @@ public class PatternController : MonoBehaviour
 
     private void setInstruments()
     {
+        
+        contInstrumentCreator = 0;
         for (int i = 0; i < numberOfInstruments; i++)
         {
             foreach (Transform child in instrumentsGameObject.transform)
             {
                 if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
                 {
+                    
                     child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
-                    child.gameObject.GetComponent<InstrumentController>().setInstrument(patronList[currentPatron][contInstrumentCreator]);
+                    Debug.Log(patronList[currentPatron][contInstrumentCreator].instrument.ToString());
+                    child.gameObject.GetComponent<InstrumentController>().setInstrument();
                     child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
                 }
             }
@@ -193,6 +201,7 @@ public class PatternController : MonoBehaviour
     IEnumerator ShowInstrument(float delayTime, Instrument newInstrument)
     {     
         yield return new WaitForSeconds(delayTime);
+        Debug.Log(newInstrument.instrument.ToString());
 
         float clipDuration = 0;
 
@@ -200,9 +209,11 @@ public class PatternController : MonoBehaviour
 
         foreach (Transform child in instrumentsGameObject.transform)
         {
-            if (child.gameObject.GetComponent<InstrumentController>().instrumentObject == newInstrument)
+            
+            if (child.gameObject.GetComponent<InstrumentController>()._instrument == newInstrument.instrument)
             {
-                child.gameObject.GetComponent<InstrumentController>().changeInstrument(true, newInstrument);
+                
+                child.gameObject.GetComponent<InstrumentController>().changeInstrument(true);
                 child.gameObject.GetComponent<InstrumentController>().playSound();
                 clipDuration = child.gameObject.GetComponent<InstrumentController>().getSoundTime();
             }
@@ -219,11 +230,11 @@ public class PatternController : MonoBehaviour
 
         foreach (Transform child in instrumentsGameObject.transform)
         {
-            if (child.gameObject.GetComponent<InstrumentController>().instrumentObject == newInstrument)
+           
+            if (child.gameObject.GetComponent<InstrumentController>()._instrument == newInstrument.instrument)
             {
-                child.gameObject.GetComponent<InstrumentController>().changeInstrument(false, newInstrument);
-                //if (contInstrument >= countPatrons) //Este indica que es el ultimo
-                //child.gameObject.GetComponent<CrystalController>().idleAnimation();
+                child.gameObject.GetComponent<InstrumentController>().changeInstrument(false);
+                
             }
         }
 
@@ -252,9 +263,10 @@ public class PatternController : MonoBehaviour
     public void checkInstrument(InstrumentController.ENUMINSTRUMENT _enumInstrument, bool instrumentWord)
     {
         isPlaying = false;
-
-        if (instrumentWord)
+       
+        if (instrumentWord && !isChecking)
         {
+            isChecking = true;
             director.SetActive(false);
 
             turnQuietInstruments();
@@ -299,6 +311,9 @@ public class PatternController : MonoBehaviour
 
                     director.SetActive(true);
                 }
+
+                isChecking = false;
+                GetComponent<PatternCheckOrchesta>().canTalk = true;
 
             }
 
