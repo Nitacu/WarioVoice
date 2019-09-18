@@ -8,9 +8,8 @@ public class FadeController : MonoBehaviour
     private const string UNFADESCREEN = "UnFadeScreen";
     private const string IDLE = "IdleFade";
     public GameObject backToMenu;
-    public GameObject speechControl;
+    public GameObject speech;
     public GameObject musicNotes;
-
     private Animator _anim;
 
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class FadeController : MonoBehaviour
 
     public void permanentFade()
     {
-        speechControl.SetActive(false);
+        FindObjectOfType<BotInput>().gameObject.SetActive(false);
         Invoke("finalFade", 2);
         Invoke("backToMenuButton", 3);
     }
@@ -58,7 +57,7 @@ public class FadeController : MonoBehaviour
     private void idleFade()
     {
         _anim.Play(Animator.StringToHash(IDLE), -1, 0f);
-        speechControl.SetActive(true);
+        speech.SetActive(true);
         musicNotes.SetActive(true);
     }
 }

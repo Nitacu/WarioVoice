@@ -9,8 +9,7 @@ public class PatternCheckOrchesta : CommandParser
     private InstrumentController.ENUMINSTRUMENT _enumInstrument;
     private bool instrumentWord = false;
     public bool canTalk = true;
-    public GameObject text;
-    private int cont = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +19,9 @@ public class PatternCheckOrchesta : CommandParser
 
     public override void parseCommand(string command)
     {
-        text.GetComponent<TextMeshProUGUI>().text = gameObject.name;
-        cont++;
-        if (canTalk)
-        {
-            canTalk = false;
-            getInstrument(command);
-        }
+        
+       getInstrument(command);
+
     }
 
     public void getInstrument(string _instrument)
@@ -34,7 +29,7 @@ public class PatternCheckOrchesta : CommandParser
         instrumentWord = false;
 
         foreach (Transform musicInstrument in patternControl.instrumentsGameObject.transform)
-        {       
+        {
             if (_instrument.Equals(musicInstrument.gameObject.GetComponent<InstrumentController>()._instrument.ToString(), System.StringComparison.OrdinalIgnoreCase))
             {
                 instrumentWord = true;
@@ -81,6 +76,6 @@ public class PatternCheckOrchesta : CommandParser
             _enumInstrument = InstrumentController.ENUMINSTRUMENT.VIOLIN;
         }
 
-        
+
     }
 }
