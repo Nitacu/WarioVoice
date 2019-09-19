@@ -276,6 +276,8 @@ public class GameManager
             {
                 //PERDER
                 Debug.Log("Todas las vidas perdidas");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
+                return;
             }
         }
 
@@ -320,6 +322,8 @@ public class GameManager
             {
                 //PERDER
                 Debug.Log("Todas las vidas perdidas");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
+                return;
 
             }
 
