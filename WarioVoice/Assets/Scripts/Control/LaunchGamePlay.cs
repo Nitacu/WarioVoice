@@ -7,16 +7,16 @@ public class LaunchGamePlay : MonoBehaviour
 
     public void LaunchNextMiniGame(bool gamePassed)
     {
-        GameManager.GetInstance().launchMinigame(gamePassed);
+        GameManager.GetInstance().launchNextMinigame(gamePassed);
     }
 
     public void StartGameplay()
     {
-        GameManager.GetInstance().startGame();
+        GameManager.GetInstance().StartGame();
     }
 
     public void ResetOrder()
     {
-        GameManager.GetInstance().setLevelRound();
+        //GameManager.GetInstance().setLevelRound();
     }
 }

@@ -186,7 +186,7 @@ public class BuildingsManager : CommandParser
             }
         }
 
-        Debug.Log("PosiblePairs: " + _posiblePairs.Count);
+        //Debug.Log("PosiblePairs: " + _posiblePairs.Count);
 
         int count = 0;
         List<Pairs> _scenePairs = new List<Pairs>();
@@ -327,7 +327,7 @@ public class BuildingsManager : CommandParser
             StartCoroutine(markPairAsPaired(_firstSelection, _secondSelection));
 
             _matchingText.text = "Great Match!";
-            Debug.Log("Correcto");
+            //Debug.Log("Correcto");
             _pairsMatched++;
 
         }
@@ -336,8 +336,9 @@ public class BuildingsManager : CommandParser
             _firstSelection.GetComponent<SpriteRenderer>().color = _secondSelection.GetComponent<SpriteRenderer>().color = Color.white;
 
             _matchingText.text = "Incorrect! \n" + _firstSelection.GetComponent<BuildPairItem>().RecognitionName + " can't be paired with " + _secondSelection.GetComponent<BuildPairItem>().RecognitionName + ". \n Try a new match";
-            Debug.Log("Incorecto");
-            GameManager.GetInstance().launchMinigame(false);
+            //Debug.Log("Incorecto");
+            //GameManager.GetInstance().launchMinigame(false);
+            GameManager.GetInstance().launchNextMinigame(false);
 
 
         }
@@ -355,7 +356,7 @@ public class BuildingsManager : CommandParser
     {
         yield return new WaitForSeconds(_charTimeToGetBuild);
 
-        Debug.Log("coroutine begin");
+        //Debug.Log("coroutine begin");
 
         first.GetComponent<SpriteRenderer>().color = second.GetComponent<SpriteRenderer>().color = Color.red;
         first.GetComponent<BuildPairItem>().PairedUp = second.GetComponent<BuildPairItem>().PairedUp = true;
@@ -378,7 +379,9 @@ public class BuildingsManager : CommandParser
         else
         {
             //resetLevel(_currentLevel);
-            GameManager.GetInstance().launchMinigame(true);
+            //GameManager.GetInstance().launchMinigame(true);
+            GameManager.GetInstance().launchNextMinigame(true);
+
         }
     }
 
