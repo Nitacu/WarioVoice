@@ -10,7 +10,7 @@ public class WordController : MonoBehaviour
     public List<Sign> signs = new List<Sign>(); //List of all signs in the game (place them in inspector)
     [HideInInspector]
     public List<Sign> signsInGame = new List<Sign>(); //Empty list that will be filled with a certain random number of signs of the main Signs list
-
+    public Sprite emptySign;
     public int gameDifficulty; //Difficulty of the game, this goes from 1 to 10, there must be at least 1 sign per difficulty level to make it work.
     private int numberOfSigns; //This determines the number of signs that the player will 
                                //have to see during the minigame, this number is determined according to difficulty
@@ -97,7 +97,7 @@ public class WordController : MonoBehaviour
 
     private void waitTimeSprite() //Sets sign to the corresponding TEXT
     {
-        playerSign.GetComponent<SpriteRenderer>().sprite = null;
+        playerSign.GetComponent<SpriteRenderer>().sprite = emptySign;
         signText.enabled = true;
         signText.text = signsInGame[currentSign].item.ToString();
     }
