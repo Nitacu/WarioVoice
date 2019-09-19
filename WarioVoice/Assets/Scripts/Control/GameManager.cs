@@ -53,7 +53,7 @@ public class GameManager
             //_instance.setLevelRound();
 
             _instance._lives = 4;
-            _instance._currentBossDifficulty = 1;//o según el progreso que lleve
+            //_instance._currentBossDifficulty = 1;//o según el progreso que lleve
         }
 
         return _instance;
@@ -236,6 +236,8 @@ public class GameManager
 
     public void StartGame()
     {
+        _instance._currentBossDifficulty = SaveAndLoad.loadBossDifficulty();
+
         setMiniGamesRound();
 
         MiniGameLevel miniGameToLaunch = returnRandomMiniGame();
@@ -305,6 +307,8 @@ public class GameManager
         if (bossDefeated)
         {
             _instance._currentBossDifficulty++;
+            SaveAndLoad.saveBossDifficulty(_instance._currentBossDifficulty);
+
             if (_instance._currentBossDifficulty > 5)
             {
                 Debug.Log("JUEGO COMPLETADO WIII!!!");
