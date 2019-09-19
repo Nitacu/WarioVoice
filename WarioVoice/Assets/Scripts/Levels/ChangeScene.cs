@@ -18,7 +18,7 @@ public class ChangeScene : MonoBehaviour
     private const string ENDING = "Ending";
     private const string CREDITS = "Credits";
 
-    private const string WARIOVOICEMENU = "WarioVoiceMenu";
+    public const string WARIOVOICEMENU = "WarioVoiceMenu";
     private const string MATCHBUILDINGS = "Buildings";
     private const string IMITA_AL_BAILARIN = "DanceScene";
     private const string LOVE_SCENE = "LoveScene";

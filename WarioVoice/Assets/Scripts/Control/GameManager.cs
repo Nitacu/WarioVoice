@@ -303,6 +303,13 @@ public class GameManager
         if (bossDefeated)
         {
             _instance._currentBossDifficulty++;
+            if (_instance._currentBossDifficulty > 5)
+            {
+                Debug.Log("JUEGO COMPLETADO WIII!!!");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
+                return;
+            }
+
             StartGame();
         }
         else
