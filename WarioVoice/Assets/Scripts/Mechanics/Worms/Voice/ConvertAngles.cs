@@ -32,18 +32,36 @@ public class ConvertAngles : CommandParser
 
     public void allowPower()
     {
-        _allowShoot = true;
-        _allowPoint = false;
-        //cambio visual
-        FindObjectOfType<GuideControlWorm>().activePower();
+        if (TutorialMode)
+        {
+            _allowShoot = true;
+            _allowPoint = false;
+            //cambio visual
+            FindObjectOfType<GuideControlWorm>().activePower();
+        }
+        else
+        {
+            _allowShoot = true;
+            _allowPoint = true;
+        }
+
     }
 
     public void allowPoint()
     {
-        _allowShoot = false;
-        _allowPoint = true;
-        //cambio visual
-        FindObjectOfType<GuideControlWorm>().activeAngle();
+        if (TutorialMode)
+        {
+            _allowShoot = false;
+            _allowPoint = true;
+            //cambio visual
+            FindObjectOfType<GuideControlWorm>().activeAngle();
+        }
+        else
+        {
+            _allowShoot = true;
+            _allowPoint = true;
+        }
+
     }
 
     public override void parseCommand(string command)
@@ -62,7 +80,7 @@ public class ConvertAngles : CommandParser
                     {
                         int result = Int32.Parse(_sentenses[0]);
 
-                        if (result <=180 && result>=0)
+                        if (result <= 180 && result >= 0)
                         {
                             _pointingGun.point(result);
                             _controlWorm.desactiveAll();
@@ -116,15 +134,15 @@ public class ConvertAngles : CommandParser
                 }
             }
         }
-        else if (_allowShoot)
+        if (_allowShoot)
         {
-            
+
             if (_sentenses.Length == 2)
             {
 
                 if (string.Equals(_sentenses[1], GlossaryOfAngles.PERCENT))
                 {
-                    
+
                     try
                     {
                         int result = Int32.Parse(_sentenses[0]);
@@ -147,7 +165,7 @@ public class ConvertAngles : CommandParser
 
                 if (_sentenses[0][_sentenses[0].Length - 1] == GlossaryOfAngles.SYMBOL_PERCENT.ToCharArray()[0])
                 {
-                    
+
                     _sentenses = _sentenses[0].Split("%".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
                     try
@@ -155,7 +173,7 @@ public class ConvertAngles : CommandParser
                         int result = Int32.Parse(_sentenses[0]);
                         if (result <= 100)
                         {
-                            
+
                             _ammunition.useWeapon(result);
                             _controlWorm.desactiveAll();
                         }

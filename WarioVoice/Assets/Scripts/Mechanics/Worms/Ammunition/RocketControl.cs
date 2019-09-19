@@ -29,7 +29,7 @@ public class RocketControl : MonoBehaviour
             if (FindObjectOfType<ConvertAngles>().TutorialMode)
             {
                 FindObjectOfType<ConvertAngles>().TutorialMode = false;
-                FindObjectOfType<GuideControlWorm>().desactiveAction();
+                FindObjectOfType<ConvertAngles>().allowPoint();
             }
             else
             {
