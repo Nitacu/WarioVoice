@@ -25,6 +25,7 @@ public class WordController : MonoBehaviour
     public GameObject finalScreen;
     #endregion
 
+    private bool winning = false;
     private bool isShowingSign = true;
     [HideInInspector]
     public int currentSign = 0; //Cont variable that determines the sign that will be shown
@@ -148,13 +149,15 @@ public class WordController : MonoBehaviour
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
                     finalScreen.SetActive(true);
-                    GameManager.GetInstance().increaseDifficulty();
+                    
+                    winning = true;
                     FindObjectOfType<FinalScreenController>().winScreenImage();
                    
                 }
             }
             else
             {
+                winning = false;
                 tempSign = signsInGame[currentSign];
                 signsInGame.RemoveAt(currentSign);
                 signsInGame.Add(tempSign);
@@ -169,5 +172,11 @@ public class WordController : MonoBehaviour
             }
         }
     }
+
+    public void nextGame()
+    {
+        GameManager.GetInstance().launchNextMinigame(winning);
+    }
+
 }
 

@@ -8,6 +8,7 @@ public class FadeController : MonoBehaviour
     private const string UNFADESCREEN = "UnFadeScreen";
     private const string IDLE = "IdleFade";
     public GameObject backToMenu;
+    public GameObject lostButton;
     public GameObject speech;
     public GameObject musicNotes;
     private Animator _anim;
@@ -40,6 +41,11 @@ public class FadeController : MonoBehaviour
     public void backToMenuButton()
     {
         backToMenu.SetActive(true);
+    }
+
+    public void lostLevel()
+    {
+        lostButton.SetActive(true);
     }
 
     public void playFade()

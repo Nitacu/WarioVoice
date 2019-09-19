@@ -294,8 +294,9 @@ public class PatternController : MonoBehaviour
                         //Muy bien, ganaste
                         Debug.Log("Ganaste");
                         confetti.SetActive(true);
+                        GameManager.GetInstance();
                         fade.permanentFade();
-                        GameManager.GetInstance().increaseDifficulty();
+                        
                         //messageInScreen.GetComponent<ScreenMessage>().winScreen();
                     }
                 }
@@ -303,7 +304,7 @@ public class PatternController : MonoBehaviour
                 {
                     //Decir que le quedó mal
                     Debug.Log("Perdiste");
-                    fade.backToMenuButton();
+                    fade.lostLevel();
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
                         child.gameObject.GetComponent<InstrumentController>().setQuietInstrument();
@@ -340,6 +341,16 @@ public class PatternController : MonoBehaviour
 
         }
 
+    }
+
+    public void nextLevel()
+    {
+        GameManager.GetInstance().launchNextMinigame(true);
+    }
+
+    public void lostLevel()
+    {
+        GameManager.GetInstance().launchNextMinigame(false);
     }
 
 

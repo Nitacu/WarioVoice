@@ -2743,7 +2743,6 @@ GameObject:
   - component: {fileID: 844595140}
   - component: {fileID: 844595139}
   - component: {fileID: 844595138}
-  - component: {fileID: 844595141}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2814,8 +2813,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844595141}
-        m_MethodName: chanceScene
+      - m_Target: {fileID: 241076755}
+        m_MethodName: nextGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2865,19 +2864,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844595136}
   m_CullTransparentMesh: 0
---- !u!114 &844595141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844595136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199cc92ef9f130f41abff31621e27268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nameScenes: 12
 --- !u!1 &867433867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,7 +4659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACK TO MENU
+  m_Text: CONTINUE
 --- !u!222 &1747566679
 CanvasRenderer:
   m_ObjectHideFlags: 0
