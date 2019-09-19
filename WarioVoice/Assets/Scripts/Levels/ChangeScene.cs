@@ -55,10 +55,9 @@ public class ChangeScene : MonoBehaviour
 
     public enum EspikinglishMinigames
     {
-        MATCHBUILDINGS,
         PAINTING,
-        /*ORCHESTA,
-        WORMS*/
+        ORCHESTA,
+        LOVE_SCENE
     }
 
     public void chanceScene()
@@ -154,15 +153,11 @@ public class ChangeScene : MonoBehaviour
             case EspikinglishMinigames.PAINTING:
                 SceneManager.LoadScene(ABSTRACTPAINTING);
                 break;
-            /*case EspikinglishMinigames.ORCHESTA:
+            case EspikinglishMinigames.ORCHESTA:
                 SceneManager.LoadScene(ORCHESTA);
                 break;
-            case EspikinglishMinigames.WORMS:
-                SceneManager.LoadScene(WORMS);
-                break;*/
-            case EspikinglishMinigames.MATCHBUILDINGS:
-                SceneManager.LoadScene(MATCHBUILDINGS);
-
+            case EspikinglishMinigames.LOVE_SCENE:
+                SceneManager.LoadScene(LOVE_SCENE);
                 break;
             default:
                 break;

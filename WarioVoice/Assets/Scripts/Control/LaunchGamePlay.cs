@@ -7,7 +7,7 @@ public class LaunchGamePlay : MonoBehaviour
 
     public void LaunchNextMiniGame(bool gamePassed)
     {
-        GameManager.GetInstance().launchNextMinigame(gamePassed);
+        GameManager.GetInstance().launchNextMinigame(gamePassed);        
     }
 
     public void StartGameplay()
