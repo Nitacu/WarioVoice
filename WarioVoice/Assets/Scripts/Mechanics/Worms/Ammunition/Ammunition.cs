@@ -10,7 +10,6 @@ public class Ammunition : MonoBehaviour
     [SerializeField] private GameObject _ammoPicture;
     private List<GameObject> _rockets = new List<GameObject>();
     private PointingGun _pointingGun;
-    private EnemyWorms[] _enemys;
     private const float FORCE_SHOOT = 15;
     private GuideControlWorm _guideControlWorm;
     private void Start()
@@ -39,12 +38,6 @@ public class Ammunition : MonoBehaviour
         else
         {
             Destroy(_rockets[0]);
-            _enemys = FindObjectsOfType<EnemyWorms>();
-
-            foreach (EnemyWorms aux in _enemys)
-            {
-                aux.prepareShoot();
-            }
 
             _rockets.RemoveAt(0);
 

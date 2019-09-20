@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyWorms : MonoBehaviour
 {
-    [SerializeField] private int _timeToShoot;
-    private PointingGun _pointingGun;
-    [SerializeField] private GameObject _proyectile;
-    [SerializeField] private Transform _positionShoot;
-    [SerializeField] private GameObject _myFather;
-    [SerializeField] private GameObject _turret;
+    [SerializeField] protected int _timeToShoot;
+    protected PointingGun _pointingGun;
+    [SerializeField] protected GameObject _proyectile;
+    [SerializeField] protected Transform _positionShoot;
+    [SerializeField] protected GameObject _myFather;
+    [SerializeField] protected GameObject _turret;
     public int TimeToShoot { get => _timeToShoot; set => _timeToShoot = value; }
 
-    private void Start()
+    public virtual void Start()
     {
         _pointingGun = FindObjectOfType<PointingGun>();
         aimPlayer();
@@ -30,16 +30,11 @@ public class EnemyWorms : MonoBehaviour
     }
 
     public virtual void prepareShoot()
-    { /*
-        _timeToShoot--;
-        if (_timeToShoot == 0)
-        {
-            shootPlayer();
-        }
-        */
+    { 
+
     }
 
-    public void shootPlayer()
+    public virtual void shootPlayer()
     {
         GameObject aux;
         float angle;

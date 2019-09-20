@@ -5,6 +5,7 @@ using UnityEngine;
 public class RocketControl : MonoBehaviour
 {
     [SerializeField] GameObject _smallExplotion;
+    private EnemyWorms[] _enemys;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,6 +35,13 @@ public class RocketControl : MonoBehaviour
             else
             {
                 FindObjectOfType<GuideControlWorm>().activeKeepAction();
+            }
+
+            _enemys = FindObjectsOfType<EnemyWorms>();
+
+            foreach (EnemyWorms aux in _enemys)
+            {
+                aux.prepareShoot();
             }
 
         }
