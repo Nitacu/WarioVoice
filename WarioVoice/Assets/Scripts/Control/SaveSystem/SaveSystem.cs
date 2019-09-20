@@ -8,34 +8,47 @@ public class SaveSystem
     public const string PLAYERDATA_PLAYERPREFCODE = "PLAYERDATA";
 
 
-    public static int loadBossDifficulty()
+    public static int loadCurrentBossDifficulty()
     {
+        PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
 
-        if (!PlayerPrefs.HasKey(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE))
+        if (_currentPlayerInformation == null)
         {
-            PlayerPrefs.SetInt(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE, 1);
+            return 0;
         }
 
-        return PlayerPrefs.GetInt(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE);
-    }
+        string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
-    public static void saveBossDifficulty(int _bossDifficulty)
-    {
-        PlayerPrefs.SetInt(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE, _bossDifficulty);
-    }
-
-    public static bool getSlot(int slotCode)
-    {
-        string playerData = PLAYERDATA_PLAYERPREFCODE + slotCode.ToString();
-
-        if (PlayerPrefs.HasKey(playerData))
+        if (PlayerPrefs.HasKey(key))
         {
-            return true;
+            return _currentPlayerInformation.bossesDefeated + 1;
         }
         else
         {
-            return false;
+            return 0;
         }
+
+        /*
+        if (!PlayerPrefs.HasKey(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE))
+        {
+            PlayerPrefs.SetInt(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE, 1);
+        }*/
+
+        return _currentPlayerInformation.bossesDefeated + 1;
     }
+
+    public static void saveCurrentBossDifficulty(int _bossDifficulty)
+    {
+        //bossDificulty siempre es +1 de los bosses derrotados
+
+        PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
+
+        _currentPlayerInformation.bossesDefeated = _bossDifficulty - 1;
+
+        string json = JsonUtility.ToJson(_currentPlayerInformation);
+        string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
+
+        PlayerPrefs.SetString(key, json);
+    } 
 
 }

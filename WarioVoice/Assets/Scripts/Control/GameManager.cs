@@ -46,6 +46,13 @@ public class GameManager
         set { _lives = value; }
     }
 
+    private PlayerInformation _currentPlayerInformation;
+    public PlayerInformation CurrentPlayerInformation
+    {
+        get { return _currentPlayerInformation; }
+        set { _currentPlayerInformation = value; }
+    }
+
     private static GameManager _instance;
 
     public static GameManager GetInstance()
@@ -53,6 +60,7 @@ public class GameManager
 
         if (_instance == null)
         {
+            Debug.Log("GameManager Instanciated");
             _instance = new GameManager();
 
             //_instance.setLevelRound();
@@ -141,7 +149,7 @@ public class GameManager
         _instance._gameLossed = false;
         _instance._gameCompleted = false;
 
-        _instance._currentBossDifficulty = SaveSystem.loadBossDifficulty();
+        _instance._currentBossDifficulty = SaveSystem.loadCurrentBossDifficulty();
 
         setMiniGamesRound();
 
@@ -226,7 +234,7 @@ public class GameManager
         if (bossDefeated)
         {
             _instance._currentBossDifficulty++;
-            SaveSystem.saveBossDifficulty(_instance._currentBossDifficulty);
+            SaveSystem.saveCurrentBossDifficulty(_instance._currentBossDifficulty);
 
             if (_instance._currentBossDifficulty > 5)
             {

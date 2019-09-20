@@ -38,4 +38,10 @@ public class ShowSlotData : MonoBehaviour
         PlayerPrefs.DeleteKey(key);
         FindObjectOfType<FileManager>().backToSlots();
     }
+
+    public void continueGamePlay()
+    {
+        GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
+        GameManager.GetInstance().StartGame();
+    }
 }
