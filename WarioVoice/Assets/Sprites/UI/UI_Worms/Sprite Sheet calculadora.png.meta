@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: ce41135c737796045be481132ac039a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3156328333534367963
+    second: Sprite Sheet calculadora_0
+  - first:
+      213: -1201341860368076725
+    second: Sprite Sheet calculadora_1
+  - first:
+      213: -3337077957241031883
+    second: Sprite Sheet calculadora_2
+  - first:
+      213: 8013873043274686348
+    second: Sprite Sheet calculadora_3
+  - first:
+      213: 5630024864492843103
+    second: Sprite Sheet calculadora_4
+  - first:
+      213: 200260937531554768
+    second: Sprite Sheet calculadora_5
+  - first:
+      213: 8706257142860259276
+    second: Sprite Sheet calculadora_6
+  - first:
+      213: -8497125575919323818
+    second: Sprite Sheet calculadora_7
+  - first:
+      213: 7913992552812341834
+    second: Sprite Sheet calculadora_8
+  - first:
+      213: 2730529007884388561
+    second: Sprite Sheet calculadora_9
+  - first:
+      213: -6490133018498055306
+    second: Sprite Sheet calculadora_10
+  - first:
+      213: -1416328221922327307
+    second: Sprite Sheet calculadora_11
+  - first:
+      213: 7906860308897184590
+    second: Sprite Sheet calculadora_12
+  - first:
+      213: 387684920148715136
+    second: Sprite Sheet calculadora_13
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_0
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 633
+        width: 52
+        height: 14
+      alignment: 9
+      pivot: {x: 0.9934375, y: 0.48909214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85a6e2b3e520be4e8c41f3e23f36bb9
+      internalID: -3156328333534367963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 555
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e530177bd28864392e51405c82ae88
+      internalID: -1201341860368076725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 429
+        width: 66
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1f045a897c9f547a8903509c618b7e
+      internalID: -3337077957241031883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 587
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042c28d57b059e54d9acaee3cb4a19e8
+      internalID: 8013873043274686348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 492
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4d4bf1de2e545448d9e22019a0628e
+      internalID: 5630024864492843103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_5
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 541
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060a1ec6d42188d4e817fa62dddfab2a
+      internalID: 200260937531554768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_6
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 534
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6a2861d167bc0438565fadeebaa6a7
+      internalID: 8706257142860259276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 416
+        width: 95
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a0836c5b90c1340ab04a8afbc67717
+      internalID: -8497125575919323818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 480
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c8227678fc5ae4da272844de3c348f
+      internalID: 7913992552812341834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_9
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 414
+        width: 55
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743db5a07ce8e7a418dc291102ab8efd
+      internalID: 2730529007884388561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 386
+        width: 93
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a333c689ea1b994fa0bf0ed52c023f2
+      internalID: -6490133018498055306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_11
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 418
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45b5cdd5fd469f4691938f9850e54f9
+      internalID: -1416328221922327307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 214
+        width: 565
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112da636379c29546a2c4513be8817b9
+      internalID: 7906860308897184590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet calculadora_13
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 41
+        width: 565
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a407a51de6b0fe47af643a946a305e2
+      internalID: 387684920148715136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
