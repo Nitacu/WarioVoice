@@ -26,6 +26,7 @@ public class ChangeScene : MonoBehaviour
     private const string ABSTRACTPAINTING = "AbstractPainting";
     private const string ORCHESTA = "Orquesta";
     private const string WORMS = "Worms";
+    public const string BETWEENMINIGAMES = "BetweenMiniGames";
 
     [SerializeField] private nameScenes _nameScenes;
 
@@ -50,14 +51,16 @@ public class ChangeScene : MonoBehaviour
         RPG,
         PAINTING,
         ORCHESTA,
-        WORMS
+        WORMS,
+        BETWEENMINIGAMES
     }    
 
     public enum EspikinglishMinigames
     {
         PAINTING,
         ORCHESTA,
-        LOVE_SCENE
+        LOVE_SCENE,
+        RPG
     }
 
     public void chanceScene()
@@ -142,6 +145,9 @@ public class ChangeScene : MonoBehaviour
             case nameScenes.WORMS:
                 SceneManager.LoadScene(WORMS);
                 break;
+            case nameScenes.BETWEENMINIGAMES:
+                SceneManager.LoadScene(BETWEENMINIGAMES);
+                break;
         }
     }
 
@@ -158,6 +164,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case EspikinglishMinigames.LOVE_SCENE:
                 SceneManager.LoadScene(LOVE_SCENE);
+                break;
+            case EspikinglishMinigames.RPG:
+                SceneManager.LoadScene(RPG);
                 break;
             default:
                 break;
