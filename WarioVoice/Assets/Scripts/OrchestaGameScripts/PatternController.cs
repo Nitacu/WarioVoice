@@ -33,19 +33,20 @@ public class PatternController : MonoBehaviour
     private int contInstrument = 0;
     private int contChecking = 0;
     private bool isChecking = false;
-  
+
 
     // Start is called before the first frame update
     void Start()
     {
         difficulty = GameManager.GetInstance().getGameDifficulty();
+
         selectDifficulty();
-        
+
         patternPanel = FindObjectOfType<PatternPanelController>();
         partiture = FindObjectOfType<PartitureController>();
         fade = FindObjectOfType<FadeController>();
         patternCreator = FindObjectOfType<PatternCreator>();
-        
+
         instrumentCreator();
 
         for (int i = 0; i < numberOfPatterns; i++)
@@ -63,7 +64,7 @@ public class PatternController : MonoBehaviour
 
     private void setInstruments()
     {
-        
+
         contInstrumentCreator = 0;
         for (int i = 0; i < numberOfInstruments; i++)
         {
@@ -71,7 +72,7 @@ public class PatternController : MonoBehaviour
             {
                 if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
                 {
-                    
+
                     child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
                     Debug.Log(patronList[currentPatron][contInstrumentCreator].instrument.ToString());
                     child.gameObject.GetComponent<InstrumentController>().setInstrument();
@@ -85,20 +86,20 @@ public class PatternController : MonoBehaviour
 
     private void disableInstruments() //this method deactivates all unused instruments in the pattern
     {
-        
+
         foreach (Transform child in instrumentsGameObject.transform)
         {
             child.gameObject.SetActive(false);
         }
 
         for (int i = 0; i < numberOfInstruments; i++)
-        {      
+        {
             foreach (Transform child in instrumentsGameObject.transform)
             {
                 if (child.gameObject.GetComponent<InstrumentController>().instrumentObject == patronList[currentPatron][contInstrumentCreator])
                 {
                     child.gameObject.SetActive(true);
-                }        
+                }
             }
             contInstrumentCreator++;
         }
@@ -109,13 +110,13 @@ public class PatternController : MonoBehaviour
     {
         patternPanel.musicPatternCreator(patronList[currentPatron]);
         patternPanel.gameObject.SetActive(false);
-        
+
         showPatron();
     }
 
     private void disableColliders()
     {
-        foreach(Transform child in instrumentsGameObject.transform)
+        foreach (Transform child in instrumentsGameObject.transform)
         {
             child.GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -199,7 +200,7 @@ public class PatternController : MonoBehaviour
     }
 
     IEnumerator ShowInstrument(float delayTime, Instrument newInstrument)
-    {     
+    {
         yield return new WaitForSeconds(delayTime);
         Debug.Log(newInstrument.instrument.ToString());
 
@@ -209,10 +210,10 @@ public class PatternController : MonoBehaviour
 
         foreach (Transform child in instrumentsGameObject.transform)
         {
-            
+
             if (child.gameObject.GetComponent<InstrumentController>()._instrument == newInstrument.instrument)
             {
-                
+
                 child.gameObject.GetComponent<InstrumentController>().changeInstrument(true);
                 child.gameObject.GetComponent<InstrumentController>().playSound();
                 clipDuration = child.gameObject.GetComponent<InstrumentController>().getSoundTime();
@@ -230,11 +231,11 @@ public class PatternController : MonoBehaviour
 
         foreach (Transform child in instrumentsGameObject.transform)
         {
-           
+
             if (child.gameObject.GetComponent<InstrumentController>()._instrument == newInstrument.instrument)
             {
                 child.gameObject.GetComponent<InstrumentController>().changeInstrument(false);
-                
+
             }
         }
 
@@ -263,7 +264,7 @@ public class PatternController : MonoBehaviour
     public void checkInstrument(InstrumentController.ENUMINSTRUMENT _enumInstrument, bool instrumentWord)
     {
         isPlaying = false;
-       
+
         if (instrumentWord && !isChecking)
         {
             isChecking = true;
@@ -296,7 +297,7 @@ public class PatternController : MonoBehaviour
                         confetti.SetActive(true);
                         GameManager.GetInstance();
                         fade.permanentFade();
-                        
+
                         //messageInScreen.GetComponent<ScreenMessage>().winScreen();
                     }
                 }
@@ -332,7 +333,7 @@ public class PatternController : MonoBehaviour
         partiture.gameObject.SetActive(false);
         activateColliders();
         director.SetActive(true);
-        
+
         audience.SetActive(true);
 
         foreach (Transform child in instrumentsGameObject.transform)

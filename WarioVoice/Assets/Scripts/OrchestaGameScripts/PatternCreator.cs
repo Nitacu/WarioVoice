@@ -7,7 +7,7 @@ public class PatternCreator : MonoBehaviour
     
     private int instrumentNumber;
 
-    Instrument crystalsInGame;
+    Instrument lastInstrument = null;
 
 
 
@@ -16,7 +16,7 @@ public class PatternCreator : MonoBehaviour
 
         Instrument[] pattern = new Instrument[patternDuration];
         for (int i = 0; i < patternDuration; i++)
-        {
+        {  
             pattern[i] = getRandomInstrument(numberOfCrystals, instruments);
         }
 
@@ -28,7 +28,19 @@ public class PatternCreator : MonoBehaviour
 
         instrumentNumber = Random.Range(0, instruments.Count);
 
-        return instruments[instrumentNumber];
+        if(instruments[instrumentNumber] == lastInstrument)
+        {
+            
+            return getRandomInstrument(numberOfCrystals, instruments);
+
+        }
+        else {
+            lastInstrument = instruments[instrumentNumber];
+            return instruments[instrumentNumber];        
+        }
+
+        
+        
     }
 
 }
