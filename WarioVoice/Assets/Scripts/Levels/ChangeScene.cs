@@ -63,6 +63,7 @@ public class ChangeScene : MonoBehaviour
         PAINTING,
         ORCHESTA,
         LOVE_SCENE,
+        WORMS,
         RPG
     }
 
@@ -173,6 +174,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case EspikinglishMinigames.RPG:
                 SceneManager.LoadScene(RPG);
+                break;
+            case EspikinglishMinigames.WORMS:
+                SceneManager.LoadScene(WORMS);
                 break;
             default:
                 break;
