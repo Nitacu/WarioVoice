@@ -100,6 +100,10 @@ public class AbstractPaintingManager : CommandParser
     }
 
     [SerializeField] private List<PaintingLevel> _levels = new List<PaintingLevel>();
+    public List<PaintingLevel> Levels
+    {
+        get { return _levels; }
+    }
 
     [SerializeField] private LayerMask _canvasMask;
     [SerializeField] private GameObject _brush;
@@ -107,6 +111,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
     [SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
+    [SerializeField] private SetBottles _bottlesHelp;
 
     [Header("UI Control")]
     [SerializeField] private TextMeshProUGUI _level;
@@ -278,6 +283,7 @@ public class AbstractPaintingManager : CommandParser
         }
 
         setHelpButtons();
+        _bottlesHelp.setBottles();
     }
 
     public override void parseCommand(string command)

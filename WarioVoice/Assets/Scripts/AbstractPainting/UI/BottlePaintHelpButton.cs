@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class HelpButton : MonoBehaviour, IPointerDownHandler
+public class BottlePaintHelpButton : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private Image _sprite;
-    public Image Sprite { get => _sprite; set => _sprite = value; }
 
     [SerializeField] private TextMeshProUGUI _text;
     public TextMeshProUGUI Text { get => _text; set => _text = value; }
@@ -17,11 +15,11 @@ public class HelpButton : MonoBehaviour, IPointerDownHandler
     public AudioClip AudioClip { get => _audioClip; set => _audioClip = value; }
 
 
-    [SerializeField] private Color _bottleColor;
+    [SerializeField] private Image _bottleColor;
     public Color BottleColor
     {
-        get { return _bottleColor; }
-        set { _bottleColor = value; }
+        get { return _bottleColor.color; }
+        set { _bottleColor.color = value; }
     }
 
 
@@ -31,6 +29,6 @@ public class HelpButton : MonoBehaviour, IPointerDownHandler
         {
             GetComponent<AudioSource>().clip = _audioClip;
             GetComponent<AudioSource>().Play();
-        }      
+        }
     }
 }
