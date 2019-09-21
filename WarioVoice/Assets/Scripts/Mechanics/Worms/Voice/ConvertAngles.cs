@@ -11,8 +11,8 @@ public class ConvertAngles : CommandParser
     private PointingGun _pointingGun;
     private Ammunition _ammunition;
     private GuideControlWorm _controlWorm;
-    private bool _allowPoint = false;
-    private bool _allowShoot = false;
+    [SerializeField]private bool _allowPoint = false;
+    [SerializeField] private bool _allowShoot = false;
     [SerializeField] private TMP_InputField _inputField;
     public bool AllowPoint { get => _allowPoint; set => _allowPoint = value; }
     public bool AllowShoot { get => _allowShoot; set => _allowShoot = value; }
@@ -22,7 +22,7 @@ public class ConvertAngles : CommandParser
         _controlWorm = FindObjectOfType<GuideControlWorm>();
         _pointingGun = FindObjectOfType<PointingGun>();
         _ammunition = FindObjectOfType<Ammunition>();
-
+        allowPoint();
     }
 
     public void angle()
@@ -43,6 +43,7 @@ public class ConvertAngles : CommandParser
         {
             _allowShoot = true;
             _allowPoint = true;
+            FindObjectOfType<SetActiveSpeechButton>().setButton(true);
         }
 
     }
@@ -60,6 +61,7 @@ public class ConvertAngles : CommandParser
         {
             _allowShoot = true;
             _allowPoint = true;
+            FindObjectOfType<SetActiveSpeechButton>().setButton(true);
         }
 
     }

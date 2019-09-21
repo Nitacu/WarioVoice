@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CalculatorControl : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
-    [SerializeField] private GameObject _contentCalculator;
+    
     private Animator _anim;
 
     private void Start()

@@ -9,13 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/WarioVoice/WarioVoiceMenu.unity
     guid: f1b222f8fd67ac44f888d9fe2e1d9971
   - enabled: 1
-    path: Assets/Scenes/WarioVoice/Worms/TextToSpeech.unity
-    guid: 661dffed67d594340b2fd7c895873e11
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/WarioVoice/Worms/Worms.unity
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D1.unity
     guid: 5e6d143783b28484c8d5fc81cf71b92f
   - enabled: 1
     path: Assets/Scenes/WarioVoice/RPG_Adventure/RPg_adventure.unity
@@ -74,4 +68,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/OrquestaScene/Orquesta.unity
     guid: 0a09bd7ce61b21348817c097ec699525
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms.unity
+    guid: 99cb4fb4f29460a47a24b0f5f422e56b
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D2.unity
+    guid: 2c8cec2837d3d4f489985c2e7390eb57
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D3.unity
+    guid: 983919f6c4f31974094372e4a286f905
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D4.unity
+    guid: 78dd0153f81ea9749b183a7b8ea353e7
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D5.unity
+    guid: 4c3d819bf016dbc479a459561d8078e6
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D6.unity
+    guid: 7b6545d78c3c6e24b84ea37c7980e279
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D7.unity
+    guid: 33f9bae6a6af3324e956c4df24c3019e
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D8.unity
+    guid: f000c5bf61693bb4e92196450f6e90b4
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D9.unity
+    guid: 088a8255c6f965e4ca659bfc9fbb69cc
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D10.unity
+    guid: bb38dbda4b1e95a4fb1b0f791aa8be15
   m_configObjects: {}

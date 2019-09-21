@@ -81,7 +81,7 @@ public class PointingGun : MonoBehaviour
 
     public void exitScene()
     {
-        SceneManager.LoadScene("WarioVoiceMenu");
+        GameManager.GetInstance().launchNextMinigame(false);
     }
 
 }

@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ConfigurationWorms : MonoBehaviour
 {
-    [SerializeField]private int _numberEnemys = 0;
+    private int _numberEnemys;
     private int _numberAmunition = 0;
     [SerializeField] private GameObject _conffeti;
     void Start()
     {
+        _numberEnemys = FindObjectsOfType<EnemyWorms>().Length;
         configurationLevel();
     }
 
@@ -18,7 +19,6 @@ public class ConfigurationWorms : MonoBehaviour
     {
         if (_numberEnemys > 0)
         {
-            
             EnemyWorms[] enemyWorms =  FindObjectsOfType<EnemyWorms>();
 
             foreach(EnemyWorms enemy in enemyWorms)
@@ -35,13 +35,12 @@ public class ConfigurationWorms : MonoBehaviour
         {
             Instantiate(_conffeti);
             Invoke("exitScene", 2);
-            Debug.Log("Ganaste");
         }
     }
 
     public void exitScene()
     {
-        SceneManager.LoadScene("WarioVoiceMenu");
+        GameManager.GetInstance().launchNextMinigame(true);
     }
 
     public void configurationLevel()

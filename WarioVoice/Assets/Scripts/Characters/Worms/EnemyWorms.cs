@@ -54,7 +54,6 @@ public class EnemyWorms : MonoBehaviour
     {
         if (collision.CompareTag(Tags.Rocket))
         {
-            Debug.Log("si entra");
             FindObjectOfType<ConfigurationWorms>().destroyEnemy();
             Destroy(collision.gameObject);
             Destroy(_myFather);
