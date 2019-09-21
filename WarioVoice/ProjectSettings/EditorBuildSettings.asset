@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/WarioVoiceMenu.unity
     guid: f1b222f8fd67ac44f888d9fe2e1d9971
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Worms/TextToSpeech.unity
+    guid: 661dffed67d594340b2fd7c895873e11
   - enabled: 0
     path: 
-    guid: b49e240f4c24df742a0cd1cb77cf6097
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/WarioVoice/Worms/Worms.unity
     guid: 5e6d143783b28484c8d5fc81cf71b92f
