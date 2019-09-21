@@ -301,7 +301,16 @@ public class AbstractPaintingManager : CommandParser
     {
         GameObject _newSplash = Instantiate(_splashBasePrefab);
         _newSplash.GetComponent<SpriteRenderer>().sprite = _currentSplashColorSelected._splashImage;
-        _newSplash.transform.localScale = new Vector3(_levels[_currentLevel].SplashSizeScale, _levels[_currentLevel].SplashSizeScale, 1);
+
+        float factor = _levels[_currentLevel].ReferencePaint.transform.localScale.x / _levels[_currentLevel].SplashesInReferencePaint[0].transform.localScale.x;
+        float newScale = _myCanvasTransform.localScale.x / factor;
+
+        Debug.Log("Reference: " + _levels[_currentLevel].SplashesInReferencePaint[0].transform.localScale.x + " * " + factor + " = " + _levels[_currentLevel].ReferencePaint.transform.localScale.x);
+        Debug.Log("My: " + _splashBasePrefab.transform.localScale.x + " * " + newScale + " = " + _myCanvasTransform.localScale.x);
+
+
+        _newSplash.transform.localScale = new Vector3(newScale, newScale, 1);
+        //_newSplash.transform.localScale = new Vector3(_levels[_currentLevel].SplashSizeScale, _levels[_currentLevel].SplashSizeScale, 1);
         Vector3 _newposition = new Vector3(_position.x, _position.y, 0);
         _newSplash.transform.position = _newposition;
         _newSplash.GetComponent<PaintSplash>().MySplashColorType = _currentSplashColorSelected;
@@ -386,7 +395,7 @@ public class AbstractPaintingManager : CommandParser
                 _splashCoincidencesCount++;
             }
 
-            Destroy(_copyReferenceSplash);
+            //Destroy(_copyReferenceSplash);
         }
 
         _coindencePercentage = (_splashCoincidencesCount * 100) / _levels[_currentLevel].SplashesInReferencePaint.Count;
