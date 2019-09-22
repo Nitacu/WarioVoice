@@ -27,6 +27,8 @@ public class ChangeScene : MonoBehaviour
     private const string ORCHESTA = "Orquesta";
     private const string WORMS = "Worms";
     public const string BETWEENMINIGAMES = "BetweenMiniGames";
+    public const string LOADDATA = "WarioVoiceLoadPlayerData";
+
 
     [SerializeField] private nameScenes _nameScenes;
 
@@ -52,7 +54,8 @@ public class ChangeScene : MonoBehaviour
         PAINTING,
         ORCHESTA,
         WORMS,
-        BETWEENMINIGAMES
+        BETWEENMINIGAMES,
+        LOADDATA
     }    
 
     public enum EspikinglishMinigames
@@ -60,6 +63,7 @@ public class ChangeScene : MonoBehaviour
         PAINTING,
         ORCHESTA,
         LOVE_SCENE,
+        WORMS,
         RPG
     }
 
@@ -148,6 +152,9 @@ public class ChangeScene : MonoBehaviour
             case nameScenes.BETWEENMINIGAMES:
                 SceneManager.LoadScene(BETWEENMINIGAMES);
                 break;
+            case nameScenes.LOADDATA:
+                SceneManager.LoadScene(LOADDATA);
+                break;
         }
     }
 
@@ -167,6 +174,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case EspikinglishMinigames.RPG:
                 SceneManager.LoadScene(RPG);
+                break;
+            case EspikinglishMinigames.WORMS:
+                SceneManager.LoadScene(WORMS);
                 break;
             default:
                 break;

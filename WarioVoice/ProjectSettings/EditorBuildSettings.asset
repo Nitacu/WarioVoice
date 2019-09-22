@@ -98,4 +98,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/Worms/Worms_D10.unity
     guid: bb38dbda4b1e95a4fb1b0f791aa8be15
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/WarioVoiceLoadPlayerData.unity
+    guid: b9b1b86d56e05834981f30bb3af46c48
   m_configObjects: {}

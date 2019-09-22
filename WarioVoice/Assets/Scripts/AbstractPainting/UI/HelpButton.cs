@@ -16,6 +16,15 @@ public class HelpButton : MonoBehaviour, IPointerDownHandler
     private AudioClip _audioClip;
     public AudioClip AudioClip { get => _audioClip; set => _audioClip = value; }
 
+
+    [SerializeField] private Color _bottleColor;
+    public Color BottleColor
+    {
+        get { return _bottleColor; }
+        set { _bottleColor = value; }
+    }
+
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!GetComponent<AudioSource>().isPlaying)
