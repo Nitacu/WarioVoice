@@ -32,11 +32,26 @@ public class ShowSlotData : MonoBehaviour
 
     }
 
+    public void DeleteConfirmation(bool confirmation)
+    {
+        if (confirmation)
+        {
+            string key = SaveSystem.PLAYERDATA_PLAYERPREFCODE + FindObjectOfType<FileManager>().PlayerInfSelected.slotNumber.ToString();
+            PlayerPrefs.DeleteKey(key);
+            StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.SLOTS));
+        }
+        else
+        {
+            StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.SHOWSLOT));
+        }
+    }
+
     public void ResetData()
     {
-        string key = SaveSystem.PLAYERDATA_PLAYERPREFCODE + FindObjectOfType<FileManager>().PlayerInfSelected.slotNumber.ToString();
-        PlayerPrefs.DeleteKey(key);
-        FindObjectOfType<FileManager>().backToSlots();
+        //string key = SaveSystem.PLAYERDATA_PLAYERPREFCODE + FindObjectOfType<FileManager>().PlayerInfSelected.slotNumber.ToString();
+        //PlayerPrefs.DeleteKey(key);
+        StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.RESET));
+        //FindObjectOfType<FileManager>().backToSlots();
     }
 
     public void continueGamePlay()

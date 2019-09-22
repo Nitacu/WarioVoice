@@ -19,6 +19,8 @@ public class FileSlot : MonoBehaviour, IPointerDownHandler
 
     private void OnEnable()
     {
+
+
         string key = SaveSystem.PLAYERDATA_PLAYERPREFCODE + _codeFile.ToString();
 
         if (PlayerPrefs.HasKey(key))
@@ -61,11 +63,16 @@ public class FileSlot : MonoBehaviour, IPointerDownHandler
     {
         if (hasData)
         {
-            FindObjectOfType<FileManager>().showMore(_currentplayerInformation, _currentplayerInformation.slotNumber);
+            FindObjectOfType<FileManager>().CurrentSlotSelected = _codeFile;
+            FindObjectOfType<FileManager>().PlayerInfSelected = _currentplayerInformation;
+            StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.SHOWSLOT));
+            //FindObjectOfType<FileManager>().showMore(_currentplayerInformation, _currentplayerInformation.slotNumber);
         }
         else
         {
-            FindObjectOfType<FileManager>().showMore(null, _codeFile);
+            FindObjectOfType<FileManager>().CurrentSlotSelected = _codeFile;
+            StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.CREATESLOT));
+            //FindObjectOfType<FileManager>().showMore(null, _codeFile);
         }
 
     }

@@ -15,17 +15,39 @@ public class CreateSlot : MonoBehaviour
     [SerializeField] TextMeshProUGUI _name;
     [SerializeField] TextMeshProUGUI _namePlaceHolder;
 
+    [SerializeField] GameObject _warningIcon;
+
 
     private void OnEnable()
     {
         _namePlaceHolder.text = PLACEHOLDER;      
         _inputfield.Select();
-        _name.text = "";
+        _inputfield.text = "";
         _fileNumber.text = FILE + FindObjectOfType<FileManager>().CurrentSlotSelected.ToString();
+    }
+
+    private void Update()
+    {
+        if (_inputfield.text.Length != 0)
+        {
+            _warningIcon.SetActive(false);
+        }
     }
 
     public void createSlot()
     {
-        FindObjectOfType<FileManager>().createNewSlot(_name.text);
+       
+        if (_inputfield.text.Length != 0)
+        {
+            FindObjectOfType<FileManager>().createNewSlot(_inputfield.text);
+            StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.SHOWSLOT));
+        }
+        else
+        {
+            _warningIcon.SetActive(true);
+        }
+
+       
+
     }
 }

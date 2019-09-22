@@ -29,6 +29,7 @@ public class FileManager : MonoBehaviour
     [SerializeField] private GameObject _slotContainer;
     [SerializeField] private GameObject _createASlotUI;
     [SerializeField] private GameObject _showDataUI;
+    [SerializeField] private GameObject _deleteConfirmationUI;
 
     private float _timeToHideSlots;
     private float _trackTimeToHide;
@@ -39,12 +40,22 @@ public class FileManager : MonoBehaviour
     public PlayerInformation PlayerInfSelected
     {
         get { return _playerInfSelected; }
+        set { _playerInfSelected = value; }
     }
 
     private int _currentSlotSelected;
     public int CurrentSlotSelected
     {
         get { return _currentSlotSelected; }
+        set { _currentSlotSelected = value; }
+    }
+
+    public enum Menus
+    {
+        SLOTS,
+        SHOWSLOT,
+        CREATESLOT,
+        RESET
     }
 
     private void Start()
@@ -56,30 +67,10 @@ public class FileManager : MonoBehaviour
         _slotContainer.SetActive(true);
         _createASlotUI.SetActive(false);
         _showDataUI.SetActive(false);
+        _deleteConfirmationUI.SetActive(false);
     }
 
-    private void Update()
-    {
-        /*if (hideSlots)
-        {
-            if (_trackTimeToHide > 0)
-            {
-                _trackTimeToHide -= Time.deltaTime;
 
-                float alpha = _trackTimeToHide / _timeToHideSlots;
-
-                _slotContainer.GetComponent<CanvasGroup>().alpha = alpha;
-
-
-            }
-            else
-            {
-                _slotContainer.SetActive(false);
-
-                hideSlots = false;
-            }
-        }*/
-    }
 
     public void createNewSlot(string name)
     {
@@ -95,95 +86,62 @@ public class FileManager : MonoBehaviour
         PlayerPrefs.SetString(newKey, json);
 
         _playerInfSelected = newSlot;
-        _createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
 
-        showMore(_playerInfSelected, _playerInfSelected.slotNumber);
+
+        //_createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
+
+        //showMore(_playerInfSelected, _playerInfSelected.slotNumber);
     }
-    
 
-    public void showMore(PlayerInformation playerInformationToShow, int slotSelected)
+
+    public IEnumerator showMenu(FileManager.Menus _menuType)
     {
-        //hideSlots = true;
-        //_trackTimeToHide = _timeToHideSlots;
 
         _slotContainer.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
+        _createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
+        _showDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
+        _deleteConfirmationUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
 
-        if (playerInformationToShow != null)
-        {
-            _playerInfSelected = playerInformationToShow;
-            _currentSlotSelected = _playerInfSelected.slotNumber;
-            StartCoroutine(chargeShowMore(true));
-
-            //_mainTextEnglish.text = CONTINUE_ENG;
-            //_mainTextSpanish.text = CONTINUE_SPA;
-        }
-        else
-        {
-            _currentSlotSelected = slotSelected;
-            StartCoroutine(chargeShowMore(false));
-
-            //_mainTextEnglish.text = WRITENAME_ENG;
-            //_mainTextSpanish.text = WRITENAME_SPA;
-        }
-
-    }
-    
-
-    IEnumerator chargeShowMore(bool hasPlayerInformation)
-    {
         yield return new WaitForSeconds(_timeToHideSlots);
+
         _slotContainer.SetActive(false);
-
-        if (hasPlayerInformation)
-        {
-            _showDataUI.SetActive(true);
-            _showDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
-            _mainTextEnglish.text = CONTINUE_ENG;
-            _mainTextSpanish.text = CONTINUE_SPA;
-        }
-        else
-        {
-            _createASlotUI.SetActive(true);
-            _createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
-            _mainTextEnglish.text = WRITENAME_ENG;
-            _mainTextSpanish.text = WRITENAME_SPA;
-        }
-
-    }
-
-    public void backToSlots()
-    {
-        try
-        {
-            _createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
-        }
-        catch (System.Exception)
-        {
-
-            throw;
-        }   
-        try
-        {
-            _showDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
-        }
-        catch (System.Exception)
-        {
-            throw;
-        }
-
-        StartCoroutine(chargeBackToSlots());
-    }
-
-    IEnumerator chargeBackToSlots()
-    {
-        yield return new WaitForSeconds(_timeToHideSlots);
-
         _createASlotUI.SetActive(false);
         _showDataUI.SetActive(false);
+        _deleteConfirmationUI.SetActive(false);
 
-        _mainTextEnglish.text = CHOOSEFILE_ENG;
-        _mainTextSpanish.text = CHOOSEFILE_SPA;
-        _slotContainer.SetActive(true);
-        _slotContainer.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+
+        switch (_menuType)
+        {
+            case Menus.SLOTS:
+                _slotContainer.SetActive(true);
+                _slotContainer.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+                _mainTextEnglish.text = CHOOSEFILE_ENG;
+                _mainTextSpanish.text = CHOOSEFILE_SPA;
+                break;
+            case Menus.SHOWSLOT:
+                _showDataUI.SetActive(true);
+                _showDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+                _mainTextEnglish.text = CONTINUE_ENG;
+                _mainTextSpanish.text = CONTINUE_SPA;
+                break;
+            case Menus.CREATESLOT:
+                _createASlotUI.SetActive(true);
+                _createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+                _mainTextEnglish.text = WRITENAME_ENG;
+                _mainTextSpanish.text = WRITENAME_SPA;
+                break;
+            case Menus.RESET:
+                _deleteConfirmationUI.SetActive(true);
+                _deleteConfirmationUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+                break;
+        }
     }
+    
+    public void backToSlots()
+    {
+        StartCoroutine(showMenu(Menus.SLOTS));
+
+
+    }
+
 }

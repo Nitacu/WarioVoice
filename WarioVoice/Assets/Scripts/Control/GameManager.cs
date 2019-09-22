@@ -215,7 +215,6 @@ public class GameManager
 
             MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty);
             _instance._currentMinigame = miniGameToLaunch;
-
         }
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
