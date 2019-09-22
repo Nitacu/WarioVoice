@@ -163,6 +163,8 @@ public class GameManager
 
     public void launchNextMinigame(bool minigamePassed)
     {
+        SaveSystem.increasePlayedTime();
+
         _instance._liveLossed = false;
         _instance._gameLossed = false;
 
@@ -191,10 +193,7 @@ public class GameManager
             {
                 //PERDER
                 Debug.Log("Todas las vidas perdidas");
-                //_instance._currentMinigame = null;
                 _instance._gameLossed = true;
-                /*UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
-                return;*/
             }
         }        
 
@@ -204,14 +203,11 @@ public class GameManager
 
             _instance.currentGameDifficulty = miniGameToLaunch._difficulty;
             _instance._currentMinigame = miniGameToLaunch;
-
-            //ChangeScene.ChangeSceneProgression(miniGameToLaunch._miniGame);
         }
         else
         {
             //lanzar boss
             _instance.currentGameDifficulty = _instance._currentBossDifficulty;
-            //UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.RPG);
 
             MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty);
             _instance._currentMinigame = miniGameToLaunch;
@@ -220,14 +216,18 @@ public class GameManager
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
     }
 
+    
+
     public void LoadMinigame()
     {
+
         _instance.currentGameDifficulty = _instance._currentMinigame._difficulty;
         ChangeScene.ChangeSceneProgression(_instance._currentMinigame._miniGame);
     }
 
     public void finisBossBattle(bool bossDefeated)
     {
+        _instance._liveLossed = false;
         _gameCompleted = false;
 
         if (bossDefeated)
@@ -238,13 +238,14 @@ public class GameManager
             if (_instance._currentBossDifficulty > 5)
             {
                 Debug.Log("JUEGO COMPLETADO WIII!!!");
-                //UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
                 _instance._gameCompleted = true;
                 _instance._currentMinigame = null;
-                //UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
-                //return;
+                SaveSystem.increasePlayedTime();
+                UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
+                return;
             }
 
+            SaveSystem.increasePlayedTime();
             StartGame();
             return;
         }
@@ -257,22 +258,20 @@ public class GameManager
             {
                 //PERDER
                 Debug.Log("Todas las vidas perdidas");
-                //UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
                 _instance._gameLossed = true;
-                //return;
 
             }
 
             _instance.currentGameDifficulty = _instance._currentBossDifficulty;
             MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty);
             _instance._currentMinigame = miniGameToLaunch;
-
-            //UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.RPG);
         }
 
+        SaveSystem.increasePlayedTime();
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
     }
     #endregion
+
 }
 
 public class MiniGameLevel

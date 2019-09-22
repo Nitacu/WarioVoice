@@ -49,6 +49,40 @@ public class SaveSystem
         string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
         PlayerPrefs.SetString(key, json);
-    } 
+    }
+
+    public static void increasePlayedTime()
+    {
+        PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
+
+        int _newPlayedTime = (int)Time.timeSinceLevelLoad;
+
+        _currentPlayerInformation.playedTime += _newPlayedTime;
+
+        string json = JsonUtility.ToJson(_currentPlayerInformation);
+        string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
+
+        PlayerPrefs.SetString(key, json);
+
+    }
+
+
+    public static void increaseMicrophonePressedTime(bool success)
+    {
+        PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
+
+        _currentPlayerInformation.microphonePressedTimes += 1;
+
+        if (success)
+        {
+            _currentPlayerInformation.microphonePressedTimesSuccesses += 1;
+
+        }
+
+        string json = JsonUtility.ToJson(_currentPlayerInformation);
+        string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
+
+        PlayerPrefs.SetString(key, json);
+    }
 
 }

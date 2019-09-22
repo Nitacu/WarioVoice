@@ -9,4 +9,7 @@ public class PlayerInformation
     public int slotNumber;
     public string playerName;
     public int bossesDefeated;
+    public int playedTime;
+    public int microphonePressedTimes;
+    public int microphonePressedTimesSuccesses;
 }

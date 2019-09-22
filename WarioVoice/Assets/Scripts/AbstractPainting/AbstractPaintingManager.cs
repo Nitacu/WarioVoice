@@ -293,14 +293,20 @@ public class AbstractPaintingManager : CommandParser
 
     private void setBrushColor(string commandColor)
     {
+        bool colorFinded = false;
+
         foreach (PaintSplashColor availableSplash in _levels[_currentLevel].AvailableColors)
         {
             if (commandColor.Equals(availableSplash._colorName, System.StringComparison.OrdinalIgnoreCase))
             {
                 _currentSplashColorSelected = availableSplash;
                 _brush.GetComponent<SpriteRenderer>().color = _currentSplashColorSelected._brushColor;
+                colorFinded = true;
             }
         }
+
+        Debug.Log("Color Finded: " + colorFinded);
+        SaveSystem.increaseMicrophonePressedTime(colorFinded);
     }
 
     private void InstantiateNewSplash(Vector2 _position)
@@ -310,10 +316,6 @@ public class AbstractPaintingManager : CommandParser
 
         float factor = _levels[_currentLevel].ReferencePaint.transform.localScale.x / _levels[_currentLevel].SplashesInReferencePaint[0].transform.localScale.x;
         float newScale = _myCanvasTransform.localScale.x / factor;
-
-        Debug.Log("Reference: " + _levels[_currentLevel].SplashesInReferencePaint[0].transform.localScale.x + " * " + factor + " = " + _levels[_currentLevel].ReferencePaint.transform.localScale.x);
-        Debug.Log("My: " + _splashBasePrefab.transform.localScale.x + " * " + newScale + " = " + _myCanvasTransform.localScale.x);
-
 
         _newSplash.transform.localScale = new Vector3(newScale, newScale, 1);
         //_newSplash.transform.localScale = new Vector3(_levels[_currentLevel].SplashSizeScale, _levels[_currentLevel].SplashSizeScale, 1);
