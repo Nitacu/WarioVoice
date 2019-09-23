@@ -164,6 +164,7 @@ public class GameManager
     public void launchNextMinigame(bool minigamePassed)
     {
         SaveSystem.increasePlayedTime();
+        SaveSystem.increasePlayedAMiniGame(_currentMinigame._miniGame, minigamePassed);
 
         _instance._liveLossed = false;
         _instance._gameLossed = false;
@@ -227,6 +228,8 @@ public class GameManager
 
     public void finisBossBattle(bool bossDefeated)
     {
+        SaveSystem.increasePlayedAMiniGame(_currentMinigame._miniGame, bossDefeated);
+
         _instance._liveLossed = false;
         _gameCompleted = false;
 

@@ -7,8 +7,8 @@ using System;
 
 public class ShowSlotData : MonoBehaviour
 {
-    private const string PLAYEDTIME = "Played time: ";
-
+    private const string PLAYEDTIME = "";
+    //Total played time: 
     private const string STARTAGAME = "Start a game to record your input Accuracy.";
 
     [SerializeField] private TextMeshProUGUI _nameTextUI;
@@ -22,6 +22,8 @@ public class ShowSlotData : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("Pinturas Veces jugadas: " + FindObjectOfType<FileManager>().PlayerInfSelected.timesPlayedModernPaints + " , Veces perdidas: " + FindObjectOfType<FileManager>().PlayerInfSelected.timesLossedModernPaints);
+
         _name = FindObjectOfType<FileManager>().PlayerInfSelected.playerName;
         _defeatedBosses = FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated;
 
@@ -58,7 +60,7 @@ public class ShowSlotData : MonoBehaviour
 
             float accuracy = Mathf.RoundToInt((success / attemps) * 100);         
 
-            _inputAccuracy.text = "Input Accuracy: " + accuracy + "%";
+            _inputAccuracy.text = accuracy + "%";
         }
         else
         {
@@ -127,5 +129,10 @@ public class ShowSlotData : MonoBehaviour
         GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
         GameManager.GetInstance().Lives = 4;
         GameManager.GetInstance().StartGame();
+    }
+
+    public void showMoreData()
+    {
+        StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.MOREDATA));
     }
 }

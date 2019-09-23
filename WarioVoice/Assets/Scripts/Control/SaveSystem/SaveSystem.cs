@@ -85,4 +85,38 @@ public class SaveSystem
         PlayerPrefs.SetString(key, json);
     }
 
+    public static void increasePlayedAMiniGame(ChangeScene.EspikinglishMinigames miniGame, bool success)
+    {
+        PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
+      
+        switch (miniGame)
+        {
+            case ChangeScene.EspikinglishMinigames.PAINTING:
+                _currentPlayerInformation.timesPlayedModernPaints += 1;
+                if (!success) _currentPlayerInformation.timesLossedModernPaints += 1;
+                break;
+            case ChangeScene.EspikinglishMinigames.ORCHESTA:
+                _currentPlayerInformation.timesPlayedOrchesta += 1;
+                if (!success) _currentPlayerInformation.timesPlayedOrchesta += 1;
+                break;
+            case ChangeScene.EspikinglishMinigames.LOVE_SCENE:
+                _currentPlayerInformation.timesPlayedLoveGame += 1;
+                if (!success) _currentPlayerInformation.timesLossedLoveGame += 1;
+                break;
+            case ChangeScene.EspikinglishMinigames.WORMS:
+                _currentPlayerInformation.timesPlayedWorms += 1;
+                if (!success) _currentPlayerInformation.timesLossedWorms += 1;
+                break;
+            case ChangeScene.EspikinglishMinigames.RPG:
+                _currentPlayerInformation.timesPlayeRPG += 1;
+                if (!success) _currentPlayerInformation.timesLossedRPG += 1;
+                break;
+        }
+
+        string json = JsonUtility.ToJson(_currentPlayerInformation);
+        string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
+
+        PlayerPrefs.SetString(key, json);
+    }
+
 }

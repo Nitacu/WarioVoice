@@ -30,6 +30,7 @@ public class FileManager : MonoBehaviour
     [SerializeField] private GameObject _createASlotUI;
     [SerializeField] private GameObject _showDataUI;
     [SerializeField] private GameObject _deleteConfirmationUI;
+    [SerializeField] private GameObject _moreDataUI;
 
     private float _timeToHideSlots;
     private float _trackTimeToHide;
@@ -55,7 +56,8 @@ public class FileManager : MonoBehaviour
         SLOTS,
         SHOWSLOT,
         CREATESLOT,
-        RESET
+        RESET,
+        MOREDATA
     }
 
     private void Start()
@@ -101,6 +103,7 @@ public class FileManager : MonoBehaviour
         _createASlotUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
         _showDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
         _deleteConfirmationUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
+        _moreDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
 
         yield return new WaitForSeconds(_timeToHideSlots);
 
@@ -108,6 +111,7 @@ public class FileManager : MonoBehaviour
         _createASlotUI.SetActive(false);
         _showDataUI.SetActive(false);
         _deleteConfirmationUI.SetActive(false);
+        _moreDataUI.SetActive(false);
 
 
         switch (_menuType)
@@ -134,9 +138,13 @@ public class FileManager : MonoBehaviour
                 _deleteConfirmationUI.SetActive(true);
                 _deleteConfirmationUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
                 break;
+            case Menus.MOREDATA:
+                _moreDataUI.SetActive(true);
+                _moreDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+                break;
         }
     }
-    
+
     public void backToSlots()
     {
         StartCoroutine(showMenu(Menus.SLOTS));
