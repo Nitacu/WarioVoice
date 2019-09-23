@@ -920,17 +920,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signs:
-  - {fileID: 11400000, guid: add437bb25838dd4f8a65f9973aaeeba, type: 2}
-  - {fileID: 11400000, guid: d60e5875ad14dea43b1f75764f089485, type: 2}
+  - {fileID: 11400000, guid: b06f9d5aac2d936488abf21700c44b30, type: 2}
+  - {fileID: 11400000, guid: 2c07cc43b91142c42b4314573d718088, type: 2}
   - {fileID: 11400000, guid: 66d15d19986586c4a9795796457fdf96, type: 2}
-  - {fileID: 11400000, guid: c46e6807429745943b409d0d087660d0, type: 2}
   - {fileID: 11400000, guid: 9990772bdef28374a99b3a7e7fd2d6de, type: 2}
+  - {fileID: 11400000, guid: 939a6b834473d7f4ba6bf3a70a416e7e, type: 2}
   - {fileID: 11400000, guid: bf27760f519316940b09325b29ef8b2e, type: 2}
   - {fileID: 11400000, guid: a47686a1760471747bf40ddc798db7a7, type: 2}
   - {fileID: 11400000, guid: 0e51b38068920ba44ae8876a7e3abca3, type: 2}
   - {fileID: 11400000, guid: 4a0cffeb058f5084392d5958c0debee9, type: 2}
   - {fileID: 11400000, guid: f00dd890b3ce7f84683c69d5815d4082, type: 2}
   - {fileID: 11400000, guid: efed705635d0a934eb7fdf1a592da4c7, type: 2}
+  - {fileID: 11400000, guid: cf46f056a79cea640992dca1a426cbf4, type: 2}
+  - {fileID: 11400000, guid: add437bb25838dd4f8a65f9973aaeeba, type: 2}
+  - {fileID: 11400000, guid: 6e9badbc49bec5c44b8d8ec6af0626aa, type: 2}
+  - {fileID: 11400000, guid: c46e6807429745943b409d0d087660d0, type: 2}
+  - {fileID: 11400000, guid: d43474227ff93004ca7dd5b8e010f750, type: 2}
+  - {fileID: 11400000, guid: 0e395c519dcf9a14fbfbb643b456cb41, type: 2}
+  - {fileID: 11400000, guid: d36d46fd32c274e41909f52283f1c53e, type: 2}
+  - {fileID: 11400000, guid: 3109ac78f45113347801f136c2f6e383, type: 2}
+  - {fileID: 11400000, guid: d7792659e1a4b9449bb226b8d983fbad, type: 2}
+  - {fileID: 11400000, guid: 67a8fb495e2eed447a0659b0deb25a34, type: 2}
+  - {fileID: 11400000, guid: 55df21170b5533e45959b59355ad3c87, type: 2}
+  - {fileID: 11400000, guid: d60e5875ad14dea43b1f75764f089485, type: 2}
+  - {fileID: 11400000, guid: c66e52d17bcbc3e4f8c91ef1a4466bf4, type: 2}
+  - {fileID: 11400000, guid: a50bc844d8db94145b899d1465e31cb2, type: 2}
+  - {fileID: 11400000, guid: 0fb39d97accc15e4095cf772395559c8, type: 2}
+  - {fileID: 11400000, guid: 45d374464b3e3384b94cf4c5e5145249, type: 2}
+  - {fileID: 11400000, guid: 00c1ac3e43b8c874da31c7f9e6d5920d, type: 2}
+  - {fileID: 11400000, guid: 3e9f0c5ddb3155042bf8b9fe08813b31, type: 2}
+  - {fileID: 11400000, guid: c5d6b8809851c7c43bd5514119b0172c, type: 2}
   signsInGame: []
   emptySign: {fileID: 21300000, guid: 61693116051c18847a6d26eb7cdf21a1, type: 3}
   gameDifficulty: 3
