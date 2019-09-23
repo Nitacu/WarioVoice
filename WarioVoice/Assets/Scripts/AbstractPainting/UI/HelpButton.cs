@@ -17,7 +17,7 @@ public class HelpButton : MonoBehaviour, IPointerDownHandler
     public AudioClip AudioClip { get => _audioClip; set => _audioClip = value; }
 
 
-    [SerializeField] private Color _bottleColor;
+    private Color _bottleColor;
     public Color BottleColor
     {
         get { return _bottleColor; }

@@ -125,6 +125,7 @@ public class ShowSlotData : MonoBehaviour
     public void continueGamePlay()
     {
         GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
+        GameManager.GetInstance().Lives = 4;
         GameManager.GetInstance().StartGame();
     }
 }

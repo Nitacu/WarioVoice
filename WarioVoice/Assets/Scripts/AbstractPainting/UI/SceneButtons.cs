@@ -30,9 +30,6 @@ public class SceneButtons : MonoBehaviour, IPointerDownHandler
             case ButtonAction.LAUNCHNEXTLEVEL:
                 FindObjectOfType<AbstractPaintingManager>().setLevel(FindObjectOfType<AbstractPaintingManager>().CurrentLevel);
                 break;
-            case ButtonAction.TRYAGAIN:
-                FindObjectOfType<AbstractPaintingManager>().keepTrying();
-                break;
             default:
                 break;
         }

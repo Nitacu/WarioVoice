@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -110,19 +111,14 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private GameObject _splashBasePrefab;
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
-    [SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
-    [SerializeField] private SetBottles _bottlesHelp;
+    //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
 
     [Header("UI Control")]
+    [SerializeField] private List<GameObject> _buttonsToDeactivate = new List<GameObject>();
     [SerializeField] private TextMeshProUGUI _level;
     [SerializeField] private TextMeshProUGUI _guideText;
-    [SerializeField] private GameObject _finishPaintButton;
-    [SerializeField] private GameObject _nextLevelButton;
-    [SerializeField] private GameObject _keepTryingButton;
-    [SerializeField] private GameObject _speechButton;
-    [SerializeField] private GameObject _removeLastButton;
-    [SerializeField] private GameObject _removeAllButton;
     [SerializeField] private GameObject _initPanel;
+    [SerializeField] private SetBottles _plallete;
     [SerializeField] private float _timeToDeactivateInitPanel;
 
 
@@ -131,7 +127,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private int _paintedSplashMargin;
     [SerializeField] private int _analyzingTime;
     [SerializeField] private GameObject _analyzerBand;
-    [SerializeField] private GameObject _paintCritique;    
+    [SerializeField] private GameObject _paintCritique;
     [SerializeField] private GameObject _critiqueSpeechBublle;
     [SerializeField] private TextMeshProUGUI _analyzeResultText;
     private float _coindencePercentage;
@@ -157,7 +153,7 @@ public class AbstractPaintingManager : CommandParser
     {
         _currentLevel = GameManager.GetInstance().getGameDifficulty();
         _currentLevel--;
-        if (_currentLevel+1 > _levels.Count)
+        if (_currentLevel + 1 > _levels.Count)
         {
             _currentLevel = _levels.Count - 1;
         }
@@ -210,40 +206,23 @@ public class AbstractPaintingManager : CommandParser
 
     private void setHelpButtons()
     {
-
-        foreach (var item in _helpButtons)
-        {
-            item.gameObject.SetActive(false);
-        }
-
-        for (int i = 0; i < _levels[_currentLevel].AvailableColors.Count; i++)
-        {
-            _helpButtons[i].gameObject.SetActive(true);
-            _helpButtons[i].Sprite.sprite = _levels[_currentLevel].AvailableColors[i]._splashImage;
-            _helpButtons[i].Text.text = _levels[_currentLevel].AvailableColors[i]._colorName;
-            _helpButtons[i].AudioClip = _levels[_currentLevel].AvailableColors[i]._audioClip;
-        }
-
-
+        _plallete.setBottles();
     }
 
     public void setLevel(int currentLevel)
     {
         //CAMBIAR BOTONES DE CHECK Y NIVEL
-        _finishPaintButton.SetActive(true);
-        //_speechButton.SetActive(true);
-        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
-        _removeAllButton.SetActive(true);
-        _removeLastButton.SetActive(true);
+        foreach (var item in _buttonsToDeactivate)
+        {
+            item.GetComponent<SetActiveSpeechButton>().setButton(true);
+        }
 
-        _nextLevelButton.SetActive(false);
-        _keepTryingButton.SetActive(false);
         _paintCritique.SetActive(false);
         _critiqueSpeechBublle.SetActive(false);
 
         //RESETEAR COLOR Y BRUSH
         _currentSplashColorSelected = null;
-        _brush.GetComponent<SpriteRenderer>().color = Color.white;
+        _brush.GetComponent<Image>().color = new Color(1, 1, 1, 0);
         _isAnalyzing = false;
 
         //BORRAR PINTURA DE REFERENCIA ANTERIOR
@@ -283,7 +262,6 @@ public class AbstractPaintingManager : CommandParser
         }
 
         setHelpButtons();
-        _bottlesHelp.setBottles();
     }
 
     public override void parseCommand(string command)
@@ -300,7 +278,7 @@ public class AbstractPaintingManager : CommandParser
             if (commandColor.Equals(availableSplash._colorName, System.StringComparison.OrdinalIgnoreCase))
             {
                 _currentSplashColorSelected = availableSplash;
-                _brush.GetComponent<SpriteRenderer>().color = _currentSplashColorSelected._brushColor;
+                _brush.GetComponent<Image>().color = _currentSplashColorSelected._brushColor;
                 colorFinded = true;
             }
         }
@@ -318,7 +296,6 @@ public class AbstractPaintingManager : CommandParser
         float newScale = _myCanvasTransform.localScale.x / factor;
 
         _newSplash.transform.localScale = new Vector3(newScale, newScale, 1);
-        //_newSplash.transform.localScale = new Vector3(_levels[_currentLevel].SplashSizeScale, _levels[_currentLevel].SplashSizeScale, 1);
         Vector3 _newposition = new Vector3(_position.x, _position.y, 0);
         _newSplash.transform.position = _newposition;
         _newSplash.GetComponent<PaintSplash>().MySplashColorType = _currentSplashColorSelected;
@@ -355,16 +332,13 @@ public class AbstractPaintingManager : CommandParser
         GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
         _guideText.text = ANALYZING;
         _paintCritique.SetActive(true);
-        //_critiqueSpeechBublle.SetActive(true);
-        //_currentRerefencePaint.SetActive(false);
 
-        //_speechButton.SetActive(false);
-        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(false);
-        _removeAllButton.SetActive(false);
-        _removeLastButton.SetActive(false);
+        foreach (var item in _buttonsToDeactivate)
+        {
+            item.GetComponent<SetActiveSpeechButton>().setButton(false);
+        }
 
         _analyzeResultText.text = "...";
-
 
         //RESETEAR QUE NO HAN SIDO ANALIZADOS
         foreach (var item in _paintedSplahes)
@@ -403,7 +377,7 @@ public class AbstractPaintingManager : CommandParser
                 _splashCoincidencesCount++;
             }
 
-            //Destroy(_copyReferenceSplash);
+            Destroy(_copyReferenceSplash);
         }
 
         _coindencePercentage = (_splashCoincidencesCount * 100) / _levels[_currentLevel].SplashesInReferencePaint.Count;
@@ -444,39 +418,40 @@ public class AbstractPaintingManager : CommandParser
             _analyzeResultText.text = "Nice Paint\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + _minCoincidencesPercentage + "%";
+            StartCoroutine(LaunchNextLevel(true));
 
-            if (_currentLevel + 2 <= _levels.Count)
-            {
-                _currentLevel++;
-                _finishPaintButton.SetActive(false);
-                _keepTryingButton.SetActive(false);
-                _nextLevelButton.SetActive(true);
-            }
-            else
-            {
-                _isAnalyzing = true;
-                _guideText.text = GAMECOMPLETEDE;
-                _finishPaintButton.SetActive(false);
-                _nextLevelButton.SetActive(false);
-                _keepTryingButton.SetActive(false);
-            }            
+            /* if (_currentLevel + 2 <= _levels.Count)
+             {
+                 _currentLevel++;
+                 _finishPaintButton.SetActive(false);
+
+             }
+             else
+             {
+                 _isAnalyzing = true;
+                 _guideText.text = GAMECOMPLETEDE;
+                 _finishPaintButton.SetActive(false);
+
+             }            */
         }
         else
         {
             _guideText.text = LOSE;
-            _keepTryingButton.SetActive(true);
             _analyzeResultText.text = "Meeh\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + _minCoincidencesPercentage + "%";
+            StartCoroutine(LaunchNextLevel(false));
+
         }
 
     }
 
-    IEnumerator setNextLevel(int currenLevelToLaunch, float timeToLaunchNextLevel)
+    IEnumerator LaunchNextLevel(bool Success)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(_timeToDeactivateInitPanel);
 
-        setLevel(currenLevelToLaunch);
+        GameManager.GetInstance().launchNextMinigame(Success);
+
     }
 
     IEnumerator deactivateInitPanel(float timeToDeactivate)
@@ -484,10 +459,9 @@ public class AbstractPaintingManager : CommandParser
         yield return new WaitForSeconds(timeToDeactivate);
 
         _initPanel.SetActive(false);
-        
     }
 
-    public void keepTrying()
+    /*public void keepTrying()
     {
         foreach (var item in _paintedSplahes)
         {
@@ -495,11 +469,8 @@ public class AbstractPaintingManager : CommandParser
         }
 
         _isAnalyzing = false;
-        _keepTryingButton.SetActive(false);
         _finishPaintButton.SetActive(true);
-        _nextLevelButton.SetActive(false);
 
-        //_speechButton.SetActive(true);
         _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
 
         _removeAllButton.SetActive(true);
@@ -509,5 +480,5 @@ public class AbstractPaintingManager : CommandParser
         _critiqueSpeechBublle.SetActive(false);
         _currentRerefencePaint.SetActive(true);
         _analyzeResultText.text = "...";
-    }
+    }*/
 }
