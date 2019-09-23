@@ -97,7 +97,7 @@ public class SaveSystem
                 break;
             case ChangeScene.EspikinglishMinigames.ORCHESTA:
                 _currentPlayerInformation.timesPlayedOrchesta += 1;
-                if (!success) _currentPlayerInformation.timesPlayedOrchesta += 1;
+                if (!success) _currentPlayerInformation.timesLossedOrchesta += 1;
                 break;
             case ChangeScene.EspikinglishMinigames.LOVE_SCENE:
                 _currentPlayerInformation.timesPlayedLoveGame += 1;
