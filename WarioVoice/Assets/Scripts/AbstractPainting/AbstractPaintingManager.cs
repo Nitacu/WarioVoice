@@ -458,7 +458,8 @@ public class AbstractPaintingManager : CommandParser
     {
         yield return new WaitForSeconds(timeToDeactivate);
 
-        _initPanel.SetActive(false);
+        _initPanel.GetComponent<Animator>().Play(Animator.StringToHash("InitialAnimation"));
+        //_initPanel.SetActive(false);
     }
 
     /*public void keepTrying()
