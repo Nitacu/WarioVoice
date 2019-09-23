@@ -241,7 +241,7 @@ public class AbstractPaintingManager : CommandParser
 
         //TEXTS
         _guideText.text = FIRSTDIALOG;
-        _level.text = LEVEL + (currentLevel + 1);
+        //_level.text = LEVEL + (currentLevel + 1);
 
         _currentRerefencePaint = Instantiate(_levels[currentLevel].ReferencePaint);
         _currentRerefencePaint.transform.position = _referenceCanvasTransform.position;
