@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b631eb9982e5bb147a6a9d01549ea6e4, type: 3}
-  m_Name: FRIENDLY
+  m_Name: GREAT
   m_EditorClassIdentifier: 
   signSprite: {fileID: 0}
-  item: 9
-  possibleAnswers: 09000000
-  pronunciation: {fileID: 8300000, guid: 48d2c21e4606aae47a87896e84994c19, type: 3}
+  item: 14
+  possibleAnswers: 0e000000
+  pronunciation: {fileID: 8300000, guid: 076e518f4ffa2784ba07ecc017ef20ff, type: 3}

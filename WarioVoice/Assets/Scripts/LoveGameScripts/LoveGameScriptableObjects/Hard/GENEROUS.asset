@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b631eb9982e5bb147a6a9d01549ea6e4, type: 3}
-  m_Name: CHARMING
+  m_Name: GENEROUS
   m_EditorClassIdentifier: 
   signSprite: {fileID: 0}
-  item: 7
-  possibleAnswers: 07000000
-  pronunciation: {fileID: 8300000, guid: b26b7614227344e429bd6303fb3bf1f2, type: 3}
+  item: 17
+  possibleAnswers: 11000000
+  pronunciation: {fileID: 8300000, guid: 2cebf6b0304cb2045baafadb8ce73b96, type: 3}
+  difficulty: 2

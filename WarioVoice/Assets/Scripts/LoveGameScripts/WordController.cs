@@ -14,6 +14,7 @@ public class WordController : MonoBehaviour
     public int gameDifficulty; //Difficulty of the game, this goes from 1 to 10, there must be at least 1 sign per difficulty level to make it work.
     private int numberOfSigns; //This determines the number of signs that the player will 
                                //have to see during the minigame, this number is determined according to difficulty
+    private int wordDifficulty = 0; //This variable determines the complexity of the words that will show ingame, 1 = easy, 2 = easy and medium 3 = all difficulties
 
     #region EverythingRelated to friend showing sign in inspector
     public GameObject playerSign;
@@ -39,17 +40,7 @@ public class WordController : MonoBehaviour
         turnSignOn();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (isShowingSign)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                
-            }
-        }
-    }
+    
 
     public void loseScene()
     {
@@ -108,16 +99,82 @@ public class WordController : MonoBehaviour
         gameDifficulty = GameManager.GetInstance().getGameDifficulty();
         numberOfSigns = gameDifficulty + 1;
         loveMetter.GetComponent<LoveMeterController>().numberOfSigns = numberOfSigns;
-        int randomNumber = 0;
+        
 
-        for (int i = 0; i < numberOfSigns; i++)
+        if (gameDifficulty > 0 && gameDifficulty < 4)
         {
-            randomNumber = Random.Range(0, signs.Count);
-            signsInGame.Add(signs[randomNumber]);
-            signs.RemoveAt(randomNumber);
+            wordDifficulty = 1;
         }
 
+        if (gameDifficulty > 3 && gameDifficulty < 8)
+        {
+            wordDifficulty = 2;
+        }
 
+        if (gameDifficulty > 7)
+        {
+            wordDifficulty = 3;
+        }
+
+        createSigns();
+
+       
+
+    }
+
+    private void createSigns()
+    {
+        int randomNumber = 0;
+
+        switch (wordDifficulty)
+        {
+            case 1:
+                for (int i = 0; i < numberOfSigns; i++)
+                {
+                    randomNumber = Random.Range(0, signs.Count);
+                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.EASY)
+                    {
+                        signsInGame.Add(signs[randomNumber]);
+                        signs.RemoveAt(randomNumber);
+                    }
+                    else
+                    {
+                        i--;
+                    }         
+                }
+                break;
+            case 2:
+                for (int i = 0; i < numberOfSigns; i++)
+                {
+                    randomNumber = Random.Range(0, signs.Count);
+                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.EASY || signs[randomNumber].difficulty == WordList.wordDifficulty.MEDIUM)
+                    {
+                        signsInGame.Add(signs[randomNumber]);
+                        signs.RemoveAt(randomNumber);
+                    }
+                    else
+                    {
+                        i--;
+                    }
+                }
+                break;
+                
+            case 3:
+                for (int i = 0; i < numberOfSigns; i++)
+                {
+                    randomNumber = Random.Range(0, signs.Count);
+                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.HARD || signs[randomNumber].difficulty == WordList.wordDifficulty.MEDIUM)
+                    {
+                        signsInGame.Add(signs[randomNumber]);
+                        signs.RemoveAt(randomNumber);
+                    }
+                    else
+                    {
+                        i--;
+                    }
+                }
+                break;   
+        }
     }
 
     public void checkAnswer(string answer)

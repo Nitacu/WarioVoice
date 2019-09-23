@@ -23,6 +23,32 @@ public class WordList : MonoBehaviour
         SWEET,
         FRIENDLY,
         SMART,
-        HEART
+        HEART,
+        BRIGHT,
+        CUTE,
+        GREAT,
+        GENTLE,
+        ATTRACTIVE,
+        GENEROUS,
+        IMPORTANT,
+        WONDERFUL,
+        SPECIAL,
+        SINCERE,
+        DIFFERENT,
+        PERFECT,
+        GLAMOROUS,
+        YOUNG,
+        GORGEOUS,
+        PASSIONATE,
+        SENSIBLE,
+        LIKEABLE,
+        BRILLIANT,
+    }
+
+    public enum wordDifficulty
+    {
+        EASY,
+        MEDIUM,
+        HARD
     }
 }

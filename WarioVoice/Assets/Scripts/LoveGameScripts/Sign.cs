@@ -9,5 +9,6 @@ public class Sign : ScriptableObject
     public WordList.itemNames item;
     public List<WordList.itemNames> possibleAnswers = new List<WordList.itemNames>();
     public AudioClip pronunciation;
+    public WordList.wordDifficulty difficulty;
     //public bool hasSprite;
 }
