@@ -53,7 +53,7 @@ public class PointingGun : MonoBehaviour
         GameObject aux;
 
         aux = Instantiate(_proyectile, _positionShoot.position, Quaternion.identity);
-        aux.transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z - 90);
+        aux.transform.localEulerAngles = new Vector3(0, 0, _turrent.transform.localEulerAngles.z - 90);
 
 
         Vector3 vec = aux.transform.position - _turrent.transform.position;

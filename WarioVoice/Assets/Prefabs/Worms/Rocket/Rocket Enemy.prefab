@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 2663965070395724346}
   - component: {fileID: 6082770205444702101}
   - component: {fileID: 6223034171720804314}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Rocket Enemy
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -4904,12 +4904,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567237876046802555}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f486a03e985f654193f7201ab0a7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 5
 --- !u!61 &7233156488398683580
 BoxCollider2D:
   m_ObjectHideFlags: 0

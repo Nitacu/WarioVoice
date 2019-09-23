@@ -37,6 +37,11 @@ public class EnemyHelicopterWorms : EnemyWorms
         }
     }
 
+    public override void aimPlayer()
+    {
+        
+    }
+
     private void Update()
     {
         RaycastHit2D ray;
@@ -53,7 +58,11 @@ public class EnemyHelicopterWorms : EnemyWorms
 
     public override void shootPlayer()
     {
-        base.shootPlayer();
+        GameObject aux;
+
+        aux = Instantiate(_proyectile, _positionShoot.position, Quaternion.identity);
+        _positionShoot.gameObject.SetActive(false);
+        aux.transform.localEulerAngles = new Vector3(0, 0, 270 - 90);
         _allowShoot = false;
     }
 

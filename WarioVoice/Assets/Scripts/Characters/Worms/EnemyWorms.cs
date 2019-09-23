@@ -20,7 +20,7 @@ public class EnemyWorms : MonoBehaviour
     }
 
 
-    public void aimPlayer()
+    public virtual void aimPlayer()
     {
         float angle;
         Vector3 toTarget = _pointingGun.transform.position - _positionShoot.position;
@@ -44,6 +44,14 @@ public class EnemyWorms : MonoBehaviour
     public virtual void prepareShoot()
     { 
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            shootPlayer();
+        }
     }
 
     public virtual void shootPlayer()

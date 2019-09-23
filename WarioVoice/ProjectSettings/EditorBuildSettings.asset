@@ -81,13 +81,13 @@ EditorBuildSettings:
     path: Assets/Scenes/WarioVoice/Worms/Worms_D4.unity
     guid: 78dd0153f81ea9749b183a7b8ea353e7
   - enabled: 1
-    path: Assets/Scenes/WarioVoice/Worms/Worms_D5.unity
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D7.unity
     guid: 4c3d819bf016dbc479a459561d8078e6
   - enabled: 1
     path: Assets/Scenes/WarioVoice/Worms/Worms_D6.unity
     guid: 7b6545d78c3c6e24b84ea37c7980e279
   - enabled: 1
-    path: Assets/Scenes/WarioVoice/Worms/Worms_D7.unity
+    path: Assets/Scenes/WarioVoice/Worms/Worms_D5.unity
     guid: 33f9bae6a6af3324e956c4df24c3019e
   - enabled: 1
     path: Assets/Scenes/WarioVoice/Worms/Worms_D8.unity
