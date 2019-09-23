@@ -116,6 +116,7 @@ public class GameManager
     {
         MiniGameLevel _randomMiniGame;
 
+
         if (_instance._miniGamesRound.Count == 1)
         {
             _randomMiniGame = _instance._miniGamesRound[0];

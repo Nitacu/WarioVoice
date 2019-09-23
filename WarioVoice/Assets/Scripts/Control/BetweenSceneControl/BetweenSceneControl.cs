@@ -5,9 +5,11 @@ using TMPro;
 
 public class BetweenSceneControl : MonoBehaviour
 {
-    private const string NEXTMINIGAMEIN = "Next in ";
+    private const string NEXTMINIGAMEIN_ENG = "Next game in ";
+    private const string NEXTMINIGAMEIN_ESP = "Siguiente juego en ";
     private const string CLIPFLAGDOWNNAME = "FlagDown";
-    private const string LOSE = "You lose";
+    private const string LOSE_ENG = "You lose";
+    private const string LOSE_ESP = "Perdiste";
     private const string COMPLETED = "You complete the Game!";
 
 
@@ -17,8 +19,13 @@ public class BetweenSceneControl : MonoBehaviour
     [SerializeField] private float _timeToLaunchNextMinigame;
     private float _timeTracking;
 
-    [SerializeField] private TextMeshProUGUI _timeText;
+    [SerializeField] private TextMeshProUGUI _timeTextENG;
+    [SerializeField] private TextMeshProUGUI _timeTextESP;
 
+    [Header("Game Lossed Vars")]
+    [SerializeField] private GameObject _continuePanel;
+    [SerializeField] private int _timeToLaunchToMainMenu;
+    [SerializeField] private TextMeshProUGUI _timer;
 
     private bool _gameCompleted;
     private bool _gameLossed;
@@ -27,8 +34,7 @@ public class BetweenSceneControl : MonoBehaviour
     {        
         if (_timeTracking > 0)
         {
-            _timeTracking -= Time.deltaTime;
-           
+            _timeTracking -= Time.deltaTime;                    
         }
         else
         {
@@ -41,13 +47,13 @@ public class BetweenSceneControl : MonoBehaviour
                 if (GameManager.GetInstance().GameCompleted)
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
-
                 }
                 else if (GameManager.GetInstance().GameLossed)
                 {
                     //volver al menu
-                    UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
-                    
+                    //UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
+                    continueGame(false);
+
                     //empezar desde el checkpoint
                     //GameManager.GetInstance().Lives = 4;
                     //GameManager.GetInstance().StartGame();
@@ -58,9 +64,14 @@ public class BetweenSceneControl : MonoBehaviour
         if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
         {
             int timeToshow = Mathf.FloorToInt(_timeTracking) + 1;
-            _timeText.text = NEXTMINIGAMEIN + timeToshow.ToString();
+            _timeTextENG.text = NEXTMINIGAMEIN_ENG + timeToshow.ToString();
+            _timeTextESP.text = NEXTMINIGAMEIN_ESP + timeToshow.ToString();
         }
-    
+        else if (GameManager.GetInstance().GameLossed)
+        {
+            int timeToshow = Mathf.FloorToInt(_timeTracking) + 1;
+            _timer.text = timeToshow.ToString();
+        }
     }
 
     private void Start()
@@ -73,11 +84,23 @@ public class BetweenSceneControl : MonoBehaviour
 
         if (_gameLossed)
         {
-            _timeText.text = LOSE;
+            _timeTextENG.text = LOSE_ENG;
+            _timeTextESP.text = LOSE_ESP;
+
+            foreach (var item in _liveFlags)
+            {
+                item.SetActive(false);
+            }
+
+            _continuePanel.SetActive(true);
+            _timeTracking = _timeToLaunchToMainMenu;
         }
         else if (_gameCompleted)
         {
-            _timeText.text = COMPLETED;
+            _timeTextENG.text = COMPLETED;
+            _timeTextESP.text = COMPLETED;
+
+            
         }
 
         if (GameManager.GetInstance().LiveLossed)
@@ -108,6 +131,19 @@ public class BetweenSceneControl : MonoBehaviour
         {
             item.GetComponent<Animator>().enabled = false;
             item.GetComponent<SpriteRenderer>().sprite = _flagDown;
+        }
+    }
+
+    public void continueGame(bool wantContinue)
+    {
+        if (wantContinue)
+        {
+            GameManager.GetInstance().Lives = 4;
+            GameManager.GetInstance().StartGame();
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
         }
     }
 }
