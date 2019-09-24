@@ -5,14 +5,16 @@ using TMPro;
 
 public class BetweenSceneControl : MonoBehaviour
 {
-    private const string NEXTMINIGAMEIN_ENG = "Next game in ";
-    private const string NEXTMINIGAMEIN_ESP = "Siguiente juego en ";
-    private const string BOSSBATTLE_ENG = "Boss Battle in ";
-    private const string BOSSBATLE_ESP = "Jefe em ";
-    private const string CLIPFLAGDOWNNAME = "FlagDown";
+    private const string NEXTMINIGAMEIN_ENG = "Next game";
+    private const string NEXTMINIGAMEIN_ESP = "Siguiente juego";
+    private const string BOSSBATTLE_ENG = "Boss Battle";
+    private const string BOSSBATLE_ESP = "Jefe";
     private const string LOSE_ENG = "You lose";
     private const string LOSE_ESP = "Perdiste";
     private const string COMPLETED = "You complete the Game!";
+
+    private const string CLIPFLAGDOWNNAME = "FlagDown";
+
 
 
     [SerializeField] private List<GameObject> _liveFlags = new List<GameObject>();
@@ -23,11 +25,12 @@ public class BetweenSceneControl : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _timeTextENG;
     [SerializeField] private TextMeshProUGUI _timeTextESP;
+    [SerializeField] private TextMeshProUGUI _timerNormalText;
 
     [Header("Game Lossed Vars")]
     [SerializeField] private GameObject _continuePanel;
     [SerializeField] private int _timeToLaunchToMainMenu;
-    [SerializeField] private TextMeshProUGUI _timer;
+    [SerializeField] private TextMeshProUGUI _timerDownText;
 
     private bool _gameCompleted;
     private bool _gameLossed;
@@ -63,27 +66,30 @@ public class BetweenSceneControl : MonoBehaviour
             }
         }
 
-        int timeToshow = Mathf.FloorToInt(_timeTracking) + 1;
-
+        int timeToshow = Mathf.FloorToInt(_timeTracking);
+        Debug.Log("Time to show: " + timeToshow);
 
         if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
         {
+            _timeTextENG.text = (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG) ? BOSSBATTLE_ENG + timeToshow.ToString() : NEXTMINIGAMEIN_ENG;
+            _timeTextESP.text = (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG) ? BOSSBATLE_ESP + timeToshow.ToString() : NEXTMINIGAMEIN_ESP;
 
 
-            if (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG)
+            if (timeToshow < 1)
             {
-                _timeTextENG.text = BOSSBATTLE_ENG + timeToshow.ToString();
-                _timeTextESP.text = BOSSBATLE_ESP + timeToshow.ToString();
+                _timerNormalText.text = "GO!";
+                FindObjectOfType<BetweenSceneAudioControl>().playGO();
             }
             else
             {
-                _timeTextENG.text = NEXTMINIGAMEIN_ENG + timeToshow.ToString();
-                _timeTextESP.text = NEXTMINIGAMEIN_ESP + timeToshow.ToString();
+                _timerNormalText.text = timeToshow.ToString();
             }
+
         }
         else if (GameManager.GetInstance().GameLossed)
-        {          
-            _timer.text = timeToshow.ToString();
+        {
+            _timerDownText.text = timeToshow.ToString();
+            FindObjectOfType<BetweenSceneAudioControl>().playGameOver();
         }
     }
 
