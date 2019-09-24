@@ -6,6 +6,8 @@ public class PaintingSoundManager : MonoBehaviour
 {
     [SerializeField] AudioClip _hummingClip;
     [SerializeField] AudioClip _wrongClip;
+    [SerializeField] AudioClip _goodPaint;
+    [SerializeField] AudioClip _badPaint;
 
 
     private AudioSource _source;
@@ -14,6 +16,11 @@ public class PaintingSoundManager : MonoBehaviour
     private void OnEnable()
     {
         _source = GetComponent<AudioSource>();   
+    }
+    public void playGoodJob(bool success)
+    {
+        _currentClip = (success) ? _goodPaint : _badPaint;        
+        playClip();
     }
 
     public void playWrongSound()

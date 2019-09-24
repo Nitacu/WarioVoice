@@ -833,8 +833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d4562ef77c861458c35a14f65960b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hummingClip: {fileID: 8300000, guid: 9a868e127568e8149909f6fc39576d0f, type: 3}
+  _hummingClip: {fileID: 8300000, guid: 2977e575f6cbaa54cbcf12b800d9ccd8, type: 3}
   _wrongClip: {fileID: 8300000, guid: 211cbb5e17060ad46ac2e9afc0b401a2, type: 3}
+  _goodPaint: {fileID: 8300000, guid: dc76177070fa8ac4c8cbf379b66ea2d5, type: 3}
+  _badPaint: {fileID: 8300000, guid: b300d3ac737550949b450d13e70a8aa2, type: 3}
 --- !u!1 &261044034
 GameObject:
   m_ObjectHideFlags: 0

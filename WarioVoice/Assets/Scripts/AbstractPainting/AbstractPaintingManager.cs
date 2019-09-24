@@ -429,7 +429,6 @@ public class AbstractPaintingManager : CommandParser
             _analyzeResultText.text = "Nice Paint\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + _minCoincidencesPercentage + "%";
-            StartCoroutine(LaunchNextLevel(true));
 
             /* if (_currentLevel + 2 <= _levels.Count)
              {
@@ -451,10 +450,14 @@ public class AbstractPaintingManager : CommandParser
             _analyzeResultText.text = "Meeh\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + _minCoincidencesPercentage + "%";
-            StartCoroutine(LaunchNextLevel(false));
 
         }
 
+
+        FindObjectOfType<PaintingSoundManager>().playGoodJob(playerWin);
+
+
+        StartCoroutine(LaunchNextLevel(playerWin));
     }
 
     IEnumerator LaunchNextLevel(bool Success)
