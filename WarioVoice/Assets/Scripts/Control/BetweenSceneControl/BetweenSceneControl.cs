@@ -7,6 +7,8 @@ public class BetweenSceneControl : MonoBehaviour
 {
     private const string NEXTMINIGAMEIN_ENG = "Next game in ";
     private const string NEXTMINIGAMEIN_ESP = "Siguiente juego en ";
+    private const string BOSSBATTLE_ENG = "Boss Battle in ";
+    private const string BOSSBATLE_ESP = "Jefe em ";
     private const string CLIPFLAGDOWNNAME = "FlagDown";
     private const string LOSE_ENG = "You lose";
     private const string LOSE_ESP = "Perdiste";
@@ -31,10 +33,10 @@ public class BetweenSceneControl : MonoBehaviour
     private bool _gameLossed;
 
     private void Update()
-    {        
+    {
         if (_timeTracking > 0)
         {
-            _timeTracking -= Time.deltaTime;                    
+            _timeTracking -= Time.deltaTime;
         }
         else
         {
@@ -61,15 +63,26 @@ public class BetweenSceneControl : MonoBehaviour
             }
         }
 
+        int timeToshow = Mathf.FloorToInt(_timeTracking) + 1;
+
+
         if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
         {
-            int timeToshow = Mathf.FloorToInt(_timeTracking) + 1;
-            _timeTextENG.text = NEXTMINIGAMEIN_ENG + timeToshow.ToString();
-            _timeTextESP.text = NEXTMINIGAMEIN_ESP + timeToshow.ToString();
+
+
+            if (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG)
+            {
+                _timeTextENG.text = BOSSBATTLE_ENG + timeToshow.ToString();
+                _timeTextESP.text = BOSSBATLE_ESP + timeToshow.ToString();
+            }
+            else
+            {
+                _timeTextENG.text = NEXTMINIGAMEIN_ENG + timeToshow.ToString();
+                _timeTextESP.text = NEXTMINIGAMEIN_ESP + timeToshow.ToString();
+            }
         }
         else if (GameManager.GetInstance().GameLossed)
-        {
-            int timeToshow = Mathf.FloorToInt(_timeTracking) + 1;
+        {          
             _timer.text = timeToshow.ToString();
         }
     }
@@ -99,8 +112,6 @@ public class BetweenSceneControl : MonoBehaviour
         {
             _timeTextENG.text = COMPLETED;
             _timeTextESP.text = COMPLETED;
-
-            
         }
 
         if (GameManager.GetInstance().LiveLossed)
@@ -122,7 +133,7 @@ public class BetweenSceneControl : MonoBehaviour
             {
                 _liveFlags[i].GetComponent<Animator>().enabled = true;
             }
-        }        
+        }
     }
 
     private void disableFlags()

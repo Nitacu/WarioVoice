@@ -133,7 +133,8 @@ public class GameManager
         else
         {
             int priorityParamater = 1;
-            List<MiniGameLevel> _minigamesWithPriority = new List<MiniGameLevel>(); 
+            List<MiniGameLevel> _minigamesWithPriority = new List<MiniGameLevel>();
+            _minigamesWithPriority.Clear();
 
             do
             {
@@ -261,7 +262,6 @@ public class GameManager
 
     public void LoadMinigame()
     {
-
         _instance.currentGameDifficulty = _instance._currentMinigame._difficulty;
         ChangeScene.ChangeSceneProgression(_instance._currentMinigame._miniGame);
     }

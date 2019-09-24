@@ -53,6 +53,8 @@ public class AbstractPaintingManager : CommandParser
     const string ALREADYANALYZING = "Al ready Analyzing, keep waiting\nAun se está analizando el cuadro";
     const string LEVEL = "Level ";
     const string GAMECOMPLETEDE = "Game Complete, Back to Menu\nJuego completado, vuelve al menu";
+    const string FIRSTDRAW = "Paint something first\nPinta algo primero";
+
     #endregion
 
     #region ColorCommands
@@ -322,6 +324,12 @@ public class AbstractPaintingManager : CommandParser
 
     public void evaluatePaint()
     {
+        if (_currentLevel == 0 && _paintedSplahes.Count <= 0)
+        {
+            _guideText.text = FIRSTDRAW;
+            return;
+        }
+
         if (_isAnalyzing)
         {
             _guideText.text = ALREADYANALYZING;
