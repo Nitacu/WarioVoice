@@ -72,7 +72,7 @@ public class GameManager
         return _instance;
     }
 
-   
+
     #region FUNCIONESLANZARNIVEL NEW
 
     private List<MiniGameLevel> _miniGamesRound = new List<MiniGameLevel>();
@@ -106,9 +106,10 @@ public class GameManager
         {
             if (!(item == ChangeScene.EspikinglishMinigames.RPG))
             {
-                MiniGameLevel _newminiGame = new MiniGameLevel(item, (_instance._currentBossDifficulty * 2) - 1);
+                int difficulty = (_instance._currentBossDifficulty * 2) - 1;
+                MiniGameLevel _newminiGame = new MiniGameLevel(item, difficulty, 1);
                 _instance._miniGamesRound.Add(_newminiGame);
-            }            
+            }
         }
     }
 
@@ -131,12 +132,39 @@ public class GameManager
         }
         else
         {
+            int priorityParamater = 1;
+            List<MiniGameLevel> _minigamesWithPriority = new List<MiniGameLevel>(); 
+
+            do
+            {
+                foreach (var item in _instance._miniGamesRound)
+                {
+                    if (item._priority == priorityParamater)
+                    {
+                        _minigamesWithPriority.Add(item);
+                    }
+                }
+
+                priorityParamater++;
+
+            } while (_minigamesWithPriority.Count <= 0);
+
+
+            do
+            {
+                int _indexRandom = Random.Range(0, _minigamesWithPriority.Count);
+                _randomMiniGame = _minigamesWithPriority[_indexRandom];
+
+            } while (_randomMiniGame._miniGame == _instance._currentMinigame._miniGame); //PARA QUE NO TIRE EL MISMO MINIJUEGO
+
+            /*
             do
             {
                 int _indexRandom = Random.Range(0, _instance._miniGamesRound.Count);
                 _randomMiniGame = _instance._miniGamesRound[_indexRandom];
 
             } while (_randomMiniGame._miniGame == _instance._currentMinigame._miniGame); //PARA QUE NO TIRE EL MISMO MINIJUEGO
+            */
         }
 
         _instance._currentMinigame = _randomMiniGame;
@@ -159,7 +187,7 @@ public class GameManager
         _instance.currentGameDifficulty = miniGameToLaunch._difficulty;
         _instance._currentMinigame = miniGameToLaunch;
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
     }
 
     public void launchNextMinigame(bool minigamePassed)
@@ -175,7 +203,8 @@ public class GameManager
             if (_instance._currentMinigame._difficulty == ((_instance._currentBossDifficulty * 2) - 1))//saber si era nivel uno 
             {
                 _instance._miniGamesRound.Remove(_instance._currentMinigame);
-                MiniGameLevel miniGameLevelUp = new MiniGameLevel(_instance._currentMinigame._miniGame, _instance._currentMinigame._difficulty + 1);
+                int difficulty = _instance._currentMinigame._difficulty + 1;
+                MiniGameLevel miniGameLevelUp = new MiniGameLevel(_instance._currentMinigame._miniGame, difficulty, _instance._currentMinigame._priority + 1);
                 _instance._miniGamesRound.Add(miniGameLevelUp);
             }
             else
@@ -191,13 +220,23 @@ public class GameManager
             _instance._lives--;
             _instance._liveLossed = true;
 
+            //SUBIR PRIORIDAD
+            foreach (var item in _instance._miniGamesRound)//SUBIR PRIORIDAD
+            {
+                if (item == _instance._currentMinigame)
+                {
+                    item._priority += 1;
+                    Debug.Log("Nueva prioridad a: " + item._miniGame + " establecida en: " + item._priority);
+                }
+            }
+
             if (_instance._lives <= 0)
             {
                 //PERDER
                 Debug.Log("Todas las vidas perdidas");
                 _instance._gameLossed = true;
             }
-        }        
+        }
 
         if (_instance._miniGamesRound.Count > 0)
         {
@@ -211,14 +250,14 @@ public class GameManager
             //lanzar boss
             _instance.currentGameDifficulty = _instance._currentBossDifficulty;
 
-            MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty);
+            MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty, 1);
             _instance._currentMinigame = miniGameToLaunch;
         }
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
     }
 
-    
+
 
     public void LoadMinigame()
     {
@@ -267,7 +306,7 @@ public class GameManager
             }
 
             _instance.currentGameDifficulty = _instance._currentBossDifficulty;
-            MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty);
+            MiniGameLevel miniGameToLaunch = new MiniGameLevel(ChangeScene.EspikinglishMinigames.RPG, _instance._currentBossDifficulty, 1);
             _instance._currentMinigame = miniGameToLaunch;
         }
 
@@ -282,10 +321,12 @@ public class MiniGameLevel
 {
     public ChangeScene.EspikinglishMinigames _miniGame;
     public int _difficulty;
+    public int _priority;
 
-    public MiniGameLevel(ChangeScene.EspikinglishMinigames minigame, int difficulty)
+    public MiniGameLevel(ChangeScene.EspikinglishMinigames minigame, int difficulty, int priority)
     {
         _miniGame = minigame;
         _difficulty = difficulty;
+        _priority = priority;
     }
 }
