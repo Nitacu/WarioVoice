@@ -326,6 +326,7 @@ public class AbstractPaintingManager : CommandParser
     {
         if (_currentLevel == 0 && _paintedSplahes.Count <= 0)
         {
+            FindObjectOfType<PaintingSoundManager>().playWrongSound();
             _guideText.text = FIRSTDRAW;
             return;
         }
@@ -335,6 +336,8 @@ public class AbstractPaintingManager : CommandParser
             _guideText.text = ALREADYANALYZING;
             return;
         }
+
+        FindObjectOfType<PaintingSoundManager>().playHumming();
 
         //ANIMACIONES ANALISIS
         GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
