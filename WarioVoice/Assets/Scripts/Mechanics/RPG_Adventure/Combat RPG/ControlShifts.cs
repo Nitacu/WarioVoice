@@ -21,7 +21,7 @@ public class ControlShifts : MonoBehaviour
         _lamia = FindObjectOfType<LamiaController>();
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
-        _informationPanel.activeDialogue("Que la pelea comience");
+        _informationPanel.activeDialogue("- Que la pelea comience");
 
         Invoke("playerTurn", 3);
     }

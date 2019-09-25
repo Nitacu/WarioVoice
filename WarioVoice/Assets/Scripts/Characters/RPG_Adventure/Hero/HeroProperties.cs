@@ -70,7 +70,7 @@ public class HeroProperties : MonoBehaviour
 
         for (int i = 0; i < _attacks.Count; i++)
         {
-            _levelInformationPanel.Attacks[i].GetComponentInChildren<TMP_Text>().text = _attacks[i]._verb;
+            _levelInformationPanel.Attacks[i].GetComponentInChildren<TMP_Text>().text = "-"+_attacks[i]._verb;
             _levelInformationPanel.Attacks[i].GetComponent<AudioSource>().clip = _attacks[i]._pronunciation;
         }
 

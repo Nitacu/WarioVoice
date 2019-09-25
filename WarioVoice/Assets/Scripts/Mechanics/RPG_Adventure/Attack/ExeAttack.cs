@@ -42,7 +42,7 @@ public class ExeAttack : MonoBehaviour
 
     public void selectAttack()
     {
-        FindObjectOfType<SetActiveSpeechButton>().setButton(false);
+        
         if (characterContainsAttack() && CorrectAttack == _typeAttack)
         {
             
