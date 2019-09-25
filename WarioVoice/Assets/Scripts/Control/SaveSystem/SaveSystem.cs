@@ -39,6 +39,11 @@ public class SaveSystem
 
     public static void saveCurrentBossDifficulty(int _bossDifficulty)
     {
+        if (GameManager.GetInstance().CurrentPlayerInformation == null)
+        {
+            return;
+        }
+
         //bossDificulty siempre es +1 de los bosses derrotados
 
         PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
@@ -53,6 +58,12 @@ public class SaveSystem
 
     public static void increasePlayedTime()
     {
+
+        if (GameManager.GetInstance().CurrentPlayerInformation == null)
+        {
+            return;
+        }
+
         PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
 
         int _newPlayedTime = (int)Time.timeSinceLevelLoad;
@@ -69,7 +80,11 @@ public class SaveSystem
 
     public static void increaseMicrophonePressedTime(bool success)
     {
-        
+        if (GameManager.GetInstance().CurrentPlayerInformation == null )
+        {
+            return;
+        }
+
         Debug.Log("Increase accuracy: " + success);
         
 
@@ -91,6 +106,11 @@ public class SaveSystem
 
     public static void increasePlayedAMiniGame(ChangeScene.EspikinglishMinigames miniGame, bool success)
     {
+        if (GameManager.GetInstance().CurrentPlayerInformation == null)
+        {
+            return;
+        }
+
         PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
       
         switch (miniGame)

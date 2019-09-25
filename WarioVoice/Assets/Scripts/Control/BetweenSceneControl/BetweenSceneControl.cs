@@ -67,7 +67,6 @@ public class BetweenSceneControl : MonoBehaviour
         }
 
         int timeToshow = Mathf.FloorToInt(_timeTracking);
-        Debug.Log("Time to show: " + timeToshow);
 
         if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
         {
