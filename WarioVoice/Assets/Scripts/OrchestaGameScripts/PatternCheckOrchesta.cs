@@ -38,7 +38,8 @@ public class PatternCheckOrchesta : CommandParser
 
         getEnum(_instrument);
 
-       
+
+        patternControl.checkInstrument(_enumInstrument, instrumentWord);
     }
 
     private void getEnum(string _instrument)
