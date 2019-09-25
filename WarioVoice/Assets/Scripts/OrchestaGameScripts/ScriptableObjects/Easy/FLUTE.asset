@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ddfc0f229c13945bf2169fb2564d65, type: 3}
+  m_Name: FLUTE
+  m_EditorClassIdentifier: 
+  clipSound: {fileID: 8300000, guid: 1dcd1d56b01289844ae301a3872ae3dc, type: 3}
+  clipName: {fileID: 8300000, guid: ebe4125732f13a9489f729c5e7aef50b, type: 3}
+  sprite: {fileID: 21300000, guid: 53c9d4bbcd8814e41ba750ab76d3ff9b, type: 3}
+  clipAnimation: {fileID: 7400000, guid: 385a5c813a1d1224493a85de97457a43, type: 2}
+  instrument: 9

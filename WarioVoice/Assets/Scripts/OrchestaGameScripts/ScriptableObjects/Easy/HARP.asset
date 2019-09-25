@@ -15,7 +15,5 @@ MonoBehaviour:
   clipSound: {fileID: 8300000, guid: 7349a36b0f2d89249ae50c73d68d6b42, type: 3}
   clipName: {fileID: 8300000, guid: 0b940a25ca0b0a8469c200b0dac4b701, type: 3}
   sprite: {fileID: 21300000, guid: c518d88a556616e43aacfccca03da602, type: 3}
-  directorPlaying: {fileID: 21300000, guid: c518d88a556616e43aacfccca03da602, type: 3}
-  memberPlaying: {fileID: 21300000, guid: c518d88a556616e43aacfccca03da602, type: 3}
   clipAnimation: {fileID: 7400000, guid: cee5b59572333544ea0da43a0f0c5b10, type: 2}
   instrument: 7

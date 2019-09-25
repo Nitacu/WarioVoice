@@ -269,9 +269,29 @@
 <category><pattern>KIND</pattern><template>KIND</template></category>
 <category><pattern>FUNNY</pattern><template>FUNNY</template></category>
 <category><pattern>CHARMING</pattern><template>CHARMING</template></category>  
- <category><pattern>SWEET</pattern><template>SWEET</template></category>
+<category><pattern>SWEET</pattern><template>SWEET</template></category>
 <category><pattern>FRIENDLY</pattern><template>FRIENDLY</template></category>
 <category><pattern>SMART</pattern><template>SMART</template></category>
+<category><pattern>BRIGHT</pattern><template>BRIGHT</template></category>
+<category><pattern>CUTE</pattern><template>CUTE</template></category>
+<category><pattern>GREAT</pattern><template>GREAT</template></category>
+<category><pattern>GENTLE</pattern><template>GENTLE</template></category>  
+<category><pattern>ATTRACTIVE</pattern><template>ATTRACTIVE</template></category>
+<category><pattern>IMPORTANT</pattern><template>IMPORTANT</template></category>
+<category><pattern>WONDERFUL</pattern><template>WONDERFUL</template></category>
+<category><pattern>SPECIAL</pattern><template>SPECIAL</template></category>  
+<category><pattern>SINCERE</pattern><template>SINCERE</template></category>
+<category><pattern>DIFFERENT</pattern><template>DIFFERENT</template></category>
+<category><pattern>PERFECT</pattern><template>PERFECT</template></category>
+<category><pattern>GLAMOROUS</pattern><template>GLAMOROUS</template></category>
+<category><pattern>YOUNG</pattern><template>YOUNG</template></category>  
+<category><pattern>GORGEOUS</pattern><template>GORGEOUS</template></category>
+<category><pattern>PASSIONATE</pattern><template>PASSIONATE</template></category>
+<category><pattern>SENSIBLE</pattern><template>SENSIBLE</template></category>
+<category><pattern>LIKEABLE</pattern><template>LIKEABLE</template></category>
+<category><pattern>GENEROUS</pattern><template>GENEROUS</template></category>
+<category><pattern>BRILLIANT</pattern><template>BRILLIANT</template></category>
+
   
 <category><pattern>HARMONICA</pattern><template>HARMONICA</template></category>
 <category><pattern>DRUMS</pattern><template>DRUMS</template></category>
@@ -280,7 +300,19 @@
 <category><pattern>SAXOPHONE</pattern><template>SAXOPHONE</template></category>
 <category><pattern>TRUMPET</pattern><template>TRUMPET</template></category>
 <category><pattern>TUBA</pattern><template>TUBA</template></category>
-<category><pattern>VIOLIN</pattern><template>VIOLIN</template></category>  
+<category><pattern>VIOLIN</pattern><template>VIOLIN</template></category>
+<category><pattern>GUITAR</pattern><template>GUITAR</template></category>
+<category><pattern>FLUTE</pattern><template>FLUTE</template></category>
+<category><pattern>MARIMBA</pattern><template>MARIMBA</template></category>
+<category><pattern>MARACAS</pattern><template>MARACAS</template></category>  
+<category><pattern>CELLO</pattern><template>CELLO</template></category>
+<category><pattern>CLARINET</pattern><template>CLARINET</template></category>
+<category><pattern>ACCORDION</pattern><template>ACCORDION</template></category>
+<category><pattern>TRIANGLE</pattern><template>TRIANGLE</template></category>
+<category><pattern>TAMBOURINE</pattern><template>TAMBOURINE</template></category>
+<category><pattern>CYMBALS</pattern><template>CYMBALS</template></category>
+<category><pattern>XYLOPHONE</pattern><template>XYLOPHONE</template></category>
+  
 
   
 </aiml>

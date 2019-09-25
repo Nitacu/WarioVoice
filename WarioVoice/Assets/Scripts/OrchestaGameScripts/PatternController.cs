@@ -283,7 +283,7 @@ public class PatternController : MonoBehaviour
                     {
                         if (child.gameObject.GetComponent<InstrumentController>()._instrument == _enumInstrument && !isPlaying)
                         {
-                            child.gameObject.GetComponent<InstrumentController>().setDirectorPlaying();
+                            child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
                             child.gameObject.GetComponent<InstrumentController>().playSound();
                             child.gameObject.GetComponent<InstrumentController>().playClip();
                             isPlaying = true;

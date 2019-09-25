@@ -1642,14 +1642,25 @@ MonoBehaviour:
   director: {fileID: 90514937}
   audience: {fileID: 497655579}
   instrumentsList:
-  - {fileID: 11400000, guid: e038b03a0460a3a4284bc54bad21c2a2, type: 2}
   - {fileID: 11400000, guid: a45866b8ea66b374ebe961230cbd468b, type: 2}
+  - {fileID: 11400000, guid: 127b38b100ff09f438367a869c75b167, type: 2}
+  - {fileID: 11400000, guid: 7d66767f29551c1419abd770031aac1c, type: 2}
   - {fileID: 11400000, guid: 1cde51481efb3ad478dcdb5b19dcd27f, type: 2}
+  - {fileID: 11400000, guid: 463a324c5c56f734bb7425ace7f86bd7, type: 2}
   - {fileID: 11400000, guid: 67b222c765a596f40ad2eb22de066876, type: 2}
-  - {fileID: 11400000, guid: 02deb6c0a3141a04098665a55f5f26f9, type: 2}
-  - {fileID: 11400000, guid: 0b558e52ad6bad742b11599af52bd16f, type: 2}
   - {fileID: 11400000, guid: 47a9f455536418b4784623f35aeae20b, type: 2}
   - {fileID: 11400000, guid: 237361ef33cd0874c9d6f39283094951, type: 2}
+  - {fileID: 11400000, guid: 024e32506dfc39a4f9f78207a70bd707, type: 2}
+  - {fileID: 11400000, guid: 4ee7faff2517de74fa81313afce5c8fc, type: 2}
+  - {fileID: 11400000, guid: 14e773af9f686c84fbb248f7aecbeff8, type: 2}
+  - {fileID: 11400000, guid: 633122b757ad3ee4ca6c1d7838331366, type: 2}
+  - {fileID: 11400000, guid: e038b03a0460a3a4284bc54bad21c2a2, type: 2}
+  - {fileID: 11400000, guid: f24d44788f3160c49b0cc6297761ab24, type: 2}
+  - {fileID: 11400000, guid: 4a9c11c4bf88e9f4a8ff380faa965e0e, type: 2}
+  - {fileID: 11400000, guid: 794b393d14944f041b5732e497d1c5c2, type: 2}
+  - {fileID: 11400000, guid: 02deb6c0a3141a04098665a55f5f26f9, type: 2}
+  - {fileID: 11400000, guid: 334367514ceeba641b03f7b2db4deb26, type: 2}
+  - {fileID: 11400000, guid: 0b558e52ad6bad742b11599af52bd16f, type: 2}
   difficulty: 3
   confetti: {fileID: 855342957}
 --- !u!114 &1264144576

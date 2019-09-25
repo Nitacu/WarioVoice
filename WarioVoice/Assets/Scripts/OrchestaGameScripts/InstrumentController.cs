@@ -9,8 +9,6 @@ public class InstrumentController : MonoBehaviour
     public int numberspawn;
     private SpriteRenderer spriteRenderer;
     private Sprite instrumentQuiet;
-    private Sprite directorPlaying;
-    private Sprite memberPlaying;
     private AudioSource _audio;
     private AudioClip _instrumentSound;
     private AudioClip _instrumentNameSound;
@@ -73,25 +71,17 @@ public class InstrumentController : MonoBehaviour
     public void setInstrument()
     {
         _instrument = instrumentObject.instrument;
-        instrumentQuiet = instrumentObject.sprite;
-        directorPlaying = instrumentObject.directorPlaying;
-        memberPlaying = instrumentObject.memberPlaying;
+        instrumentQuiet = instrumentObject.sprite;      
         _instrumentNameSound = instrumentObject.clipName;
         _instrumentSound = instrumentObject.clipSound;
         clipAnimation = instrumentObject.clipAnimation;
     }
 
     public void setMemberPlaying()
-    {
-       
-      
-        spriteRenderer.sprite = memberPlaying;
+    {    
+        spriteRenderer.sprite = instrumentQuiet;
     }
 
-    public void setDirectorPlaying()
-    {
-        spriteRenderer.sprite = directorPlaying;
-    }
 
     public void playSound()
     {

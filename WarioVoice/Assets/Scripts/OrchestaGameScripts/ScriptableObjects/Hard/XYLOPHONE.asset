@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ddfc0f229c13945bf2169fb2564d65, type: 3}
+  m_Name: XYLOPHONE
+  m_EditorClassIdentifier: 
+  clipSound: {fileID: 8300000, guid: 0794d724d711059488599eeb9cdaddd4, type: 3}
+  clipName: {fileID: 8300000, guid: 9714595a62b29f44eb77022f43b0dfe1, type: 3}
+  sprite: {fileID: 21300000, guid: e0a164c4f76628b4e8ff671bb4a88e32, type: 3}
+  clipAnimation: {fileID: 7400000, guid: 60e62d0ad72c584498b640998fd3cae4, type: 2}
+  instrument: 18
