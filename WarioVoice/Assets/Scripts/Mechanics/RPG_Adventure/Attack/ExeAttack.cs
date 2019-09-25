@@ -42,10 +42,10 @@ public class ExeAttack : MonoBehaviour
 
     public void selectAttack()
     {
-
+        FindObjectOfType<SetActiveSpeechButton>().setButton(false);
         if (characterContainsAttack() && CorrectAttack == _typeAttack)
         {
-
+            
             //aplcia el daño
             if (_lamia.lostLife(_currentAttack._damage))
                 FindObjectOfType<ControlShifts>().playerTurn();
