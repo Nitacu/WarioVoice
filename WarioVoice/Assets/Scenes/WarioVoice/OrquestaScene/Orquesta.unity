@@ -247,6 +247,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &42579511 stripped
@@ -425,6 +430,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &89178975 stripped
@@ -1184,6 +1194,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &701691738 stripped
@@ -1281,6 +1296,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &768720963 stripped
@@ -1828,6 +1848,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &1489553728 stripped
@@ -2071,6 +2096,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &1500286587 stripped
@@ -2393,6 +2423,11 @@ PrefabInstance:
       propertyPath: numberspawn
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &1631722493 stripped
@@ -3357,6 +3392,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 67b222c765a596f40ad2eb22de066876,
         type: 2}
+    - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!1001 &3690706761476641680

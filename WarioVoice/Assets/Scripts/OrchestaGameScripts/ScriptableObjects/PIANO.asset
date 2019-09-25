@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clipSound: {fileID: 8300000, guid: 3c3970384789d8641b47c368a16506d4, type: 3}
   clipName: {fileID: 8300000, guid: 805b676e2e2fa2345916ad0b43dbabfc, type: 3}
-  sprite: {fileID: 21300000, guid: b88eb4677ade0c54a883f255fa059769, type: 3}
-  directorPlaying: {fileID: 21300000, guid: 1da9a3a3ea3c5484ea0a38fe5dcffedd, type: 3}
-  memberPlaying: {fileID: 21300000, guid: 31a05bfd660d3ca4c845cbd47fe8b594, type: 3}
-  scale: {x: 2, y: 2, z: 2}
+  sprite: {fileID: 21300000, guid: 13134b76f886e1d46bf4db44295720fb, type: 3}
+  directorPlaying: {fileID: 21300000, guid: 13134b76f886e1d46bf4db44295720fb, type: 3}
+  memberPlaying: {fileID: 21300000, guid: 13134b76f886e1d46bf4db44295720fb, type: 3}
+  clipAnimation: {fileID: 7400000, guid: d2c1209664e7c4e40bc61763299dd4fb, type: 2}
   instrument: 2

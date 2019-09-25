@@ -14,6 +14,8 @@ public class InstrumentController : MonoBehaviour
     private AudioSource _audio;
     private AudioClip _instrumentSound;
     private AudioClip _instrumentNameSound;
+    private AnimationClip clipAnimation;
+    private Animator _anim;
 
     public bool isOn = false;
 
@@ -26,7 +28,18 @@ public class InstrumentController : MonoBehaviour
         SAXOPHONE,
         TUBA,
         TRUMPET,
-        HARP
+        HARP,
+        GUITAR,
+        FLUTE,
+        MARIMBA,
+        MARACAS,
+        CELLO,
+        CLARINET,
+        ACCORDION,
+        TRIANGLE,
+        TAMBOURINE,
+        CYMBALS,
+        XYLOPHONE
     }
 
     [HideInInspector]
@@ -43,6 +56,7 @@ public class InstrumentController : MonoBehaviour
         instrumentObject = null;
         spriteRenderer = GetComponent<SpriteRenderer>();
         _audio = GetComponent<AudioSource>();
+        _anim = GetComponent<Animator>();
         //setInstrument(instrumentObject);
         //setMemberPlaying();
     }
@@ -51,7 +65,9 @@ public class InstrumentController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         _audio = GetComponent<AudioSource>();
+        _anim = GetComponent<Animator>();
         setInstrument();
+        
     }
 
     public void setInstrument()
@@ -62,18 +78,12 @@ public class InstrumentController : MonoBehaviour
         memberPlaying = instrumentObject.memberPlaying;
         _instrumentNameSound = instrumentObject.clipName;
         _instrumentSound = instrumentObject.clipSound;
+        clipAnimation = instrumentObject.clipAnimation;
     }
 
     public void setMemberPlaying()
     {
-        /*if (memberPlaying == null)
-        {
-            Debug.Log("No tengo sprite de member playing");
-        }
-        if (spriteRenderer == null)
-        {
-            Debug.Log("No tengo sprite renderer wey");
-        }*/
+       
       
         spriteRenderer.sprite = memberPlaying;
     }
@@ -104,6 +114,10 @@ public class InstrumentController : MonoBehaviour
     public void changeInstrument(bool boolean)
     {
         isOn = boolean;
+        if (boolean)
+        {
+            playClip();
+        }
     }
 
     public float getSoundTime()
@@ -114,6 +128,18 @@ public class InstrumentController : MonoBehaviour
     public float getNameTime()
     {
         return _instrumentNameSound.length;
+    }
+
+    public void playClip()
+    {
+        _anim.Play(Animator.StringToHash(clipAnimation.name.ToString()), -1, 0f);
+        Invoke("setIdle", _instrumentSound.length);
+    }
+
+    private void setIdle()
+    {
+        _anim.Play(Animator.StringToHash("Idle"),-1,0f);
+        GetComponent<MusicParticles>().stopParticles();
     }
 
     // Update is called once per frame

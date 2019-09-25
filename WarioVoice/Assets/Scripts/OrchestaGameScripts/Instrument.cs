@@ -10,6 +10,6 @@ public class Instrument : ScriptableObject
     public Sprite sprite;
     public Sprite directorPlaying;
     public Sprite memberPlaying;
-    public Vector3 scale;
+    public AnimationClip clipAnimation;
     public InstrumentController.ENUMINSTRUMENT instrument;
 }

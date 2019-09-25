@@ -181,10 +181,25 @@ public class WordController : MonoBehaviour
     {
         Sign tempSign;
         bool correctAnswer = false;
+        bool correctPronunciation = false;
 
         if (isShowingSign)
         {
-            foreach(WordList.itemNames possibleAnswer in signsInGame[currentSign].possibleAnswers) //Checks all possible answers for the word or image in sign
+
+            foreach (Sign sign in signs) //Checks all possible answers for the word or image in sign
+            {
+                foreach (WordList.itemNames possibleAnswer in sign.possibleAnswers) //Checks all possible answers for the word or image in sign
+                {
+                    if (answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        correctPronunciation = true;
+                    }
+                }
+            }
+
+            SaveSystem.increaseMicrophonePressedTime(correctPronunciation);
+
+            foreach (WordList.itemNames possibleAnswer in signsInGame[currentSign].possibleAnswers) //Checks all possible answers for the word or image in sign
             {
                 //answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase)
                 if (answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase))

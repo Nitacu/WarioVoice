@@ -39,7 +39,7 @@ public class PatternController : MonoBehaviour
     void Start()
     {
         difficulty = GameManager.GetInstance().getGameDifficulty();
-
+        
         selectDifficulty();
 
         patternPanel = FindObjectOfType<PatternPanelController>();
@@ -152,11 +152,11 @@ public class PatternController : MonoBehaviour
                 break;
             case 5:
                 numberOfInstruments = 4;
-                patternDuration = 5;
+                patternDuration = 4;
                 break;
             case 6:
                 numberOfInstruments = 4;
-                patternDuration = 4;
+                patternDuration = 5;
                 break;
             case 7:
                 numberOfInstruments = 5;
@@ -168,7 +168,7 @@ public class PatternController : MonoBehaviour
                 break;
             case 9:
                 numberOfInstruments = 7;
-                patternDuration = 6;
+                patternDuration = 7;
                 break;
             case 10:
                 numberOfInstruments = 8;
@@ -284,6 +284,7 @@ public class PatternController : MonoBehaviour
                         {
                             child.gameObject.GetComponent<InstrumentController>().setDirectorPlaying();
                             child.gameObject.GetComponent<InstrumentController>().playSound();
+                            child.gameObject.GetComponent<InstrumentController>().playClip();
                             isPlaying = true;
                         }
                     }
@@ -297,7 +298,7 @@ public class PatternController : MonoBehaviour
                         confetti.SetActive(true);
                         GameManager.GetInstance();
                         fade.permanentFade();
-
+                        Invoke("nextLevel", 2);
                         //messageInScreen.GetComponent<ScreenMessage>().winScreen();
                     }
                 }
@@ -305,7 +306,8 @@ public class PatternController : MonoBehaviour
                 {
                     //Decir que le quedó mal
                     Debug.Log("Perdiste");
-                    fade.lostLevel();
+                    fade.permanentFade();
+                    Invoke("lostLevel", 2);
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
                         child.gameObject.GetComponent<InstrumentController>().setQuietInstrument();
@@ -332,7 +334,7 @@ public class PatternController : MonoBehaviour
         //patternPanel.gameObject.SetActive(true); 
         partiture.gameObject.SetActive(false);
         activateColliders();
-        director.SetActive(true);
+        //director.SetActive(true);
 
         audience.SetActive(true);
 

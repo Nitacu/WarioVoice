@@ -30,7 +30,7 @@ public class FadeController : MonoBehaviour
     {
         FindObjectOfType<BotInput>().gameObject.SetActive(false);
         Invoke("finalFade", 2);
-        Invoke("backToMenuButton", 3);
+        
     }
 
     private void finalFade()
