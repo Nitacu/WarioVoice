@@ -278,6 +278,7 @@ public class PatternController : MonoBehaviour
 
                 if (_enumInstrument == patronList[currentPatron - 1][contChecking].instrument)
                 {
+                    SaveSystem.increaseMicrophonePressedTime(true);
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
                         if (child.gameObject.GetComponent<InstrumentController>()._instrument == _enumInstrument && !isPlaying)
@@ -307,6 +308,7 @@ public class PatternController : MonoBehaviour
                     //Decir que le quedó mal
                     Debug.Log("Perdiste");
                     fade.permanentFade();
+                    SaveSystem.increaseMicrophonePressedTime(false);
                     Invoke("lostLevel", 2);
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
@@ -325,6 +327,7 @@ public class PatternController : MonoBehaviour
         else
         {
             //wrong pronunciation
+            SaveSystem.increaseMicrophonePressedTime(false);
         }
     }
 

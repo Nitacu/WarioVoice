@@ -38,16 +38,7 @@ public class PatternCheckOrchesta : CommandParser
 
         getEnum(_instrument);
 
-        if (instrumentWord)
-        {
-            SaveSystem.increaseMicrophonePressedTime(true);
-        }
-        else
-        {
-            SaveSystem.increaseMicrophonePressedTime(false);
-        }
-
-        patternControl.checkInstrument(_enumInstrument, instrumentWord);
+       
     }
 
     private void getEnum(string _instrument)

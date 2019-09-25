@@ -185,19 +185,7 @@ public class WordController : MonoBehaviour
 
         if (isShowingSign)
         {
-
-            foreach (Sign sign in signs) //Checks all possible answers for the word or image in sign
-            {
-                foreach (WordList.itemNames possibleAnswer in sign.possibleAnswers) //Checks all possible answers for the word or image in sign
-                {
-                    if (answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase))
-                    {
-                        correctPronunciation = true;
-                    }
-                }
-            }
-
-            SaveSystem.increaseMicrophonePressedTime(correctPronunciation);
+      
 
             foreach (WordList.itemNames possibleAnswer in signsInGame[currentSign].possibleAnswers) //Checks all possible answers for the word or image in sign
             {
@@ -205,8 +193,11 @@ public class WordController : MonoBehaviour
                 if (answer.Equals(possibleAnswer.ToString(), System.StringComparison.OrdinalIgnoreCase))
                 {
                     correctAnswer = true;
+                    correctPronunciation = true;
                 }
             }
+
+            SaveSystem.increaseMicrophonePressedTime(correctPronunciation);
 
             if (correctAnswer)
             {
