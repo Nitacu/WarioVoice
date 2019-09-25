@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GOLD
   m_EditorClassIdentifier: 
   _colorName: GOLD
-  _splashImage: {fileID: 5618026609613044863, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 7870207821755300739, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 15
   _brushColor: {r: 1, g: 0.8431373, b: 0, a: 1}

@@ -111,6 +111,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private LayerMask _canvasMask;
     [SerializeField] private GameObject _brush;
     [SerializeField] private GameObject _splashBasePrefab;
+    [SerializeField] private GameObject _wrongPaintPrefab;
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
     //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
@@ -124,7 +125,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private float _timeToDeactivateInitPanel;
 
 
-    [Header("Win Parameters")]
+    [Header("Win Parameters")]    
     [SerializeField] private float _minCoincidencesPercentage;
     [SerializeField] private int _paintedSplashMargin;
     [SerializeField] private int _analyzingTime;
@@ -386,6 +387,8 @@ public class AbstractPaintingManager : CommandParser
             if (_copyReferenceSplash.GetComponent<ReferencePaintSplash>().evaluateSimilarSplashAround())
             {
                 _splashCoincidencesCount++;
+
+               
             }
 
             Destroy(_copyReferenceSplash);
@@ -418,17 +421,22 @@ public class AbstractPaintingManager : CommandParser
             if (!item.GetComponent<SelfPaintSplash>().Matched)
             {
                 item.GetComponent<SpriteRenderer>().color = Color.grey;
+
+                GameObject ecs = Instantiate(_wrongPaintPrefab);
+
+                Vector2 newposition = new Vector2(item.transform.position.x, item.transform.position.y);
+                ecs.transform.position = newposition;
             }
         }
 
-        Destroy(analyzerBandToDestroy);
+        //Destroy(analyzerBandToDestroy);
 
         if (playerWin)
         {
             _guideText.text = WIN;
             _analyzeResultText.text = "Nice Paint\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
-                    + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + _minCoincidencesPercentage + "%";
+                    + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + "100%";
 
             /* if (_currentLevel + 2 <= _levels.Count)
              {
@@ -449,7 +457,7 @@ public class AbstractPaintingManager : CommandParser
             _guideText.text = LOSE;
             _analyzeResultText.text = "Meeh\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
-                    + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + _minCoincidencesPercentage + "%";
+                    + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + "100%";
 
         }
 

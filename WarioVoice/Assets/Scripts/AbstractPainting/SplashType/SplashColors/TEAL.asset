@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TEAL
   m_EditorClassIdentifier: 
   _colorName: TEAL
-  _splashImage: {fileID: 5705619188353881585, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 468474980119610100, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 23
   _brushColor: {r: 0, g: 0.5019608, b: 0.5019608, a: 1}

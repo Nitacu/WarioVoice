@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TAN
   m_EditorClassIdentifier: 
   _colorName: TAN
-  _splashImage: {fileID: 3972260694628208622, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 5598536493028257994, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 27
   _brushColor: {r: 0.82745105, g: 0.7137255, b: 0.56078434, a: 1}

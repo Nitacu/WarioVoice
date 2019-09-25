@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AZURE
   m_EditorClassIdentifier: 
   _colorName: AZURE
-  _splashImage: {fileID: -7182412306432049925, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 3016687544854614915, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 28
   _brushColor: {r: 0, g: 0.49803925, b: 1, a: 1}

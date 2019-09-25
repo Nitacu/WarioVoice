@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BRONZE
   m_EditorClassIdentifier: 
   _colorName: BRONZE
-  _splashImage: {fileID: -5376342860832589252, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 6627294996291356088, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 14
   _brushColor: {r: 0.80392164, g: 0.49803925, b: 0.19607845, a: 1}

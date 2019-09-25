@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TURQUOISE
   m_EditorClassIdentifier: 
   _colorName: TURQUOISE
-  _splashImage: {fileID: 4955178320066359833, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 4236206714054571704, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 21
   _brushColor: {r: 0.2509804, g: 0.87843144, b: 0.81568635, a: 1}

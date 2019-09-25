@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AMETHYST
   m_EditorClassIdentifier: 
   _colorName: AMETHYST
-  _splashImage: {fileID: -2951336565086025986, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 2092793830414246769, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 22
   _brushColor: {r: 0.6, g: 0.40000004, b: 0.8000001, a: 1}

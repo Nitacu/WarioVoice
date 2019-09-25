@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PURPLE
   m_EditorClassIdentifier: 
   _colorName: PURPLE
-  _splashImage: {fileID: 9097756742785441464, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 2425309500492090509, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 6
   _brushColor: {r: 0.5019608, g: 0, b: 0.5019608, a: 1}

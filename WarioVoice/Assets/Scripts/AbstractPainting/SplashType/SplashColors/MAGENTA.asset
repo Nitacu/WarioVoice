@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MAGENTA
   m_EditorClassIdentifier: 
   _colorName: MAGENTA
-  _splashImage: {fileID: -3698394584390798031, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 2540476659441031949, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 9
   _brushColor: {r: 1, g: 0, b: 1, a: 1}

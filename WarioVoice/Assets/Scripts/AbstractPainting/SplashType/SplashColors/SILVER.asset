@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SILVER
   m_EditorClassIdentifier: 
   _colorName: SILVER
-  _splashImage: {fileID: -7717256601614675534, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 6530464239036028991, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 11
   _brushColor: {r: 0.75294125, g: 0.75294125, b: 0.75294125, a: 1}

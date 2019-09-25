@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RUBY
   m_EditorClassIdentifier: 
   _colorName: RUBY
-  _splashImage: {fileID: 1406727451726706396, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: -8428798543136661885, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 13
   _brushColor: {r: 0.96470594, g: 0.21568629, b: 0.49803925, a: 1}

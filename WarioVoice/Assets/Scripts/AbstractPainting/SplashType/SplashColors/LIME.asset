@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LIME
   m_EditorClassIdentifier: 
   _colorName: LIME
-  _splashImage: {fileID: -6306496086427281703, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: -1645503111440527043, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 19
   _brushColor: {r: 0.7490196, g: 1, b: 0, a: 1}

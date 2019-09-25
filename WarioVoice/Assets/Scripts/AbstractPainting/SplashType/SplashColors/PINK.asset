@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PINK
   m_EditorClassIdentifier: 
   _colorName: PINK
-  _splashImage: {fileID: 4753302071356348453, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 6967789186118970393, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 5
   _brushColor: {r: 0.9921569, g: 0.42352945, b: 0.61960787, a: 1}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HARLEQUIN
   m_EditorClassIdentifier: 
   _colorName: HARLEQUIN
-  _splashImage: {fileID: 7414556624040780649, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 1449425550574669093, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 29
   _brushColor: {r: 0.24705884, g: 1, b: 0, a: 1}

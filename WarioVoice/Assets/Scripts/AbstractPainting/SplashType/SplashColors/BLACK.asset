@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BLACK
   m_EditorClassIdentifier: 
   _colorName: BLACK
-  _splashImage: {fileID: -2500777982274813115, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 7543222166109188186, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 7
   _brushColor: {r: 0, g: 0, b: 0, a: 1}

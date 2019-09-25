@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SANGRIA
   m_EditorClassIdentifier: 
   _colorName: SANGRIA
-  _splashImage: {fileID: 8881735678822551105, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: -5830684531959634743, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 20
   _brushColor: {r: 0.57254905, g: 0, b: 0.039215688, a: 1}

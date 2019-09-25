@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JADE
   m_EditorClassIdentifier: 
   _colorName: JADE
-  _splashImage: {fileID: -2305716859088352701, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 2290123687210025540, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 24
   _brushColor: {r: 0, g: 0.65882355, b: 0.41960788, a: 1}

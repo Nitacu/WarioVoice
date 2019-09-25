@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SCARLET
   m_EditorClassIdentifier: 
   _colorName: SCARLET
-  _splashImage: {fileID: 1305952914170428943, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 3789393752066378185, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 16
   _brushColor: {r: 1, g: 0.14117648, b: 0, a: 1}

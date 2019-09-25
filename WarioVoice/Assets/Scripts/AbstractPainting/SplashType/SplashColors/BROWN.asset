@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BROWN
   m_EditorClassIdentifier: 
   _colorName: BROWN
-  _splashImage: {fileID: -1465495637993225428, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: -3712016268402882356, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 8
   _brushColor: {r: 0.5882353, g: 0.29803923, b: 0.007843138, a: 1}

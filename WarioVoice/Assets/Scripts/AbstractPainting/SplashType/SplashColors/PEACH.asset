@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PEACH
   m_EditorClassIdentifier: 
   _colorName: PEACH
-  _splashImage: {fileID: 1944106526218400674, guid: 312bada487ebe67489b00e591e14f5fe,
+  _splashImage: {fileID: 8131268077065117130, guid: 4d453db242766234faf964b338428f0b,
     type: 3}
   _splasColorType: 26
   _brushColor: {r: 1, g: 0.8980393, b: 0.7058824, a: 1}
