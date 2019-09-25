@@ -47,6 +47,7 @@ public class ControlShifts : MonoBehaviour
             int numberRandom = Random.Range(0, _heroes.Length);
             if (_heroes[numberRandom].IsLive)
             {
+                FindObjectOfType<SetActiveSpeechButton>().setButton(true);
                 _heroes[numberRandom].showAttacks();
                 return true;
             }

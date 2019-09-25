@@ -566,8 +566,8 @@ RectTransform:
   m_Father: {fileID: 1308863121}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: -0.00008605064, y: 0.47243854}
-  m_AnchorMax: {x: 0.17203099, y: 0.6382489}
+  m_AnchorMin: {x: 0.031066941, y: 0.48354965}
+  m_AnchorMax: {x: 0.20318398, y: 0.64936006}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -802,8 +802,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
 --- !u!222 &517609141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1931,7 +1931,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: con que porcentaje del poder quieres disparar
+  m_text: Con que porcentaje del poder quieres disparar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5174,8 +5174,8 @@ RectTransform:
   m_Father: {fileID: 1308863121}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: -0.00008605064, y: 0.47243854}
-  m_AnchorMax: {x: 0.17203099, y: 0.708463}
+  m_AnchorMin: {x: 0.031066941, y: 0.48354965}
+  m_AnchorMax: {x: 0.20318398, y: 0.71957415}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5274,7 +5274,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: a cuantos grados quieres disparar
+  m_text: A cuantos grados quieres disparar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5302,7 +5302,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 11.9
+  m_fontSize: 47.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5808,6 +5808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: initial text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428728264759955883, guid: db0b470f152b65e49b5e0cff947ce067,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8428728264759955895, guid: db0b470f152b65e49b5e0cff947ce067,
         type: 3}
