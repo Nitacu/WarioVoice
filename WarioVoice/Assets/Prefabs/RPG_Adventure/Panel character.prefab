@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7313950891300914740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7313950891300914741}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35,10 +35,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: -0.24682444, y: -0.13562691}
+  m_AnchorMax: {x: 0.110301204, y: -0.000000011665741}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 115.52, y: 88.7}
+  m_SizeDelta: {x: 0.0000076293945, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7313950891300914737
 CanvasRenderer:
@@ -125,10 +125,10 @@ RectTransform:
   m_Father: {fileID: 7313950891300914740}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.30910063, y: 0.54076236}
-  m_AnchorMax: {x: 0.6908994, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.7753159, y: 0.000007082434}
+  m_AnchorMax: {x: 0.99999857, y: 1.0000113}
+  m_AnchoredPosition: {x: 0.00016403198, y: 9.239492}
+  m_SizeDelta: {x: 0, y: -18.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7313950891334266071
 CanvasRenderer:
@@ -201,10 +201,10 @@ RectTransform:
   m_Father: {fileID: 7313950891300914740}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.000047638918, y: 0.107010156}
-  m_AnchorMax: {x: 1, y: 0.5407631}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.008090255, y: 0.35839906}
+  m_AnchorMax: {x: 0.671, y: 0.6353942}
+  m_AnchoredPosition: {x: 0.0000038146973, y: -0.03999996}
+  m_SizeDelta: {x: 0, y: -0.07999992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7313950892228222317
 CanvasRenderer:
@@ -231,7 +231,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 8
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1

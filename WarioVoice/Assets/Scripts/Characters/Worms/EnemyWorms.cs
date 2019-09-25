@@ -10,7 +10,16 @@ public class EnemyWorms : MonoBehaviour
     [SerializeField] protected Transform _positionShoot;
     [SerializeField] protected GameObject _myFather;
     [SerializeField] protected GameObject _turret;
-    private const float _SPEED = 12; 
+    [SerializeField] protected typeShoot _typeShoot;
+    private const float _SPEED = 12;
+    float T;
+
+    public enum typeShoot
+    {
+        S_MAX,
+        S_MIN,
+        S_LOW_ENERGI
+    }
     public int TimeToShoot { get => _timeToShoot; set => _timeToShoot = value; }
 
     public virtual void Start()
@@ -29,10 +38,28 @@ public class EnemyWorms : MonoBehaviour
         float gSquared = Physics.gravity.sqrMagnitude;
         float b = _SPEED * _SPEED + Vector3.Dot(toTarget, Physics.gravity);
         float discriminant = b * b - gSquared * toTarget.sqrMagnitude;
+        float discRoot = Mathf.Sqrt(discriminant);
 
-        float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
+        switch (_typeShoot)
+        {
+            case typeShoot.S_LOW_ENERGI:
+                float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
+                 T = T_lowEnergy;
+                break;
 
-        float T = T_lowEnergy;// choose T_max, T_min, or some T in-between like T_lowEnergy
+            case typeShoot.S_MAX:
+                float T_max = Mathf.Sqrt((b + discRoot) * 2f / gSquared);
+                 T = T_max;
+                break;
+
+            case typeShoot.S_MIN:
+                float T_min = Mathf.Sqrt((b - discRoot) * 2f / gSquared);
+                T = T_min;
+                break;
+
+        }
+
+
 
         //Convert from time-to-hit to a launch velocity:
         Vector3 velocity = toTarget / T - Physics.gravity * T / 2f;
@@ -74,21 +101,29 @@ public class EnemyWorms : MonoBehaviour
         {
             // Target is too far away to hit at this speed.
             // Abort, or fire at max speed in its general direction?
-            Debug.Log("nopuedo golpear al objetivo");
+            Debug.Log("no puedo golpear al objetivo");
         }
 
         float discRoot = Mathf.Sqrt(discriminant);
 
-        // Highest shot with the given max speed:
-        float T_max = Mathf.Sqrt((b + discRoot) * 2f / gSquared);
+        switch (_typeShoot)
+        {
+            case typeShoot.S_LOW_ENERGI:
+                float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
+                T = T_lowEnergy;
+                break;
 
-        // Most direct shot with the given max speed:
-        float T_min = Mathf.Sqrt((b - discRoot) * 2f / gSquared);
+            case typeShoot.S_MAX:
+                float T_max = Mathf.Sqrt((b + discRoot) * 2f / gSquared);
+                T = T_max;
+                break;
 
-        // Lowest-speed arc available:
-        float T_lowEnergy = Mathf.Sqrt(Mathf.Sqrt(toTarget.sqrMagnitude * 4f / gSquared));
+            case typeShoot.S_MIN:
+                float T_min = Mathf.Sqrt((b - discRoot) * 2f / gSquared);
+                T = T_min;
+                break;
 
-        float T = T_lowEnergy;// choose T_max, T_min, or some T in-between like T_lowEnergy
+        }
 
         //Convert from time-to-hit to a launch velocity:
         Vector3 velocity = toTarget / T - Physics.gravity * T / 2f;

@@ -75,7 +75,7 @@ public class ConvertAngles : CommandParser
         {
             if (_sentenses.Length == 2)
             {
-
+                
                 if (string.Equals(_sentenses[1], GlossaryOfAngles.DEGREES))
                 {
                     try
@@ -84,6 +84,7 @@ public class ConvertAngles : CommandParser
 
                         if (result <= 180 && result >= 0)
                         {
+                            SaveSystem.increaseMicrophonePressedTime(true);
                             _pointingGun.point(result);
                             _controlWorm.desactiveAll();
                             if (TutorialMode)
@@ -116,6 +117,7 @@ public class ConvertAngles : CommandParser
 
                         if (result <= 180 && result >= 0)
                         {
+                            SaveSystem.increaseMicrophonePressedTime(true);
                             _pointingGun.point(result);
                             _controlWorm.desactiveAll();
                             if (TutorialMode)
@@ -135,6 +137,10 @@ public class ConvertAngles : CommandParser
                     }
                 }
             }
+            else
+            {
+                SaveSystem.increaseMicrophonePressedTime(false);
+            }
         }
         if (_allowShoot)
         {
@@ -151,6 +157,7 @@ public class ConvertAngles : CommandParser
 
                         if (result <= 100)
                         {
+                            SaveSystem.increaseMicrophonePressedTime(true);
                             _ammunition.useWeapon(result);
                             _controlWorm.desactiveAll();
                         }
@@ -175,7 +182,7 @@ public class ConvertAngles : CommandParser
                         int result = Int32.Parse(_sentenses[0]);
                         if (result <= 100)
                         {
-
+                            SaveSystem.increaseMicrophonePressedTime(true);
                             _ammunition.useWeapon(result);
                             _controlWorm.desactiveAll();
                         }
@@ -185,6 +192,10 @@ public class ConvertAngles : CommandParser
                         Debug.Log($"Unable to parse '{_sentenses[0]}'");
                     }
                 }
+            }
+            else
+            {
+                SaveSystem.increaseMicrophonePressedTime(false);
             }
         }
 

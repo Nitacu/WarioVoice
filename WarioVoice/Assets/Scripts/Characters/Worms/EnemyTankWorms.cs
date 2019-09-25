@@ -46,10 +46,6 @@ public class EnemyTankWorms : EnemyWorms
         {
             prepareShoot();
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            shootPlayer();
-        }
     }
 
     public override void aimPlayer()
