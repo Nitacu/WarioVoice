@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1bc8e5ab65c9843b696ebefe6b977e, type: 3}
   m_Name: Hero3
   m_EditorClassIdentifier: 
-  _standing: {fileID: -6774535098186297636, guid: e8bfd1ff1258d394780d88d86f3cc772,
+  _standing: {fileID: -3650473751189997891, guid: c60f209a902755747bf05254e22a1b1a,
     type: 3}
-  _icon: {fileID: -5966527664196737326, guid: e8bfd1ff1258d394780d88d86f3cc772, type: 3}
+  _icon: {fileID: -3174510707732458725, guid: c60f209a902755747bf05254e22a1b1a, type: 3}
   _animator: {fileID: 0}
