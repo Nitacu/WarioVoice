@@ -299,7 +299,7 @@ public class PatternController : MonoBehaviour
                         confetti.SetActive(true);
                         GameManager.GetInstance();
                         fade.permanentFade();
-                        Invoke("nextLevel", 2);
+                        Invoke("nextLevel", 3);
                         //messageInScreen.GetComponent<ScreenMessage>().winScreen();
                     }
                 }
@@ -315,7 +315,7 @@ public class PatternController : MonoBehaviour
                         child.gameObject.GetComponent<InstrumentController>().setQuietInstrument();
                     }
 
-                    director.SetActive(true);
+                    
                 }
 
                 isChecking = false;
