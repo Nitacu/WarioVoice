@@ -72,7 +72,6 @@ public class PatternController : MonoBehaviour
             {
                 if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
                 {
-
                     child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
                     Debug.Log(patronList[currentPatron][contInstrumentCreator].instrument.ToString());
                     child.gameObject.GetComponent<InstrumentController>().setInstrument();
