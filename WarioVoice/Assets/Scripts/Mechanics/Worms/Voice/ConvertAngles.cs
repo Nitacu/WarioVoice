@@ -102,6 +102,10 @@ public class ConvertAngles : CommandParser
                         Debug.Log($"Unable to parse '{_sentenses[0]}'");
                     }
                 }
+                else
+                {
+                    SaveSystem.increaseMicrophonePressedTime(false);
+                }
             }
             else if (_sentenses.Length == 1)
             {
@@ -136,6 +140,10 @@ public class ConvertAngles : CommandParser
                         Debug.Log($"Unable to parse '{_sentenses[0]}'");
                     }
                 }
+                else
+                {
+                    SaveSystem.increaseMicrophonePressedTime(false);
+                }
             }
             else
             {
@@ -168,6 +176,10 @@ public class ConvertAngles : CommandParser
                         Debug.Log($"Unable to parse '{_sentenses[0]}'");
                     }
                 }
+                else
+                {
+                    SaveSystem.increaseMicrophonePressedTime(false);
+                }
             }
             else if (_sentenses.Length == 1)
             {
@@ -191,6 +203,10 @@ public class ConvertAngles : CommandParser
                     {
                         Debug.Log($"Unable to parse '{_sentenses[0]}'");
                     }
+                }
+                else
+                {
+                    SaveSystem.increaseMicrophonePressedTime(false);
                 }
             }
             else
