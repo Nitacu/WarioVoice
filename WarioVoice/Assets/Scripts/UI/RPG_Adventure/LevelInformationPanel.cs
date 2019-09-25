@@ -6,10 +6,13 @@ using TMPro;
 public class LevelInformationPanel : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _attacks;
-    [SerializeField] private GameObject _text;
     [SerializeField] private GameObject _panelAttacks;
     [SerializeField] private TMP_Text _puzzle;
+    private string _riddle;
+    private string _currentDialogue;
     private ControlShifts _controlShifts;
+    private float _time = 0;
+    private bool _allowReloadRiddle = false;
 
     private void Start()
     {
@@ -18,20 +21,47 @@ public class LevelInformationPanel : MonoBehaviour
 
     public void activeDialogue(string text)
     {
-
+        _allowReloadRiddle = false;
+        FindObjectOfType<SetActiveSpeechButton>().setButton(false);
         _panelAttacks.SetActive(false);
-        _text.SetActive(true);
-        _text.GetComponent<TMP_Text>().text = text;
+        _puzzle.text = text;
+    }
+
+    public void reloadTime()
+    {
+        _time = 0;
+    }
+
+    private void Update()
+    {
+        if (_allowReloadRiddle)
+        {
+            _time += Time.deltaTime;
+
+            if (_time >= 3)
+            {
+                reloadRiddle();
+            }
+        }
 
     }
 
     public void activePanelAttacks(string puzzle)
     {
-
+        _allowReloadRiddle = true;
+        _riddle = puzzle;
+        FindObjectOfType<SetActiveSpeechButton>().setButton(true);
         _panelAttacks.SetActive(true);
-        _text.SetActive(false);
         _puzzle.text = puzzle;
+    }
 
+    public void reloadRiddle()
+    {
+        if (!string.Equals(_puzzle.text, _riddle))
+        {
+            _puzzle.text = _riddle;   
+        }
+        _time = 0;
     }
 
     public void pronunciationAttack(GameObject gameObject)

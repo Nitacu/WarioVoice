@@ -28,9 +28,9 @@ public class PatternCheckOrchesta : CommandParser
     {
         instrumentWord = false;
 
-        foreach (Transform musicInstrument in patternControl.instrumentsGameObject.transform)
+        foreach (Instrument musicInstrument in patternControl.instrumentsList)
         {
-            if (_instrument.Equals(musicInstrument.gameObject.GetComponent<InstrumentController>()._instrument.ToString(), System.StringComparison.OrdinalIgnoreCase))
+            if (_instrument.Equals(musicInstrument.instrument.ToString(), System.StringComparison.OrdinalIgnoreCase))
             {
                 instrumentWord = true;
             }
@@ -76,7 +76,49 @@ public class PatternCheckOrchesta : CommandParser
         {
             _enumInstrument = InstrumentController.ENUMINSTRUMENT.VIOLIN;
         }
-
-
+        if (_instrument.Equals("GUITAR", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.GUITAR;
+        }
+        if (_instrument.Equals("FLUTE", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.FLUTE;
+        }
+        if (_instrument.Equals("MARIMBA", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.MARIMBA;
+        }
+        if (_instrument.Equals("MARACAS", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.MARACAS;
+        }
+        if (_instrument.Equals("CELLO", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.CELLO;
+        }
+        if (_instrument.Equals("CLARINET", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.CLARINET;
+        }
+        if (_instrument.Equals("ACCORDION", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.ACCORDION;
+        }
+        if (_instrument.Equals("TRIANGLE", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.TRIANGLE;
+        }
+        if (_instrument.Equals("TAMBOURINE", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.TAMBOURINE;
+        }
+        if (_instrument.Equals("CYMBALS", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.CYMBALS;
+        }
+        if (_instrument.Equals("XYLOPHONE", System.StringComparison.OrdinalIgnoreCase))
+        {
+            _enumInstrument = InstrumentController.ENUMINSTRUMENT.XYLOPHONE;
+        }
     }
 }

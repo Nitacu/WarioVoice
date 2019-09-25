@@ -97,7 +97,7 @@ public class ConvertAttack : CommandParser
                 break;
 
             default:
-                Debug.Log("la palabra " + command + " no coincide");
+                
                 break;
         }
     }
