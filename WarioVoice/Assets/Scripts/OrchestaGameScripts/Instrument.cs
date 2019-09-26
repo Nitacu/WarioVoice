@@ -10,4 +10,5 @@ public class Instrument : ScriptableObject
     public Sprite sprite;
     public AnimationClip clipAnimation;
     public InstrumentController.ENUMINSTRUMENT instrument;
+    public InstrumentController.INSTRUMENTDIFFICULTY difficulty;
 }

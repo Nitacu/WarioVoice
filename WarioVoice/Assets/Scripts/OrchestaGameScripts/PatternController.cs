@@ -32,8 +32,8 @@ public class PatternController : MonoBehaviour
     private int currentPatron = 0;
     private int contInstrument = 0;
     private int contChecking = 0;
+    private int instrumentDifficulty = 0;
     
-
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +73,6 @@ public class PatternController : MonoBehaviour
                 if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
                 {
                     child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
-                    Debug.Log(patronList[currentPatron][contInstrumentCreator].instrument.ToString());
                     child.gameObject.GetComponent<InstrumentController>().setInstrument();
                     child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
                 }
@@ -174,18 +173,81 @@ public class PatternController : MonoBehaviour
                 patternDuration = 8;
                 break;
         }
+
+        if (difficulty > 0 && difficulty < 5) //easy instruments (1-4)
+        {
+            instrumentDifficulty = 1;
+        }
+
+        if (difficulty > 4 && difficulty < 9) // easy and medium instruments (5-8)
+        {
+            instrumentDifficulty = 2;
+        }
+
+        if (difficulty > 8) // medium and hard instruments (9-10)
+        {
+            instrumentDifficulty = 3;
+        }
     }
 
     private void instrumentCreator()
     {
         int randomNumber = 0;
 
-        for (int i = 0; i < numberOfInstruments; i++)
+        switch (instrumentDifficulty)
         {
-            randomNumber = Random.Range(0, instrumentsList.Count);
-            instrumentsInScene.Add(instrumentsList[randomNumber]);
-            instrumentsList.RemoveAt(randomNumber);
+            case 1:
+                for (int i = 0; i < numberOfInstruments; i++)
+                {
+                    randomNumber = Random.Range(0, instrumentsList.Count);
+                    if(instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.EASY)
+                    {
+                        instrumentsInScene.Add(instrumentsList[randomNumber]);
+                        instrumentsList.RemoveAt(randomNumber);
+                    }
+                    else
+                    {
+                        i--;
+                    }
+                    
+                }
+                break;
+            case 2:
+                for (int i = 0; i < numberOfInstruments; i++)
+                {
+                    randomNumber = Random.Range(0, instrumentsList.Count);
+                    if (instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.EASY || instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.MEDIUM)
+                    {
+                        instrumentsInScene.Add(instrumentsList[randomNumber]);
+                        instrumentsList.RemoveAt(randomNumber);
+                    }
+                    else
+                    {
+                        i--;
+                    }
+
+                }
+                break;
+
+            case 3:
+                for (int i = 0; i < numberOfInstruments; i++)
+                {
+                    randomNumber = Random.Range(0, instrumentsList.Count);
+                    if (instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.HARD || instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.MEDIUM)
+                    {
+                        instrumentsInScene.Add(instrumentsList[randomNumber]);
+                        instrumentsList.RemoveAt(randomNumber);
+                    }
+                    else
+                    {
+                        i--;
+                    }
+
+                }
+                break;
+                
         }
+       
     }
 
 
@@ -201,7 +263,7 @@ public class PatternController : MonoBehaviour
     IEnumerator ShowInstrument(float delayTime, Instrument newInstrument)
     {
         yield return new WaitForSeconds(delayTime);
-        Debug.Log(newInstrument.instrument.ToString());
+
 
         float clipDuration = 0;
 
@@ -298,7 +360,8 @@ public class PatternController : MonoBehaviour
                         confetti.SetActive(true);
                         GameManager.GetInstance();
                         fade.permanentFade();
-                        Invoke("nextLevel", 3);
+                        disableColliders();
+                        Invoke("nextLevel", 4.5f);
                         //messageInScreen.GetComponent<ScreenMessage>().winScreen();
                     }
                 }

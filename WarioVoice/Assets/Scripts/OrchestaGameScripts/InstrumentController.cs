@@ -6,6 +6,7 @@ public class InstrumentController : MonoBehaviour
 {
     
     public Instrument instrumentObject;
+   
     public int numberspawn;
     private SpriteRenderer spriteRenderer;
     private Sprite instrumentQuiet;
@@ -16,6 +17,15 @@ public class InstrumentController : MonoBehaviour
     private Animator _anim;
 
     public bool isOn = false;
+
+    public Instrument violinForBug;
+
+    public enum INSTRUMENTDIFFICULTY
+    {
+        EASY,
+        MEDIUM,
+        HARD
+    }
 
     public enum ENUMINSTRUMENT
     {
@@ -42,6 +52,8 @@ public class InstrumentController : MonoBehaviour
 
     [HideInInspector]
     public ENUMINSTRUMENT _instrument;
+    [HideInInspector]
+    public INSTRUMENTDIFFICULTY _difficulty;
 
     private void Awake()
     {
@@ -51,7 +63,7 @@ public class InstrumentController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instrumentObject = null;
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         _audio = GetComponent<AudioSource>();
         _anim = GetComponent<Animator>();
@@ -72,12 +84,15 @@ public class InstrumentController : MonoBehaviour
     {
         if (instrumentObject != null)
         {
+           
             _instrument = instrumentObject.instrument;
             instrumentQuiet = instrumentObject.sprite;
             _instrumentNameSound = instrumentObject.clipName;
             _instrumentSound = instrumentObject.clipSound;
             clipAnimation = instrumentObject.clipAnimation;
+            _difficulty = instrumentObject.difficulty;
         }
+        
     }
 
     public void setMemberPlaying()
@@ -124,9 +139,17 @@ public class InstrumentController : MonoBehaviour
     }
 
     public void playClip()
-    {
-        _anim.Play(Animator.StringToHash(clipAnimation.name.ToString()), -1, 0f);
-        Invoke("setIdle", _instrumentSound.length);
+    {   
+        if(instrumentObject == null)
+        {       
+            instrumentObject = violinForBug;
+            setInstrument();
+        }
+        clipAnimation = instrumentObject.clipAnimation;
+        Debug.Log(clipAnimation.name.ToString());
+        GetComponent<Animator>().Play(Animator.StringToHash(clipAnimation.name.ToString()), -1, 0f);
+        
+        Invoke("setIdle", instrumentObject.clipSound.length);
     }
 
     private void setIdle()
@@ -147,5 +170,6 @@ public class InstrumentController : MonoBehaviour
             GetComponent<SpriteRenderer>().color = new Color(0.2f, 0.2f, 0.2f, 1);
         }
 
+        
     }
 }

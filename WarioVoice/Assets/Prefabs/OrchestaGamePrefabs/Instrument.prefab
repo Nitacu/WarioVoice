@@ -102,7 +102,9 @@ MonoBehaviour:
   instrumentObject: {fileID: 0}
   numberspawn: 0
   isOn: 0
+  violinForBug: {fileID: 11400000, guid: 237361ef33cd0874c9d6f39283094951, type: 2}
   _instrument: 0
+  _difficulty: 0
 --- !u!61 &5580144246130499582
 BoxCollider2D:
   m_ObjectHideFlags: 0
