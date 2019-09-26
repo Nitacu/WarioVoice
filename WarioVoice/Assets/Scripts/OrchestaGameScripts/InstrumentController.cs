@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstrumentController : MonoBehaviour
 {
-    [HideInInspector]
+    
     public Instrument instrumentObject;
     public int numberspawn;
     private SpriteRenderer spriteRenderer;
@@ -70,11 +70,14 @@ public class InstrumentController : MonoBehaviour
 
     public void setInstrument()
     {
-        _instrument = instrumentObject.instrument;
-        instrumentQuiet = instrumentObject.sprite;      
-        _instrumentNameSound = instrumentObject.clipName;
-        _instrumentSound = instrumentObject.clipSound;
-        clipAnimation = instrumentObject.clipAnimation;
+        if (instrumentObject != null)
+        {
+            _instrument = instrumentObject.instrument;
+            instrumentQuiet = instrumentObject.sprite;
+            _instrumentNameSound = instrumentObject.clipName;
+            _instrumentSound = instrumentObject.clipSound;
+            clipAnimation = instrumentObject.clipAnimation;
+        }
     }
 
     public void setMemberPlaying()

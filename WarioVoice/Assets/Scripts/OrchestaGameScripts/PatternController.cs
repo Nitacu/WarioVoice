@@ -32,7 +32,7 @@ public class PatternController : MonoBehaviour
     private int currentPatron = 0;
     private int contInstrument = 0;
     private int contChecking = 0;
-    private bool isChecking = false;
+    
 
 
     // Start is called before the first frame update
@@ -264,9 +264,9 @@ public class PatternController : MonoBehaviour
     {
         isPlaying = false;
 
-        if (instrumentWord && !isChecking)
+        if (instrumentWord)
         {
-            isChecking = true;
+            
             director.SetActive(false);
 
             turnQuietInstruments();
@@ -317,7 +317,7 @@ public class PatternController : MonoBehaviour
                     
                 }
 
-                isChecking = false;
+                
                 GetComponent<PatternCheckOrchesta>().canTalk = true;
 
             }

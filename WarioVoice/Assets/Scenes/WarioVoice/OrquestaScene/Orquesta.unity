@@ -240,8 +240,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: e038b03a0460a3a4284bc54bad21c2a2,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -423,8 +422,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: 0b558e52ad6bad742b11599af52bd16f,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -1187,8 +1185,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: 237361ef33cd0874c9d6f39283094951,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -1289,8 +1286,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: a45866b8ea66b374ebe961230cbd468b,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -1852,8 +1848,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: 47a9f455536418b4784623f35aeae20b,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -2100,8 +2095,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: 02deb6c0a3141a04098665a55f5f26f9,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -2427,8 +2421,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: 1cde51481efb3ad478dcdb5b19dcd27f,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4423131959057747952, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: numberspawn
@@ -3401,8 +3394,7 @@ PrefabInstance:
         type: 3}
       propertyPath: instrumentObject
       value: 
-      objectReference: {fileID: 11400000, guid: 67b222c765a596f40ad2eb22de066876,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7222445870244482781, guid: d8741b8a491750d4da9395e4c5918457,
         type: 3}
       propertyPath: m_Controller

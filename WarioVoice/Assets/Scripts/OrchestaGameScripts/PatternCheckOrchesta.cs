@@ -28,9 +28,9 @@ public class PatternCheckOrchesta : CommandParser
     {
         instrumentWord = false;
 
-        foreach (Instrument musicInstrument in patternControl.instrumentsList)
+        foreach (Transform musicalInstrument in patternControl.instrumentsGameObject.transform)
         {
-            if (_instrument.Equals(musicInstrument.instrument.ToString(), System.StringComparison.OrdinalIgnoreCase))
+            if (_instrument.Equals(musicalInstrument.GetComponent<InstrumentController>()._instrument.ToString(), System.StringComparison.OrdinalIgnoreCase))
             {
                 instrumentWord = true;
             }
