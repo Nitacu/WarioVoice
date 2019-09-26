@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Tell
   _attack: 11
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: ff83bdbad3e88be449fa32a3614017dc, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: Frase de broma family friendly
   _riddle: Este es el tell

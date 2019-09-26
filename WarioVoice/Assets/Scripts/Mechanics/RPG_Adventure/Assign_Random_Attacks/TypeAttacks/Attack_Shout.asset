@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Shout
   _attack: 9
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: def80661709ded443aa79e1575ddc192, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: '*Ruidos molestos*'
   _riddle: Este es el shout

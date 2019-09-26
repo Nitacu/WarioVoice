@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Downgrade
   _attack: 1
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 96d735741ba700942993960170a7abe2, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: '*una paloma lo caga*'
   _riddle: Este es el downgrade

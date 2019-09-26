@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Paste
   _attack: 14
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 7f9267821ac81ef4d84fb03ea4d81a5c, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: Se le pega un chicle en el pelo
   _riddle: Este es el paste

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Look
   _attack: 8
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 358b730bd885a2143b547e51c782f841, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: Pasa una linda chica y al verlo votea para otro lado
     con asco

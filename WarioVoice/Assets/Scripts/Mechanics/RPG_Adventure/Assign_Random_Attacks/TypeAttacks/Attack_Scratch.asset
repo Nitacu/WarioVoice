@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Scratch
   _attack: 13
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: c9262297ae9e43748bed0f547f101b7b, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: "Se le da un gato que al tenerlo comienza a ara\xF1arlo"
   _riddle: Este es el scratch

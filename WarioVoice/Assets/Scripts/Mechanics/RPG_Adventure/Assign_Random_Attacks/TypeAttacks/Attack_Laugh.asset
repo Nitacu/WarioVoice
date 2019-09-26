@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Laugh
   _attack: 2
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 35853b9b14dbc044ab9d4328c1e0c8c2, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: Ataque de cosquillas
   _riddle: Este es el laugh

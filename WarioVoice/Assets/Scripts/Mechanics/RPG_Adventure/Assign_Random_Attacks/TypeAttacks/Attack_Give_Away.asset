@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Give away
   _attack: 7
-  _pronunciation: {fileID: 8300000, guid: bb8ee1e5b454bff46833593b1d445e5e, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 76ecc93b19857cc4b9bc6a57d8c2cbca, type: 3}
   _damage: 1
   _sentenceToCompleteAttack: "Se regala una caja sorpresa que al abrirla sale un pu\xF1o
     de la caja y lo golpea"
