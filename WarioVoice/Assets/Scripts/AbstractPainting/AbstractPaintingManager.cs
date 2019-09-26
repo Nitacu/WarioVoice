@@ -54,10 +54,16 @@ public class AbstractPaintingManager : CommandParser
     const string LEVEL = "Level ";
     const string GAMECOMPLETEDE = "Game Complete, Back to Menu\nJuego completado, vuelve al menu";
     const string FIRSTDRAW = "Paint something first\nPinta algo primero";
+    const string WANTARESULT = "Do you finish your painting?";
+    const string YESORNO = "Yes / No";
+
 
     #endregion
 
-    #region ColorCommands
+    #region Commands
+    public const string YES = "YES";
+    public const string NO = "NO";
+
     public const string BLUE = "Blue";
     public const string RED = "Red";
     public const string GREEN = "Green";
@@ -114,10 +120,12 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private GameObject _wrongPaintPrefab;
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
+    [SerializeField] private AnimationClip _critiqueAppearClip;
     //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
 
     [Header("UI Control")]
     [SerializeField] private List<GameObject> _buttonsToDeactivate = new List<GameObject>();
+    [SerializeField] private GameObject _microphoneButton;
     [SerializeField] private TextMeshProUGUI _level;
     [SerializeField] private TextMeshProUGUI _guideText;
     [SerializeField] private GameObject _initPanel;
@@ -125,7 +133,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private float _timeToDeactivateInitPanel;
 
 
-    [Header("Win Parameters")]    
+    [Header("Win Parameters")]
     [SerializeField] private float _minCoincidencesPercentage;
     [SerializeField] private int _paintedSplashMargin;
     [SerializeField] private int _analyzingTime;
@@ -150,6 +158,7 @@ public class AbstractPaintingManager : CommandParser
     private Vector2 _offsetBetweenCanvas;
     private bool _isAnalyzing;
     private GameObject _currentRerefencePaint;
+    private bool _wantAResult = false;
     #endregion
 
     private void Start()
@@ -269,6 +278,12 @@ public class AbstractPaintingManager : CommandParser
 
     public override void parseCommand(string command)
     {
+        if (_wantAResult)
+        {
+            wantAResult(command);
+            return;
+        }
+
         setBrushColor(command);
     }
 
@@ -323,14 +338,8 @@ public class AbstractPaintingManager : CommandParser
         _paintedSplahes.Clear();
     }
 
-    public void evaluatePaint()
-    {
-        if (_currentLevel == 0 && _paintedSplahes.Count <= 0)
-        {
-            FindObjectOfType<PaintingSoundManager>().playWrongSound();
-            _guideText.text = FIRSTDRAW;
-            return;
-        }
+    private void evaluatePaint()
+    {        
 
         if (_isAnalyzing)
         {
@@ -343,7 +352,7 @@ public class AbstractPaintingManager : CommandParser
         //ANIMACIONES ANALISIS
         GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
         _guideText.text = ANALYZING;
-        _paintCritique.SetActive(true);
+        //_paintCritique.SetActive(true);
 
         foreach (var item in _buttonsToDeactivate)
         {
@@ -388,10 +397,10 @@ public class AbstractPaintingManager : CommandParser
             {
                 _splashCoincidencesCount++;
 
-               
+
             }
 
-            Destroy(_copyReferenceSplash);
+            //Destroy(_copyReferenceSplash);
         }
 
         _coindencePercentage = (_splashCoincidencesCount * 100) / _levels[_currentLevel].SplashesInReferencePaint.Count;
@@ -406,7 +415,84 @@ public class AbstractPaintingManager : CommandParser
         }
 
         StartCoroutine(setWinOrLose(_playerWin, _newAnalyzerBand));
+    }
 
+    private void wantAResult(string want)
+    {
+        bool _want = false;
+
+
+        if (want.Equals(YES, System.StringComparison.OrdinalIgnoreCase))
+        {
+            _want = true;
+        }
+        else if (want.Equals(NO, System.StringComparison.OrdinalIgnoreCase))
+        {
+            _want = false;
+        }
+        else
+        {
+            _guideText.text = YESORNO;
+            return;
+        }
+
+
+        if (_want)
+        {
+            evaluatePaint();
+        }
+        else
+        {
+            animateCritique(false);
+            _critiqueSpeechBublle.SetActive(false);
+
+            foreach (var item in _buttonsToDeactivate)
+            {
+                item.GetComponent<SetActiveSpeechButton>().setButton(true);
+            }
+
+            _guideText.text = "";
+            _wantAResult = false;
+        }
+    }
+
+    public void askWantAResult()
+    {
+        if (_currentLevel == 0 && _paintedSplahes.Count <= 0)
+        {
+            FindObjectOfType<PaintingSoundManager>().playWrongSound();
+            _guideText.text = FIRSTDRAW;
+            return;
+        }
+
+        animateCritique(true);
+
+        foreach (var item in _buttonsToDeactivate)
+        {
+            item.GetComponent<SetActiveSpeechButton>().setButton(false);
+        }
+
+        StartCoroutine(showSpeechBubble());
+    }
+
+    private void animateCritique(bool appear)
+    {
+        _paintCritique.SetActive(true);
+        string state = (appear) ? "Appear" : "Disappear";
+        _paintCritique.GetComponent<Animator>().Play(Animator.StringToHash(state));
+    }
+
+    IEnumerator showSpeechBubble()
+    {
+        yield return new WaitForSeconds(_critiqueAppearClip.averageDuration);
+
+        _microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(true);
+
+        _critiqueSpeechBublle.SetActive(true);
+        _analyzeResultText.text = WANTARESULT;
+        _guideText.text = YESORNO;
+
+        _wantAResult = true;
 
     }
 
@@ -473,7 +559,6 @@ public class AbstractPaintingManager : CommandParser
         yield return new WaitForSeconds(_timeToDeactivateInitPanel);
 
         GameManager.GetInstance().launchNextMinigame(Success);
-
     }
 
     IEnumerator deactivateInitPanel(float timeToDeactivate)

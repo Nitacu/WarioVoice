@@ -25,7 +25,7 @@ public class SceneButtons : MonoBehaviour, IPointerDownHandler
                 FindObjectOfType<AbstractPaintingManager>().parseCommand(color);
                 break;
             case ButtonAction.CHECKPAINT:
-                FindObjectOfType<AbstractPaintingManager>().evaluatePaint();
+                //FindObjectOfType<AbstractPaintingManager>().evaluatePaint();
                 break;
             case ButtonAction.LAUNCHNEXTLEVEL:
                 FindObjectOfType<AbstractPaintingManager>().setLevel(FindObjectOfType<AbstractPaintingManager>().CurrentLevel);

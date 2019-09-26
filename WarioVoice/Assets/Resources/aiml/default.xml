@@ -259,7 +259,9 @@
 <category><pattern>AZURE</pattern><template>AZURE</template></category>
   <category><pattern>COLOR AZURE</pattern><template>AZURE</template></category>      
   
-  
+<category><pattern>YES</pattern><template>YES</template></category>
+<category><pattern>NO</pattern><template>NO</template></category>
+
   
 <category><pattern>LOVE</pattern><template>LOVE</template></category>
 <category><pattern>HAPPY</pattern><template>HAPPY</template></category>
