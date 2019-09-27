@@ -54,7 +54,7 @@ public class AbstractPaintingManager : CommandParser
     const string LEVEL = "Level ";
     const string GAMECOMPLETEDE = "Game Complete, Back to Menu\nJuego completado, vuelve al menu";
     const string FIRSTDRAW = "Paint something first\nPinta algo primero";
-    const string WANTARESULT = "Do you finish your painting?";
+    const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
     const string YESORNO = "Yes / No";
 
 
