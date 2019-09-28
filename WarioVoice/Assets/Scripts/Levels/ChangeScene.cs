@@ -28,6 +28,8 @@ public class ChangeScene : MonoBehaviour
     private const string WORMS = "Worms";
     public const string BETWEENMINIGAMES = "BetweenMiniGames";
     public const string LOADDATA = "WarioVoiceLoadPlayerData";
+    public const string TUTORIALESPIKINGLISH = "TutorialEspikinglish";
+
 
 
     [SerializeField] private nameScenes _nameScenes;
@@ -55,7 +57,8 @@ public class ChangeScene : MonoBehaviour
         ORCHESTA,
         WORMS,
         BETWEENMINIGAMES,
-        LOADDATA
+        LOADDATA,
+        ESPKINGLISHTUTORIAL
     }    
 
     public enum EspikinglishMinigames
@@ -154,6 +157,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case nameScenes.LOADDATA:
                 SceneManager.LoadScene(LOADDATA);
+                break;
+            case nameScenes.ESPKINGLISHTUTORIAL:
+                SceneManager.LoadScene(TUTORIALESPIKINGLISH);
                 break;
         }
     }

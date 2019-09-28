@@ -60,6 +60,11 @@ public class FileManager : MonoBehaviour
         MOREDATA
     }
 
+    private void Awake()
+    {
+        GameManager.ResetInstance();
+    }
+
     private void Start()
     {
         _mainTextEnglish.text = CHOOSEFILE_ENG;

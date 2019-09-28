@@ -7,10 +7,14 @@ using System;
 
 public class ShowSlotData : MonoBehaviour
 {
+    public const string CONTINUE = "Continue";
+    public const string STARTGAME = "Start Game";
+
     //Total played time: 
 
     [SerializeField] private TextMeshProUGUI _nameTextUI;
-    
+    [SerializeField] private TextMeshProUGUI _buttonTextContinue;
+
     [SerializeField] private List<Image> _imageBosses = new List<Image>();
 
 
@@ -19,6 +23,8 @@ public class ShowSlotData : MonoBehaviour
 
     private void OnEnable()
     {
+        _buttonTextContinue.text = (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0) ? CONTINUE : STARTGAME;
+
         _name = FindObjectOfType<FileManager>().PlayerInfSelected.playerName;
         _defeatedBosses = FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated;
 
@@ -33,11 +39,7 @@ public class ShowSlotData : MonoBehaviour
         {
             _imageBosses[i].color = Color.white;
         }
-
-
     }
-
-   
 
     public void DeleteConfirmation(bool confirmation)
     {
@@ -65,7 +67,15 @@ public class ShowSlotData : MonoBehaviour
     {
         GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
         GameManager.GetInstance().Lives = 4;
-        GameManager.GetInstance().StartGame();
+
+        if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0)
+        {          
+            GameManager.GetInstance().StartGame();
+        }
+        else
+        {
+            GetComponent<ChangeScene>().chanceScene();
+        }        
     }
 
     public void showMoreData()

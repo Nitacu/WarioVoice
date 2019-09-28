@@ -1763,6 +1763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nameTextUI: {fileID: 1346073198}
+  _buttonTextContinue: {fileID: 0}
   _imageBosses:
   - {fileID: 1176103412}
   - {fileID: 765566993}
@@ -3563,6 +3564,7 @@ GameObject:
   - component: {fileID: 537474753}
   - component: {fileID: 537474755}
   - component: {fileID: 537474754}
+  - component: {fileID: 537474756}
   m_Layer: 5
   m_Name: ShowSlotData
   m_TagString: Untagged
@@ -3641,12 +3643,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nameTextUI: {fileID: 786358948}
+  _buttonTextContinue: {fileID: 1152682716}
   _imageBosses:
   - {fileID: 261650052}
   - {fileID: 1725115564}
   - {fileID: 789609609}
   - {fileID: 1513428191}
   - {fileID: 1979897958}
+--- !u!114 &537474756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537474751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199cc92ef9f130f41abff31621e27268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nameScenes: 22
 --- !u!1 &541273419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6151,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8.85
+  m_fontSize: 13.35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6889,7 +6905,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.35
+  m_fontSize: 14.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7104,7 +7120,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.15
+  m_fontSize: 27.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9812,6 +9828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nameTextUI: {fileID: 229783208}
+  _buttonTextContinue: {fileID: 0}
   _imageBosses:
   - {fileID: 1386994973}
   - {fileID: 308031441}

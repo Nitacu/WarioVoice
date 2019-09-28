@@ -101,4 +101,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/WarioVoiceLoadPlayerData.unity
     guid: b9b1b86d56e05834981f30bb3af46c48
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/TutorialEspikinglish.unity
+    guid: 97e873b802514604ca5150cf78536269
   m_configObjects: {}
