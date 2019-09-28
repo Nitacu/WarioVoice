@@ -8,24 +8,18 @@ public class TextScreenControl : MonoBehaviour
 
     private TextMeshProUGUI text;
     private PatternController _patternController;
-    private bool intro = true;
+    [HideInInspector]
+    public bool intro = true;
 
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
         _patternController = FindObjectOfType<PatternController>();
-        warning();
-    }
-
-    private void warning()
-    {
         intro = true;
-        text.text = "LISTEN AND REPEAT";
-        Invoke("startGame", 3);
     }
 
-    private void startGame()
+    public void startGame()
     {
         text.text = " ";
         intro = false;

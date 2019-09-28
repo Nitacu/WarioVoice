@@ -38,8 +38,8 @@ public class PatternController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficulty = GameManager.GetInstance().getGameDifficulty();
-        
+        //difficulty = GameManager.GetInstance().getGameDifficulty();
+        difficulty = 8;
         selectDifficulty();
 
         patternPanel = FindObjectOfType<PatternPanelController>();
@@ -112,7 +112,7 @@ public class PatternController : MonoBehaviour
         showPatron();
     }
 
-    private void disableColliders()
+    public void disableColliders()
     {
         foreach (Transform child in instrumentsGameObject.transform)
         {
@@ -325,6 +325,7 @@ public class PatternController : MonoBehaviour
     public void checkInstrument(InstrumentController.ENUMINSTRUMENT _enumInstrument, bool instrumentWord)
     {
         isPlaying = false;
+        
 
         if (instrumentWord)
         {
