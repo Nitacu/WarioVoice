@@ -76,7 +76,8 @@ public class ConvertAngles : CommandParser
             if (_sentenses.Length == 2)
             {
                 
-                if (string.Equals(_sentenses[1], GlossaryOfAngles.DEGREES))
+                if (string.Equals(_sentenses[1], GlossaryOfAngles.DEGREES) || 
+                    string.Equals(_sentenses[1], GlossaryOfAngles.DEGREE))
                 {
                     try
                     {

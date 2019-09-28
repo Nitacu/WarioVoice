@@ -217,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7411351489431661473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.334, y: -0.33099985, z: 0}
+  m_LocalPosition: {x: -0.282, y: -0.326, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7411351490929405055}
@@ -379,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7411351490135893985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25699997, y: -0.33099985, z: 0}
+  m_LocalPosition: {x: 0.213, y: -0.293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7411351490929405055}
@@ -463,9 +463,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7411351490929405049}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.03, y: 2.3799999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.38556787}
+  m_LocalScale: {x: 1.194, y: 1.194, z: 0.46036804}
   m_Children:
   - {fileID: 7411351489803063469}
   - {fileID: 7411351489431661478}
@@ -544,7 +544,7 @@ MonoBehaviour:
   _positionShoot: {fileID: 7411351489127001222}
   _myFather: {fileID: 7411351490929405049}
   _turret: {fileID: 7411351489803063468}
-  _typeShoot: 0
+  _typeShoot: 1
 --- !u!61 &7411351490929405053
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9201758940211368679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.031, y: -0.34, z: 0}
+  m_LocalPosition: {x: -0.031, y: -0.331, z: 0}
   m_LocalScale: {x: 1.0881, y: 1.0881, z: 1.088}
   m_Children: []
   m_Father: {fileID: 7411351490929405055}

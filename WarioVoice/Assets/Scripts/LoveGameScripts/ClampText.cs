@@ -6,12 +6,23 @@ using TMPro;
 
 public class ClampText : MonoBehaviour
 {
-    public TextMeshProUGUI nameLable;   
-    // Update is called once per frame
+    public TextMeshProUGUI nameLable;
+    [Header("Para cualquier objeto")]
+    [SerializeField] private GameObject _UIGameObject;
+
     void Update()
     {
-        Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
-        nameLable.transform.position = namePos;
+        if (nameLable)
+        {
+            Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
+            nameLable.transform.position = namePos;
+        }
+        else if (_UIGameObject)
+        {
+            Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
+            _UIGameObject.transform.position = namePos;
+        }
+
     }
 }
 

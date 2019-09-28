@@ -6,6 +6,7 @@ public class GlossaryOfAngles : MonoBehaviour
 {
     // Palabras que tiene que decir
     public const string DEGREES = "degrees";
+    public const string DEGREE = "degree";
     public const string SYMBOL_GRADES = "°";
     public const string PERCENT = "percent";
     public const string SYMBOL_PERCENT = "%";
