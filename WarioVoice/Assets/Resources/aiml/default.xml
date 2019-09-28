@@ -315,6 +315,6 @@
 <category><pattern>CYMBALS</pattern><template>CYMBALS</template></category>
 <category><pattern>XYLOPHONE</pattern><template>XYLOPHONE</template></category>
   
-
+<category><pattern>GO</pattern><template>GO</template></category>
   
 </aiml>
