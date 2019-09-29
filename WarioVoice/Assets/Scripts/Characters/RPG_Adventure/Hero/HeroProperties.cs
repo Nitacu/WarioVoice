@@ -48,8 +48,10 @@ public class HeroProperties : MonoBehaviour
         {
             IsLive = false;
             GetComponent<SpriteRenderer>().color = Color.grey;
-            FindObjectOfType<ControlShifts>().dieCharacter();
+            FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
             _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(0);
+            _lamia.herosAlive(GetComponent<HeroProperties>());
+
         }
 
 

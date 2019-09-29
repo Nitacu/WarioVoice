@@ -16,7 +16,7 @@ public class LamiaController : MonoBehaviour
 
     private float life;
     [SerializeField] private GameObject _visualDamage;
-    private List<HeroProperties> _characters = new List<HeroProperties>();
+    [SerializeField]private List<HeroProperties> _characters = new List<HeroProperties>();
     [SerializeField] private GameObject _cofetti;
     private bool _weak = false; // para saber si esta debil el jefe
 
@@ -40,6 +40,10 @@ public class LamiaController : MonoBehaviour
             Invoke("loadMenu", 1.5f);
             return false;
         }
+        else if (Life == 1)
+        {
+            _weak = true;
+        }
         return true;
     }
 
@@ -61,15 +65,9 @@ public class LamiaController : MonoBehaviour
     }
 
     // evalua que heroes estan vivos
-    public void herosAlive()
+    public void herosAlive(HeroProperties hero)
     {
-        foreach (HeroProperties hero in _characters)
-        {
-            if (!hero.IsLive)
-            {
-                _characters.Remove(hero);
-            }
-        }
+        _characters.Remove(hero);
     }
 
     public bool effectiveAttack(AttackGlossary.attack attack)
@@ -111,23 +109,27 @@ public class LamiaController : MonoBehaviour
             {
                 // fijo
                 case 1:
-                    random = Random.Range(1, _characters.Count);
+                    random = Random.Range(1, _characters.Count - 1);
                     attack(_characters[random], 1, "ataque directo");
                     break;
 
                 // en area
                 case 2:
-                    foreach (HeroProperties hero in _characters)
+                    if (_characters.Count == 1)
                     {
-                        attack(hero, 1, "ataque en area");
+                        foreach (HeroProperties hero in _characters)
+                        {
+                            attack(hero, 1, "ataque en area");
+                        }
                     }
+                    attack(_characters[0], 1, "ataque directo");
                     break;
             }
         }
         else
         {
             // aca deberia ser mas mortal 
-            random = Random.Range(1, _characters.Count);
+            random = Random.Range(1, _characters.Count-1);
             attack(_characters[random], 2, "ataque cargado  ");
         }
     }

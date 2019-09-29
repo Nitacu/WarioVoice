@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class ControlShifts : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class ControlShifts : MonoBehaviour
     private LevelInformationPanel _informationPanel;
     private int numberCharacterLive = 0;
     private LamiaController _lamia;
-    private HeroProperties[] _heroes = new HeroProperties[0];
-    private int _indexTurnHero = 0;
+    private List<HeroProperties> _heroes = new List<HeroProperties>();
+    private int _indexTurnHero = -1;
     private HeroProperties _currentHero; // heroe que va a atacar;
 
     // GET Y SET
@@ -25,7 +26,7 @@ public class ControlShifts : MonoBehaviour
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _informationPanel.activeDialogue("- Que la pelea comience");
-        _heroes = FindObjectsOfType<HeroProperties>();
+        _heroes = FindObjectsOfType<HeroProperties>().ToList();
         Invoke("playerEnemy", 3);
     }
 
@@ -43,32 +44,31 @@ public class ControlShifts : MonoBehaviour
     {
         while (true)
         {
+            _indexTurnHero++;
+
+            if (_heroes.Count >= _indexTurnHero)
+            {
+                _indexTurnHero = 0;
+            }
+            Debug.Log("player #" +_indexTurnHero);
             if (_heroes[_indexTurnHero].IsLive)
             {
                 return _heroes[_indexTurnHero];
             }
-            else
-            {
-                _indexTurnHero++;
 
-                if (_heroes.Length == _indexTurnHero)
-                {
-                    _indexTurnHero = 0;
-                }  
-            }
         }
     }
 
     public void playerEnemy()
     {
         _lamia.selecAttack(); // ataca
-        _lamia.herosAlive(); // comprueba cuales quedaron vivos luego de atacar
         Invoke("playerTurn", 1.5f);
     }
 
-    public void dieCharacter()
+    public void dieCharacter(HeroProperties hero)
     {
         numberCharacterLive++;
+        _heroes.Remove(hero);
 
         if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
         {
