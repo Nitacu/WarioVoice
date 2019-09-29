@@ -1759,12 +1759,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tutorialMode: 0
   _inputFieldTest: {fileID: 77629457}
+  _confetti: {fileID: 7029716479514159708, guid: f5f92fd9528e277428b8aec62b1747e5,
+    type: 3}
   _textGuideEng: {fileID: 1833088294}
   _textGuideEsp: {fileID: 489717904}
   _pointer: {fileID: 616958561}
   _startButton: {fileID: 2042658948}
   _speechButton: {fileID: 1258685549}
-  welcomteTime: 2
+  welcomteTime: 3
+  _startGameTime: 4
 --- !u!4 &1292506145
 Transform:
   m_ObjectHideFlags: 0

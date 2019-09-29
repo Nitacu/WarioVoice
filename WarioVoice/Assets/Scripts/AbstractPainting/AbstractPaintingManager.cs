@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class PaintingLevel
@@ -57,7 +58,7 @@ public class AbstractPaintingManager : CommandParser
     const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
     const string YESORNO = "Yes / No";
 
-
+    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci\n Bien hecho"};
     #endregion
 
     #region Commands
@@ -519,7 +520,9 @@ public class AbstractPaintingManager : CommandParser
 
         if (playerWin)
         {
-            _guideText.text = WIN;
+            int randomDialog = Random.Range(0,_winDialogs.Count);
+            //int _indexRandom = System.Random.Range(0, _winDialogs.Count);
+            _guideText.text = _winDialogs[randomDialog];
             _analyzeResultText.text = "Nice Paint\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + "100%";

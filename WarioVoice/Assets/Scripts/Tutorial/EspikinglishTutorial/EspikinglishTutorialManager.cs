@@ -23,6 +23,7 @@ public class EspikinglishTutorialManager : CommandParser
     #endregion
 
     [SerializeField] private TMP_InputField _inputFieldTest;
+    [SerializeField] private GameObject _confetti;
 
     [Header("UI Vars")]
     [SerializeField] private TextMeshProUGUI _textGuideEng;
@@ -36,6 +37,8 @@ public class EspikinglishTutorialManager : CommandParser
 
     [Header("Timers")]
     [SerializeField] private float welcomteTime;
+    [SerializeField] private float _startGameTime;
+
 
     public override void parseCommand(string command)
     {
@@ -61,10 +64,13 @@ public class EspikinglishTutorialManager : CommandParser
 
             _textGuideEng.text = GOODJOB_ENG;
 
-            _startButton.SetActive(true);
+            //_startButton.SetActive(true);
+            GameObject confetti = Instantiate(_confetti);
+            confetti.transform.position = Vector3.zero;
 
             _textGuideEsp.text = GOODJOB_ESP;
 
+            StartCoroutine(startGame());
             StartCoroutine(deactivateSpeechButton());
         }
         else
@@ -106,8 +112,10 @@ public class EspikinglishTutorialManager : CommandParser
         _pointer.SetActive(!hide);
     }
 
-    public void startGame()
+    IEnumerator startGame()
     {
+        yield return new WaitForSeconds(_startGameTime);
+
         GameManager.GetInstance().StartGame();
     }
 
