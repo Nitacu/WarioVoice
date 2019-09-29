@@ -28,35 +28,65 @@ public class EspikinglishTutorialManager : CommandParser
     [SerializeField] private TextMeshProUGUI _textGuideEng;
     [SerializeField] private TextMeshProUGUI _textGuideEsp;
     //[SerializeField] private GameObject _pressButtonPanel;
-    [SerializeField] private GameObject _buttonPointer;
+    [SerializeField] private GameObject _pointer;
     [SerializeField] private GameObject _startButton;
     [SerializeField] private GameObject _speechButton;
 
-
+    private bool tutorialComplete = false;
 
     [Header("Timers")]
     [SerializeField] private float welcomteTime;
 
     public override void parseCommand(string command)
     {
+        if (tutorialComplete)
+        {
+
+            if (command.Equals("BLUE", System.StringComparison.OrdinalIgnoreCase))
+            {
+                startGame();
+            }
+
+            return;
+        }
+
+
         if (command.Equals(GO, System.StringComparison.OrdinalIgnoreCase))
         {
+            
+
+            tutorialComplete = true;
+
+            hidePointer(true);
+
             _textGuideEng.text = GOODJOB_ENG;
-            _textGuideEsp.text = GOODJOB_ESP;
+
             _startButton.SetActive(true);
-            _speechButton.GetComponent<SetActiveSpeechButton>().setButton(false);
+
+            _textGuideEsp.text = GOODJOB_ESP;
+
+            StartCoroutine(deactivateSpeechButton());
         }
         else
         {
-            buttonPressed(true);
+            hidePointer(false);
         }
     }
 
     private void OnEnable()
     {
+        _startButton.SetActive(false);
         _textGuideEng.text = WELCOME_ENG;
         _textGuideEsp.text = WELCOME_ESP;
+        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(false);
         StartCoroutine(nextStep(welcomteTime));
+    }
+
+    IEnumerator deactivateSpeechButton()
+    {
+        yield return new WaitForEndOfFrame();
+
+        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(false);
     }
 
     IEnumerator nextStep(float timeToActivate)
@@ -65,14 +95,15 @@ public class EspikinglishTutorialManager : CommandParser
 
         //STEP 1
         //_pressButtonPanel.SetActive(true);
-        _buttonPointer.SetActive(true);
+        _pointer.SetActive(true);
         _textGuideEng.text = TEST_ENG;
         _textGuideEsp.text = TEST_ESP;
+        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
     }
 
-    public void buttonPressed(bool activate)
+    public void hidePointer(bool hide)
     {
-        _buttonPointer.SetActive(activate);
+        _pointer.SetActive(!hide);
     }
 
     public void startGame()

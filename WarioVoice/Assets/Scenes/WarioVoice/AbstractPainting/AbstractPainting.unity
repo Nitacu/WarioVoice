@@ -1162,8 +1162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8759390585255100289, guid: 3bff39830fb8f2a4f890a1c5b45a7326,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: e117e27618a78784caf418b15aef305c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1190,7 +1189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261044034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.72, y: 2.18, z: 0}
+  m_LocalPosition: {x: -5.17, y: 2.18, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.081}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7412,9 +7411,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 846010472778899471, guid: b76be41c0d042e246bb021af4e275747, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d15309687a561aa41bbe19a0cac6bff3, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
