@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5523595687900687667}
   - component: {fileID: -5962520172806507440}
   m_Layer: 0
-  m_Name: gallery_40907_14_34089_8
+  m_Name: Hero_RPG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44827986511d5a84ea1f7ed73d6efe8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attacks: []
 --- !u!114 &-5962520172806507440
 MonoBehaviour:
   m_ObjectHideFlags: 0

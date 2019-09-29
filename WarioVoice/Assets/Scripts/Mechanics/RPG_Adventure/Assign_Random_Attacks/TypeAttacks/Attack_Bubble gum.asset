@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Laugh
+  m_Name: Attack_Accuse 2
   m_EditorClassIdentifier: 
-  _verb: Laugh
-  _attack: 2
-  _pronunciation: {fileID: 8300000, guid: 35853b9b14dbc044ab9d4328c1e0c8c2, type: 3}
+  _verb: Accuse
+  _attack: 5
+  _pronunciation: {fileID: 8300000, guid: 528ed41cb81a7f34f91d3f4cd64dc4d1, type: 3}
   _damage: 1
-  _sentenceToCompleteAttack: Ataque de cosquillas
-  _riddle: Este es el laugh
+  _sentenceToCompleteAttack: "Tu mam\xE1 te llama, tienes que terminar de hacer tus
+    tareas"
+  _riddle: Este es el accuse

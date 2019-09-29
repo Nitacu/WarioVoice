@@ -38,6 +38,10 @@ public class HeroProperties : MonoBehaviour
     public void getDamage(float damage)
     {
         _life -= damage;
+
+        if (_life < 0)
+            _life = 0;
+
         _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(_life);
 
         if (_life <= 0)
@@ -66,7 +70,6 @@ public class HeroProperties : MonoBehaviour
     public void showAttacks()
     {
         _exeAttack.prepareAttack(_attacks, GetComponent<HeroProperties>());
-        _lamia.Characters = gameObject.GetComponent<HeroProperties>();
 
         for (int i = 0; i < _attacks.Count; i++)
         {
@@ -74,10 +77,8 @@ public class HeroProperties : MonoBehaviour
             _levelInformationPanel.Attacks[i].GetComponent<AudioSource>().clip = _attacks[i]._pronunciation;
         }
 
-        int random = Random.Range(0,_attacks.Count);
-
-        _exeAttack.CorrectAttack = _attacks[random]._attack;
-       _levelInformationPanel.activePanelAttacks(_attacks[random]._riddle);
+        
+       _levelInformationPanel.activePanelAttacks("¿Con cual objeto deberia atacar?");
 
         //mueve al personaje
         GetComponent<MoveHeroe>().changeDirection();

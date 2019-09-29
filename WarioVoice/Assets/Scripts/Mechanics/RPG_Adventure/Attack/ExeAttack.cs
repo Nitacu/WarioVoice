@@ -26,6 +26,7 @@ public class ExeAttack : MonoBehaviour
         _hero = hero;
     }
 
+    //revisa si el heroe tiene el ataque 
     public bool characterContainsAttack()
     {
         foreach (VoiceAttacks attacks in _listAttacks)
@@ -43,25 +44,28 @@ public class ExeAttack : MonoBehaviour
     public void selectAttack()
     {
         
-        if (characterContainsAttack() && CorrectAttack == _typeAttack)
+        if (characterContainsAttack())
         {
-            
-            //aplcia el daño
-            if (_lamia.lostLife(_currentAttack._damage))
-                FindObjectOfType<ControlShifts>().playerTurn();
-            // visual
-            _visualDamage.gameObject.transform.position = _lamia.transform.position;
-            _visualDamage.gameObject.SetActive(true);
-            //frase del ataque
-            FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
-            _hero.GetComponent<MoveHeroe>().changeDirection();
+            if (_lamia.effectiveAttack(_typeAttack))
+            {
+                //aplcia el daño
+                if (_lamia.lostLife(_currentAttack._damage))
+                    _controlShifts.Invoke("playerEnemy", 1);
+                // visual
+                _visualDamage.gameObject.transform.position = _lamia.transform.position;
+                _visualDamage.gameObject.SetActive(true);
+                //frase del ataque
+                FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+                _hero.GetComponent<MoveHeroe>().changeDirection();
 
+            }
+            else
+            {
+                _controlShifts.Invoke("playerEnemy", 1);
+                FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+                _hero.GetComponent<MoveHeroe>().changeDirection();
+            }
         }
-        else
-        {
-            _lamia.attack(_hero);
-        }
-
     }
 
 

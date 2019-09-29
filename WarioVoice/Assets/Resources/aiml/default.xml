@@ -181,22 +181,38 @@
 <category><pattern>MUSICIAN</pattern><template>MUSICIAN</template></category>
 <category><pattern>MUSIC STAGE</pattern><template>MUSIC STAGE</template></category>
 
-<category><pattern>THROW</pattern><template>THROW</template></category>
-<category><pattern>DOWNGRADE</pattern><template>DOWNGRADE</template></category>
-<category><pattern>LAUGH</pattern><template>LAUGH</template></category>
-<category><pattern>SHOOT</pattern><template>SHOOT</template></category>
-<category><pattern>BURN</pattern><template>BURN</template></category>
-<category><pattern>ACCUSE</pattern><template>ACCUSE</template></category>
-<category><pattern>EAT</pattern><template>EAT</template></category>
-<category><pattern>GIVE AWAY</pattern><template>GIVE_AWAY</template></category>
-<category><pattern>LOOK</pattern><template>LOOK</template></category>
-<category><pattern>SHOUT</pattern><template>SHOUT</template></category>
-<category><pattern>BLOW</pattern><template>BLOW</template></category>
-<category><pattern>TELL</pattern><template>TELL</template></category>
-<category><pattern>FLY</pattern><template>FLY</template></category>
-<category><pattern>SCRATCH</pattern><template>SCRATCH</template></category>
-<category><pattern>PASTE</pattern><template>PASTE</template></category>
-<category><pattern>HIT</pattern><template>HIT</template></category>
+  <category>
+    <pattern>PEPPER</pattern>
+    <template>PEPPER</template>
+  </category>
+  <category>
+    <pattern>LEMON</pattern>
+    <template>LEMON</template>
+  </category>
+  <category>
+    <pattern>PAPER PLANE</pattern>
+    <template>PAPER_PLANE</template>
+  </category>
+  <category>
+    <pattern>ONION</pattern>
+    <template>ONION</template>
+  </category>
+  <category>
+    <pattern>CHLORINE</pattern>
+    <template>CHLORINE</template>
+  </category>
+  <category>
+    <pattern>PERFUME</pattern>
+    <template>PERFUME</template>
+  </category>
+  <category>
+    <pattern>BUBBLE GUM</pattern>
+    <template>BUBBLE_GUM</template>
+  </category>
+  <category>
+    <pattern>SWORD AWAY</pattern>
+    <template>SWORD</template>
+  </category>
   
 <category><pattern>BLUE</pattern><template>BLUE</template></category>
  <category><pattern>COLOR BLUE</pattern><template>BLUE</template></category>  

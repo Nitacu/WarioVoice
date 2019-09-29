@@ -8,10 +8,12 @@ public class CharacterStatistics : MonoBehaviour
 {
     [SerializeField] private GameObject _life;
     [SerializeField] private GameObject _heart;
-    private List<GameObject> _listHearts = new List<GameObject>();
+    [SerializeField]private List<GameObject> _listHearts = new List<GameObject>();
     [SerializeField] private Image _icon;
 
     public Image Icon { get => _icon; set => _icon = value; }
+
+    // recibe la vida actual si es mejor borra corazones si es mayor los crea
 
     public void reloadStatistics(float life)
     {
@@ -19,7 +21,9 @@ public class CharacterStatistics : MonoBehaviour
         {
             if (life < _listHearts.Count)
             {
-                _listHearts.RemoveAt(0);
+                Debug.Log("removio corazon");
+                Destroy(_listHearts[0]);
+                 _listHearts.RemoveAt(0);
                 
             }
             else if (life > _listHearts.Count)

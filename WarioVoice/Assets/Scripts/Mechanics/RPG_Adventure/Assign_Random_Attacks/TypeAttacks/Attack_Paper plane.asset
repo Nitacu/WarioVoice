@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Hit
+  m_Name: Attack_Accuse 6
   m_EditorClassIdentifier: 
-  _verb: Hit
-  _attack: 15
-  _pronunciation: {fileID: 8300000, guid: d4a843c7b19d0d44d996faf3d871b571, type: 3}
+  _verb: Accuse
+  _attack: 5
+  _pronunciation: {fileID: 8300000, guid: 528ed41cb81a7f34f91d3f4cd64dc4d1, type: 3}
   _damage: 1
-  _sentenceToCompleteAttack: 'Mide su cara con su mama y en eso lo golpeamos '
-  _riddle: Este es el hit
+  _sentenceToCompleteAttack: "Tu mam\xE1 te llama, tienes que terminar de hacer tus
+    tareas"
+  _riddle: Este es el accuse

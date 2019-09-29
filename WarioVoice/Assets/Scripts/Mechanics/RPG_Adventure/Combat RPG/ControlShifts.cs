@@ -11,7 +11,10 @@ public class ControlShifts : MonoBehaviour
     private int numberCharacterLive = 0;
     private LamiaController _lamia;
     private HeroProperties[] _heroes = new HeroProperties[0];
+    private int _indexTurnHero = 0;
+    private HeroProperties _currentHero; // heroe que va a atacar;
 
+    // GET Y SET
     public bool TurnEnemy { get => turnEnemy; set => turnEnemy = value; }
     public bool TurnPlayer { get => turnPlayer; set => turnPlayer = value; }
     public int NumberCharacterLive { get => numberCharacterLive; set => numberCharacterLive = value; }
@@ -22,44 +25,45 @@ public class ControlShifts : MonoBehaviour
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _informationPanel.activeDialogue("- Que la pelea comience");
-
-        Invoke("playerTurn", 3);
+        _heroes = FindObjectsOfType<HeroProperties>();
+        Invoke("playerEnemy", 3);
     }
 
     public void playerTurn()
     {
-        turnEnemy = false;
-        TurnPlayer = true;
-
-        if (_heroes.Length<=0)
-        {
-            _heroes = FindObjectsOfType<HeroProperties>();
-        }
-
-        Invoke("newChallenge", 1.5f);
+        //selecciona el hero y lo mueve
+        _currentHero = newChallenge();
+        _currentHero.GetComponent<MoveHeroe>();
+        //muestre los ataques
+        _currentHero.showAttacks();
 
     }
 
-    public bool newChallenge()
+    public HeroProperties newChallenge()
     {
         while (true)
         {
-            int numberRandom = Random.Range(0, _heroes.Length);
-            if (_heroes[numberRandom].IsLive)
+            if (_heroes[_indexTurnHero].IsLive)
             {
-                FindObjectOfType<SetActiveSpeechButton>().setButton(true);
-                _heroes[numberRandom].showAttacks();
-                return true;
+                return _heroes[_indexTurnHero];
+            }
+            else
+            {
+                _indexTurnHero++;
+
+                if (_heroes.Length == _indexTurnHero)
+                {
+                    _indexTurnHero = 0;
+                }  
             }
         }
-
     }
 
     public void playerEnemy()
     {
-        turnEnemy = true;
-        TurnPlayer = false;
-        _informationPanel.activeDialogue("");
+        _lamia.selecAttack(); // ataca
+        _lamia.herosAlive(); // comprueba cuales quedaron vivos luego de atacar
+        Invoke("playerTurn", 1.5f);
     }
 
     public void dieCharacter()

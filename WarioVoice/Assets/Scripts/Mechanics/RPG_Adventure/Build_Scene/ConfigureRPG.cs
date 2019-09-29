@@ -13,6 +13,25 @@ public class ConfigureRPG : MonoBehaviour
         _characterBuilder = FindObjectOfType<CharacterBuilder>();
         _lamiaController = FindObjectOfType<LamiaController>();
         configurateLevel();
+
+        //carga los ataque que van a tener los heroes
+        // se tiene que hacer de esta forma para que no copie la referencia sino las cosas del interior
+        foreach (VoiceAttacks voice in _lamiaController.ListAttacksDefinitive)
+        {
+            _characterBuilder.ListAttacksDefinitive.Add(voice);
+        }
+
+        foreach (VoiceAttacks voice in _lamiaController.ListAttacksUseful)
+        {
+            _characterBuilder.ListAttacksUseful.Add(voice);
+        }
+
+        foreach (VoiceAttacks voice in _lamiaController.ListAttacksUseless)
+        {
+            _characterBuilder.ListAttacksUseless.Add(voice);
+        }
+
+        // crea los players
         _characterBuilder.createdCharacters();
     }
 
@@ -23,7 +42,7 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                return 1;
+                return 3;
                 break;
 
             case 2:
@@ -77,63 +96,53 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                _characterBuilder.NumberCharacters = 1;
-                _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
+                _characterBuilder.NumberCharacters = 2;
+                _lamiaController.Life = 5;
                 break;
 
             case 2:
                 _characterBuilder.NumberCharacters = 1;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 3:
                 _characterBuilder.NumberCharacters = 2;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 4:
                 _characterBuilder.NumberCharacters = 2;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 5:
                 _characterBuilder.NumberCharacters = 2;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 6:
                 _characterBuilder.NumberCharacters = 3;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 7:
                 _characterBuilder.NumberCharacters = 3;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 8:
                 _characterBuilder.NumberCharacters = 4;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 9:
                 _characterBuilder.NumberCharacters = 4;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
             case 10:
                 _characterBuilder.NumberCharacters = 4;
                 _lamiaController.Life = 1;
-                _lamiaController.Damage = 1;
                 break;
 
 

@@ -5,41 +5,25 @@ using UnityEngine;
 public class AttackGlossary 
 {
     // Palabras que tiene que decir
-    public const string THROW = "THROW";
-    public const string DOWNGRADE = "DOWNGRADE";
-    public const string LAUGH = "LAUGH";
-    public const string SHOOT = "SHOOT";
-    public const string BURN = "BURN";
-    public const string ACCUSE = "ACCUSE";
-    public const string EAT = "EAT";
-    public const string GIVE_AWAY = "GIVE_AWAY";
-    public const string LOOK = "LOOK";
-    public const string SHOUT = "SHOUT";
-    public const string BLOW = "BLOW";
-    public const string TELL = "TELL";
-    public const string FLY = "FLY";
-    public const string SCRATCH = "SCRATCH";
-    public const string PASTE = "PASTE";
-    public const string HIT = "HIT";
+    public const string PEPPER = "PEPPER";
+    public const string LEMON = "LEMON";
+    public const string PAPER_PLANE = "PAPER_ PLANE";
+    public const string ONION = "ONION";
+    public const string CHLORINE = "CHLORINE";
+    public const string PERFUME = "PERFUME";
+    public const string BUBBLE_GUM = "BUBBLE_GUM";
+    public const string SWORD = "SWORD";
 
     public enum attack
     {
-        THROW,
-        DOWNGRADE,
-        LAUGH,
-        SHOOT,
-        BURN,
-        ACCUSE,
-        EAT,
-        GIVE_AWAY,
-        LOOK,
-        SHOUT,
-        BLOW,
-        TELL,
-        FLY,
-        SCRATCH,
-        PASTE,
-        HIT
+        PEPPER,
+        LEMON,
+        PAPER_PLANE,
+        ONION,
+        CHORINE,
+        PERFUME,
+        BUBLE_BUM,
+            SWORD
     }
 
 
