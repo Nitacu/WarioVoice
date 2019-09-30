@@ -51,7 +51,7 @@ public class BetweenSceneControl : MonoBehaviour
             {
                 if (GameManager.GetInstance().GameCompleted)
                 {
-                    UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
                 }
                 else if (GameManager.GetInstance().GameLossed)
                 {
@@ -162,7 +162,7 @@ public class BetweenSceneControl : MonoBehaviour
         }
         else
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.WARIOVOICEMENU);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
         }
     }
 }

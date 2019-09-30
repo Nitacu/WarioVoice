@@ -53,6 +53,13 @@ public class GameManager
         set { _currentPlayerInformation = value; }
     }
 
+    private bool _developerMode;
+    public bool DeveloperMode
+    {
+        get { return _developerMode; }
+        set { _developerMode = value; }
+    }
+
     private static GameManager _instance;
 
     public static GameManager GetInstance()

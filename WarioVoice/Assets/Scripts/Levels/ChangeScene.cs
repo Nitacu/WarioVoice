@@ -18,7 +18,7 @@ public class ChangeScene : MonoBehaviour
     private const string ENDING = "Ending";
     private const string CREDITS = "Credits";
 
-    public const string WARIOVOICEMENU = "WarioVoiceMenu";
+    public const string SPIKINGLISHMENU = "SpikinglishMenu";
     private const string MATCHBUILDINGS = "Buildings";
     private const string IMITA_AL_BAILARIN = "DanceScene";
     private const string LOVE_SCENE = "LoveScene";
@@ -29,6 +29,7 @@ public class ChangeScene : MonoBehaviour
     public const string BETWEENMINIGAMES = "BetweenMiniGames";
     public const string LOADDATA = "WarioVoiceLoadPlayerData";
     public const string TUTORIALESPIKINGLISH = "TutorialEspikinglish";
+    public const string ESPIKINGLISHGAMETEST = "MiniGameTest";
 
 
 
@@ -48,7 +49,7 @@ public class ChangeScene : MonoBehaviour
         LEVEL_5,
         ENDING,
         CREDITS,
-        WARIOVOICEMENU,
+        SPIKINGLISHMENU,
         MATCHBUILDINGS,
         IMITA_AL_BAILARIN,
         LOVE_SCENE,
@@ -58,7 +59,8 @@ public class ChangeScene : MonoBehaviour
         WORMS,
         BETWEENMINIGAMES,
         LOADDATA,
-        ESPKINGLISHTUTORIAL
+        ESPKINGLISHTUTORIAL,
+        ESPIKINGLISHGAMETEST
     }    
 
     public enum EspikinglishMinigames
@@ -122,8 +124,8 @@ public class ChangeScene : MonoBehaviour
                 SceneManager.LoadScene(LEVEL_5);
                 break;
 
-            case nameScenes.WARIOVOICEMENU:
-                SceneManager.LoadScene(WARIOVOICEMENU);
+            case nameScenes.SPIKINGLISHMENU:
+                SceneManager.LoadScene(SPIKINGLISHMENU);
                 break;
 
             case nameScenes.MATCHBUILDINGS:
@@ -156,7 +158,8 @@ public class ChangeScene : MonoBehaviour
                 SceneManager.LoadScene(BETWEENMINIGAMES);
                 break;
             case nameScenes.LOADDATA:
-                SceneManager.LoadScene(LOADDATA);
+                string scene = (GameManager.GetInstance().DeveloperMode) ? ESPIKINGLISHGAMETEST : LOADDATA;
+                SceneManager.LoadScene(scene);
                 break;
             case nameScenes.ESPKINGLISHTUTORIAL:
                 SceneManager.LoadScene(TUTORIALESPIKINGLISH);
