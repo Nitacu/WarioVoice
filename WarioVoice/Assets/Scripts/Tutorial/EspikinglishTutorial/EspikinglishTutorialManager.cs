@@ -18,8 +18,8 @@ public class EspikinglishTutorialManager : CommandParser
     public const string TEST_ENG = "Press the button and say \"Go\"";
     public const string TEST_ESP = "Presiona el botón y di \"Go\"";
 
-    public const string GOODJOB_ENG = "Great, press continue to start the game";
-    public const string GOODJOB_ESP = "Excelente, presiona continuar para comenzar a jugar";
+    public const string GOODJOB_ENG = "Great, let's start";
+    public const string GOODJOB_ESP = "Excelente, empecemos";
     #endregion
 
     [SerializeField] private TMP_InputField _inputFieldTest;
