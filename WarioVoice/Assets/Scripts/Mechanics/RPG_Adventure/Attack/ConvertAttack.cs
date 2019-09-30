@@ -59,7 +59,7 @@ public class ConvertAttack : CommandParser
 
 
             default:
-                
+                SaveSystem.increaseMicrophonePressedTime(false);
                 break;
         }
     }

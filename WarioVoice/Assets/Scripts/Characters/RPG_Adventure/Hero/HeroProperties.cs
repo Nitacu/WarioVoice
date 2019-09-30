@@ -19,6 +19,7 @@ public class HeroProperties : MonoBehaviour
     private Sprite _icon; // icono del rostro
 
     public bool IsLive { get => _isLive; set => _isLive = value; }
+    public List<VoiceAttacks> Attacks { get => _attacks; set => _attacks = value; }
 
     private void Start()
     {
@@ -50,8 +51,6 @@ public class HeroProperties : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.grey;
             FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
             _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(0);
-            _lamia.herosAlive(GetComponent<HeroProperties>());
-
         }
 
 
@@ -65,18 +64,30 @@ public class HeroProperties : MonoBehaviour
 
     public void getAttack(VoiceAttacks attack)
     {
-        _attacks.Add(attack);
+        Attacks.Add(attack);
     }
 
     //activa el panel de ataques y muestra los ataques de este personaje
     public void showAttacks()
     {
-        _exeAttack.prepareAttack(_attacks, GetComponent<HeroProperties>());
+        _exeAttack.prepareAttack(Attacks, GetComponent<HeroProperties>());
 
-        for (int i = 0; i < _attacks.Count; i++)
+        for (int i = 0; i < _levelInformationPanel.Attacks.Count; i++)
         {
-            _levelInformationPanel.Attacks[i].GetComponentInChildren<TMP_Text>().text = "-"+_attacks[i]._verb;
-            _levelInformationPanel.Attacks[i].GetComponent<AudioSource>().clip = _attacks[i]._pronunciation;
+            if (i < Attacks.Count)
+            {
+                _levelInformationPanel.Attacks[i].SetActive(true);
+                // palabra 
+                _levelInformationPanel.Attacks[i].GetComponentInChildren<TMP_Text>().text = "-" + Attacks[i]._verb;
+                _levelInformationPanel.Attacks[i].GetComponent<AudioSource>().clip = Attacks[i]._pronunciation;
+                //imagen de la palabra
+                _levelInformationPanel.Images[i].GetComponent<Image>().sprite = Attacks[i]._sprite;
+            }
+            else
+            {
+                _levelInformationPanel.Attacks[i].SetActive(false);
+            }
+
         }
 
         

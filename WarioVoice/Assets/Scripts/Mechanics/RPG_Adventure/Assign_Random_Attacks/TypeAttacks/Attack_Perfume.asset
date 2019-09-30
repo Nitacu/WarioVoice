@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Accuse 3
+  m_Name: Attack_Perfume
   m_EditorClassIdentifier: 
-  _verb: Accuse
+  _verb: Perfume
   _attack: 5
-  _pronunciation: {fileID: 8300000, guid: 528ed41cb81a7f34f91d3f4cd64dc4d1, type: 3}
+  _pronunciation: {fileID: 8300000, guid: a48b6c67950503147add5725b0c97fca, type: 3}
   _damage: 1
-  _sentenceToCompleteAttack: "Tu mam\xE1 te llama, tienes que terminar de hacer tus
-    tareas"
+  _sprite: {fileID: 21300000, guid: 05ccb7fca35486f4297114d56ab412d4, type: 3}
+  _sentenceToCompleteAttack: 
   _riddle: Este es el accuse

@@ -14,9 +14,13 @@ public class LamiaController : MonoBehaviour
     [Header("atque con el que destruye al enemigo")]
     [SerializeField] private List<VoiceAttacks> _listAttacksDefinitive;
 
-    private float life;
+    [SerializeField] private float life;
+    [Header("Cuando me hacen daño")]
     [SerializeField] private GameObject _visualDamage;
-    [SerializeField]private List<HeroProperties> _characters = new List<HeroProperties>();
+    [Header("Cuando hago daño")]
+    [SerializeField] private GameObject _visualDamageOthers;
+    private List<HeroProperties> _characters = new List<HeroProperties>();
+    [SerializeField] private List<GameObject> _listEyes = new List<GameObject>();
     [SerializeField] private GameObject _cofetti;
     private bool _weak = false; // para saber si esta debil el jefe
 
@@ -29,34 +33,44 @@ public class LamiaController : MonoBehaviour
     {
         Life -= damage;
 
-        // animacion batalla
-        //GetComponent<Animator>().Play(Animator.StringToHash("Damage Lamia"));
 
         if (Life <= 0)
         {
-            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Animator>().enabled = false;
             GameManager.GetInstance().increaseDifficulty();
+            Instantiate(_visualDamage, transform);
             Instantiate(_cofetti);
             Invoke("loadMenu", 1.5f);
             return false;
         }
-        else if (Life == 1)
+        else
         {
-            _weak = true;
+            if(Life == 1)
+                _weak = true;
+
+            Instantiate(_visualDamage, _listEyes[0].transform);
+            GetComponent<Animator>().SetBool("Damage", true);
+            Invoke("destroyEye", 2);
         }
+
         return true;
+    }
+
+    public void destroyEye()
+    {
+        GetComponent<Animator>().SetBool("Damage", false);
+        Destroy(_listEyes[0]);
+        _listEyes.RemoveAt(0);
     }
 
     public void loadMenu()
     {
-        SceneManager.LoadScene("WarioVoiceMenu");
+        GameManager.GetInstance().launchNextMinigame(true);
     }
 
-    public void attack(HeroProperties hero, float damage, string sentenses)
+    public void attack(HeroProperties hero, float damage,string sentenses)
     {
         //daño
-        _visualDamage.SetActive(true);
-        _visualDamage.transform.position = hero.transform.position;
         hero.getDamage(damage);
         //siguiente accion
         //FindObjectOfType<ControlShifts>().playerTurn();
@@ -65,16 +79,33 @@ public class LamiaController : MonoBehaviour
     }
 
     // evalua que heroes estan vivos
-    public void herosAlive(HeroProperties hero)
+    public void removeHeroe()
     {
-        _characters.Remove(hero);
+        if (heroeIsAlive())
+        {
+            _characters.Remove(heroeIsAlive());
+            removeHeroe();
+        }
+    }
+
+    public HeroProperties heroeIsAlive()
+    {
+        foreach (HeroProperties hero in _characters)
+        {
+            if (!hero.IsLive)
+            {
+                return hero;
+            }
+        }
+
+        return null;
     }
 
     public bool effectiveAttack(AttackGlossary.attack attack)
     {
         if (_weak)
         {
-            foreach(VoiceAttacks voiceAttacks in ListAttacksDefinitive)
+            foreach (VoiceAttacks voiceAttacks in ListAttacksDefinitive)
             {
                 if (attack == voiceAttacks._attack)
                 {
@@ -87,7 +118,6 @@ public class LamiaController : MonoBehaviour
         {
             foreach (VoiceAttacks voiceAttacks in ListAttacksUseful)
             {
-                Debug.Log("ataques que funcionan" + voiceAttacks._verb);
 
                 if (attack == voiceAttacks._attack)
                 {
@@ -109,29 +139,39 @@ public class LamiaController : MonoBehaviour
             {
                 // fijo
                 case 1:
-                    random = Random.Range(1, _characters.Count - 1);
-                    attack(_characters[random], 1, "ataque directo");
+                    random = Random.Range(0, _characters.Count);
+                    //visual del daño
+                    Instantiate(_visualDamageOthers, _characters[random].transform);
+                    _characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                    //recibe el daño
+                    attack(_characters[random], 1, "Ataque directo");
                     break;
 
                 // en area
                 case 2:
-                    if (_characters.Count == 1)
+                    foreach (HeroProperties hero in _characters)
                     {
-                        foreach (HeroProperties hero in _characters)
-                        {
-                            attack(hero, 1, "ataque en area");
-                        }
+                        Instantiate(_visualDamageOthers, hero.transform);
+                        hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                        attack(hero, 1, "Ataque en area");
                     }
-                    attack(_characters[0], 1, "ataque directo");
                     break;
             }
         }
         else
         {
             // aca deberia ser mas mortal 
-            random = Random.Range(1, _characters.Count-1);
-            attack(_characters[random], 2, "ataque cargado  ");
+            random = Random.Range(0, _characters.Count - 1);
+            //visual del daño
+            Instantiate(_visualDamageOthers, _characters[random].transform);
+            Instantiate(_visualDamageOthers, _characters[random].transform);
+            _characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+            //recibe el daño
+            attack(_characters[random], 2, "Ataque cargado  ");
         }
+
+        //revisa si mato a alguien
+        removeHeroe();
     }
 
 

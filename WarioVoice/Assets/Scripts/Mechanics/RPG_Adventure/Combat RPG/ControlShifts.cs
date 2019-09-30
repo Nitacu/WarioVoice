@@ -45,12 +45,13 @@ public class ControlShifts : MonoBehaviour
         while (true)
         {
             _indexTurnHero++;
-
-            if (_heroes.Count >= _indexTurnHero)
+            
+            if (_heroes.Count <= _indexTurnHero)
             {
+                
                 _indexTurnHero = 0;
             }
-            Debug.Log("player #" +_indexTurnHero);
+            
             if (_heroes[_indexTurnHero].IsLive)
             {
                 return _heroes[_indexTurnHero];
@@ -72,7 +73,7 @@ public class ControlShifts : MonoBehaviour
 
         if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
         {
-            SceneManager.LoadScene("WarioVoiceMenu");
+            GameManager.GetInstance().launchNextMinigame(false);
         }
     }
 }

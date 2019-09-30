@@ -42,11 +42,11 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                return 3;
+                return 4;
                 break;
 
             case 2:
-                return 1;
+                return 3;
                 break;
 
             case 3:
@@ -101,13 +101,13 @@ public class ConfigureRPG : MonoBehaviour
                 break;
 
             case 2:
-                _characterBuilder.NumberCharacters = 1;
-                _lamiaController.Life = 1;
+                _characterBuilder.NumberCharacters = 2;
+                _lamiaController.Life = 5;
                 break;
 
             case 3:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 1;
+                _lamiaController.Life = 5;
                 break;
 
             case 4:

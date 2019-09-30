@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 169780209046667640}
   - component: {fileID: 5523595687900687667}
   - component: {fileID: -5962520172806507440}
+  - component: {fileID: 2500221982103903683}
   m_Layer: 0
   m_Name: Hero_RPG
   m_TagString: Untagged
@@ -109,3 +110,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _starPosition: {x: 0, y: 0, z: 0}
+--- !u!95 &2500221982103903683
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6157600078149907170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 60e9bd833f6a3eb4bb20342c9b488ac2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

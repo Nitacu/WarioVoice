@@ -180,40 +180,18 @@
 <category><pattern>CINEMA</pattern><template>CINEMA</template></category>
 <category><pattern>MUSICIAN</pattern><template>MUSICIAN</template></category>
 <category><pattern>MUSIC STAGE</pattern><template>MUSIC STAGE</template></category>
-
-  <category>
-    <pattern>PEPPER</pattern>
-    <template>PEPPER</template>
-  </category>
-  <category>
-    <pattern>LEMON</pattern>
-    <template>LEMON</template>
-  </category>
-  <category>
-    <pattern>PAPER PLANE</pattern>
-    <template>PAPER_PLANE</template>
-  </category>
-  <category>
-    <pattern>ONION</pattern>
-    <template>ONION</template>
-  </category>
-  <category>
-    <pattern>CHLORINE</pattern>
-    <template>CHLORINE</template>
-  </category>
-  <category>
-    <pattern>PERFUME</pattern>
-    <template>PERFUME</template>
-  </category>
-  <category>
-    <pattern>BUBBLE GUM</pattern>
-    <template>BUBBLE_GUM</template>
-  </category>
-  <category>
-    <pattern>SWORD AWAY</pattern>
-    <template>SWORD</template>
-  </category>
   
+  
+<category><pattern>BUBBLE GUM</pattern><template>BUBBLE_GUM</template></category>
+<category><pattern>CHLORINE</pattern><template>CHLORINE</template></category>
+<category><pattern>LEMON</pattern><template>LEMON</template></category>
+<category><pattern>ONION</pattern><template>ONION</template></category>
+<category><pattern>PAPER PLANE</pattern><template>PAPER_PLANE</template></category>
+<category><pattern>PEPPER</pattern><template>PEPPER</template></category>
+<category><pattern>PERFUME</pattern><template>PERFUME</template></category>
+<category><pattern>SWORD</pattern><template>SWORD</template></category>
+
+
 <category><pattern>BLUE</pattern><template>BLUE</template></category>
  <category><pattern>COLOR BLUE</pattern><template>BLUE</template></category>  
 <category><pattern>RED</pattern><template>RED</template></category>

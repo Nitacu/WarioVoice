@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: {fileID: 7313950892228222320}
   _heart: {fileID: 7868136502421060289, guid: c01225c70f4dbe84099a3671eb286e24, type: 3}
+  _listHearts: []
   _icon: {fileID: 7313950891334266072}
 --- !u!1 &7313950891334266074
 GameObject:
@@ -125,10 +126,10 @@ RectTransform:
   m_Father: {fileID: 7313950891300914740}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7191462, y: 0.25819153}
+  m_AnchorMin: {x: 0.78000003, y: 0.25819072}
   m_AnchorMax: {x: 0.99999857, y: 1.0000113}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.0000019073486}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_SizeDelta: {x: -0.000030518, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7313950891334266071
 CanvasRenderer:

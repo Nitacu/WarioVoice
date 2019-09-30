@@ -9,7 +9,6 @@ public class TestVoiceInput : MonoBehaviour
 
     public void testVoice()
     {
-        Debug.Log(text.text);
         FindObjectOfType<CommandParser>().parseCommand(text.text);
     }
 }

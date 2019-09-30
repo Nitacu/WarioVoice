@@ -43,25 +43,25 @@ public class ExeAttack : MonoBehaviour
 
     public void selectAttack()
     {
-        
+        SaveSystem.increaseMicrophonePressedTime(true);
         if (characterContainsAttack())
         {
             if (_lamia.effectiveAttack(_typeAttack))
             {
                 //aplcia el daño
                 if (_lamia.lostLife(_currentAttack._damage))
-                    _controlShifts.Invoke("playerEnemy", 1);
+                    _controlShifts.Invoke("playerEnemy", 2);
                 // visual
-                _visualDamage.gameObject.transform.position = _lamia.transform.position;
-                _visualDamage.gameObject.SetActive(true);
+
                 //frase del ataque
                 FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
                 _hero.GetComponent<MoveHeroe>().changeDirection();
+                _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
 
             }
             else
             {
-                _controlShifts.Invoke("playerEnemy", 1);
+                _controlShifts.Invoke("playerEnemy", 2);
                 FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
                 _hero.GetComponent<MoveHeroe>().changeDirection();
             }
