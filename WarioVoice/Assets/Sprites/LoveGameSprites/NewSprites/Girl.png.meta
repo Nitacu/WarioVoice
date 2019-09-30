@@ -1,7 +1,73 @@
 fileFormatVersion: 2
 guid: f898a5f9ec057604b93928e22ad1a2d6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7777177641172106769
+    second: Girl_0
+  - first:
+      213: -2275071983613723935
+    second: Girl_1
+  - first:
+      213: -3973561355303910223
+    second: Girl_Face_01
+  - first:
+      213: 2868394332392052343
+    second: Girl_3
+  - first:
+      213: -6512062428402373838
+    second: Girl_4
+  - first:
+      213: 8098686937164773183
+    second: Girl_5
+  - first:
+      213: -4902695134445092299
+    second: Girl_6
+  - first:
+      213: -2186158343969203122
+    second: Girl_7
+  - first:
+      213: 5904386835994083326
+    second: Girl_8
+  - first:
+      213: -1820109380404049340
+    second: Girl_9
+  - first:
+      213: 6099821561258908939
+    second: Girl_10
+  - first:
+      213: 5446275835778763982
+    second: Girl_11
+  - first:
+      213: -1207961324030329304
+    second: Girl_12
+  - first:
+      213: -317958437259603865
+    second: Girl_13
+  - first:
+      213: -5883743376494934879
+    second: Girl_14
+  - first:
+      213: 1381924704659932688
+    second: Girl_15
+  - first:
+      213: -6400100833316376621
+    second: Girl_16
+  - first:
+      213: -439903183182660498
+    second: Girl_17
+  - first:
+      213: -5088276001708972051
+    second: Girl_18
+  - first:
+      213: 8695508292730127081
+    second: Girl_19
+  - first:
+      213: 2904297120038030634
+    second: Girl_Face_02
+  - first:
+      213: -633100787453192100
+    second: Girl_Face_03
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +106,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +136,138 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Girl_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 220
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a7be25f93661140b70e1f9d3d2a885
+      internalID: -7777177641172106769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 0
+        width: 223
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa1b5e3527822d48ac25aeb4de12614
+      internalID: -2275071983613723935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_Face_01
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 127
+        width: 140
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb7a2f8317828c478181b0fd6b3730c
+      internalID: -3973561355303910223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_Face_02
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 127
+        width: 139
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eca363c24284064e81b6dbaf4f2a981
+      internalID: 2904297120038030634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_Face_03
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 127
+        width: 141
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6c4bb8fc9d3704e886343d8fdb1dea
+      internalID: -633100787453192100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

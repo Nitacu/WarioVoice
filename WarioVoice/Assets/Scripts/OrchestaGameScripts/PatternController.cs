@@ -38,8 +38,8 @@ public class PatternController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //difficulty = GameManager.GetInstance().getGameDifficulty();
-        difficulty = 8;
+        difficulty = GameManager.GetInstance().getGameDifficulty();
+       
         selectDifficulty();
 
         patternPanel = FindObjectOfType<PatternPanelController>();

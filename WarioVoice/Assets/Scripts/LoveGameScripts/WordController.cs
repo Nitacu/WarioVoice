@@ -37,10 +37,15 @@ public class WordController : MonoBehaviour
         loveMetter = FindObjectOfType<LoveMeterController>().gameObject;
         wtfBar = FindObjectOfType<WTFBarController>().gameObject;
         setDifficulty();
-        turnSignOn();
+        player.SetActive(false);
+        
     }
 
-    
+    public void startGame()
+    {
+        player.SetActive(true);
+        turnSignOn();
+    }
 
     public void loseScene()
     {
