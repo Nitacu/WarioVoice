@@ -46,7 +46,7 @@ public class AbstractPaintingManager : CommandParser
 {
     #region HelpDialogs
     const string FIRSTDIALOG = "Say a color to set your brush\nDi un color";
-    const string SAYACOLORFIRST = "Say a color first\nDebes decir un color primero";
+    const string SAYACOLORFIRST = "Say a color to set your brush\nDi un color";
     const string PAINTONCANVAS = "Now, paint on your canvas\nAhora, dibuja en tu lienzo";
     const string ANALYZING = "Analyzing Paint...\nAnalizando el cuadro";
     const string WIN = "Mother of DaVinci\n Bien hecho";
@@ -58,7 +58,7 @@ public class AbstractPaintingManager : CommandParser
     const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
     const string YESORNO = "Yes / No";
 
-    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci\n Bien hecho"};
+    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci"};
     #endregion
 
     #region Commands

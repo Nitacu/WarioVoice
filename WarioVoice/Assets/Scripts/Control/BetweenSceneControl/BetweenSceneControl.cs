@@ -67,6 +67,8 @@ public class BetweenSceneControl : MonoBehaviour
         }
 
         int timeToshow = Mathf.FloorToInt(_timeTracking);
+        timeToshow = Mathf.Clamp(timeToshow, 0, timeToshow);
+        Debug.Log("Time to show: " + timeToshow);
 
         if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
         {
@@ -86,8 +88,9 @@ public class BetweenSceneControl : MonoBehaviour
 
         }
         else if (GameManager.GetInstance().GameLossed)
-        {
+        {            
             _timerDownText.text = timeToshow.ToString();
+           
             FindObjectOfType<BetweenSceneAudioControl>().playGameOver();
         }
     }
