@@ -125,6 +125,7 @@ public class AbstractPaintingManager : CommandParser
     //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
 
     [Header("UI Control")]
+    [SerializeField] private List<GameObject> _developermodeObjects = new List<GameObject>();
     [SerializeField] private List<GameObject> _buttonsToDeactivate = new List<GameObject>();
     [SerializeField] private GameObject _microphoneButton;
     [SerializeField] private TextMeshProUGUI _level;
@@ -164,6 +165,12 @@ public class AbstractPaintingManager : CommandParser
 
     private void Start()
     {
+        bool developermode = GameManager.GetInstance().DeveloperMode;
+        foreach (var item in _developermodeObjects)
+        {
+            item.SetActive(developermode);
+        }
+
         _currentLevel = GameManager.GetInstance().getGameDifficulty();
         _currentLevel--;
         if (_currentLevel + 1 > _levels.Count)

@@ -82,7 +82,7 @@ public class GameManager
     public static void ResetInstance()
     {
         if (_instance != null)
-        {
+        {            
             _instance = null;
         }
         
