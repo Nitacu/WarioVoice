@@ -46,25 +46,47 @@ public class ExeAttack : MonoBehaviour
         SaveSystem.increaseMicrophonePressedTime(true);
         if (characterContainsAttack())
         {
-            if (_lamia.effectiveAttack(_typeAttack))
+            if (_currentAttack._cure)
             {
-                //aplcia el daño
-                if (_lamia.lostLife(_currentAttack._damage))
-                    _controlShifts.Invoke("playerEnemy", 2);
-                // visual
-
+                HeroProperties[] aux =  FindObjectsOfType<HeroProperties>();
+                List<HeroProperties> revive = new List<HeroProperties>();
+                foreach (HeroProperties hero in aux)
+                {
+                    hero.getCharacterStastic(1);
+                    _lamia.Characters.Add(hero);
+                }
+                
+                //para finalizar el turno
+                _controlShifts.Invoke("playerEnemy", 2);
                 //frase del ataque
                 FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
                 _hero.GetComponent<MoveHeroe>().changeDirection();
                 _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
-
             }
             else
             {
-                _controlShifts.Invoke("playerEnemy", 2);
-                FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
-                _hero.GetComponent<MoveHeroe>().changeDirection();
+                if (_lamia.effectiveAttack(_typeAttack))
+                {
+                    //aplcia el daño
+                    if (_lamia.lostLife(_currentAttack._damage))
+                        _controlShifts.Invoke("playerEnemy", 2);
+                    // visual
+
+                    //frase del ataque
+                    FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+                    _hero.GetComponent<MoveHeroe>().changeDirection();
+                    _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
+
+                }
+                else
+                {
+                    _controlShifts.Invoke("playerEnemy", 2);
+                    FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+                    _hero.GetComponent<MoveHeroe>().changeDirection();
+                }
             }
+            
+            _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
         }
     }
 

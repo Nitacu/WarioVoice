@@ -14,7 +14,7 @@ public class CharacterBuilder : MonoBehaviour
     private List<VoiceAttacks> _listAttacksDefinitive = new List<VoiceAttacks>();
     [Header("Todos los cuerpos de personajes")]
     [SerializeField] private List<TypeHeroeRPG> _listHeroes;
-    private const int NUMBER_ATTACKS_USELESS = 1;
+    private const int NUMBER_ATTACKS_USELESS = 3;
     private const int NUMBER_ATTACKS_USEFUL = 2;
     private const int NUMBER_ATTACKS_DEFINITIVE = 1;
     private int _numberCharacters;

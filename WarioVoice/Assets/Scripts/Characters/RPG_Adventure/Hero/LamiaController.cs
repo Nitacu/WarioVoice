@@ -26,7 +26,7 @@ public class LamiaController : MonoBehaviour
 
     private void Start()
     {
-        _characters = FindObjectsOfType<HeroProperties>().ToList();
+        Characters = FindObjectsOfType<HeroProperties>().ToList();
     }
 
     public bool lostLife(float damage)
@@ -63,9 +63,21 @@ public class LamiaController : MonoBehaviour
         _listEyes.RemoveAt(0);
     }
 
+    public void winEnemy()
+    {
+        List<HeroProperties> heros =  FindObjectsOfType<HeroProperties>().ToList();
+        GameObject gObj;
+
+        foreach (HeroProperties aux in heros)
+        {
+            gObj = Instantiate(_visualDamageOthers, aux.transform);
+            Destroy(gObj.GetComponent<SelfDestroy>());
+        }
+    }
+
     public void loadMenu()
     {
-        GameManager.GetInstance().launchNextMinigame(true);
+        GameManager.GetInstance().finisBossBattle(true);
     }
 
     public void attack(HeroProperties hero, float damage,string sentenses)
@@ -83,14 +95,14 @@ public class LamiaController : MonoBehaviour
     {
         if (heroeIsAlive())
         {
-            _characters.Remove(heroeIsAlive());
+            Characters.Remove(heroeIsAlive());
             removeHeroe();
         }
     }
 
     public HeroProperties heroeIsAlive()
     {
-        foreach (HeroProperties hero in _characters)
+        foreach (HeroProperties hero in Characters)
         {
             if (!hero.IsLive)
             {
@@ -139,17 +151,17 @@ public class LamiaController : MonoBehaviour
             {
                 // fijo
                 case 1:
-                    random = Random.Range(0, _characters.Count);
+                    random = Random.Range(0, Characters.Count);
                     //visual del daño
-                    Instantiate(_visualDamageOthers, _characters[random].transform);
-                    _characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                    Instantiate(_visualDamageOthers, Characters[random].transform);
+                    Characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                     //recibe el daño
-                    attack(_characters[random], 1, "Ataque directo");
+                    attack(Characters[random], 1, "Ataque directo");
                     break;
 
                 // en area
                 case 2:
-                    foreach (HeroProperties hero in _characters)
+                    foreach (HeroProperties hero in Characters)
                     {
                         Instantiate(_visualDamageOthers, hero.transform);
                         hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
@@ -161,13 +173,13 @@ public class LamiaController : MonoBehaviour
         else
         {
             // aca deberia ser mas mortal 
-            random = Random.Range(0, _characters.Count - 1);
+            random = Random.Range(0, Characters.Count - 1);
             //visual del daño
-            Instantiate(_visualDamageOthers, _characters[random].transform);
-            Instantiate(_visualDamageOthers, _characters[random].transform);
-            _characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+            Instantiate(_visualDamageOthers, Characters[random].transform);
+            Instantiate(_visualDamageOthers, Characters[random].transform);
+            Characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
             //recibe el daño
-            attack(_characters[random], 2, "Ataque cargado  ");
+            attack(Characters[random], 2, "Ataque cargado  ");
         }
 
         //revisa si mato a alguien
@@ -179,4 +191,5 @@ public class LamiaController : MonoBehaviour
     public List<VoiceAttacks> ListAttacksUseless { get => _listAttacksUseless; set => _listAttacksUseless = value; }
     public List<VoiceAttacks> ListAttacksUseful { get => _listAttacksUseful; set => _listAttacksUseful = value; }
     public List<VoiceAttacks> ListAttacksDefinitive { get => _listAttacksDefinitive; set => _listAttacksDefinitive = value; }
+    public List<HeroProperties> Characters { get => _characters; set => _characters = value; }
 }

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Bubble gum
+  m_Name: Attack_Spatula
   m_EditorClassIdentifier: 
-  _verb: Buble bum
-  _attack: 6
-  _pronunciation: {fileID: 8300000, guid: 56ee3793781b6b64ca0817949a0e4e8c, type: 3}
+  _verb: Spatula
+  _attack: 9
+  _pronunciation: {fileID: 8300000, guid: 898f7e892ba904a469abf2a9ca078cab, type: 3}
   _damage: 1
-  _sprite: {fileID: 4292991442675503664, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
-  _sentenceToCompleteAttack: "\xF1umi \xF1umi"
+  _cure: 0
+  _sprite: {fileID: 21300000, guid: 256fd07597800cf44b3d9865ab3b7577, type: 3}
+  _sentenceToCompleteAttack: 
   _riddle: Este es el accuse

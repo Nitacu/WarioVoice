@@ -35,8 +35,8 @@ public class ConvertAttack : CommandParser
                 _exeAttack.selectAttack();
                 break;
 
-            case AttackGlossary.PEPPER:
-                _exeAttack.TypeAttack = AttackGlossary.attack.PEPPER;
+            case AttackGlossary.BLACK_PEPPER:
+                _exeAttack.TypeAttack = AttackGlossary.attack.BLACK_PEPPER;
                 _exeAttack.selectAttack();
                 break;
 
@@ -45,16 +45,40 @@ public class ConvertAttack : CommandParser
                 _exeAttack.selectAttack();
                 break;
 
-            case AttackGlossary.BUBBLE_GUM:
-                _exeAttack.TypeAttack = AttackGlossary.attack.BUBLE_BUM;
+            case AttackGlossary.CANDY:
+                _exeAttack.TypeAttack = AttackGlossary.attack.CANDY;
                 _exeAttack.selectAttack();
                 
                 break;
 
-            case AttackGlossary.SWORD:
-                _exeAttack.TypeAttack = AttackGlossary.attack.SWORD;
+            case AttackGlossary.UMBRELLA:
+                _exeAttack.TypeAttack = AttackGlossary.attack.UMBRELLA;
                 _exeAttack.selectAttack();
                 
+                break;
+
+            case AttackGlossary.SPATULA:
+                _exeAttack.TypeAttack = AttackGlossary.attack.SPATULA;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.NEWSPAPER:
+                _exeAttack.TypeAttack = AttackGlossary.attack.NEWSPAPER;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.COIN:
+                _exeAttack.TypeAttack = AttackGlossary.attack.COIN;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.CUPCAKE:
+                _exeAttack.TypeAttack = AttackGlossary.attack.CUPCAKE;
+                _exeAttack.selectAttack();
+
                 break;
 
 

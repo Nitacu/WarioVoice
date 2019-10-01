@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Sword
+  m_Name: Attack_Candy
   m_EditorClassIdentifier: 
-  _verb: Sword
-  _attack: 7
-  _pronunciation: {fileID: 8300000, guid: 03fb3c65f984cb34894c73ed7be8a0d1, type: 3}
+  _verb: Candy
+  _attack: 6
+  _pronunciation: {fileID: 8300000, guid: 66dc316e8a9356849a61e23425cfad34, type: 3}
   _damage: 1
-  _sprite: {fileID: -5063555655813669412, guid: dada751d7542ea94cbfe9fe4eb50f9aa,
-    type: 3}
+  _cure: 1
+  _sprite: {fileID: 4292991442675503664, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
   _sentenceToCompleteAttack: 
   _riddle: Este es el accuse

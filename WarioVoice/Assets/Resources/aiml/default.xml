@@ -182,14 +182,18 @@
 <category><pattern>MUSIC STAGE</pattern><template>MUSIC STAGE</template></category>
   
   
-<category><pattern>BUBBLE GUM</pattern><template>BUBBLE_GUM</template></category>
+<category><pattern>CANDY</pattern><template>CANDY</template></category>
 <category><pattern>CHLORINE</pattern><template>CHLORINE</template></category>
 <category><pattern>LEMON</pattern><template>LEMON</template></category>
 <category><pattern>ONION</pattern><template>ONION</template></category>
 <category><pattern>PAPER PLANE</pattern><template>PAPER_PLANE</template></category>
-<category><pattern>PEPPER</pattern><template>PEPPER</template></category>
+<category><pattern>BLACK PEPPER</pattern><template>BLACK_PEPPER</template></category>
 <category><pattern>PERFUME</pattern><template>PERFUME</template></category>
-<category><pattern>SWORD</pattern><template>SWORD</template></category>
+<category><pattern>UMBRELLA</pattern><template>UMBRELLA</template></category>
+<category><pattern>SPATULA</pattern><template>SPATULA</template></category>
+<category><pattern>NEWSPAPER</pattern><template>NEWSPAPER</template></category>
+<category><pattern>CUPCAKE</pattern><template>CUPCAKE</template></category>
+<category><pattern>COIN</pattern><template>COIN</template></category>
 
 
 <category><pattern>BLUE</pattern><template>BLUE</template></category>

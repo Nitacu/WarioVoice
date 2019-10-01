@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Pepper
+  m_Name: Attack_Newspaper
   m_EditorClassIdentifier: 
-  _verb: Black Pepper
-  _attack: 0
-  _pronunciation: {fileID: 8300000, guid: 4296be75984646c4299e92c9914eef81, type: 3}
+  _verb: Newspaper
+  _attack: 8
+  _pronunciation: {fileID: 8300000, guid: 8f747d57ff91a5443a36f57bd3799391, type: 3}
   _damage: 1
   _cure: 0
-  _sprite: {fileID: 21300000, guid: 0009bbad2e2e63a499c7974802ef5be7, type: 3}
+  _sprite: {fileID: 21300000, guid: b7b22dfa3c922e048a3836917b8584de, type: 3}
   _sentenceToCompleteAttack: 
   _riddle: Este es el accuse

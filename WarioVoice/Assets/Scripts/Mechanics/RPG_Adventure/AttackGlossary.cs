@@ -5,25 +5,33 @@ using UnityEngine;
 public class AttackGlossary 
 {
     // Palabras que tiene que decir
-    public const string PEPPER = "PEPPER";
+    public const string BLACK_PEPPER = "BLACK_PEPPER";
     public const string LEMON = "LEMON";
-    public const string PAPER_PLANE = "PAPER_ PLANE";
+    public const string PAPER_PLANE = "PAPER_PLANE";
     public const string ONION = "ONION";
     public const string CHLORINE = "CHLORINE";
     public const string PERFUME = "PERFUME";
-    public const string BUBBLE_GUM = "BUBBLE_GUM";
-    public const string SWORD = "SWORD";
+    public const string CANDY = "CANDY";
+    public const string UMBRELLA = "UMBRELLA";
+    public const string SPATULA = "SPATULA";
+    public const string NEWSPAPER = "NEWSPAPER";
+    public const string COIN = "COIN";
+    public const string CUPCAKE = "CUPCAKE";
 
     public enum attack
     {
-        PEPPER,
+        BLACK_PEPPER,
         LEMON,
         PAPER_PLANE,
         ONION,
         CHORINE,
         PERFUME,
-        BUBLE_BUM,
-            SWORD
+        CANDY,
+        UMBRELLA,
+        NEWSPAPER,
+        SPATULA,
+        COIN,
+        CUPCAKE
     }
 
 

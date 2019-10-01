@@ -27,11 +27,16 @@ public class ControlShifts : MonoBehaviour
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _informationPanel.activeDialogue("- Que la pelea comience");
         _heroes = FindObjectsOfType<HeroProperties>().ToList();
-        Invoke("playerEnemy", 3);
+        Invoke("playerTurn", 3);
     }
 
     public void playerTurn()
     {
+        if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
+        {
+            GameManager.GetInstance().finisBossBattle(false);
+        }
+
         //selecciona el hero y lo mueve
         _currentHero = newChallenge();
         _currentHero.GetComponent<MoveHeroe>();
@@ -45,25 +50,33 @@ public class ControlShifts : MonoBehaviour
         while (true)
         {
             _indexTurnHero++;
-            
+
             if (_heroes.Count <= _indexTurnHero)
             {
-                
                 _indexTurnHero = 0;
             }
-            
+
             if (_heroes[_indexTurnHero].IsLive)
             {
                 return _heroes[_indexTurnHero];
             }
-
         }
     }
 
     public void playerEnemy()
     {
         _lamia.selecAttack(); // ataca
-        Invoke("playerTurn", 1.5f);
+
+        if (_heroes.Count == 0)
+            _lamia.winEnemy();
+
+            Invoke("playerTurn", 1.5f);
+    }
+
+    public void reviveHero(HeroProperties hero)
+    {
+        _heroes.Add(hero);
+        numberCharacterLive--;
     }
 
     public void dieCharacter(HeroProperties hero)
@@ -71,9 +84,6 @@ public class ControlShifts : MonoBehaviour
         numberCharacterLive++;
         _heroes.Remove(hero);
 
-        if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
-        {
-            GameManager.GetInstance().launchNextMinigame(false);
-        }
+
     }
 }

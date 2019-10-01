@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Pepper
+  m_Name: Attack_Coin
   m_EditorClassIdentifier: 
-  _verb: Black Pepper
-  _attack: 0
-  _pronunciation: {fileID: 8300000, guid: 4296be75984646c4299e92c9914eef81, type: 3}
+  _verb: Coin
+  _attack: 10
+  _pronunciation: {fileID: 8300000, guid: 93b887367e43f674f95653bcc46a2a2c, type: 3}
   _damage: 1
   _cure: 0
-  _sprite: {fileID: 21300000, guid: 0009bbad2e2e63a499c7974802ef5be7, type: 3}
+  _sprite: {fileID: -5743514602376443267, guid: dada751d7542ea94cbfe9fe4eb50f9aa,
+    type: 3}
   _sentenceToCompleteAttack: 
   _riddle: Este es el accuse

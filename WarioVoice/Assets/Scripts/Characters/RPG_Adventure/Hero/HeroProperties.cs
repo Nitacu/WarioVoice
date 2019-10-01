@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using TMPro;
 
 public class HeroProperties : MonoBehaviour
@@ -47,7 +48,9 @@ public class HeroProperties : MonoBehaviour
 
         if (_life <= 0)
         {
+            
             IsLive = false;
+            GetComponent<Animator>().enabled = false;
             GetComponent<SpriteRenderer>().color = Color.grey;
             FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
             _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(0);
@@ -60,11 +63,25 @@ public class HeroProperties : MonoBehaviour
     {
         _life += life;
         _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(_life);
+
+        if (!IsLive && _life>0)
+        {
+            reviveHeroe();
+        }
+    }
+
+    public void reviveHeroe()
+    {
+        IsLive = true;
+        GetComponent<Animator>().enabled = true;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        FindObjectOfType<ControlShifts>().reviveHero(GetComponent<HeroProperties>());        
     }
 
     public void getAttack(VoiceAttacks attack)
     {
         Attacks.Add(attack);
+       
     }
 
     //activa el panel de ataques y muestra los ataques de este personaje
