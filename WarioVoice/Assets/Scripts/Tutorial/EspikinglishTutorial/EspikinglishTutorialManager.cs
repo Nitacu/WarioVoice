@@ -83,6 +83,8 @@ public class EspikinglishTutorialManager : CommandParser
 
     private void OnEnable()
     {
+        Debug.Log("Developer mode: " + GameManager.GetInstance().DeveloperMode);
+
         foreach (var item in _developerModeObjects)
         {
             bool developerMode = GameManager.GetInstance().DeveloperMode;

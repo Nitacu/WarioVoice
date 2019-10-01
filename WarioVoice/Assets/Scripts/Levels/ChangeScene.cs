@@ -158,8 +158,16 @@ public class ChangeScene : MonoBehaviour
                 SceneManager.LoadScene(BETWEENMINIGAMES);
                 break;
             case nameScenes.LOADDATA:
-                string scene = (GameManager.GetInstance().DeveloperMode) ? ESPIKINGLISHGAMETEST : LOADDATA;
-                SceneManager.LoadScene(scene);
+                if (SceneManager.GetActiveScene().name == ESPIKINGLISHGAMETEST)
+                {
+                    SceneManager.LoadScene(LOADDATA);
+                }
+                else
+                {
+                    string scene = (GameManager.GetInstance().DeveloperMode) ? ESPIKINGLISHGAMETEST : LOADDATA;
+                    SceneManager.LoadScene(scene);
+                }
+
                 break;
             case nameScenes.ESPKINGLISHTUTORIAL:
                 SceneManager.LoadScene(TUTORIALESPIKINGLISH);

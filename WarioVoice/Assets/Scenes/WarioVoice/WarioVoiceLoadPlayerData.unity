@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 302344402}
   - component: {fileID: 302344401}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3069,7 +3069,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4288585360
   m_fontColor: {r: 0.5647059, g: 0.61960787, b: 0.61960787, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -3887,13 +3887,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281906920
-  m_fontColor: {r: 0.9098039, g: 0.7137255, b: 0.21960784, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+    rgba: 4278237582
+  m_fontColor: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+    topRight: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -6679,13 +6679,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281906920
-  m_fontColor: {r: 0.9098039, g: 0.7137255, b: 0.21960784, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+    rgba: 4278237582
+  m_fontColor: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+    topRight: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -7832,7 +7832,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Slot 1
+  m_text: Slot 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa52a6bdca7839c4e87f7101bd610818, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 7ffc4b3bb04e77e4b9776705344cbcf4, type: 2}
@@ -7843,7 +7843,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4288585360
   m_fontColor: {r: 0.5647059, g: 0.61960787, b: 0.61960787, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -8000,13 +8000,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281906920
-  m_fontColor: {r: 0.9098039, g: 0.7137255, b: 0.21960784, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+    rgba: 4278237582
+  m_fontColor: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+    topRight: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -8928,13 +8928,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281483214
-  m_fontColor: {r: 0.8078432, g: 0.24705884, b: 0.19607845, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+    rgba: 4281219779
+  m_fontColor: {r: 0.7647059, g: 0.22745098, b: 0.18039216, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.76470596, g: 0.227451, b: 0.18039216, a: 1}
+    topRight: {r: 0.76470596, g: 0.227451, b: 0.18039216, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -9162,7 +9162,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4288585360
   m_fontColor: {r: 0.5647059, g: 0.61960787, b: 0.61960787, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -10032,7 +10032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1725270279
 RectTransform:
   m_ObjectHideFlags: 0
