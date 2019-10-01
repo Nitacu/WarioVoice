@@ -5,23 +5,27 @@ using UnityEngine.UI;
 
 public class ScrollBackground : MonoBehaviour
 {
-    Material material;
+    RawImage rawIm;
 
     [SerializeField] float lerpVelocity;
 
 
     void Start()
     {
-        material = GetComponent<RawImage>().material;
+        rawIm = GetComponent<RawImage>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       Vector2 offset = material.mainTextureOffset;
+        Vector2 offset;
+        offset.x = rawIm.uvRect.x;
+        offset.y = rawIm.uvRect.y;
         offset.x += Time.deltaTime / lerpVelocity;
         offset.y += Time.deltaTime / lerpVelocity;
 
-        material.mainTextureOffset = offset;
+        rawIm.uvRect = new Rect(offset.x, offset.y, rawIm.uvRect.width, rawIm.uvRect.height);
+
+        //material.mainTextureOffset = offset;
     }
 }
