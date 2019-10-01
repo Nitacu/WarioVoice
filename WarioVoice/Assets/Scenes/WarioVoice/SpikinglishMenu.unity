@@ -905,7 +905,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 31.7
+  m_fontSize: 31.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2118,5 +2118,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1717640611}
+    - target: {fileID: 1927670136736692317, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_UVRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927670136736692317, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_UVRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927670136736692317, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927670136736692317, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_UVRect.width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927670136736692317, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_UVRect.height
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47aa69e96a0e64d43bf31291b21e9d50, type: 3}

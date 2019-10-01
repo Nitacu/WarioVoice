@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BackgroundPolygon 4
+  m_Name: BackgroundPolygon 5
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -44,9 +44,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: dc6e659baf77f5c46841ef3f5909f292, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d75a21139dcd214d84727cf569cf716, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 14.378854, y: 14.378854}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
