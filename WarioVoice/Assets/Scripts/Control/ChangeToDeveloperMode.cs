@@ -9,12 +9,14 @@ public class ChangeToDeveloperMode : MonoBehaviour
 
     private void Start()
     {
+        GameManager.ResetInstance();
         _toggle.isOn = GameManager.GetInstance().DeveloperMode;
-        //GameManager.GetInstance().DeveloperMode = _toggle.isOn;
+        GameManager.GetInstance().DeveloperMode = _toggle.isOn;
     }
 
     public void changeDeveloperMode(bool isOn)
     {
+        
         GameManager.GetInstance().DeveloperMode = isOn;
 
     }

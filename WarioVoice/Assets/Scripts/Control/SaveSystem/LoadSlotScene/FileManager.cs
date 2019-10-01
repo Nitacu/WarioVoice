@@ -62,7 +62,7 @@ public class FileManager : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.ResetInstance();
+        //GameManager.ResetInstance();
     }
 
     private void Start()

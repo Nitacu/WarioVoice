@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10.184937, y: 4.2424927}
+  m_AnchoredPosition: {x: 10.184814, y: 4.2425537}
   m_SizeDelta: {x: 145.57, y: 23.854996}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &228321519
@@ -1200,13 +1200,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281906920
-  m_fontColor: {r: 0.909804, g: 0.7137255, b: 0.21960786, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+    rgba: 4278237582
+  m_fontColor: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+    topRight: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -1905,13 +1905,13 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281906920
-  m_fontColor: {r: 0.909804, g: 0.7137255, b: 0.21960786, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+    rgba: 4278237582
+  m_fontColor: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
+    topRight: {r: 0.5568628, g: 0.7254902, b: 0, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -2118,20 +2118,5 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1717640611}
-    - target: {fileID: 5498534785775067904, guid: 47aa69e96a0e64d43bf31291b21e9d50,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.14509805
-      objectReference: {fileID: 0}
-    - target: {fileID: 5498534785775067904, guid: 47aa69e96a0e64d43bf31291b21e9d50,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.21568629
-      objectReference: {fileID: 0}
-    - target: {fileID: 5498534785775067904, guid: 47aa69e96a0e64d43bf31291b21e9d50,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.49803925
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47aa69e96a0e64d43bf31291b21e9d50, type: 3}
