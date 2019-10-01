@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.50980395, g: 0.38431376, b: 0.078431375, a: 1}
+  m_Color: {r: 0.2784314, g: 0.6431373, b: 0.043137256, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5498534786312320368}
   - component: {fileID: 5498534786312320371}
   m_Layer: 5
-  m_Name: Background
+  m_Name: BackgroundEspikinglish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

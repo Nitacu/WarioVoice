@@ -17,13 +17,21 @@ public class ShowSlotData : MonoBehaviour
 
     [SerializeField] private List<Image> _imageBosses = new List<Image>();
 
+    [Header("Boss Icons")]
+    [SerializeField] private Sprite _defeatedIcon;
+    [SerializeField] private Sprite _undefetaedIcon;
+
 
     private int _defeatedBosses;
     private string _name;
 
     private void OnEnable()
     {
-        _buttonTextContinue.text = (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0) ? CONTINUE : STARTGAME;
+        if (_buttonTextContinue != null)
+        {
+            _buttonTextContinue.text = (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0) ? CONTINUE : STARTGAME;
+
+        }
 
         _name = FindObjectOfType<FileManager>().PlayerInfSelected.playerName;
         _defeatedBosses = FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated;
@@ -32,12 +40,15 @@ public class ShowSlotData : MonoBehaviour
 
         foreach (var boss in _imageBosses)
         {
-            boss.color = Color.black;
+            //boss.color = Color.black;
+            boss.GetComponent<Image>().sprite = _undefetaedIcon;
         }
 
         for (int i = 0; i < _defeatedBosses; i++)
         {
-            _imageBosses[i].color = Color.white;
+            //_imageBosses[i].color = Color.white;
+            _imageBosses[i].GetComponent<Image>().sprite = _defeatedIcon;
+
         }
     }
 

@@ -10,9 +10,9 @@ public class FileManager : MonoBehaviour
     private const string CHOOSEFILE_ENG = "Choose a File";
     private const string CHOOSEFILE_SPA = "Elige un archivo";
     private const string WRITENAME_ENG = "What's your name?";
-    private const string WRITENAME_SPA = "Cómo te llamas?";
+    private const string WRITENAME_SPA = "Como te llamas?";
     private const string CONTINUE_ENG = "What do you want to do?";
-    private const string CONTINUE_SPA = "Qué quieres hacer?";
+    private const string CONTINUE_SPA = "Que quieres hacer?";
     #endregion
 
     #region ClipNames

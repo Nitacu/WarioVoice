@@ -16,7 +16,7 @@ public class EspikinglishTutorialManager : CommandParser
     public const string WELCOME_ESP = "Bienvenido a Espikinglish";
 
     public const string TEST_ENG = "Press the button and say \"Go\"";
-    public const string TEST_ESP = "Presiona el botón y di \"Go\"";
+    public const string TEST_ESP = "Presiona el boton y di \"Go\"";
 
     public const string GOODJOB_ENG = "Great, let's start";
     public const string GOODJOB_ESP = "Excelente, empecemos";
@@ -24,6 +24,8 @@ public class EspikinglishTutorialManager : CommandParser
 
     [SerializeField] private TMP_InputField _inputFieldTest;
     [SerializeField] private GameObject _confetti;
+
+    [SerializeField] private List<GameObject> _developerModeObjects = new List<GameObject>();
 
     [Header("UI Vars")]
     [SerializeField] private TextMeshProUGUI _textGuideEng;
@@ -81,6 +83,12 @@ public class EspikinglishTutorialManager : CommandParser
 
     private void OnEnable()
     {
+        foreach (var item in _developerModeObjects)
+        {
+            bool developerMode = GameManager.GetInstance().DeveloperMode;
+            item.SetActive(developerMode);
+        }
+
         _startButton.SetActive(false);
         _textGuideEng.text = WELCOME_ENG;
         _textGuideEsp.text = WELCOME_ESP;

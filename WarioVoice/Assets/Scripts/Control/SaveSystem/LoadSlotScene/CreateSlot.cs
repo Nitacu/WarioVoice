@@ -5,7 +5,7 @@ using TMPro;
 
 public class CreateSlot : MonoBehaviour
 {
-    private const string FILE = "File ";
+    private const string FILE = "Slot ";
     private const string PLACEHOLDER = "Enter name...";
 
 
