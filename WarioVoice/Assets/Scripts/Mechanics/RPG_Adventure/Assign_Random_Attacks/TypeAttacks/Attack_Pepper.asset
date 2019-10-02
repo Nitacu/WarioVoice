@@ -18,5 +18,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: 0009bbad2e2e63a499c7974802ef5be7, type: 3}
-  _sentenceToCompleteAttack: 
-  _riddle: Este es el accuse
+  _sentenceToCompleteAttack: Le arrojas pimienta al enemigo!
+  _sentencesToNotUseAttack: 

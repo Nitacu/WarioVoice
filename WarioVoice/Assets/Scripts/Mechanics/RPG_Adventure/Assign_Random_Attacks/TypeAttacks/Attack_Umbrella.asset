@@ -18,5 +18,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: 1c2bc54e664b6bb45a20b76d9fd9d5e0, type: 3}
-  _sentenceToCompleteAttack: 
-  _riddle: Este es el accuse
+  _sentenceToCompleteAttack: "Sacas un paraguas... Pero no est\xE1 lloviendo"
+  _sentencesToNotUseAttack: 

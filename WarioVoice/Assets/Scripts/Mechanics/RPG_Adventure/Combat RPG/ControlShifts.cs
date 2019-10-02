@@ -34,7 +34,8 @@ public class ControlShifts : MonoBehaviour
     {
         if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
         {
-            GameManager.GetInstance().finisBossBattle(false);
+            // GameManager.GetInstance().finisBossBattle(false);
+            SceneManager.LoadScene("SpikinglishMenu");
         }
 
         //selecciona el hero y lo mueve
@@ -68,8 +69,8 @@ public class ControlShifts : MonoBehaviour
         _lamia.selecAttack(); // ataca
 
         if (_heroes.Count == 0)
-            _lamia.winEnemy();
-
+            _lamia.Invoke("winEnemy",1.5f);
+        else
             Invoke("playerTurn", 1.5f);
     }
 

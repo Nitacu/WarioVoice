@@ -16,6 +16,7 @@ MonoBehaviour:
   _attack: 5
   _pronunciation: {fileID: 8300000, guid: a48b6c67950503147add5725b0c97fca, type: 3}
   _damage: 1
+  _cure: 0
   _sprite: {fileID: 21300000, guid: 05ccb7fca35486f4297114d56ab412d4, type: 3}
-  _sentenceToCompleteAttack: 
-  _riddle: Este es el accuse
+  _sentenceToCompleteAttack: Perfumas los ojos del enemigo!
+  _sentencesToNotUseAttack: 

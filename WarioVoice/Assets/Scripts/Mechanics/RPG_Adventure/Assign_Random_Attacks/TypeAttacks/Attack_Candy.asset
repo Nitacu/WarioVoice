@@ -18,5 +18,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 1
   _sprite: {fileID: 4292991442675503664, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
-  _sentenceToCompleteAttack: 
-  _riddle: Este es el accuse
+  _sentenceToCompleteAttack: "Tu y tu compa\xF1ero se han comido un dulce"
+  _sentencesToNotUseAttack: 

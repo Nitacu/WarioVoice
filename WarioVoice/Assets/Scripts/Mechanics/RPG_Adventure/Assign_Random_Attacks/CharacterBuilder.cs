@@ -74,7 +74,23 @@ public class CharacterBuilder : MonoBehaviour
                 }
             }
 
+            aux.GetComponent<HeroProperties>().Attacks = messlist(aux.GetComponent<HeroProperties>().Attacks);
         }
 
+    }
+
+    public List<VoiceAttacks> messlist(List<VoiceAttacks> input)
+    {
+        List<VoiceAttacks> arr = input;
+        List<VoiceAttacks> arrDes = new List<VoiceAttacks>();
+
+        while (arr.Count > 0)
+        {
+            int val = Random.Range(0, arr.Count);
+            arrDes.Add(arr[val]);
+            arr.RemoveAt(val);
+        }
+
+        return arrDes;
     }
 }

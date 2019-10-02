@@ -4897,9 +4897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014f4131ebba451469960ed41111a397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _correctAttack: 0
   _currentAttack: {fileID: 0}
   _visualDamage: {fileID: 1028709443}
+  _usedObject: {fileID: 4917085688868193065, guid: 6316ff87818eacd458458d35e3e3a854,
+    type: 3}
 --- !u!114 &1642384655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5606,7 +5607,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2304a894e7f1d444886e8ea1d4558be8, type: 2}
   - {fileID: 11400000, guid: eb7964651f116334b9a27cd5afb2fdd5, type: 2}
   - {fileID: 11400000, guid: 39715b274a27b9b49a7f82d2348b7458, type: 2}
-  - {fileID: 11400000, guid: e72ca498bf0a7e1429ee328af3824d4d, type: 2}
+  - {fileID: 11400000, guid: aac2cb97ccc4fde4baaa31c7aeeac3ea, type: 2}
   _listAttacksUseful:
   - {fileID: 11400000, guid: 89f0809718358164c9a5cd8ea76e1f37, type: 2}
   - {fileID: 11400000, guid: cb1de5e1d82e10442be927a879e14701, type: 2}

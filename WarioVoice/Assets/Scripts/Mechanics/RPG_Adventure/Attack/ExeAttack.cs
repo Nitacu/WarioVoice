@@ -7,13 +7,14 @@ public class ExeAttack : MonoBehaviour
     [Header("acertijos")]
     private List<VoiceAttacks> _riddle;
     private AttackGlossary.attack _typeAttack; //lo masnda el comanparse 
-    [SerializeField] private AttackGlossary.attack _correctAttack; //es el que tiene el que se tiene que usar
     private LamiaController _lamia;
     private List<VoiceAttacks> _listAttacks = new List<VoiceAttacks>();
     private HeroProperties _hero;
     [SerializeField] private VoiceAttacks _currentAttack;
     private ControlShifts _controlShifts;
     [SerializeField] private VisualDamage _visualDamage;
+    [SerializeField] private GameObject _usedObject; //muestra que objeto uso
+
     private void Start()
     {
         _lamia = FindObjectOfType<LamiaController>();
@@ -46,22 +47,30 @@ public class ExeAttack : MonoBehaviour
         SaveSystem.increaseMicrophonePressedTime(true);
         if (characterContainsAttack())
         {
+            // crea el objeto que muestra cual es que uso
+            GameObject usedObject = Instantiate(_usedObject);
+            usedObject.GetComponent<SpriteRenderer>().sprite = _currentAttack._sprite;
+            usedObject.GetComponent<AudioSource>().clip = _currentAttack._soundEffect;
+            usedObject.GetComponent<AudioSource>().Play();
+
             if (_currentAttack._cure)
             {
                 HeroProperties[] aux =  FindObjectsOfType<HeroProperties>();
                 List<HeroProperties> revive = new List<HeroProperties>();
+
                 foreach (HeroProperties hero in aux)
                 {
+                    if (!hero.IsLive)
+                        _lamia.Characters.Add(hero);
+
                     hero.getCharacterStastic(1);
-                    _lamia.Characters.Add(hero);
+                    
                 }
                 
                 //para finalizar el turno
-                _controlShifts.Invoke("playerEnemy", 2);
+                _controlShifts.Invoke("playerEnemy", 3);
                 //frase del ataque
                 FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
-                _hero.GetComponent<MoveHeroe>().changeDirection();
-                _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
             }
             else
             {
@@ -69,28 +78,23 @@ public class ExeAttack : MonoBehaviour
                 {
                     //aplcia el daño
                     if (_lamia.lostLife(_currentAttack._damage))
-                        _controlShifts.Invoke("playerEnemy", 2);
+                        _controlShifts.Invoke("playerEnemy", 3);
                     // visual
 
                     //frase del ataque
                     FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
-                    _hero.GetComponent<MoveHeroe>().changeDirection();
-                    _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
-
                 }
                 else
                 {
-                    _controlShifts.Invoke("playerEnemy", 2);
-                    FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
-                    _hero.GetComponent<MoveHeroe>().changeDirection();
+                    _controlShifts.Invoke("playerEnemy", 3);
+                    FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentencesToNotUseAttack);
                 }
             }
-            
+            _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
             _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
         }
     }
 
 
     public AttackGlossary.attack TypeAttack { get => _typeAttack; set => _typeAttack = value; }
-    public AttackGlossary.attack CorrectAttack { get => _correctAttack; set => _correctAttack = value; }
 }

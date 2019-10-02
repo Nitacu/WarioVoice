@@ -7,7 +7,8 @@ using TMPro;
 
 public class HeroProperties : MonoBehaviour
 {
-    [SerializeField]private List<VoiceAttacks> _attacks = new List<VoiceAttacks>(); // mis ataques
+
+    private List<VoiceAttacks> _attacks = new List<VoiceAttacks>(); // mis ataques
     private ExeAttack _exeAttack; // donde va a preparar el ataque
     private LevelInformationPanel _levelInformationPanel; // panel que muestra la informacion del nivel
     private LamiaController _lamia; //enemigo

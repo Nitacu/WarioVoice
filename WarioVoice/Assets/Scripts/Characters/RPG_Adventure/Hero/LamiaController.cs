@@ -67,12 +67,14 @@ public class LamiaController : MonoBehaviour
     {
         List<HeroProperties> heros =  FindObjectsOfType<HeroProperties>().ToList();
         GameObject gObj;
+        GetComponent<Animator>().Play(Animator.StringToHash("Win"));
 
         foreach (HeroProperties aux in heros)
         {
             gObj = Instantiate(_visualDamageOthers, aux.transform);
             Destroy(gObj.GetComponent<SelfDestroy>());
         }
+        FindObjectOfType<ControlShifts>().Invoke("playerTurn", 1.5f);
     }
 
     public void loadMenu()
@@ -143,7 +145,7 @@ public class LamiaController : MonoBehaviour
 
     public void selecAttack()
     {
-        int random = Random.Range(1, 3);
+        int random = 2;//Random.Range(1, 3);
 
         if (!_weak)
         {
@@ -165,6 +167,7 @@ public class LamiaController : MonoBehaviour
                     {
                         Instantiate(_visualDamageOthers, hero.transform);
                         hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                        Debug.Log("hello");
                         attack(hero, 1, "Ataque en area");
                     }
                     break;
