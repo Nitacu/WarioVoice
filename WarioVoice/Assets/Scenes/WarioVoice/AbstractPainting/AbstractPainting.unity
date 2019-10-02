@@ -521,7 +521,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.65
+  m_fontSize: 9.6
   m_fontSizeBase: 7.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1162,12 +1162,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e117e27618a78784caf418b15aef305c, type: 3}
+  m_Sprite: {fileID: -7403224552369808211, guid: e117e27618a78784caf418b15aef305c,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.76, y: 2.3}
+  m_Size: {x: 4.02, y: 2.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3685,7 +3686,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.8
+  m_fontSize: 9.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4285,7 +4286,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.65
+  m_fontSize: 9.6
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4699,7 +4700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22.730011, y: -15}
+  m_AnchoredPosition: {x: -22.72998, y: -15}
   m_SizeDelta: {x: 49.27, y: 54}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1433224336
@@ -5775,7 +5776,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.8
+  m_fontSize: 9.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

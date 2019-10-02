@@ -84,8 +84,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 4
-    height: 4
+    width: 3
+    height: 3
 --- !u!1 &5498534786312320370
 GameObject:
   m_ObjectHideFlags: 0
