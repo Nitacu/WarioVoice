@@ -44,13 +44,21 @@ public class WordController : MonoBehaviour
     public void startGame()
     {
         player.SetActive(true);
-        turnSignOn();
+        Invoke("waitStartTime", 1f);   
     }
 
     public void loseScene()
     {
         finalScreen.SetActive(true);
         FindObjectOfType<FinalScreenController>().loseScreenImage();
+    }
+
+    private void waitStartTime()
+    {
+        
+        player.GetComponent<PositionController>().playAnimation();
+        //sends to next method to chose next sign and show it
+        Invoke("turnSignOn", player.GetComponent<PositionController>().getCurrentClipTime());
     }
 
     private void nextSign()
@@ -62,34 +70,33 @@ public class WordController : MonoBehaviour
         {
             signText.enabled = false;
         }
-        player.GetComponent<Animator>().Play(Animator.StringToHash("SearchingSign"));
-        
+       
+
+        player.GetComponent<PositionController>().playAnimation();
         //sends to next method to chose next sign and show it
-        Invoke("turnSignOn", 1);
+        Invoke("turnSignOn", player.GetComponent<PositionController>().getCurrentClipTime());
     }
 
     private void turnSignOn()
     {
         //Turn Everything ON again
-        
-        player.GetComponent<Animator>().Play(Animator.StringToHash("ShowingSign"));
-        
+       
+
         isShowingSign = true;
         
 
         //Show current sign
         if(signsInGame[currentSign].signSprite == null) //If has a sprite, set it to the one of the scriptable object, else, enable Text and write the ENUM word
         {
-            Invoke("waitTimeSprite", 0.02f); //time it has to wait for the position of the player to update, if it doesnt wait, the word will
-                                            //be in the air for some miliseconds before clamping to the player sign
+            Invoke("waitTimeSprite", 0.25f); //time it has to wait for the position of the player to update, if it doesnt wait, the word will
+                                           //be in the air for some miliseconds before clamping to the player sign
         }
         else
         {
             playerSign.GetComponent<SpriteRenderer>().sprite = signsInGame[currentSign].signSprite;
         }
-        playerSign.SetActive(true);
-        player.GetComponent<PositionController>().setPosition();
-
+        //playerSign.SetActive(true);
+        
     }
 
     private void waitTimeSprite() //Sets sign to the corresponding TEXT
@@ -97,6 +104,7 @@ public class WordController : MonoBehaviour
         playerSign.GetComponent<SpriteRenderer>().sprite = emptySign;
         signText.enabled = true;
         signText.text = signsInGame[currentSign].item.ToString();
+        
     }
 
     private void setDifficulty() //Sets the number of signs that will be used in the minigame and what signs will be shown
@@ -209,7 +217,15 @@ public class WordController : MonoBehaviour
                 currentSign++;
                 if (currentSign < signsInGame.Count) //Checks cont of how many words has the player said, to know if he won or he should keep going.
                 {
-                    nextSign();
+                    if (player.GetComponent<PositionController>().previousClip.name == "Taxi")
+                    {
+                        player.GetComponent<PositionController>().playTaxiOut();
+                        Invoke("nextSign", 1f);
+                    }
+                    else
+                    {
+                        nextSign();
+                    }
                     women.GetComponent<WomanController>().playLoveAnimation();
                     loveMetter.GetComponent<LoveMeterController>().updateLoveBar();
                 }

@@ -68,6 +68,9 @@ TextureImporter:
   - first:
       213: -633100787453192100
     second: Girl_Face_03
+  - first:
+      213: -3973561355303910223
+    second: Girl_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -167,10 +170,10 @@ TextureImporter:
       name: Girl_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 220
-        height: 312
+        x: 21
+        y: 45
+        width: 237
+        height: 315
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +191,10 @@ TextureImporter:
       name: Girl_1
       rect:
         serializedVersion: 2
-        x: 310
-        y: 0
-        width: 223
-        height: 312
+        x: 294
+        y: 51
+        width: 237
+        height: 315
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,12 +212,12 @@ TextureImporter:
       name: Girl_Face_01
       rect:
         serializedVersion: 2
-        x: 589
-        y: 127
-        width: 140
-        height: 138
+        x: 640
+        y: 143
+        width: 103
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,12 +233,12 @@ TextureImporter:
       name: Girl_Face_02
       rect:
         serializedVersion: 2
-        x: 755
-        y: 127
-        width: 139
-        height: 137
+        x: 640
+        y: 263
+        width: 103
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,12 +254,12 @@ TextureImporter:
       name: Girl_Face_03
       rect:
         serializedVersion: 2
-        x: 920
-        y: 127
-        width: 141
-        height: 137
+        x: 830
+        y: 216
+        width: 252
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,6 +267,90 @@ TextureImporter:
       bones: []
       spriteID: af6c4bb8fc9d3704e886343d8fdb1dea
       internalID: -633100787453192100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 32
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2531299dcc300ee478acf66df0719368
+      internalID: -3973561355303910223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_3
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 0
+        width: 238
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914a3ae38e2818846a0107936283c5fc
+      internalID: 2868394332392052343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_4
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 129
+        width: 142
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08fa7f331738b4419aff7ee322305a6
+      internalID: -6512062428402373838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Girl_5
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 148
+        width: 181
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0011dd67edc2f5d47af6bc3c413f9649
+      internalID: 8098686937164773183
       vertices: []
       indices: 
       edges: []
