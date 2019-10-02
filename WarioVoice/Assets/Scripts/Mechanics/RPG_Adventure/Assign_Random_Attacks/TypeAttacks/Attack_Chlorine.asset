@@ -15,6 +15,7 @@ MonoBehaviour:
   _verb: Chlorine
   _attack: 4
   _pronunciation: {fileID: 8300000, guid: 2639e70d377a07e4aacc630295ebac76, type: 3}
+  _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
   _sprite: {fileID: 5559745257100799005, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}

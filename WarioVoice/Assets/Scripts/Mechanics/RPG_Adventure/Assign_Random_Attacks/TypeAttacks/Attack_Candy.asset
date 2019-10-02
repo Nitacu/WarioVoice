@@ -15,6 +15,7 @@ MonoBehaviour:
   _verb: Candy
   _attack: 6
   _pronunciation: {fileID: 8300000, guid: 66dc316e8a9356849a61e23425cfad34, type: 3}
+  _soundEffect: {fileID: 8300000, guid: 7e0fd45fbd205a84685d5f98e5854080, type: 3}
   _damage: 1
   _cure: 1
   _sprite: {fileID: 4292991442675503664, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}

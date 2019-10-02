@@ -15,6 +15,7 @@ MonoBehaviour:
   _verb: Lemon
   _attack: 1
   _pronunciation: {fileID: 8300000, guid: 3214134b75f262d4a9dfdb1266a193f2, type: 3}
+  _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
   _sprite: {fileID: 1660957820977104790, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}

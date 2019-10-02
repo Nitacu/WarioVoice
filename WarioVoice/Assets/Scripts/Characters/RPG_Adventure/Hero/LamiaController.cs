@@ -145,7 +145,7 @@ public class LamiaController : MonoBehaviour
 
     public void selecAttack()
     {
-        int random = 2;//Random.Range(1, 3);
+        int random = Random.Range(1, 3);
 
         if (!_weak)
         {

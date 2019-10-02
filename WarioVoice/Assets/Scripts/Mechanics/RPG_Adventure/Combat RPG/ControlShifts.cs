@@ -34,8 +34,7 @@ public class ControlShifts : MonoBehaviour
     {
         if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
         {
-            // GameManager.GetInstance().finisBossBattle(false);
-            SceneManager.LoadScene("SpikinglishMenu");
+GameManager.GetInstance().finisBossBattle(false);
         }
 
         //selecciona el hero y lo mueve
