@@ -45,18 +45,15 @@ public class PaintingLevel
 public class AbstractPaintingManager : CommandParser
 {
     #region HelpDialogs
-    const string FIRSTDIALOG = "Say a color to set your brush\nDi un color";
-    const string SAYACOLORFIRST = "Say a color to set your brush\nDi un color";
-    const string PAINTONCANVAS = "Now, paint on your canvas\nAhora, dibuja en tu lienzo";
-    const string ANALYZING = "Analyzing Paint...\nAnalizando el cuadro";
-    const string WIN = "Mother of DaVinci\n Bien hecho";
-    const string LOSE = "BULLSHIT\n Sigue intentando";
-    const string ALREADYANALYZING = "Al ready Analyzing, keep waiting\nAun se estA analizando el cuadro";
-    const string LEVEL = "Level ";
-    const string GAMECOMPLETEDE = "Game Complete, Back to Menu\nJuego completado, vuelve al menu";
+    const string FIRSTDIALOG = "Say a color to set your brush\nDi un color para seleccionar";
+    const string SAYACOLORFIRST = "Say a color to set your brush\nDi un color para seleccionar";
+    const string PAINTONCANVAS = "Now, paint on your canvas\nAhora, pinta en tu lienzo";
+    const string ANALYZING = "Analyzing Paint...\nAnalizando la pintura";
+    const string LOSE = "Not enough \n No es suficiente";
+    const string ALREADYANALYZING = "Analyzing Paint...\nAnalizando la pintura";
     const string FIRSTDRAW = "Paint something first\nPinta algo primero";
     const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
-    const string YESORNO = "Yes / No";
+    const string YESORNO = "Yes | No";
 
     private List<string> _winDialogs = new List<string>() { "Mother of DaVinci"};
     #endregion

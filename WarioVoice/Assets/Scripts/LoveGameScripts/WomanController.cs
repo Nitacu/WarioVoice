@@ -26,10 +26,13 @@ public class WomanController : MonoBehaviour
         Invoke("playIdle", GetAnimationClip(LOVEANIMATION).length);
     }
 
-    public void playWTFAnimation()
+    public void playWTFAnimation(int cont)
     {
         _animator.Play(Animator.StringToHash(WTFANIMATION), -1, 0f);
-        Invoke("playIdle", GetAnimationClip(WTFANIMATION).length);
+        if (cont != 3)
+        {
+            Invoke("playIdle", GetAnimationClip(WTFANIMATION).length);
+        }
     }
 
 
