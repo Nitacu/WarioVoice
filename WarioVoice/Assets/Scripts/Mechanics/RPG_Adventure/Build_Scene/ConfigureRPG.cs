@@ -31,6 +31,11 @@ public class ConfigureRPG : MonoBehaviour
             _characterBuilder.ListAttacksUseless.Add(voice);
         }
 
+        foreach (VoiceAttacks voice in _lamiaController.ListHealingObjects)
+        {
+            _characterBuilder.ListHealingObjects.Add(voice);
+        }
+
         // crea los players
         _characterBuilder.createdCharacters();
     }

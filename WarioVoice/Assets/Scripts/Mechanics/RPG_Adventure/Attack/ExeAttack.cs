@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ExeAttack : MonoBehaviour
 {
-    [Header("acertijos")]
     private List<VoiceAttacks> _riddle;
     private AttackGlossary.attack _typeAttack; //lo masnda el comanparse 
     private LamiaController _lamia;
     private List<VoiceAttacks> _listAttacks = new List<VoiceAttacks>();
     private HeroProperties _hero;
-    [SerializeField] private VoiceAttacks _currentAttack;
+    private VoiceAttacks _currentAttack;
     private ControlShifts _controlShifts;
+    [SerializeField] private GameObject _hearth; //corazon de gano vida
     [SerializeField] private VisualDamage _visualDamage;
     [SerializeField] private GameObject _usedObject; //muestra que objeto uso
 
@@ -42,6 +42,16 @@ public class ExeAttack : MonoBehaviour
         return false;
     }
 
+    public void feeckbackGotLife()
+    {
+        HeroProperties[] aux = FindObjectsOfType<HeroProperties>();
+
+        foreach (HeroProperties hero in aux)
+        {
+            Instantiate(_hearth, hero.transform).transform.position = hero.transform.position + new Vector3(0,1,0);
+        }
+    }
+
     public void selectAttack()
     {
         SaveSystem.increaseMicrophonePressedTime(true);
@@ -66,9 +76,11 @@ public class ExeAttack : MonoBehaviour
                     hero.getCharacterStastic(1);
                     
                 }
-                
+
+                //muestra que gano vida
+                Invoke("feeckbackGotLife", 1);
                 //para finalizar el turno
-                _controlShifts.Invoke("playerEnemy", 3);
+                _controlShifts.Invoke("playerEnemy", 4);
                 //frase del ataque
                 FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
             }

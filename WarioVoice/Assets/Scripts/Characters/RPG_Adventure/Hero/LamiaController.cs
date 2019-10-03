@@ -9,12 +9,14 @@ public class LamiaController : MonoBehaviour
 {
     [Header("los ataques que no sirven")]
     [SerializeField] private List<VoiceAttacks> _listAttacksUseless;
+    [Header("objetos que curan")]
+    [SerializeField] private List<VoiceAttacks> _listHealingObjects;
     [Header("Todos los ataques que si hacen daño")]
     [SerializeField] private List<VoiceAttacks> _listAttacksUseful;
     [Header("atque con el que destruye al enemigo")]
     [SerializeField] private List<VoiceAttacks> _listAttacksDefinitive;
 
-    [SerializeField] private float life;
+    private float life;
     [Header("Cuando me hacen daño")]
     [SerializeField] private GameObject _visualDamage;
     [Header("Cuando hago daño")]
@@ -23,6 +25,7 @@ public class LamiaController : MonoBehaviour
     [SerializeField] private List<GameObject> _listEyes = new List<GameObject>();
     [SerializeField] private GameObject _cofetti;
     private bool _weak = false; // para saber si esta debil el jefe
+    private HeroProperties _lastHeroToHarm; // la creo aca para no estar la creando muchas veces 
 
     private void Start()
     {
@@ -45,7 +48,7 @@ public class LamiaController : MonoBehaviour
         }
         else
         {
-            if(Life == 1)
+            if (Life == 1)
                 _weak = true;
 
             Instantiate(_visualDamage, _listEyes[0].transform);
@@ -65,7 +68,7 @@ public class LamiaController : MonoBehaviour
 
     public void winEnemy()
     {
-        List<HeroProperties> heros =  FindObjectsOfType<HeroProperties>().ToList();
+        List<HeroProperties> heros = FindObjectsOfType<HeroProperties>().ToList();
         GameObject gObj;
         GetComponent<Animator>().Play(Animator.StringToHash("Win"));
 
@@ -82,7 +85,7 @@ public class LamiaController : MonoBehaviour
         GameManager.GetInstance().finisBossBattle(true);
     }
 
-    public void attack(HeroProperties hero, float damage,string sentenses)
+    public void attack(HeroProperties hero, float damage, string sentenses)
     {
         //daño
         hero.getDamage(damage);
@@ -143,6 +146,23 @@ public class LamiaController : MonoBehaviour
         return false;
     }
 
+    // evitar que ataque siempre a un solo heroe
+    public HeroProperties heroWithMoreLife(HeroProperties possibleHero)
+    {
+        if (Characters.Count > 0)
+        {
+            foreach (HeroProperties hero in Characters)
+            {
+                if (possibleHero.Life < hero.Life)
+                {
+                    return hero;
+                }
+            }
+        }
+
+        return possibleHero;
+    }
+
     public void selecAttack()
     {
         int random = Random.Range(1, 3);
@@ -156,7 +176,8 @@ public class LamiaController : MonoBehaviour
                     random = Random.Range(0, Characters.Count);
                     //visual del daño
                     Instantiate(_visualDamageOthers, Characters[random].transform);
-                    Characters[random].GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                    _lastHeroToHarm = heroWithMoreLife(Characters[random]);
+                    _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                     //recibe el daño
                     attack(Characters[random], 1, "Ataque directo");
                     break;
@@ -195,4 +216,5 @@ public class LamiaController : MonoBehaviour
     public List<VoiceAttacks> ListAttacksUseful { get => _listAttacksUseful; set => _listAttacksUseful = value; }
     public List<VoiceAttacks> ListAttacksDefinitive { get => _listAttacksDefinitive; set => _listAttacksDefinitive = value; }
     public List<HeroProperties> Characters { get => _characters; set => _characters = value; }
+    public List<VoiceAttacks> ListHealingObjects { get => _listHealingObjects; set => _listHealingObjects = value; }
 }

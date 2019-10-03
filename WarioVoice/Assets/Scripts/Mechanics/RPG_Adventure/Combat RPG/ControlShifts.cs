@@ -27,7 +27,7 @@ public class ControlShifts : MonoBehaviour
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _informationPanel.activeDialogue("- Que la pelea comience");
         _heroes = FindObjectsOfType<HeroProperties>().ToList();
-        Invoke("playerTurn", 3);
+        Invoke("playerTurn", 7);
     }
 
     public void playerTurn()
