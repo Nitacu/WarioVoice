@@ -72,8 +72,8 @@ public class BetweenSceneControl : MonoBehaviour
 
         if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
         {
-            _timeTextENG.text = (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG) ? BOSSBATTLE_ENG + timeToshow.ToString() : NEXTMINIGAMEIN_ENG;
-            _timeTextESP.text = (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG) ? BOSSBATLE_ESP + timeToshow.ToString() : NEXTMINIGAMEIN_ESP;
+            _timeTextENG.text = (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG) ? BOSSBATTLE_ENG : NEXTMINIGAMEIN_ENG;
+            _timeTextESP.text = (GameManager.GetInstance().CurrentMiniGame._miniGame == ChangeScene.EspikinglishMinigames.RPG) ? BOSSBATLE_ESP : NEXTMINIGAMEIN_ESP;
 
 
             if (timeToshow < 1)
