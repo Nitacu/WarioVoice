@@ -115,6 +115,8 @@ public class GameManager
 
     private void setMiniGamesRound()
     {
+        _instance._miniGamesRound.Clear();
+
         //AÑADIR NIVELES 1 - SEGUN EL BOSS LEVEL => (BOSSLEVES * 2) -1
 
         foreach (ChangeScene.EspikinglishMinigames item in System.Enum.GetValues(typeof(ChangeScene.EspikinglishMinigames)))
