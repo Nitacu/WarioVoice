@@ -163,6 +163,7 @@ public class LamiaController : MonoBehaviour
         return possibleHero;
     }
 
+
     public void selecAttack()
     {
         int random = Random.Range(1, 3);

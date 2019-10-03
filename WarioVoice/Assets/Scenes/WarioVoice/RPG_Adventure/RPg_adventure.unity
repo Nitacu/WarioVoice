@@ -5910,7 +5910,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2304a894e7f1d444886e8ea1d4558be8, type: 2}
   - {fileID: 11400000, guid: 39715b274a27b9b49a7f82d2348b7458, type: 2}
   - {fileID: 11400000, guid: aac2cb97ccc4fde4baaa31c7aeeac3ea, type: 2}
-  - {fileID: 11400000, guid: e72ca498bf0a7e1429ee328af3824d4d, type: 2}
+  - {fileID: 11400000, guid: 80a8421812e9f4345baed41c736c96ab, type: 2}
   _listHealingObjects:
   - {fileID: 11400000, guid: 2fef7cd4c8a8af744860edd86ab7c094, type: 2}
   - {fileID: 11400000, guid: eb7964651f116334b9a27cd5afb2fdd5, type: 2}
@@ -5921,7 +5921,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b95d8db380a703a41913438c151ee880, type: 2}
   _listAttacksDefinitive:
   - {fileID: 11400000, guid: 62fc1ff824ad77f49b826442f5496433, type: 2}
-  - {fileID: 11400000, guid: 80a8421812e9f4345baed41c736c96ab, type: 2}
+  - {fileID: 11400000, guid: e72ca498bf0a7e1429ee328af3824d4d, type: 2}
   _visualDamage: {fileID: 3474785825650400531, guid: 18fc001ba9ac87048a5c55a494ddfdb5,
     type: 3}
   _visualDamageOthers: {fileID: 3474785825650400531, guid: 0aaf2c8ee4e40754e803a3fed04c550d,

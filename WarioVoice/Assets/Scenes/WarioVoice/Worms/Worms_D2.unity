@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d681602053dab44a8dbe8a1646f8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speechButton: {fileID: 0}
+  _speechButton: {fileID: 1515251134319169548}
   _deactiveColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0.85882354}
 --- !u!1 &1400519899
 GameObject:
@@ -5767,16 +5767,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 955517224779352138, guid: 308718ebb938d994dab1c55d4f0738e8,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 955517224779352138, guid: 308718ebb938d994dab1c55d4f0738e8,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 955517223193040957, guid: 308718ebb938d994dab1c55d4f0738e8,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -6116,6 +6106,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 955517224779352138, guid: 308718ebb938d994dab1c55d4f0738e8,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 955517224779352138, guid: 308718ebb938d994dab1c55d4f0738e8,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308718ebb938d994dab1c55d4f0738e8, type: 3}

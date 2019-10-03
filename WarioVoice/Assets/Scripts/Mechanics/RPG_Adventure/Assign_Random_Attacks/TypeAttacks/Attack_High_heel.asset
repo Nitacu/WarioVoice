@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Chlorine
+  m_Name: Attack_High_heel
   m_EditorClassIdentifier: 
-  _verb: Chlorine
+  _verb: High heel
   _attack: 4
-  _pronunciation: {fileID: 8300000, guid: 2639e70d377a07e4aacc630295ebac76, type: 3}
+  _pronunciation: {fileID: 8300000, guid: d19c30a292e90e04f8f44cb839260c6e, type: 3}
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
   _sprite: {fileID: 5559745257100799005, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
-  _sentenceToCompleteAttack: Le lanzas cloro al enemigo!
-  _sentencesToNotUseAttack: El cloro fue bloqueado por uno de los ojos
+  _sentenceToCompleteAttack: El tacon del zapato ha sido super efectivo
+  _sentencesToNotUseAttack: No es un buen momento para bailar

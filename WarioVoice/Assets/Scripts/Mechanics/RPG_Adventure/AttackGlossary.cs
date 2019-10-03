@@ -9,7 +9,7 @@ public class AttackGlossary
     public const string LEMON = "LEMON";
     public const string PAPER_PLANE = "PAPER_PLANE";
     public const string ONION = "ONION";
-    public const string CHLORINE = "CHLORINE";
+    public const string HIGH_HEEL = "HIGH_HEEL";
     public const string PERFUME = "PERFUME";
     public const string CANDY = "CANDY";
     public const string UMBRELLA = "UMBRELLA";
@@ -24,7 +24,7 @@ public class AttackGlossary
         LEMON,
         PAPER_PLANE,
         ONION,
-        CHORINE,
+        HIGH_HEEL,
         PERFUME,
         CANDY,
         UMBRELLA,

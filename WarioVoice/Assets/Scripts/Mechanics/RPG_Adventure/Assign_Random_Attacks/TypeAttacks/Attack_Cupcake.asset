@@ -19,5 +19,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 1
   _sprite: {fileID: 21300000, guid: 930025db38bf6a74599a03bc3cc163be, type: 3}
-  _sentenceToCompleteAttack: "Tu y tu compa\xF1ero \U000E7CEF se han comido un cupcake"
+  _sentenceToCompleteAttack: "Tu y tu compa\xF1ero \U000E7CEFcomparten un cupcake"
   _sentencesToNotUseAttack: 

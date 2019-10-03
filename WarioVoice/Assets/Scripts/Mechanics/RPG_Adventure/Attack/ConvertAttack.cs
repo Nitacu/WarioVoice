@@ -15,8 +15,8 @@ public class ConvertAttack : CommandParser
     {
         switch (command)
         {
-            case AttackGlossary.CHLORINE:
-                _exeAttack.TypeAttack = AttackGlossary.attack.CHORINE;
+            case AttackGlossary.HIGH_HEEL:
+                _exeAttack.TypeAttack = AttackGlossary.attack.HIGH_HEEL;
                 _exeAttack.selectAttack();
                 break;
 
