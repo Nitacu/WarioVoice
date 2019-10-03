@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Paper plane
+  m_Name: Attack_Glasses
   m_EditorClassIdentifier: 
-  _verb: Paper plane
+  _verb: Glasses
   _attack: 2
-  _pronunciation: {fileID: 8300000, guid: dadc8ae4f12f91b4aa854f9171630011, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 1b45db80e002fc64e8146725bb60662f, type: 3}
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
-  _sprite: {fileID: 21300000, guid: 25a2e88725fa3c34a833a130dfac5a48, type: 3}
+  _sprite: {fileID: 21300000, guid: 1efed4fd87c7bfc4f80e8ab3be546af4, type: 3}
   _sentenceToCompleteAttack: "No ha surgido efecto, tu enemigo tiene visi\xF3n perfecta"
   _sentencesToNotUseAttack: 

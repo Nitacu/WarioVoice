@@ -7,7 +7,7 @@ public class AttackGlossary
     // Palabras que tiene que decir
     public const string BLACK_PEPPER = "BLACK_PEPPER";
     public const string LEMON = "LEMON";
-    public const string PAPER_PLANE = "PAPER_PLANE";
+    public const string GLASSES = "GLASSES";
     public const string ONION = "ONION";
     public const string HIGH_HEEL = "HIGH_HEEL";
     public const string PERFUME = "PERFUME";
@@ -22,7 +22,7 @@ public class AttackGlossary
     {
         BLACK_PEPPER,
         LEMON,
-        PAPER_PLANE,
+        GLASSES,
         ONION,
         HIGH_HEEL,
         PERFUME,

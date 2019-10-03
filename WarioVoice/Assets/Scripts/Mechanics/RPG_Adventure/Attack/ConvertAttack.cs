@@ -30,8 +30,8 @@ public class ConvertAttack : CommandParser
                 _exeAttack.selectAttack();
                 break;
 
-            case AttackGlossary.PAPER_PLANE:
-                _exeAttack.TypeAttack = AttackGlossary.attack.PAPER_PLANE;
+            case AttackGlossary.GLASSES:
+                _exeAttack.TypeAttack = AttackGlossary.attack.GLASSES;
                 _exeAttack.selectAttack();
                 break;
 
