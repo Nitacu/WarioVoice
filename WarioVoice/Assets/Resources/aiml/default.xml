@@ -183,7 +183,7 @@
   
   
 <category><pattern>CANDY</pattern><template>CANDY</template></category>
-<category><pattern>CHLORINE</pattern><template>CHLORINE</template></category>
+<category><pattern>HIGH HEEL</pattern><template>HIGH_HEEL</template></category>
 <category><pattern>LEMON</pattern><template>LEMON</template></category>
 <category><pattern>ONION</pattern><template>ONION</template></category>
 <category><pattern>PAPER PLANE</pattern><template>PAPER_PLANE</template></category>

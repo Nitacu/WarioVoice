@@ -102,9 +102,9 @@ public class ExeAttack : MonoBehaviour
                     FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentencesToNotUseAttack);
                 }
             }
+
             _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
             _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
-            FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
         }
     }
 
