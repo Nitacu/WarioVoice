@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class WordController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class WordController : MonoBehaviour
     private GameObject loveMetter;
     private GameObject wtfBar;
     public GameObject finalScreen;
+    public ParticleSystem confetti;
+    public GameObject speechButton;
     #endregion
 
     private bool winning = false;
@@ -50,7 +53,8 @@ public class WordController : MonoBehaviour
     public void loseScene()
     {
         finalScreen.SetActive(true);
-        FindObjectOfType<FinalScreenController>().loseScreenImage();
+        Invoke("lostLevel", 4f);
+        //FindObjectOfType<FinalScreenController>().loseScreenImage();
     }
 
     private void waitStartTime()
@@ -88,7 +92,7 @@ public class WordController : MonoBehaviour
         //Show current sign
         if(signsInGame[currentSign].signSprite == null) //If has a sprite, set it to the one of the scriptable object, else, enable Text and write the ENUM word
         {
-            Invoke("waitTimeSprite", 0.25f); //time it has to wait for the position of the player to update, if it doesnt wait, the word will
+            waitTimeSprite(); //time it has to wait for the position of the player to update, if it doesnt wait, the word will
                                            //be in the air for some miliseconds before clamping to the player sign
         }
         else
@@ -232,10 +236,14 @@ public class WordController : MonoBehaviour
                 else
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
-                    finalScreen.SetActive(true);
-                    
+                    disableSpeechButton();
+                    //finalScreen.SetActive(true);
+                    confetti.Play();
+                    loveMetter.GetComponent<LoveMeterController>().updateLoveBar();
+                    women.GetComponent<WomanController>().playLoveAnimation();
+                    Invoke("nextLevel", 4f);
                     winning = true;
-                    FindObjectOfType<FinalScreenController>().winScreenImage();
+                    //FindObjectOfType<FinalScreenController>().winScreenImage();
                    
                 }
             }
@@ -247,8 +255,9 @@ public class WordController : MonoBehaviour
                 signsInGame.Add(tempSign);
                 women.GetComponent<WomanController>().playWTFAnimation();
                 //Add wtf bar and check tries to see if loses
-                wtfBar.GetComponent<WTFBarController>().updateWTFbar();
+                
                 nextSign();
+                wtfBar.GetComponent<WTFBarController>().updateWTFbar();
                 //finalScreen.SetActive(true);
                 //FindObjectOfType<FinalScreenController>().loseScreenImage();
                 //Debug.Log("Perdiste");
@@ -262,5 +271,20 @@ public class WordController : MonoBehaviour
         GameManager.GetInstance().launchNextMinigame(winning);
     }
 
+    public void nextLevel()
+    {
+        GameManager.GetInstance().launchNextMinigame(true);
+    }
+
+    public void lostLevel()
+    {
+        GameManager.GetInstance().launchNextMinigame(false);
+    }
+
+    public void disableSpeechButton()
+    {
+        speechButton.GetComponent<Image>().color = Color.gray;
+        speechButton.GetComponent<EventTrigger>().enabled = false;
+    }
 }
 
