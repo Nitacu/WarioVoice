@@ -10272,7 +10272,7 @@ Canvas:
   m_GameObject: {fileID: 1728113109}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 183806467}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -11038,6 +11038,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 183806467}
+    - target: {fileID: 5498534786312320369, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5498534785775067904, guid: 47aa69e96a0e64d43bf31291b21e9d50,
         type: 3}
       propertyPath: m_Color.r
@@ -11089,7 +11094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25481918, y: 0.38048938}
   m_AnchorMax: {x: 0.4628151, y: 0.42314544}
-  m_AnchoredPosition: {x: -5.199952, y: 0}
+  m_AnchoredPosition: {x: -5.199951, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970999722

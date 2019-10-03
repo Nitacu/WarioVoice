@@ -352,7 +352,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 5503460646655229670, guid: 9178cf7220726a04b98abe3512c1789c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -726,7 +726,7 @@ Canvas:
   m_GameObject: {fileID: 356304555}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 571116744}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -849,7 +849,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 5503460646655229670, guid: 9178cf7220726a04b98abe3512c1789c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2458,7 +2458,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 5503460646655229670, guid: 9178cf7220726a04b98abe3512c1789c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2786,6 +2786,46 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 571116744}
+    - target: {fileID: 5498534786312320369, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498534786312320369, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498534786312320369, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498534786312320368, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498534786312320371, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498534786312320371, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498534785775067906, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927670136736692317, guid: 47aa69e96a0e64d43bf31291b21e9d50,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47aa69e96a0e64d43bf31291b21e9d50, type: 3}
 --- !u!1 &2134329886
@@ -2876,7 +2916,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 5503460646655229670, guid: 9178cf7220726a04b98abe3512c1789c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
