@@ -19,5 +19,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: 25a2e88725fa3c34a833a130dfac5a48, type: 3}
-  _sentenceToCompleteAttack: "Lanzas el avi\xF3n de papel directo al ojo enemigo!"
-  _sentencesToNotUseAttack: "El avi\xF3n de papel fue bloqueado por uno de los ojos"
+  _sentenceToCompleteAttack: "No ha surgido efecto, tu enemigo tiene visi\xF3n perfecta"
+  _sentencesToNotUseAttack: 

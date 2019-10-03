@@ -20,5 +20,5 @@ MonoBehaviour:
   _cure: 0
   _sprite: {fileID: -5743514602376443267, guid: dada751d7542ea94cbfe9fe4eb50f9aa,
     type: 3}
-  _sentenceToCompleteAttack: Usas la moneda...Nada ha pasado
+  _sentenceToCompleteAttack: El enemigo ha rechazado tu soborno
   _sentencesToNotUseAttack: 
