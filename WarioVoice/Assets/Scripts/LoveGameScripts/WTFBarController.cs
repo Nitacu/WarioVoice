@@ -30,6 +30,7 @@ public class WTFBarController : MonoBehaviour
         {
             wtfBar.fillAmount = 1;
             friend.SetActive(false);
+            wordControl.endGame = true;
             Invoke("callEndScene", 1);
         }
     }

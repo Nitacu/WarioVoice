@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class FadeController : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class FadeController : MonoBehaviour
     public GameObject lostButton;
     public GameObject speech;
     public GameObject musicNotes;
+    public GameObject speechButton;
     private Animator _anim;
 
     // Start is called before the first frame update
@@ -28,7 +31,7 @@ public class FadeController : MonoBehaviour
 
     public void permanentFade()
     {
-        FindObjectOfType<BotInput>().gameObject.SetActive(false);
+        disableSpeechButton();
         Invoke("finalFade", 2);
         
     }
@@ -65,5 +68,11 @@ public class FadeController : MonoBehaviour
         _anim.Play(Animator.StringToHash(IDLE), -1, 0f);
         speech.SetActive(true);
         musicNotes.SetActive(true);
+    }
+
+    public void disableSpeechButton()
+    {
+        speechButton.GetComponent<Image>().color = Color.gray;
+        speechButton.GetComponent<EventTrigger>().enabled = false;
     }
 }

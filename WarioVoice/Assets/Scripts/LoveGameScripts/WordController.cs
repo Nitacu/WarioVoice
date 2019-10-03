@@ -30,9 +30,12 @@ public class WordController : MonoBehaviour
     #endregion
 
     private bool winning = false;
+    [HideInInspector]
+    public bool endGame = false;
     private bool isShowingSign = true;
     [HideInInspector]
     public int currentSign = 0; //Cont variable that determines the sign that will be shown
+    private int contWTF = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +55,9 @@ public class WordController : MonoBehaviour
 
     public void loseScene()
     {
-        finalScreen.SetActive(true);
-        Invoke("lostLevel", 4f);
+        signText.enabled = false;
+        women.GetComponent<Animator>().Play(Animator.StringToHash("LeavingRestaurant"));
+        Invoke("lostLevel", 4.3f);
         //FindObjectOfType<FinalScreenController>().loseScreenImage();
     }
 
@@ -249,15 +253,24 @@ public class WordController : MonoBehaviour
             }
             else
             {
+                contWTF++;
                 winning = false;
                 tempSign = signsInGame[currentSign];
                 signsInGame.RemoveAt(currentSign);
                 signsInGame.Add(tempSign);
-                women.GetComponent<WomanController>().playWTFAnimation();
+                women.GetComponent<WomanController>().playWTFAnimation(contWTF);
                 //Add wtf bar and check tries to see if loses
-                
-                nextSign();
                 wtfBar.GetComponent<WTFBarController>().updateWTFbar();
+                if (contWTF < 3)
+                {
+                    nextSign();
+                }
+                else
+                {
+                    disableSpeechButton();
+                   signText.enabled = false;
+                }
+                
                 //finalScreen.SetActive(true);
                 //FindObjectOfType<FinalScreenController>().loseScreenImage();
                 //Debug.Log("Perdiste");
