@@ -22,6 +22,7 @@ public class HeroProperties : MonoBehaviour
 
     public bool IsLive { get => _isLive; set => _isLive = value; }
     public List<VoiceAttacks> Attacks { get => _attacks; set => _attacks = value; }
+    public float Life { get => _life; set => _life = value; }
 
     private void Start()
     {
@@ -40,14 +41,14 @@ public class HeroProperties : MonoBehaviour
 
     public void getDamage(float damage)
     {
-        _life -= damage;
+        Life -= damage;
 
-        if (_life < 0)
-            _life = 0;
+        if (Life < 0)
+            Life = 0;
 
-        _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(_life);
+        _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(Life);
 
-        if (_life <= 0)
+        if (Life <= 0)
         {
             
             IsLive = false;
@@ -62,10 +63,10 @@ public class HeroProperties : MonoBehaviour
 
     public void getCharacterStastic(float life)
     {
-        _life += life;
-        _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(_life);
+        Life += life;
+        _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(Life);
 
-        if (!IsLive && _life>0)
+        if (!IsLive && Life>0)
         {
             reviveHeroe();
         }
@@ -96,7 +97,7 @@ public class HeroProperties : MonoBehaviour
             {
                 _levelInformationPanel.Attacks[i].SetActive(true);
                 // palabra 
-                _levelInformationPanel.Attacks[i].GetComponentInChildren<TMP_Text>().text = "-" + Attacks[i]._verb;
+                _levelInformationPanel.Attacks[i].GetComponentInChildren<TMP_Text>().text = Attacks[i]._verb;
                 _levelInformationPanel.Attacks[i].GetComponent<AudioSource>().clip = Attacks[i]._pronunciation;
                 //imagen de la palabra
                 _levelInformationPanel.Images[i].GetComponent<Image>().sprite = Attacks[i]._sprite;

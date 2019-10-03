@@ -13,7 +13,7 @@ public class CharacterStatistics : MonoBehaviour
 
     public Image Icon { get => _icon; set => _icon = value; }
 
-    // recibe la vida actual si es mejor borra corazones si es mayor los crea
+    // recibe la vida actual si es menor borra corazones si es mayor los crea
 
     public void reloadStatistics(float life)
     {
@@ -21,7 +21,6 @@ public class CharacterStatistics : MonoBehaviour
         {
             if (life < _listHearts.Count)
             {
-                Debug.Log("removio corazon");
                 Destroy(_listHearts[0]);
                  _listHearts.RemoveAt(0);
                 
@@ -30,6 +29,15 @@ public class CharacterStatistics : MonoBehaviour
             {
                 _listHearts.Add(Instantiate(_heart, _life.transform));
             }
+        }
+
+        if (_listHearts.Count == 0)
+        {
+            _icon.GetComponent<Image>().color = Color.gray;
+        }
+        else
+        {
+            _icon.GetComponent<Image>().color = Color.white;
         }
     }
 }
