@@ -174,7 +174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.3932586
+  orthographic size: 4.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -276,9 +276,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Turquoise
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -387,7 +386,8 @@ GameObject:
   - component: {fileID: 145423383}
   - component: {fileID: 145423382}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [AlmendraSC-Bold SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [Big_Bottom_Typeface_Normal SDF Material + LiberationSans
+    SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 4.4
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 145423383}
   m_TextComponent: {fileID: 1448551427}
   m_materialReferenceIndex: 1
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.65
+  m_fontSize: 8.55
   m_fontSizeBase: 7.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1936,9 +1936,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Turquoise
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3154,8 +3153,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Haz una copia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
+  m_fontAsset: {fileID: 11400000, guid: 21ce24611954a0d4abd18abf6414ee41, type: 2}
+  m_sharedMaterial: {fileID: 1510132653968890912, guid: 21ce24611954a0d4abd18abf6414ee41,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3181,7 +3180,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 48
+  m_fontSize: 18.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3233,7 +3232,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -3363,8 +3362,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
+  m_fontAsset: {fileID: 11400000, guid: 21ce24611954a0d4abd18abf6414ee41, type: 2}
+  m_sharedMaterial: {fileID: 1510132653968890912, guid: 21ce24611954a0d4abd18abf6414ee41,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3699,7 +3698,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.8
+  m_fontSize: 8.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4299,7 +4298,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.65
+  m_fontSize: 8.55
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5026,8 +5025,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Did you finish your painting?\\n \xBFTerminaste tu pintura?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
+  m_fontAsset: {fileID: 11400000, guid: 21ce24611954a0d4abd18abf6414ee41, type: 2}
+  m_sharedMaterial: {fileID: 1510132653968890912, guid: 21ce24611954a0d4abd18abf6414ee41,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5053,7 +5052,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 13.4
+  m_fontSize: 7.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5099,7 +5098,7 @@ MonoBehaviour:
     spaceCount: 8
     wordCount: 8
     linkCount: 0
-    lineCount: 3
+    lineCount: 2
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -5184,9 +5183,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Turquoise
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5789,7 +5787,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.8
+  m_fontSize: 8.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6243,9 +6241,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Turquoise
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6401,9 +6398,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Turquoise
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7225,8 +7221,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Make a copy!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48836530392397646bcc767227136a5b, type: 2}
-  m_sharedMaterial: {fileID: -3903470929743508480, guid: 48836530392397646bcc767227136a5b,
+  m_fontAsset: {fileID: 11400000, guid: 21ce24611954a0d4abd18abf6414ee41, type: 2}
+  m_sharedMaterial: {fileID: 1510132653968890912, guid: 21ce24611954a0d4abd18abf6414ee41,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7252,7 +7248,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 96.2
+  m_fontSize: 49.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7304,7 +7300,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
