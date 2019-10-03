@@ -25,7 +25,7 @@ public class LoveMeterController : MonoBehaviour
         else
         {
             loveBar.fillAmount = 1;
-            Debug.Log("Entro al que no es");
+          
         }
     }
 }

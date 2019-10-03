@@ -10,6 +10,7 @@ public class WTFBarController : MonoBehaviour
     public float numberOfTries = 3;
     public float contSigns = 0;
     private WordController wordControl;
+    public GameObject friend;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class WTFBarController : MonoBehaviour
         else
         {
             wtfBar.fillAmount = 1;
+            friend.SetActive(false);
             Invoke("callEndScene", 1);
         }
     }
@@ -35,5 +37,6 @@ public class WTFBarController : MonoBehaviour
     private void callEndScene()
     {
         wordControl.loseScene();
+        wordControl.disableSpeechButton();
     }
 }
