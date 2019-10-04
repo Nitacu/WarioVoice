@@ -19,5 +19,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: 256fd07597800cf44b3d9865ab3b7577, type: 3}
-  _sentenceToCompleteAttack: Sacas una espatula... Esta bonita
-  _sentencesToNotUseAttack: 
+  _sentenceToCompleteAttack: 
+  _sentencesToNotUseAttack: Sacas una espatula... Esta bonita

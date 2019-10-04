@@ -8,7 +8,8 @@ public class LevelInformationPanel : MonoBehaviour
     [SerializeField] private List<GameObject> _attacks;
     [SerializeField] private List<GameObject> _images;
     [SerializeField] private GameObject _panelAttacks;
-    [SerializeField] private TMP_Text _puzzle;
+    [SerializeField] private TMP_Text _oldText;
+    [SerializeField] private TMP_Text _newText;
     private string _riddle;
     private string _currentDialogue;
     private ControlShifts _controlShifts;
@@ -22,7 +23,8 @@ public class LevelInformationPanel : MonoBehaviour
     {
         FindObjectOfType<SetActiveSpeechButton>().setButton(false);
         _panelAttacks.SetActive(false);
-        _puzzle.text = text;
+        _oldText.text = _newText.text;
+        _newText.text = text;
     }
 
 
@@ -31,7 +33,8 @@ public class LevelInformationPanel : MonoBehaviour
         _riddle = puzzle;
         FindObjectOfType<SetActiveSpeechButton>().setButton(true);
         _panelAttacks.SetActive(true);
-        _puzzle.text = puzzle;
+        _oldText.text = _newText.text;
+        _newText.text = puzzle;
     }
 
     public void pronunciationAttack(GameObject gameObject)

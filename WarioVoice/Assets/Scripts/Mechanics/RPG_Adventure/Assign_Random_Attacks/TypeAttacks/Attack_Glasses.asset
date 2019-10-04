@@ -19,5 +19,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: 1efed4fd87c7bfc4f80e8ab3be546af4, type: 3}
-  _sentenceToCompleteAttack: "No ha surgido efecto, tu enemigo tiene visi\xF3n perfecta"
-  _sentencesToNotUseAttack: 
+  _sentenceToCompleteAttack: 
+  _sentencesToNotUseAttack: "No ha surgido efecto, tu enemigo tiene visi\U000EE8F0erfecta"

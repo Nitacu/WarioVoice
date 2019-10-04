@@ -85,14 +85,17 @@ public class LamiaController : MonoBehaviour
         GameManager.GetInstance().finisBossBattle(true);
     }
 
-    public void attack(HeroProperties hero, float damage, string sentenses)
+    public void attack(HeroProperties hero, float damage, string sentenses = null)
     {
         //daño
         hero.getDamage(damage);
-        //siguiente accion
-        //FindObjectOfType<ControlShifts>().playerTurn();
         //frase que dice cuando ataca
-        FindObjectOfType<LevelInformationPanel>().activeDialogue(sentenses);
+        if (sentenses != null)
+        {
+            Debug.Log("mierda");
+            FindObjectOfType<LevelInformationPanel>().activeDialogue(sentenses);
+        }
+
     }
 
     // evalua que heroes estan vivos
@@ -176,11 +179,11 @@ public class LamiaController : MonoBehaviour
                 case 1:
                     random = Random.Range(0, Characters.Count);
                     //visual del daño
-                    Instantiate(_visualDamageOthers, Characters[random].transform);
                     _lastHeroToHarm = heroWithMoreLife(Characters[random]);
+                    Instantiate(_visualDamageOthers, Characters[random].transform);
                     _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                     //recibe el daño
-                    attack(Characters[random], 1, "Ataque directo");
+                    attack(_lastHeroToHarm, 1, "Ataque directo");
                     break;
 
                 // en area
@@ -189,9 +192,9 @@ public class LamiaController : MonoBehaviour
                     {
                         Instantiate(_visualDamageOthers, hero.transform);
                         hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
-                        Debug.Log("hello");
-                        attack(hero, 1, "Ataque en area");
+                        attack(hero, 1);
                     }
+                    FindObjectOfType<LevelInformationPanel>().activeDialogue("Daño en area");
                     break;
             }
         }
