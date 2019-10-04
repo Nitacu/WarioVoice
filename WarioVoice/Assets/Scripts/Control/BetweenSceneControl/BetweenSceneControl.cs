@@ -11,7 +11,8 @@ public class BetweenSceneControl : MonoBehaviour
     private const string BOSSBATLE_ESP = "Jefe";
     private const string LOSE_ENG = "You lose";
     private const string LOSE_ESP = "Perdiste";
-    private const string COMPLETED = "You complete the Game!";
+    private const string COMPLETED_ESP = "Thanks for playing Spikinglish Demo!";
+    private const string COMPLETED_ENG = "Gracias por jugar el demo de Spikinglish!";
 
     private const string CLIPFLAGDOWNNAME = "FlagDown";
 
@@ -118,8 +119,9 @@ public class BetweenSceneControl : MonoBehaviour
         }
         else if (_gameCompleted)
         {
-            _timeTextENG.text = COMPLETED;
-            _timeTextESP.text = COMPLETED;
+            _timeTextENG.text = COMPLETED_ESP;
+            _timeTextESP.text = COMPLETED_ENG;
+            _timeTracking = _timeToLaunchToMainMenu;
         }
 
         if (GameManager.GetInstance().LiveLossed)

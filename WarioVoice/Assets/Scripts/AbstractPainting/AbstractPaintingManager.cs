@@ -55,7 +55,7 @@ public class AbstractPaintingManager : CommandParser
     const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
     const string YESORNO = "Yes | No";
 
-    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci"};
+    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci", "Good Job"};
     #endregion
 
     #region Commands
