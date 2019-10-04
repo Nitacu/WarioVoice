@@ -57,7 +57,7 @@ public class WordController : MonoBehaviour
     {
         signText.enabled = false;
         women.GetComponent<Animator>().Play(Animator.StringToHash("LeavingRestaurant"));
-        Invoke("lostLevel", 5.5f);
+        Invoke("lostLevel", 6.2f);
         //FindObjectOfType<FinalScreenController>().loseScreenImage();
     }
 
