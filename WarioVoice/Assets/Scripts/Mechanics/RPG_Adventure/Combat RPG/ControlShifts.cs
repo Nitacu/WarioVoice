@@ -14,7 +14,7 @@ public class ControlShifts : MonoBehaviour
     private List<HeroProperties> _heroes = new List<HeroProperties>();
     private int _indexTurnHero = -1;
     private HeroProperties _currentHero; // heroe que va a atacar;
-
+    private bool _firtsTurn = true;
     // GET Y SET
     public bool TurnEnemy { get => turnEnemy; set => turnEnemy = value; }
     public bool TurnPlayer { get => turnPlayer; set => turnPlayer = value; }
@@ -25,16 +25,21 @@ public class ControlShifts : MonoBehaviour
         _lamia = FindObjectOfType<LamiaController>();
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
-        _informationPanel.showDialogs("Que la pelea comience", false);
         _heroes = FindObjectsOfType<HeroProperties>().ToList();
-        Invoke("playerTurn", 7);
+        Invoke("playerTurn", 5);
     }
 
     public void playerTurn()
     {
+        if (_firtsTurn)
+        {
+            _informationPanel.showDialogs("Que la pelea comience", false);
+            _firtsTurn = false;
+        }
+
         if (numberCharacterLive >= FindObjectOfType<CharacterBuilder>().NumberCharacters)
         {
-GameManager.GetInstance().finisBossBattle(false);
+            GameManager.GetInstance().finisBossBattle(false);
         }
 
         //selecciona el hero y lo mueve
@@ -68,7 +73,7 @@ GameManager.GetInstance().finisBossBattle(false);
         _lamia.selecAttack(); // ataca
 
         if (_heroes.Count == 0)
-            _lamia.Invoke("winEnemy",1.5f);
+            _lamia.Invoke("winEnemy", 1.5f);
         else
             Invoke("playerTurn", 1.5f);
     }

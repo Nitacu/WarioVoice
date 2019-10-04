@@ -22,7 +22,7 @@ public class LevelInformationPanel : MonoBehaviour
     }
 
     // true cuando el plaeyr tenga que hablar false para cuando este pasando cosas dentro del juego
-    public void showDialogs(string puzzle , bool state)
+    public void showDialogs(string puzzle , bool state = false)
     {
         FindObjectOfType<SetActiveSpeechButton>().setButton(state);
         _panelAttacks.SetActive(state);
