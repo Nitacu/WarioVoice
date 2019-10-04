@@ -110,7 +110,7 @@ public class HeroProperties : MonoBehaviour
         }
 
         
-       _levelInformationPanel.activePanelAttacks("¿Con cual objeto deberia atacar?");
+       _levelInformationPanel.showDialogs("¿Con cual objeto deberia atacar?" , true);
 
         //mueve al personaje
         GetComponent<MoveHeroe>().changeDirection();

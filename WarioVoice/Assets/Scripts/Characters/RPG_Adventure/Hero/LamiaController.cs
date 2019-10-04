@@ -92,8 +92,7 @@ public class LamiaController : MonoBehaviour
         //frase que dice cuando ataca
         if (sentenses != null)
         {
-            Debug.Log("mierda");
-            FindObjectOfType<LevelInformationPanel>().activeDialogue(sentenses);
+            FindObjectOfType<LevelInformationPanel>().showDialogs(sentenses, false);
         }
 
     }
@@ -194,7 +193,7 @@ public class LamiaController : MonoBehaviour
                         hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                         attack(hero, 1);
                     }
-                    FindObjectOfType<LevelInformationPanel>().activeDialogue("Daño en area");
+                    FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en area", false);
                     break;
             }
         }

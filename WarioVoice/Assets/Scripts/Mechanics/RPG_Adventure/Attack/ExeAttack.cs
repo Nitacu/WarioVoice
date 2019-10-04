@@ -82,7 +82,7 @@ public class ExeAttack : MonoBehaviour
                 //para finalizar el turno
                 _controlShifts.Invoke("playerEnemy", 4);
                 //frase del ataque
-                FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+                FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentenceToCompleteAttack, false);
             }
             else
             {
@@ -94,12 +94,12 @@ public class ExeAttack : MonoBehaviour
                     // visual
 
                     //frase del ataque
-                    FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentenceToCompleteAttack);
+                    FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentenceToCompleteAttack,false);
                 }
                 else
                 {
                     _controlShifts.Invoke("playerEnemy", 3);
-                    FindObjectOfType<LevelInformationPanel>().activeDialogue(_currentAttack._sentencesToNotUseAttack);
+                    FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentencesToNotUseAttack,false);
                 }
             }
 
