@@ -33,6 +33,14 @@ public class ScrollBackground : MonoBehaviour
     {
         rawIm = GetComponent<RawImage>();
 
+        int randomHorizontal = Random.Range(0, 2);
+        _xDirection = (randomHorizontal == 0) ? -1 : 1;
+
+        int randomVertical = Random.Range(0, 2);
+        _yDirection = (randomVertical == 0) ? -1 : 1;
+
+
+        /*
         switch (_horizontalDirection)
         {
             case horizontalDirection.LEFT:
@@ -58,7 +66,7 @@ public class ScrollBackground : MonoBehaviour
                 _yDirection = 0;
 
                 break;
-        }        
+        }      */
     }
 
     // Update is called once per frame

@@ -504,7 +504,7 @@ public class AbstractPaintingManager : CommandParser
 
     IEnumerator setWinOrLose(bool playerWin, GameObject analyzerBandToDestroy)
     {
-        yield return new WaitForSeconds(_timeTochangeLevel);
+        yield return new WaitForSeconds(_analyzingTime);
 
         _critiqueSpeechBublle.SetActive(true);
 
@@ -569,7 +569,7 @@ public class AbstractPaintingManager : CommandParser
 
     IEnumerator LaunchNextLevel(bool Success)
     {
-        yield return new WaitForSeconds(_timeToDeactivateInitPanel);
+        yield return new WaitForSeconds(_timeTochangeLevel);
 
         GameManager.GetInstance().launchNextMinigame(Success);
     }
