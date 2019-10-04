@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &219010619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -720,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &475149988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -976,7 +976,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 4.430769
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1357,7 +1357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &678946064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3160,7 +3160,7 @@ PrefabInstance:
     - target: {fileID: 7411351490929405055, guid: 4a93678148e1d0f438e6740624610606,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.74
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 7411351490929405055, guid: 4a93678148e1d0f438e6740624610606,
         type: 3}
@@ -6598,7 +6598,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 6, y: 4, z: 0}
+  - first: {x: 6, y: 3, z: 0}
     second:
       m_TileIndex: 2
       m_TileSpriteIndex: 2
@@ -6607,7 +6607,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 7, y: 4, z: 0}
+  - first: {x: 7, y: 3, z: 0}
     second:
       m_TileIndex: 2
       m_TileSpriteIndex: 2
@@ -6616,7 +6616,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 8, y: 4, z: 0}
+  - first: {x: 8, y: 3, z: 0}
     second:
       m_TileIndex: 2
       m_TileSpriteIndex: 2
@@ -6732,7 +6732,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.715797, y: 2.9876604}
+  m_Offset: {x: 4.715797, y: 2.3234098}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6743,7 +6743,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8897314, y: 0.31354332}
+  m_Size: {x: 1.8897314, y: 0.37606096}
   m_EdgeRadius: 0
 --- !u!61 &1524702747
 BoxCollider2D:
@@ -7013,7 +7013,7 @@ PrefabInstance:
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
@@ -7023,27 +7023,27 @@ PrefabInstance:
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.000053406
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.6758869
+      value: 0.008386929
       objectReference: {fileID: 0}
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.89986306
+      value: 0.8998632
       objectReference: {fileID: 0}
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1.0000002
+      value: 0.33250025
       objectReference: {fileID: 0}
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9872964
+      value: 0.98729664
       objectReference: {fileID: 0}
     - target: {fileID: 6552349196851330628, guid: 39fe5a0646e931645943b3d39eec1bc0,
         type: 3}

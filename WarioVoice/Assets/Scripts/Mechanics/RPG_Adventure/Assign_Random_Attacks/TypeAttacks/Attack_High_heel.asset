@@ -18,6 +18,6 @@ MonoBehaviour:
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
-  _sprite: {fileID: 5559745257100799005, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
+  _sprite: {fileID: 21300000, guid: 60fde732c23bd3142b8799d811cf0201, type: 3}
   _sentenceToCompleteAttack: El tacon del zapato ha sido super efectivo
   _sentencesToNotUseAttack: No es un buen momento para bailar
