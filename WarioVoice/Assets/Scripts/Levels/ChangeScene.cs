@@ -30,6 +30,8 @@ public class ChangeScene : MonoBehaviour
     public const string LOADDATA = "WarioVoiceLoadPlayerData";
     public const string TUTORIALESPIKINGLISH = "TutorialEspikinglish";
     public const string ESPIKINGLISHGAMETEST = "MiniGameTest";
+    public const string ESPIKINGLISHCREDITS = "SpikinglishCredits";
+
 
 
 
@@ -60,7 +62,8 @@ public class ChangeScene : MonoBehaviour
         BETWEENMINIGAMES,
         LOADDATA,
         ESPKINGLISHTUTORIAL,
-        ESPIKINGLISHGAMETEST
+        ESPIKINGLISHGAMETEST,
+        ESPIKINGLISHCREDITS
     }    
 
     public enum EspikinglishMinigames
@@ -167,10 +170,15 @@ public class ChangeScene : MonoBehaviour
                     string scene = (GameManager.GetInstance().DeveloperMode) ? ESPIKINGLISHGAMETEST : LOADDATA;
                     SceneManager.LoadScene(scene);
                 }
-
                 break;
             case nameScenes.ESPKINGLISHTUTORIAL:
                 SceneManager.LoadScene(TUTORIALESPIKINGLISH);
+                break;
+            case nameScenes.ESPIKINGLISHGAMETEST:
+                SceneManager.LoadScene(ESPIKINGLISHGAMETEST);
+                break;
+            case nameScenes.ESPIKINGLISHCREDITS:
+                SceneManager.LoadScene(ESPIKINGLISHCREDITS);
                 break;
         }
     }

@@ -119,6 +119,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private Transform _referenceCanvasTransform;
     [SerializeField] private Transform _myCanvasTransform;
     [SerializeField] private AnimationClip _critiqueAppearClip;
+    [SerializeField] private GameObject _prefabConffeti;
     //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
 
     [Header("UI Control")]
@@ -402,7 +403,6 @@ public class AbstractPaintingManager : CommandParser
             {
                 _splashCoincidencesCount++;
 
-
             }
 
             //Destroy(_copyReferenceSplash);
@@ -507,6 +507,8 @@ public class AbstractPaintingManager : CommandParser
 
         _critiqueSpeechBublle.SetActive(true);
 
+
+
         foreach (var item in _paintedSplahes)
         {
             if (!item.GetComponent<SelfPaintSplash>().Matched)
@@ -530,6 +532,9 @@ public class AbstractPaintingManager : CommandParser
             _analyzeResultText.text = "Nice Paint\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + "100%";
+
+            GameObject confetti = Instantiate(_prefabConffeti);
+            confetti.transform.position = Vector3.zero;
 
             /* if (_currentLevel + 2 <= _levels.Count)
              {
