@@ -107,4 +107,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/MiniGameTest.unity
     guid: 610d8457db5b9f444bfc2413409e7abe
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/SpikinglishCredits.unity
+    guid: 32509d6106c73e240b3a6cc9de0fba86
   m_configObjects: {}
