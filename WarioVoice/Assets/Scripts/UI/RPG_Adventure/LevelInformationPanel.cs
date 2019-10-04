@@ -10,27 +10,36 @@ public class LevelInformationPanel : MonoBehaviour
     [SerializeField] private List<GameObject> _images;
     [SerializeField] private GameObject _panelAttacks;
     [SerializeField] private GameObject _fatherText;
-    [SerializeField] private TMP_Text _newText;
-    [SerializeField] private List<TMP_Text> _listTexts = new List<TMP_Text>();
+    [SerializeField] private List<GameObject> _newText = new List<GameObject>();
+    [SerializeField] private List<GameObject> _listTexts = new List<GameObject>();
     private int _index = 0;
     private string _currentDialogue;
     private ControlShifts _controlShifts;
+    private Vector3 _startPosition;
 
     private void Start()
     {
         ControlShifts = FindObjectOfType<ControlShifts>();
+        _startPosition = _newText[0].transform.position;
     }
 
     // true cuando el plaeyr tenga que hablar false para cuando este pasando cosas dentro del juego
-    public void showDialogs(string puzzle , bool state = false)
+    public void showDialogs(string puzzle, bool state = false)
     {
+
         FindObjectOfType<SetActiveSpeechButton>().setButton(state);
         _panelAttacks.SetActive(state);
 
+
         if (_listTexts.Count <= 3)
         {
-            _listTexts.Add(Instantiate(_newText, _fatherText.transform));
-            _listTexts[_listTexts.Count - 1].text = puzzle;
+            _newText[0].SetActive(true);
+            _newText[0].GetComponent<TMP_Text>().text = puzzle;
+            _newText[0].GetComponent<Animator>().Play(Animator.StringToHash("Start"));
+            _newText[0].transform.position = _startPosition;
+            _listTexts.Add(_newText[0]);
+            _newText.RemoveAt(0);
+            _listTexts[_listTexts.Count - 1].GetComponent<TMP_Text>().text = puzzle;
         }
 
         if (_listTexts.Count > 1)
@@ -43,6 +52,7 @@ public class LevelInformationPanel : MonoBehaviour
         {
             _listTexts[0].gameObject.SetActive(true);
         }
+        
     }
 
     public void showDialog()
@@ -64,11 +74,13 @@ public class LevelInformationPanel : MonoBehaviour
             {
                 _listTexts[0].GetComponent<Animator>().Play(Animator.StringToHash("Delete_text"));
                 _listTexts[1].GetComponent<Animator>().Play(Animator.StringToHash("Old_text"));
+                _newText.Add(_listTexts[0]);
                 _listTexts.RemoveAt(0);
                 _index = 0;
                 Invoke("showDialog", 0.5f);
             }
         }
+        
     }
 
     public void pronunciationAttack(GameObject gameObject)
