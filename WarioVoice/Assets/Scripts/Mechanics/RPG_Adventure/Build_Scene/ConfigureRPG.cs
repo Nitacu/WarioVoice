@@ -55,15 +55,15 @@ public class ConfigureRPG : MonoBehaviour
                 break;
 
             case 3:
-                return 1;
+                return 3;
                 break;
 
             case 4:
-                return 1;
+                return 3;
                 break;
 
             case 5:
-                return 1;
+                return 3;
                 break;
 
             case 6:
