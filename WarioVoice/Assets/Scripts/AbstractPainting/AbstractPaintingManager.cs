@@ -143,7 +143,7 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private TextMeshProUGUI _analyzeResultText;
     private float _coindencePercentage;
     private float _splashCoincidencesCount;
-
+    [SerializeField] private float _timeTochangeLevel;
 
     #region LevelControl
     private PaintSplashColor _currentSplashColorSelected;
@@ -159,6 +159,7 @@ public class AbstractPaintingManager : CommandParser
     private bool _isAnalyzing;
     private GameObject _currentRerefencePaint;
     private bool _wantAResult = false;
+    
     #endregion
 
     private void Start()
@@ -503,7 +504,7 @@ public class AbstractPaintingManager : CommandParser
 
     IEnumerator setWinOrLose(bool playerWin, GameObject analyzerBandToDestroy)
     {
-        yield return new WaitForSeconds(_analyzingTime);
+        yield return new WaitForSeconds(_timeTochangeLevel);
 
         _critiqueSpeechBublle.SetActive(true);
 
