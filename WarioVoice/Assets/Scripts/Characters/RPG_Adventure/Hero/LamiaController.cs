@@ -26,6 +26,7 @@ public class LamiaController : MonoBehaviour
     [SerializeField] private GameObject _cofetti;
     private bool _weak = false; // para saber si esta debil el jefe
     private HeroProperties _lastHeroToHarm; // la creo aca para no estar la creando muchas veces 
+    [SerializeField]private Sprite _eyeWeak;
 
     private void Start()
     {
@@ -49,7 +50,10 @@ public class LamiaController : MonoBehaviour
         else
         {
             if (Life == 1)
+            {
                 _weak = true;
+                GetComponent<SpriteRenderer>().sprite = _eyeWeak;
+            }
 
             Instantiate(_visualDamage, _listEyes[0].transform);
             GetComponent<Animator>().SetBool("Damage", true);
