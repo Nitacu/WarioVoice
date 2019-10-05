@@ -117,12 +117,12 @@ public class ConfigureRPG : MonoBehaviour
 
             case 4:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 1;
+                _lamiaController.Life = 5;
                 break;
 
             case 5:
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 1;
+                _lamiaController.Life = 5;
                 break;
 
             case 6:
