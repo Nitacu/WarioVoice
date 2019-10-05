@@ -71,9 +71,8 @@ public class CharacterBuilder : MonoBehaviour
             {
                 if (ListAttacksDefinitive.Count > 0)
                 {
-                    numberRandom = Random.Range(0, ListAttacksDefinitive.Count -1 );
-                    aux.GetComponent<HeroProperties>().getAttack(ListAttacksDefinitive[numberRandom]);
-                    ListAttacksDefinitive.RemoveAt(numberRandom);
+                    aux.GetComponent<HeroProperties>().getAttack(ListAttacksDefinitive[e]);
+                    ListAttacksDefinitive.RemoveAt(e);
                 }
             }
 
