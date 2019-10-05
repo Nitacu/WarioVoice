@@ -197,7 +197,7 @@ public class LamiaController : MonoBehaviour
                         hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                         attack(hero, 1);
                     }
-                    FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en area", false);
+                    FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
                     break;
             }
         }

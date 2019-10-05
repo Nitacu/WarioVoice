@@ -20,4 +20,4 @@ MonoBehaviour:
   _cure: 0
   _sprite: {fileID: 21300000, guid: b7b22dfa3c922e048a3836917b8584de, type: 3}
   _sentenceToCompleteAttack: 
-  _sentencesToNotUseAttack: Lees un periodico... estas mejor informado
+  _sentencesToNotUseAttack: "Lees un peri\xF3dico... estas mejor informado"
