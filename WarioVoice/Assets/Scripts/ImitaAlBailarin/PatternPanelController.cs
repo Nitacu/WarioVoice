@@ -5,13 +5,14 @@ using UnityEngine;
 public class PatternPanelController : MonoBehaviour
 {
     public GameObject panelObject;
+    public GameObject partitura;
     
     private List<GameObject> musicNotes = new List<GameObject>();
 
     public void patternCreator(Crystal[] crystals)
     {
         int cont = 0;
-
+        partitura.SetActive(true);
         foreach (Crystal crystal in crystals)
         {
             Instantiate(panelObject, gameObject.transform);

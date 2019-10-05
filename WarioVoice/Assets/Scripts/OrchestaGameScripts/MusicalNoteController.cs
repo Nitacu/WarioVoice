@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class MusicalNoteController : MonoBehaviour
 {
-
+    public List<Sprite> musicNoteSprites = new List<Sprite>();
+    [HideInInspector]
     public bool isOn = false;
+    private int randomNumber = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        randomNumber = Random.Range(0, musicNoteSprites.Count - 1);
+        GetComponent<Image>().sprite = musicNoteSprites[randomNumber];
     }
 
     // Update is called once per frame
@@ -19,7 +22,7 @@ public class MusicalNoteController : MonoBehaviour
     {
         if (isOn)
         {
-            GetComponent<Image>().color = Color.white;
+            GetComponent<Image>().color = Color.red;
         }
         else
         {

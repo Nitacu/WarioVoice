@@ -11,6 +11,7 @@ public class PatternController : MonoBehaviour
     public GameObject audience;
     public List<Instrument> instrumentsList = new List<Instrument>();
     private List<Instrument> instrumentsInScene = new List<Instrument>();
+    private List<Instrument> showedInstruments = new List<Instrument>();
     private PatternPanelController patternPanel;
     public int difficulty = 2;
     private int patternDuration = 0;
@@ -21,7 +22,8 @@ public class PatternController : MonoBehaviour
     private FadeController fade;
     public GameObject confetti;
     private int contInstrumentCreator = 0;
-
+    public GameObject partiturePanel;
+    public GameObject tomatoes;
     //List that will be used to play and check patrons 
     private List<Instrument[]> patronList = new List<Instrument[]>();
     private Instrument[] checkPattern;
@@ -39,7 +41,7 @@ public class PatternController : MonoBehaviour
     void Start()
     {
         difficulty = GameManager.GetInstance().getGameDifficulty();
-       
+        
         selectDifficulty();
 
         patternPanel = FindObjectOfType<PatternPanelController>();
@@ -72,14 +74,31 @@ public class PatternController : MonoBehaviour
             {
                 if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
                 {
-                    child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
-                    child.gameObject.GetComponent<InstrumentController>().setInstrument();
-                    child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
+                    if (!checkShowedInstruments(patronList[currentPatron][contInstrumentCreator]))
+                    {
+                        child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
+                        child.gameObject.GetComponent<InstrumentController>().setInstrument();
+                        child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
+                        showedInstruments.Add(patronList[currentPatron][contInstrumentCreator]);
+                    }
+                    
                 }
             }
             contInstrumentCreator++;
         }
         contInstrumentCreator = 0;
+    }
+
+    private bool checkShowedInstruments(Instrument _scriptable)
+    {
+        foreach(Instrument instrument in showedInstruments)
+        {
+            if(_scriptable == instrument)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void disableInstruments() //this method deactivates all unused instruments in the pattern
@@ -372,7 +391,9 @@ public class PatternController : MonoBehaviour
                     Debug.Log("Perdiste");
                     fade.permanentFade();
                     SaveSystem.increaseMicrophonePressedTime(false);
-                    Invoke("lostLevel", 2);
+                    tomatoes.SetActive(true);
+                    tomatoes.GetComponent<AudioSource>().Play();
+                    Invoke("lostLevel", 4);
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
                         child.gameObject.GetComponent<InstrumentController>().setQuietInstrument();
@@ -400,6 +421,7 @@ public class PatternController : MonoBehaviour
         //patternPanel.gameObject.SetActive(true); 
         partiture.gameObject.SetActive(false);
         activateColliders();
+        partiturePanel.SetActive(true);
         //director.SetActive(true);
 
         audience.SetActive(true);
