@@ -152,6 +152,7 @@ public class ConvertAngles : CommandParser
             }
             */
         }
+
         if (_allowShoot)
         {
 
