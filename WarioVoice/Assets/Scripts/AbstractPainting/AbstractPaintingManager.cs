@@ -508,8 +508,6 @@ public class AbstractPaintingManager : CommandParser
 
         _critiqueSpeechBublle.SetActive(true);
 
-
-
         foreach (var item in _paintedSplahes)
         {
             if (!item.GetComponent<SelfPaintSplash>().Matched)
@@ -523,7 +521,7 @@ public class AbstractPaintingManager : CommandParser
             }
         }
 
-        //Destroy(analyzerBandToDestroy);
+        Destroy(analyzerBandToDestroy);
 
         if (playerWin)
         {
@@ -564,13 +562,19 @@ public class AbstractPaintingManager : CommandParser
         FindObjectOfType<PaintingSoundManager>().playGoodJob(playerWin);
 
 
+        Destroy(_microphoneButton);
+
         StartCoroutine(LaunchNextLevel(playerWin));
     }
 
     IEnumerator LaunchNextLevel(bool Success)
     {
+        _microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
+
         yield return new WaitForSeconds(_timeTochangeLevel);
 
+
+        Destroy(_microphoneButton);
         GameManager.GetInstance().launchNextMinigame(Success);
     }
 
