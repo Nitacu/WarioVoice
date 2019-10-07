@@ -561,9 +561,6 @@ public class AbstractPaintingManager : CommandParser
 
         FindObjectOfType<PaintingSoundManager>().playGoodJob(playerWin);
 
-
-        Destroy(_microphoneButton);
-
         StartCoroutine(LaunchNextLevel(playerWin));
     }
 
