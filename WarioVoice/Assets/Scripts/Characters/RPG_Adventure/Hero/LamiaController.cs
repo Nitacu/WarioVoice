@@ -40,6 +40,7 @@ public class LamiaController : MonoBehaviour
 
         if (Life <= 0)
         {
+            Destroy(FindObjectOfType<speechContoller>().gameObject);
             GetComponent<Animator>().enabled = false;
             GameManager.GetInstance().increaseDifficulty();
             Instantiate(_visualDamage, transform);
@@ -72,6 +73,7 @@ public class LamiaController : MonoBehaviour
 
     public void winEnemy()
     {
+        Destroy(FindObjectOfType<speechContoller>().gameObject);
         List<HeroProperties> heros = FindObjectsOfType<HeroProperties>().ToList();
         GameObject gObj;
         GetComponent<Animator>().Play(Animator.StringToHash("Win"));

@@ -19,6 +19,7 @@ public class ConfigurationWorms : MonoBehaviour
     {
         if (_numberEnemys > 0)
         {
+            Destroy(FindObjectOfType<speechContoller>().gameObject);
             EnemyWorms[] enemyWorms =  FindObjectsOfType<EnemyWorms>();
 
             foreach(EnemyWorms enemy in enemyWorms)
@@ -33,6 +34,7 @@ public class ConfigurationWorms : MonoBehaviour
         _numberEnemys--;
         if (_numberEnemys == 0)
         {
+            Destroy(FindObjectOfType<speechContoller>().gameObject);
             Instantiate(_conffeti);
             Invoke("exitScene", 2);
         }
