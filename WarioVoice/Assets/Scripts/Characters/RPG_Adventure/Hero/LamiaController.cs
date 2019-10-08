@@ -45,7 +45,7 @@ public class LamiaController : MonoBehaviour
             GameManager.GetInstance().increaseDifficulty();
             Instantiate(_visualDamage, transform);
             Instantiate(_cofetti);
-            Invoke("loadMenu", 1.5f);
+            Invoke("loadMenu", 2.5f);
             return false;
         }
         else
