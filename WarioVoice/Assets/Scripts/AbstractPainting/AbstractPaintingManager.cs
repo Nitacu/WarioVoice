@@ -558,6 +558,7 @@ public class AbstractPaintingManager : CommandParser
 
         }
 
+        Destroy(_microphoneButton);
 
         FindObjectOfType<PaintingSoundManager>().playGoodJob(playerWin);
 
@@ -566,12 +567,10 @@ public class AbstractPaintingManager : CommandParser
 
     IEnumerator LaunchNextLevel(bool Success)
     {
-        _microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
+        //_microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
 
         yield return new WaitForSeconds(_timeTochangeLevel);
 
-
-        Destroy(_microphoneButton);
         GameManager.GetInstance().launchNextMinigame(Success);
     }
 
