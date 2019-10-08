@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44827986511d5a84ea1f7ed73d6efe8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacks: []
 --- !u!114 &-5962520172806507440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _starPosition: {x: 0, y: 0, z: 0}
+  _currentEndPosition: {x: 0, y: 0, z: 0}
+  _time: 2
 --- !u!95 &2500221982103903683
 Animator:
   serializedVersion: 3

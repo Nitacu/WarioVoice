@@ -44,7 +44,7 @@ public class ControlShifts : MonoBehaviour
 
         //selecciona el hero y lo mueve
         _currentHero = newChallenge();
-        _currentHero.GetComponent<MoveHeroe>();
+        _currentHero.GetComponent<MoveHeroe>().changeDirection();
         //muestre los ataques
         _currentHero.showAttacks();
 

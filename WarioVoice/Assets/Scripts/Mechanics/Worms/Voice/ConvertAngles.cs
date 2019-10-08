@@ -145,12 +145,12 @@ public class ConvertAngles : CommandParser
                 {
                     SaveSystem.increaseMicrophonePressedTime(false);
                 }
-            }/*
+            }
             else
             {
                 SaveSystem.increaseMicrophonePressedTime(false);
             }
-            */
+            
         }
 
         if (_allowShoot)
@@ -211,12 +211,11 @@ public class ConvertAngles : CommandParser
                 {
                     SaveSystem.increaseMicrophonePressedTime(false);
                 }
-            }/*
+            }
             else
             {
                 SaveSystem.increaseMicrophonePressedTime(false);
             }
-            */
         }
 
 

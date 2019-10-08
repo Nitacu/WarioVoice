@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MoveHeroe : MonoBehaviour
 {
-    [SerializeField]private Vector3 _starPosition;
+    private Vector3 _starPosition;
     private Vector3 _combatPosition = new Vector3(-1.5f, -0.64f, 0);
     private Vector3 _currentEndPosition;
     private float _rateTime;
-    private float _time = 0; 
+    private float _time = 2; 
 
     private void Start()
     {

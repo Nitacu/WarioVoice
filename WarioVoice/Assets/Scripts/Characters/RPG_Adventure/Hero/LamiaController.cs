@@ -174,7 +174,7 @@ public class LamiaController : MonoBehaviour
 
     public void selecAttack()
     {
-        int random = Random.Range(1, 3);
+        int random = 1;//Random.Range(1, 3);
 
         if (!_weak)
         {
@@ -185,7 +185,7 @@ public class LamiaController : MonoBehaviour
                     random = Random.Range(0, Characters.Count);
                     //visual del daño
                     _lastHeroToHarm = heroWithMoreLife(Characters[random]);
-                    Instantiate(_visualDamageOthers, Characters[random].transform);
+                    Instantiate(_visualDamageOthers, _lastHeroToHarm.transform);
                     _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                     //recibe el daño
                     attack(_lastHeroToHarm, 1, "Ataque directo");

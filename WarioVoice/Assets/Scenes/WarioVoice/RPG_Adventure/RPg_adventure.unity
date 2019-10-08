@@ -174,41 +174,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text (TMP) new game dialog (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontSizeMin
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,6 +278,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228be98d54e2a944aa080a021a76273f, type: 3}
@@ -3432,61 +3432,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text (TMP) new game dialog
       objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_text
-      value: Que la batalla comience
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontSizeMin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3591,6 +3536,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_text
+      value: Que la batalla comience
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228be98d54e2a944aa080a021a76273f, type: 3}
@@ -3850,41 +3850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text (TMP) new game dialog (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
-        type: 3}
-      propertyPath: m_fontSizeMin
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3989,6 +3954,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 58347832950046194, guid: 228be98d54e2a944aa080a021a76273f,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228be98d54e2a944aa080a021a76273f, type: 3}

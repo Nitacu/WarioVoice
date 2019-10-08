@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ConfigurationWorms : MonoBehaviour
@@ -19,7 +20,7 @@ public class ConfigurationWorms : MonoBehaviour
     {
         if (_numberEnemys > 0)
         {
-            Destroy(FindObjectOfType<speechContoller>().gameObject);
+            FindObjectOfType<SetActiveSpeechButton>().setButton(false);
             EnemyWorms[] enemyWorms =  FindObjectsOfType<EnemyWorms>();
 
             foreach(EnemyWorms enemy in enemyWorms)
@@ -34,7 +35,7 @@ public class ConfigurationWorms : MonoBehaviour
         _numberEnemys--;
         if (_numberEnemys == 0)
         {
-            Destroy(FindObjectOfType<speechContoller>().gameObject);
+            FindObjectOfType<SetActiveSpeechButton>().setButton(false);
             Instantiate(_conffeti);
             Invoke("exitScene", 2);
         }
