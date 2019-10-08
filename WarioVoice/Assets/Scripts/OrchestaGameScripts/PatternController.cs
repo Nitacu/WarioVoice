@@ -41,7 +41,8 @@ public class PatternController : MonoBehaviour
     void Start()
     {
         difficulty = GameManager.GetInstance().getGameDifficulty();
-        
+
+       
         selectDifficulty();
 
         patternPanel = FindObjectOfType<PatternPanelController>();
