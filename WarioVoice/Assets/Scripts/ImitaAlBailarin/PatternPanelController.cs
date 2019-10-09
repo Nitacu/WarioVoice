@@ -6,6 +6,7 @@ public class PatternPanelController : MonoBehaviour
 {
     public GameObject panelObject;
     public GameObject partitura;
+    private GameObject newInstrument;
     
     private List<GameObject> musicNotes = new List<GameObject>();
 
@@ -33,7 +34,9 @@ public class PatternPanelController : MonoBehaviour
     {
         foreach (Instrument instrument in insturments)
         {
-            musicNotes.Add(Instantiate(panelObject, gameObject.transform));
+            newInstrument = Instantiate(panelObject, gameObject.transform);
+            newInstrument.GetComponent<MusicalNoteController>().instrumentSprite = instrument.sprite;
+            musicNotes.Add(newInstrument);
         }
     }
 

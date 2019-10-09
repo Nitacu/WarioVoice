@@ -10,6 +10,7 @@ public class TextScreenControl : MonoBehaviour
     private PatternController _patternController;
     [HideInInspector]
     public bool intro = true;
+    private int cont = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class TextScreenControl : MonoBehaviour
         _patternController.startGame();
     }
     
-    private void clearText()
+    public void clearText()
     {
         text.text = " ";
 
@@ -39,6 +40,12 @@ public class TextScreenControl : MonoBehaviour
             text.text = instrument;
             Invoke("clearText", time);
         }
+    }
+
+    public void showPattern(string instrument)
+    {
+        cont++;
+        text.text = cont + ". " + instrument;
     }
 
 }

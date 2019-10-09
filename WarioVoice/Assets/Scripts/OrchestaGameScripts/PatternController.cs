@@ -24,6 +24,7 @@ public class PatternController : MonoBehaviour
     private int contInstrumentCreator = 0;
     public GameObject partiturePanel;
     public GameObject tomatoes;
+    public FeedbackController feedback;
     //List that will be used to play and check patrons 
     private List<Instrument[]> patronList = new List<Instrument[]>();
     private Instrument[] checkPattern;
@@ -294,7 +295,7 @@ public class PatternController : MonoBehaviour
 
             if (child.gameObject.GetComponent<InstrumentController>()._instrument == newInstrument.instrument)
             {
-
+                FindObjectOfType<TextScreenControl>().showPattern(newInstrument.instrument.ToString());
                 child.gameObject.GetComponent<InstrumentController>().changeInstrument(true);
                 child.gameObject.GetComponent<InstrumentController>().playSound();
                 clipDuration = child.gameObject.GetComponent<InstrumentController>().getSoundTime();
@@ -330,6 +331,7 @@ public class PatternController : MonoBehaviour
             currentPatron++;
             showingPattern = false;
             fade.playFade();
+            FindObjectOfType<TextScreenControl>().clearText();
             Invoke("switchScene", 2);
         }
     }
@@ -389,17 +391,15 @@ public class PatternController : MonoBehaviour
                 else
                 {
                     //Decir que le quedó mal
-                    Debug.Log("Perdiste");
-                    fade.permanentFade();
-                    SaveSystem.increaseMicrophonePressedTime(false);
-                    tomatoes.SetActive(true);
-                    tomatoes.GetComponent<AudioSource>().Play();
-                    Invoke("lostLevel", 4);
+                    feedback.playWrong();
+                    fade.disableSpeechButton();
+                    SaveSystem.increaseMicrophonePressedTime(false);          
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
                         child.gameObject.GetComponent<InstrumentController>().setQuietInstrument();
                     }
 
+                    Invoke("endGame", feedback.getWrongLength() + 0.5f);
                     
                 }
 
@@ -412,10 +412,19 @@ public class PatternController : MonoBehaviour
         else
         {
             //wrong pronunciation
+            feedback.playQuestion();
             SaveSystem.increaseMicrophonePressedTime(false);
         }
     }
 
+    private void endGame()
+    {
+        Debug.Log("Perdiste");
+        fade.permanentFade();
+        tomatoes.SetActive(true);
+        tomatoes.GetComponent<AudioSource>().Play();
+        Invoke("lostLevel", 4);
+    }
 
     private void switchScene()
     {
