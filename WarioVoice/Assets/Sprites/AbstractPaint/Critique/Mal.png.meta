@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 922d3512aa4019244b7c96cc8af9ace7
+guid: fc8c317b93970a24bb5e1cef08a7bb80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4953338524232158044
-    second: Giussepe Petit Balle_0
+      213: -998735963251065576
+    second: Mal_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -101,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Giussepe Petit Balle_0
+      name: Mal_0
       rect:
         serializedVersion: 2
-        x: 254
-        y: 127
+        x: 8
+        y: 6
         width: 390
-        height: 689
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59f650154fd329f40903009b1463c811
-      internalID: 4953338524232158044
+      spriteID: 06187cf8b8aa9a747aefc9c0f9b025df
+      internalID: -998735963251065576
       vertices: []
       indices: 
       edges: []

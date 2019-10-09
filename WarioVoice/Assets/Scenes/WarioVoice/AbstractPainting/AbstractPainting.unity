@@ -249,7 +249,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.398338
+  orthographic size: 5.408145
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2025,6 +2025,14 @@ MonoBehaviour:
   _myCanvasTransform: {fileID: 1139107903}
   _critiqueAppearClip: {fileID: 7400000, guid: 807b258f0442bb746bff5611193e7ed7, type: 2}
   _prefabConffeti: {fileID: 8831683711069136542, guid: 191ed14f1b25f1b45bd87af9a4811b84,
+    type: 3}
+  _normalCritique: {fileID: 4953338524232158044, guid: 922d3512aa4019244b7c96cc8af9ace7,
+    type: 3}
+  _analyzingCritique: {fileID: 4345116516264977580, guid: 9d8555fbdd086db4e80afe97b2eb6bce,
+    type: 3}
+  _correctCritique: {fileID: 6620570638328996004, guid: 684a0258d21c27f4099be60723d11cb3,
+    type: 3}
+  _wrongCritique: {fileID: -998735963251065576, guid: fc8c317b93970a24bb5e1cef08a7bb80,
     type: 3}
   _developermodeObjects:
   - {fileID: 646740901}

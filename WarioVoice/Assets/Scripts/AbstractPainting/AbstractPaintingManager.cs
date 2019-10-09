@@ -122,6 +122,12 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private GameObject _prefabConffeti;
     //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
 
+    [Header("Critique Sprites")]
+    [SerializeField] private Sprite _normalCritique;
+    [SerializeField] private Sprite _analyzingCritique;
+    [SerializeField] private Sprite _correctCritique;
+    [SerializeField] private Sprite _wrongCritique;
+
     [Header("UI Control")]
     [SerializeField] private List<GameObject> _developermodeObjects = new List<GameObject>();
     [SerializeField] private List<GameObject> _buttonsToDeactivate = new List<GameObject>();
@@ -305,6 +311,7 @@ public class AbstractPaintingManager : CommandParser
                 _currentSplashColorSelected = availableSplash;
                 _brush.GetComponent<Image>().color = _currentSplashColorSelected._brushColor;
                 colorFinded = true;
+                _guideText.text = PAINTONCANVAS;
             }
         }
 
@@ -359,6 +366,7 @@ public class AbstractPaintingManager : CommandParser
         //ANIMACIONES ANALISIS
         GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
         _guideText.text = ANALYZING;
+        _paintCritique.GetComponent<Image>().sprite = _analyzingCritique;
         //_paintCritique.SetActive(true);
 
         foreach (var item in _buttonsToDeactivate)
@@ -525,6 +533,7 @@ public class AbstractPaintingManager : CommandParser
 
         if (playerWin)
         {
+            _paintCritique.GetComponent<Image>().sprite = _correctCritique;
             int randomDialog = Random.Range(0,_winDialogs.Count);
             //int _indexRandom = System.Random.Range(0, _winDialogs.Count);
             _guideText.text = _winDialogs[randomDialog];
@@ -535,22 +544,10 @@ public class AbstractPaintingManager : CommandParser
             GameObject confetti = Instantiate(_prefabConffeti);
             confetti.transform.position = Vector3.zero;
 
-            /* if (_currentLevel + 2 <= _levels.Count)
-             {
-                 _currentLevel++;
-                 _finishPaintButton.SetActive(false);
-
-             }
-             else
-             {
-                 _isAnalyzing = true;
-                 _guideText.text = GAMECOMPLETEDE;
-                 _finishPaintButton.SetActive(false);
-
-             }            */
         }
         else
         {
+            _paintCritique.GetComponent<Image>().sprite = _wrongCritique;
             _guideText.text = LOSE;
             _analyzeResultText.text = "Meeh\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
@@ -582,24 +579,5 @@ public class AbstractPaintingManager : CommandParser
         //_initPanel.SetActive(false);
     }
 
-    /*public void keepTrying()
-    {
-        foreach (var item in _paintedSplahes)
-        {
-            item.GetComponent<SpriteRenderer>().color = Color.white;
-        }
 
-        _isAnalyzing = false;
-        _finishPaintButton.SetActive(true);
-
-        _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
-
-        _removeAllButton.SetActive(true);
-        _removeLastButton.SetActive(true);
-
-        _paintCritique.SetActive(false);
-        _critiqueSpeechBublle.SetActive(false);
-        _currentRerefencePaint.SetActive(true);
-        _analyzeResultText.text = "...";
-    }*/
 }
