@@ -104,6 +104,11 @@ public class SaveSystem
         PlayerPrefs.SetString(key, json);
     }
 
+    public static PlayerInformation getPlayerInstace()
+    {
+        return GameManager.GetInstance().CurrentPlayerInformation;
+    }
+
     public static void increasePlayedAMiniGame(ChangeScene.EspikinglishMinigames miniGame, bool success)
     {
         if (GameManager.GetInstance().CurrentPlayerInformation == null)

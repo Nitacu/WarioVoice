@@ -31,6 +31,7 @@ public class ChangeScene : MonoBehaviour
     public const string TUTORIALESPIKINGLISH = "TutorialEspikinglish";
     public const string ESPIKINGLISHGAMETEST = "MiniGameTest";
     public const string ESPIKINGLISHCREDITS = "SpikinglishCredits";
+    public const string BOSSDEFEATED = "BossDefeatedFeedBack";
 
 
 
@@ -63,7 +64,8 @@ public class ChangeScene : MonoBehaviour
         LOADDATA,
         ESPKINGLISHTUTORIAL,
         ESPIKINGLISHGAMETEST,
-        ESPIKINGLISHCREDITS
+        ESPIKINGLISHCREDITS,
+        BOSSDEFEATED
     }    
 
     public enum EspikinglishMinigames
@@ -179,6 +181,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case nameScenes.ESPIKINGLISHCREDITS:
                 SceneManager.LoadScene(ESPIKINGLISHCREDITS);
+                break;
+            case nameScenes.BOSSDEFEATED:
+                SceneManager.LoadScene(BOSSDEFEATED);
                 break;
         }
     }
