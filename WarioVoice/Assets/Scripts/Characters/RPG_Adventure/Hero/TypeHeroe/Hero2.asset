@@ -16,6 +16,6 @@ MonoBehaviour:
     type: 3}
   _die: {fileID: -8105859332134802791, guid: 683a277c24fad004dbe8cdba99dca52e, type: 3}
   _icon: {fileID: -6080661372640674001, guid: c60f209a902755747bf05254e22a1b1a, type: 3}
-  _iconDie: {fileID: -5852332806724077781, guid: b27aecd52171e974388050857311ea61,
+  _iconDie: {fileID: 1545536668377178316, guid: 40149cfdca3ded64cb47543dae4d168b,
     type: 3}
   _animator: {fileID: 0}

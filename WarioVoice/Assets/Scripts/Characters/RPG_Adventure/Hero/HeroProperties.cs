@@ -110,6 +110,17 @@ public class HeroProperties : MonoBehaviour
                 _levelInformationPanel.Attacks[i].GetComponent<AudioSource>().clip = Attacks[i]._pronunciation;
                 //imagen de la palabra
                 _levelInformationPanel.Images[i].GetComponent<Image>().sprite = Attacks[i]._sprite;
+
+                // resalta el item de curar cuando tenga 1 de vida
+                if (_life ==1 && Attacks[i]._cure)
+                {
+                    _levelInformationPanel.Attacks[i].GetComponent<Outline>().enabled = true;
+                }
+                else
+                {
+                    _levelInformationPanel.Attacks[i].GetComponent<Outline>().enabled = false;
+                }
+
             }
             else
             {

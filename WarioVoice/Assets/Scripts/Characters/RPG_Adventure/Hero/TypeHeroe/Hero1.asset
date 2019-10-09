@@ -15,7 +15,7 @@ MonoBehaviour:
   _standing: {fileID: -3701217343410388883, guid: 683a277c24fad004dbe8cdba99dca52e,
     type: 3}
   _die: {fileID: -3307423051440279432, guid: 683a277c24fad004dbe8cdba99dca52e, type: 3}
-  _icon: {fileID: 21300000, guid: b7d39f0b8dc4f764daa96ca64c057c5d, type: 3}
-  _iconDie: {fileID: -805449330550506167, guid: b27aecd52171e974388050857311ea61,
+  _icon: {fileID: -2943070522349085356, guid: 40149cfdca3ded64cb47543dae4d168b, type: 3}
+  _iconDie: {fileID: -3646493548761244890, guid: 40149cfdca3ded64cb47543dae4d168b,
     type: 3}
   _animator: {fileID: 0}

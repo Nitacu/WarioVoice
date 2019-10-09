@@ -47,7 +47,7 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                return 1;
+                return 3;
                 break;
 
             case 2:
