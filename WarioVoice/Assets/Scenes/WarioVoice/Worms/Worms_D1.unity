@@ -338,6 +338,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1398742774}
+          m_MethodName: resetColorText
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &51231163
@@ -682,7 +693,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Enemigo a la vista espero angulo de inclinacion para disparar
+  m_text: "Comandante. \xBFA cuantos grados debo disparar? Use el comunicador para
+    dar la orden."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -710,14 +722,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 13.05
+  m_fontSize: 24.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -751,12 +763,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 265651697}
-    characterCount: 61
+    characterCount: 82
     spriteCount: 0
-    spaceCount: 9
-    wordCount: 10
+    spaceCount: 12
+    wordCount: 13
     linkCount: 0
-    lineCount: 4
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1292,7 +1304,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2916,6 +2928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageAngle: {fileID: 1300842099}
   _imagePower: {fileID: 1080891802}
+  _text: {fileID: 780980538}
 --- !u!114 &1398742775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7472,7 +7485,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Angulo fijado coronel espero ordenes de potencia de disparo
+  m_text: "Comandante. \xBFCon que % de potencia debo disparar? Use el comunicador
+    para dar la orden."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8067,7 +8081,7 @@ PrefabInstance:
     - target: {fileID: 955517223975748278, guid: 308718ebb938d994dab1c55d4f0738e8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -330.7
       objectReference: {fileID: 0}
     - target: {fileID: 955517223975748278, guid: 308718ebb938d994dab1c55d4f0738e8,
         type: 3}
@@ -8173,6 +8187,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textAlignment
       value: 516
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275673698929974727, guid: 308718ebb938d994dab1c55d4f0738e8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.30000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 701328085221692254, guid: 308718ebb938d994dab1c55d4f0738e8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.30999756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133421566300455408, guid: 308718ebb938d994dab1c55d4f0738e8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.94999695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308718ebb938d994dab1c55d4f0738e8, type: 3}
@@ -8437,6 +8466,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8428728264759955893, guid: db0b470f152b65e49b5e0cff947ce067,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8070195776294063738, guid: db0b470f152b65e49b5e0cff947ce067,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8447,10 +8481,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.40975952
       objectReference: {fileID: 0}
-    - target: {fileID: 8428728264759955893, guid: db0b470f152b65e49b5e0cff947ce067,
+    - target: {fileID: 7825443573939512646, guid: db0b470f152b65e49b5e0cff947ce067,
         type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
+      propertyPath: Priority
+      value: 63
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db0b470f152b65e49b5e0cff947ce067, type: 3}

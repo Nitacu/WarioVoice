@@ -26,7 +26,7 @@ public class LamiaController : MonoBehaviour
     [SerializeField] private GameObject _cofetti;
     private bool _weak = false; // para saber si esta debil el jefe
     private HeroProperties _lastHeroToHarm; // la creo aca para no estar la creando muchas veces 
-    [SerializeField]private Sprite _eyeWeak;
+    [SerializeField] private Sprite _eyeWeak;
 
     private void Start()
     {
@@ -45,7 +45,7 @@ public class LamiaController : MonoBehaviour
             GameManager.GetInstance().increaseDifficulty();
             Instantiate(_visualDamage, transform);
             Instantiate(_cofetti);
-            Invoke("loadMenu", 2.5f);
+            Invoke("loadMenu", 4f);
             return false;
         }
         else
@@ -174,33 +174,31 @@ public class LamiaController : MonoBehaviour
 
     public void selecAttack()
     {
-        int random = 1;//Random.Range(1, 3);
+        int random = Random.Range(1, 101);
 
         if (!_weak)
         {
-            switch (random)
+            // fijo
+            if (random <= 70)
             {
-                // fijo
-                case 1:
-                    random = Random.Range(0, Characters.Count);
-                    //visual del daño
-                    _lastHeroToHarm = heroWithMoreLife(Characters[random]);
-                    Instantiate(_visualDamageOthers, _lastHeroToHarm.transform);
-                    _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
-                    //recibe el daño
-                    attack(_lastHeroToHarm, 1, "Ataque directo");
-                    break;
-
+                random = Random.Range(0, Characters.Count);
+                //visual del daño
+                _lastHeroToHarm = heroWithMoreLife(Characters[random]);
+                Instantiate(_visualDamageOthers, _lastHeroToHarm.transform);
+                _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                //recibe el daño
+                attack(_lastHeroToHarm, 1, "Ataque directo");
+            }
+            else
+            {
                 // en area
-                case 2:
-                    foreach (HeroProperties hero in Characters)
-                    {
-                        Instantiate(_visualDamageOthers, hero.transform);
-                        hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
-                        attack(hero, 1);
-                    }
-                    FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
-                    break;
+                foreach (HeroProperties hero in Characters)
+                {
+                    Instantiate(_visualDamageOthers, hero.transform);
+                    hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                    attack(hero, 1);
+                }
+                FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
             }
         }
         else

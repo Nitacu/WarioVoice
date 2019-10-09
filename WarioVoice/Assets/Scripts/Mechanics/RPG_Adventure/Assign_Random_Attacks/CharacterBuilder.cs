@@ -45,7 +45,7 @@ public class CharacterBuilder : MonoBehaviour
 
             // se le agrega un icono
             numberRandom = Random.Range(0, _listHeroes.Count - 1);
-            aux.GetComponent<HeroProperties>().getIdentity(_listHeroes[numberRandom]._standing, _listHeroes[numberRandom]._icon);
+            aux.GetComponent<HeroProperties>().getIdentity(_listHeroes[numberRandom]._standing, _listHeroes[numberRandom]._die, _listHeroes[numberRandom]._icon, _listHeroes[numberRandom]._iconDie);
             aux.GetComponent<HeroProperties>().getCharacterStastic(_configureRPG.configurationCharacters());
             _listHeroes.RemoveAt(numberRandom);
 

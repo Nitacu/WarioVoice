@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GuideControlWorm : MonoBehaviour
 {
@@ -8,12 +9,19 @@ public class GuideControlWorm : MonoBehaviour
     private ConvertAngles _convertAngles;
     [SerializeField] private GameObject _imageAngle;
     [SerializeField] private GameObject _imagePower;
+    [Header("Textos de ejemplo")]
+    [SerializeField] private TMP_Text _text;
+    private Color _colorTutorial = Color.gray;
+    private const string EXAMPLE_DEGREES = "Ejemplo: 20 Degrees";
+    private const string EXAMPLE_PERCENT = "Ejemplo: 90 Percent";
     private void Start()
     {
         _speechButton = FindObjectOfType<SetActiveSpeechButton>();
         _convertAngles = FindObjectOfType<ConvertAngles>();
         if (_convertAngles.TutorialMode)
         {
+            _text.text = EXAMPLE_DEGREES;
+            _text.color = _colorTutorial;
             _convertAngles.allowPoint();
         }
     }
@@ -37,12 +45,19 @@ public class GuideControlWorm : MonoBehaviour
         _imagePower.SetActive(false);
     }
 
+    public void resetColorText()
+    {
+        _text.color = Color.black;
+    }
+
     public void activePower()
     {
         _speechButton.setButton(true);
         _imageAngle.SetActive(false);
         _imagePower.SetActive(true);
 
+        _text.text = EXAMPLE_PERCENT;
+        _text.color = _colorTutorial;
     }
 
     public void desactiveAll()

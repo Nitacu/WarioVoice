@@ -6,6 +6,8 @@ using UnityEngine;
 public class TypeHeroeRPG : ScriptableObject
 {
     public Sprite _standing;
+    public Sprite _die;
     public Sprite _icon;
+    public Sprite _iconDie;
     public RuntimeAnimatorController _animator;
 }
