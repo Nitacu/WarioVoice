@@ -170,6 +170,9 @@ public class AbstractPaintingManager : CommandParser
 
     private void Start()
     {
+   
+        _microphoneButton.GetComponent<Outline>().enabled = (_currentLevel == 0) ? true : false;
+
         bool developermode = GameManager.GetInstance().DeveloperMode;
         foreach (var item in _developermodeObjects)
         {
