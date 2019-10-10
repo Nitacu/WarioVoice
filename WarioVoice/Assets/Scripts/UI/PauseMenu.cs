@@ -9,6 +9,12 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
 
+
+    [SerializeField] private Animator _anim;
+    private const string ANIMATION_APPEAR = "PMAppear";
+    private const string ANIMATION_DESAPPEAR = "PMDesappear";
+    [SerializeField] AnimationClip _appearAnimation;
+
     public static bool _gameIsPaused;
 
     [SerializeField] private GameObject pauseContainer;
@@ -36,6 +42,7 @@ public class PauseMenu : MonoBehaviour
         pauseContainer.SetActive(false);
         Resume();
 
+        _anim =  GetComponent<Animator>();
 
         if (AudioMixerControl.GetInstance().musicOn)
         {
@@ -60,25 +67,47 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Resume()
+    public void  Resume()
     {
-        pauseContainer.SetActive(false);
         //activaranimacion
         Time.timeScale = 1;
         _gameIsPaused = false;
         AudioListener.pause = false;
 
+        _anim.Play(Animator.StringToHash(ANIMATION_DESAPPEAR));
+
+        StartCoroutine(ResumeCoroutine());
     }
+
+    IEnumerator ResumeCoroutine()
+    {
+        yield return new WaitForSeconds(_appearAnimation.averageDuration);
+
+        pauseContainer.SetActive(false);
+    }
+
 
     public void Pause()
     {
         pauseContainer.SetActive(true);
+        Debug.Log("Animator: " + _anim.gameObject.name);
+        _anim.Play(Animator.StringToHash(ANIMATION_APPEAR));
+
+        StartCoroutine(PauseCoroutine());
+    }
+
+    IEnumerator PauseCoroutine()
+    {
+        yield return new WaitForSeconds(_appearAnimation.averageDuration);
+
         //activaranimacion
         Time.timeScale = 0;
         _gameIsPaused = true;
 
         AudioListener.pause = true;
     }
+
+
 
     public void exit()
     {
@@ -103,7 +132,7 @@ public class PauseMenu : MonoBehaviour
             _mixer.SetFloat(MUSICPARAMETER, normalVolValue);
             _musicButton.GetComponent<Image>().sprite = _musicButtonNormalSprite;
             AudioMixerControl.GetInstance().musicOn = true;
-        }       
+        }
     }
 
     public void setupSFX()
