@@ -8,11 +8,16 @@ public class WomanController : MonoBehaviour
     private const string LOVEANIMATION = "Loved";
     private const string WTFANIMATION = "Wtf";
 
+    public AudioClip awwSFX;
+    public AudioClip whatSFX;
+    private AudioSource audioSource;
+
     private Animator _animator;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void playIdle()
@@ -23,18 +28,32 @@ public class WomanController : MonoBehaviour
     public void playLoveAnimation()
     {
         _animator.Play(Animator.StringToHash(LOVEANIMATION), -1, 0f);
+        
         Invoke("playIdle", GetAnimationClip(LOVEANIMATION).length);
     }
 
     public void playWTFAnimation(int cont)
     {
         _animator.Play(Animator.StringToHash(WTFANIMATION), -1, 0f);
+        
         if (cont != 3)
         {
             Invoke("playIdle", GetAnimationClip(WTFANIMATION).length);
         }
     }
 
+    public void playGoodSoundEffect()
+    {
+        audioSource.clip = awwSFX;
+        audioSource.Play();
+    }
+
+    public void playBadSoundEffect()
+    {
+        audioSource.clip = whatSFX;
+        audioSource.Play();
+    }
+    
 
     private AnimationClip GetAnimationClip(string name)
     {

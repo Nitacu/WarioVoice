@@ -225,6 +225,7 @@ public class WordController : MonoBehaviour
                 currentSign++;
                 if (currentSign < signsInGame.Count) //Checks cont of how many words has the player said, to know if he won or he should keep going.
                 {
+                    women.GetComponent<WomanController>().playGoodSoundEffect();
                     if (player.GetComponent<PositionController>().previousClip.name == "Taxi")
                     {
                         player.GetComponent<PositionController>().playTaxiOut();
@@ -240,6 +241,7 @@ public class WordController : MonoBehaviour
                 else
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
+                    
                     disableSpeechButton();
                     //finalScreen.SetActive(true);
                     confetti.Play();
@@ -255,6 +257,7 @@ public class WordController : MonoBehaviour
             {
                 contWTF++;
                 winning = false;
+                women.GetComponent<WomanController>().playBadSoundEffect();
                 tempSign = signsInGame[currentSign];
                 signsInGame.RemoveAt(currentSign);
                 signsInGame.Add(tempSign);

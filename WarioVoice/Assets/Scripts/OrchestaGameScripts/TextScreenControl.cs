@@ -10,11 +10,11 @@ public class TextScreenControl : MonoBehaviour
     private PatternController _patternController;
     [HideInInspector]
     public bool intro = true;
-    private int cont = 0;
-
+   
     // Start is called before the first frame update
     void Start()
     {
+        
         text = GetComponent<TextMeshProUGUI>();
         _patternController = FindObjectOfType<PatternController>();
         intro = true;
@@ -42,10 +42,6 @@ public class TextScreenControl : MonoBehaviour
         }
     }
 
-    public void showPattern(string instrument)
-    {
-        cont++;
-        text.text = cont + ". " + instrument;
-    }
+  
 
 }

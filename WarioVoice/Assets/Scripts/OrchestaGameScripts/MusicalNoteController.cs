@@ -28,7 +28,8 @@ public class MusicalNoteController : MonoBehaviour
         }
         else
         {
-            GetComponent<Image>().color = Color.black;
+            GetComponent<Image>().color = Color.white;
+            GetComponent<Image>().sprite = questionMark;
         }
     }
 }
