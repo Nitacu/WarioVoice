@@ -263,7 +263,7 @@ public class GameManager
         {
             _instance._lives--;
             _instance._liveLossed = true;
-
+            /*
             //SUBIR PRIORIDAD
             foreach (var item in _instance._miniGamesRound)//SUBIR PRIORIDAD
             {
@@ -273,6 +273,13 @@ public class GameManager
                     Debug.Log("Nueva prioridad a: " + item._miniGame + " establecida en: " + item._priority);
                 }
             }
+            */
+            MiniGameLevel newpriorityMiniGame = _instance._currentMinigame;
+            newpriorityMiniGame._priority += 1;
+            _instance._miniGamesRound.Remove(_instance._currentMinigame);
+            _instance._miniGamesRound.Add(newpriorityMiniGame);
+
+
 
             if (_instance._lives <= 0)
             {

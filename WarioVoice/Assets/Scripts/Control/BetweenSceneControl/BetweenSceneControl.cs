@@ -9,7 +9,7 @@ public class BetweenSceneControl : MonoBehaviour
     private const string NEXTMINIGAMEIN_ESP = "Siguiente juego";
     private const string BOSSBATTLE_ENG = "Boss Battle";
     private const string BOSSBATLE_ESP = "Jefe";
-    private const string LOSE_ENG = "You lose";
+    private const string LOSE_ENG = "You lost";
     private const string LOSE_ESP = "Perdiste";
     private const string COMPLETED_ESP = "Thanks for playing Spikinglish Demo!";
     private const string COMPLETED_ENG = "Gracias por jugar el demo de Spikinglish!";
