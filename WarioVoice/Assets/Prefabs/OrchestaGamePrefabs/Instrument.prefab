@@ -102,7 +102,7 @@ MonoBehaviour:
   instrumentObject: {fileID: 0}
   numberspawn: 0
   isOn: 0
-  violinForBug: {fileID: 11400000, guid: 237361ef33cd0874c9d6f39283094951, type: 2}
+  violinForBug: {fileID: 0}
   _instrument: 0
   _difficulty: 0
 --- !u!61 &5580144246130499582
@@ -153,7 +153,8 @@ AudioSource:
   m_GameObject: {fileID: 2773893641599438476}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2640682520155523652, guid: 024bd897da2f28445bb0536f02c51d4a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
