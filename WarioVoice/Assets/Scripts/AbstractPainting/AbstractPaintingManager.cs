@@ -150,6 +150,8 @@ public class AbstractPaintingManager : CommandParser
     private float _coindencePercentage;
     private float _splashCoincidencesCount;
     [SerializeField] private float _timeTochangeLevel;
+    [SerializeField] private AudioSource _backgroundMusic;
+
 
     #region LevelControl
     private PaintSplashColor _currentSplashColorSelected;
@@ -520,6 +522,8 @@ public class AbstractPaintingManager : CommandParser
         yield return new WaitForSeconds(_analyzingTime);
 
         _critiqueSpeechBublle.SetActive(true);
+
+        //_backgroundMusic.Stop();
 
         foreach (var item in _paintedSplahes)
         {

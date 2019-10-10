@@ -249,7 +249,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.3890343
+  orthographic size: 5.397736
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.6
+  m_fontSize: 9.65
   m_fontSizeBase: 7.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2108,6 +2108,7 @@ MonoBehaviour:
   _critiqueSpeechBublle: {fileID: 213900611}
   _analyzeResultText: {fileID: 1448551427}
   _timeTochangeLevel: 4
+  _backgroundMusic: {fileID: 878031118}
 --- !u!4 &405565825
 Transform:
   m_ObjectHideFlags: 0
@@ -3615,9 +3616,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5694626403513259746, guid: 024bd897da2f28445bb0536f02c51d4a,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3db2e1c26de139c41bb4838914134c12, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29742b50ec9157c40abf1835eac69b32, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4319,7 +4320,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.75
+  m_fontSize: 9.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4920,7 +4921,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.6
+  m_fontSize: 9.65
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6568,7 +6569,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 9.75
+  m_fontSize: 9.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8476,7 +8477,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 1100
   m_TargetDisplay: 0
 --- !u!224 &2135618890
 RectTransform:
@@ -8563,11 +8564,6 @@ PrefabInstance:
     - target: {fileID: 102756524972975996, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 102756525593118701, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 102756525405051092, guid: 332fa07e42c30814f938d62de8c0c955,
