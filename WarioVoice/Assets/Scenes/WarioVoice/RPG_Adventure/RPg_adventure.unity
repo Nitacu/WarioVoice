@@ -803,7 +803,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 26.8
+  m_fontSize: 33.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.75
+  m_fontSize: 23.45
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3392,7 +3392,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 42.55
+  m_fontSize: 92.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4597,7 +4597,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4823,7 +4823,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 55.4
+  m_fontSize: 135.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6862,7 +6862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1642384652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6941,7 +6941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemys:
-  - {fileID: 1942431618}
+  - {fileID: 1751488869}
   - {fileID: 1942431618}
 --- !u!114 &1642384657
 MonoBehaviour:
@@ -7669,7 +7669,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.75
+  m_fontSize: 23.45
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8734,7 +8734,7 @@ MonoBehaviour:
   _eyeWeak: {fileID: 0}
   _elementaryTypeList:
   - {r: 1, g: 0.14117648, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.4862745, a: 1}
+  - {r: 0.093871, g: 1, b: 0, a: 1}
   - {r: 0.9019608, g: 0, b: 1, a: 1}
 --- !u!212 &1942431620
 SpriteRenderer:
