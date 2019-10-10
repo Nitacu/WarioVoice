@@ -328,6 +328,11 @@ public class AbstractPaintingManager : CommandParser
 
     private void InstantiateNewSplash(Vector2 _position)
     {
+        if (PauseMenu._gameIsPaused)
+        {
+            return;
+        }
+
         GameObject _newSplash = Instantiate(_splashBasePrefab);
         _newSplash.GetComponent<SpriteRenderer>().sprite = _currentSplashColorSelected._splashImage;
 

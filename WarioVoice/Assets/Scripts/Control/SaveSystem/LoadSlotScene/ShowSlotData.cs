@@ -9,6 +9,7 @@ public class ShowSlotData : MonoBehaviour
 {
     public const string CONTINUE = "Continue";
     public const string STARTGAME = "Start Game";
+    public const string GAMECOMPLETED = "Game completed";
     public const string DEFEATED_BOSSES = "Defetated bosses | Jefes derrotados";
 
 
@@ -35,6 +36,10 @@ public class ShowSlotData : MonoBehaviour
         {
             _buttonTextContinue.text = (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0) ? CONTINUE : STARTGAME;
 
+            if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated >= GameManager.maxBosses)
+            {
+                _buttonTextContinue.text = GAMECOMPLETED;
+            }
         }
 
         _name = FindObjectOfType<FileManager>().PlayerInfSelected.playerName;
@@ -82,17 +87,23 @@ public class ShowSlotData : MonoBehaviour
 
     public void continueGamePlay()
     {
+
+        if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated >= GameManager.maxBosses)
+        {
+            return;
+        }
+
         GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
         GameManager.GetInstance().Lives = 4;
 
         if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0)
-        {          
+        {
             GameManager.GetInstance().StartGame();
         }
         else
         {
             GetComponent<ChangeScene>().chanceScene();
-        }        
+        }
     }
 
     public void showMoreData()

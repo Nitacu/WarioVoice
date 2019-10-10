@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
 
-    private bool _gameIsPaused;
+    public static bool _gameIsPaused;
 
     [SerializeField] private GameObject pauseContainer;
 
@@ -55,7 +55,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            _mixer.SetFloat(SFXPARAMETER, normalVolValue);
+            _mixer.SetFloat(SFXPARAMETER, minVolValue);
             _sfxButton.GetComponent<Image>().sprite = _sfxButtonPressedSprite;
         }
     }
@@ -66,6 +66,8 @@ public class PauseMenu : MonoBehaviour
         //activaranimacion
         Time.timeScale = 1;
         _gameIsPaused = false;
+        AudioListener.pause = false;
+
     }
 
     public void Pause()
@@ -74,6 +76,8 @@ public class PauseMenu : MonoBehaviour
         //activaranimacion
         Time.timeScale = 0;
         _gameIsPaused = true;
+
+        AudioListener.pause = true;
     }
 
     public void exit()

@@ -7,8 +7,10 @@ using TMPro;
 
 public class BossDefeatedFeedBack : MonoBehaviour
 {
-    const string APPEAR = "FinalAnimationAppear";
-    const string DISAPPEAR = "InitialAnimation";
+    const string APPEAR = "Appear";
+    const string DISAPPEAR = "Disappear";
+    const string SHAKE = "Shake";
+
 
     private int currentBossesDefeated = 1;
 
@@ -25,17 +27,19 @@ public class BossDefeatedFeedBack : MonoBehaviour
 
     private void Awake()
     {
+        
         currentBossesDefeated = SaveSystem.getPlayerInstace().bossesDefeated;
-        _animationTime = _animationClip.length;
         PlayerInformation playerInf = SaveSystem.getPlayerInstace();
         _playername.text = playerInf.playerName;
         _bossesText.text = ShowSlotData.DEFEATED_BOSSES + "\n" + (playerInf.bossesDefeated - 1).ToString() + "/" + GameManager.maxBosses.ToString();
+        
+        _animationTime = _animationClip.length;
+
     }
 
 
     private void Start()
     {
-
 
         foreach (var item in _bossIcons)
         {
@@ -47,15 +51,18 @@ public class BossDefeatedFeedBack : MonoBehaviour
             _bossIcons[i].GetComponent<Image>().sprite = _defeatedIcon;
         }
 
-        StartCoroutine(defeatAnimation(currentBossesDefeated - 1, 0));
+        StartCoroutine(defeatAnimation(currentBossesDefeated - 1, 1.5f));
 
     }
 
     IEnumerator defeatAnimation(int indexIcon, float timeToStartAnimation)
     {
+        Animator iconAnim = _bossIcons[indexIcon].GetComponent<Animator>();
+        iconAnim.Play(Animator.StringToHash(SHAKE));
+
+
         yield return new WaitForSeconds(timeToStartAnimation);
 
-        Animator iconAnim = _bossIcons[indexIcon].GetComponent<Animator>();
         iconAnim.Play(Animator.StringToHash(DISAPPEAR));
 
         StartCoroutine(changeSprite(indexIcon));
