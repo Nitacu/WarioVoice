@@ -265,7 +265,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8.55
+  m_fontSize: 10.7
   m_fontSizeBase: 7.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1001,7 +1001,8 @@ AudioSource:
   m_GameObject: {fileID: 201500236}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2640682520155523652, guid: 024bd897da2f28445bb0536f02c51d4a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4412,7 +4413,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8.7
+  m_fontSize: 10.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5013,7 +5014,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8.55
+  m_fontSize: 10.7
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5594,7 +5595,8 @@ AudioSource:
   m_GameObject: {fileID: 1433224334}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2640682520155523652, guid: 024bd897da2f28445bb0536f02c51d4a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6316,7 +6318,8 @@ AudioSource:
   m_GameObject: {fileID: 1581774530}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2640682520155523652, guid: 024bd897da2f28445bb0536f02c51d4a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 2977e575f6cbaa54cbcf12b800d9ccd8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6661,7 +6664,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 8.7
+  m_fontSize: 10.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
