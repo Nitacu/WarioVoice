@@ -7,9 +7,11 @@ public class ConfigureRPG : MonoBehaviour
     private int _difficultyLevel;
     private CharacterBuilder _characterBuilder;
     private LamiaController _lamiaController;
+    [SerializeField] private List<GameObject> _enemys = new List<GameObject>();
 
     private void Start()
     {
+        createdEnemy();
         _characterBuilder = FindObjectOfType<CharacterBuilder>();
         _lamiaController = FindObjectOfType<LamiaController>();
         configurateLevel();
@@ -38,6 +40,15 @@ public class ConfigureRPG : MonoBehaviour
 
         // crea los players
         _characterBuilder.createdCharacters();
+    }
+
+    public void createdEnemy()
+    {
+        GameObject enemy;
+        enemy = _enemys[GameManager.GetInstance().getGameDifficulty() - 1];
+        enemy.SetActive(true);
+        FindObjectOfType<ExeAttack>().Lamia = enemy.GetComponent<LamiaController>();
+
     }
 
     // la vida de cada personaje

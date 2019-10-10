@@ -17,7 +17,6 @@ public class ExeAttack : MonoBehaviour
 
     private void Start()
     {
-        _lamia = FindObjectOfType<LamiaController>();
         _controlShifts = FindObjectOfType<ControlShifts>();
     }
 
@@ -55,6 +54,7 @@ public class ExeAttack : MonoBehaviour
     public void selectAttack()
     {
         SaveSystem.increaseMicrophonePressedTime(true);
+
         if (characterContainsAttack())
         {
             // crea el objeto que muestra cual es que uso
@@ -71,7 +71,7 @@ public class ExeAttack : MonoBehaviour
                 foreach (HeroProperties hero in aux)
                 {
                     if (!hero.IsLive)
-                        _lamia.Characters.Add(hero);
+                        Lamia.Characters.Add(hero);
 
                     hero.getCharacterStastic(1);
                     
@@ -86,10 +86,10 @@ public class ExeAttack : MonoBehaviour
             }
             else
             {
-                if (_lamia.effectiveAttack(_typeAttack))
+                if (Lamia.effectiveAttack(_typeAttack))
                 {
                     //aplcia el daño
-                    if (_lamia.lostLife(_currentAttack._damage))
+                    if (Lamia.lostLife(_currentAttack._damage))
                         _controlShifts.Invoke("playerEnemy", 3);
                     // visual
 
@@ -110,4 +110,5 @@ public class ExeAttack : MonoBehaviour
 
 
     public AttackGlossary.attack TypeAttack { get => _typeAttack; set => _typeAttack = value; }
+    public LamiaController Lamia { get => _lamia; set => _lamia = value; }
 }
