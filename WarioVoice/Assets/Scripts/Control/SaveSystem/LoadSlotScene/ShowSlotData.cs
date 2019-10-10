@@ -9,11 +9,15 @@ public class ShowSlotData : MonoBehaviour
 {
     public const string CONTINUE = "Continue";
     public const string STARTGAME = "Start Game";
+    public const string DEFEATED_BOSSES = "Defetated bosses | Jefes derrotados";
+
 
     //Total played time: 
 
     [SerializeField] private TextMeshProUGUI _nameTextUI;
     [SerializeField] private TextMeshProUGUI _buttonTextContinue;
+    [SerializeField] private TextMeshProUGUI _defeatedBossesText;
+
 
     [SerializeField] private List<Image> _imageBosses = new List<Image>();
 
@@ -50,6 +54,8 @@ public class ShowSlotData : MonoBehaviour
             _imageBosses[i].GetComponent<Image>().sprite = _defeatedIcon;
 
         }
+
+        _defeatedBossesText.text = DEFEATED_BOSSES + "\n" + _defeatedBosses.ToString() + "/" + GameManager.maxBosses.ToString();
     }
 
     public void DeleteConfirmation(bool confirmation)

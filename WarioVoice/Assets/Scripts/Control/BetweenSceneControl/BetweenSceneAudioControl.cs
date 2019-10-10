@@ -17,6 +17,10 @@ public class BetweenSceneAudioControl : MonoBehaviour
     {
         _source = GetComponent<AudioSource>();
         setToFasterVelocity();
+        if (GameManager.GetInstance().GameCompleted)
+        {
+            _source.volume = 0;
+        }
     }
 
     public void playGO()

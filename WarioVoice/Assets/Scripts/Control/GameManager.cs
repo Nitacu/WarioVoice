@@ -46,6 +46,8 @@ public class GameManager
         set { _lives = value; }
     }
 
+    public const int maxBosses = 3;
+
     private PlayerInformation _currentPlayerInformation;
     public PlayerInformation CurrentPlayerInformation
     {
@@ -319,7 +321,7 @@ public class GameManager
             _instance._currentBossDifficulty++;
             SaveSystem.saveCurrentBossDifficulty(_instance._currentBossDifficulty);
 
-            if (_instance._currentBossDifficulty > 3)
+            if (_instance._currentBossDifficulty > maxBosses)
             {
                 Debug.Log("JUEGO COMPLETADO WIII!!!");
                 _instance._gameCompleted = true;

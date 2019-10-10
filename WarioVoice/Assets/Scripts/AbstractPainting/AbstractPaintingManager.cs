@@ -55,7 +55,7 @@ public class AbstractPaintingManager : CommandParser
     const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
     const string YESORNO = "Yes | No";
 
-    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci", "Good Job"};
+    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci", "Good Job", "Van Gogh would be proud of you\nVan Gogh estaría orgulloso de ti"};
     #endregion
 
     #region Commands
@@ -171,7 +171,6 @@ public class AbstractPaintingManager : CommandParser
     private void Start()
     {
    
-        _microphoneButton.GetComponent<Outline>().enabled = (_currentLevel == 0) ? true : false;
 
         bool developermode = GameManager.GetInstance().DeveloperMode;
         foreach (var item in _developermodeObjects)
@@ -189,6 +188,9 @@ public class AbstractPaintingManager : CommandParser
         setLevel(_currentLevel);
         _initPanel.SetActive(true);
         StartCoroutine(deactivateInitPanel(_timeToDeactivateInitPanel));
+
+        _microphoneButton.GetComponent<Outline>().enabled = (_currentLevel == 0) ? true : false;
+
     }
 
     private void Update()

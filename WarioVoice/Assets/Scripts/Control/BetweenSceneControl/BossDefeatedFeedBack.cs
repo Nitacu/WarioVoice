@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BossDefeatedFeedBack : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class BossDefeatedFeedBack : MonoBehaviour
     const string DISAPPEAR = "InitialAnimation";
 
     private int currentBossesDefeated = 1;
+
+
+    [SerializeField] private TextMeshProUGUI _bossesText;
+    [SerializeField] private TextMeshProUGUI _playername;
     [SerializeField] private float timeTochangeScene = 3;
 
     [SerializeField] private List<GameObject> _bossIcons = new List<GameObject>();
@@ -20,10 +25,13 @@ public class BossDefeatedFeedBack : MonoBehaviour
 
     private void Awake()
     {
-        //currentBossesDefeated = SaveSystem.getPlayerInstace().bossesDefeated;
+        currentBossesDefeated = SaveSystem.getPlayerInstace().bossesDefeated;
         _animationTime = _animationClip.length;
-
+        PlayerInformation playerInf = SaveSystem.getPlayerInstace();
+        _playername.text = playerInf.playerName;
+        _bossesText.text = ShowSlotData.DEFEATED_BOSSES + "\n" + (playerInf.bossesDefeated - 1).ToString() + "/" + GameManager.maxBosses.ToString();
     }
+
 
     private void Start()
     {
@@ -59,6 +67,8 @@ public class BossDefeatedFeedBack : MonoBehaviour
         yield return new WaitForSeconds(_animationTime);
         _bossIcons[indexIcon].GetComponent<Image>().sprite = _defeatedIcon;
         _bossIcons[indexIcon].GetComponent<Animator>().Play(Animator.StringToHash(APPEAR));
+
+        _bossesText.text = ShowSlotData.DEFEATED_BOSSES + "\n" + (SaveSystem.getPlayerInstace().bossesDefeated ).ToString() + "/" + GameManager.maxBosses.ToString();
 
         StartCoroutine(changeScene());
     }
