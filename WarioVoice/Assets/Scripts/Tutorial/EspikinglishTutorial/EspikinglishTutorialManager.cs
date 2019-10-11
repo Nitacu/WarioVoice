@@ -26,7 +26,7 @@ public class EspikinglishTutorialManager : CommandParser
     [SerializeField] private GameObject _confetti;
 
     [SerializeField] private List<GameObject> _developerModeObjects = new List<GameObject>();
-
+    [SerializeField] private AudioSource _source;
     [Header("UI Vars")]
     [SerializeField] private TextMeshProUGUI _textGuideEng;
     [SerializeField] private TextMeshProUGUI _textGuideEsp;
@@ -71,6 +71,8 @@ public class EspikinglishTutorialManager : CommandParser
             confetti.transform.position = Vector3.zero;
 
             _textGuideEsp.text = GOODJOB_ESP;
+
+            _source.Play();
 
             StartCoroutine(startGame());
             StartCoroutine(deactivateSpeechButton());
