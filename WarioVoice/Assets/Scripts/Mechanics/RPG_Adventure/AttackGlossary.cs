@@ -26,6 +26,7 @@ public class AttackGlossary
     public const string SPONGE = "SPONGE";
     public const string VACUUM_CLEANER = "VACUUM_CLEANER";
     public const string BREAD = "BREAD";
+    public const string CHOCOLATE = "HOT_CHOCOLATE";
     public const string STRAWBERRY = "STRAWBERRY";
     public const string PICKAXE = "PICKAXE";
 
@@ -50,7 +51,7 @@ public class AttackGlossary
         SAND,
         SPONGE,
         VACUUM_CLEANER,
-        BREAD,
+        CHOCOLATE,
         STRAWBERRY,
         PICKAXE
     }

@@ -13,7 +13,6 @@ public class ConvertAttack : CommandParser
 
     public override void parseCommand(string command)
     {
-        Debug.Log(command);
         switch (command)
         {
             case AttackGlossary.HIGH_HEEL:
@@ -88,8 +87,8 @@ public class ConvertAttack : CommandParser
 
                 break;
 
-            case AttackGlossary.BREAD:
-                _exeAttack.TypeAttack = AttackGlossary.attack.BREAD;
+            case AttackGlossary.CHOCOLATE:
+                _exeAttack.TypeAttack = AttackGlossary.attack.CHOCOLATE;
                 _exeAttack.selectAttack();
 
                 break;

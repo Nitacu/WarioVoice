@@ -146,8 +146,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Pronunciation \nCalculator"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aa4ee527141d86a4f9185874b9bd2480, type: 2}
-  m_sharedMaterial: {fileID: -6099828252319136447, guid: aa4ee527141d86a4f9185874b9bd2480,
+  m_fontAsset: {fileID: 11400000, guid: 8ee67ec7a912a0340b00606b6763ebc4, type: 2}
+  m_sharedMaterial: {fileID: 21493367090742902, guid: 8ee67ec7a912a0340b00606b6763ebc4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25.5
+  m_fontSize: 28.1
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1

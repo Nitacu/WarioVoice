@@ -21,6 +21,12 @@ public class ElementaryController : LamiaController
         return null;
     }
 
+    public void createdExplotion()
+    {
+        Instantiate(_visualDamageOthers, transform);
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
     public override bool lostLife(float damage)
     {
         Life -= damage;
@@ -34,7 +40,7 @@ public class ElementaryController : LamiaController
         if (Life <= 0)
         {
             Destroy(FindObjectOfType<speechContoller>().gameObject);
-            GetComponent<Animator>().enabled = false;
+            GetComponent<Animator>().Play(Animator.StringToHash("Die"));
             GameManager.GetInstance().increaseDifficulty();
             Instantiate(_cofetti);
             Invoke("loadMenu", 4f);
@@ -70,7 +76,7 @@ public class ElementaryController : LamiaController
 
         foreach (HeroProperties aux in heros)
         {
-            Instantiate(_listVisualDamage[0], aux.transform);
+            Instantiate(_listVisualDamage[0], aux.transform.position, Quaternion.Euler(_listVisualDamage[0].transform.localEulerAngles.x, 0, 0));
         }
         FindObjectOfType<ControlShifts>().Invoke("playerTurn", 1.5f);
     }
@@ -85,13 +91,16 @@ public class ElementaryController : LamiaController
     public override void selecAttack()
     {
         int random = Random.Range(1, 101);
+
+        GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
+
         // fijo
         if (random <= 70)
         {
             random = Random.Range(0, Characters.Count);
             //visual del daño
             _lastHeroToHarm = heroWithMoreLife(Characters[random]);
-            Instantiate(_listVisualDamage[0], _lastHeroToHarm.transform);
+            Instantiate(_listVisualDamage[0], _lastHeroToHarm.transform.position,Quaternion.Euler(_listVisualDamage[0].transform.localEulerAngles.x,0,0));
             _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
             //recibe el daño
             attack(_lastHeroToHarm, 1, "Ataque directo");
@@ -101,7 +110,7 @@ public class ElementaryController : LamiaController
             // en area
             foreach (HeroProperties hero in Characters)
             {
-                Instantiate(_listVisualDamage[0], hero.transform);
+                Instantiate(_listVisualDamage[0], hero.transform.position, Quaternion.Euler(_listVisualDamage[0].transform.localEulerAngles.x, 0, 0));
                 hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
                 attack(hero, 1);
             }

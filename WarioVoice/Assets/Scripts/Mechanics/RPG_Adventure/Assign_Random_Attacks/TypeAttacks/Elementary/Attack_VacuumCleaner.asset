@@ -18,6 +18,6 @@ MonoBehaviour:
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
-  _sprite: {fileID: 21300000, guid: 954d45575efb2f44180d909639888af9, type: 3}
-  _sentenceToCompleteAttack: 
-  _sentencesToNotUseAttack: 
+  _sprite: {fileID: 21300000, guid: 85553d3f2c4ebc9438044f170db9ec53, type: 3}
+  _sentenceToCompleteAttack: soy todo un caza fantasmas tururu tu turu
+  _sentencesToNotUseAttack: Sacas una aspiradora pero no hay fantasmas cerca

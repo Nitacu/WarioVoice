@@ -2639,7 +2639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b24597559fd7840ba2e48ee1f145d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 1276990980}
+  _audioSource: {fileID: 1276990981}
   _time: 0
 --- !u!1 &462680951
 GameObject:
@@ -4559,7 +4559,7 @@ GameObject:
   - component: {fileID: 1276990977}
   - component: {fileID: 1276990976}
   - component: {fileID: 1276990979}
-  - component: {fileID: 1276990980}
+  - component: {fileID: 1276990981}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4645,7 +4645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalResolution: 1920
---- !u!82 &1276990980
+--- !u!82 &1276990981
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4658,7 +4658,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 3db2e1c26de139c41bb4838914134c12, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.191
+  m_Volume: 0.059
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6945,8 +6945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemys:
-  - {fileID: 1751488869}
   - {fileID: 1942431618}
+  - {fileID: 1942431618}
+  - {fileID: 1751488869}
 --- !u!114 &1642384657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8730,7 +8731,8 @@ MonoBehaviour:
   _listAttacksDefinitive: []
   _visualDamage: {fileID: 3474785825650400531, guid: 18fc001ba9ac87048a5c55a494ddfdb5,
     type: 3}
-  _visualDamageOthers: {fileID: 0}
+  _visualDamageOthers: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1,
+    type: 3}
   _listEyes: []
   _cofetti: {fileID: 7029716479514159708, guid: f5f92fd9528e277428b8aec62b1747e5,
     type: 3}
@@ -9235,7 +9237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040588185, y: 3.492}
   m_AnchorMax: {x: 0.97158444, y: 4.71}
-  m_AnchoredPosition: {x: 0.50006104, y: -12.833008}
+  m_AnchoredPosition: {x: 0.50006104, y: -12.83342}
   m_SizeDelta: {x: -1, y: -5.463852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2025160816 stripped

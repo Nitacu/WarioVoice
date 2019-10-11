@@ -202,7 +202,7 @@
 <category><pattern>SAND</pattern><template>SAND</template></category>
 <category><pattern>SPONGE</pattern><template>SPONGE</template></category>
 <category><pattern>VACUUM CLEANER</pattern><template>VACUUM_CLEANER</template></category>
-<category><pattern>BREAD</pattern><template>BREAD</template></category>
+<category><pattern>HOT CHOCOLATE</pattern><template>HOT_CHOCOLATE</template></category>
 <category><pattern>STRAWBERRY</pattern><template>STRAWBERRY</template></category>
 <category><pattern>PICKAXE</pattern><template>PICKAXE</template></category>
 

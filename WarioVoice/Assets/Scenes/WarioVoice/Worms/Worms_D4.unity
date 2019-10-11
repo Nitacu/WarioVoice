@@ -1674,7 +1674,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e992ae9a96997c94595e5a7110d9415c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.275
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3021,7 +3021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _imageAngle: {fileID: 346220351}
   _imagePower: {fileID: 1644186751}
-  _text: {fileID: 0}
+  _text: {fileID: 906552425689596125}
   _time: 0
 --- !u!114 &1398742775
 MonoBehaviour:

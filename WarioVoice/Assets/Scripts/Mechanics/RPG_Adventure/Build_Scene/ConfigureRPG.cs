@@ -137,7 +137,13 @@ public class ConfigureRPG : MonoBehaviour
                 break;
 
             case 3:
+                _controlShifts.Invoke("playerTurn", 5);
                 _characterBuilder.NumberCharacters = 2;
+                _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 1;
+                _characterBuilder.NUMBER_ATTACKS_USEFUL1 = 2;
+                _characterBuilder.NUMBER_ATTACKS_USELESS1 = 2;
+                _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
+                _characterBuilder.SPLIT_ATTACKS1 = 0;
                 _lamiaController.Life = 5;
                 break;
 

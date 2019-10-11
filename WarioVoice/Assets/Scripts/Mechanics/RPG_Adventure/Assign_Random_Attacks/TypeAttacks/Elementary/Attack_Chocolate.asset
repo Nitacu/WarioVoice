@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Bread
+  m_Name: Attack_Chocolate
   m_EditorClassIdentifier: 
-  _verb: Bread
+  _verb: Hot Chocolate
   _attack: 19
-  _pronunciation: {fileID: 8300000, guid: 852c60ea062879241a294f20a1133529, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 2dcc87afd1c9c54468cf470216a5c16f, type: 3}
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 1
-  _sprite: {fileID: 4266283910081353605, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
-  _sentenceToCompleteAttack: 
+  _sprite: {fileID: -8845260698105690896, guid: dada751d7542ea94cbfe9fe4eb50f9aa,
+    type: 3}
+  _sentenceToCompleteAttack: "Tu y tu compa\xF1ero beben un ... chocolate caliente"
   _sentencesToNotUseAttack: 

@@ -19,5 +19,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: -675955477173538400, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
-  _sentenceToCompleteAttack: Te proteges del sol y le pinchas el ojo a tu enemigo
-  _sentencesToNotUseAttack: Sacas un paraguas... Pero no esta lloviendo
+  _sentenceToCompleteAttack: Hora de trabajar en la destruccion de la criatura
+  _sentencesToNotUseAttack: No creo que pueda golpearlo con esto

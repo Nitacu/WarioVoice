@@ -15,7 +15,8 @@ public class GuideControlWorm : MonoBehaviour
     [SerializeField]private float _time = 0;
     private const string EXAMPLE_DEGREES = "Ejemplo: 20 Degrees";
     private const string EXAMPLE_PERCENT = "Ejemplo: 90 Percent";
-    private const string WARNING_FOR_STAND_STILL = "HAGA ALGO PUTO";
+    private const string EXAMPLE_REMINDER = "Ejemplo 20 Desgress ó 90 Percent.";
+    private const string WARNING_FOR_STAND_STILL = "Comandante. Recuerde indicar Angulo y potencia.";
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class GuideControlWorm : MonoBehaviour
     public void restarTime()
     {
         _time = 0;
+        _text.color = Color.black;
     }
 
     private void Update()
@@ -44,6 +46,9 @@ public class GuideControlWorm : MonoBehaviour
             {
                 _imageAngle.SetActive(true);
                 _imageAngle.GetComponentInChildren<TMP_Text>().text = WARNING_FOR_STAND_STILL;
+
+                _text.text = EXAMPLE_REMINDER;
+                _text.color = _colorTutorial;
             }
         }
     }

@@ -61,7 +61,6 @@ public class ExeAttack : MonoBehaviour
             usedObject.GetComponent<SpriteRenderer>().sprite = _currentAttack._sprite;
             usedObject.GetComponent<AudioSource>().clip = _currentAttack._soundEffect;
             usedObject.GetComponent<AudioSource>().Play();
-            Debug.Log(_currentAttack._verb);
 
             if (_currentAttack._cure)
             {

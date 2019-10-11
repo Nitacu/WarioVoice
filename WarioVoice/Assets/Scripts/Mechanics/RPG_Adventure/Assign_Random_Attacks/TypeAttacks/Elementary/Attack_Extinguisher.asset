@@ -18,6 +18,6 @@ MonoBehaviour:
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
-  _sprite: {fileID: 21300000, guid: bdc0ffb64a4d55b4f89d42db65a35d53, type: 3}
-  _sentenceToCompleteAttack: 
-  _sentencesToNotUseAttack: 
+  _sprite: {fileID: 21300000, guid: ce1b8b099abefea42a7b9e1ab1aa3ebd, type: 3}
+  _sentenceToCompleteAttack: Fuego Fuego Fuego!!
+  _sentencesToNotUseAttack: No creo que tenga sentido usarlo en este momento
