@@ -12,8 +12,11 @@ public class GuideControlWorm : MonoBehaviour
     [Header("Textos de ejemplo")]
     [SerializeField] private TMP_Text _text;
     private Color _colorTutorial = Color.gray;
+    [SerializeField]private float _time = 0;
     private const string EXAMPLE_DEGREES = "Ejemplo: 20 Degrees";
     private const string EXAMPLE_PERCENT = "Ejemplo: 90 Percent";
+    private const string WARNING_FOR_STAND_STILL = "HAGA ALGO PUTO";
+
     private void Start()
     {
         _speechButton = FindObjectOfType<SetActiveSpeechButton>();
@@ -23,6 +26,25 @@ public class GuideControlWorm : MonoBehaviour
             _text.text = EXAMPLE_DEGREES;
             _text.color = _colorTutorial;
             _convertAngles.allowPoint();
+        }
+    }
+
+    public void restarTime()
+    {
+        _time = 0;
+    }
+
+    private void Update()
+    {
+        if (!_convertAngles.TutorialMode)
+        {
+            _time += Time.deltaTime;
+
+            if (_time>=30)
+            {
+                _imageAngle.SetActive(true);
+                _imageAngle.GetComponentInChildren<TMP_Text>().text = WARNING_FOR_STAND_STILL;
+            }
         }
     }
 
