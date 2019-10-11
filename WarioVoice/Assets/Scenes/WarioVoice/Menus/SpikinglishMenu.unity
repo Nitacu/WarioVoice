@@ -743,16 +743,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655416920}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1205815467}
   m_Father: {fileID: 1047828111}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 148}
+  m_AnchoredPosition: {x: 0.000061035156, y: 148}
   m_SizeDelta: {x: 723.7, y: 109.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655416922
@@ -1051,6 +1052,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1205815466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205815467}
+  - component: {fileID: 1205815469}
+  - component: {fileID: 1205815468}
+  m_Layer: 5
+  m_Name: TitoTitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1205815467
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205815466}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 655416921}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -359.10007, y: 26.09999}
+  m_SizeDelta: {x: 113.06, y: 133.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1205815468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205815466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: -1415228550314662545, guid: 6df692483ce10604c9c2c5b5ecf1458b,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1205815469
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205815466}
+  m_CullTransparentMesh: 0
 --- !u!1 &1282219572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2501,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _musicButton
+      value: 
+      objectReference: {fileID: 187295488}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _sfxButton
+      value: 
+      objectReference: {fileID: 958332767}
     - target: {fileID: 102756524972975996, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2479,16 +2566,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _musicButton
-      value: 
-      objectReference: {fileID: 187295488}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _sfxButton
-      value: 
-      objectReference: {fileID: 958332767}
     - target: {fileID: 102756525405051092, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_LocalPosition.z
