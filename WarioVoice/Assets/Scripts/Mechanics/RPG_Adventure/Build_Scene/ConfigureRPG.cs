@@ -7,10 +7,12 @@ public class ConfigureRPG : MonoBehaviour
     private int _difficultyLevel;
     private CharacterBuilder _characterBuilder;
     private LamiaController _lamiaController;
+    private ControlShifts _controlShifts;
     [SerializeField] private List<GameObject> _enemys = new List<GameObject>();
 
     private void Start()
     {
+        _controlShifts = FindObjectOfType<ControlShifts>();
         createdEnemy();
         _characterBuilder = FindObjectOfType<CharacterBuilder>();
         _lamiaController = FindObjectOfType<LamiaController>();
@@ -23,10 +25,12 @@ public class ConfigureRPG : MonoBehaviour
             _characterBuilder.ListAttacksDefinitive.Add(voice);
         }
 
+
         foreach (VoiceAttacks voice in _lamiaController.ListAttacksUseful)
         {
             _characterBuilder.ListAttacksUseful.Add(voice);
         }
+
 
         foreach (VoiceAttacks voice in _lamiaController.ListAttacksUseless)
         {
@@ -48,7 +52,6 @@ public class ConfigureRPG : MonoBehaviour
         enemy = _enemys[GameManager.GetInstance().getGameDifficulty() - 1];
         enemy.SetActive(true);
         FindObjectOfType<ExeAttack>().Lamia = enemy.GetComponent<LamiaController>();
-
     }
 
     // la vida de cada personaje
@@ -112,13 +115,25 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
+                _controlShifts.Invoke("playerTurn", 5);
                 _characterBuilder.NumberCharacters = 2;
+                _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 1;
+                _characterBuilder.NUMBER_ATTACKS_USEFUL1 = 2;
+                _characterBuilder.NUMBER_ATTACKS_USELESS1 = 2;
+                _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
+                _characterBuilder.SPLIT_ATTACKS1 = 0;
                 _lamiaController.Life = 5;
                 break;
 
             case 2:
+                _controlShifts.Invoke("playerEnemy", 5);
                 _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 3;
+                _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 0;
+                _characterBuilder.NUMBER_ATTACKS_USEFUL1 = 4;
+                _characterBuilder.NUMBER_ATTACKS_USELESS1 = 1;
+                _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
+                _characterBuilder.SPLIT_ATTACKS1 = 2;
+                _lamiaController.Life = 4;
                 break;
 
             case 3:

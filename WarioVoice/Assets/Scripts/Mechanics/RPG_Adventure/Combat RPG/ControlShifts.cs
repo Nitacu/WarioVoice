@@ -26,7 +26,6 @@ public class ControlShifts : MonoBehaviour
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _heroes = FindObjectsOfType<HeroProperties>().ToList();
-        Invoke("playerTurn", 5);
     }
 
     public void playerTurn()
@@ -70,6 +69,12 @@ public class ControlShifts : MonoBehaviour
 
     public void playerEnemy()
     {
+        if (_firtsTurn)
+        {
+            _informationPanel.showDialogs("Que la pelea comience", false);
+            _firtsTurn = false;
+        }
+
         _lamia.selecAttack(); // ataca
 
         if (_heroes.Count == 0)

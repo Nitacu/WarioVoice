@@ -18,6 +18,17 @@ public class AttackGlossary
     public const string COIN = "COIN";
     public const string CUPCAKE = "CUPCAKE";
 
+    public const string BATTERY = "BATTERY";
+    public const string DRILL = "DRILL";
+    public const string EXTINGUISHER = "EXTINGUISHER";
+    public const string FAN = "FAN";
+    public const string SAND = "SAND";
+    public const string SPONGE = "SPONGE";
+    public const string VACUUM_CLEANER = "VACUUM_CLEANER";
+    public const string BREAD = "BREAD";
+    public const string STRAWBERRY = "STRAWBERRY";
+    public const string PICKAXE = "PICKAXE";
+
     public enum attack
     {
         BLACK_PEPPER,
@@ -31,7 +42,17 @@ public class AttackGlossary
         NEWSPAPER,
         SPATULA,
         COIN,
-        CUPCAKE
+        CUPCAKE,
+        BATTERY,
+        DRILL,
+        EXTINGUISHER,
+        FAN,
+        SAND,
+        SPONGE,
+        VACUUM_CLEANER,
+        BREAD,
+        STRAWBERRY,
+        PICKAXE
     }
 
 

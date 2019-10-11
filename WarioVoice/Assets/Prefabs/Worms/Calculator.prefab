@@ -144,7 +144,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Pronuncuation \nCassio"
+  m_text: "Pronunciation \nCalculator"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa4ee527141d86a4f9185874b9bd2480, type: 2}
   m_sharedMaterial: {fileID: -6099828252319136447, guid: aa4ee527141d86a4f9185874b9bd2480,
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24.4
+  m_fontSize: 25.5
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 3462560146010957883}
-    characterCount: 21
+    characterCount: 25
     spriteCount: 0
     spaceCount: 2
     wordCount: 2

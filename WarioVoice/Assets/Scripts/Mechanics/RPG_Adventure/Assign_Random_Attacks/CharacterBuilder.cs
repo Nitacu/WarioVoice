@@ -15,10 +15,11 @@ public class CharacterBuilder : MonoBehaviour
     private List<VoiceAttacks> _listHealingObjects = new List<VoiceAttacks>();
     [Header("Todos los cuerpos de personajes")]
     [SerializeField] private List<TypeHeroeRPG> _listHeroes;
-    private const int NUMBER_ATTACKS_USELESS = 2;
-    private const int NUMBER_ATTACKS_USEFUL = 2;
-    private const int NUMBER_ATTACKS_DEFINITIVE = 1;
-    private const int NUMBER_HEALING_OBJECTS = 1;
+    private int NUMBER_ATTACKS_USELESS = 2;
+    private int NUMBER_ATTACKS_USEFUL = 2;
+    private int NUMBER_ATTACKS_DEFINITIVE = 1;
+    private int NUMBER_HEALING_OBJECTS = 1;
+    private int SPLIT_ATTACKS = 0;
     private int _numberCharacters;
     [Header("Objeto que contendra todos los personajes")]
     [SerializeField] private List<GameObject> _contentCharacters;
@@ -31,13 +32,17 @@ public class CharacterBuilder : MonoBehaviour
     public List<VoiceAttacks> ListAttacksUseful { get => _listAttacksUseful; set => _listAttacksUseful = value; }
     public List<VoiceAttacks> ListAttacksDefinitive { get => _listAttacksDefinitive; set => _listAttacksDefinitive = value; }
     public List<VoiceAttacks> ListHealingObjects { get => _listHealingObjects; set => _listHealingObjects = value; }
+    public int NUMBER_ATTACKS_USELESS1 { get => NUMBER_ATTACKS_USELESS; set => NUMBER_ATTACKS_USELESS = value; }
+    public int NUMBER_ATTACKS_USEFUL1 { get => NUMBER_ATTACKS_USEFUL; set => NUMBER_ATTACKS_USEFUL = value; }
+    public int NUMBER_ATTACKS_DEFINITIVE1 { get => NUMBER_ATTACKS_DEFINITIVE; set => NUMBER_ATTACKS_DEFINITIVE = value; }
+    public int NUMBER_HEALING_OBJECTS1 { get => NUMBER_HEALING_OBJECTS; set => NUMBER_HEALING_OBJECTS = value; }
+    public int SPLIT_ATTACKS1 { get => SPLIT_ATTACKS; set => SPLIT_ATTACKS = value; }
 
     public void createdCharacters()
     {
         _configureRPG = FindObjectOfType<ConfigureRPG>();
         GameObject aux;
         int numberRandom;
-
         //crea cada tarjeta de persona
         for (int i = 0; i < NumberCharacters; i++)
         {
@@ -53,7 +58,7 @@ public class CharacterBuilder : MonoBehaviour
             //ataques inutiles
             for (int e = 0; e < NUMBER_ATTACKS_USELESS; e++)
             {
-                numberRandom = Random.Range(0, ListAttacksUseless.Count -1);
+                numberRandom = Random.Range(0, ListAttacksUseless.Count);
                 aux.GetComponent<HeroProperties>().getAttack(ListAttacksUseless[numberRandom]);
                 ListAttacksUseless.RemoveAt(numberRandom);
             }
@@ -61,9 +66,17 @@ public class CharacterBuilder : MonoBehaviour
             // ataque util
             for (int e = 0; e < NUMBER_ATTACKS_USEFUL; e++)
             {
-                numberRandom = Random.Range(0, ListAttacksUseful.Count -1 );
-                aux.GetComponent<HeroProperties>().getAttack(ListAttacksUseful[numberRandom]);
-                ListAttacksUseful.RemoveAt(numberRandom);
+                if (SPLIT_ATTACKS == 0)
+                {
+                    numberRandom = Random.Range(0, ListAttacksUseful.Count);
+                    aux.GetComponent<HeroProperties>().getAttack(ListAttacksUseful[numberRandom]);
+                    ListAttacksUseful.RemoveAt(numberRandom);
+                }
+                else
+                {
+                    aux.GetComponent<HeroProperties>().getAttack(ListAttacksUseful[(SPLIT_ATTACKS*e)+i]);
+
+                }
             }
 
             //ataque definitivo
@@ -78,7 +91,7 @@ public class CharacterBuilder : MonoBehaviour
 
             //CURA
             
-            numberRandom = Random.Range(0, ListHealingObjects.Count -1 );
+            numberRandom = Random.Range(0, ListHealingObjects.Count);
             aux.GetComponent<HeroProperties>().getAttack(ListHealingObjects[numberRandom]);
             ListHealingObjects.RemoveAt(numberRandom);
             

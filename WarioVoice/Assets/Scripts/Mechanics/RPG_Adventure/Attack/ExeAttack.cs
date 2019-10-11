@@ -12,7 +12,6 @@ public class ExeAttack : MonoBehaviour
     private VoiceAttacks _currentAttack;
     private ControlShifts _controlShifts;
     [SerializeField] private GameObject _hearth; //corazon de gano vida
-    [SerializeField] private VisualDamage _visualDamage;
     [SerializeField] private GameObject _usedObject; //muestra que objeto uso
 
     private void Start()
@@ -62,6 +61,7 @@ public class ExeAttack : MonoBehaviour
             usedObject.GetComponent<SpriteRenderer>().sprite = _currentAttack._sprite;
             usedObject.GetComponent<AudioSource>().clip = _currentAttack._soundEffect;
             usedObject.GetComponent<AudioSource>().Play();
+            Debug.Log(_currentAttack._verb);
 
             if (_currentAttack._cure)
             {
@@ -86,8 +86,10 @@ public class ExeAttack : MonoBehaviour
             }
             else
             {
+                
                 if (Lamia.effectiveAttack(_typeAttack))
                 {
+                    
                     //aplcia el daño
                     if (Lamia.lostLife(_currentAttack._damage))
                         _controlShifts.Invoke("playerEnemy", 3);

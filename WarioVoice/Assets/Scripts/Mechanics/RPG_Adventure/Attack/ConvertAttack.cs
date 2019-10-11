@@ -13,6 +13,7 @@ public class ConvertAttack : CommandParser
 
     public override void parseCommand(string command)
     {
+        Debug.Log(command);
         switch (command)
         {
             case AttackGlossary.HIGH_HEEL:
@@ -77,6 +78,66 @@ public class ConvertAttack : CommandParser
 
             case AttackGlossary.CUPCAKE:
                 _exeAttack.TypeAttack = AttackGlossary.attack.CUPCAKE;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.BATTERY:
+                _exeAttack.TypeAttack = AttackGlossary.attack.BATTERY;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.BREAD:
+                _exeAttack.TypeAttack = AttackGlossary.attack.BREAD;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.EXTINGUISHER:
+                _exeAttack.TypeAttack = AttackGlossary.attack.EXTINGUISHER;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.FAN:
+                _exeAttack.TypeAttack = AttackGlossary.attack.FAN;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.PICKAXE:
+                _exeAttack.TypeAttack = AttackGlossary.attack.PICKAXE;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.SAND:
+                _exeAttack.TypeAttack = AttackGlossary.attack.SAND;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.SPONGE:
+                _exeAttack.TypeAttack = AttackGlossary.attack.SPONGE;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.STRAWBERRY:
+                _exeAttack.TypeAttack = AttackGlossary.attack.STRAWBERRY;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.VACUUM_CLEANER:
+                _exeAttack.TypeAttack = AttackGlossary.attack.VACUUM_CLEANER;
+                _exeAttack.selectAttack();
+
+                break;
+
+            case AttackGlossary.DRILL:
+                _exeAttack.TypeAttack = AttackGlossary.attack.DRILL;
                 _exeAttack.selectAttack();
 
                 break;

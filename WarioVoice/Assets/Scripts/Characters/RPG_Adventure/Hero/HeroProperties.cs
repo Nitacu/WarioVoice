@@ -95,6 +95,23 @@ public class HeroProperties : MonoBehaviour
        
     }
 
+
+    //sirve para ver si algun personaje tiene poca vida 
+    public bool heroeLowLive()
+    {
+        HeroProperties[] heroes = FindObjectsOfType<HeroProperties>();
+
+        foreach (HeroProperties hero in heroes)
+        {
+            if (hero.Life == 1)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     //activa el panel de ataques y muestra los ataques de este personaje
     public void showAttacks()
     {
@@ -112,7 +129,7 @@ public class HeroProperties : MonoBehaviour
                 _levelInformationPanel.Images[i].GetComponent<Image>().sprite = Attacks[i]._sprite;
 
                 // resalta el item de curar cuando tenga 1 de vida
-                if (_life ==1 && Attacks[i]._cure)
+                if (heroeLowLive() && Attacks[i]._cure)
                 {
                     _levelInformationPanel.Attacks[i].GetComponent<Outline>().enabled = true;
                 }

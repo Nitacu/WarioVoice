@@ -28,7 +28,7 @@ public class LamiaController : MonoBehaviour
     protected HeroProperties _lastHeroToHarm; // la creo aca para no estar la creando muchas veces 
     [SerializeField] private Sprite _eyeWeak;
 
-    public void Start()
+    public virtual void Start()
     {
         Characters = FindObjectsOfType<HeroProperties>().ToList();
     }
@@ -71,7 +71,7 @@ public class LamiaController : MonoBehaviour
         _listEyes.RemoveAt(0);
     }
 
-    public void winEnemy()
+    public virtual void winEnemy()
     {
         Destroy(FindObjectOfType<speechContoller>().gameObject);
         List<HeroProperties> heros = FindObjectsOfType<HeroProperties>().ToList();
@@ -126,7 +126,7 @@ public class LamiaController : MonoBehaviour
         return null;
     }
 
-    public bool effectiveAttack(AttackGlossary.attack attack)
+    public virtual bool effectiveAttack(AttackGlossary.attack attack)
     {
         if (_weak)
         {

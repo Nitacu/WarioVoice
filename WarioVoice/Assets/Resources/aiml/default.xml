@@ -194,6 +194,17 @@
 <category><pattern>NEWSPAPER</pattern><template>NEWSPAPER</template></category>
 <category><pattern>CUPCAKE</pattern><template>CUPCAKE</template></category>
 <category><pattern>COIN</pattern><template>COIN</template></category>
+  
+<category><pattern>BATTERY</pattern><template>BATTERY</template></category>
+<category><pattern>DRILL</pattern><template>DRILL</template></category>
+<category><pattern>EXTINGUISHER</pattern><template>EXTINGUISHER</template></category>
+<category><pattern>FAN</pattern><template>FAN</template></category>
+<category><pattern>SAND</pattern><template>SAND</template></category>
+<category><pattern>SPONGE</pattern><template>SPONGE</template></category>
+<category><pattern>VACUUM CLEANER</pattern><template>VACUUM_CLEANER</template></category>
+<category><pattern>BREAD</pattern><template>BREAD</template></category>
+<category><pattern>STRAWBERRY</pattern><template>STRAWBERRY</template></category>
+<category><pattern>PICKAXE</pattern><template>PICKAXE</template></category>
 
 
 <category><pattern>BLUE</pattern><template>BLUE</template></category>
