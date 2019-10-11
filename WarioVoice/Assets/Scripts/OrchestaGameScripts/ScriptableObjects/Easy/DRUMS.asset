@@ -16,5 +16,5 @@ MonoBehaviour:
   clipName: {fileID: 8300000, guid: eb0215b949888fc438283f0fb8c7d965, type: 3}
   sprite: {fileID: 21300000, guid: e2f947a10ea72be42817bc754151f4cd, type: 3}
   clipAnimation: {fileID: 7400000, guid: 3c8120c3b985cf24280f061e6a228367, type: 2}
-  instrument: 1
+  instrument: 2
   difficulty: 0

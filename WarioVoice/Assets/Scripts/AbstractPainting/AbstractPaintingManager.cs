@@ -137,6 +137,9 @@ public class AbstractPaintingManager : CommandParser
     [SerializeField] private GameObject _initPanel;
     [SerializeField] private SetBottles _plallete;
     [SerializeField] private float _timeToDeactivateInitPanel;
+    [SerializeField] private float _inactivityTime = 90;
+    private float _inactivityTimeTracker;
+    [SerializeField] private GameObject _palleteCompleted;
 
 
     [Header("Win Parameters")]
@@ -172,7 +175,6 @@ public class AbstractPaintingManager : CommandParser
 
     private void Start()
     {
-   
 
         bool developermode = GameManager.GetInstance().DeveloperMode;
         foreach (var item in _developermodeObjects)
@@ -192,6 +194,8 @@ public class AbstractPaintingManager : CommandParser
         StartCoroutine(deactivateInitPanel(_timeToDeactivateInitPanel));
 
         _microphoneButton.GetComponent<Outline>().enabled = (_currentLevel == 0) ? true : false;
+
+        resetHelp();
 
     }
 
@@ -225,6 +229,7 @@ public class AbstractPaintingManager : CommandParser
                     if (_currentSplashColorSelected != null)
                     {
                         InstantiateNewSplash(mousePos2D);
+                        resetHelp();
                     }
                     else
                     {
@@ -234,6 +239,23 @@ public class AbstractPaintingManager : CommandParser
                 }
             }
         }
+
+
+        //TRACK INACTIVITY
+        if (_inactivityTimeTracker < _inactivityTime)
+        {
+            _inactivityTimeTracker += Time.deltaTime;
+        }
+        else
+        {
+            _palleteCompleted.GetComponent<DeactivateOutlineOnclick>().PlayAnimationOutine(true);
+        }
+    }
+
+    public void resetHelp()
+    {
+        _inactivityTimeTracker = 0;
+        _palleteCompleted.GetComponent<DeactivateOutlineOnclick>().PlayAnimationOutine(false);
     }
 
     private void setHelpButtons()
@@ -319,6 +341,8 @@ public class AbstractPaintingManager : CommandParser
                 _brush.GetComponent<Image>().color = _currentSplashColorSelected._brushColor;
                 colorFinded = true;
                 _guideText.text = PAINTONCANVAS;
+
+                resetHelp();
             }
         }
 

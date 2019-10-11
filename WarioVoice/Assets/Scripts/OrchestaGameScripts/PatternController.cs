@@ -43,7 +43,7 @@ public class PatternController : MonoBehaviour
     {
         difficulty = GameManager.GetInstance().getGameDifficulty();
 
-        difficulty = 4;
+        
 
         selectDifficulty();
 
@@ -59,6 +59,11 @@ public class PatternController : MonoBehaviour
             patronList.Add(patternCreator.patternCreatorCrystal(numberOfInstruments, patternDuration, instrumentsInScene));
         }
 
+        foreach (Instrument _instrument in patronList[0])
+        {
+            Debug.Log(_instrument.instrument.ToString());
+        }
+
         setInstruments();
         disableInstruments();
         disableColliders();
@@ -69,25 +74,25 @@ public class PatternController : MonoBehaviour
 
     private void setInstruments()
     {
-
+        bool copiedItem = false;
         contInstrumentCreator = 0;
-        for (int i = 0; i < numberOfInstruments; i++)
+
+        for (int i = 0; i < patternDuration; i++)
         {
             foreach (Transform child in instrumentsGameObject.transform)
             {
                 if (child.gameObject.GetComponent<InstrumentController>().numberspawn == contInstrumentCreator)
                 {
-                    if (!checkShowedInstruments(patronList[currentPatron][contInstrumentCreator]))
-                    {
-                        child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
-                        child.gameObject.GetComponent<InstrumentController>().setInstrument();
-                        child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
-                        showedInstruments.Add(patronList[currentPatron][contInstrumentCreator]);
-                    }
+                    Debug.Log(contInstrumentCreator);
+                    child.gameObject.GetComponent<InstrumentController>().instrumentObject = patronList[currentPatron][contInstrumentCreator];
+                    child.gameObject.GetComponent<InstrumentController>().setInstrument();
+                    child.gameObject.GetComponent<InstrumentController>().setMemberPlaying();
 
                 }
             }
+
             contInstrumentCreator++;
+
         }
         contInstrumentCreator = 0;
     }
@@ -106,24 +111,33 @@ public class PatternController : MonoBehaviour
 
     private void disableInstruments() //this method deactivates all unused instruments in the pattern
     {
-
+        contInstrumentCreator = 0;
         foreach (Transform child in instrumentsGameObject.transform)
         {
             child.gameObject.SetActive(false);
         }
 
-        for (int i = 0; i < numberOfInstruments; i++)
+
+        foreach (Transform child in instrumentsGameObject.transform)
         {
-            foreach (Transform child in instrumentsGameObject.transform)
+            if (child.gameObject.GetComponent<InstrumentController>().instrumentObject != null)
             {
-                if (child.gameObject.GetComponent<InstrumentController>().instrumentObject == patronList[currentPatron][contInstrumentCreator])
+                if (!checkShowedInstruments(child.gameObject.GetComponent<InstrumentController>().instrumentObject))
                 {
                     child.gameObject.SetActive(true);
+                    showedInstruments.Add(child.gameObject.GetComponent<InstrumentController>().instrumentObject);
+                }
+                else
+                {
+                    child.gameObject.GetComponent<InstrumentController>().instrumentObject = null;
+                    child.gameObject.GetComponent<InstrumentController>()._instrument = InstrumentController.ENUMINSTRUMENT.NULL;
                 }
             }
-            contInstrumentCreator++;
         }
-        contInstrumentCreator = 0;
+
+       
+
+            contInstrumentCreator = 0;
     }
 
     public void startGame()
@@ -159,24 +173,24 @@ public class PatternController : MonoBehaviour
                 patternDuration = 2;
                 break;
             case 2:
-                numberOfInstruments = 2;
+                numberOfInstruments = 3;
                 patternDuration = 3;
                 break;
             case 3:
                 numberOfInstruments = 3;
-                patternDuration = 3;
+                patternDuration = 4;
                 break;
             case 4:
-                numberOfInstruments = 3;
-                patternDuration = 4;
-                break;
-            case 5:
-                numberOfInstruments = 4;
-                patternDuration = 4;
-                break;
-            case 6:
                 numberOfInstruments = 4;
                 patternDuration = 5;
+                break;
+            case 5:
+                numberOfInstruments = 5;
+                patternDuration = 6;
+                break;
+            case 6:
+                numberOfInstruments = 6;
+                patternDuration = 6;
                 break;
             case 7:
                 numberOfInstruments = 5;
@@ -196,17 +210,17 @@ public class PatternController : MonoBehaviour
                 break;
         }
 
-        if (difficulty > 0 && difficulty < 5) //easy instruments (1-4)
+        if (difficulty > 0 && difficulty < 3) //easy instruments (1-4)
         {
             instrumentDifficulty = 1;
         }
 
-        if (difficulty > 4 && difficulty < 9) // easy and medium instruments (5-8)
+        if (difficulty > 2 && difficulty < 5) // easy and medium instruments (5-8)
         {
             instrumentDifficulty = 2;
         }
 
-        if (difficulty > 8) // medium and hard instruments (9-10)
+        if (difficulty > 4) // medium and hard instruments (9-10)
         {
             instrumentDifficulty = 3;
         }
@@ -238,7 +252,7 @@ public class PatternController : MonoBehaviour
                 for (int i = 0; i < numberOfInstruments; i++)
                 {
                     randomNumber = Random.Range(0, instrumentsList.Count);
-                    if (instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.EASY || instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.MEDIUM)
+                    if (instrumentsList[randomNumber].difficulty == InstrumentController.INSTRUMENTDIFFICULTY.MEDIUM)
                     {
                         instrumentsInScene.Add(instrumentsList[randomNumber]);
                         instrumentsList.RemoveAt(randomNumber);
@@ -279,11 +293,12 @@ public class PatternController : MonoBehaviour
         countPatrons = patronList[currentPatron].Length;
         showingPattern = true;
         checkPattern = patronList[currentPatron];
-        StartCoroutine(ShowInstrument(0.2f, patronList[currentPatron][contInstrument])); //Turns de current color in the pattern
+        StartCoroutine(ShowInstrument(0.2f, patronList[currentPatron][contInstrument])); //Turns de current instrument in the pattern
     }
 
     IEnumerator ShowInstrument(float delayTime, Instrument newInstrument)
     {
+
         yield return new WaitForSeconds(delayTime);
         float clipDuration = 0;
 
@@ -291,8 +306,10 @@ public class PatternController : MonoBehaviour
 
         foreach (Transform child in instrumentsGameObject.transform)
         {
+
             if (child.gameObject.GetComponent<InstrumentController>()._instrument == newInstrument.instrument)
             {
+
                 FindObjectOfType<ShowingPatternControl>().showPattern(newInstrument.instrument.ToString());
                 child.gameObject.GetComponent<InstrumentController>().changeInstrument(true);
                 child.gameObject.GetComponent<InstrumentController>().playSound();
@@ -317,7 +334,7 @@ public class PatternController : MonoBehaviour
 
             }
         }
-        Debug.Log(contInstrument);
+
         if (contInstrument < countPatrons)
         {
             showPatron();
@@ -345,7 +362,7 @@ public class PatternController : MonoBehaviour
     public void checkInstrument(InstrumentController.ENUMINSTRUMENT _enumInstrument, bool instrumentWord)
     {
         isPlaying = false;
-
+        float clipDuration = 0;
 
         if (instrumentWord)
         {
@@ -369,6 +386,7 @@ public class PatternController : MonoBehaviour
                             child.gameObject.GetComponent<InstrumentController>().playSound();
                             child.gameObject.GetComponent<InstrumentController>().playClip();
                             isPlaying = true;
+                            clipDuration = child.gameObject.GetComponent<InstrumentController>().getSoundTime();
                         }
                     }
                     patternPanel.turnOnNote(contChecking);
@@ -377,12 +395,7 @@ public class PatternController : MonoBehaviour
                     if (contChecking > patronList[currentPatron - 1].Length - 1)
                     {
                         //Muy bien, ganaste
-                        Debug.Log("Ganaste");
-                        confetti.SetActive(true);
-                        GameManager.GetInstance();
-                        fade.permanentFade();
-                        disableColliders();
-                        Invoke("nextLevel", 3.5f);
+                        Invoke("winGame", clipDuration);
                         //messageInScreen.GetComponent<ScreenMessage>().winScreen();
                     }
                 }
@@ -413,6 +426,16 @@ public class PatternController : MonoBehaviour
             feedback.playQuestion();
             SaveSystem.increaseMicrophonePressedTime(false);
         }
+    }
+
+    private void winGame()
+    {
+        Debug.Log("Ganaste");
+        confetti.SetActive(true);
+        GameManager.GetInstance();
+        fade.permanentFade();
+        disableColliders();
+        Invoke("nextLevel", 3.5f);
     }
 
     private void endGame()

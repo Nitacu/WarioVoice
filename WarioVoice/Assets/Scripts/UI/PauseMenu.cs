@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void  Resume()
+    public void Resume()
     {
         //activaranimacion
         Time.timeScale = 1;

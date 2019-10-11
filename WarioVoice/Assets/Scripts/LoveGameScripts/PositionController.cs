@@ -12,15 +12,34 @@ public class PositionController : MonoBehaviour
     [HideInInspector]
     public AnimationClip previousClip;
     public AnimationClip TaxiOut;
+    public GameObject trashCan;
+    public GameObject cake;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
     }
 
+    public void playIdleFriend()
+    {
+        _animator.Play(Animator.StringToHash("IdleFriend"), -1, 0f);
+    }
+
     public void playTaxiOut()
     {
         _animator.Play(Animator.StringToHash(TaxiOut.name), -1, 0f);
+    }
+
+    public void playTrashCanOut()
+    {
+        playIdleFriend();
+        trashCan.SetActive(true);
+    }
+
+    public void playCakeOut()
+    {
+        playIdleFriend();
+        cake.SetActive(true);
     }
 
     public void setPosition()
@@ -35,6 +54,15 @@ public class PositionController : MonoBehaviour
         if(previousClip != clips[random])
         {
             previousClip = clips[random];
+            if(clips[random].name == "TrashCan")
+            {
+                trashCan.SetActive(false);
+            }
+            if (clips[random].name == "Cake")
+            {
+                cake.SetActive(false);
+            }
+
             _animator.Play(Animator.StringToHash(clips[random].name), -1, 0f);
         }
         else

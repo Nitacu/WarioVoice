@@ -226,22 +226,14 @@ public class WordController : MonoBehaviour
                 if (currentSign < signsInGame.Count) //Checks cont of how many words has the player said, to know if he won or he should keep going.
                 {
                     women.GetComponent<WomanController>().playGoodSoundEffect();
-                    if (player.GetComponent<PositionController>().previousClip.name == "Taxi")
-                    {
-                        player.GetComponent<PositionController>().playTaxiOut();
-                        Invoke("nextSign", 1f);
-                    }
-                    else
-                    {
-                        nextSign();
-                    }
+                    chooseExitAnimation(false);
                     women.GetComponent<WomanController>().playLoveAnimation();
                     loveMetter.GetComponent<LoveMeterController>().updateLoveBar();
                 }
                 else
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
-                    
+                    chooseExitAnimation(true);
                     disableSpeechButton();
                     //finalScreen.SetActive(true);
                     confetti.Play();
@@ -257,6 +249,7 @@ public class WordController : MonoBehaviour
             {
                 contWTF++;
                 winning = false;
+                
                 women.GetComponent<WomanController>().playBadSoundEffect();
                 tempSign = signsInGame[currentSign];
                 signsInGame.RemoveAt(currentSign);
@@ -266,12 +259,13 @@ public class WordController : MonoBehaviour
                 wtfBar.GetComponent<WTFBarController>().updateWTFbar();
                 if (contWTF < 3)
                 {
-                    nextSign();
+                    chooseExitAnimation(false);
                 }
                 else
                 {
                     disableSpeechButton();
-                   signText.enabled = false;
+                    chooseExitAnimation(true);
+                    signText.enabled = false;
                 }
                 
                 //finalScreen.SetActive(true);
@@ -279,6 +273,34 @@ public class WordController : MonoBehaviour
                 //Debug.Log("Perdiste");
 
             }
+        }
+    }
+
+    private void chooseExitAnimation(bool endGame)
+    {
+        signText.text = " ";
+        if (player.GetComponent<PositionController>().previousClip.name == "Taxi")
+        {
+            player.GetComponent<PositionController>().playTaxiOut();
+            Invoke("nextSign", 1f);
+
+        }else if(player.GetComponent<PositionController>().previousClip.name == "TrashCan")
+        {
+            player.GetComponent<PositionController>().playTrashCanOut();
+            Invoke("nextSign", 1f);
+        }
+        else if (player.GetComponent<PositionController>().previousClip.name == "Cake")
+        {
+            player.GetComponent<PositionController>().playCakeOut();
+            Invoke("nextSign", 1f);
+        }else if (!endGame)
+        {
+            nextSign();
+        }
+
+        if (endGame)
+        {
+            player.GetComponent<PositionController>().playIdleFriend();
         }
     }
 
