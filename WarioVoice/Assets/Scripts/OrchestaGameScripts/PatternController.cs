@@ -43,7 +43,7 @@ public class PatternController : MonoBehaviour
     {
         difficulty = GameManager.GetInstance().getGameDifficulty();
 
-        difficulty = 4;
+        
 
         selectDifficulty();
 
