@@ -147,7 +147,7 @@ public class HeroProperties : MonoBehaviour
         }
 
         
-       _levelInformationPanel.showDialogs("¿Con cual objeto deberia atacar?" , true);
+       _levelInformationPanel.showDialogs("¿Con cuál objeto debería atacar?" , true);
 
     }
 
