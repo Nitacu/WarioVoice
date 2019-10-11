@@ -11,4 +11,17 @@ public class DeactivateOutlineOnclick : MonoBehaviour, IPointerDownHandler
     {
         gameObject.GetComponent<Outline>().enabled = false;
     }
+
+    public void PlayAnimationOutine(bool play)
+    {        
+
+        if (play)
+        {
+            gameObject.GetComponent<Outline>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<Outline>().enabled = false;
+        }
+    }
 }
