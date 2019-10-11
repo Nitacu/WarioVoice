@@ -29,6 +29,7 @@ public class InstrumentController : MonoBehaviour
 
     public enum ENUMINSTRUMENT
     {
+        NULL,
         VIOLIN,
         DRUMS,
         PIANO,
