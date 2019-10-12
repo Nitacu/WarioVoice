@@ -20,6 +20,7 @@ public class BetweenSceneControl : MonoBehaviour
 
     [SerializeField] private List<GameObject> _liveFlags = new List<GameObject>();
     [SerializeField] private Sprite _flagDown;
+    [SerializeField] private GameObject _confetti;
 
     [SerializeField] private float _timeToLaunchNextMinigame;
     private float _timeTracking;
@@ -101,7 +102,7 @@ public class BetweenSceneControl : MonoBehaviour
         disableFlags();
 
         _gameCompleted = GameManager.GetInstance().GameCompleted;
-        _gameLossed = GameManager.GetInstance().GameLossed;
+        _gameLossed = GameManager.GetInstance().GameLossed;        
 
         if (_gameLossed)
         {
@@ -121,6 +122,9 @@ public class BetweenSceneControl : MonoBehaviour
             _timeTextENG.text = COMPLETED_ESP;
             _timeTextESP.text = COMPLETED_ENG;
             _timeTracking = _timeToLaunchToMainMenu;
+            GameObject confetti = Instantiate(_confetti);
+            confetti.transform.position = Vector3.zero;
+            FindObjectOfType<BetweenSceneAudioControl>().playGreat();
         }
 
         if (GameManager.GetInstance().LiveLossed)

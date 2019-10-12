@@ -8,6 +8,7 @@ public class BetweenSceneAudioControl : MonoBehaviour
 
     [SerializeField] AudioClip _goClip;
     [SerializeField] AudioClip _gameOverClip;
+    [SerializeField] AudioClip _greatAudioClip;
 
     [SerializeField] float _normalVelocity = 1;
     [SerializeField] float _fasterVelocity = 2;
@@ -21,6 +22,23 @@ public class BetweenSceneAudioControl : MonoBehaviour
         {
             _source.volume = 0;
         }
+    }
+
+    public void playGreat()
+    {
+        if (_goLaunched)
+        {
+            return;
+        }
+
+        _source.Pause();
+        _source.clip = _greatAudioClip;
+        if (!_source.isPlaying)
+        {
+            _source.Play();
+        }
+        setToNormalVelocity();
+        _goLaunched = true;
     }
 
     public void playGO()
