@@ -117,22 +117,26 @@ public class WordController : MonoBehaviour
 
     private void setDifficulty() //Sets the number of signs that will be used in the minigame and what signs will be shown
     {
-        gameDifficulty = GameManager.GetInstance().getGameDifficulty();
+        gameDifficulty = GameManager.GetInstance().getGameDifficulty(); 
+        if(gameDifficulty > 6)
+        {
+            gameDifficulty = 6;
+        }
         numberOfSigns = gameDifficulty + 1;
         loveMetter.GetComponent<LoveMeterController>().numberOfSigns = numberOfSigns;
         
 
-        if (gameDifficulty > 0 && gameDifficulty < 4)
+        if (gameDifficulty > 0 && gameDifficulty < 3)
         {
             wordDifficulty = 1;
         }
 
-        if (gameDifficulty > 3 && gameDifficulty < 8)
+        if (gameDifficulty > 2 && gameDifficulty < 5)
         {
             wordDifficulty = 2;
         }
 
-        if (gameDifficulty > 7)
+        if (gameDifficulty > 4)
         {
             wordDifficulty = 3;
         }
@@ -168,7 +172,7 @@ public class WordController : MonoBehaviour
                 for (int i = 0; i < numberOfSigns; i++)
                 {
                     randomNumber = Random.Range(0, signs.Count);
-                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.EASY || signs[randomNumber].difficulty == WordList.wordDifficulty.MEDIUM)
+                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.MEDIUM)
                     {
                         signsInGame.Add(signs[randomNumber]);
                         signs.RemoveAt(randomNumber);
@@ -184,7 +188,7 @@ public class WordController : MonoBehaviour
                 for (int i = 0; i < numberOfSigns; i++)
                 {
                     randomNumber = Random.Range(0, signs.Count);
-                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.HARD || signs[randomNumber].difficulty == WordList.wordDifficulty.MEDIUM)
+                    if (signs[randomNumber].difficulty == WordList.wordDifficulty.HARD)
                     {
                         signsInGame.Add(signs[randomNumber]);
                         signs.RemoveAt(randomNumber);
@@ -282,18 +286,34 @@ public class WordController : MonoBehaviour
         if (player.GetComponent<PositionController>().previousClip.name == "Taxi")
         {
             player.GetComponent<PositionController>().playTaxiOut();
-            Invoke("nextSign", 1f);
+            if (!endGame)
+                Invoke("nextSign", 1f);
 
         }else if(player.GetComponent<PositionController>().previousClip.name == "TrashCan")
         {
             player.GetComponent<PositionController>().playTrashCanOut();
-            Invoke("nextSign", 1f);
+            if (!endGame)
+                Invoke("nextSign", 1f);
         }
         else if (player.GetComponent<PositionController>().previousClip.name == "Cake")
         {
             player.GetComponent<PositionController>().playCakeOut();
-            Invoke("nextSign", 1f);
-        }else if (!endGame)
+            if (!endGame)
+                Invoke("nextSign", 1f);
+        }
+        else if (player.GetComponent<PositionController>().previousClip.name == "DoorHouse")
+        {
+            player.GetComponent<PositionController>().playHouseOut();
+            if (!endGame)
+                Invoke("nextSign", 1f);
+        }
+        else if (player.GetComponent<PositionController>().previousClip.name == "Sewer")
+        {
+            player.GetComponent<PositionController>().playSewerOut();
+            if (!endGame)
+                Invoke("nextSign", 1f);
+        }
+        else if (!endGame)
         {
             nextSign();
         }

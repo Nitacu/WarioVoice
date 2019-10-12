@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 64f069b97f1142741956e60bb8911cec
+guid: d9c82810c68f4ab4d9dd610df2bfa1d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 435429667062075967
-    second: Friend_0
+      213: 3109283150546598539
+    second: Calle _0
   - first:
-      213: 1858837324337748716
-    second: Friend_1
+      213: 4421856204557823529
+    second: Calle _1
   - first:
-      213: 6507964426018686383
-    second: Friend_2
+      213: -233253278649797859
+    second: Calle _2
   - first:
-      213: 6644001207997118436
-    second: Friend_4
-  - first:
-      213: 7067115627397326658
-    second: Friend_5
+      213: -1189962189261041156
+    second: Calle _3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -113,85 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Friend_0
+      name: Calle _0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 188
-        width: 183
-        height: 239
+        x: 9
+        y: 479
+        width: 1482
+        height: 130
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53271111aebc6424ab1babb087447a13
-      internalID: 435429667062075967
+      spriteID: 446ae4613f615cb49bb5c2841dc1c886
+      internalID: 3109283150546598539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Friend_1
+      name: Calle _1
       rect:
         serializedVersion: 2
-        x: 233
-        y: 322
-        width: 183
-        height: 105
+        x: 9
+        y: 319
+        width: 253
+        height: 73
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b11b162788d891d42a2639a89bd71e29
-      internalID: 1858837324337748716
+      spriteID: 06afde41145e6f54487a274340fb1afe
+      internalID: 4421856204557823529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Friend_2
+      name: Calle _2
       rect:
         serializedVersion: 2
-        x: 232
-        y: 117
-        width: 183
-        height: 203
+        x: 452
+        y: 310
+        width: 254
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79a23b00bc525f24b8c97949e42fac37
-      internalID: 6507964426018686383
+      spriteID: a75515954b358f548b3f9fd587b3ab03
+      internalID: -233253278649797859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Friend_4
+      name: Calle _3
       rect:
         serializedVersion: 2
-        x: 40
-        y: 3
-        width: 35
-        height: 108
+        x: 9
+        y: 11
+        width: 1482
+        height: 134
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6bef02fba0d1d942b8bfc905d999cac
-      internalID: 6644001207997118436
+      spriteID: e4ba8dfbb592b044b8cba59889572d62
+      internalID: -1189962189261041156
       vertices: []
       indices: 
       edges: []

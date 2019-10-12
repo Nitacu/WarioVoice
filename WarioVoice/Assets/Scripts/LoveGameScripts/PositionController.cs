@@ -14,6 +14,8 @@ public class PositionController : MonoBehaviour
     public AnimationClip TaxiOut;
     public GameObject trashCan;
     public GameObject cake;
+    public GameObject blueHouse;
+    public GameObject street;
 
     private void Start()
     {
@@ -42,6 +44,18 @@ public class PositionController : MonoBehaviour
         cake.SetActive(true);
     }
 
+    public void playSewerOut()
+    {
+        playIdleFriend();
+        street.SetActive(true);
+    }
+
+    public void playHouseOut()
+    {
+        playIdleFriend();
+        blueHouse.SetActive(true);
+    }
+
     public void setPosition()
     {
         random = Random.Range(0, positionList.Count);
@@ -54,20 +68,33 @@ public class PositionController : MonoBehaviour
         if(previousClip != clips[random])
         {
             previousClip = clips[random];
-            if(clips[random].name == "TrashCan")
-            {
-                trashCan.SetActive(false);
-            }
-            if (clips[random].name == "Cake")
-            {
-                cake.SetActive(false);
-            }
+            clipOptions();
 
             _animator.Play(Animator.StringToHash(clips[random].name), -1, 0f);
         }
         else
         {
             playAnimation();
+        }
+    }
+
+    private void clipOptions()
+    {
+        if (clips[random].name == "TrashCan")
+        {
+            trashCan.SetActive(false);
+        }
+        if (clips[random].name == "Cake")
+        {
+            cake.SetActive(false);
+        }
+        if (clips[random].name == "DoorHouse")
+        {
+            blueHouse.SetActive(false);
+        }
+        if (clips[random].name == "Sewer")
+        {
+            street.SetActive(false);
         }
     }
 

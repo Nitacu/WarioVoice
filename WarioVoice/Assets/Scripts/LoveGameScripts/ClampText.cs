@@ -10,12 +10,14 @@ public class ClampText : MonoBehaviour
     [Header("Para cualquier objeto")]
     [SerializeField] private GameObject _UIGameObject;
 
+    public float offsetY = 0;
+
     void Update()
     {
         if (nameLable)
         {
             Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
-            nameLable.transform.position = namePos;
+            nameLable.transform.position = new Vector3(namePos.x,namePos.y + offsetY, namePos.z);
         }
         else if (_UIGameObject)
         {
