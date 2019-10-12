@@ -343,7 +343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -18.999985}
+  m_AnchoredPosition: {x: -41.5, y: -18.999985}
   m_SizeDelta: {x: 50.69, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &73820744
@@ -2336,7 +2336,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 1dff37995ece6fc4bbb2c9c3aaf11ee3, type: 3}
-  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0.5647059}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7073,7 +7073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.042124998, y: 0.040611114}
   m_AnchorMax: {x: 0.84287506, y: 0.16549997}
-  m_AnchoredPosition: {x: 0, y: 0.07998657}
+  m_AnchoredPosition: {x: 0, y: 0.08001709}
   m_SizeDelta: {x: -0.9000244, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402598488
@@ -9488,17 +9488,17 @@ PrefabInstance:
     - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.60001373
+      value: -25.099976
       objectReference: {fileID: 0}
     - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
@@ -9508,6 +9508,11 @@ PrefabInstance:
     - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: m_Pivot.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9891,7 +9896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -174, y: -35}
+  m_AnchoredPosition: {x: -259, y: -35}
   m_SizeDelta: {x: 317, y: 35.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004211169

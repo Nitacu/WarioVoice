@@ -154,11 +154,11 @@ RectTransform:
   m_Father: {fileID: 1047828111}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.24845257, y: 0.57268983}
-  m_AnchorMax: {x: 0.3761455, y: 0.67006713}
-  m_AnchoredPosition: {x: 698.5, y: 184.4}
-  m_SizeDelta: {x: -96.2, y: -10.4}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -119, y: -18.800003}
+  m_SizeDelta: {x: 40.799988, y: 47.600006}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &187295490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,11 +828,11 @@ RectTransform:
   m_Father: {fileID: 1047828111}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.60375804, y: 0.5726899}
-  m_AnchorMax: {x: 0.731451, y: 0.67006713}
-  m_AnchoredPosition: {x: 352.4299, y: 184.40001}
-  m_SizeDelta: {x: -96.76, y: -10.4}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -33.380005, y: -18.800003}
+  m_SizeDelta: {x: 40.23999, y: 47.600006}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &958332769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,16 +2501,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _musicButton
-      value: 
-      objectReference: {fileID: 187295488}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _sfxButton
-      value: 
-      objectReference: {fileID: 958332767}
     - target: {fileID: 102756524972975996, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2571,6 +2561,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _musicButton
+      value: 
+      objectReference: {fileID: 187295488}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _sfxButton
+      value: 
+      objectReference: {fileID: 958332767}
     - target: {fileID: 102756523889832683, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_IsActive
