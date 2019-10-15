@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: dc85d36ca25fde646bdcf8f1b58ee5dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 248002961453075493
+    second: tito2_Idle1
+  - first:
+      213: -2193565106178422961
+    second: tito2_Idle2
+  - first:
+      213: 1407203125119921542
+    second: tito2_Idle3
+  - first:
+      213: 1979416508061048561
+    second: tito2_Idle4
+  - first:
+      213: -894831051747872692
+    second: Tito el koalito 2_4
+  - first:
+      213: 1158091205088564771
+    second: Tito el koalito 2_5
+  - first:
+      213: -2757445129446969422
+    second: Tito el koalito 2_6
+  - first:
+      213: 6909202909273844281
+    second: Tito el koalito 2_7
+  - first:
+      213: -7454432593585527195
+    second: titio2_down1
+  - first:
+      213: -1500453194628850663
+    second: titio2_down2
+  - first:
+      213: 291206008305585987
+    second: titio2_down3
+  - first:
+      213: 2626850356733493913
+    second: titio2_down4
+  - first:
+      213: 2468089748798469980
+    second: titio2_down5
+  - first:
+      213: -1121196682387634038
+    second: titio2_down6
+  - first:
+      213: 5845476424287560871
+    second: Tito el koalito 2_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tito2_Idle1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 877
+        width: 251
+        height: 702
+      alignment: 9
+      pivot: {x: 0.53792274, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b29db43f2fbff146a3b6191e573adab
+      internalID: 248002961453075493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tito2_Idle2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 874
+        width: 251
+        height: 702
+      alignment: 9
+      pivot: {x: 0.503666, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee7b06a9d673d84cabeca6a4445e2a2
+      internalID: -2193565106178422961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tito2_Idle3
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 874
+        width: 251
+        height: 702
+      alignment: 9
+      pivot: {x: 0.5108329, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95041a3ed7537fc46953230c131364ba
+      internalID: 1407203125119921542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tito2_Idle4
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 874
+        width: 251
+        height: 702
+      alignment: 9
+      pivot: {x: 0.48645118, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fb677014bbaa244b7b69d489e9ce5b
+      internalID: 1979416508061048561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tito el koalito 2_4
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1105
+        width: 187
+        height: 207
+      alignment: 9
+      pivot: {x: 0.822203, y: 0.50095826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e788c8e834be4b0458b6f538aa5ca682
+      internalID: -894831051747872692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tito el koalito 2_5
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 1086
+        width: 177
+        height: 227
+      alignment: 9
+      pivot: {x: 0.794355, y: 0.5059126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de1e2ea67d80eb4ea60638924b802de
+      internalID: 1158091205088564771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tito el koalito 2_6
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 1086
+        width: 187
+        height: 219
+      alignment: 9
+      pivot: {x: 0.8225424, y: 0.529313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70271d138d682541a0bd3ddb3573d3c
+      internalID: -2757445129446969422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tito el koalito 2_7
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1087
+        width: 172
+        height: 229
+      alignment: 9
+      pivot: {x: 0.8179719, y: 0.5117342}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbe8f6c53e5dcc4a9b89655c0089438
+      internalID: 6909202909273844281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titio2_down1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 37
+        width: 251
+        height: 701
+      alignment: 9
+      pivot: {x: 0.53926593, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794f9d08015447443b284779ad1f66e7
+      internalID: -7454432593585527195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titio2_down2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 37
+        width: 250
+        height: 701
+      alignment: 9
+      pivot: {x: 0.53939867, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8057b23230dda41921fae4bef2a914
+      internalID: -1500453194628850663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titio2_down3
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 37
+        width: 245
+        height: 701
+      alignment: 9
+      pivot: {x: 0.5330975, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b3180f2578bdc46925c473c7fdcd66
+      internalID: 291206008305585987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titio2_down4
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 37
+        width: 241
+        height: 701
+      alignment: 9
+      pivot: {x: 0.5242259, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067fbe40dcaf6a545a0f89591e027bb2
+      internalID: 2626850356733493913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titio2_down5
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 36
+        width: 251
+        height: 701
+      alignment: 9
+      pivot: {x: 0.54171497, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203f480c01e73e54186209eb2121a8e6
+      internalID: 2468089748798469980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: titio2_down6
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 37
+        width: 252
+        height: 701
+      alignment: 9
+      pivot: {x: 0.53166807, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640ad6e8a0e7d92428bdfc463510e511
+      internalID: -1121196682387634038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tito el koalito 2_14
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 262
+        width: 277
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4fedf131fd19c4c9a88c1c99141ffc
+      internalID: 5845476424287560871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -593,7 +593,7 @@ public class AbstractPaintingManager : CommandParser
 
         }
 
-        Destroy(_microphoneButton);
+        _microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
 
         FindObjectOfType<PaintingSoundManager>().playGoodJob(playerWin);
 
