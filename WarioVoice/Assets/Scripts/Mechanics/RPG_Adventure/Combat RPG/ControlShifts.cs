@@ -93,7 +93,5 @@ public class ControlShifts : MonoBehaviour
     {
         numberCharacterLive++;
         _heroes.Remove(hero);
-
-
     }
 }

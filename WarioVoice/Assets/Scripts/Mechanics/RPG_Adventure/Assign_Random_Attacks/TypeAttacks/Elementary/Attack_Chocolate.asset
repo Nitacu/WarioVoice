@@ -20,5 +20,5 @@ MonoBehaviour:
   _cure: 1
   _sprite: {fileID: -8845260698105690896, guid: dada751d7542ea94cbfe9fe4eb50f9aa,
     type: 3}
-  _sentenceToCompleteAttack: "Tu y tu compa\xF1ero beben un ... chocolate caliente"
+  _sentenceToCompleteAttack: "T\xFA y tu compa\xF1ero beben un ... Chocolate caliente"
   _sentencesToNotUseAttack: 

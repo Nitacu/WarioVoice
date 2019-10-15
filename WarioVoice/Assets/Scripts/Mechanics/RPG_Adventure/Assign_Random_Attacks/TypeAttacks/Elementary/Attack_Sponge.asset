@@ -20,4 +20,4 @@ MonoBehaviour:
   _cure: 0
   _sprite: {fileID: 21300000, guid: ea1a6a69297e2da48ad75de885d59781, type: 3}
   _sentenceToCompleteAttack: 'Absorbes a tu enemigo con tu esponja '
-  _sentencesToNotUseAttack: No se por que pense que esto funcionaria
+  _sentencesToNotUseAttack: "No s\xE9 por que pens\xE9 que esto funcionaria"

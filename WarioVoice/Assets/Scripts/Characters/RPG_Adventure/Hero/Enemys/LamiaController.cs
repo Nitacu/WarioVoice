@@ -42,8 +42,10 @@ public class LamiaController : MonoBehaviour
         {
             Destroy(FindObjectOfType<speechContoller>().gameObject);
             GetComponent<Animator>().enabled = false;
+            FindObjectOfType<ControlShifts>().GetComponent<AudioSource>().Play();
+            Camera.main.GetComponent<AudioSource>().enabled = false;
             GameManager.GetInstance().increaseDifficulty();
-            Instantiate(_visualDamage, transform);
+            Instantiate(_visualDamage, transform).GetComponent<AudioSource>().enabled = false;
             Instantiate(_cofetti);
             Invoke("loadMenu", 4f);
             return false;
