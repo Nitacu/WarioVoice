@@ -19,5 +19,5 @@ MonoBehaviour:
   _damage: 1
   _cure: 0
   _sprite: {fileID: 6671531605914933198, guid: dada751d7542ea94cbfe9fe4eb50f9aa, type: 3}
-  _sentenceToCompleteAttack: "Ahogaste \xE9l fue con la arena"
+  _sentenceToCompleteAttack: Apagaste el fuego con la arena
   _sentencesToNotUseAttack: Lanzaste arena pero el viento te la regreso

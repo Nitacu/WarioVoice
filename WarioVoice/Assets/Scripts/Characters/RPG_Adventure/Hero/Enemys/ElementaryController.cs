@@ -21,10 +21,19 @@ public class ElementaryController : LamiaController
         return null;
     }
 
+    //lo llama la animacion
     public void createdExplotion()
     {
         Instantiate(_visualDamageOthers, transform);
         GetComponent<SpriteRenderer>().enabled = false;
+        Camera.main.GetComponent<AudioSource>().enabled = false;
+        FindObjectOfType<ControlShifts>().GetComponent<AudioSource>().Play();
+        Invoke("finishDie", 0.7f);
+    }
+
+    public void finishDie()
+    {
+        Instantiate(_cofetti);
     }
 
     public override bool lostLife(float damage)
@@ -42,8 +51,7 @@ public class ElementaryController : LamiaController
             Destroy(FindObjectOfType<speechContoller>().gameObject);
             GetComponent<Animator>().Play(Animator.StringToHash("Die"));
             GameManager.GetInstance().increaseDifficulty();
-            Instantiate(_cofetti);
-            Invoke("loadMenu", 4f);
+            Invoke("loadMenu", 5f);
             return false;
         }
         else

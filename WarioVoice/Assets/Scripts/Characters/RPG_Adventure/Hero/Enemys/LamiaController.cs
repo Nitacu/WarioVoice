@@ -42,12 +42,10 @@ public class LamiaController : MonoBehaviour
         {
             Destroy(FindObjectOfType<speechContoller>().gameObject);
             GetComponent<Animator>().enabled = false;
-            FindObjectOfType<ControlShifts>().GetComponent<AudioSource>().Play();
-            Camera.main.GetComponent<AudioSource>().enabled = false;
             GameManager.GetInstance().increaseDifficulty();
             Instantiate(_visualDamage, transform).GetComponent<AudioSource>().enabled = false;
-            Instantiate(_cofetti);
-            Invoke("loadMenu", 4f);
+            Invoke("destroyEye", 2);
+            Invoke("loadMenu", 5f);
             return false;
         }
         else
@@ -68,9 +66,21 @@ public class LamiaController : MonoBehaviour
 
     public void destroyEye()
     {
-        GetComponent<Animator>().SetBool("Damage", false);
-        Destroy(_listEyes[0]);
-        _listEyes.RemoveAt(0);
+        if (_listEyes.Count > 0)
+        {
+            GetComponent<Animator>().SetBool("Damage", false);
+            _listEyes[0].SetActive(false);
+            _listEyes.RemoveAt(0);
+        }
+        else
+        {
+            Instantiate(_cofetti);
+            Camera.main.GetComponent<AudioSource>().enabled = false;
+            FindObjectOfType<ControlShifts>().GetComponent<AudioSource>().Play();
+            GetComponentInChildren<ParticleSystem>().Stop();
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+
     }
 
     public virtual void winEnemy()
@@ -90,6 +100,7 @@ public class LamiaController : MonoBehaviour
 
     public void loadMenu()
     {
+        Debug.Log("funciono ");
         GameManager.GetInstance().finisBossBattle(true);
     }
 

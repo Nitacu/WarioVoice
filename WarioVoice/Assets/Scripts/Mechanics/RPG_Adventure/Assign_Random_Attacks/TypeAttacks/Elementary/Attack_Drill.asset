@@ -20,4 +20,4 @@ MonoBehaviour:
   _cure: 0
   _sprite: {fileID: 21300000, guid: c6f42700baf576e4dba3412b467a61ed, type: 3}
   _sentenceToCompleteAttack: No hay muro que un buen taladro no pueda romper
-  _sentencesToNotUseAttack: "Creo que seria mejor usarlo en un s\xF3lido"
+  _sentencesToNotUseAttack: "Creo que ser\xEDa mejor usarlo en un s\xF3lido"
