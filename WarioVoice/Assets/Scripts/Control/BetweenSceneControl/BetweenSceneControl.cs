@@ -9,8 +9,8 @@ public class BetweenSceneControl : MonoBehaviour
     private const string NEXTMINIGAMEIN_ESP = "Siguiente juego";
     private const string BOSSBATTLE_ENG = "Boss Battle";
     private const string BOSSBATLE_ESP = "Jefe";
-    private const string LOSE_ENG = "You lost";
-    private const string LOSE_ESP = "Perdiste";
+    private const string LOSE_ENG = "Game over";
+    private const string LOSE_ESP = "Juego terminado";
     private const string COMPLETED_ESP = "Thanks for playing Spikinglish Demo!";
     private const string COMPLETED_ENG = "Gracias por jugar el demo de Spikinglish!";
 
@@ -33,6 +33,16 @@ public class BetweenSceneControl : MonoBehaviour
     [SerializeField] private GameObject _continuePanel;
     [SerializeField] private int _timeToLaunchToMainMenu;
     [SerializeField] private TextMeshProUGUI _timerDownText;
+
+    [Header("AudioClips")]
+    [SerializeField] private AudioSource _sourceVoice;
+    [SerializeField] private AudioClip _gameOverClip;
+    [SerializeField] private AudioClip _thanksForPlayingClip;
+
+    [Header("AudioClipsEffects")]
+    [SerializeField] private AudioClip _gameOverEffect;
+    [SerializeField] private AudioClip _gameCompleteEffect;
+
 
     private bool _gameCompleted;
     private bool _gameLossed;
@@ -90,14 +100,15 @@ public class BetweenSceneControl : MonoBehaviour
         }
         else if (GameManager.GetInstance().GameLossed)
         {            
-            _timerDownText.text = timeToshow.ToString();
-           
-            FindObjectOfType<BetweenSceneAudioControl>().playGameOver();
+            _timerDownText.text = timeToshow.ToString();                      
+            
         }
     }
 
     private void Start()
     {
+        _timerNormalText.text = "";
+
         _timeTracking = _timeToLaunchNextMinigame;
         disableFlags();
 
@@ -108,6 +119,9 @@ public class BetweenSceneControl : MonoBehaviour
         {
             _timeTextENG.text = LOSE_ENG;
             _timeTextESP.text = LOSE_ESP;
+
+            FindObjectOfType<BetweenSceneAudioControl>().playGameOver();
+            StartCoroutine(playClip(_sourceVoice, _gameOverClip, _gameOverEffect.length));
 
             foreach (var item in _liveFlags)
             {
@@ -125,6 +139,8 @@ public class BetweenSceneControl : MonoBehaviour
             GameObject confetti = Instantiate(_confetti);
             confetti.transform.position = Vector3.zero;
             FindObjectOfType<BetweenSceneAudioControl>().playGreat();
+            StartCoroutine(playClip(_sourceVoice, _thanksForPlayingClip, _gameCompleteEffect.length));
+            
         }
 
         if (GameManager.GetInstance().LiveLossed)
@@ -169,5 +185,14 @@ public class BetweenSceneControl : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
         }
+    }
+
+    IEnumerator playClip(AudioSource source, AudioClip clip, float waitingTime)
+    {
+        yield return new WaitForSeconds(waitingTime);
+
+        source.Pause();
+        source.clip = clip;
+        source.Play();
     }
 }

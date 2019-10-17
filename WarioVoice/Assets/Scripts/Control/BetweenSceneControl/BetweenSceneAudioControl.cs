@@ -40,7 +40,7 @@ public class BetweenSceneAudioControl : MonoBehaviour
         setToNormalVelocity();
         _goLaunched = true;
     }
-
+    
     public void playGO()
     {
         if (_goLaunched)

@@ -26,7 +26,9 @@ public class EspikinglishTutorialManager : CommandParser
     [SerializeField] private GameObject _confetti;
 
     [SerializeField] private List<GameObject> _developerModeObjects = new List<GameObject>();
-    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _sourceEffect;
+    [SerializeField] private AudioSource _sourceVoice;
+
     [Header("UI Vars")]
     [SerializeField] private TextMeshProUGUI _textGuideEng;
     [SerializeField] private TextMeshProUGUI _textGuideEsp;
@@ -40,6 +42,13 @@ public class EspikinglishTutorialManager : CommandParser
     [Header("Timers")]
     [SerializeField] private float welcomteTime;
     [SerializeField] private float _startGameTime;
+
+    [Header("AudioClips")]
+    [SerializeField] AudioClip _welcomeClip;
+    [SerializeField] AudioClip _sayGoClip;
+    [SerializeField] AudioClip greatClip;
+    [SerializeField] AudioClip _greatLetsStart;
+
 
 
     public override void parseCommand(string command)
@@ -71,9 +80,9 @@ public class EspikinglishTutorialManager : CommandParser
             confetti.transform.position = Vector3.zero;
 
             _textGuideEsp.text = GOODJOB_ESP;
+            //playClip(_sourceVoice, _greatLetsStart);
 
-            _source.Play();
-
+            playClip(_sourceEffect ,greatClip);
             StartCoroutine(startGame());
             StartCoroutine(deactivateSpeechButton());
         }
@@ -81,6 +90,13 @@ public class EspikinglishTutorialManager : CommandParser
         {
             hidePointer(false);
         }
+    }
+
+    public void playClip(AudioSource source, AudioClip clip)
+    {
+        source.Pause();
+        source.clip = clip;
+        source.Play();
     }
 
     private void OnEnable()
@@ -96,6 +112,7 @@ public class EspikinglishTutorialManager : CommandParser
         _startButton.SetActive(false);
         _textGuideEng.text = WELCOME_ENG;
         _textGuideEsp.text = WELCOME_ESP;
+        playClip( _sourceVoice, _welcomeClip);
         _speechButton.GetComponent<SetActiveSpeechButton>().setButton(false);
         StartCoroutine(nextStep(welcomteTime));
     }
@@ -116,6 +133,7 @@ public class EspikinglishTutorialManager : CommandParser
         _pointer.SetActive(true);
         _textGuideEng.text = TEST_ENG;
         _textGuideEsp.text = TEST_ESP;
+        playClip(_sourceVoice,_sayGoClip);
         _speechButton.GetComponent<SetActiveSpeechButton>().setButton(true);
     }
 

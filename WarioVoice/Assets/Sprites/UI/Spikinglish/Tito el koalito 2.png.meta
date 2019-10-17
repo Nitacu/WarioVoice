@@ -230,12 +230,12 @@ TextureImporter:
       name: Tito el koalito 2_4
       rect:
         serializedVersion: 2
-        x: 1282
-        y: 1105
+        x: 1283
+        y: 1091
         width: 187
-        height: 207
+        height: 229
       alignment: 9
-      pivot: {x: 0.822203, y: 0.50095826}
+      pivot: {x: 0.7143241, y: 0.27617422}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,12 +251,12 @@ TextureImporter:
       name: Tito el koalito 2_5
       rect:
         serializedVersion: 2
-        x: 1558
-        y: 1086
-        width: 177
-        height: 227
+        x: 1546
+        y: 1084
+        width: 187
+        height: 229
       alignment: 9
-      pivot: {x: 0.794355, y: 0.5059126}
+      pivot: {x: 0.72019005, y: 0.26368734}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,11 +273,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1811
-        y: 1086
+        y: 1084
         width: 187
-        height: 219
+        height: 229
       alignment: 9
-      pivot: {x: 0.8225424, y: 0.529313}
+      pivot: {x: 0.71713763, y: 0.2600892}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,12 +293,12 @@ TextureImporter:
       name: Tito el koalito 2_7
       rect:
         serializedVersion: 2
-        x: 2088
+        x: 2075
         y: 1087
-        width: 172
+        width: 187
         height: 229
       alignment: 9
-      pivot: {x: 0.8179719, y: 0.5117342}
+      pivot: {x: 0.47008428, y: 0.38910845}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
