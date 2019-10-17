@@ -27,6 +27,7 @@ public class WordController : MonoBehaviour
     public GameObject finalScreen;
     public ParticleSystem confetti;
     public GameObject speechButton;
+    public AudioLoveGameController audioController;
     #endregion
 
     private bool winning = false;
@@ -238,12 +239,13 @@ public class WordController : MonoBehaviour
                 {
                     Debug.Log("Ganaste, quedó bien enamorada");
                     chooseExitAnimation(true);
+                    audioController.playVictorySound();
                     disableSpeechButton();
                     //finalScreen.SetActive(true);
                     confetti.Play();
                     loveMetter.GetComponent<LoveMeterController>().updateLoveBar();
                     women.GetComponent<WomanController>().playLoveAnimation();
-                    Invoke("nextLevel", 4f);
+                    Invoke("nextLevel", audioController.getVictorySoundTime()+0.4f);
                     winning = true;
                     //FindObjectOfType<FinalScreenController>().winScreenImage();
                    
@@ -253,8 +255,8 @@ public class WordController : MonoBehaviour
             {
                 contWTF++;
                 winning = false;
+
                 
-                women.GetComponent<WomanController>().playBadSoundEffect();
                 tempSign = signsInGame[currentSign];
                 signsInGame.RemoveAt(currentSign);
                 signsInGame.Add(tempSign);
@@ -264,11 +266,13 @@ public class WordController : MonoBehaviour
                 if (contWTF < 3)
                 {
                     chooseExitAnimation(false);
+                    women.GetComponent<WomanController>().playBadSoundEffect();
                 }
                 else
                 {
                     disableSpeechButton();
                     chooseExitAnimation(true);
+                    Invoke("playExitAudio", women.GetComponent<WomanController>().whatSFX.length);                   
                     signText.enabled = false;
                 }
                 
@@ -278,6 +282,11 @@ public class WordController : MonoBehaviour
 
             }
         }
+    }
+
+    private void playExitAudio()
+    {
+        audioController.playLostSound();
     }
 
     private void chooseExitAnimation(bool endGame)
