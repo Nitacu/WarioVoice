@@ -25,6 +25,7 @@ TagManager:
   - PaintCanvas
   - ReferenceSplash
   - ROCKET
+  - Music
   layers:
   - Default
   - TransparentFX
