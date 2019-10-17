@@ -16,7 +16,7 @@ public class GuideControlWorm : MonoBehaviour
     private const string EXAMPLE_DEGREES = "Ejemplo: 20 Degrees";
     private const string EXAMPLE_PERCENT = "Ejemplo: 90 Percent";
     private const string EXAMPLE_REMINDER = "Ejemplo 20 Desgress ó 90 Percent.";
-    private const string WARNING_FOR_STAND_STILL = "Comandante. Recuerde indicar ángulo y potencia.";
+    private const string WARNING_FOR_STAND_STILL = "Comandante. Recuerde indicar grados y potencia.";
 
     private void Start()
     {

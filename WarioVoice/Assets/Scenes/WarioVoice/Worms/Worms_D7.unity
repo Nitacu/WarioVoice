@@ -1135,9 +1135,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5694626403513259746, guid: 024bd897da2f28445bb0536f02c51d4a,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: e992ae9a96997c94595e5a7110d9415c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aafc07175484f0d41b6df86b64ae07b6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.022
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3103,6 +3103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameLable: {fileID: 0}
   _UIGameObject: {fileID: 1644186751}
+  offsetY: 0
 --- !u!114 &1523226137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3117,6 +3118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameLable: {fileID: 0}
   _UIGameObject: {fileID: 346220351}
+  offsetY: 0
 --- !u!212 &1523226138
 SpriteRenderer:
   m_ObjectHideFlags: 0

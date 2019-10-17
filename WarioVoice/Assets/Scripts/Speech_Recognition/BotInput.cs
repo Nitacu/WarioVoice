@@ -89,8 +89,11 @@ public class BotInput : MonoBehaviour
 
             // Response BotAIml in the Chat window
             if(_commandParser!=null){
-                _commandParser.parseCommand(answer);
-                Debug.Log("command send to parser");
+                if (!FindObjectOfType<ConvertAngles>())
+                {
+                    _commandParser.parseCommand(answer);
+                    Debug.Log("command send to parser");
+                }
             }
          
             robotOutput.text = answer;
