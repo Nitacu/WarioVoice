@@ -14,12 +14,15 @@ public class BetweenSceneControl : MonoBehaviour
     private const string COMPLETED_ESP = "Thanks for playing Spikinglish Demo!";
     private const string COMPLETED_ENG = "Gracias por jugar el demo de Spikinglish!";
 
-    private const string CLIPFLAGDOWNNAME = "FlagDown";
+    private const string CLIP_lIVE_IDLE = "IdleLive";
+    private const string CLIP_lIVE_FALLING = "LiveFalling";
+    private const string CLIP_LIVE_DOWN = "LiveDown";
 
 
 
-    [SerializeField] private List<GameObject> _liveFlags = new List<GameObject>();
-    [SerializeField] private Sprite _flagDown;
+    [SerializeField] private List<GameObject> _lives = new List<GameObject>();
+    [SerializeField] private Sprite liveDOWN;
+    [SerializeField] private AnimationClip fallingClip;
     [SerializeField] private GameObject _confetti;
 
     [SerializeField] private float _timeToLaunchNextMinigame;
@@ -99,9 +102,9 @@ public class BetweenSceneControl : MonoBehaviour
 
         }
         else if (GameManager.GetInstance().GameLossed)
-        {            
-            _timerDownText.text = timeToshow.ToString();                      
-            
+        {
+            _timerDownText.text = timeToshow.ToString();
+
         }
     }
 
@@ -110,10 +113,11 @@ public class BetweenSceneControl : MonoBehaviour
         _timerNormalText.text = "";
 
         _timeTracking = _timeToLaunchNextMinigame;
-        disableFlags();
+
+        //disableFlags();
 
         _gameCompleted = GameManager.GetInstance().GameCompleted;
-        _gameLossed = GameManager.GetInstance().GameLossed;        
+        _gameLossed = GameManager.GetInstance().GameLossed;
 
         if (_gameLossed)
         {
@@ -123,7 +127,7 @@ public class BetweenSceneControl : MonoBehaviour
             FindObjectOfType<BetweenSceneAudioControl>().playGameOver();
             StartCoroutine(playClip(_sourceVoice, _gameOverClip, _gameOverEffect.length));
 
-            foreach (var item in _liveFlags)
+            foreach (var item in _lives)
             {
                 item.SetActive(false);
             }
@@ -140,19 +144,61 @@ public class BetweenSceneControl : MonoBehaviour
             confetti.transform.position = Vector3.zero;
             FindObjectOfType<BetweenSceneAudioControl>().playGreat();
             StartCoroutine(playClip(_sourceVoice, _thanksForPlayingClip, _gameCompleteEffect.length));
-            
+
         }
 
+        int _currentLives = GameManager.GetInstance().Lives;
+
+        for (int i = 0; i < _lives.Count; i++)
+        {
+            if (i >= _currentLives)
+            {
+
+                if (i == _currentLives)
+                {
+                    if (GameManager.GetInstance().LiveLossed)
+                    {
+                        _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_FALLING));
+                    }
+                    else
+                    {
+                        _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
+                    }
+                }
+                else
+                {
+                    _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
+                }
+
+
+            }
+            else
+            {
+                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_IDLE));
+
+            }
+        }
+        /*
         if (GameManager.GetInstance().LiveLossed)
         {
             int _currentLives = GameManager.GetInstance().Lives + 1;
 
             for (int i = 0; i < _currentLives; i++)
             {
-                _liveFlags[i].GetComponent<Animator>().enabled = true;
+                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_IDLE));
+                _lives[i].GetComponent<Animator>().enabled = true;
             }
 
-            _liveFlags[_currentLives - 1].GetComponent<Animator>().Play(Animator.StringToHash(CLIPFLAGDOWNNAME));
+            _lives[_currentLives - 1].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_FALLING));
+
+            StartCoroutine(setLiveDown(fallingClip.averageDuration, _lives[_currentLives - 1]));
+            
+
+            for (int i = _lives.Count - 1; i > _currentLives - 1; i--)
+            {
+                _lives[i].GetComponent<Animator>().enabled = true;
+                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
+            }
         }
         else
         {
@@ -160,17 +206,32 @@ public class BetweenSceneControl : MonoBehaviour
 
             for (int i = 0; i < _currentLives; i++)
             {
-                _liveFlags[i].GetComponent<Animator>().enabled = true;
+                _lives[i].GetComponent<Animator>().enabled = true;
+                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_IDLE));
             }
-        }
+
+            for (int i = _lives.Count -1 ; i > _currentLives -1; i--)
+            {
+                _lives[i].GetComponent<Animator>().enabled = true;
+                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
+            }
+        }*/
+    }
+    IEnumerator setLiveDown(float timeToSet, GameObject live)
+    {
+        yield return new WaitForSeconds(timeToSet);
+
+        live.GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
+
     }
 
     private void disableFlags()
     {
-        foreach (var item in _liveFlags)
+        foreach (var item in _lives)
         {
             item.GetComponent<Animator>().enabled = false;
-            item.GetComponent<SpriteRenderer>().sprite = _flagDown;
+            //item.GetComponent<SpriteRenderer>().sprite = liveDOWN;
+            StartCoroutine(setLiveDown(0, item));
         }
     }
 
