@@ -170,7 +170,7 @@ public class ConvertAngles : CommandParser
                         {
                             SaveSystem.increaseMicrophonePressedTime(true, command, ChangeScene.EspikinglishMinigames.WORMS);
                             _ammunition.useWeapon(result);
-                            _controlWorm.desactiveAll();
+                            //_controlWorm.desactiveAll();
                         }
 
                     }
@@ -199,7 +199,7 @@ public class ConvertAngles : CommandParser
                         {
                             SaveSystem.increaseMicrophonePressedTime(true, command, ChangeScene.EspikinglishMinigames.WORMS);
                             _ammunition.useWeapon(result);
-                            _controlWorm.desactiveAll();
+                            //_controlWorm.desactiveAll();
                         }
                     }
                     catch (FormatException)

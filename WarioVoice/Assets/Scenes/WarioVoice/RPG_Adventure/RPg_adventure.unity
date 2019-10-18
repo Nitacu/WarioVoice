@@ -1670,11 +1670,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 102756525405051095, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 49
-      objectReference: {fileID: 0}
     - target: {fileID: 102756523889832660, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1714,6 +1709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: -0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 102756525405051095, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332fa07e42c30814f938d62de8c0c955, type: 3}
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemys:
   - {fileID: 1751488869}
-  - {fileID: 1751488869}
+  - {fileID: 1942431618}
   - {fileID: 1751488869}
 --- !u!114 &1642384657
 MonoBehaviour:
