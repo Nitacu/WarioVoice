@@ -5,14 +5,19 @@ using TMPro;
 
 public class VocabularyData : MonoBehaviour
 {
-
+    private const string NOWORDS = "NO WORDS";
 
     [Header("UI Texts")]
     [SerializeField] private TextMeshProUGUI _loveWords;
+    [SerializeField] private GameObject _questionmarkLove;
     [SerializeField] private TextMeshProUGUI _paintWords;
+    [SerializeField] private GameObject _questionmarkpaint;
     [SerializeField] private TextMeshProUGUI _orquestsWords;
+    [SerializeField] private GameObject _questionmarkOrquesta;
     [SerializeField] private TextMeshProUGUI _wormsWords;
+    [SerializeField] private GameObject _questionmarkWorms;
     [SerializeField] private TextMeshProUGUI _bossWords;
+    [SerializeField] private GameObject _questionmarkBoss;
 
 
     private void OnEnable()
@@ -22,67 +27,92 @@ public class VocabularyData : MonoBehaviour
         PlayerInformation playerInf = FindObjectOfType<FileManager>().PlayerInfSelected;
 
         //LOVE WORDS
-        for (int i = 0; i < playerInf._pronouncedWordsLove.Count; i++)
+        if (playerInf._pronouncedWordsLove.Count > 0)
         {
-            if (i!=0)
+            _questionmarkLove.SetActive(false);
+
+            for (int i = 0; i < playerInf._pronouncedWordsLove.Count; i++)
             {
-                _loveWords.text += (", " + playerInf._pronouncedWordsLove[i]);
-            }
-            else
-            {
-                _loveWords.text += playerInf._pronouncedWordsLove[i];
+                if (i != 0)
+                {
+                    _loveWords.text += (", " + playerInf._pronouncedWordsLove[i]);
+                }
+                else
+                {
+                    _loveWords.text += playerInf._pronouncedWordsLove[i];
+                }
             }
         }
 
         //PAINT WORDS
-        for (int i = 0; i < playerInf._pronouncedWordsPaint.Count; i++)
+        if (playerInf._pronouncedWordsPaint.Count > 0)
         {
-            if (i != 0)
+            _questionmarkpaint.SetActive(false);
+
+            for (int i = 0; i < playerInf._pronouncedWordsPaint.Count; i++)
             {
-                _paintWords.text += (", " + playerInf._pronouncedWordsPaint[i]);
-            }
-            else
-            {
-                _paintWords.text += playerInf._pronouncedWordsPaint[i];
+                if (i != 0)
+                {
+                    _paintWords.text += (", " + playerInf._pronouncedWordsPaint[i]);
+                }
+                else
+                {
+                    _paintWords.text += playerInf._pronouncedWordsPaint[i];
+                }
             }
         }
 
         //ORQUESTA WORDS
-        for (int i = 0; i < playerInf._pronouncedWordsOrchesta.Count; i++)
+        if (playerInf._pronouncedWordsOrchesta.Count > 0)
         {
-            if (i != 0)
+            _questionmarkOrquesta.SetActive(false);
+
+            for (int i = 0; i < playerInf._pronouncedWordsOrchesta.Count; i++)
             {
-                _orquestsWords.text += (", " + playerInf._pronouncedWordsOrchesta[i]);
-            }
-            else
-            {
-                _orquestsWords.text += playerInf._pronouncedWordsOrchesta[i];
+                if (i != 0)
+                {
+                    _orquestsWords.text += (", " + playerInf._pronouncedWordsOrchesta[i]);
+                }
+                else
+                {
+                    _orquestsWords.text += playerInf._pronouncedWordsOrchesta[i];
+                }
             }
         }
 
         //WORMS WORDS
-        for (int i = 0; i < playerInf._pronouncedWordsWorms.Count; i++)
+        if (playerInf._pronouncedWordsWorms.Count > 0)
         {
-            if (i != 0)
+            _questionmarkWorms.SetActive(false);
+
+            for (int i = 0; i < playerInf._pronouncedWordsWorms.Count; i++)
             {
-                _wormsWords.text += (", " + playerInf._pronouncedWordsWorms[i]);
+                if (i != 0)
+                {
+                    _wormsWords.text += (", " + playerInf._pronouncedWordsWorms[i]);
+                }
+                else
+                {
+                    _wormsWords.text += playerInf._pronouncedWordsWorms[i];
+                }
             }
-            else
-            {
-                _wormsWords.text += playerInf._pronouncedWordsWorms[i];
-            }
-        }
+        }        
 
         //BOSS WORDS
-        for (int i = 0; i < playerInf._pronouncedWordsBoss.Count; i++)
+        if (playerInf._pronouncedWordsBoss.Count > 0)
         {
-            if (i != 0)
+            _questionmarkBoss.SetActive(false);
+
+            for (int i = 0; i < playerInf._pronouncedWordsBoss.Count; i++)
             {
-                _bossWords.text += (", " + playerInf._pronouncedWordsBoss[i]);
-            }
-            else
-            {
-                _bossWords.text += playerInf._pronouncedWordsBoss[i];
+                if (i != 0)
+                {
+                    _bossWords.text += (", " + playerInf._pronouncedWordsBoss[i]);
+                }
+                else
+                {
+                    _bossWords.text += playerInf._pronouncedWordsBoss[i];
+                }
             }
         }
     }
