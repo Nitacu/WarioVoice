@@ -7,7 +7,7 @@ using TMPro;
 public class ShowMoreData : MonoBehaviour
 {
     private const string PLAYEDTIME = "";
-    private const string STARTAGAME = "Start a game to record your input Accuracy.";
+    private const string STARTAGAME = "Start a game to record your Accuracy.";
     private const string PLAYED = "You have lost ";
     private const string TIMES1 = " time of ";
     private const string TIMES2 = " times played.";
@@ -37,8 +37,13 @@ public class ShowMoreData : MonoBehaviour
 
         PlayerInformation playerInf = FindObjectOfType<FileManager>().PlayerInfSelected;
 
+        timesPlayedModernPaints.text = (playerInf.timesPlayedModernPaints - playerInf.timesLossedModernPaints).ToString() + "/" + playerInf.timesPlayedModernPaints;
+        timesPlayedOrchesta.text = (playerInf.timesPlayedOrchesta - playerInf.timesLossedOrchesta).ToString() + "/" + playerInf.timesPlayedOrchesta;
+        timesPlayedLoveGame.text = (playerInf.timesPlayedLoveGame - playerInf.timesLossedLoveGame).ToString() + "/" + playerInf.timesPlayedLoveGame;
+        timesPlayedWorms.text = (playerInf.timesPlayedWorms - playerInf.timesLossedWorms).ToString() + "/" + playerInf.timesPlayedWorms;
+        timesPlayeRPG.text = (playerInf.timesPlayeRPG - playerInf.timesLossedRPG).ToString() + "/" + playerInf.timesPlayeRPG;
 
-
+        /*
         timesPlayedModernPaints.text = (playerInf.timesPlayedModernPaints > 0) ? PLAYED + playerInf.timesLossedModernPaints.ToString() +
               TIMES1 + playerInf.timesPlayedModernPaints.ToString() + TIMES2 : NOPLAYED;
 
@@ -53,7 +58,7 @@ public class ShowMoreData : MonoBehaviour
 
         timesPlayeRPG.text = (playerInf.timesPlayeRPG > 0) ? PLAYED + playerInf.timesLossedRPG.ToString() +
               TIMES1 + playerInf.timesPlayeRPG.ToString() + TIMES2 : NOPLAYED;
-        
+        */
 
 
         if (_playedTime != null)
@@ -96,6 +101,14 @@ public class ShowMoreData : MonoBehaviour
         int hours = (playedTime / 3600) % 24;
         int days = (playedTime / 86400) % 365;
 
+        string secondsString = (seconds >= 10) ? seconds.ToString() : "0" + seconds.ToString();
+        string minutesString = (minutes >= 10) ? minutes.ToString() : "0" + minutes.ToString();
+        string hoursString = (hours >= 10) ? hours.ToString() : "0" + hours.ToString();
+
+        _playedTime.text =hoursString + ":" + minutesString + ":" + secondsString;
+
+        /*
+
         if (days != 0)
         {
             _playedTime.text = PLAYEDTIME + days.ToString() + " Days, " + hours.ToString() + " Hours, " + minutes.ToString() + " Minutes, " + seconds.ToString() + " Seconds.";
@@ -114,6 +127,6 @@ public class ShowMoreData : MonoBehaviour
         {
             _playedTime.text = PLAYEDTIME + seconds.ToString() + " Seconds.";
 
-        }
+        }*/
     }
 }

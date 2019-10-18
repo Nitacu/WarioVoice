@@ -87,7 +87,6 @@ public class SaveSystem
 
         Debug.Log("Increase accuracy: " + success);
         
-
         PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
 
         _currentPlayerInformation.microphonePressedTimes += 1;
