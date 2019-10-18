@@ -377,7 +377,7 @@ public class PatternController : MonoBehaviour
 
                 if (_enumInstrument == patronList[currentPatron - 1][contChecking].instrument)
                 {
-                    SaveSystem.increaseMicrophonePressedTime(true);
+                    SaveSystem.increaseMicrophonePressedTime(true, _enumInstrument.ToString(), ChangeScene.EspikinglishMinigames.ORCHESTA);
                     foreach (Transform child in instrumentsGameObject.transform)
                     {
                         if (child.gameObject.GetComponent<InstrumentController>()._instrument == _enumInstrument && !isPlaying)
