@@ -31,6 +31,7 @@ public class FileManager : MonoBehaviour
     [SerializeField] private GameObject _showDataUI;
     [SerializeField] private GameObject _deleteConfirmationUI;
     [SerializeField] private GameObject _moreDataUI;
+    [SerializeField] private GameObject _vocabulary;
 
     private float _timeToHideSlots;
     private float _trackTimeToHide;
@@ -57,7 +58,8 @@ public class FileManager : MonoBehaviour
         SHOWSLOT,
         CREATESLOT,
         RESET,
-        MOREDATA
+        MOREDATA,
+        VOCABULARY
     }
 
     private void Awake()
@@ -109,6 +111,7 @@ public class FileManager : MonoBehaviour
         _showDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
         _deleteConfirmationUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
         _moreDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
+        _vocabulary.GetComponent<Animator>().Play(Animator.StringToHash(FADE_DISAPPEAR));
 
         yield return new WaitForSeconds(_timeToHideSlots);
 
@@ -117,6 +120,7 @@ public class FileManager : MonoBehaviour
         _showDataUI.SetActive(false);
         _deleteConfirmationUI.SetActive(false);
         _moreDataUI.SetActive(false);
+        _vocabulary.SetActive(false);
 
 
         switch (_menuType)
@@ -146,6 +150,10 @@ public class FileManager : MonoBehaviour
             case Menus.MOREDATA:
                 _moreDataUI.SetActive(true);
                 _moreDataUI.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
+                break;
+            case Menus.VOCABULARY:
+                _vocabulary.SetActive(true);
+                _vocabulary.GetComponent<Animator>().Play(Animator.StringToHash(FADE_APPEAR));
                 break;
         }
     }

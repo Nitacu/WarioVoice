@@ -103,6 +103,50 @@ public class SaveSystem
         PlayerPrefs.SetString(key, json);
     }
 
+    public static void increaseMicrophonePressedTime(bool success, string pronouncedWord, ChangeScene.EspikinglishMinigames miniGame)
+    {
+        if (GameManager.GetInstance().CurrentPlayerInformation == null)
+        {
+            return;
+        }
+
+        Debug.Log("Increase accuracy: " + success);
+
+        PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
+
+        switch (miniGame)
+        {
+            case ChangeScene.EspikinglishMinigames.PAINTING:
+                _currentPlayerInformation._pronouncedWordsPaint.Add(pronouncedWord);
+                break;
+            case ChangeScene.EspikinglishMinigames.ORCHESTA:
+                _currentPlayerInformation._pronouncedWordsOrchesta.Add(pronouncedWord);
+                break;
+            case ChangeScene.EspikinglishMinigames.LOVE_SCENE:
+                _currentPlayerInformation._pronouncedWordsLove.Add(pronouncedWord);
+                break;
+            case ChangeScene.EspikinglishMinigames.WORMS:
+                _currentPlayerInformation._pronouncedWordsWorms.Add(pronouncedWord);
+                break;
+            case ChangeScene.EspikinglishMinigames.RPG:
+                _currentPlayerInformation._pronouncedWordsBoss.Add(pronouncedWord);
+                break;            
+        }
+
+        _currentPlayerInformation.microphonePressedTimes += 1;    
+        
+        if (success)
+        {
+            _currentPlayerInformation.microphonePressedTimesSuccesses += 1;
+
+        }
+
+        string json = JsonUtility.ToJson(_currentPlayerInformation);
+        string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
+
+        PlayerPrefs.SetString(key, json);
+    }
+
     public static PlayerInformation getPlayerInstace()
     {
         return GameManager.GetInstance().CurrentPlayerInformation;

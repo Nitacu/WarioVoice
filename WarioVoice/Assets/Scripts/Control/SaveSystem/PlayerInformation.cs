@@ -27,5 +27,11 @@ public class PlayerInformation
 
     public int timesPlayeRPG;
     public int timesLossedRPG;
-    
+
+    public List<string> _pronouncedWordsLove = new List<string>();
+    public List<string> _pronouncedWordsPaint = new List<string>();
+    public List<string> _pronouncedWordsOrchesta = new List<string>();
+    public List<string> _pronouncedWordsWorms = new List<string>();
+    public List<string> _pronouncedWordsBoss = new List<string>();
+
 }

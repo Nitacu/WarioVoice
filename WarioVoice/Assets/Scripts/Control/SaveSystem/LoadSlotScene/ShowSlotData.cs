@@ -60,7 +60,10 @@ public class ShowSlotData : MonoBehaviour
 
         }
 
-        _defeatedBossesText.text = DEFEATED_BOSSES + "\n" + _defeatedBosses.ToString() + "/" + GameManager.maxBosses.ToString();
+        if (_defeatedBossesText != null)
+        {
+            _defeatedBossesText.text = DEFEATED_BOSSES + "\n" + _defeatedBosses.ToString() + "/" + GameManager.maxBosses.ToString();
+        }
     }
 
     public void DeleteConfirmation(bool confirmation)

@@ -129,4 +129,9 @@ public class ShowMoreData : MonoBehaviour
 
         }*/
     }
+
+    public void showVocabulary()
+    {
+        StartCoroutine(FindObjectOfType<FileManager>().showMenu(FileManager.Menus.VOCABULARY));
+    }
 }
