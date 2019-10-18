@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Ammunition : MonoBehaviour
 {
@@ -12,10 +13,23 @@ public class Ammunition : MonoBehaviour
     private PointingGun _pointingGun;
     private const float FORCE_SHOOT = 15;
     private GuideControlWorm _guideControlWorm;
+    private List<EnemyWorms> _enemys  = new List<EnemyWorms>();
+
     private void Start()
     {
         _guideControlWorm = FindObjectOfType<GuideControlWorm>();
         _pointingGun = FindObjectOfType<PointingGun>();
+    }
+
+    public void turnEnemys()
+    {
+        _enemys = FindObjectsOfType<EnemyWorms>().ToList();
+
+        foreach (EnemyWorms aux in _enemys)
+        {
+            aux.prepareShoot();
+        }
+        _enemys.Clear();
     }
 
     public void getAmmunition(int ammunition)

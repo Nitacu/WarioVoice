@@ -66,7 +66,7 @@ public class ChangeScene : MonoBehaviour
         ESPIKINGLISHGAMETEST,
         ESPIKINGLISHCREDITS,
         BOSSDEFEATED
-    }    
+    }
 
     public enum EspikinglishMinigames
     {
@@ -188,11 +188,10 @@ public class ChangeScene : MonoBehaviour
         }
     }
 
-    public static void ChangeSceneProgression(EspikinglishMinigames _miniGameScene)        
+    public static void ChangeSceneProgression(EspikinglishMinigames _miniGameScene)
     {
         switch (_miniGameScene)
         {
-
             case EspikinglishMinigames.PAINTING:
                 SceneManager.LoadScene(ABSTRACTPAINTING);
                 break;

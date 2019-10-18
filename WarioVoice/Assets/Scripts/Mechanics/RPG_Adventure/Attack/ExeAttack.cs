@@ -50,9 +50,9 @@ public class ExeAttack : MonoBehaviour
         }
     }
 
-    public void selectAttack()
+    public void selectAttack(string word)
     {
-        SaveSystem.increaseMicrophonePressedTime(true);
+        SaveSystem.increaseMicrophonePressedTime(true,word,ChangeScene.EspikinglishMinigames.RPG);
 
         if (characterContainsAttack())
         {

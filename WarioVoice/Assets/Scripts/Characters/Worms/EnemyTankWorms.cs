@@ -74,9 +74,7 @@ public class EnemyTankWorms : EnemyWorms
         }
         else
         {
-            Debug.Log("izquierda");
             ray = Physics2D.Raycast(_pointInBack.position, new Vector2(2, 0), 3);
-
             if (ray)
             {
                 _endPosition = ray.point - new Vector2(0.7f, 0);

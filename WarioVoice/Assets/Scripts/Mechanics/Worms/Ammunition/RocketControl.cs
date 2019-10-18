@@ -5,22 +5,23 @@ using UnityEngine;
 public class RocketControl : MonoBehaviour
 {
     [SerializeField] GameObject _smallExplotion;
-    private EnemyWorms[] _enemys;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.collider.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            checkRocket();
         }
     }
 
 
-    private void OnDestroy()
+    public void checkRocket()
     {
-        Instantiate(_smallExplotion,transform.position,Quaternion.identity);
+        Instantiate(_smallExplotion, transform.position, Quaternion.identity);
+        //GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(GetComponent<Rigidbody2D>());
 
-        
         if (FindObjectOfType<Ammunition>().Amnunition == 0)
         {
             FindObjectOfType<ConfigurationWorms>().lostGame();
@@ -37,15 +38,13 @@ public class RocketControl : MonoBehaviour
                 FindObjectOfType<GuideControlWorm>().activeKeepAction();
             }
 
-            _enemys = FindObjectsOfType<EnemyWorms>();
-
-            foreach (EnemyWorms aux in _enemys)
-            {
-                aux.prepareShoot();
-            }
-
         }
 
+        Destroy(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        FindObjectOfType<Ammunition>().turnEnemys();
+    }
 }

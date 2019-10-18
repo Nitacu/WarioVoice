@@ -140,7 +140,7 @@ public class EnemyWorms : MonoBehaviour
         if (collision.CompareTag(Tags.Rocket))
         {
             FindObjectOfType<ConfigurationWorms>().destroyEnemy();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<RocketControl>().checkRocket();
             Destroy(_myFather);
         }
 
