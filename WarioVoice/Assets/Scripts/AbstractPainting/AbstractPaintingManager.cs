@@ -347,7 +347,16 @@ public class AbstractPaintingManager : CommandParser
         }
 
         Debug.Log("Color Finded: " + colorFinded);
-        SaveSystem.increaseMicrophonePressedTime(colorFinded);
+
+        if (colorFinded)
+        {
+            SaveSystem.increaseMicrophonePressedTime(colorFinded, commandColor, ChangeScene.EspikinglishMinigames.PAINTING);
+        }
+        else
+        {
+            SaveSystem.increaseMicrophonePressedTime(colorFinded);
+        }
+
     }
 
     private void InstantiateNewSplash(Vector2 _position)
@@ -475,17 +484,19 @@ public class AbstractPaintingManager : CommandParser
         if (want.Equals(YES, System.StringComparison.OrdinalIgnoreCase))
         {
             _want = true;
+            SaveSystem.increaseMicrophonePressedTime(true, "YES", ChangeScene.EspikinglishMinigames.PAINTING);
         }
         else if (want.Equals(NO, System.StringComparison.OrdinalIgnoreCase))
         {
+            SaveSystem.increaseMicrophonePressedTime(true, "NO", ChangeScene.EspikinglishMinigames.PAINTING);
             _want = false;
         }
         else
         {
             _guideText.text = YESORNO;
+            SaveSystem.increaseMicrophonePressedTime(false);
             return;
         }
-
 
         if (_want)
         {

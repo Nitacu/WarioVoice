@@ -117,19 +117,34 @@ public class SaveSystem
         switch (miniGame)
         {
             case ChangeScene.EspikinglishMinigames.PAINTING:
-                _currentPlayerInformation._pronouncedWordsPaint.Add(pronouncedWord);
+                if (!_currentPlayerInformation._pronouncedWordsPaint.Contains(pronouncedWord))
+                {
+                    _currentPlayerInformation._pronouncedWordsPaint.Add(pronouncedWord);
+                }
                 break;
             case ChangeScene.EspikinglishMinigames.ORCHESTA:
-                _currentPlayerInformation._pronouncedWordsOrchesta.Add(pronouncedWord);
+                if (!_currentPlayerInformation._pronouncedWordsOrchesta.Contains(pronouncedWord))
+                {
+                    _currentPlayerInformation._pronouncedWordsOrchesta.Add(pronouncedWord);
+                }                
                 break;
             case ChangeScene.EspikinglishMinigames.LOVE_SCENE:
-                _currentPlayerInformation._pronouncedWordsLove.Add(pronouncedWord);
+                if (!_currentPlayerInformation._pronouncedWordsLove.Contains(pronouncedWord))
+                {
+                    _currentPlayerInformation._pronouncedWordsLove.Add(pronouncedWord);
+                }
                 break;
             case ChangeScene.EspikinglishMinigames.WORMS:
-                _currentPlayerInformation._pronouncedWordsWorms.Add(pronouncedWord);
+                if (!_currentPlayerInformation._pronouncedWordsWorms.Contains(pronouncedWord))
+                {
+                    _currentPlayerInformation._pronouncedWordsWorms.Add(pronouncedWord);
+                }                
                 break;
             case ChangeScene.EspikinglishMinigames.RPG:
-                _currentPlayerInformation._pronouncedWordsBoss.Add(pronouncedWord);
+                if (!_currentPlayerInformation._pronouncedWordsBoss.Contains(pronouncedWord))
+                {
+                    _currentPlayerInformation._pronouncedWordsBoss.Add(pronouncedWord);
+                }                
                 break;            
         }
 
@@ -138,7 +153,6 @@ public class SaveSystem
         if (success)
         {
             _currentPlayerInformation.microphonePressedTimesSuccesses += 1;
-
         }
 
         string json = JsonUtility.ToJson(_currentPlayerInformation);
