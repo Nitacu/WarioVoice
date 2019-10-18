@@ -73,7 +73,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -8952493619046933745, guid: 00d55ef9f9884074da11fb20bf2c0dab,
+      value: {fileID: -687536628270731353, guid: 3e2e87e6133f80c44ba70da77859049e,
         type: 3}
     attribute: m_Sprite
     path: koalito/TitoCabezaNormal
@@ -108,7 +108,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -8952493619046933745, guid: 00d55ef9f9884074da11fb20bf2c0dab, type: 3}
+    - {fileID: -687536628270731353, guid: 3e2e87e6133f80c44ba70da77859049e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

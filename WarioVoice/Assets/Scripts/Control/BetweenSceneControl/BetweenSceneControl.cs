@@ -22,7 +22,7 @@ public class BetweenSceneControl : MonoBehaviour
 
     [SerializeField] private List<GameObject> _lives = new List<GameObject>();
     [SerializeField] private Sprite liveDOWN;
-    [SerializeField] private AnimationClip fallingClip;
+    [SerializeField] private AnimationClip _fallingClip;
     [SerializeField] private GameObject _confetti;
 
     [SerializeField] private float _timeToLaunchNextMinigame;
@@ -147,7 +147,7 @@ public class BetweenSceneControl : MonoBehaviour
 
         }
 
-        int _currentLives = GameManager.GetInstance().Lives;
+       int _currentLives = GameManager.GetInstance().Lives;              
 
         for (int i = 0; i < _lives.Count; i++)
         {
@@ -156,9 +156,10 @@ public class BetweenSceneControl : MonoBehaviour
 
                 if (i == _currentLives)
                 {
-                    if (GameManager.GetInstance().LiveLossed)
+                    if (true)
                     {
                         _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_FALLING));
+                        StartCoroutine(setLiveDown(_fallingClip.length, _lives[i]));
                     }
                     else
                     {
@@ -178,44 +179,7 @@ public class BetweenSceneControl : MonoBehaviour
 
             }
         }
-        /*
-        if (GameManager.GetInstance().LiveLossed)
-        {
-            int _currentLives = GameManager.GetInstance().Lives + 1;
-
-            for (int i = 0; i < _currentLives; i++)
-            {
-                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_IDLE));
-                _lives[i].GetComponent<Animator>().enabled = true;
-            }
-
-            _lives[_currentLives - 1].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_FALLING));
-
-            StartCoroutine(setLiveDown(fallingClip.averageDuration, _lives[_currentLives - 1]));
-            
-
-            for (int i = _lives.Count - 1; i > _currentLives - 1; i--)
-            {
-                _lives[i].GetComponent<Animator>().enabled = true;
-                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
-            }
-        }
-        else
-        {
-            int _currentLives = GameManager.GetInstance().Lives;
-
-            for (int i = 0; i < _currentLives; i++)
-            {
-                _lives[i].GetComponent<Animator>().enabled = true;
-                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_IDLE));
-            }
-
-            for (int i = _lives.Count -1 ; i > _currentLives -1; i--)
-            {
-                _lives[i].GetComponent<Animator>().enabled = true;
-                _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_LIVE_DOWN));
-            }
-        }*/
+       
     }
     IEnumerator setLiveDown(float timeToSet, GameObject live)
     {

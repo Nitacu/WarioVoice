@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class VocabularyData : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class VocabularyData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bossWords;
     [SerializeField] private GameObject _questionmarkBoss;
 
+    private List<string> sortListAlphabetic(List<string> _list)
+    {
+        _list = _list.OrderBy(o => o).ToList();
+        return _list;
+    }
 
     private void OnEnable()
     {
@@ -27,92 +33,42 @@ public class VocabularyData : MonoBehaviour
         PlayerInformation playerInf = FindObjectOfType<FileManager>().PlayerInfSelected;
 
         //LOVE WORDS
-        if (playerInf._pronouncedWordsLove.Count > 0)
-        {
-            _questionmarkLove.SetActive(false);
-
-            for (int i = 0; i < playerInf._pronouncedWordsLove.Count; i++)
-            {
-                if (i != 0)
-                {
-                    _loveWords.text += (", " + playerInf._pronouncedWordsLove[i]);
-                }
-                else
-                {
-                    _loveWords.text += playerInf._pronouncedWordsLove[i];
-                }
-            }
-        }
+        setText(playerInf._pronouncedWordsLove, _loveWords, _questionmarkLove);
 
         //PAINT WORDS
-        if (playerInf._pronouncedWordsPaint.Count > 0)
-        {
-            _questionmarkpaint.SetActive(false);
-
-            for (int i = 0; i < playerInf._pronouncedWordsPaint.Count; i++)
-            {
-                if (i != 0)
-                {
-                    _paintWords.text += (", " + playerInf._pronouncedWordsPaint[i]);
-                }
-                else
-                {
-                    _paintWords.text += playerInf._pronouncedWordsPaint[i];
-                }
-            }
-        }
+        setText(playerInf._pronouncedWordsPaint, _paintWords, _questionmarkpaint);
 
         //ORQUESTA WORDS
-        if (playerInf._pronouncedWordsOrchesta.Count > 0)
-        {
-            _questionmarkOrquesta.SetActive(false);
-
-            for (int i = 0; i < playerInf._pronouncedWordsOrchesta.Count; i++)
-            {
-                if (i != 0)
-                {
-                    _orquestsWords.text += (", " + playerInf._pronouncedWordsOrchesta[i]);
-                }
-                else
-                {
-                    _orquestsWords.text += playerInf._pronouncedWordsOrchesta[i];
-                }
-            }
-        }
+        setText(playerInf._pronouncedWordsOrchesta, _orquestsWords, _questionmarkOrquesta);
 
         //WORMS WORDS
-        if (playerInf._pronouncedWordsWorms.Count > 0)
-        {
-            _questionmarkWorms.SetActive(false);
-
-            for (int i = 0; i < playerInf._pronouncedWordsWorms.Count; i++)
-            {
-                if (i != 0)
-                {
-                    _wormsWords.text += (", " + playerInf._pronouncedWordsWorms[i]);
-                }
-                else
-                {
-                    _wormsWords.text += playerInf._pronouncedWordsWorms[i];
-                }
-            }
-        }        
+        setText(playerInf._pronouncedWordsWorms, _wormsWords, _questionmarkWorms);
 
         //BOSS WORDS
-        if (playerInf._pronouncedWordsBoss.Count > 0)
-        {
-            _questionmarkBoss.SetActive(false);
+        setText(playerInf._pronouncedWordsBoss, _bossWords, _questionmarkBoss);
 
-            for (int i = 0; i < playerInf._pronouncedWordsBoss.Count; i++)
+    }
+
+    public void setText(List<string> wordsList, TextMeshProUGUI textUI, GameObject questionMark)
+    {
+        if (wordsList.Count > 0)
+        {
+            questionMark.SetActive(false);
+            List<string> _wordsAux = new List<string>();
+            _wordsAux = sortListAlphabetic(wordsList);
+
+            for (int i = 0; i < _wordsAux.Count; i++)
             {
+                textUI.text += _wordsAux[i] + "\n";
+                /*
                 if (i != 0)
                 {
-                    _bossWords.text += (", " + playerInf._pronouncedWordsBoss[i]);
+                    textUI.text += ("\n" + _wordsAux[i]);
                 }
                 else
                 {
-                    _bossWords.text += playerInf._pronouncedWordsBoss[i];
-                }
+                    textUI.text += _wordsAux[i];
+                }*/
             }
         }
     }
