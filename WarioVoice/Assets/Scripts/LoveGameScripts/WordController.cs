@@ -223,7 +223,14 @@ public class WordController : MonoBehaviour
                 }
             }
 
-            SaveSystem.increaseMicrophonePressedTime(correctPronunciation);
+            if (correctPronunciation)
+            {
+                SaveSystem.increaseMicrophonePressedTime(true, answer, ChangeScene.EspikinglishMinigames.LOVE_SCENE);
+            }
+            else
+            {
+                SaveSystem.increaseMicrophonePressedTime(false);
+            }
 
             if (correctAnswer)
             {
