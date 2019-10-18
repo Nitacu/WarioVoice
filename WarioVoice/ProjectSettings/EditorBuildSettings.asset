@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/WarioVoice/Menus/Splash.unity
+    guid: eeb9deb0f304bcb45b86a2c4e57f0da8
+  - enabled: 1
     path: Assets/Scenes/WarioVoice/Menus/SpikinglishMenu.unity
     guid: f1b222f8fd67ac44f888d9fe2e1d9971
   - enabled: 1
