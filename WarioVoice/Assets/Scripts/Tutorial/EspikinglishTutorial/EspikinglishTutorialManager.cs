@@ -51,19 +51,9 @@ public class EspikinglishTutorialManager : CommandParser
 
 
 
-    public override void parseCommand(string command)
+    public override void parseCommand(string comandoNoWork, string command)
     {
-        if (tutorialComplete)
-        {
-
-            if (command.Equals("BLUE", System.StringComparison.OrdinalIgnoreCase))
-            {
-                startGame();
-            }
-
-            return;
-        }
-
+      
 
         if (command.Equals(GO, System.StringComparison.OrdinalIgnoreCase))
         {

@@ -16,12 +16,15 @@ public class BetweenSceneAudioControl : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("Between SceneAudioControl OnEnable() start");
+
         _source = GetComponent<AudioSource>();
         setToFasterVelocity();
         if (GameManager.GetInstance().GameCompleted)
         {
             _source.volume = 0;
         }
+        Debug.Log("Between SceneAudioControl OnEnable() end");
     }
 
     public void playGreat()

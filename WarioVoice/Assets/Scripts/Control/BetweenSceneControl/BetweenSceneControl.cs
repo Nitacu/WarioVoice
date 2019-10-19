@@ -58,12 +58,21 @@ public class BetweenSceneControl : MonoBehaviour
         }
         else
         {
+            Debug.Log("Time tracking start)");
+
             if (!GameManager.GetInstance().GameLossed && !GameManager.GetInstance().GameCompleted)
             {
+                Debug.Log("Time tracking start !gamelossed and !completed)");
+
                 GameManager.GetInstance().LoadMinigame();
+
+                Debug.Log("Time tracking end gamelossed and completed)");
+
             }
             else
             {
+                Debug.Log("Time tracking start gamelossed and completed)");            
+
                 if (GameManager.GetInstance().GameCompleted)
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
@@ -110,6 +119,8 @@ public class BetweenSceneControl : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Start() start" );
+
         _timerNormalText.text = "";
 
         _timeTracking = _timeToLaunchNextMinigame;
@@ -121,6 +132,8 @@ public class BetweenSceneControl : MonoBehaviour
 
         if (_gameLossed)
         {
+            Debug.Log("game manager game lossed - if start");
+
             _timeTextENG.text = LOSE_ENG;
             _timeTextESP.text = LOSE_ESP;
 
@@ -134,9 +147,13 @@ public class BetweenSceneControl : MonoBehaviour
 
             _continuePanel.SetActive(true);
             _timeTracking = _timeToLaunchToMainMenu;
+
+            Debug.Log("game manager game lossed - if start");
         }
         else if (_gameCompleted)
         {
+            Debug.Log("game manager game completed - if start");
+
             _timeTextENG.text = COMPLETED_ESP;
             _timeTextESP.text = COMPLETED_ENG;
             _timeTracking = _timeToLaunchToMainMenu;
@@ -145,9 +162,11 @@ public class BetweenSceneControl : MonoBehaviour
             FindObjectOfType<BetweenSceneAudioControl>().playGreat();
             StartCoroutine(playClip(_sourceVoice, _thanksForPlayingClip, _gameCompleteEffect.length));
 
+            Debug.Log("game manager game completed - if end");
         }
 
-       int _currentLives = GameManager.GetInstance().Lives;              
+        int _currentLives = GameManager.GetInstance().Lives;
+        
 
         for (int i = 0; i < _lives.Count; i++)
         {
@@ -157,6 +176,8 @@ public class BetweenSceneControl : MonoBehaviour
                 {
                     if (GameManager.GetInstance().LiveLossed)
                     {
+                        Debug.Log("live Lossed live falling");
+
                         _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_FALLING));
                         StartCoroutine(setLiveDown(_fallingClip.length, _lives[i]));
                     }
@@ -178,7 +199,8 @@ public class BetweenSceneControl : MonoBehaviour
 
             }
         }
-       
+
+        Debug.Log("Start() End");
     }
     IEnumerator setLiveDown(float timeToSet, GameObject live)
     {
@@ -199,15 +221,26 @@ public class BetweenSceneControl : MonoBehaviour
     }
 
     public void continueGame(bool wantContinue)
-    {
+    {       
+
         if (wantContinue)
         {
+            Debug.Log("Quiere continuar juego start");
+
             GameManager.GetInstance().Lives = 4;
             GameManager.GetInstance().StartGame();
+
+            Debug.Log("Quiere continuar juego end");
+
         }
         else
         {
+            Debug.Log("No quiere continuar juego start");
+
             UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
+
+            Debug.Log("No quiere continuar juego end");
+
         }
     }
 

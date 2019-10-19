@@ -318,7 +318,7 @@ public class AbstractPaintingManager : CommandParser
         setHelpButtons();
     }
 
-    public override void parseCommand(string command)
+    public override void parseCommand(string comandoNoWork, string command)
     {
         if (_wantAResult)
         {
