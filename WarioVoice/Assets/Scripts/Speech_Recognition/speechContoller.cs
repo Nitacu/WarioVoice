@@ -18,9 +18,9 @@ class AndroidPluginCallback : AndroidJavaProxy
         control.settext(textSpeech);
        
         //BotInput chat = GameObject.FindObjectOfType<BotInput>();
-        //BotInput chat = BotInput.getInstance();
-        //string texto = textSpeech;
-        //chat.SendQuestionToRobotFromSpeech(texto);
+        BotInput chat = BotInput.getInstance();
+        string texto = textSpeech;
+        chat.SendQuestionToRobotFromSpeech(texto);
 
     }
 
@@ -81,11 +81,7 @@ public class speechContoller : MonoBehaviour {
 
     public void settext(string speechText){
         speechReturned.text= speechText;
-
-        if (FindObjectOfType<ConvertAngles>())
-        {
-            FindObjectOfType<ConvertAngles>().parseCommand(speechText);
-        }
+        FindObjectOfType<ConvertAngles>().parseCommand(speechText);        
     }
 
     public void openexplorer()

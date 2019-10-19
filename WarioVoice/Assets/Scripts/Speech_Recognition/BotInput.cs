@@ -22,7 +22,7 @@ public class BotInput : MonoBehaviour
     //
     private TextAsset GlobalSettings, GenderSubstitutions, Person2Substitutions, PersonSubstitutions, Substitutions, DefaultPredicates, Splitters;
     //
-    //private ChatbotMobileWeb bot;
+    private ChatbotMobileWeb bot;
     private CommandParser _commandParser;
     
     public Text robotOutput;
@@ -50,14 +50,12 @@ public class BotInput : MonoBehaviour
 
         //***BOT Init***
 
-        //bot = new ChatbotMobileWeb();
+        bot = new ChatbotMobileWeb();
         LoadFilesFromConfigFolder();
-        //bot.LoadSettings(GlobalSettings.text, GenderSubstitutions.text, Person2Substitutions.text, PersonSubstitutions.text, Substitutions.text, DefaultPredicates.text, Splitters.text);
-        //TextAssetToXmlDocumentAIMLFiles();
-        //bot.loadAIMLFromXML(aimlXmlDocumentList.ToArray(), aimlXmlDocumentListFileName.ToArray());
-        //bot.LoadBrain();
-
-       
+        bot.LoadSettings(GlobalSettings.text, GenderSubstitutions.text, Person2Substitutions.text, PersonSubstitutions.text, Substitutions.text, DefaultPredicates.text, Splitters.text);
+        TextAssetToXmlDocumentAIMLFiles();
+        bot.loadAIMLFromXML(aimlXmlDocumentList.ToArray(), aimlXmlDocumentListFileName.ToArray());
+        bot.LoadBrain();   
        
     }
 
@@ -73,18 +71,15 @@ public class BotInput : MonoBehaviour
         {
             // Response Bot AIML
             string text = RemoveDiacritics(speechText);
-            var answer = text; //bot.getOutput(text);
+            var answer = bot.getOutput(text);
             Debug.Log("texto enviado " + text);
             
             answer = answer.Replace(".", "");
 
             // Response BotAIml in the Chat window
             if(_commandParser!=null){
-                if (!FindObjectOfType<ConvertAngles>())
-                {
-                    _commandParser.parseCommand(answer);
-                    Debug.Log("command send to parser");
-                }
+               _commandParser.parseCommand(answer, text);
+                Debug.Log("command send to parser");                
             }
          
             robotOutput.text = answer;
@@ -145,7 +140,7 @@ public class BotInput : MonoBehaviour
 
     void OnDisable()
     {
-        //bot.SaveBrain();
+        bot.SaveBrain();
     }
 
 
