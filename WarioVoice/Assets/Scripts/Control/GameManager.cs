@@ -84,9 +84,9 @@ public class GameManager
     public static void ResetInstance()
     {
         if (_instance != null)
-        {            
+        {
             _instance = null;
-        }        
+        }
     }
 
     #region FUNCIONESLANZARNIVEL NEW
@@ -116,6 +116,8 @@ public class GameManager
 
     private void setMiniGamesRound()
     {
+        Debug.Log("SetMiniGamesRound() Start");
+
         _instance._miniGamesRound.Clear();
 
         //AÑADIR NIVELES 1 - SEGUN EL BOSS LEVEL => (BOSSLEVES * 2) -1
@@ -129,6 +131,7 @@ public class GameManager
             _instance._miniGamesRound.Add(new MiniGameLevel(ChangeScene.EspikinglishMinigames.ORCHESTA, difficulty, 1));
             _instance._miniGamesRound.Add(new MiniGameLevel(ChangeScene.EspikinglishMinigames.WORMS, difficulty, 1));
 
+            Debug.Log("SetMiniGamesRound() return if _currentBossDifficulty == 1");
             return;
         }
 
@@ -141,18 +144,25 @@ public class GameManager
                 _instance._miniGamesRound.Add(_newminiGame);
             }
         }
+
+        Debug.Log("SetMiniGamesRound() End");
+
     }
 
     private MiniGameLevel returnRandomMiniGame()
     {
+        Debug.Log("returnRandomMiniGame() Start");
+
+
         MiniGameLevel _randomMiniGame;
 
 
         if (_instance._miniGamesRound.Count == 1)//CUANDO SOLO QUEDA UN MINIJUEGO EN COLA
         {
             _randomMiniGame = _instance._miniGamesRound[0];
-            return _randomMiniGame;
+            Debug.Log("returnRandomMiniGame() return _miniGamesRound.Count == 1 CUANDO SOLO QUEDA UN MINIJUEGO EN COLA");
 
+            return _randomMiniGame;
         }
 
         if (_instance._currentMinigame == null)//SI ES EL PRIMERMINIJUEGO DEVOLVER UNO CUALQUIERA
@@ -186,11 +196,8 @@ public class GameManager
                 int _indexRandom = Random.Range(0, _minigamesWithPriority.Count);
                 _randomMiniGame = _minigamesWithPriority[_indexRandom];
 
-            } while (_randomMiniGame._miniGame == _instance._currentMinigame._miniGame); //PARA QUE NO TIRE EL MISMO MINIJUEGO
-
-          
+            } while (_randomMiniGame._miniGame == _instance._currentMinigame._miniGame); //PARA QUE NO TIRE EL MISMO MINIJUEGO          
         }
-
 
         //ORDEN PRIMERO
         if (_instance._currentBossDifficulty == 1)
@@ -213,11 +220,15 @@ public class GameManager
 
         _instance._currentMinigame = _randomMiniGame;
 
+        Debug.Log("returnRandomMiniGame() end return random miniGame");
+
         return _randomMiniGame;
     }
 
     public void StartGame()
     {
+        Debug.Log("StartGame() Start");
+
         _instance._liveLossed = false;
         _instance._gameLossed = false;
         _instance._gameCompleted = false;
@@ -232,10 +243,15 @@ public class GameManager
         _instance._currentMinigame = miniGameToLaunch;
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
+
+        Debug.Log("StartGame() End");
+
     }
 
     public void launchNextMinigame(bool minigamePassed)
     {
+        Debug.Log("launchNextMinigame() Start");
+
         SaveSystem.increasePlayedTime();
         SaveSystem.increasePlayedAMiniGame(_currentMinigame._miniGame, minigamePassed);
 
@@ -306,22 +322,28 @@ public class GameManager
         }
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
+        Debug.Log("launchNextMinigame() End");
     }
-
-
 
     public void LoadMinigame()
     {
+        Debug.Log("LoadMinigame() Start");
+
         _instance.currentGameDifficulty = _instance._currentMinigame._difficulty;
         ChangeScene.ChangeSceneProgression(_instance._currentMinigame._miniGame);
+
+        Debug.Log("LoadMinigame() End");
     }
 
     public void finisBossBattle(bool bossDefeated)
     {
+        Debug.Log("finisBossBattle() Start");
+
         SaveSystem.increasePlayedAMiniGame(_currentMinigame._miniGame, bossDefeated);
+        SaveSystem.increasePlayedTime();
 
         _instance._liveLossed = false;
-        _gameCompleted = false;
+        //_instance._gameCompleted = false;
 
         if (bossDefeated)
         {
@@ -333,14 +355,14 @@ public class GameManager
                 Debug.Log("JUEGO COMPLETADO WIII!!!");
                 _instance._gameCompleted = true;
                 _instance._currentMinigame = null;
-                SaveSystem.increasePlayedTime();
                 UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
+                Debug.Log("finisBossBattle() return _currentBossDifficulty > maxBosses");
                 return;
             }
 
-            SaveSystem.increasePlayedTime();
             //StartGame();
             UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BOSSDEFEATED);
+            Debug.Log("finisBossBattle() return bossDefeated");
             return;
         }
         else
@@ -361,8 +383,8 @@ public class GameManager
             _instance._currentMinigame = miniGameToLaunch;
         }
 
-        SaveSystem.increasePlayedTime();
         UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.BETWEENMINIGAMES);
+        Debug.Log("finisBossBattle() End");
     }
     #endregion
 

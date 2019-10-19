@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ConfigureRPG : MonoBehaviour
 {
@@ -61,7 +63,7 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                return 1;
+                return 3;
                 break;
 
             case 2:

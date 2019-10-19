@@ -10,21 +10,28 @@ public class SaveSystem
 
     public static int loadCurrentBossDifficulty()
     {
+        Debug.Log("LoadCurrentBossDifficulty() Start");
+
         PlayerInformation _currentPlayerInformation = GameManager.GetInstance().CurrentPlayerInformation;
 
         if (_currentPlayerInformation == null)
         {
+            Debug.Log("LoadCurrentBossDifficulty() return currentPlayerInformation == null");
+
             return 0;
         }
 
         string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
+
         if (PlayerPrefs.HasKey(key))
         {
+            Debug.Log("LoadCurrentBossDifficulty() End return has key bossesdefeated + 1");
             return _currentPlayerInformation.bossesDefeated + 1;
         }
         else
         {
+            Debug.Log("LoadCurrentBossDifficulty() End return no key founded 0");
             return 0;
         }
 
@@ -35,12 +42,18 @@ public class SaveSystem
         }*/
 
         return _currentPlayerInformation.bossesDefeated + 1;
+
     }
 
     public static void saveCurrentBossDifficulty(int _bossDifficulty)
     {
+        Debug.Log("saveCurrentBossDifficulty() Start");
+
+
         if (GameManager.GetInstance().CurrentPlayerInformation == null)
         {
+            Debug.Log("saveCurrentBossDifficulty() return CurrentPlayerInformation == null");
+
             return;
         }
 
@@ -54,13 +67,20 @@ public class SaveSystem
         string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
         PlayerPrefs.SetString(key, json);
+
+        Debug.Log("saveCurrentBossDifficulty() End");
+
     }
 
     public static void increasePlayedTime()
     {
+        Debug.Log("increasePlayedTime() Start");
+
 
         if (GameManager.GetInstance().CurrentPlayerInformation == null)
         {
+            Debug.Log("increasePlayedTime() return CurrentPlayerInformation == null");
+
             return;
         }
 
@@ -75,13 +95,19 @@ public class SaveSystem
 
         PlayerPrefs.SetString(key, json);
 
+        Debug.Log("increasePlayedTime() End");
+
     }
 
 
     public static void increaseMicrophonePressedTime(bool success)
     {
+        Debug.Log("increaseMicrophonePressedTime() Start");
+
         if (GameManager.GetInstance().CurrentPlayerInformation == null )
         {
+            Debug.Log("increaseMicrophonePressedTime() return CurrentPlayerInformation == null ");
+
             return;
         }
 
@@ -101,12 +127,19 @@ public class SaveSystem
         string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
         PlayerPrefs.SetString(key, json);
+
+        Debug.Log("increaseMicrophonePressedTime() End");
+
     }
 
     public static void increaseMicrophonePressedTime(bool success, string pronouncedWord, ChangeScene.EspikinglishMinigames miniGame)
     {
+        Debug.Log("increaseMicrophonePressedTime(3 parametros) Start");
+
+
         if (GameManager.GetInstance().CurrentPlayerInformation == null)
         {
+            Debug.Log("increaseMicrophonePressedTime(3 parametros) return CurrentPlayerInformation == null");
             return;
         }
 
@@ -159,17 +192,24 @@ public class SaveSystem
         string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
         PlayerPrefs.SetString(key, json);
+
+        Debug.Log("increaseMicrophonePressedTime(3 parametros) End");
+
     }
 
     public static PlayerInformation getPlayerInstace()
     {
+        Debug.Log("getPlayerInstace() Start - End Return");
         return GameManager.GetInstance().CurrentPlayerInformation;
     }
 
     public static void increasePlayedAMiniGame(ChangeScene.EspikinglishMinigames miniGame, bool success)
     {
+        Debug.Log("increasePlayedAMiniGame() Start");
+
         if (GameManager.GetInstance().CurrentPlayerInformation == null)
         {
+            Debug.Log("increasePlayedAMiniGame() return CurrentPlayerInformation == null");
             return;
         }
 
@@ -203,6 +243,9 @@ public class SaveSystem
         string key = PLAYERDATA_PLAYERPREFCODE + _currentPlayerInformation.slotNumber.ToString();
 
         PlayerPrefs.SetString(key, json);
+
+        Debug.Log("increasePlayedAMiniGame() End");
+
     }
 
 }
