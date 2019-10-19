@@ -70,7 +70,8 @@ public class EspikinglishTutorialManager : CommandParser
             _textGuideEsp.text = GOODJOB_ESP;
             //playClip(_sourceVoice, _greatLetsStart);
 
-            playClip(_sourceEffect ,greatClip);
+            //playClip(_sourceEffect ,greatClip);
+            StartCoroutine(playGreat());
             StartCoroutine(startGame());
             StartCoroutine(deactivateSpeechButton());
         }
@@ -78,6 +79,13 @@ public class EspikinglishTutorialManager : CommandParser
         {
             hidePointer(false);
         }
+    }
+
+    IEnumerator playGreat()
+    {
+        yield return new WaitForEndOfFrame();
+
+        playClip(_sourceEffect, greatClip);
     }
 
     public void playClip(AudioSource source, AudioClip clip)
