@@ -5,9 +5,18 @@ using UnityEngine;
 public class PaintingSoundManager : MonoBehaviour
 {
     [SerializeField] AudioClip _hummingClip;
+    public AudioClip HummingClip
+    {
+        get { return _hummingClip; }
+    }
     [SerializeField] AudioClip _wrongClip;
     [SerializeField] AudioClip _goodPaint;
+    public AudioClip GoodPaint
+    {
+        get { return _goodPaint; }
+    }
     [SerializeField] AudioClip _badPaint;
+    [SerializeField] AudioClip _greatTada;
 
 
     private AudioSource _source;
@@ -35,6 +44,11 @@ public class PaintingSoundManager : MonoBehaviour
         playClip();        
     }
 
+    public void playGreatTada()
+    {
+        _currentClip = _greatTada;
+        playClip();
+    }
 
     private void playClip()
     {

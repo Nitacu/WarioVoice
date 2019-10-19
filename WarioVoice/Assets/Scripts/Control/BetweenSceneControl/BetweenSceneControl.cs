@@ -153,10 +153,9 @@ public class BetweenSceneControl : MonoBehaviour
         {
             if (i >= _currentLives)
             {
-
                 if (i == _currentLives)
                 {
-                    if (true)
+                    if (GameManager.GetInstance().LiveLossed)
                     {
                         _lives[i].GetComponent<Animator>().Play(Animator.StringToHash(CLIP_lIVE_FALLING));
                         StartCoroutine(setLiveDown(_fallingClip.length, _lives[i]));

@@ -590,9 +590,10 @@ public class AbstractPaintingManager : CommandParser
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + "100%";
 
+            /*
             GameObject confetti = Instantiate(_prefabConffeti);
             confetti.transform.position = Vector3.zero;
-
+            */
         }
         else
         {
@@ -615,6 +616,15 @@ public class AbstractPaintingManager : CommandParser
     {
         //_microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
 
+        yield return new WaitForSeconds(FindObjectOfType<PaintingSoundManager>().GoodPaint.length- 0.5f);
+
+        if (Success)
+        {
+            GameObject confetti = Instantiate(_prefabConffeti);
+            confetti.transform.position = Vector3.zero;
+            FindObjectOfType<PaintingSoundManager>().playGreatTada();
+        }
+     
         yield return new WaitForSeconds(_timeTochangeLevel);
 
         GameManager.GetInstance().launchNextMinigame(Success);
