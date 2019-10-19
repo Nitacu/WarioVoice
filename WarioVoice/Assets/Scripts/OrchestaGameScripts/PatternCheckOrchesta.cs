@@ -17,10 +17,10 @@ public class PatternCheckOrchesta : CommandParser
         patternControl = GetComponent<PatternController>();
     }
 
-    public override void parseCommand(string command)
+    public override void parseCommand(string command, string originalText)
     {
         
-       getInstrument(command);
+       getInstrument(originalText);
 
     }
 

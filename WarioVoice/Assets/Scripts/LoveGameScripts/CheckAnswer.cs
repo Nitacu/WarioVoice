@@ -11,8 +11,8 @@ public class CheckAnswer : CommandParser
         wordControl = GetComponent<WordController>();
     }
 
-    public override void parseCommand(string command)
+    public override void parseCommand(string command, string originalText)
     {
-        wordControl.checkAnswer(command);
+        wordControl.checkAnswer(originalText);
     }
 }
