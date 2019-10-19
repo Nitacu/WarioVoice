@@ -221,16 +221,28 @@ public class WordController : MonoBehaviour
                     correctAnswer = true;
                     correctPronunciation = true;
                 }
+
+                if(possibleAnswer.ToString() == "LIKEABLE")
+                {
+                    if(answer.Equals("likable", System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        correctAnswer = true;
+                        correctPronunciation = true;
+                    }
+                }
             }
 
             if (correctPronunciation)
             {
                 SaveSystem.increaseMicrophonePressedTime(true, answer, ChangeScene.EspikinglishMinigames.LOVE_SCENE);
+                
             }
             else
             {
                 SaveSystem.increaseMicrophonePressedTime(false);
             }
+
+            signText.text = " ";
 
             if (correctAnswer)
             {
