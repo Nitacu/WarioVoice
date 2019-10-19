@@ -57,11 +57,19 @@ public class Ammunition : MonoBehaviour
 
             float force = (percent * FORCE_SHOOT) / 100;
 
-
-            _pointingGun.shoot(force);
+            StartCoroutine(shootCoroutine(force));
+            //_pointingGun.shoot(force);
         }
         Amnunition--;
         
+    }
+
+    IEnumerator shootCoroutine(float force)
+    {
+        yield return new WaitForEndOfFrame();
+
+        _pointingGun.shoot(force);
+
     }
 
     public int Amnunition { get => _amnunition; set => _amnunition = value; }

@@ -13,6 +13,14 @@ public class CheckAnswer : CommandParser
 
     public override void parseCommand(string command, string originalText)
     {
-        wordControl.checkAnswer(originalText);
+        StartCoroutine(checkAnswerCoroutine(originalText));
+        //wordControl.checkAnswer(originalText);
+    }
+
+    IEnumerator checkAnswerCoroutine(string originaltext)
+    {
+        yield return new WaitForEndOfFrame();
+        wordControl.checkAnswer(originaltext);
+
     }
 }

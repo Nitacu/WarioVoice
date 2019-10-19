@@ -50,6 +50,16 @@ public class ExeAttack : MonoBehaviour
         }
     }
 
+    IEnumerator createUsedObjectCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+
+        GameObject usedObject = Instantiate(_usedObject);
+        usedObject.GetComponent<SpriteRenderer>().sprite = _currentAttack._sprite;
+        usedObject.GetComponent<AudioSource>().clip = _currentAttack._soundEffect;
+        usedObject.GetComponent<AudioSource>().Play();
+    }
+
     public void selectAttack(string word)
     {
         SaveSystem.increaseMicrophonePressedTime(true,word,ChangeScene.EspikinglishMinigames.RPG);
@@ -57,10 +67,13 @@ public class ExeAttack : MonoBehaviour
         if (characterContainsAttack())
         {
             // crea el objeto que muestra cual es que uso
+            /*
             GameObject usedObject = Instantiate(_usedObject);
             usedObject.GetComponent<SpriteRenderer>().sprite = _currentAttack._sprite;
             usedObject.GetComponent<AudioSource>().clip = _currentAttack._soundEffect;
             usedObject.GetComponent<AudioSource>().Play();
+            */
+            StartCoroutine(createUsedObjectCoroutine());
 
             if (_currentAttack._cure)
             {

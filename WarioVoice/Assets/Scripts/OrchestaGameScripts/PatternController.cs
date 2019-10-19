@@ -359,7 +359,7 @@ public class PatternController : MonoBehaviour
         {
             child.gameObject.GetComponent<InstrumentController>().setQuietInstrument();
         }
-    }
+    }    
 
     public void checkInstrument(InstrumentController.ENUMINSTRUMENT _enumInstrument, bool instrumentWord)
     {

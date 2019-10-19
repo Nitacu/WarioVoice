@@ -38,7 +38,13 @@ public class PatternCheckOrchesta : CommandParser
 
         getEnum(_instrument);
 
+        StartCoroutine(checkInstrumentCoroutine());
+        //patternControl.checkInstrument(_enumInstrument, instrumentWord);
+    }
 
+    IEnumerator checkInstrumentCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
         patternControl.checkInstrument(_enumInstrument, instrumentWord);
     }
 
