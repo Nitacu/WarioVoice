@@ -251,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &42579511 stripped
@@ -433,6 +438,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &89178975 stripped
@@ -719,6 +729,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!223 &217610166 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 102756525405051095, guid: 332fa07e42c30814f938d62de8c0c955,
+    type: 3}
+  m_PrefabInstance: {fileID: 2139339058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &241298051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,6 +1922,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &701691738 stripped
@@ -2007,6 +2028,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &768720963 stripped
@@ -2948,6 +2974,7 @@ MonoBehaviour:
   tomatoes: {fileID: 356432260}
   feedback: {fileID: 1197225682}
   cameraAudioSource: {fileID: 2100570626}
+  pauseMenuCanvas: {fileID: 217610166}
 --- !u!114 &1264144576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3228,6 +3255,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &1489553728 stripped
@@ -3475,6 +3507,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &1500286587 stripped
@@ -4119,6 +4156,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!4 &1631722493 stripped
@@ -5194,7 +5236,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ea712bc817353dd4dbded5e546e5a09d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.102
+  m_Volume: 0.036
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10517,6 +10559,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 91ccb0d81ddf3b2479a6c95311e06275, type: 2}
+    - target: {fileID: 7947203577367927639, guid: d8741b8a491750d4da9395e4c5918457,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8741b8a491750d4da9395e4c5918457, type: 3}
 --- !u!222 &2813385669484800391

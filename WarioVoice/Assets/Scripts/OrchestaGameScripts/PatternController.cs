@@ -26,6 +26,7 @@ public class PatternController : MonoBehaviour
     public GameObject tomatoes;
     public FeedbackController feedback;
     public AudioSource cameraAudioSource;
+    public Canvas pauseMenuCanvas;
     //List that will be used to play and check patrons 
     private List<Instrument[]> patronList = new List<Instrument[]>();
     private Instrument[] checkPattern;
@@ -456,6 +457,7 @@ public class PatternController : MonoBehaviour
         partiture.gameObject.SetActive(false);
         activateColliders();
         partiturePanel.SetActive(true);
+        pauseMenuCanvas.sortingOrder = 100;
         //director.SetActive(true);
 
         audience.SetActive(true);
