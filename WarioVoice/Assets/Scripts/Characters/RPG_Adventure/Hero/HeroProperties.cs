@@ -24,10 +24,14 @@ public class HeroProperties : MonoBehaviour
     private Sprite _live; // cuando esta vivo
     private Sprite _die; // cuando muere
 
+    private bool _associatedObject = false;
+    [SerializeField]private AttackGlossary.attack _counterAttack;
 
     public bool IsLive { get => _isLive; set => _isLive = value; }
     public List<VoiceAttacks> Attacks { get => _attacks; set => _attacks = value; }
     public float Life { get => _life; set => _life = value; }
+    public bool AssociatedObject { get => _associatedObject; set => _associatedObject = value; }
+    public AttackGlossary.attack CounterAttack { get => _counterAttack; set => _counterAttack = value; }
 
     private void Start()
     {
@@ -95,7 +99,6 @@ public class HeroProperties : MonoBehaviour
     public void getAttack(VoiceAttacks attack)
     {
         Attacks.Add(attack);
-       
     }
 
 

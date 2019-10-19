@@ -19,6 +19,7 @@ public class ControlShifts : MonoBehaviour
     public bool TurnEnemy { get => turnEnemy; set => turnEnemy = value; }
     public bool TurnPlayer { get => turnPlayer; set => turnPlayer = value; }
     public int NumberCharacterLive { get => numberCharacterLive; set => numberCharacterLive = value; }
+    public HeroProperties CurrentHero { get => _currentHero; set => _currentHero = value; }
 
     private void Start()
     {
@@ -42,10 +43,10 @@ public class ControlShifts : MonoBehaviour
         }
 
         //selecciona el hero y lo mueve
-        _currentHero = newChallenge();
-        _currentHero.GetComponent<MoveHeroe>().changeDirection();
+        CurrentHero = newChallenge();
+        CurrentHero.GetComponent<MoveHeroe>().changeDirection();
         //muestre los ataques
-        _currentHero.showAttacks();
+        CurrentHero.showAttacks();
 
     }
 

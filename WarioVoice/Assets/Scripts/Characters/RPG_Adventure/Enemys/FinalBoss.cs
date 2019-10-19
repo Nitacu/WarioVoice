@@ -4,17 +4,40 @@ using UnityEngine;
 
 public class FinalBoss : LamiaController
 {
+    private ControlShifts _shifts;
+
+    private int random;
+
     [Header("todos los ataques el boss")]
     [SerializeField] private List<GameObject> _attacks = new List<GameObject>();
     private List<RelationshipAttacksCounters> _counters = new List<RelationshipAttacksCounters>();
+    private List<RelationshipAttacksCounters> _countersUsed = new List<RelationshipAttacksCounters>();
 
     public override void Start()
     {
         base.Start();
 
-        for(int i = 0; i<_attacks.Count;i++)
+        _shifts = FindObjectOfType<ControlShifts>();
+
+        for (int i = 0; i < _attacks.Count; i++)
         {
-            _counters.Add(new RelationshipAttacksCounters(_attacks[i],_listAttacksUseful[i]._attack));
+            _counters.Add(new RelationshipAttacksCounters(_attacks[i], _listAttacksUseful[i]._attack));
+        }
+    }
+
+    public override void addCharacter(HeroProperties hero)
+    {
+        base.addCharacter(hero);
+
+        hero.AssociatedObject = false;
+
+        for(int i =0; i<_countersUsed.Count;i++)
+        {
+            if(_countersUsed[i]._attackPlayer == hero.CounterAttack)
+            {
+                _counters.Add(_countersUsed[i]);
+                _countersUsed.RemoveAt(i);
+            }
         }
     }
 
@@ -33,58 +56,58 @@ public class FinalBoss : LamiaController
         else
         {
             //visual de que dañaron al golem
-            GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+            //GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
         }
 
         return true;
     }
 
-    public override bool effectiveAttack(AttackGlossary.attack attack)
+    public override bool effectiveAttack(AttackGlossary.attack attackPlayer)
     {
-
-        return false;
+        if (attackPlayer == _shifts.CurrentHero.CounterAttack)
+        {
+            //daño al jefe
+            Debug.Log("le pega al boss");
+            return true;
+        }
+        else
+        {
+            //daño al player
+            attack(_shifts.CurrentHero, 1, "Ataque directo");
+            //revisa si mato a alguien
+            removeHeroe();
+            Debug.Log("se pega el");
+            return false;
+        }
     }
 
     public override void winEnemy()
     {
         Destroy(FindObjectOfType<speechContoller>().gameObject);
 
-        GetComponent<Animator>().Play(Animator.StringToHash("Win"));
+        //GetComponent<Animator>().Play(Animator.StringToHash("Win"));
 
         FindObjectOfType<ControlShifts>().Invoke("playerTurn", 1.5f);
     }
 
     public override void selecAttack()
     {
-        int random = Random.Range(1, 101);
+        //selecciona un player
+        random = Random.Range(0, Characters.Count);
+        _lastHeroToHarm = heroWithMoreLife(Characters[random]);
 
-        GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
-
-        // fijo
-        if (random <= 70)
+        if (!_lastHeroToHarm.AssociatedObject)
         {
-            random = Random.Range(0, Characters.Count);
-            //visual del daño
-            _lastHeroToHarm = heroWithMoreLife(Characters[random]);
-            //COLOCAR COMO SE VE EL DAÑO
-            _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
-            //recibe el daño
-            attack(_lastHeroToHarm, 1, "Ataque directo");
+            //le coloca el objeto
+            random = Random.Range(0, _counters.Count);
+            _lastHeroToHarm.AssociatedObject = true;
+            _lastHeroToHarm.CounterAttack = _counters[random]._attackPlayer;
+            Instantiate(_counters[random]._attackEnemy, _lastHeroToHarm.transform).GetComponent<FollowPoint>()._position = _lastHeroToHarm.transform;
+            //por si el heroe revive poder volver a usar ese ataque
+            _countersUsed.Add(_counters[random]);
+            _counters.RemoveAt(random);
         }
-        else
-        {
-            // en area
-            foreach (HeroProperties hero in Characters)
-            {
-                //COMO SE VE EL DAÑO
-                hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
-                attack(hero, 1);
-            }
-            FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
-        }
-
-        //revisa si mato a alguien
-        removeHeroe();
+        
     }
 }
 

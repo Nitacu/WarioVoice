@@ -33,6 +33,11 @@ public class LamiaController : MonoBehaviour
         Characters = FindObjectsOfType<HeroProperties>().ToList();
     }
 
+    public virtual void addCharacter(HeroProperties hero)
+    {
+        Characters.Add(hero);
+    }
+
     public virtual bool lostLife(float damage)
     {
         Life -= damage;
@@ -149,7 +154,6 @@ public class LamiaController : MonoBehaviour
                     return true;
                 }
             }
-
         }
         else
         {

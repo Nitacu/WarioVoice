@@ -9,6 +9,6 @@ public class TestVoiceInput : MonoBehaviour
 
     public void testVoice()
     {
-        FindObjectOfType<CommandParser>().parseCommand(text.text);
+        FindObjectOfType<CommandParser>().parseCommand("",text.text);
     }
 }

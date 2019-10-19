@@ -70,10 +70,9 @@ public class ExeAttack : MonoBehaviour
                 foreach (HeroProperties hero in aux)
                 {
                     if (!hero.IsLive)
-                        Lamia.Characters.Add(hero);
+                        Lamia.addCharacter(hero);
 
-                    hero.getCharacterStastic(1);
-                    
+                    hero.getCharacterStastic(1);  
                 }
 
                 //muestra que gano vida

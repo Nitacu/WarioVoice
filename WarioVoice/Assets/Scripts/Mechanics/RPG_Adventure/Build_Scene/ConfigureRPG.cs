@@ -51,7 +51,7 @@ public class ConfigureRPG : MonoBehaviour
     public void createdEnemy()
     {
         GameObject enemy;
-        enemy = _enemys[GameManager.GetInstance().getGameDifficulty() - 1];
+        enemy = _enemys[2];//_enemys[GameManager.GetInstance().getGameDifficulty() - 1];
         enemy.SetActive(true);
         FindObjectOfType<ExeAttack>().Lamia = enemy.GetComponent<LamiaController>();
     }
@@ -112,7 +112,7 @@ public class ConfigureRPG : MonoBehaviour
 
     public void configurateLevel()
     {
-        _difficultyLevel = GameManager.GetInstance().getGameDifficulty();
+        _difficultyLevel = 3;// GameManager.GetInstance().getGameDifficulty();
 
         switch (_difficultyLevel)
         {
@@ -139,14 +139,14 @@ public class ConfigureRPG : MonoBehaviour
                 break;
 
             case 3:
-                _controlShifts.Invoke("playerTurn", 5);
+                _controlShifts.Invoke("playerEnemy", 5);
                 _characterBuilder.NumberCharacters = 2;
-                _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 1;
-                _characterBuilder.NUMBER_ATTACKS_USEFUL1 = 2;
-                _characterBuilder.NUMBER_ATTACKS_USELESS1 = 2;
+                _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 0;
+                _characterBuilder.NUMBER_ATTACKS_USEFUL1 = 4;
+                _characterBuilder.NUMBER_ATTACKS_USELESS1 = 1;
                 _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
                 _characterBuilder.SPLIT_ATTACKS1 = 0;
-                _lamiaController.Life = 5;
+                _lamiaController.Life = 4;
                 break;
 
             case 4:
