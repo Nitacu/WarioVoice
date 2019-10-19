@@ -22,7 +22,7 @@ public class BotInput : MonoBehaviour
     //
     private TextAsset GlobalSettings, GenderSubstitutions, Person2Substitutions, PersonSubstitutions, Substitutions, DefaultPredicates, Splitters;
     //
-    private ChatbotMobileWeb bot;
+    //private ChatbotMobileWeb bot;
     private CommandParser _commandParser;
     
     public Text robotOutput;
@@ -50,13 +50,14 @@ public class BotInput : MonoBehaviour
 
         //***BOT Init***
 
+        /*
         bot = new ChatbotMobileWeb();
         LoadFilesFromConfigFolder();
         bot.LoadSettings(GlobalSettings.text, GenderSubstitutions.text, Person2Substitutions.text, PersonSubstitutions.text, Substitutions.text, DefaultPredicates.text, Splitters.text);
         TextAssetToXmlDocumentAIMLFiles();
         bot.loadAIMLFromXML(aimlXmlDocumentList.ToArray(), aimlXmlDocumentListFileName.ToArray());
         bot.LoadBrain();   
-       
+       */
     }
 
     /// <summary>
@@ -71,7 +72,7 @@ public class BotInput : MonoBehaviour
         {
             // Response Bot AIML
             string text = RemoveDiacritics(speechText);
-            var answer = bot.getOutput(text);
+            var answer = text;//  bot.getOutput(text);
             Debug.Log("texto enviado " + text);
             
             answer = answer.Replace(".", "");
@@ -84,7 +85,7 @@ public class BotInput : MonoBehaviour
          
             robotOutput.text = answer;
 
-            Debug.Log("texto recibido" + answer);
+            Debug.Log("texto recibido " + answer);
             //
             //inputField.text = string.Empty;
         }
@@ -140,7 +141,7 @@ public class BotInput : MonoBehaviour
 
     void OnDisable()
     {
-        bot.SaveBrain();
+        //bot.SaveBrain();
     }
 
 
