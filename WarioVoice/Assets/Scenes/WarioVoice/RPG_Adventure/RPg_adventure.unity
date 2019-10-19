@@ -6917,7 +6917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemys:
-  - {fileID: 1942431618}
+  - {fileID: 1751488869}
   - {fileID: 1942431618}
   - {fileID: 1751488869}
 --- !u!114 &1642384657
