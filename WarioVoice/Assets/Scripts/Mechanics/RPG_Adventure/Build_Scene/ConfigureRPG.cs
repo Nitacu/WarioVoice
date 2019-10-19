@@ -61,7 +61,7 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
-                return 3;
+                return 1;
                 break;
 
             case 2:
@@ -134,8 +134,6 @@ public class ConfigureRPG : MonoBehaviour
                 _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
                 _characterBuilder.SPLIT_ATTACKS1 = 2;
                 _lamiaController.Life = 4;
-                
-
                 break;
 
             case 3:

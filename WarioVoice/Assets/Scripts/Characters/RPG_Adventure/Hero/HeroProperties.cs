@@ -42,9 +42,11 @@ public class HeroProperties : MonoBehaviour
         _die = die;
         GetComponent<SpriteRenderer>().sprite = face;
         _PanelData = FindObjectOfType<StatisticsContentPanel>().activePanel();
+        GetComponentInChildren<ClampText>()._UIGameObject = _PanelData;
         _iconLive = iconlive;
         _iconDie = iconDie;
-        _PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconLive;
+        //rostro del personaje
+        //_PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconLive;
     }
 
     public void getDamage(float damage)
@@ -59,7 +61,8 @@ public class HeroProperties : MonoBehaviour
         if (Life <= 0)
         {
             GetComponent<SpriteRenderer>().sprite = _die;
-            _PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconDie;
+            //rostro del personaje
+            //_PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconDie;
             IsLive = false;
             GetComponent<Animator>().Play(Animator.StringToHash("Die_heroe"));
             FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
@@ -83,7 +86,8 @@ public class HeroProperties : MonoBehaviour
     public void reviveHeroe()
     {
         GetComponent<SpriteRenderer>().sprite = _live;
-        _PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconLive;
+        //rostro del personaje
+        //_PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconLive;
         IsLive = true;
         GetComponent<Animator>().Play(Animator.StringToHash("Revive_heroe"));
         FindObjectOfType<ControlShifts>().reviveHero(GetComponent<HeroProperties>());        

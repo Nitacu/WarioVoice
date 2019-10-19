@@ -8,7 +8,7 @@ public class ClampText : MonoBehaviour
 {
     public TextMeshProUGUI nameLable;
     [Header("Para cualquier objeto")]
-    [SerializeField] private GameObject _UIGameObject;
+    public GameObject _UIGameObject;
 
     public float offsetY = 0;
 

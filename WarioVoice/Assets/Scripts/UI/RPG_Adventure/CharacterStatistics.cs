@@ -31,6 +31,7 @@ public class CharacterStatistics : MonoBehaviour
             }
         }
 
+// cuando muere colocar el rostro de color gris
         if (_listHearts.Count == 0)
         {
             _icon.GetComponent<Image>().color = Color.gray;
@@ -39,5 +40,6 @@ public class CharacterStatistics : MonoBehaviour
         {
             _icon.GetComponent<Image>().color = Color.white;
         }
+        
     }
 }
