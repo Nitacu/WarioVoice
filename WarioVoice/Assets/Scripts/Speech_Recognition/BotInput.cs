@@ -22,7 +22,7 @@ public class BotInput : MonoBehaviour
     //
     private TextAsset GlobalSettings, GenderSubstitutions, Person2Substitutions, PersonSubstitutions, Substitutions, DefaultPredicates, Splitters;
     //
-    private ChatbotMobileWeb bot;
+    //private ChatbotMobileWeb bot;
     private CommandParser _commandParser;
     
     public Text robotOutput;
@@ -47,28 +47,19 @@ public class BotInput : MonoBehaviour
             Debug.Log("commandparser not found");
         }
          
-        bot = new ChatbotMobileWeb();
+
+        //***BOT Init***
+
+        //bot = new ChatbotMobileWeb();
         LoadFilesFromConfigFolder();
-        bot.LoadSettings(GlobalSettings.text, GenderSubstitutions.text, Person2Substitutions.text, PersonSubstitutions.text, Substitutions.text, DefaultPredicates.text, Splitters.text);
-        TextAssetToXmlDocumentAIMLFiles();
-        bot.loadAIMLFromXML(aimlXmlDocumentList.ToArray(), aimlXmlDocumentListFileName.ToArray());
-        bot.LoadBrain();
+        //bot.LoadSettings(GlobalSettings.text, GenderSubstitutions.text, Person2Substitutions.text, PersonSubstitutions.text, Substitutions.text, DefaultPredicates.text, Splitters.text);
+        //TextAssetToXmlDocumentAIMLFiles();
+        //bot.loadAIMLFromXML(aimlXmlDocumentList.ToArray(), aimlXmlDocumentListFileName.ToArray());
+        //bot.LoadBrain();
 
        
        
     }
-
-
-    
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
 
     /// <summary>
     /// Button to send the question to the robot
@@ -82,9 +73,9 @@ public class BotInput : MonoBehaviour
         {
             // Response Bot AIML
             string text = RemoveDiacritics(speechText);
-            var answer = bot.getOutput(text);
-            Debug.Log("texto enviado" + text);
-
+            var answer = text; //bot.getOutput(text);
+            Debug.Log("texto enviado " + text);
+            
             answer = answer.Replace(".", "");
 
             // Response BotAIml in the Chat window
@@ -154,7 +145,7 @@ public class BotInput : MonoBehaviour
 
     void OnDisable()
     {
-        bot.SaveBrain();
+        //bot.SaveBrain();
     }
 
 

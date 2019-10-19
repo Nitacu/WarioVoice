@@ -18,9 +18,9 @@ class AndroidPluginCallback : AndroidJavaProxy
         control.settext(textSpeech);
        
         //BotInput chat = GameObject.FindObjectOfType<BotInput>();
-        BotInput chat = BotInput.getInstance();
-        string texto = textSpeech;
-        chat.SendQuestionToRobotFromSpeech(texto);
+        //BotInput chat = BotInput.getInstance();
+        //string texto = textSpeech;
+        //chat.SendQuestionToRobotFromSpeech(texto);
 
     }
 
@@ -28,7 +28,7 @@ class AndroidPluginCallback : AndroidJavaProxy
     {
         //speechContoller control = GameObject.FindObjectOfType<speechContoller>();
         speechContoller control = speechContoller.getInstance();
-        Debug.Log("ENTER callback onError: " + startmessage);
+        Debug.Log("ENTER callback onStart: " + startmessage);
         control.speechReturned.text = startmessage;
     }
 
@@ -37,7 +37,7 @@ class AndroidPluginCallback : AndroidJavaProxy
     {
         //speechContoller control = GameObject.FindObjectOfType<speechContoller>();
         speechContoller control = speechContoller.getInstance();
-        Debug.Log("ENTER callback onError: " + endmessage);
+        Debug.Log("ENTER callback onEnd: " + endmessage);
         control.speechReturned.text = endmessage;
     }
 
@@ -87,11 +87,6 @@ public class speechContoller : MonoBehaviour {
             FindObjectOfType<ConvertAngles>().parseCommand(speechText);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void openexplorer()
     {
