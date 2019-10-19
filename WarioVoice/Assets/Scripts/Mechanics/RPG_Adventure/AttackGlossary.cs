@@ -5,30 +5,31 @@ using UnityEngine;
 public class AttackGlossary 
 {
     // Palabras que tiene que decir
-    public const string BLACK_PEPPER = "BLACK_PEPPER";
-    public const string LEMON = "LEMON";
-    public const string GLASSES = "GLASSES";
-    public const string ONION = "ONION";
-    public const string HIGH_HEEL = "HIGH_HEEL";
-    public const string PERFUME = "PERFUME";
-    public const string CANDY = "CANDY";
-    public const string UMBRELLA = "UMBRELLA";
-    public const string SPATULA = "SPATULA";
-    public const string NEWSPAPER = "NEWSPAPER";
-    public const string COIN = "COIN";
-    public const string CUPCAKE = "CUPCAKE";
+    public const string BLACK_PEPPER = "black pepper";
+    public const string LEMON = "lemon";
+    public const string GLASSES = "glasses";
+    public const string ONION = "onion";
+    public const string HIGH_HEEL = "high heel";
+    public const string PERFUME = "perfume";
+    public const string CANDY = "candy";
+    public const string UMBRELLA = "umbrella";
+    public const string SPATULA = "spatula";
+    public const string NEWSPAPER = "newspaper";
+    public const string COIN = "coin";
+    public const string CUPCAKE = "cupcake";
 
-    public const string BATTERY = "BATTERY";
-    public const string DRILL = "DRILL";
-    public const string EXTINGUISHER = "EXTINGUISHER";
-    public const string FAN = "FAN";
-    public const string SAND = "SAND";
-    public const string SPONGE = "SPONGE";
-    public const string VACUUM_CLEANER = "VACUUM_CLEANER";
-    public const string BREAD = "BREAD";
-    public const string CHOCOLATE = "HOT_CHOCOLATE";
-    public const string STRAWBERRY = "STRAWBERRY";
-    public const string PICKAXE = "PICKAXE";
+    public const string BATTERY = "battery";
+    public const string DRILL = "drill";
+    public const string EXTINGUISHER = "extinguisher";
+    public const string FAN = "fan";
+    public const string SAND = "sand";
+    public const string SPONGE = "sponge";
+    public const string VACUUM_CLEANER = "vacuum cleaner";
+    public const string BREAD = "bread";
+    public const string CHOCOLATE = "hot chocolate";
+    public const string STRAWBERRY = "strawberry";
+    public const string PICKAXE = "pickaxe";
+
 
     public enum attack
     {

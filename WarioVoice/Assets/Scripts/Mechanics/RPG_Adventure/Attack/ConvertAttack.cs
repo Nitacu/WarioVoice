@@ -11,9 +11,9 @@ public class ConvertAttack : CommandParser
         _exeAttack = FindObjectOfType<ExeAttack>();
     }
 
-    public override void parseCommand(string command)
+    public override void parseCommand(string command, string originalText)
     {
-        switch (command)
+        switch (originalText)
         {
             case AttackGlossary.HIGH_HEEL:
                 _exeAttack.TypeAttack = AttackGlossary.attack.HIGH_HEEL;

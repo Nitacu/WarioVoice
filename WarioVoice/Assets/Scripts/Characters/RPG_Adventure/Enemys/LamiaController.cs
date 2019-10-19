@@ -100,7 +100,6 @@ public class LamiaController : MonoBehaviour
 
     public void loadMenu()
     {
-        Debug.Log("funciono ");
         GameManager.GetInstance().finisBossBattle(true);
     }
 

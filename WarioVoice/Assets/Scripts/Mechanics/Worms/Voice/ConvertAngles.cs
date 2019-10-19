@@ -66,10 +66,10 @@ public class ConvertAngles : CommandParser
 
     }
 
-    public override void parseCommand(string command)
+    public override void parseCommand(string command, string originalText)
     {
-        command = command.Replace(' ', '_');
-        _sentenses = command.Split("_".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+        originalText = originalText.Replace(' ', '_');
+        _sentenses = originalText.Split("_".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
         if (_allowPoint)
         {
@@ -85,7 +85,7 @@ public class ConvertAngles : CommandParser
 
                         if (result <= 180 && result >= 0)
                         {
-                            SaveSystem.increaseMicrophonePressedTime(true, command,ChangeScene.EspikinglishMinigames.WORMS);
+                            SaveSystem.increaseMicrophonePressedTime(true, originalText, ChangeScene.EspikinglishMinigames.WORMS);
                             _pointingGun.point(result);
                             _controlWorm.desactiveAll();
                             if (TutorialMode)
@@ -122,7 +122,7 @@ public class ConvertAngles : CommandParser
 
                         if (result <= 180 && result >= 0)
                         {
-                            SaveSystem.increaseMicrophonePressedTime(true,command, ChangeScene.EspikinglishMinigames.WORMS);
+                            SaveSystem.increaseMicrophonePressedTime(true, originalText, ChangeScene.EspikinglishMinigames.WORMS);
                             _pointingGun.point(result);
                             _controlWorm.desactiveAll();
                             if (TutorialMode)
@@ -168,7 +168,7 @@ public class ConvertAngles : CommandParser
 
                         if (result <= 100)
                         {
-                            SaveSystem.increaseMicrophonePressedTime(true, command, ChangeScene.EspikinglishMinigames.WORMS);
+                            SaveSystem.increaseMicrophonePressedTime(true, originalText, ChangeScene.EspikinglishMinigames.WORMS);
                             _ammunition.useWeapon(result);
                             //_controlWorm.desactiveAll();
                         }
@@ -197,7 +197,7 @@ public class ConvertAngles : CommandParser
                         int result = Int32.Parse(_sentenses[0]);
                         if (result <= 100)
                         {
-                            SaveSystem.increaseMicrophonePressedTime(true, command, ChangeScene.EspikinglishMinigames.WORMS);
+                            SaveSystem.increaseMicrophonePressedTime(true, originalText, ChangeScene.EspikinglishMinigames.WORMS);
                             _ammunition.useWeapon(result);
                             //_controlWorm.desactiveAll();
                         }
