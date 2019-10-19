@@ -136,7 +136,6 @@ public class SaveSystem
     {
         Debug.Log("increaseMicrophonePressedTime(3 parametros) Start");
 
-
         if (GameManager.GetInstance().CurrentPlayerInformation == null)
         {
             Debug.Log("increaseMicrophonePressedTime(3 parametros) return CurrentPlayerInformation == null");
@@ -194,7 +193,6 @@ public class SaveSystem
         PlayerPrefs.SetString(key, json);
 
         Debug.Log("increaseMicrophonePressedTime(3 parametros) End");
-
     }
 
     public static PlayerInformation getPlayerInstace()

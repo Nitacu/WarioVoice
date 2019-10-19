@@ -397,6 +397,13 @@ public class AbstractPaintingManager : CommandParser
         _paintedSplahes.Clear();
     }
 
+    IEnumerator playHummingClip()
+    {
+        yield return new WaitForEndOfFrame();
+
+        FindObjectOfType<PaintingSoundManager>().playHumming();
+    }
+
     private void evaluatePaint()
     {        
 
@@ -406,7 +413,8 @@ public class AbstractPaintingManager : CommandParser
             return;
         }
 
-        FindObjectOfType<PaintingSoundManager>().playHumming();
+        
+        StartCoroutine(playHummingClip());
 
         //ANIMACIONES ANALISIS
         GameObject _newAnalyzerBand = Instantiate(_analyzerBand);
@@ -605,6 +613,8 @@ public class AbstractPaintingManager : CommandParser
 
         }
 
+
+
         _microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
 
         FindObjectOfType<PaintingSoundManager>().playGoodJob(playerWin);
@@ -615,7 +625,6 @@ public class AbstractPaintingManager : CommandParser
     IEnumerator LaunchNextLevel(bool Success)
     {
         //_microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
-
         yield return new WaitForSeconds(FindObjectOfType<PaintingSoundManager>().GoodPaint.length- 0.5f);
 
         if (Success)
