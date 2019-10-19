@@ -434,6 +434,7 @@ public class PatternController : MonoBehaviour
     {
         Debug.Log("Ganaste");
         confetti.SetActive(true);
+        GetComponent<AudioSource>().Play();
         cameraAudioSource.Stop();
         GameManager.GetInstance();
         fade.permanentFade();

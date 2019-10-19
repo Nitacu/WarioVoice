@@ -22,11 +22,11 @@ public class TemporalWritingItem : MonoBehaviour
 
     public void getInstrument()
     {
-        FindObjectOfType<PatternCheckOrchesta>().parseCommand(input.text);
+        FindObjectOfType<PatternCheckOrchesta>().parseCommand(input.text, input.text);
     }
 
     public void getWord()
     {
-        FindObjectOfType<CheckAnswer>().parseCommand(input.text);
+        FindObjectOfType<CheckAnswer>().parseCommand(input.text, input.text);
     }
 }
