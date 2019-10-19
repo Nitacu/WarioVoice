@@ -28,7 +28,6 @@ public class DontDestroyMusic : MonoBehaviour
         
         if (scene.name != ChangeScene.SPIKINGLISHMENU && scene.name != ChangeScene.ESPIKINGLISHCREDITS)
         {
-            Debug.Log("Destroy");
             Destroy(_music);
             return;
         }

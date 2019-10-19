@@ -240,7 +240,6 @@ public class AbstractPaintingManager : CommandParser
             }
         }
 
-
         //TRACK INACTIVITY
         if (_inactivityTimeTracker < _inactivityTime)
         {
@@ -340,7 +339,8 @@ public class AbstractPaintingManager : CommandParser
                 _currentSplashColorSelected = availableSplash;
                 _brush.GetComponent<Image>().color = _currentSplashColorSelected._brushColor;
                 colorFinded = true;
-                _guideText.text = PAINTONCANVAS;
+
+                //_guideText.text = PAINTONCANVAS;
 
                 resetHelp();
             }
@@ -616,7 +616,7 @@ public class AbstractPaintingManager : CommandParser
     {
         //_microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
 
-        yield return new WaitForSeconds(FindObjectOfType<PaintingSoundManager>().GoodPaint.length- 0.5f);
+        yield return new WaitForSeconds(FindObjectOfType<PaintingSoundManager>().GoodPaint.length);
 
         if (Success)
         {
