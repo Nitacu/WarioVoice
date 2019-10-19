@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class IntroOrquesta : MonoBehaviour
 {
+    public AudioSource cameraAudioSource;
 
     public void endAnimationOrquesta()
     {
         FindObjectOfType<TextScreenControl>().startGame();
+        cameraAudioSource.Play();
         gameObject.SetActive(false);
     }
 }

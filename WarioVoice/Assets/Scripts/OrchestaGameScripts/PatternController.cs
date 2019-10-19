@@ -25,6 +25,7 @@ public class PatternController : MonoBehaviour
     public GameObject partiturePanel;
     public GameObject tomatoes;
     public FeedbackController feedback;
+    public AudioSource cameraAudioSource;
     //List that will be used to play and check patrons 
     private List<Instrument[]> patronList = new List<Instrument[]>();
     private Instrument[] checkPattern;
@@ -432,6 +433,7 @@ public class PatternController : MonoBehaviour
     {
         Debug.Log("Ganaste");
         confetti.SetActive(true);
+        cameraAudioSource.Stop();
         GameManager.GetInstance();
         fade.permanentFade();
         disableColliders();
@@ -440,6 +442,7 @@ public class PatternController : MonoBehaviour
 
     private void endGame()
     {
+        cameraAudioSource.Stop();
         Debug.Log("Perdiste");
         fade.permanentFade();
         tomatoes.SetActive(true);

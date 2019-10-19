@@ -8,6 +8,7 @@ public class AudioLoveGameController : MonoBehaviour
     public AudioClip lostSound;
     public AudioClip backgroundSong;
     public AudioClip victorySound;
+    public AudioSource womenAudioSource;
 
     private void Start()
     {
@@ -35,8 +36,8 @@ public class AudioLoveGameController : MonoBehaviour
     {
         _audioSource.loop = false;
         _audioSource.Stop();
-        _audioSource.clip = victorySound;
-        _audioSource.Play();
+        womenAudioSource.clip = victorySound;
+        womenAudioSource.Play();
     }
 
     public void playLostSound()
@@ -44,8 +45,8 @@ public class AudioLoveGameController : MonoBehaviour
         _audioSource.loop = false;
         _audioSource.Stop();
         _audioSource.volume = 1;
-        _audioSource.clip = lostSound;
-        _audioSource.Play();
+        womenAudioSource.clip = lostSound;
+        womenAudioSource.Play();
     }
 
 }
