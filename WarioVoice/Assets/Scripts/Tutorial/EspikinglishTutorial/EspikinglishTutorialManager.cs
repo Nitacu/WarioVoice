@@ -56,9 +56,7 @@ public class EspikinglishTutorialManager : CommandParser
       
 
         if (command.Equals(GO, System.StringComparison.OrdinalIgnoreCase))
-        {
-            
-
+        {            
             tutorialComplete = true;
 
             hidePointer(true);
