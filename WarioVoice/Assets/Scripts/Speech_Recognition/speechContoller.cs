@@ -80,8 +80,7 @@ public class speechContoller : MonoBehaviour {
 
 
     public void settext(string speechText){
-        speechReturned.text= speechText;
-        FindObjectOfType<ConvertAngles>().parseCommand(speechText);        
+        speechReturned.text= speechText;        
     }
 
     public void openexplorer()
