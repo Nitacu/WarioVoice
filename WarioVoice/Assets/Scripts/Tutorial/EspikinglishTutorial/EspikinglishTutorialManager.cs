@@ -139,6 +139,6 @@ public class EspikinglishTutorialManager : CommandParser
 
     public void test()
     {
-        parseCommand(_inputFieldTest.text);
+        parseCommand("",_inputFieldTest.text);
     }
 }
