@@ -30,6 +30,14 @@ public class AttackGlossary
     public const string STRAWBERRY = "strawberry";
     public const string PICKAXE = "pickaxe";
 
+    public const string ANTENNA = "antenna";
+    public const string BAT = "bat";
+    public const string BOUQUET = "bouquet";
+    public const string HONEY = "honey";
+    public const string KITE = "kite";
+    public const string LEAVES_BLOWER = "leaves blower";
+    public const string RACKET = "racket";
+
 
     public enum attack
     {
@@ -54,7 +62,14 @@ public class AttackGlossary
         VACUUM_CLEANER,
         CHOCOLATE,
         STRAWBERRY,
-        PICKAXE
+        PICKAXE,
+        ANTENNA,
+        BAT,
+        BOUQUET,
+        HONEY,
+        KITE,
+        LEAVES_BLOWER,
+        RACKET
     }
 
 

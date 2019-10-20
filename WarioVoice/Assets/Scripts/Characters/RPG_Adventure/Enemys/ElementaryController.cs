@@ -125,6 +125,8 @@ public class ElementaryController : LamiaController
             FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
         }
 
+        //siguiente personaje en atacar
+        _shifts.CurrentHero = _shifts.newChallenge();
         //revisa si mato a alguien
         removeHeroe();
     }

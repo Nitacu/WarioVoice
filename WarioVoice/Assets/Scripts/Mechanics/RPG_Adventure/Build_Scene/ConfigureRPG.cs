@@ -147,6 +147,7 @@ public class ConfigureRPG : MonoBehaviour
                 _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
                 _characterBuilder.SPLIT_ATTACKS1 = 0;
                 _lamiaController.Life = 5;
+
                 /*
                 _controlShifts.Invoke("playerEnemy", 5);
                 _characterBuilder.NumberCharacters = 2;
@@ -154,7 +155,7 @@ public class ConfigureRPG : MonoBehaviour
                 _characterBuilder.NUMBER_ATTACKS_USEFUL1 = 4;
                 _characterBuilder.NUMBER_ATTACKS_USELESS1 = 1;
                 _characterBuilder.NUMBER_HEALING_OBJECTS1 = 1;
-                _characterBuilder.SPLIT_ATTACKS1 = 0;
+                _characterBuilder.SPLIT_ATTACKS1 = 2;
                 _lamiaController.Life = 4;
                 */
                 break;
@@ -162,36 +163,6 @@ public class ConfigureRPG : MonoBehaviour
             case 4:
                 _characterBuilder.NumberCharacters = 2;
                 _lamiaController.Life = 5;
-                break;
-
-            case 5:
-                _characterBuilder.NumberCharacters = 2;
-                _lamiaController.Life = 5;
-                break;
-
-            case 6:
-                _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = 1;
-                break;
-
-            case 7:
-                _characterBuilder.NumberCharacters = 3;
-                _lamiaController.Life = 1;
-                break;
-
-            case 8:
-                _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = 1;
-                break;
-
-            case 9:
-                _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = 1;
-                break;
-
-            case 10:
-                _characterBuilder.NumberCharacters = 4;
-                _lamiaController.Life = 1;
                 break;
 
 

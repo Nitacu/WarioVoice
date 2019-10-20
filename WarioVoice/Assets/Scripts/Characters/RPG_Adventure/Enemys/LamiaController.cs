@@ -16,6 +16,7 @@ public class LamiaController : MonoBehaviour
     [Header("atque con el que destruye al enemigo")]
     [SerializeField] protected List<VoiceAttacks> _listAttacksDefinitive;
 
+    protected ControlShifts _shifts;
     protected float life;
     [Header("Cuando me hacen daño")]
     [SerializeField] protected GameObject _visualDamage;
@@ -31,6 +32,7 @@ public class LamiaController : MonoBehaviour
     public virtual void Start()
     {
         Characters = FindObjectsOfType<HeroProperties>().ToList();
+        _shifts = FindObjectOfType<ControlShifts>();
     }
 
     public virtual void addCharacter(HeroProperties hero)
@@ -229,6 +231,8 @@ public class LamiaController : MonoBehaviour
             attack(Characters[random], 2, "Ataque cargado  ");
         }
 
+        //siguiente personaje en atacar
+        _shifts.CurrentHero = _shifts.newChallenge();
         //revisa si mato a alguien
         removeHeroe();
     }

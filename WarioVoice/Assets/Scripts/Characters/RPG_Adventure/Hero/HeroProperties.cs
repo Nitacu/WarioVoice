@@ -8,7 +8,7 @@ using TMPro;
 public class HeroProperties : MonoBehaviour
 {
 
-    private List<VoiceAttacks> _attacks = new List<VoiceAttacks>(); // mis ataques
+    [SerializeField]private List<VoiceAttacks> _attacks = new List<VoiceAttacks>(); // mis ataques
     private ExeAttack _exeAttack; // donde va a preparar el ataque
     private LevelInformationPanel _levelInformationPanel; // panel que muestra la informacion del nivel
     private LamiaController _lamia; //enemigo
@@ -71,8 +71,6 @@ public class HeroProperties : MonoBehaviour
             FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
             _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(0);
         }
-
-
     }
 
     public void getCharacterStastic(float life)

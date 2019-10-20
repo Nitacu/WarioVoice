@@ -94,6 +94,7 @@ public class ExeAttack : MonoBehaviour
                 _controlShifts.Invoke("playerEnemy", 4);
                 //frase del ataque
                 FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentenceToCompleteAttack, false);
+                _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
             }
             else
             {
@@ -103,8 +104,21 @@ public class ExeAttack : MonoBehaviour
                     
                     //aplcia el daño
                     if (Lamia.lostLife(_currentAttack._damage))
-                        _controlShifts.Invoke("playerEnemy", 3);
-                    // visual
+                    {
+                        if (_controlShifts.CurrentHero.AssociatedObject)
+                        {
+                            _controlShifts.Invoke("playerEnemy", 5);
+                            _controlShifts.CurrentHero.AssociatedObject = false;
+                            _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 2);
+                            _controlShifts.CurrentHero = _controlShifts.newChallenge();
+                        }
+                        else
+                        {
+                            _controlShifts.Invoke("playerEnemy", 3);
+                            _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
+                        }
+
+                    }
 
                     //frase del ataque
                     FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentenceToCompleteAttack,false);
@@ -113,12 +127,10 @@ public class ExeAttack : MonoBehaviour
                 {
                     _controlShifts.Invoke("playerEnemy", 3);
                     FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentencesToNotUseAttack,false);
+                    _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
                 }
             }
-
-            _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
             _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
-            _controlShifts.CurrentHero = _controlShifts.newChallenge();
         }
     }
 

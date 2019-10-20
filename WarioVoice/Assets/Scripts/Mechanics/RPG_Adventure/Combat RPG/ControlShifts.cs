@@ -13,7 +13,7 @@ public class ControlShifts : MonoBehaviour
     private LamiaController _lamia;
     private List<HeroProperties> _heroes = new List<HeroProperties>();
     private int _indexTurnHero = -1;
-    private HeroProperties _currentHero; // heroe que va a atacar;
+    [SerializeField]private HeroProperties _currentHero; // heroe que va a atacar;
     private bool _firtsTurn = true;
     // GET Y SET
     public bool TurnEnemy { get => turnEnemy; set => turnEnemy = value; }
@@ -52,20 +52,25 @@ public class ControlShifts : MonoBehaviour
 
     public HeroProperties newChallenge()
     {
-        while (true)
+        if (_heroes.Count>0)
         {
-            _indexTurnHero++;
-
-            if (_heroes.Count <= _indexTurnHero)
+            while (true)
             {
-                _indexTurnHero = 0;
-            }
+                _indexTurnHero++;
 
-            if (_heroes[_indexTurnHero].IsLive)
-            {
-                return _heroes[_indexTurnHero];
+                if (_heroes.Count <= _indexTurnHero)
+                {
+                    _indexTurnHero = 0;
+                }
+
+                if (_heroes[_indexTurnHero].IsLive)
+                {
+                    return _heroes[_indexTurnHero];
+                }
             }
         }
+
+        return null;
     }
 
     public void playerEnemy()
