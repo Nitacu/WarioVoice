@@ -38,6 +38,7 @@ public class PatternController : MonoBehaviour
     private int contInstrument = 0;
     private int contChecking = 0;
     private int instrumentDifficulty = 0;
+    private bool patternShowed = false;
 
 
     // Start is called before the first frame update
@@ -76,7 +77,7 @@ public class PatternController : MonoBehaviour
 
     private void setInstruments()
     {
-        bool copiedItem = false;
+        
         contInstrumentCreator = 0;
 
         for (int i = 0; i < patternDuration; i++)
@@ -158,11 +159,19 @@ public class PatternController : MonoBehaviour
         }
     }
 
-    private void activateColliders()
+    public void activateColliders()
     {
         foreach (Transform child in instrumentsGameObject.transform)
         {
             child.GetComponent<BoxCollider2D>().enabled = true;
+        }
+    }
+
+    public void activateCollidersWithTime(float time)
+    {
+        if (patternShowed)
+        {
+            Invoke("activateColliders", time);
         }
     }
 
@@ -460,7 +469,7 @@ public class PatternController : MonoBehaviour
         partiturePanel.SetActive(true);
         pauseMenuCanvas.sortingOrder = 100;
         //director.SetActive(true);
-
+        patternShowed = true;
         audience.SetActive(true);
 
         foreach (Transform child in instrumentsGameObject.transform)

@@ -349,6 +349,8 @@ public class WordController : MonoBehaviour
         if (endGame)
         {
             player.GetComponent<PositionController>().playIdleFriend();
+            signText.text = " ";
+            signText.enabled = false;
         }
     }
 
