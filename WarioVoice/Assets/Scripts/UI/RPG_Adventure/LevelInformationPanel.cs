@@ -30,8 +30,7 @@ public class LevelInformationPanel : MonoBehaviour
         FindObjectOfType<SetActiveSpeechButton>().setButton(state);
         _panelAttacks.SetActive(state);
 
-
-        if (_listTexts.Count <= 3)
+        if (_listTexts.Count < 3)
         {
             _newText[0].SetActive(true);
             _newText[0].GetComponent<TMP_Text>().text = puzzle;

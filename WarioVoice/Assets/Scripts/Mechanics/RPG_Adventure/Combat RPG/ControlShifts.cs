@@ -27,6 +27,7 @@ public class ControlShifts : MonoBehaviour
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
         _heroes = FindObjectsOfType<HeroProperties>().ToList();
+        CurrentHero = newChallenge();
     }
 
     public void playerTurn()
@@ -43,7 +44,6 @@ public class ControlShifts : MonoBehaviour
         }
 
         //selecciona el hero y lo mueve
-        CurrentHero = newChallenge();
         CurrentHero.GetComponent<MoveHeroe>().changeDirection();
         //muestre los ataques
         CurrentHero.showAttacks();
@@ -82,6 +82,7 @@ public class ControlShifts : MonoBehaviour
             _lamia.Invoke("winEnemy", 1.5f);
         else
             Invoke("playerTurn", 1.5f);
+
     }
 
     public void reviveHero(HeroProperties hero)

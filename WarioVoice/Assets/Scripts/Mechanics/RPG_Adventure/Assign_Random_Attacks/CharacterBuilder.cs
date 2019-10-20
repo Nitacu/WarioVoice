@@ -75,7 +75,6 @@ public class CharacterBuilder : MonoBehaviour
                 else
                 {
                     aux.GetComponent<HeroProperties>().getAttack(ListAttacksUseful[(SPLIT_ATTACKS*e)+i]);
-
                 }
             }
 

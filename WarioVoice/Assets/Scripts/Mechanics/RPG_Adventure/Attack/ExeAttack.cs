@@ -118,6 +118,7 @@ public class ExeAttack : MonoBehaviour
 
             _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
             _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
+            _controlShifts.CurrentHero = _controlShifts.newChallenge();
         }
     }
 

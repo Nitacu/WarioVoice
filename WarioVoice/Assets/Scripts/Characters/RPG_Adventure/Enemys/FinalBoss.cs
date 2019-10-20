@@ -68,6 +68,8 @@ public class FinalBoss : LamiaController
         {
             //daño al jefe
             Debug.Log("le pega al boss");
+            Destroy(_shifts.CurrentHero.GetComponentInChildren<FollowPoint>().gameObject);
+            _shifts.CurrentHero.AssociatedObject = false;
             return true;
         }
         else
@@ -93,8 +95,7 @@ public class FinalBoss : LamiaController
     public override void selecAttack()
     {
         //selecciona un player
-        random = Random.Range(0, Characters.Count);
-        _lastHeroToHarm = heroWithMoreLife(Characters[random]);
+        _lastHeroToHarm = _shifts.CurrentHero;
 
         if (!_lastHeroToHarm.AssociatedObject)
         {
