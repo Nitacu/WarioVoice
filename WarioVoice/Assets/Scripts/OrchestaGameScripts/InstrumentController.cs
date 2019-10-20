@@ -101,11 +101,21 @@ public class InstrumentController : MonoBehaviour
         spriteRenderer.sprite = instrumentQuiet;
     }
 
+    IEnumerator playSoundCor()
+    {
+        yield return new WaitForEndOfFrame();
+        GetComponent<AudioSource>().clip = _instrumentSound;
+        GetComponent<AudioSource>().Play();
+
+    }
 
     public void playSound()
     {
+        StartCoroutine(playSoundCor());
+        /*
         GetComponent<AudioSource>().clip = _instrumentSound;
         GetComponent<AudioSource>().Play();
+        */
     }
 
     public void playName()
