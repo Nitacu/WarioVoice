@@ -147,7 +147,7 @@ public class PatternController : MonoBehaviour
     {
         patternPanel.musicPatternCreator(patronList[currentPatron]);
         patternPanel.gameObject.SetActive(false);
-
+        pauseMenuCanvas.sortingOrder = 100;
         showPatron();
     }
 
@@ -467,7 +467,6 @@ public class PatternController : MonoBehaviour
         partiture.gameObject.SetActive(false);
         activateColliders();
         partiturePanel.SetActive(true);
-        pauseMenuCanvas.sortingOrder = 100;
         //director.SetActive(true);
         patternShowed = true;
         audience.SetActive(true);
