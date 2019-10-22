@@ -32,7 +32,9 @@ public class BetweenSceneControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timeTextESP;
     [SerializeField] private TextMeshProUGUI _timerNormalText;
 
+    [Header("Game Lossed Vars")]
     [SerializeField] private GameObject _gameCompletedPanel;
+    [SerializeField] private AudioSource _sourceMusic;
 
     [Header("Game Lossed Vars")]
     [SerializeField] private GameObject _continuePanel;
@@ -128,10 +130,11 @@ public class BetweenSceneControl : MonoBehaviour
         _timeTracking = _timeToLaunchNextMinigame;
 
         //disableFlags();
-     
+
+       
         _gameCompleted = GameManager.GetInstance().GameCompleted;
         _gameLossed = GameManager.GetInstance().GameLossed;        
-     
+
 
         if (_gameLossed)
         {
@@ -174,6 +177,7 @@ public class BetweenSceneControl : MonoBehaviour
             }
 
             _gameCompletedPanel.SetActive(true);
+            _sourceMusic.Play();
 
             Debug.Log("game manager game completed - if end");
         }
