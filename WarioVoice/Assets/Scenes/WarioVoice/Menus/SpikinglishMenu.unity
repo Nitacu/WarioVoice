@@ -754,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 148}
+  m_AnchoredPosition: {x: 0, y: 145.4}
   m_SizeDelta: {x: 723.7, y: 109.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655416922
@@ -777,7 +777,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 553bf4f76f994b54abfdf6570a20a264, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fbd5f7ff3f46644795464d3162d663b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2497,6 +2497,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _musicButton
+      value: 
+      objectReference: {fileID: 187295488}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _sfxButton
+      value: 
+      objectReference: {fileID: 958332767}
     - target: {fileID: 102756524972975996, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2557,16 +2567,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _musicButton
-      value: 
-      objectReference: {fileID: 187295488}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _sfxButton
-      value: 
-      objectReference: {fileID: 958332767}
     - target: {fileID: 102756523889832683, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_IsActive
@@ -2644,12 +2644,12 @@ PrefabInstance:
     - target: {fileID: 2509397082690307059, guid: f426f943308bfee49999f75f013a0748,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -368.4
+      value: -365.7
       objectReference: {fileID: 0}
     - target: {fileID: 2509397082690307059, guid: f426f943308bfee49999f75f013a0748,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.6
+      value: 0.000017643
       objectReference: {fileID: 0}
     - target: {fileID: 2509397082690307059, guid: f426f943308bfee49999f75f013a0748,
         type: 3}
