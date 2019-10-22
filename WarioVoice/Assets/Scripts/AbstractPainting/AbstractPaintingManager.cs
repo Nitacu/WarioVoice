@@ -338,7 +338,7 @@ public class AbstractPaintingManager : CommandParser
             if (commandColor.Equals(availableSplash._colorName, System.StringComparison.OrdinalIgnoreCase))
             {
                 _currentSplashColorSelected = availableSplash;
-                _brush.GetComponent<Image>().color = _currentSplashColorSelected._brushColor;
+                _brush.GetComponent<Image>().color = availableSplash._brushColor;
                 colorFinded = true;
                 _guideText.text = PAINTONCANVAS;
 

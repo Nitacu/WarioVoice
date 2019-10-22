@@ -11,8 +11,8 @@ public class BetweenSceneControl : MonoBehaviour
     private const string BOSSBATLE_ESP = "Jefe";
     private const string LOSE_ENG = "Game over";
     private const string LOSE_ESP = "";
-    private const string COMPLETED_ESP = "Thanks for playing Spikinglish Demo!";
-    private const string COMPLETED_ENG = "Gracias por jugar el demo de Spikinglish!";
+    private const string COMPLETED_ESP = "Thanks for playing Espikinglish Demo!";
+    private const string COMPLETED_ENG = "Gracias por jugar el demo de Espikinglish!";
 
     private const string CLIP_lIVE_IDLE = "IdleLive";
     private const string CLIP_lIVE_FALLING = "LiveFalling";
@@ -31,6 +31,8 @@ public class BetweenSceneControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timeTextENG;
     [SerializeField] private TextMeshProUGUI _timeTextESP;
     [SerializeField] private TextMeshProUGUI _timerNormalText;
+
+    [SerializeField] private GameObject _gameCompletedPanel;
 
     [Header("Game Lossed Vars")]
     [SerializeField] private GameObject _continuePanel;
@@ -126,9 +128,10 @@ public class BetweenSceneControl : MonoBehaviour
         _timeTracking = _timeToLaunchNextMinigame;
 
         //disableFlags();
-
+     
         _gameCompleted = GameManager.GetInstance().GameCompleted;
-        _gameLossed = GameManager.GetInstance().GameLossed;
+        _gameLossed = GameManager.GetInstance().GameLossed;        
+     
 
         if (_gameLossed)
         {
@@ -156,11 +159,21 @@ public class BetweenSceneControl : MonoBehaviour
 
             _timeTextENG.text = COMPLETED_ESP;
             _timeTextESP.text = COMPLETED_ENG;
+
             _timeTracking = _timeToLaunchToMainMenu;
+
             GameObject confetti = Instantiate(_confetti);
             confetti.transform.position = Vector3.zero;
+
             FindObjectOfType<BetweenSceneAudioControl>().playGreat();
             StartCoroutine(playClip(_sourceVoice, _thanksForPlayingClip, _gameCompleteEffect.length));
+
+            foreach (var item in _lives)
+            {
+                item.SetActive(false);
+            }
+
+            _gameCompletedPanel.SetActive(true);
 
             Debug.Log("game manager game completed - if end");
         }

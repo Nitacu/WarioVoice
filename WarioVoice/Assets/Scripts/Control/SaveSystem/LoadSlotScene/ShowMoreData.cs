@@ -33,8 +33,6 @@ public class ShowMoreData : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Pinturas Veces jugadas: " + FindObjectOfType<FileManager>().PlayerInfSelected.timesPlayedModernPaints + " , Veces perdidas: " + FindObjectOfType<FileManager>().PlayerInfSelected.timesLossedModernPaints);
-
         PlayerInformation playerInf = FindObjectOfType<FileManager>().PlayerInfSelected;
 
         timesPlayedModernPaints.text = (playerInf.timesPlayedModernPaints - playerInf.timesLossedModernPaints).ToString() + "/" + playerInf.timesPlayedModernPaints;

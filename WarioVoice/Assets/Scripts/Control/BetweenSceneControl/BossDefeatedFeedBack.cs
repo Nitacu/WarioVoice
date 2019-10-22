@@ -27,7 +27,6 @@ public class BossDefeatedFeedBack : MonoBehaviour
 
     private void Awake()
     {
-        
         currentBossesDefeated = SaveSystem.getPlayerInstace().bossesDefeated;
         PlayerInformation playerInf = SaveSystem.getPlayerInstace();
         _playername.text = playerInf.playerName;

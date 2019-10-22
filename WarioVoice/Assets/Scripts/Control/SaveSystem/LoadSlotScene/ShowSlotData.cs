@@ -47,18 +47,21 @@ public class ShowSlotData : MonoBehaviour
 
         _nameTextUI.text = _name;
 
-        foreach (var boss in _imageBosses)
+        if (_imageBosses.Count >0)
         {
-            //boss.color = Color.black;
-            boss.GetComponent<Image>().sprite = _undefetaedIcon;
-        }
+            foreach (var boss in _imageBosses)
+            {
+                //boss.color = Color.black;
+                boss.GetComponent<Image>().sprite = _undefetaedIcon;
+            }
 
-        for (int i = 0; i < _defeatedBosses; i++)
-        {
-            //_imageBosses[i].color = Color.white;
-            _imageBosses[i].GetComponent<Image>().sprite = _defeatedIcon;
+            for (int i = 0; i < _defeatedBosses; i++)
+            {
+                //_imageBosses[i].color = Color.white;
+                _imageBosses[i].GetComponent<Image>().sprite = _defeatedIcon;
 
-        }
+            }
+        }      
 
         if (_defeatedBossesText != null)
         {
