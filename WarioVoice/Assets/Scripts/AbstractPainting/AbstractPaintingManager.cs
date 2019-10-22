@@ -55,7 +55,14 @@ public class AbstractPaintingManager : CommandParser
     const string WANTARESULT = "Did you finish your painting?\n ¿Terminaste tu pintura?";
     const string YESORNO = "Yes | No";
 
-    private List<string> _winDialogs = new List<string>() { "Mother of DaVinci", "Good Job", "Van Gogh would be proud of you\nVan Gogh estaría orgulloso de ti"};
+    private List<string> _lostDialogs = new List<string>()
+    {"Not enough\nNo es suficiente", "Por la oreja de vangoh\nPor la oreja de vangoh\n",
+        "Are you a Pigcaso" };
+    private List<string> _winDialogs = new List<string>() {"Michelangelo would share you his pizza\nMiguel Angel te compartiría su pizza",
+        "Rafael likes your service, 5 ninja stars\nA Rafael le gusta tu servicio, 5 estrellas ninja",
+        "Donatello gives you 3 thumbs up\nDonatello te da 3 pulgares arriba",
+        "Mother of Leo DaVinci",
+    };
     #endregion
 
     #region Commands
@@ -170,7 +177,7 @@ public class AbstractPaintingManager : CommandParser
     private bool _isAnalyzing;
     private GameObject _currentRerefencePaint;
     private bool _wantAResult = false;
-    
+
     #endregion
 
     private void Start()
@@ -405,7 +412,7 @@ public class AbstractPaintingManager : CommandParser
     }
 
     private void evaluatePaint()
-    {        
+    {
 
         if (_isAnalyzing)
         {
@@ -413,7 +420,7 @@ public class AbstractPaintingManager : CommandParser
             return;
         }
 
-        
+
         StartCoroutine(playHummingClip());
 
         //ANIMACIONES ANALISIS
@@ -591,7 +598,7 @@ public class AbstractPaintingManager : CommandParser
         if (playerWin)
         {
             _paintCritique.GetComponent<Image>().sprite = _correctCritique;
-            int randomDialog = Random.Range(0,_winDialogs.Count);
+            int randomDialog = Random.Range(0, _winDialogs.Count);
             //int _indexRandom = System.Random.Range(0, _winDialogs.Count);
             _guideText.text = _winDialogs[randomDialog];
             _analyzeResultText.text = "Nice Paint\n" + "Splahes Number: " +
@@ -606,7 +613,8 @@ public class AbstractPaintingManager : CommandParser
         else
         {
             _paintCritique.GetComponent<Image>().sprite = _wrongCritique;
-            _guideText.text = LOSE;
+            int randomDialog = Random.Range(0, _lostDialogs.Count);
+            _guideText.text = _lostDialogs[randomDialog];
             _analyzeResultText.text = "Meeh\n" + "Splahes Number: " +
                     _paintedSplahes.Count + "/" + _levels[_currentLevel].SplashesInReferencePaint.Count
                     + "\nCoincidences: " + Mathf.RoundToInt(_coindencePercentage) + "/" + "100%";
@@ -625,7 +633,7 @@ public class AbstractPaintingManager : CommandParser
     IEnumerator LaunchNextLevel(bool Success)
     {
         //_microphoneButton.GetComponent<SetActiveSpeechButton>().setButton(false);
-        yield return new WaitForSeconds(FindObjectOfType<PaintingSoundManager>().GoodPaint.length- 0.5f);
+        yield return new WaitForSeconds(FindObjectOfType<PaintingSoundManager>().GoodPaint.length - 0.5f);
 
         if (Success)
         {
@@ -633,7 +641,7 @@ public class AbstractPaintingManager : CommandParser
             confetti.transform.position = Vector3.zero;
             FindObjectOfType<PaintingSoundManager>().playGreatTada();
         }
-     
+
         yield return new WaitForSeconds(_timeTochangeLevel);
 
         GameManager.GetInstance().launchNextMinigame(Success);

@@ -1338,7 +1338,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'V 0.4.10
+  m_text: 'V 0.4.11
 
 '
   m_isRightToLeft: 0
@@ -2497,16 +2497,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _musicButton
-      value: 
-      objectReference: {fileID: 187295488}
-    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
-        type: 3}
-      propertyPath: _sfxButton
-      value: 
-      objectReference: {fileID: 958332767}
     - target: {fileID: 102756524972975996, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2567,6 +2557,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _musicButton
+      value: 
+      objectReference: {fileID: 187295488}
+    - target: {fileID: 102756524972975987, guid: 332fa07e42c30814f938d62de8c0c955,
+        type: 3}
+      propertyPath: _sfxButton
+      value: 
+      objectReference: {fileID: 958332767}
     - target: {fileID: 102756523889832683, guid: 332fa07e42c30814f938d62de8c0c955,
         type: 3}
       propertyPath: m_IsActive
