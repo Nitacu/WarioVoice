@@ -52,23 +52,49 @@ public class ControlShifts : MonoBehaviour
 
     public HeroProperties newChallenge()
     {
-        if (_heroes.Count>0)
+        if (FindObjectOfType<FinalBoss>())
         {
-            while (true)
+            if (_heroes.Count > 1)
             {
-                _indexTurnHero++;
-
-                if (_heroes.Count <= _indexTurnHero)
+                while (true)
                 {
-                    _indexTurnHero = 0;
-                }
+                    _indexTurnHero++;
 
-                if (_heroes[_indexTurnHero].IsLive)
-                {
-                    return _heroes[_indexTurnHero];
+                    if (_heroes.Count <= _indexTurnHero)
+                    {
+                        _indexTurnHero = 0;
+                    }
+
+                    if (_heroes[_indexTurnHero].IsLive && _heroes.Count > 1)
+                    {
+                        Debug.Log("cambia ?");
+                        return _heroes[_indexTurnHero];
+                    }
                 }
             }
         }
+        else
+        {
+            if (_heroes.Count > 0)
+            {
+                while (true)
+                {
+                    _indexTurnHero++;
+
+                    if (_heroes.Count <= _indexTurnHero)
+                    {
+                        _indexTurnHero = 0;
+                    }
+
+                    if (_heroes[_indexTurnHero].IsLive)
+                    {
+                        Debug.Log("cambia ?");
+                        return _heroes[_indexTurnHero];
+                    }
+                }
+            }
+        }
+
 
         return null;
     }
@@ -83,10 +109,19 @@ public class ControlShifts : MonoBehaviour
 
         _lamia.selecAttack(); // ataca
 
-        if (_heroes.Count == 0)
-            _lamia.Invoke("winEnemy", 1.5f);
+        if (!FindObjectOfType<FinalBoss>())
+        {
+            if (_heroes.Count == 0)
+                _lamia.Invoke("winEnemy", 1.5f);
+            else
+                Invoke("playerTurn", 1.5f);
+        }
         else
-            Invoke("playerTurn", 1.5f);
+        {
+            
+            if (_heroes.Count == 0)
+                _lamia.Invoke("winEnemy", 1.5f);     
+        }
 
     }
 

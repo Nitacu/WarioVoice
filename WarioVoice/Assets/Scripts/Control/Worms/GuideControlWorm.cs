@@ -5,7 +5,7 @@ using TMPro;
 
 public class GuideControlWorm : MonoBehaviour
 {
-    private SetActiveSpeechButton _speechButton;
+    [SerializeField]private SetActiveSpeechButton _speechButton;
     private ConvertAngles _convertAngles;
     [SerializeField] private GameObject _imageAngle;
     [SerializeField] private GameObject _imagePower;

@@ -46,7 +46,7 @@ public class ExeAttack : MonoBehaviour
 
         foreach (HeroProperties hero in aux)
         {
-            Instantiate(_hearth, hero.transform).transform.position = hero.transform.position + new Vector3(0,1,0);
+            Instantiate(_hearth, hero.transform).transform.position = hero.transform.position + new Vector3(0, 1, 0);
         }
     }
 
@@ -60,9 +60,11 @@ public class ExeAttack : MonoBehaviour
         usedObject.GetComponent<AudioSource>().Play();
     }
 
-    public void selectAttack(string word)
+    IEnumerator selectAttackCoroutine(string word)
     {
-        SaveSystem.increaseMicrophonePressedTime(true,word,ChangeScene.EspikinglishMinigames.RPG);
+        yield return new WaitForEndOfFrame();
+
+        SaveSystem.increaseMicrophonePressedTime(true, word, ChangeScene.EspikinglishMinigames.RPG);
 
         if (characterContainsAttack())
         {
@@ -77,7 +79,7 @@ public class ExeAttack : MonoBehaviour
 
             if (_currentAttack._cure)
             {
-                HeroProperties[] aux =  FindObjectsOfType<HeroProperties>();
+                HeroProperties[] aux = FindObjectsOfType<HeroProperties>();
                 List<HeroProperties> revive = new List<HeroProperties>();
 
                 foreach (HeroProperties hero in aux)
@@ -85,9 +87,16 @@ public class ExeAttack : MonoBehaviour
                     if (!hero.IsLive)
                         Lamia.addCharacter(hero);
 
-                    hero.getCharacterStastic(1);  
+                    hero.getCharacterStastic(1);
                 }
 
+                if (FindObjectOfType<FinalBoss>())
+                {
+                    if (FindObjectOfType<FinalBoss>().Counters.Count>0)
+                        _controlShifts.CurrentHero = _controlShifts.newChallenge();
+
+                    FindObjectOfType<FinalBoss>().effectiveAttack(_currentAttack._attack);
+                }
                 //muestra que gano vida
                 Invoke("feeckbackGotLife", 1);
                 //para finalizar el turno
@@ -98,18 +107,18 @@ public class ExeAttack : MonoBehaviour
             }
             else
             {
-                
+
                 if (Lamia.effectiveAttack(_typeAttack))
                 {
-                    
+
                     //aplcia el daño
                     if (Lamia.lostLife(_currentAttack._damage))
                     {
                         if (_controlShifts.CurrentHero.AssociatedObject)
                         {
-                            _controlShifts.Invoke("playerEnemy", 5);
+                            _controlShifts.Invoke("playerEnemy", 6);
                             _controlShifts.CurrentHero.AssociatedObject = false;
-                            _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 2);
+                            _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 3);
                             _controlShifts.CurrentHero = _controlShifts.newChallenge();
                         }
                         else
@@ -121,17 +130,30 @@ public class ExeAttack : MonoBehaviour
                     }
 
                     //frase del ataque
-                    FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentenceToCompleteAttack,false);
+                    FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentenceToCompleteAttack, false);
                 }
                 else
                 {
+                    if (FindObjectOfType<FinalBoss>())
+                    {
+                        Debug.Log(_controlShifts.CurrentHero.Life);
+                        if (FindObjectOfType<FinalBoss>().Counters.Count > 0 || _controlShifts.CurrentHero.Life <= 1)
+                            _controlShifts.CurrentHero = _controlShifts.newChallenge();
+                    }
+
                     _controlShifts.Invoke("playerEnemy", 3);
-                    FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentencesToNotUseAttack,false);
+                    FindObjectOfType<LevelInformationPanel>().showDialogs(_currentAttack._sentencesToNotUseAttack, false);
                     _hero.GetComponent<MoveHeroe>().Invoke("changeDirection", 1);
                 }
             }
             _hero.GetComponent<HeroProperties>().Attacks.Remove(_currentAttack);
         }
+    }
+
+
+    public void selectAttack(string word)
+    {
+        StartCoroutine(selectAttackCoroutine(word));
     }
 
 

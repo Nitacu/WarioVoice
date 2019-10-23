@@ -123,7 +123,7 @@ public class LamiaController : MonoBehaviour
     }
 
     // evalua que heroes estan vivos
-    public void removeHeroe()
+    public virtual void removeHeroe()
     {
         if (heroeIsAlive())
         {

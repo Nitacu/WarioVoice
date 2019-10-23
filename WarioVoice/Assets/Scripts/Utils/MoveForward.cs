@@ -9,18 +9,21 @@ public class MoveForward : MonoBehaviour
     private float _time = 0;
     private float _rate;
     public Vector3 Direction { get => _direction; set => _direction = value; }
+    public float Speed { get => _speed; set => _speed = value; }
+    public float Rate { get => _rate; set => _rate = value; }
+    public float Time { get => _time; set => _time = value; }
 
     private void Start()
     {
-        _rate = 1f / Vector3.Distance(transform.eulerAngles, new Vector3(0,0,180)) * _speed;
+        Rate = 1f / Vector3.Distance(transform.eulerAngles, new Vector3(0,0,180)) * Speed;
     }
 
     void Update()
     {
-        if (_time <= 1)
+        if (Time <= 1)
         {
-            _time += Time.deltaTime * _rate;
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, 180), _time);
+            Time += UnityEngine.Time.deltaTime * Rate;
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 0, 180), Time);
         }
 
     }

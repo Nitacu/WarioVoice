@@ -735,7 +735,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 44.75
+  m_fontSize: 27.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -781,7 +781,7 @@ MonoBehaviour:
     spaceCount: 12
     wordCount: 13
     linkCount: 0
-    lineCount: 4
+    lineCount: 5
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -1319,7 +1319,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.430769
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3246,6 +3246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026fee8761ed7dc418b29360fa9f2c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speechButton: {fileID: 1398742775}
   _imageAngle: {fileID: 1300842099}
   _imagePower: {fileID: 1080891802}
   _text: {fileID: 780980538}
@@ -8027,7 +8028,7 @@ PrefabInstance:
     - target: {fileID: 3806252619100791871, guid: 308718ebb938d994dab1c55d4f0738e8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.4801102
+      value: 2.480116
       objectReference: {fileID: 0}
     - target: {fileID: 3806252619100791871, guid: 308718ebb938d994dab1c55d4f0738e8,
         type: 3}

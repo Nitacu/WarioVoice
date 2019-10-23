@@ -26,12 +26,14 @@ public class HeroProperties : MonoBehaviour
 
     private bool _associatedObject = false;
     [SerializeField]private AttackGlossary.attack _counterAttack;
+    private int _indexAttackAssociated;
 
     public bool IsLive { get => _isLive; set => _isLive = value; }
     public List<VoiceAttacks> Attacks { get => _attacks; set => _attacks = value; }
     public float Life { get => _life; set => _life = value; }
     public bool AssociatedObject { get => _associatedObject; set => _associatedObject = value; }
     public AttackGlossary.attack CounterAttack { get => _counterAttack; set => _counterAttack = value; }
+    public int IndexAttackAssociated { get => _indexAttackAssociated; set => _indexAttackAssociated = value; }
 
     private void Start()
     {
@@ -70,6 +72,7 @@ public class HeroProperties : MonoBehaviour
             GetComponent<Animator>().Play(Animator.StringToHash("Die_heroe"));
             FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
             _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(0);
+
         }
     }
 
