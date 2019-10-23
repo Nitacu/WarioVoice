@@ -1235,7 +1235,8 @@ MonoBehaviour:
     de manchas de pintura vector gratuito\" by Milano83 , Dise\xF1ado por Freepik\n\n\"icono
     ventilador\" by Freepik from flaticon.com\n\n\"Resilience\" from patrickdearteaga.com\n\n\"Intrusi\xF3n\"
     from patrickdearteaga.com\n\n\"Solve The Puzzle\" \U000EE8A0from patrickdearteaga.com\n\n\"SuTurno\"
-    from patrickdearteaga.com\n\n\"sci-fi-sound.wav\" by univ_lyon3 of Freesound.org\n"
+    from patrickdearteaga.com\n\n\"sci-fi-sound.wav\" by univ_lyon3 of Freesound.org\n\n\"Acoustic
+    breeze\" from: www.bensound.com\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba8e61b465945ba44a6c1787228e431c, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 7ef2fce454fcdc1458db9a738cc99d41, type: 2}
@@ -1304,12 +1305,12 @@ MonoBehaviour:
   m_margin: {x: 4, y: 0, z: 4.4478326, w: 0}
   m_textInfo:
     textComponent: {fileID: 1177190877}
-    characterCount: 624
+    characterCount: 666
     spriteCount: 0
-    spaceCount: 87
-    wordCount: 93
+    spaceCount: 92
+    wordCount: 99
     linkCount: 0
-    lineCount: 25
+    lineCount: 27
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
