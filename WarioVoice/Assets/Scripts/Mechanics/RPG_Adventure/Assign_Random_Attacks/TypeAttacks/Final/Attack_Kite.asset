@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Kite
   _attack: 26
-  _pronunciation: {fileID: 8300000, guid: 205274b30fbf39641a998d261baff643, type: 3}
+  _pronunciation: {fileID: 8300000, guid: adad14b8f70a70f4c8ec6f43316ebb40, type: 3}
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: 8816f5e93c202b848a7ed5256a3a9cba, type: 3}
-  _sentenceToCompleteAttack: No hay muro que un buen taladro no pueda romper
-  _sentencesToNotUseAttack: "Creo que ser\xEDa mejor usarlo en un s\xF3lido"
+  _sentenceToCompleteAttack: Por el poder que me confiere Benjamin franklin, ataque
+    de rayo cometa!
+  _sentencesToNotUseAttack: "No hay viento, la cometa se cay\xF3 al suelo"

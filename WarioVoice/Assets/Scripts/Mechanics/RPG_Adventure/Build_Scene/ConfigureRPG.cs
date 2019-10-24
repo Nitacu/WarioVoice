@@ -71,7 +71,7 @@ public class ConfigureRPG : MonoBehaviour
                 break;
 
             case 3:
-                return 3;
+                return 2;
                 break;
 
             case 4:
@@ -117,6 +117,7 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
+                
                 _controlShifts.Invoke("playerTurn", 5);
                 _characterBuilder.NumberCharacters = 2;
                 _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 1;

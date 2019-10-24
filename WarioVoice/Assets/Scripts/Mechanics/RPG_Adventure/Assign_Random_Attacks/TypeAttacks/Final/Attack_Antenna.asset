@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verb: Antenna
   _attack: 22
-  _pronunciation: {fileID: 8300000, guid: 205274b30fbf39641a998d261baff643, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 688435ff335e6044dba446c9773a8744, type: 3}
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: af76a040af13d1d48a69d36de58ddc54, type: 3}
-  _sentenceToCompleteAttack: No hay muro que un buen taladro no pueda romper
-  _sentencesToNotUseAttack: "Creo que ser\xEDa mejor usarlo en un s\xF3lido"
+  _sentenceToCompleteAttack: El perfecto pararrayos
+  _sentencesToNotUseAttack: Y esto de que me sirve? si ni tengo un televisor

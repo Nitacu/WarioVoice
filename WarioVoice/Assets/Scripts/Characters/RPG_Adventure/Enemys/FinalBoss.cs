@@ -95,6 +95,9 @@ public class FinalBoss : LamiaController
         {
             Destroy(_reflectedAttack);
         }
+
+        Debug.Log("as");
+        GetComponent<AudioSource>().Play();
         GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
 
         if (Life <= 0)
@@ -208,7 +211,10 @@ public class FinalBoss : LamiaController
                 GetComponent<Animator>().Play(Animator.StringToHash("Attack_final_boss"));
                 GameObject aux = Instantiate(_jar, transform.position, Quaternion.identity);
                 if (Counters[random]._useOtherObj)
+                {
                     aux.GetComponent<SpriteRenderer>().sprite = _bomb;
+                    aux.GetComponent<LaunchAttack>()._audioCrash = false;
+                }
                 aux.GetComponent<LaunchAttack>()._finalPosition = _lastHeroToHarm.transform;
                 aux.GetComponent<LaunchAttack>().shoot();
             }
@@ -235,7 +241,6 @@ public class FinalBoss : LamiaController
         Counters[random]._hero = _lastHeroToHarm;
         _countersUsed.Add(Counters[random]);
         Counters.RemoveAt(random);
-        Debug.Log("ataques usados" + _countersUsed.Count);
         _lastHeroToHarm.IndexAttackAssociated = Counters.Count - 1;
         GetComponent<Animator>().Play(Animator.StringToHash("Idle_boss"));
     }

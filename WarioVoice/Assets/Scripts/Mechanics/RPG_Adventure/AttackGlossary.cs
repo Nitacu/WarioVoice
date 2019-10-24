@@ -35,7 +35,7 @@ public class AttackGlossary
     public const string BOUQUET = "bouquet";
     public const string HONEY = "honey";
     public const string KITE = "kite";
-    public const string LEAVES_BLOWER = "leaves blower";
+    public const string LEAVES_BLOWER = "leaf blower";
     public const string RACKET = "racket";
 
 

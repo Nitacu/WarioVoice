@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294ad71dd11d9dd47b258cf262ccb85a, type: 3}
-  m_Name: Attack_Leaves blower
+  m_Name: Attack_Leaf blower
   m_EditorClassIdentifier: 
-  _verb: Leaves Blower
+  _verb: Leaf blower
   _attack: 27
-  _pronunciation: {fileID: 8300000, guid: 205274b30fbf39641a998d261baff643, type: 3}
+  _pronunciation: {fileID: 8300000, guid: 7b3b162adfcc0404ea9701040b8c7ce4, type: 3}
   _soundEffect: {fileID: 8300000, guid: 6b0e1e4bb21774c4c8329ebf5e99a370, type: 3}
   _damage: 1
   _cure: 0
   _sprite: {fileID: 21300000, guid: cb933d297c22716468f891083a7bbab2, type: 3}
-  _sentenceToCompleteAttack: No hay muro que un buen taladro no pueda romper
-  _sentencesToNotUseAttack: "Creo que ser\xEDa mejor usarlo en un s\xF3lido"
+  _sentenceToCompleteAttack: Justo lo que necesitaba
+  _sentencesToNotUseAttack: Es un viento agradable, pero no me ayuda con esto

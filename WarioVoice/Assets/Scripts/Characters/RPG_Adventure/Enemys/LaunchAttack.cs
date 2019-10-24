@@ -6,6 +6,8 @@ public class LaunchAttack : MonoBehaviour
 {
     private const float _SPEED = 12;
     public Transform _finalPosition;
+    public AudioClip _crash;
+    public bool _audioCrash = true;
     float T;
 
     public void shoot()
@@ -14,7 +16,7 @@ public class LaunchAttack : MonoBehaviour
 
         Vector2 vector = _finalPosition.position - transform.position;
 
-        Vector3 toTarget = _finalPosition.position -transform.position;
+        Vector3 toTarget = _finalPosition.position - transform.position;
 
         // Set up the terms we need to solve the quadratic equations.
         float gSquared = Physics.gravity.sqrMagnitude;
@@ -46,6 +48,24 @@ public class LaunchAttack : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         FindObjectOfType<FinalBoss>().activeAttack();
+        if (_audioCrash)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(GetComponent<Rigidbody2D>());
+            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().clip = _crash;
+            GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator destroy()
+    {
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }
