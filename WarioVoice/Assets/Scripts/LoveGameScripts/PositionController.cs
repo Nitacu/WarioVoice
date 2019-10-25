@@ -32,8 +32,8 @@ public class PositionController : MonoBehaviour
     public void playTaxiOut()
     {
         _animator.Play(Animator.StringToHash(TaxiOut.name), -1, 0f);
-        sfxAudioSource.clip = carEngine;
-        sfxAudioSource.Play();
+       // sfxAudioSource.clip = carEngine;
+       // sfxAudioSource.Play();
     }
 
     public void playTrashCanOut()
