@@ -29,6 +29,12 @@ public class PositionController : MonoBehaviour
         _animator.Play(Animator.StringToHash("IdleFriend"), -1, 0f);
     }
 
+    public void playCarSound()
+    {
+        sfxAudioSource.clip = carEngine;
+        sfxAudioSource.Play();
+    }
+
     public void playTaxiOut()
     {
         _animator.Play(Animator.StringToHash(TaxiOut.name), -1, 0f);
