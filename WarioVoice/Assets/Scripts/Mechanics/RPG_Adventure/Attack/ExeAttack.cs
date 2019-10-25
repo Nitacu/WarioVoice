@@ -94,7 +94,7 @@ public class ExeAttack : MonoBehaviour
                 {
                     FindObjectOfType<FinalBoss>().effectiveAttack(_currentAttack._attack, _hero.Counters);
 
-                    if (FindObjectOfType<FinalBoss>().Counters.Count>0)
+                    if (FindObjectOfType<FinalBoss>().Counters.Count > 0)
                         _controlShifts.CurrentHero = _controlShifts.newChallenge();
 
                 }

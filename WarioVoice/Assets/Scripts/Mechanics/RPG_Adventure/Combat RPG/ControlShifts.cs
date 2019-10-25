@@ -20,13 +20,14 @@ public class ControlShifts : MonoBehaviour
     public bool TurnPlayer { get => turnPlayer; set => turnPlayer = value; }
     public int NumberCharacterLive { get => numberCharacterLive; set => numberCharacterLive = value; }
     public HeroProperties CurrentHero { get => _currentHero; set => _currentHero = value; }
+    public List<HeroProperties> Heroes { get => _heroes; set => _heroes = value; }
 
     private void Start()
     {
         _lamia = FindObjectOfType<LamiaController>();
         _informationPanel = FindObjectOfType<LevelInformationPanel>();
         _informationPanel.ControlShifts = GetComponent<ControlShifts>();
-        _heroes = FindObjectsOfType<HeroProperties>().ToList();
+        Heroes = FindObjectsOfType<HeroProperties>().ToList();
         CurrentHero = newChallenge();
     }
 
@@ -54,45 +55,45 @@ public class ControlShifts : MonoBehaviour
     {
         if (FindObjectOfType<FinalBoss>())
         {
-            if (_heroes.Count > 1)
+            if (Heroes.Count > 1)
             {
                 while (true)
                 {
                     _indexTurnHero++;
 
-                    if (_heroes.Count <= _indexTurnHero)
+                    if (Heroes.Count <= _indexTurnHero)
                     {
                         _indexTurnHero = 0;
                     }
 
-                    if (_heroes[_indexTurnHero].IsLive && _heroes.Count > 1)
+                    if (Heroes[_indexTurnHero].IsLive && Heroes.Count > 1)
                     {
-                        return _heroes[_indexTurnHero];
+                        return Heroes[_indexTurnHero];
                     }
                 }
             }
             else
             {
                 _indexTurnHero = 0;
-                return _heroes[0];
+                return Heroes[0];
             }
         }
         else
         {
-            if (_heroes.Count > 0)
+            if (Heroes.Count > 0)
             {
                 while (true)
                 {
                     _indexTurnHero++;
 
-                    if (_heroes.Count <= _indexTurnHero)
+                    if (Heroes.Count <= _indexTurnHero)
                     {
                         _indexTurnHero = 0;
                     }
 
-                    if (_heroes[_indexTurnHero].IsLive)
+                    if (Heroes[_indexTurnHero].IsLive)
                     {
-                        return _heroes[_indexTurnHero];
+                        return Heroes[_indexTurnHero];
                     }
                 }
             }
@@ -114,7 +115,7 @@ public class ControlShifts : MonoBehaviour
 
         if (!FindObjectOfType<FinalBoss>())
         {
-            if (_heroes.Count == 0)
+            if (Heroes.Count == 0)
                 _lamia.Invoke("winEnemy", 1.5f);
             else
                 Invoke("playerTurn", 1.5f);
@@ -122,7 +123,7 @@ public class ControlShifts : MonoBehaviour
         else
         {
 
-            if (_heroes.Count == 0)
+            if (Heroes.Count == 0)
                 _lamia.Invoke("winEnemy", 1.5f);     
         }
 
@@ -130,13 +131,13 @@ public class ControlShifts : MonoBehaviour
 
     public void reviveHero(HeroProperties hero)
     {
-        _heroes.Add(hero);
+        Heroes.Add(hero);
         numberCharacterLive--;
     }
 
     public void dieCharacter(HeroProperties hero)
     {
         numberCharacterLive++;
-        _heroes.Remove(hero);
+        Heroes.Remove(hero);
     }
 }

@@ -166,6 +166,12 @@ public class FinalBoss : LamiaController
             attack(_heroApplyDamage, 1, "Ataque directo");
         }
 
+        //esto soluciona el bug de que si se cura y tiene la bomba es como si siguiera vivo
+        if (_shifts.Heroes.Count == 1)
+        {
+            _shifts.CurrentHero = _shifts.newChallenge();
+        }
+
         //daño al player
         _heroApplyDamage.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
         //revisa si mato a alguien
@@ -209,7 +215,7 @@ public class FinalBoss : LamiaController
         {
             if (!_lastHeroToHarm.AssociatedObject)
             {
-                random = Counters.Count - 1;//Random.Range(0, Counters.Count);
+                random = Random.Range(0, Counters.Count);
 
                 GetComponent<Animator>().Play(Animator.StringToHash("Attack_final_boss"));
                 GameObject aux = Instantiate(_jar, transform.position, Quaternion.identity);
