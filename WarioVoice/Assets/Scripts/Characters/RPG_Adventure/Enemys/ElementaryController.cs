@@ -63,7 +63,7 @@ public class ElementaryController : LamiaController
         return true;
     }
 
-    public override bool effectiveAttack(AttackGlossary.attack attack)
+    public override bool effectiveAttack(AttackGlossary.attack attack, RelationshipAttacksCounters counter = null)
     {
         for(int i = 0;i < _characterBuilder.SPLIT_ATTACKS1 ;i++)
         {

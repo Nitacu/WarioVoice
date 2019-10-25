@@ -237,12 +237,12 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -44.423157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.05687384
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -262,7 +262,7 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9346601
+      value: 1.0037459
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -1447,7 +1447,7 @@ GameObject:
   - component: {fileID: 252181799}
   - component: {fileID: 252181800}
   m_Layer: 0
-  m_Name: Final boss
+  m_Name: Crazy scientific
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4028,12 +4028,12 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -44.423157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -4043,7 +4043,7 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.05687384
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -4053,7 +4053,7 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9346601
+      value: 1.0037459
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -5297,17 +5297,17 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -44.423157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -5317,7 +5317,7 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.05687384
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -5327,7 +5327,7 @@ PrefabInstance:
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9346601
+      value: 1.0037459
       objectReference: {fileID: 0}
     - target: {fileID: 58347832950046195, guid: 228be98d54e2a944aa080a021a76273f,
         type: 3}
@@ -7240,9 +7240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemys:
-  - {fileID: 1751488869}
-  - {fileID: 1942431618}
   - {fileID: 252181795}
+  - {fileID: 1942431618}
+  - {fileID: 1751488869}
 --- !u!114 &1642384657
 MonoBehaviour:
   m_ObjectHideFlags: 0

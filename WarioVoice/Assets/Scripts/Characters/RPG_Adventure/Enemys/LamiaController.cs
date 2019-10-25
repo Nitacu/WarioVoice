@@ -145,7 +145,7 @@ public class LamiaController : MonoBehaviour
         return null;
     }
 
-    public virtual bool effectiveAttack(AttackGlossary.attack attack)
+    public virtual bool effectiveAttack(AttackGlossary.attack attack, RelationshipAttacksCounters counter = null)
     {
         if (_weak)
         {

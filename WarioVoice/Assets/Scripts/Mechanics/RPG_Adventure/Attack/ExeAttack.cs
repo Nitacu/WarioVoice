@@ -92,10 +92,11 @@ public class ExeAttack : MonoBehaviour
 
                 if (FindObjectOfType<FinalBoss>())
                 {
+                    FindObjectOfType<FinalBoss>().effectiveAttack(_currentAttack._attack, _hero.Counters);
+
                     if (FindObjectOfType<FinalBoss>().Counters.Count>0)
                         _controlShifts.CurrentHero = _controlShifts.newChallenge();
 
-                    FindObjectOfType<FinalBoss>().effectiveAttack(_currentAttack._attack);
                 }
                 //muestra que gano vida
                 Invoke("feeckbackGotLife", 1);
@@ -108,7 +109,7 @@ public class ExeAttack : MonoBehaviour
             else
             {
 
-                if (Lamia.effectiveAttack(_typeAttack))
+                if (Lamia.effectiveAttack(_typeAttack, _hero.Counters))
                 {
 
                     //aplcia el daño
@@ -136,7 +137,6 @@ public class ExeAttack : MonoBehaviour
                 {
                     if (FindObjectOfType<FinalBoss>())
                     {
-                        Debug.Log(_controlShifts.CurrentHero.Life);
                         if (FindObjectOfType<FinalBoss>().Counters.Count > 0 || _controlShifts.CurrentHero.Life <= 1)
                             _controlShifts.CurrentHero = _controlShifts.newChallenge();
                     }

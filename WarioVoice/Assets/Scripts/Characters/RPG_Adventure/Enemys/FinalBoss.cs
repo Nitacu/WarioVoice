@@ -96,7 +96,6 @@ public class FinalBoss : LamiaController
             Destroy(_reflectedAttack);
         }
 
-        Debug.Log("as");
         GetComponent<AudioSource>().Play();
         GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
 
@@ -129,25 +128,24 @@ public class FinalBoss : LamiaController
     }
 
 
-    public override bool effectiveAttack(AttackGlossary.attack attackPlayer)
+    public override bool effectiveAttack(AttackGlossary.attack attackPlayer, RelationshipAttacksCounters counter)
     {
-        foreach (RelationshipAttacksCounters attacksCounters in _countersUsed)
+
+        if (counter.attackUseful(attackPlayer))
         {
-            if (attacksCounters.attackUseful(attackPlayer))
+            foreach (AttackGlossary.attack attack in counter._attackPlayer)
             {
-                foreach (AttackGlossary.attack attack in attacksCounters._attackPlayer)
+                if (attack == attackPlayer)
                 {
-                    if (attack == attackPlayer)
-                    {
-                        //daño al jefe
-                        _heroApplyDamage = _shifts.CurrentHero;
-                        _reflectedAttack = _heroApplyDamage.GetComponentInChildren<ParticleSystem>().gameObject;
-                        _reflectedAttack.AddComponent<MoveAttack>();
-                        return true;
-                    }
+                    //daño al jefe
+                    _heroApplyDamage = _shifts.CurrentHero;
+                    _reflectedAttack = _heroApplyDamage.GetComponentInChildren<ParticleSystem>().gameObject;
+                    _reflectedAttack.AddComponent<MoveAttack>();
+                    return true;
                 }
             }
         }
+
         _heroApplyDamage = _shifts.CurrentHero;
         StartCoroutine(applyDamage());
         return false;
@@ -160,11 +158,16 @@ public class FinalBoss : LamiaController
         yield return new WaitForSeconds(2.5f);
         if (_heroApplyDamage.GetComponentInChildren<ActiveAttack>())
         {
+            attack(_heroApplyDamage, _heroApplyDamage.GetComponentInChildren<ActiveAttack>()._damage, "Ataque directo");
             _heroApplyDamage.GetComponentInChildren<ActiveAttack>().active();
         }
-        _heroApplyDamage.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+        else
+        {
+            attack(_heroApplyDamage, 1, "Ataque directo");
+        }
+
         //daño al player
-        attack(_heroApplyDamage, 1, "Ataque directo");
+        _heroApplyDamage.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
         //revisa si mato a alguien
         removeHeroe();
     }
@@ -192,7 +195,6 @@ public class FinalBoss : LamiaController
 
     IEnumerator destroyAttackAssociation(HeroProperties hero)
     {
-        Debug.Log("final");
         _lastHeroeDie = hero.GetComponentInChildren<ParticleSystem>().gameObject;
         _lastHeroeDie.transform.parent = null;
         yield return new WaitForSeconds(1);
@@ -207,7 +209,8 @@ public class FinalBoss : LamiaController
         {
             if (!_lastHeroToHarm.AssociatedObject)
             {
-                random = Random.Range(0, Counters.Count);
+                random = Counters.Count - 1;//Random.Range(0, Counters.Count);
+
                 GetComponent<Animator>().Play(Animator.StringToHash("Attack_final_boss"));
                 GameObject aux = Instantiate(_jar, transform.position, Quaternion.identity);
                 if (Counters[random]._useOtherObj)
@@ -236,8 +239,14 @@ public class FinalBoss : LamiaController
         //le coloca el objeto
         _lastHeroToHarm.AssociatedObject = true;
         _lastHeroToHarm.CounterAttack = Counters[random]._attackPlayer[0];
-        Instantiate(Counters[random]._attackEnemy, _lastHeroToHarm.transform);
+
+        if (Counters[random]._useOtherObj)
+            Instantiate(Counters[random]._attackEnemy, _lastHeroToHarm.transform).GetComponentInChildren<ActiveAttack>()._damage = 2;
+        else
+            Instantiate(Counters[random]._attackEnemy, _lastHeroToHarm.transform);
+
         //por si el heroe revive poder volver a usar ese ataque
+        _lastHeroToHarm.Counters = Counters[random];
         Counters[random]._hero = _lastHeroToHarm;
         _countersUsed.Add(Counters[random]);
         Counters.RemoveAt(random);

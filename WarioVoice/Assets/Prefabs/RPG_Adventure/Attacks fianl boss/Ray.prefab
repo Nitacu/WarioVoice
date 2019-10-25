@@ -3559,7 +3559,7 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 3
     type: 1
-    collisionMode: 0
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0

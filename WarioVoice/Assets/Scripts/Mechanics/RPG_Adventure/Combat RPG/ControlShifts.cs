@@ -67,10 +67,14 @@ public class ControlShifts : MonoBehaviour
 
                     if (_heroes[_indexTurnHero].IsLive && _heroes.Count > 1)
                     {
-                        Debug.Log("cambia ?");
                         return _heroes[_indexTurnHero];
                     }
                 }
+            }
+            else
+            {
+                _indexTurnHero = 0;
+                return _heroes[0];
             }
         }
         else
@@ -88,7 +92,6 @@ public class ControlShifts : MonoBehaviour
 
                     if (_heroes[_indexTurnHero].IsLive)
                     {
-                        Debug.Log("cambia ?");
                         return _heroes[_indexTurnHero];
                     }
                 }
@@ -118,7 +121,7 @@ public class ControlShifts : MonoBehaviour
         }
         else
         {
-            
+
             if (_heroes.Count == 0)
                 _lamia.Invoke("winEnemy", 1.5f);     
         }

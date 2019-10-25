@@ -27,6 +27,7 @@ public class HeroProperties : MonoBehaviour
     private bool _associatedObject = false;
     [SerializeField]private AttackGlossary.attack _counterAttack;
     private int _indexAttackAssociated;
+    private RelationshipAttacksCounters _counters;
 
     public bool IsLive { get => _isLive; set => _isLive = value; }
     public List<VoiceAttacks> Attacks { get => _attacks; set => _attacks = value; }
@@ -34,6 +35,7 @@ public class HeroProperties : MonoBehaviour
     public bool AssociatedObject { get => _associatedObject; set => _associatedObject = value; }
     public AttackGlossary.attack CounterAttack { get => _counterAttack; set => _counterAttack = value; }
     public int IndexAttackAssociated { get => _indexAttackAssociated; set => _indexAttackAssociated = value; }
+    public RelationshipAttacksCounters Counters { get => _counters; set => _counters = value; }
 
     private void Start()
     {
@@ -69,7 +71,7 @@ public class HeroProperties : MonoBehaviour
             //rostro del personaje
             _PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconDie;
             IsLive = false;
-            GetComponent<Animator>().Play(Animator.StringToHash("Die_heroe"));
+            GetComponent<Animator>().SetBool("isLive", IsLive);
             FindObjectOfType<ControlShifts>().dieCharacter(GetComponent<HeroProperties>());
             _PanelData.GetComponent<CharacterStatistics>().reloadStatistics(0);
 
@@ -93,7 +95,7 @@ public class HeroProperties : MonoBehaviour
         //rostro del personaje
         _PanelData.GetComponent<CharacterStatistics>().Icon.sprite = _iconLive;
         IsLive = true;
-        GetComponent<Animator>().Play(Animator.StringToHash("Revive_heroe"));
+        GetComponent<Animator>().SetBool("isLive", IsLive);
         FindObjectOfType<ControlShifts>().reviveHero(GetComponent<HeroProperties>());        
     }
 
