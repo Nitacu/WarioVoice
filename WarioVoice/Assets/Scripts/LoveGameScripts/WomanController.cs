@@ -10,6 +10,7 @@ public class WomanController : MonoBehaviour
 
     public AudioClip awwSFX;
     public AudioClip whatSFX;
+    public AudioClip carSound;
     private AudioSource audioSource;
 
     private Animator _animator;
@@ -18,6 +19,12 @@ public class WomanController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    public void playCarSound()
+    {
+        audioSource.clip = carSound;
+        audioSource.Play();
     }
 
     private void playIdle()

@@ -8464,6 +8464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   awwSFX: {fileID: 8300000, guid: 3f339575ac062d447855df3e19015d5b, type: 3}
   whatSFX: {fileID: 8300000, guid: 75f3dc4f770c57a42b2f9575d37b8d67, type: 3}
+  carSound: {fileID: 8300000, guid: d5e3d1436dea31f44b0dfb084d6bdcb2, type: 3}
 --- !u!82 &1715319986
 AudioSource:
   m_ObjectHideFlags: 0
