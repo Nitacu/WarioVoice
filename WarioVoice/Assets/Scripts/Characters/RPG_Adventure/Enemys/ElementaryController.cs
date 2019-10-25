@@ -103,7 +103,7 @@ public class ElementaryController : LamiaController
         GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
 
         // fijo
-        if (random <= 70)
+        if (random <= 50)
         {
             random = Random.Range(0, Characters.Count);
             //visual del daño
