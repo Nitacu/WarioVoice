@@ -117,6 +117,7 @@ public class ConfigureRPG : MonoBehaviour
         switch (_difficultyLevel)
         {
             case 1:
+                
                 _controlShifts.Invoke("playerEnemy", 5);
                 _characterBuilder.NumberCharacters = 2;
                 _characterBuilder.NUMBER_ATTACKS_DEFINITIVE1 = 0;

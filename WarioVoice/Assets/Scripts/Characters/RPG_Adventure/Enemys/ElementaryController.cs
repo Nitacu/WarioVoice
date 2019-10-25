@@ -98,12 +98,37 @@ public class ElementaryController : LamiaController
 
     public override void selecAttack()
     {
-        int random = Random.Range(1, 101);
+        int random = Random.Range(1, 3);
 
         GetComponent<Animator>().Play(Animator.StringToHash("Attack"));
 
         // fijo
-        if (random <= 50)
+        switch (random)
+        {
+            case 1:
+                random = Random.Range(0, Characters.Count);
+                //visual del daño
+                _lastHeroToHarm = heroWithMoreLife(Characters[random]);
+                Instantiate(_listVisualDamage[0], _lastHeroToHarm.transform.position, Quaternion.Euler(_listVisualDamage[0].transform.localEulerAngles.x, 0, 0));
+                _lastHeroToHarm.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                //recibe el daño
+                attack(_lastHeroToHarm, 1, "Ataque directo");
+                break;
+
+            case 2:
+                // en area
+                foreach (HeroProperties hero in Characters)
+                {
+                    Instantiate(_listVisualDamage[0], hero.transform.position, Quaternion.Euler(_listVisualDamage[0].transform.localEulerAngles.x, 0, 0));
+                    hero.GetComponent<Animator>().Play(Animator.StringToHash("Damage"));
+                    attack(hero, 1);
+                }
+                FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
+                break;
+        }
+
+        /*
+        if (random <= 70)
         {
             random = Random.Range(0, Characters.Count);
             //visual del daño
@@ -124,7 +149,7 @@ public class ElementaryController : LamiaController
             }
             FindObjectOfType<LevelInformationPanel>().showDialogs("Daño en área", false);
         }
-
+        */
         //siguiente personaje en atacar
         _shifts.CurrentHero = _shifts.newChallenge();
         //revisa si mato a alguien
