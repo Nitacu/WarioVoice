@@ -337,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bossesText: {fileID: 1214908042}
   _playername: {fileID: 1163864565}
-  timeTochangeScene: 3.5
+  timeTochangeScene: 6.5
   _bossIcons:
   - {fileID: 7475437}
   - {fileID: 1862643879}
@@ -677,7 +677,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2640682520155523652, guid: 024bd897da2f28445bb0536f02c51d4a,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: e5cbfdc745860a74aa993d5855abf186, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1c41b91a05d079d469d84713955c211d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.45
   m_Pitch: 1

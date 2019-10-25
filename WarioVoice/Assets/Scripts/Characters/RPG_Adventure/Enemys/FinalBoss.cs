@@ -247,7 +247,7 @@ public class FinalBoss : LamiaController
         _lastHeroToHarm.CounterAttack = Counters[random]._attackPlayer[0];
 
         if (Counters[random]._useOtherObj)
-            Instantiate(Counters[random]._attackEnemy, _lastHeroToHarm.transform).GetComponentInChildren<ActiveAttack>()._damage = 2;
+            Instantiate(Counters[random]._attackEnemy, _lastHeroToHarm.transform).GetComponentInChildren<ActiveAttack>()._damage = 3;
         else
             Instantiate(Counters[random]._attackEnemy, _lastHeroToHarm.transform);
 
