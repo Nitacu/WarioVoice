@@ -36,6 +36,7 @@ public class ConfigurationWorms : MonoBehaviour
         if (_numberEnemys == 0)
         {
             FindObjectOfType<GuideControlWorm>().desactiveAll();
+            ControlMoney.EarnMoney();
             Instantiate(_conffeti);
             Invoke("exitScene", 2);
         }

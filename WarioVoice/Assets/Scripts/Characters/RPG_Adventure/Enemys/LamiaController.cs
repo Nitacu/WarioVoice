@@ -82,6 +82,7 @@ public class LamiaController : MonoBehaviour
         else
         {
             Instantiate(_cofetti);
+            ControlMoney.EarnMoney();
             Camera.main.GetComponent<AudioSource>().enabled = false;
             FindObjectOfType<ControlShifts>().GetComponent<AudioSource>().Play();
             GetComponentInChildren<ParticleSystem>().Stop();
