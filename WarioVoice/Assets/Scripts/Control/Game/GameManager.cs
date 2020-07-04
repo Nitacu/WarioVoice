@@ -39,6 +39,12 @@ public class GameManager
     }
     #endregion
 
+    #region Persistent information
+    private int _money;
+
+    public int Money { get => _money; set => _money = value; }
+    #endregion
+
     private int _lives;
     public int Lives
     {
@@ -77,6 +83,7 @@ public class GameManager
             _instance._lives = 4;
             _instance.DeveloperMode = false;
             _instance._currentBossDifficulty = 3;//o según el progreso que lleve
+            _instance.Money = PlayerPrefs.GetInt(PlayerPrefsKeys.KEY_MONEY);
         }
 
         return _instance;
