@@ -14,7 +14,8 @@ public class Ammunition : MonoBehaviour
     private const float FORCE_SHOOT = 15;
     private GuideControlWorm _guideControlWorm;
     private List<EnemyWorms> _enemys  = new List<EnemyWorms>();
-
+    private bool _shot = false;
+    private float _force = 0;
     private void Start()
     {
         _guideControlWorm = FindObjectOfType<GuideControlWorm>();
@@ -55,13 +56,23 @@ public class Ammunition : MonoBehaviour
 
             _rockets.RemoveAt(0);
 
-            float force = (percent * FORCE_SHOOT) / 100;
+            _force = (percent * FORCE_SHOOT) / 100;
+            _shot = true;
+            //StartCoroutine(shootCoroutine(force));
 
-            StartCoroutine(shootCoroutine(force));
             //_pointingGun.shoot(force);
         }
         Amnunition--;
         
+    }
+
+    public void Update()
+    {
+        if (_shot)
+        {
+            _pointingGun.shoot(_force);
+            _shot = false;
+        }
     }
 
     IEnumerator shootCoroutine(float force)

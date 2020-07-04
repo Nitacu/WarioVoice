@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Video;
 
 public class BetweenSceneControl : MonoBehaviour
 {
@@ -50,6 +51,10 @@ public class BetweenSceneControl : MonoBehaviour
     [SerializeField] private AudioClip _gameOverEffect;
     [SerializeField] private AudioClip _gameCompleteEffect;
 
+    [Header("Publicity")]
+    [SerializeField] private GameObject _videoPublicity;
+    [SerializeField] private VideoClip _videoClip;
+    [SerializeField] private GameObject _titles;
 
     private bool _gameCompleted;
     private bool _gameLossed;
@@ -244,9 +249,8 @@ public class BetweenSceneControl : MonoBehaviour
         {
             Debug.Log("Quiere continuar juego start");
 
-            GameManager.GetInstance().Lives = 4;
-            GameManager.GetInstance().StartGame();
-
+            StartCoroutine(playPublicity());
+            
             Debug.Log("Quiere continuar juego end");
 
         }
@@ -259,6 +263,18 @@ public class BetweenSceneControl : MonoBehaviour
             Debug.Log("No quiere continuar juego end");
 
         }
+    }
+
+    IEnumerator playPublicity()
+    {
+        _titles.SetActive(false);
+        _continuePanel.SetActive(false);
+        _videoPublicity.SetActive(true);
+        yield return new WaitForSeconds((float)_videoClip.length+0.5f);
+        _titles.SetActive(true);
+        _videoPublicity.SetActive(false);
+        GameManager.GetInstance().Lives = 1;
+        GameManager.GetInstance().StartGame();
     }
 
     IEnumerator playClip(AudioSource source, AudioClip clip, float waitingTime)

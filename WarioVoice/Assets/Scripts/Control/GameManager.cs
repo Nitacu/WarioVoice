@@ -75,7 +75,8 @@ public class GameManager
             //_instance.setLevelRound();
 
             _instance._lives = 4;
-            //_instance._currentBossDifficulty = 1;//o según el progreso que lleve
+            _instance.DeveloperMode = false;
+            _instance._currentBossDifficulty = 3;//o según el progreso que lleve
         }
 
         return _instance;
@@ -329,7 +330,7 @@ public class GameManager
     {
         Debug.Log("LoadMinigame() Start");
 
-        _instance.currentGameDifficulty = _instance._currentMinigame._difficulty;
+        //_instance.currentGameDifficulty = _instance._currentMinigame._difficulty;
         ChangeScene.ChangeSceneProgression(_instance._currentMinigame._miniGame);
 
         Debug.Log("LoadMinigame() End");
