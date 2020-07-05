@@ -33,13 +33,16 @@ public class TitoMoodController : MonoBehaviour
     private const string SUPER_HAPPY_ANIMATION = "SuperHappy_Tito";
     private const string HAPPY_ANIMATION = "Happy_Tito";
     private const string NORMAL_ANIMATION = "Normal_Tito";
-    private const string SAD_ANIMATION = "Sad_Tito";  
+    private const string SAD_ANIMATION = "Sad_Tito";
+    private const string TITO_MOOD_KEY = "MoodValue";
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _moodlevel = PlayerPrefs.GetInt(TITO_MOOD_KEY);
         setMood();
+        StartCoroutine(waitForFillingBar());
     }
 
     public void addMoodPoints(float moodPoints)
@@ -53,7 +56,7 @@ public class TitoMoodController : MonoBehaviour
         {
             _moodlevel = 0;
         }
-
+        PlayerPrefs.SetInt(TITO_MOOD_KEY, (int)_moodlevel);
         setMood();
     }
     private void setMood()
@@ -74,13 +77,15 @@ public class TitoMoodController : MonoBehaviour
             _mood = ENUM_TitoMood.SAD;
         }
 
-        updateMoodBar();
+        
         switchMoodHeadSprite(_mood);
         switchMoodAnimation(_mood);
+        updateMoodBar();
     }
     private void updateMoodBar()
     {
-        _moodBar.fillAmount = _moodlevel/ 100;
+        Debug.Log(_moodlevel);
+        _moodBar.fillAmount = (float)(_moodlevel/ 100);
     }
     private void switchMoodAnimation(ENUM_TitoMood mood)
     {
@@ -121,5 +126,11 @@ public class TitoMoodController : MonoBehaviour
                 _headIcon.sprite = _normal;
                 break;
         }
+    }
+
+    IEnumerator waitForFillingBar()
+    {
+        yield return new WaitForEndOfFrame();
+        updateMoodBar();
     }
 }
