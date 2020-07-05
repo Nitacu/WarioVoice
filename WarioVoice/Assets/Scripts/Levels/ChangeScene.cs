@@ -17,6 +17,7 @@ public class ChangeScene : MonoBehaviour
     private const string TUTORIAL_4 = "Tutorial_4";
     private const string ENDING = "Ending";
     private const string CREDITS = "Credits";
+    
 
     public const string SPIKINGLISHMENU = "SpikinglishMenu";
     private const string MATCHBUILDINGS = "Buildings";
@@ -32,7 +33,7 @@ public class ChangeScene : MonoBehaviour
     public const string ESPIKINGLISHGAMETEST = "MiniGameTest";
     public const string ESPIKINGLISHCREDITS = "SpikinglishCredits";
     public const string BOSSDEFEATED = "BossDefeatedFeedBack";
-
+    private const string KOALA_ROOM = "KoalaRoom";
 
 
 
@@ -65,7 +66,8 @@ public class ChangeScene : MonoBehaviour
         ESPKINGLISHTUTORIAL,
         ESPIKINGLISHGAMETEST,
         ESPIKINGLISHCREDITS,
-        BOSSDEFEATED
+        BOSSDEFEATED,
+        KOALA_ROOM
     }
 
     public enum EspikinglishMinigames
@@ -184,6 +186,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case nameScenes.BOSSDEFEATED:
                 SceneManager.LoadScene(BOSSDEFEATED);
+                break;
+            case nameScenes.KOALA_ROOM:
+                SceneManager.LoadScene(KOALA_ROOM);
                 break;
         }
     }

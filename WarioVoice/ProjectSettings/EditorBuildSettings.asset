@@ -116,4 +116,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WarioVoice/Menus/BossDefeatedFeedBack.unity
     guid: a262299caf214fd46beeddc85bf7ce3e
+  - enabled: 1
+    path: Assets/Scenes/WarioVoice/Tamagotchi/KoalaRoom.unity
+    guid: 2ed6720d27b07cc4a9a9858a06e77601
   m_configObjects: {}
