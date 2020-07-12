@@ -128,7 +128,7 @@ public class BetweenSceneControl : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Start() start" );
+        Debug.Log("Start() start " + _videoClip.length);
 
         _timerNormalText.text = "";
 
@@ -270,7 +270,7 @@ public class BetweenSceneControl : MonoBehaviour
         _titles.SetActive(false);
         _continuePanel.SetActive(false);
         _videoPublicity.SetActive(true);
-        yield return new WaitForSeconds((float)_videoClip.length+0.5f);
+        yield return new WaitForSeconds((float)_videoClip.frameCount+1f);
         _titles.SetActive(true);
         _videoPublicity.SetActive(false);
         GameManager.GetInstance().Lives = 1;
