@@ -19,6 +19,9 @@ public class TitoMoodController : MonoBehaviour
     [SerializeField] private Image _headIcon;
     [SerializeField] private Image _moodBar;
 
+    [Header("UI")]
+    [SerializeField] private InputField _inputField;
+
     public enum ENUM_TitoMood
     {
         HAPPY,
@@ -78,6 +81,22 @@ public class TitoMoodController : MonoBehaviour
         PlayerPrefs.SetInt(TITO_MOOD_KEY, (int)_moodlevel);
         setMood();
     }
+
+    public void setMoodPercent()
+    {
+        float.TryParse(_inputField.text, out _moodlevel);
+        if (_moodlevel > 100)
+        {
+            _moodlevel = 100;
+        }
+        if (_moodlevel < 0)
+        {
+            _moodlevel = 0;
+        }
+        PlayerPrefs.SetInt(TITO_MOOD_KEY, (int)_moodlevel);
+        setMood();
+    }
+
     private void setMood()
     {
         if(_moodlevel <= 100 && _moodlevel > 75)

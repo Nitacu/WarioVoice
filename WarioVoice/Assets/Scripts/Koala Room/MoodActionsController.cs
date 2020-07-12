@@ -8,7 +8,7 @@ public class MoodActionsController : MonoBehaviour
 {
     [Header("Cooldown Times")]
     [SerializeField] private float _playSecondsToWait = 28800; //8 horas
-    [SerializeField] private float _eatSecondsToWait = 28800; 
+    [SerializeField] private float _eatSecondsToWait = 28800;
     [SerializeField] private float _showerSecondsToWait = 28800;
     [SerializeField] private float _moodUpdateSecondsToWait = 43200; // 12 horas
     [Header("Mood Points")]
@@ -36,6 +36,7 @@ public class MoodActionsController : MonoBehaviour
     private const string LAST_SHOWER_KEY = "LastShower";
     private const string LAST_MOOD_UPDATE_KEY = "MoodUpdate";
 
+
     public enum ENUM_Actions
     {
         PLAY,
@@ -44,7 +45,7 @@ public class MoodActionsController : MonoBehaviour
         MOOD_UPDATE
     }
 
-    private void Start()
+    private void Awake()
     {
         if (PlayerPrefs.GetString(LAST_EAT_KEY) != null)
         {
@@ -61,8 +62,12 @@ public class MoodActionsController : MonoBehaviour
         if (PlayerPrefs.GetString(LAST_MOOD_UPDATE_KEY) != null)
         {
             ulong.TryParse(PlayerPrefs.GetString(LAST_MOOD_UPDATE_KEY), out _lastMoodUpdateAction);
+            Debug.Log(_lastMoodUpdateAction);
         }
+    }
 
+    private void Start()
+    {
         checkButtonsOnStart();
     }
 
@@ -71,12 +76,29 @@ public class MoodActionsController : MonoBehaviour
         checkButtonsOnUpdate();
     }
 
+
+    public void restartPrefabs()
+    {
+        PlayerPrefs.SetString(LAST_PLAY_KEY, "0");
+        PlayerPrefs.SetString(LAST_EAT_KEY, "0");
+        PlayerPrefs.SetString(LAST_MOOD_UPDATE_KEY, "0");
+        PlayerPrefs.SetString(LAST_SHOWER_KEY, "0");
+
+        _lastEatAction = 0;
+        _lastPlayAction = 0;
+        _lastShowerAction = 0;
+        _lastMoodUpdateAction = 0;
+        _isMoodUpdated = false;
+    }
+
+
     private void checkButtonsOnUpdate()
     {
-        if (isMoodUpdateActionReady())
+        if (!_isMoodUpdated)
         {
-            if (!_isMoodUpdated)
+            if (isMoodUpdateActionReady())
             {
+                _isMoodUpdated = true;
                 updateMoodBar();
             }
         }
@@ -89,7 +111,7 @@ public class MoodActionsController : MonoBehaviour
             {
                 _playButton.interactable = true;
                 _playText.text = "";
-            }            
+            }
         }
 
         if (!_eatButton.IsInteractable())
@@ -100,7 +122,7 @@ public class MoodActionsController : MonoBehaviour
             {
                 _eatButton.interactable = true;
                 _eatText.text = "";
-            }          
+            }
         }
 
         if (!_showerButton.IsInteractable())
@@ -111,7 +133,7 @@ public class MoodActionsController : MonoBehaviour
             {
                 _showerButton.interactable = true;
                 _showerText.text = "";
-            }          
+            }
         }
     }
     private void checkButtonsOnStart()
@@ -129,6 +151,12 @@ public class MoodActionsController : MonoBehaviour
         if (!isShowerActionReady())
         {
             _showerButton.interactable = false;
+        }
+
+        if (!isMoodUpdateActionReady())
+        {
+            Debug.Log("Im true");
+            _isMoodUpdated = true;
         }
     }
     private string getTimeLeft(ENUM_Actions action)
@@ -172,7 +200,7 @@ public class MoodActionsController : MonoBehaviour
     public void playWithTito()
     {
         _lastPlayAction = (ulong)System.DateTime.Now.Ticks;
-        PlayerPrefs.SetString(LAST_PLAY_KEY,_lastPlayAction.ToString());
+        PlayerPrefs.SetString(LAST_PLAY_KEY, _lastPlayAction.ToString());
         _titoMood.addMoodPoints(_playPoints);
         _playButton.interactable = false;
     }
@@ -192,9 +220,9 @@ public class MoodActionsController : MonoBehaviour
     }
     public void updateMoodBar()
     {
-        _isMoodUpdated = true;
         _lastMoodUpdateAction = (ulong)System.DateTime.Now.Ticks;
-        PlayerPrefs.SetString(LAST_MOOD_UPDATE_KEY, _lastPlayAction.ToString());
+        Debug.Log("LMUA: " + _lastMoodUpdateAction);
+        PlayerPrefs.SetString(LAST_MOOD_UPDATE_KEY, _lastMoodUpdateAction.ToString());
         if (isPlayActionReady())
         {
             _titoMood.addMoodPoints(_moodPoints);
@@ -203,7 +231,7 @@ public class MoodActionsController : MonoBehaviour
         {
             _titoMood.addMoodPoints(_moodPoints);
         }
-        StartCoroutine(reactiveMoodUpdateBool());
+        _isMoodUpdated = true;
     }
     #endregion
 
@@ -212,7 +240,7 @@ public class MoodActionsController : MonoBehaviour
     {
         ulong diff = ((ulong)System.DateTime.Now.Ticks - _lastPlayAction);
         ulong miliseconds = diff / System.TimeSpan.TicksPerMillisecond;
-        float secondsLeft = (float)((_playSecondsToWait*1000) - miliseconds) / 1000;
+        float secondsLeft = (float)((_playSecondsToWait * 1000) - miliseconds) / 1000;
 
         if (secondsLeft < 0)
         {

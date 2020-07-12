@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class GameManager
 {
+    #region Leaves Control
+    public int leavesInInventory = 3;
+    public void consumeLeaf()
+    {
+        leavesInInventory -= 1;
+    }
+    public void addLeaf()
+    {
+        leavesInInventory += 1;
+    }
+    #endregion
 
     #region LevelProgression 
     private const int _bossLevelMultiple = 2;
