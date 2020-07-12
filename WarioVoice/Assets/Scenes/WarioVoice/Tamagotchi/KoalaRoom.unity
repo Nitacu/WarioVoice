@@ -1656,12 +1656,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66dfa6d2496dd5244b014c973b1a89a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playSecondsToWait: 20
-  _eatSecondsToWait: 85
-  _showerSecondsToWait: 50
-  _playPoints: 5
+  _playSecondsToWait: 28800
+  _eatSecondsToWait: 28800
+  _showerSecondsToWait: 28800
+  _moodUpdateSecondsToWait: 43200
+  _playPoints: 20
   _foodPoints: 50
-  _showerPoints: 15
+  _showerPoints: 20
+  _moodPoints: -20
   _titoMood: {fileID: 447594644}
   _playButton: {fileID: 342428409}
   _eatButton: {fileID: 1245251444}

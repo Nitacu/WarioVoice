@@ -100,7 +100,7 @@ public class ShowSlotData : MonoBehaviour
         }
 
         GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
-        GameManager.GetInstance().Lives = 5;
+        GameManager.GetInstance().Lives = GameManager.GetInstance().maxNumberOfLives;
 
         if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0)
         {

@@ -53,6 +53,7 @@ public class GameManager
     }
 
     public const int maxBosses = 3;
+    public int maxNumberOfLives = 5;
 
     private PlayerInformation _currentPlayerInformation;
     public PlayerInformation CurrentPlayerInformation

@@ -45,6 +45,25 @@ public class TitoMoodController : MonoBehaviour
         StartCoroutine(waitForFillingBar());
     }
 
+    public void setMaxNumberOfLives()
+    {
+        switch (_mood)
+        {
+            case ENUM_TitoMood.HAPPY:
+                GameManager.GetInstance().maxNumberOfLives = 4;
+                break;
+            case ENUM_TitoMood.SAD:
+                GameManager.GetInstance().maxNumberOfLives = 2;
+                break;
+            case ENUM_TitoMood.SUPERHAPPY:
+                GameManager.GetInstance().maxNumberOfLives = 5;
+                break;
+            case ENUM_TitoMood.NORMAL:
+                GameManager.GetInstance().maxNumberOfLives = 3;
+                break;
+        }
+    }
+
     public void addMoodPoints(float moodPoints)
     {
         _moodlevel += moodPoints;
@@ -77,7 +96,7 @@ public class TitoMoodController : MonoBehaviour
             _mood = ENUM_TitoMood.SAD;
         }
 
-        
+        setMaxNumberOfLives();
         switchMoodHeadSprite(_mood);
         switchMoodAnimation(_mood);
         updateMoodBar();

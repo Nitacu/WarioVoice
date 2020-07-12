@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class MoodActionsController : MonoBehaviour
 {
     [Header("Cooldown Times")]
-    [SerializeField] private float _playSecondsToWait = 30;
-    [SerializeField] private float _eatSecondsToWait = 30;
-    [SerializeField] private float _showerSecondsToWait = 30;
+    [SerializeField] private float _playSecondsToWait = 28800; //8 horas
+    [SerializeField] private float _eatSecondsToWait = 28800; 
+    [SerializeField] private float _showerSecondsToWait = 28800;
+    [SerializeField] private float _moodUpdateSecondsToWait = 43200; // 12 horas
     [Header("Mood Points")]
-    [SerializeField] private float _playPoints = 15;
+    [SerializeField] private float _playPoints = 20;
     [SerializeField] private float _foodPoints = 50;
-    [SerializeField] private float _showerPoints = 5;
+    [SerializeField] private float _showerPoints = 20;
+    [SerializeField] private float _moodPoints = -20;
     [SerializeField] private TitoMoodController _titoMood;
     [Header("UI Stuff")]
     [SerializeField] private Button _playButton;
@@ -26,16 +28,20 @@ public class MoodActionsController : MonoBehaviour
     private ulong _lastPlayAction;
     private ulong _lastShowerAction;
     private ulong _lastEatAction;
+    private ulong _lastMoodUpdateAction;
+    private bool _isMoodUpdated = false;
 
     private const string LAST_EAT_KEY = "LastEat";
     private const string LAST_PLAY_KEY = "LastPlay";
     private const string LAST_SHOWER_KEY = "LastShower";
+    private const string LAST_MOOD_UPDATE_KEY = "MoodUpdate";
 
     public enum ENUM_Actions
     {
         PLAY,
         SHOWER,
-        EAT
+        EAT,
+        MOOD_UPDATE
     }
 
     private void Start()
@@ -52,6 +58,10 @@ public class MoodActionsController : MonoBehaviour
         {
             ulong.TryParse(PlayerPrefs.GetString(LAST_SHOWER_KEY), out _lastShowerAction);
         }
+        if (PlayerPrefs.GetString(LAST_MOOD_UPDATE_KEY) != null)
+        {
+            ulong.TryParse(PlayerPrefs.GetString(LAST_MOOD_UPDATE_KEY), out _lastMoodUpdateAction);
+        }
 
         checkButtonsOnStart();
     }
@@ -63,6 +73,14 @@ public class MoodActionsController : MonoBehaviour
 
     private void checkButtonsOnUpdate()
     {
+        if (isMoodUpdateActionReady())
+        {
+            if (!_isMoodUpdated)
+            {
+                updateMoodBar();
+            }
+        }
+
         if (!_playButton.IsInteractable())
         {
             _playText.text = getTimeLeft(ENUM_Actions.PLAY);
@@ -172,6 +190,21 @@ public class MoodActionsController : MonoBehaviour
         _titoMood.addMoodPoints(_showerPoints);
         _showerButton.interactable = false;
     }
+    public void updateMoodBar()
+    {
+        _isMoodUpdated = true;
+        _lastMoodUpdateAction = (ulong)System.DateTime.Now.Ticks;
+        PlayerPrefs.SetString(LAST_MOOD_UPDATE_KEY, _lastPlayAction.ToString());
+        if (isPlayActionReady())
+        {
+            _titoMood.addMoodPoints(_moodPoints);
+        }
+        if (isShowerActionReady())
+        {
+            _titoMood.addMoodPoints(_moodPoints);
+        }
+        StartCoroutine(reactiveMoodUpdateBool());
+    }
     #endregion
 
     #region timer check methods
@@ -223,5 +256,26 @@ public class MoodActionsController : MonoBehaviour
             return false;
         }
     }
+    private bool isMoodUpdateActionReady()
+    {
+        ulong diff = ((ulong)System.DateTime.Now.Ticks - _lastMoodUpdateAction);
+        ulong miliseconds = diff / System.TimeSpan.TicksPerMillisecond;
+        float secondsLeft = (float)((_moodUpdateSecondsToWait * 1000) - miliseconds) / 1000;
+
+        if (secondsLeft < 0)
+        {           
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     #endregion
+
+    IEnumerator reactiveMoodUpdateBool()
+    {
+        yield return new WaitForSeconds(3f);
+        _isMoodUpdated = false;
+    }
 }
