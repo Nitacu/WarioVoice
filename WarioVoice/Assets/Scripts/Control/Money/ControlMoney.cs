@@ -13,6 +13,10 @@ public class ControlMoney : MonoBehaviour
     public static void LoseMoney(int lostMoney)
     {
         GameManager.GetInstance().Money -= lostMoney;
+        if(GameManager.GetInstance().Money < 0)
+        {
+            GameManager.GetInstance().Money = 0;
+        }
         PlayerPrefs.SetInt(PlayerPrefsKeys.KEY_MONEY, GameManager.GetInstance().Money);
     }
 

@@ -20,14 +20,14 @@ public class FoodInventoryController : MonoBehaviour
     void Start()
     {
         _moodControllerScript = GetComponent<MoodActionsController>();
-        _leavesCount.text = "Leaves: " + GameManager.GetInstance().leavesInInventory;
+        _leavesCount.text = "Leaves: " + GameManager.GetInstance().Money;
     }
 
     public void openFoodPanel()
     {
         _foodCanvas.SetActive(true);
-        _leavesCount.text = "Leaves: " + GameManager.GetInstance().leavesInInventory;
-        if(GameManager.GetInstance().leavesInInventory == 0)
+        _leavesCount.text = "Leaves: " + GameManager.GetInstance().Money;
+        if(GameManager.GetInstance().Money == 0)
         {
             _eatButton.gameObject.SetActive(false);
             _playToGetMoreText.gameObject.SetActive(true);
@@ -41,7 +41,7 @@ public class FoodInventoryController : MonoBehaviour
 
     public void eatLeaf()
     {
-        GameManager.GetInstance().consumeLeaf();
+        ControlMoney.LoseMoney(1);
         _moodControllerScript.eatWithTito();
         backToGarden();
     }
