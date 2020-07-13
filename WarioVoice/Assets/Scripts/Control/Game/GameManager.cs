@@ -45,6 +45,8 @@ public class GameManager
     public int Money { get => _money; set => _money = value; }
     #endregion
 
+    private TitoMoodController.ENUM_TitoMood _titoMood;
+
     private int _lives;
     public int Lives
     {
@@ -122,6 +124,8 @@ public class GameManager
     {
         get { return _gameCompleted; }
     }
+
+    public TitoMoodController.ENUM_TitoMood TitoMood { get => _titoMood; set => _titoMood = value; }
 
     private void setMiniGamesRound()
     {

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 43336273}
   - component: {fileID: 43336272}
   - component: {fileID: 43336271}
+  - component: {fileID: 43336274}
   m_Layer: 5
   m_Name: Set Mood button
   m_TagString: Untagged
@@ -251,6 +252,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43336269}
   m_CullTransparentMesh: 0
+--- !u!114 &43336274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43336269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac2e51c36a01f943979d20cb0b39560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &51344119
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +509,7 @@ GameObject:
   - component: {fileID: 230815895}
   - component: {fileID: 230815894}
   - component: {fileID: 230815893}
+  - component: {fileID: 230815896}
   m_Layer: 5
   m_Name: Set tito mood bar
   m_TagString: Untagged
@@ -624,6 +638,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230815891}
   m_CullTransparentMesh: 0
+--- !u!114 &230815896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230815891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac2e51c36a01f943979d20cb0b39560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &339691043
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,12 +1000,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4705f148909fd3841894e7fdbc684f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _happy: {fileID: -883498693729231807, guid: 00d55ef9f9884074da11fb20bf2c0dab, type: 3}
+  _happy: {fileID: -687536628270731353, guid: 3e2e87e6133f80c44ba70da77859049e, type: 3}
   _sad: {fileID: -8952493619046933745, guid: 00d55ef9f9884074da11fb20bf2c0dab, type: 3}
-  _superHappy: {fileID: -687536628270731353, guid: 3e2e87e6133f80c44ba70da77859049e,
+  _superHappy: {fileID: -6285561550219981448, guid: 3e2e87e6133f80c44ba70da77859049e,
     type: 3}
-  _normal: {fileID: -8688305086844272323, guid: 3e2e87e6133f80c44ba70da77859049e,
-    type: 3}
+  _normal: {fileID: 21300000, guid: 8c4d4f7d750311549984759795e4a924, type: 3}
   _titoHead: {fileID: 600047167}
   _moodlevel: 0
   _headIcon: {fileID: 5571879701722866337}
@@ -3188,6 +3213,7 @@ GameObject:
   - component: {fileID: 1828807684}
   - component: {fileID: 1828807683}
   - component: {fileID: 1828807682}
+  - component: {fileID: 1828807685}
   m_Layer: 5
   m_Name: Restart Cooldowns
   m_TagString: Untagged
@@ -3306,6 +3332,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828807680}
   m_CullTransparentMesh: 0
+--- !u!114 &1828807685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828807680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac2e51c36a01f943979d20cb0b39560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874773696
 GameObject:
   m_ObjectHideFlags: 0
