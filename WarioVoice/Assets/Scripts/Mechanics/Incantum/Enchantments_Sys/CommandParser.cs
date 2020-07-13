@@ -36,7 +36,7 @@ public class CommandParser : MonoBehaviour
 
     public virtual void parseCommand(string command)
     {
-        //selectExe(command);
+        selectExe(command);
     }
 
     public virtual void parseCommand(string command, string originalText)

@@ -637,7 +637,7 @@ public class AbstractPaintingManager : CommandParser
 
         if (Success)
         {
-            ControlMoney.EarnMoney();
+            ControlMoney.EarnMoney(1);
             GameObject confetti = Instantiate(_prefabConffeti);
             confetti.transform.position = Vector3.zero;
             FindObjectOfType<PaintingSoundManager>().playGreatTada();

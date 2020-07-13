@@ -20,9 +20,11 @@ public class BossDefeatedFeedBack : MonoBehaviour
     [SerializeField] private float timeTochangeScene = 3;
 
     [SerializeField] private List<GameObject> _bossIcons = new List<GameObject>();
+    [SerializeField] private List<GameObject> _leafIcons = new List<GameObject>();
     [SerializeField] private Sprite _defeatedIcon;
     [SerializeField] private Sprite _unDefeatedIcon;
     [SerializeField] private AnimationClip _animationClip;
+    [SerializeField] private AnimationClip _animationEarLeaf;
     private float _animationTime;
 
     private void Awake()
@@ -75,6 +77,9 @@ public class BossDefeatedFeedBack : MonoBehaviour
         _bossIcons[indexIcon].GetComponent<Animator>().Play(Animator.StringToHash(APPEAR));
 
         _bossesText.text = ShowSlotData.DEFEATED_BOSSES + "\n" + (SaveSystem.getPlayerInstace().bossesDefeated ).ToString() + "/" + GameManager.maxBosses.ToString();
+
+        _leafIcons[indexIcon].GetComponent<Animator>().Play("EarLeaf");
+        yield return new WaitForSeconds(_animationEarLeaf.length + 0.5f);
 
         StartCoroutine(changeScene());
     }

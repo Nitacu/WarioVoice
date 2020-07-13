@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControlMoney : MonoBehaviour
 {
-    public static void EarnMoney(int earnedMoney = 10)
+    public static void EarnMoney(int earnedMoney = 0)
     {
         GameManager.GetInstance().Money += earnedMoney;
         PlayerPrefs.SetInt(PlayerPrefsKeys.KEY_MONEY, GameManager.GetInstance().Money);
