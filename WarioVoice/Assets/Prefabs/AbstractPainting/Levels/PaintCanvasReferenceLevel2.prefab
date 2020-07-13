@@ -50,6 +50,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -93,11 +94,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 728178612321666999}
     m_Modifications:
-    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
-      propertyPath: m_Name
-      value: ReferenceSplashDefault (1)
-      objectReference: {fileID: 0}
+      propertyPath: _mySplashColorType
+      value: 
+      objectReference: {fileID: 11400000, guid: dd9c7c1195ae29b45b8e4bba0bae3b03,
+        type: 2}
     - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -163,18 +165,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Name
+      value: ReferenceSplashDefault (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2500777982274813115, guid: 312bada487ebe67489b00e591e14f5fe,
         type: 3}
-    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: _mySplashColorType
-      value: 
-      objectReference: {fileID: 11400000, guid: dd9c7c1195ae29b45b8e4bba0bae3b03,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa45ca0126c1616469fcc9350b740718, type: 3}
 --- !u!4 &567193754060254838 stripped
@@ -190,11 +191,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 728178612321666999}
     m_Modifications:
-    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
-      propertyPath: m_Name
-      value: ReferenceSplashDefault (2)
-      objectReference: {fileID: 0}
+      propertyPath: _mySplashColorType
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c6c3ec8c1c702640aee627ea3c54418,
+        type: 2}
     - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -260,18 +262,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Name
+      value: ReferenceSplashDefault (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3698394584390798031, guid: 312bada487ebe67489b00e591e14f5fe,
         type: 3}
-    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: _mySplashColorType
-      value: 
-      objectReference: {fileID: 11400000, guid: 4c6c3ec8c1c702640aee627ea3c54418,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa45ca0126c1616469fcc9350b740718, type: 3}
 --- !u!4 &224270732572215051 stripped
@@ -287,11 +288,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 728178612321666999}
     m_Modifications:
-    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
-      propertyPath: m_Name
-      value: ReferenceSplashDefault
-      objectReference: {fileID: 0}
+      propertyPath: _mySplashColorType
+      value: 
+      objectReference: {fileID: 11400000, guid: 59e3c01a0b71b7d4bada0358dc030819,
+        type: 2}
     - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -357,18 +359,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Name
+      value: ReferenceSplashDefault
+      objectReference: {fileID: 0}
     - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1465495637993225428, guid: 312bada487ebe67489b00e591e14f5fe,
         type: 3}
-    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: _mySplashColorType
-      value: 
-      objectReference: {fileID: 11400000, guid: 59e3c01a0b71b7d4bada0358dc030819,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa45ca0126c1616469fcc9350b740718, type: 3}
 --- !u!4 &6114888537670339397 stripped
@@ -384,11 +385,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 728178612321666999}
     m_Modifications:
-    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
-      propertyPath: m_Name
-      value: ReferenceSplashDefault (3)
-      objectReference: {fileID: 0}
+      propertyPath: _mySplashColorType
+      value: 
+      objectReference: {fileID: 11400000, guid: 59e3c01a0b71b7d4bada0358dc030819,
+        type: 2}
     - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -454,18 +456,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Name
+      value: ReferenceSplashDefault (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1465495637993225428, guid: 312bada487ebe67489b00e591e14f5fe,
         type: 3}
-    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: _mySplashColorType
-      value: 
-      objectReference: {fileID: 11400000, guid: 59e3c01a0b71b7d4bada0358dc030819,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa45ca0126c1616469fcc9350b740718, type: 3}
 --- !u!4 &5352918882016523010 stripped
@@ -481,11 +482,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 728178612321666999}
     m_Modifications:
-    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
-      propertyPath: m_Name
-      value: ReferenceSplashDefault (4)
-      objectReference: {fileID: 0}
+      propertyPath: _mySplashColorType
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c6c3ec8c1c702640aee627ea3c54418,
+        type: 2}
     - target: {fileID: 1694144561325191164, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -551,18 +553,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1694144561325191166, guid: aa45ca0126c1616469fcc9350b740718,
+        type: 3}
+      propertyPath: m_Name
+      value: ReferenceSplashDefault (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 1694144561325191167, guid: aa45ca0126c1616469fcc9350b740718,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3698394584390798031, guid: 312bada487ebe67489b00e591e14f5fe,
         type: 3}
-    - target: {fileID: -2572016587788918783, guid: aa45ca0126c1616469fcc9350b740718,
-        type: 3}
-      propertyPath: _mySplashColorType
-      value: 
-      objectReference: {fileID: 11400000, guid: 4c6c3ec8c1c702640aee627ea3c54418,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa45ca0126c1616469fcc9350b740718, type: 3}
 --- !u!4 &7948158569979570553 stripped

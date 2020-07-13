@@ -1510,10 +1510,10 @@ RectTransform:
   m_Father: {fileID: 1047828111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8480099, y: 0}
-  m_AnchorMax: {x: 1, y: 0.079416834}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -1.9000244, y: 5}
+  m_SizeDelta: {x: 162.60297, y: 38.21254}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1301650684
 MonoBehaviour:
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: v 0.4.13
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa52a6bdca7839c4e87f7101bd610818, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 7ffc4b3bb04e77e4b9776705344cbcf4, type: 2}
@@ -1562,14 +1562,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
+  m_fontSize: 33.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: -3.3
   m_fontSizeMax: 1000
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1603,13 +1603,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1301650684}
-    characterCount: 0
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 4
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -2517,7 +2517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TITO\xB4S \r\nYARD\r\n"
+  m_text: "TITO'S \r\nYARD\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa52a6bdca7839c4e87f7101bd610818, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 7ffc4b3bb04e77e4b9776705344cbcf4, type: 2}
@@ -2545,7 +2545,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28.55
+  m_fontSize: 30.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2589,11 +2589,11 @@ MonoBehaviour:
     characterCount: 15
     spriteCount: 0
     spaceCount: 3
-    wordCount: 3
+    wordCount: 2
     linkCount: 0
     lineCount: 2
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2652,8 +2652,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 76.1, y: -22.6}
-  m_SizeDelta: {x: 38.985268, y: 30.410625}
+  m_AnchoredPosition: {x: 73.56, y: -20.62}
+  m_SizeDelta: {x: 44.059593, y: 34.36887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040151136
 MonoBehaviour:
@@ -2710,6 +2710,7 @@ MonoBehaviour:
   _superHappy: {fileID: -883498693729231807, guid: 00d55ef9f9884074da11fb20bf2c0dab,
     type: 3}
   _normal: {fileID: 21300000, guid: 8c4d4f7d750311549984759795e4a924, type: 3}
+  _tito: {fileID: 2040151134}
 --- !u!1 &2061701405
 GameObject:
   m_ObjectHideFlags: 0
