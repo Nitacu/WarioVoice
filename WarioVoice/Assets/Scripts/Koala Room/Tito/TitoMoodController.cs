@@ -65,6 +65,8 @@ public class TitoMoodController : MonoBehaviour
                 GameManager.GetInstance().maxNumberOfLives = 3;
                 break;
         }
+
+        FindObjectOfType<MoodActionsController>().updateUILifes();
     }
 
     public void addMoodPoints(float moodPoints)

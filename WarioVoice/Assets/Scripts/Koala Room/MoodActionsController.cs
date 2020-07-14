@@ -24,6 +24,7 @@ public class MoodActionsController : MonoBehaviour
     [SerializeField] private Text _playText;
     [SerializeField] private Text _eatText;
     [SerializeField] private Text _showerText;
+    [SerializeField] private List<GameObject> _titoLifes;
 
     private ulong _lastPlayAction;
     private ulong _lastShowerAction;
@@ -76,9 +77,26 @@ public class MoodActionsController : MonoBehaviour
         checkButtonsOnUpdate();
     }
 
+    public void updateUILifes()
+    {
+        int numberOfLives = GameManager.GetInstance().maxNumberOfLives;
+        
+        for(int i = 0; i< _titoLifes.Count; i++)
+        {
+            if (i < numberOfLives)
+            {
+                _titoLifes[i].SetActive(true);
+            }
+            else
+            {
+                _titoLifes[i].SetActive(false);
+            }
+        }
+    }
 
     public void restartPrefabs()
     {
+        PlayerPrefs.SetString(TutorialKoalaRoomControl.TUTORIAL_COMPLETED_KEY, "false");
         PlayerPrefs.SetString(LAST_PLAY_KEY, "0");
         PlayerPrefs.SetString(LAST_EAT_KEY, "0");
         PlayerPrefs.SetString(LAST_MOOD_UPDATE_KEY, "0");
