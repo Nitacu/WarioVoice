@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class PaintingSoundManager : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'PaintingSoundManager._hummingClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _hummingClip;
+#pragma warning restore CS0649 // El campo 'PaintingSoundManager._hummingClip' nunca se asigna y siempre tendrá el valor predeterminado null
     public AudioClip HummingClip
     {
         get { return _hummingClip; }
     }
+#pragma warning disable CS0649 // El campo 'PaintingSoundManager._wrongClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _wrongClip;
+#pragma warning restore CS0649 // El campo 'PaintingSoundManager._wrongClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PaintingSoundManager._goodPaint' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _goodPaint;
+#pragma warning restore CS0649 // El campo 'PaintingSoundManager._goodPaint' nunca se asigna y siempre tendrá el valor predeterminado null
     public AudioClip GoodPaint
     {
         get { return _goodPaint; }
     }
+#pragma warning disable CS0649 // El campo 'PaintingSoundManager._badPaint' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _badPaint;
+#pragma warning restore CS0649 // El campo 'PaintingSoundManager._badPaint' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PaintingSoundManager._greatTada' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _greatTada;
+#pragma warning restore CS0649 // El campo 'PaintingSoundManager._greatTada' nunca se asigna y siempre tendrá el valor predeterminado null
 
 
     private AudioSource _source;

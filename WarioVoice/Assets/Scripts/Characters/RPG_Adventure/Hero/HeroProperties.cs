@@ -14,7 +14,9 @@ public class HeroProperties : MonoBehaviour
     private LamiaController _lamia; //enemigo
 
     private float _life = 0;
+#pragma warning disable CS0414 // El campo 'HeroProperties._mana' está asignado pero su valor nunca se usa
     private float _mana = 0;
+#pragma warning restore CS0414 // El campo 'HeroProperties._mana' está asignado pero su valor nunca se usa
     private bool _isLive = true;
 
     private GameObject _PanelData; // por si al final queda el panel y el personajes como 2 GO diferentes

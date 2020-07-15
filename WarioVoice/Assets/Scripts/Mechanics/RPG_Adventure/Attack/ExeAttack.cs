@@ -11,8 +11,12 @@ public class ExeAttack : MonoBehaviour
     private HeroProperties _hero;
     private VoiceAttacks _currentAttack;
     private ControlShifts _controlShifts;
+#pragma warning disable CS0649 // El campo 'ExeAttack._hearth' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _hearth; //corazon de gano vida
+#pragma warning restore CS0649 // El campo 'ExeAttack._hearth' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'ExeAttack._usedObject' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _usedObject; //muestra que objeto uso
+#pragma warning restore CS0649 // El campo 'ExeAttack._usedObject' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private void Start()
     {

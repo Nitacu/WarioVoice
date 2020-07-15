@@ -15,16 +15,25 @@ public class BossDefeatedFeedBack : MonoBehaviour
     private int currentBossesDefeated = 1;
 
 
+#pragma warning disable CS0649 // El campo 'BossDefeatedFeedBack._bossesText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _bossesText;
+#pragma warning restore CS0649 // El campo 'BossDefeatedFeedBack._bossesText' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BossDefeatedFeedBack._playername' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _playername;
+#pragma warning restore CS0649 // El campo 'BossDefeatedFeedBack._playername' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private float timeTochangeScene = 3;
 
     [SerializeField] private List<GameObject> _bossIcons = new List<GameObject>();
-    [SerializeField] private List<GameObject> _leafIcons = new List<GameObject>();
+
+#pragma warning disable CS0649 // El campo 'BossDefeatedFeedBack._defeatedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _defeatedIcon;
+#pragma warning restore CS0649 // El campo 'BossDefeatedFeedBack._defeatedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BossDefeatedFeedBack._unDefeatedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _unDefeatedIcon;
+#pragma warning restore CS0649 // El campo 'BossDefeatedFeedBack._unDefeatedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BossDefeatedFeedBack._animationClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AnimationClip _animationClip;
-    [SerializeField] private AnimationClip _animationEarLeaf;
+#pragma warning restore CS0649 // El campo 'BossDefeatedFeedBack._animationClip' nunca se asigna y siempre tendrá el valor predeterminado null
     private float _animationTime;
 
     private void Awake()
@@ -77,10 +86,6 @@ public class BossDefeatedFeedBack : MonoBehaviour
         _bossIcons[indexIcon].GetComponent<Animator>().Play(Animator.StringToHash(APPEAR));
 
         _bossesText.text = ShowSlotData.DEFEATED_BOSSES + "\n" + (SaveSystem.getPlayerInstace().bossesDefeated ).ToString() + "/" + GameManager.maxBosses.ToString();
-
-        _leafIcons[indexIcon].GetComponent<Animator>().Play("EarLeaf");
-        yield return new WaitForSeconds(_animationEarLeaf.length + 0.5f);
-
         StartCoroutine(changeScene());
     }
 

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class ClickSound : MonoBehaviour, IPointerDownHandler
 {
+#pragma warning disable CS0649 // El campo 'ClickSound._sound' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _sound;
+#pragma warning restore CS0649 // El campo 'ClickSound._sound' nunca se asigna y siempre tendrá el valor predeterminado null
     private AudioSource _source;
     private Button  _button;
 

@@ -11,9 +11,13 @@ public class FileSlot : MonoBehaviour, IPointerDownHandler
 
     private bool hasData;
 
+#pragma warning disable CS0649 // El campo 'FileSlot._codeFile' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private int _codeFile;
+#pragma warning restore CS0649 // El campo 'FileSlot._codeFile' nunca se asigna y siempre tendrá el valor predeterminado 0
 
+#pragma warning disable CS0649 // El campo 'FileSlot._name' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _name;
+#pragma warning restore CS0649 // El campo 'FileSlot._name' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private PlayerInformation _currentplayerInformation;
 

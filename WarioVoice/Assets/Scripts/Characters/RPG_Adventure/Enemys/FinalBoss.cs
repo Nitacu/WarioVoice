@@ -11,10 +11,16 @@ public class FinalBoss : LamiaController
     private HeroProperties _heroApplyDamage;
     private GameObject _reflectedAttack;
     [Header("objecto que lanza")]
+#pragma warning disable CS0649 // El campo 'FinalBoss._jar' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _jar;
+#pragma warning restore CS0649 // El campo 'FinalBoss._jar' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FinalBoss._bomb' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _bomb;
+#pragma warning restore CS0649 // El campo 'FinalBoss._bomb' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("LLuvia de jarras")]
+#pragma warning disable CS0649 // El campo 'FinalBoss._rainJar' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _rainJar;
+#pragma warning restore CS0649 // El campo 'FinalBoss._rainJar' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("todos los ataques el boss")]
     [SerializeField] private List<GameObject> _attacks = new List<GameObject>();
     private List<RelationshipAttacksCounters> _counters = new List<RelationshipAttacksCounters>();

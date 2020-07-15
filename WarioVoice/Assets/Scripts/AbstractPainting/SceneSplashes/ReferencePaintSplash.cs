@@ -7,8 +7,12 @@ public class ReferencePaintSplash : PaintSplash
     private bool _evaluatorSplash;
     public bool EvaluatorSplash { get => _evaluatorSplash; set => _evaluatorSplash = value; }
 
+#pragma warning disable CS0649 // El campo 'ReferencePaintSplash._evaluateRadius' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _evaluateRadius;
+#pragma warning restore CS0649 // El campo 'ReferencePaintSplash._evaluateRadius' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'ReferencePaintSplash._mask' nunca se asigna y siempre tendrá el valor predeterminado 
     [SerializeField] private LayerMask _mask;
+#pragma warning restore CS0649 // El campo 'ReferencePaintSplash._mask' nunca se asigna y siempre tendrá el valor predeterminado 
 
     public override void Start()
     {

@@ -6,10 +6,14 @@ using UnityEngine.EventSystems;
 
 public class SetActiveSpeechButton : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'SetActiveSpeechButton._speechButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _speechButton;
+#pragma warning restore CS0649 // El campo 'SetActiveSpeechButton._speechButton' nunca se asigna y siempre tendrá el valor predeterminado null
     //[SerializeField] private GameObject _speechButtonImage;
 
+#pragma warning disable CS0649 // El campo 'SetActiveSpeechButton._deactiveColor' nunca se asigna y siempre tendrá el valor predeterminado 
     [SerializeField] private Color _deactiveColor;
+#pragma warning restore CS0649 // El campo 'SetActiveSpeechButton._deactiveColor' nunca se asigna y siempre tendrá el valor predeterminado 
 
     public void setButton(bool active)
     {

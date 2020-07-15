@@ -15,16 +15,26 @@ public class ShowSlotData : MonoBehaviour
 
     //Total played time: 
 
+#pragma warning disable CS0649 // El campo 'ShowSlotData._nameTextUI' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _nameTextUI;
+#pragma warning restore CS0649 // El campo 'ShowSlotData._nameTextUI' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'ShowSlotData._buttonTextContinue' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _buttonTextContinue;
+#pragma warning restore CS0649 // El campo 'ShowSlotData._buttonTextContinue' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'ShowSlotData._defeatedBossesText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _defeatedBossesText;
+#pragma warning restore CS0649 // El campo 'ShowSlotData._defeatedBossesText' nunca se asigna y siempre tendrá el valor predeterminado null
 
 
     [SerializeField] private List<Image> _imageBosses = new List<Image>();
 
     [Header("Boss Icons")]
+#pragma warning disable CS0649 // El campo 'ShowSlotData._defeatedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _defeatedIcon;
+#pragma warning restore CS0649 // El campo 'ShowSlotData._defeatedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'ShowSlotData._undefetaedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _undefetaedIcon;
+#pragma warning restore CS0649 // El campo 'ShowSlotData._undefetaedIcon' nunca se asigna y siempre tendrá el valor predeterminado null
 
 
     private int _defeatedBosses;
@@ -93,6 +103,7 @@ public class ShowSlotData : MonoBehaviour
 
     public void continueGamePlay()
     {
+        ControlMoney._earnedMoney = false;
 
         if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated >= GameManager.maxBosses)
         {
@@ -102,6 +113,7 @@ public class ShowSlotData : MonoBehaviour
         GameManager.GetInstance().CurrentPlayerInformation = FindObjectOfType<FileManager>().PlayerInfSelected;
         GameManager.GetInstance().Lives = GameManager.GetInstance().maxNumberOfLives;
 
+        Debug.Log("numero de vidas " + GameManager.GetInstance().maxNumberOfLives);
         if (FindObjectOfType<FileManager>().PlayerInfSelected.bossesDefeated > 0)
         {
             GameManager.GetInstance().StartGame();

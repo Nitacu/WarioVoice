@@ -6,14 +6,18 @@ using UnityEngine.EventSystems;
 
 public class SceneButtons : MonoBehaviour, IPointerDownHandler
 {
+#pragma warning disable CS0649 // El campo 'SceneButtons._text' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _text;
+#pragma warning restore CS0649 // El campo 'SceneButtons._text' nunca se asigna y siempre tendrá el valor predeterminado null
 
     public enum ButtonAction
     {
         CHANGECOLOR, CHECKPAINT, LAUNCHNEXTLEVEL, TRYAGAIN
     }
 
+#pragma warning disable CS0649 // El campo 'SceneButtons._buttonAction' nunca se asigna y siempre tendrá el valor predeterminado 
     [SerializeField] private ButtonAction _buttonAction;
+#pragma warning restore CS0649 // El campo 'SceneButtons._buttonAction' nunca se asigna y siempre tendrá el valor predeterminado 
 
     public void OnPointerDown(PointerEventData eventData)
     {

@@ -9,14 +9,24 @@ public class CreateSlot : MonoBehaviour
     private const string PLACEHOLDER = "Enter name...";
 
 
+#pragma warning disable CS0649 // El campo 'CreateSlot._fileNumber' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] TextMeshProUGUI _fileNumber;
+#pragma warning restore CS0649 // El campo 'CreateSlot._fileNumber' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'CreateSlot._inputfield' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] TMP_InputField _inputfield;
+#pragma warning restore CS0649 // El campo 'CreateSlot._inputfield' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [SerializeField] TextMeshProUGUI _name;
+#pragma warning disable CS0649 // El campo 'CreateSlot._namePlaceHolder' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] TextMeshProUGUI _namePlaceHolder;
+#pragma warning restore CS0649 // El campo 'CreateSlot._namePlaceHolder' nunca se asigna y siempre tendrá el valor predeterminado null
 
+#pragma warning disable CS0649 // El campo 'CreateSlot._warningIcon' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] GameObject _warningIcon;
+#pragma warning restore CS0649 // El campo 'CreateSlot._warningIcon' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'CreateSlot._warningText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] GameObject _warningText;
+#pragma warning restore CS0649 // El campo 'CreateSlot._warningText' nunca se asigna y siempre tendrá el valor predeterminado null
 
 
     private void OnEnable()

@@ -6,8 +6,12 @@ using TMPro;
 
 public class CharacterStatistics : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'CharacterStatistics._life' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _life;
+#pragma warning restore CS0649 // El campo 'CharacterStatistics._life' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'CharacterStatistics._heart' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _heart;
+#pragma warning restore CS0649 // El campo 'CharacterStatistics._heart' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField]private List<GameObject> _listHearts = new List<GameObject>();
     [SerializeField] private Image _icon;
 

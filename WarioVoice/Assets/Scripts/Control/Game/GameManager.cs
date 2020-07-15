@@ -55,7 +55,7 @@ public class GameManager
     }
 
     public const int maxBosses = 3;
-    public int maxNumberOfLives = 5;
+    public int maxNumberOfLives;
 
     private PlayerInformation _currentPlayerInformation;
     public PlayerInformation CurrentPlayerInformation
@@ -82,8 +82,8 @@ public class GameManager
             _instance = new GameManager();
 
             //_instance.setLevelRound();
-
-            _instance._lives = 4;
+            _instance.MaxLives();
+            _instance._lives = _instance.maxNumberOfLives;
             _instance.DeveloperMode = false;
             _instance._currentBossDifficulty = 3;//o según el progreso que lleve
             _instance.Money = PlayerPrefs.GetInt(PlayerPrefsKeys.KEY_MONEY);
@@ -101,6 +101,32 @@ public class GameManager
     }
 
     #region FUNCIONESLANZARNIVEL NEW
+
+    public void MaxLives()
+    {
+        int _moodlevel = PlayerPrefs.GetInt("MoodValue");
+
+        if (_moodlevel <= 100 && _moodlevel > 75)
+        {
+            GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.SUPERHAPPY;
+            GameManager.GetInstance().maxNumberOfLives = 5;
+        }
+        else if (_moodlevel <= 75 && _moodlevel > 50)
+        {
+            GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.HAPPY;
+            GameManager.GetInstance().maxNumberOfLives = 4;
+        }
+        else if (_moodlevel <= 50 && _moodlevel > 25)
+        {
+            GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.NORMAL;
+            GameManager.GetInstance().maxNumberOfLives = 3;
+        }
+        else if (_moodlevel <= 25 && _moodlevel >= 0)
+        {
+            GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.SAD;
+            GameManager.GetInstance().maxNumberOfLives = 2;
+        }
+    }
 
     private List<MiniGameLevel> _miniGamesRound = new List<MiniGameLevel>();
     private int _currentBossDifficulty = 1;

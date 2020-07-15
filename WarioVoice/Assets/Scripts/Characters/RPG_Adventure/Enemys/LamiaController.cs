@@ -27,7 +27,9 @@ public class LamiaController : MonoBehaviour
     [SerializeField] protected GameObject _cofetti;
     protected bool _weak = false; // para saber si esta debil el jefe
     protected HeroProperties _lastHeroToHarm; // la creo aca para no estar la creando muchas veces 
+#pragma warning disable CS0649 // El campo 'LamiaController._eyeWeak' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _eyeWeak;
+#pragma warning restore CS0649 // El campo 'LamiaController._eyeWeak' nunca se asigna y siempre tendrá el valor predeterminado null
 
     public virtual void Start()
     {
@@ -82,7 +84,7 @@ public class LamiaController : MonoBehaviour
         else
         {
             Instantiate(_cofetti);
-            ControlMoney.EarnMoney();
+            ControlMoney.EarnMoney(Random.Range(10, 15));
             Camera.main.GetComponent<AudioSource>().enabled = false;
             FindObjectOfType<ControlShifts>().GetComponent<AudioSource>().Play();
             GetComponentInChildren<ParticleSystem>().Stop();

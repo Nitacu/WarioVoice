@@ -7,10 +7,16 @@ public class GuideControlWorm : MonoBehaviour
 {
     [SerializeField]private SetActiveSpeechButton _speechButton;
     private ConvertAngles _convertAngles;
+#pragma warning disable CS0649 // El campo 'GuideControlWorm._imageAngle' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _imageAngle;
+#pragma warning restore CS0649 // El campo 'GuideControlWorm._imageAngle' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'GuideControlWorm._imagePower' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _imagePower;
+#pragma warning restore CS0649 // El campo 'GuideControlWorm._imagePower' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("Textos de ejemplo")]
+#pragma warning disable CS0649 // El campo 'GuideControlWorm._text' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TMP_Text _text;
+#pragma warning restore CS0649 // El campo 'GuideControlWorm._text' nunca se asigna y siempre tendrá el valor predeterminado null
     private Color _colorTutorial = Color.gray;
     [SerializeField]private float _time = 0;
     private const string EXAMPLE_DEGREES = "Ejemplo: 20 Degrees";

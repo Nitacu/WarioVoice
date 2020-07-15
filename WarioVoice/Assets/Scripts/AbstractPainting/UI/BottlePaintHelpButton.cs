@@ -15,7 +15,9 @@ public class BottlePaintHelpButton : MonoBehaviour, IPointerDownHandler
     public AudioClip AudioClip { get => _audioClip; set => _audioClip = value; }
 
 
+#pragma warning disable CS0649 // El campo 'BottlePaintHelpButton._bottleColor' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Image _bottleColor;
+#pragma warning restore CS0649 // El campo 'BottlePaintHelpButton._bottleColor' nunca se asigna y siempre tendrá el valor predeterminado null
     public Color BottleColor
     {
         get { return _bottleColor.color; }

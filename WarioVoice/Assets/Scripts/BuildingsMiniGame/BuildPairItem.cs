@@ -8,9 +8,13 @@ public class BuildPairItem : MonoBehaviour
     private const string REDUCE_CLIP = "Reduce";
 
     private bool _showingText;
+#pragma warning disable CS0649 // El campo 'BuildPairItem._dialogTextName' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _dialogTextName;
+#pragma warning restore CS0649 // El campo 'BuildPairItem._dialogTextName' nunca se asigna y siempre tendrá el valor predeterminado null
     private GameObject _instantiatedDialogText;
+#pragma warning disable CS0649 // El campo 'BuildPairItem._dialogTextOffset' nunca se asigna y siempre tendrá el valor predeterminado 
     [SerializeField] private Vector3 _dialogTextOffset;
+#pragma warning restore CS0649 // El campo 'BuildPairItem._dialogTextOffset' nunca se asigna y siempre tendrá el valor predeterminado 
 
 
     private float _showingTextTime = 4f;

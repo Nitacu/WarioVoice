@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class EnchantmentsSimulator : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'EnchantmentsSimulator._listEnchantments' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Dropdown _listEnchantments;
+#pragma warning restore CS0649 // El campo 'EnchantmentsSimulator._listEnchantments' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsSimulator._listEnchantmentObjs' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Dropdown _listEnchantmentObjs;
+#pragma warning restore CS0649 // El campo 'EnchantmentsSimulator._listEnchantmentObjs' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private CommandParser _commandParser;
 

@@ -41,7 +41,9 @@ public class SaveSystem
             PlayerPrefs.SetInt(BOSSDIFFICULTYCHECKPOINT_PLAYERPREFCODE, 1);
         }*/
 
+#pragma warning disable CS0162 // Se detectó código inaccesible
         return _currentPlayerInformation.bossesDefeated + 1;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
     }
 

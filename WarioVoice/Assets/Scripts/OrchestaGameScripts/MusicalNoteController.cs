@@ -10,7 +10,9 @@ public class MusicalNoteController : MonoBehaviour
     public bool isOn = false;
     [HideInInspector]
     public Sprite instrumentSprite;
+#pragma warning disable CS0414 // El campo 'MusicalNoteController.randomNumber' está asignado pero su valor nunca se usa
     private int randomNumber = 0;
+#pragma warning restore CS0414 // El campo 'MusicalNoteController.randomNumber' está asignado pero su valor nunca se usa
 
     // Start is called before the first frame update
     void Start()

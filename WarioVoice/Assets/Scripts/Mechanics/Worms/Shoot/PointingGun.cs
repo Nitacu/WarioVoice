@@ -7,11 +7,21 @@ public class PointingGun : MonoBehaviour
 {
     private float _angle;
     [SerializeField] private GameObject _player;
+#pragma warning disable CS0649 // El campo 'PointingGun._proyectile' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _proyectile;
+#pragma warning restore CS0649 // El campo 'PointingGun._proyectile' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PointingGun._positionShoot' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _positionShoot;
+#pragma warning restore CS0649 // El campo 'PointingGun._positionShoot' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PointingGun._explotion' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _explotion;
+#pragma warning restore CS0649 // El campo 'PointingGun._explotion' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PointingGun._turrent' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _turrent;
+#pragma warning restore CS0649 // El campo 'PointingGun._turrent' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PointingGun._sp' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private SpriteRenderer[] _sp;
+#pragma warning restore CS0649 // El campo 'PointingGun._sp' nunca se asigna y siempre tendrá el valor predeterminado null
     private GuideControlWorm _guideControlWorm;
 
     private void Start()

@@ -7,7 +7,9 @@ public class ScrollBackground : MonoBehaviour
 {
     RawImage rawIm;
 
+#pragma warning disable CS0649 // El campo 'ScrollBackground.lerpVelocity' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] float lerpVelocity;
+#pragma warning restore CS0649 // El campo 'ScrollBackground.lerpVelocity' nunca se asigna y siempre tendrá el valor predeterminado 0
 
     enum horizontalDirection
     {

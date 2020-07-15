@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class OcelotCommandSimulator : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'OcelotCommandSimulator._listCommands' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Dropdown _listCommands;
+#pragma warning restore CS0649 // El campo 'OcelotCommandSimulator._listCommands' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Dropdown _listObj;
     private CommandParser _commandParser; 
 

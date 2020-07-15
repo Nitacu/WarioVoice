@@ -13,22 +13,36 @@ public class ShowMoreData : MonoBehaviour
     private const string TIMES2 = " times played.";
     private const string NOPLAYED = "You have never played this game.";
 
+#pragma warning disable CS0649 // El campo 'ShowMoreData._playedTime' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _playedTime;
+#pragma warning restore CS0649 // El campo 'ShowMoreData._playedTime' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'ShowMoreData._inputAccuracy' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _inputAccuracy;
+#pragma warning restore CS0649 // El campo 'ShowMoreData._inputAccuracy' nunca se asigna y siempre tendrá el valor predeterminado null
 
+#pragma warning disable CS0649 // El campo 'ShowMoreData.timesPlayedModernPaints' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesPlayedModernPaints;
+#pragma warning restore CS0649 // El campo 'ShowMoreData.timesPlayedModernPaints' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesLossedModernPaints;
 
+#pragma warning disable CS0649 // El campo 'ShowMoreData.timesPlayedOrchesta' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesPlayedOrchesta;
+#pragma warning restore CS0649 // El campo 'ShowMoreData.timesPlayedOrchesta' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesLossedOrchesta;
 
+#pragma warning disable CS0649 // El campo 'ShowMoreData.timesPlayedLoveGame' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesPlayedLoveGame;
+#pragma warning restore CS0649 // El campo 'ShowMoreData.timesPlayedLoveGame' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesLossedLoveGame;
 
+#pragma warning disable CS0649 // El campo 'ShowMoreData.timesPlayedWorms' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesPlayedWorms;
+#pragma warning restore CS0649 // El campo 'ShowMoreData.timesPlayedWorms' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesLossedWorms;
 
+#pragma warning disable CS0649 // El campo 'ShowMoreData.timesPlayeRPG' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesPlayeRPG;
+#pragma warning restore CS0649 // El campo 'ShowMoreData.timesPlayeRPG' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI timesLossedRPG;
 
     private void OnEnable()

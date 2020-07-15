@@ -47,12 +47,16 @@ public static class BuildingVocabulary
 [System.Serializable]
 public class Pairs
 {
+#pragma warning disable CS0649 // El campo 'Pairs._buildPrefab' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _buildPrefab;
+#pragma warning restore CS0649 // El campo 'Pairs._buildPrefab' nunca se asigna y siempre tendrá el valor predeterminado null
     public GameObject BuildPrefab
     {
         get { return _buildPrefab; }
     }
+#pragma warning disable CS0649 // El campo 'Pairs._charPrefab' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _charPrefab;
+#pragma warning restore CS0649 // El campo 'Pairs._charPrefab' nunca se asigna y siempre tendrá el valor predeterminado null
     public GameObject CharPrefab
     {
         get { return _charPrefab; }
@@ -64,7 +68,9 @@ public class Level
 {
 
     [Header("Número de parejas que aparecerán en este nivel")]
+#pragma warning disable CS0649 // El campo 'Level._numberOfPairs' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private int _numberOfPairs;
+#pragma warning restore CS0649 // El campo 'Level._numberOfPairs' nunca se asigna y siempre tendrá el valor predeterminado 0
     public int NumberOfPairs
     {
         get { return _numberOfPairs; }
@@ -99,10 +105,18 @@ public class BuildingsManager : CommandParser
     private bool _itemSelected;
     private bool _itemFinded;
 
+#pragma warning disable CS0649 // El campo 'BuildingsManager._charTimeToGetBuild' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _charTimeToGetBuild;
+#pragma warning restore CS0649 // El campo 'BuildingsManager._charTimeToGetBuild' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'BuildingsManager._LevelText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _LevelText;
+#pragma warning restore CS0649 // El campo 'BuildingsManager._LevelText' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BuildingsManager._itemTapGuide' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _itemTapGuide;
+#pragma warning restore CS0649 // El campo 'BuildingsManager._itemTapGuide' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BuildingsManager._matchingText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _matchingText;
+#pragma warning restore CS0649 // El campo 'BuildingsManager._matchingText' nunca se asigna y siempre tendrá el valor predeterminado null
 
 
     private BuildingVocabulary.PairType _currentType;
@@ -120,7 +134,9 @@ public class BuildingsManager : CommandParser
     public override void parseCommand(string command)
     {
 
+#pragma warning disable CS0219 // La variable '_itemFinded' está asignada pero su valor nunca se usa
         bool _itemFinded = false;
+#pragma warning restore CS0219 // La variable '_itemFinded' está asignada pero su valor nunca se usa
 
         findItemOnBuilds(command);
         findItemOnChars(command);
@@ -137,7 +153,9 @@ public class BuildingsManager : CommandParser
     //simulación sin voz
     public void parseCommandSimulation(string command)
     {
+#pragma warning disable CS0219 // La variable '_itemFinded' está asignada pero su valor nunca se usa
         bool _itemFinded = false;
+#pragma warning restore CS0219 // La variable '_itemFinded' está asignada pero su valor nunca se usa
 
 
         findItemOnBuilds(command);

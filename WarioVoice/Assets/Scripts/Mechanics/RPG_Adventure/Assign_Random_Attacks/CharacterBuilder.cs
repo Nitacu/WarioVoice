@@ -14,7 +14,9 @@ public class CharacterBuilder : MonoBehaviour
     private List<VoiceAttacks> _listAttacksDefinitive = new List<VoiceAttacks>();
     private List<VoiceAttacks> _listHealingObjects = new List<VoiceAttacks>();
     [Header("Todos los cuerpos de personajes")]
+#pragma warning disable CS0649 // El campo 'CharacterBuilder._listHeroes' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private List<TypeHeroeRPG> _listHeroes;
+#pragma warning restore CS0649 // El campo 'CharacterBuilder._listHeroes' nunca se asigna y siempre tendrá el valor predeterminado null
     private int NUMBER_ATTACKS_USELESS = 2;
     private int NUMBER_ATTACKS_USEFUL = 2;
     private int NUMBER_ATTACKS_DEFINITIVE = 1;
@@ -22,9 +24,13 @@ public class CharacterBuilder : MonoBehaviour
     private int SPLIT_ATTACKS = 0;
     private int _numberCharacters;
     [Header("Objeto que contendra todos los personajes")]
+#pragma warning disable CS0649 // El campo 'CharacterBuilder._contentCharacters' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private List<GameObject> _contentCharacters;
+#pragma warning restore CS0649 // El campo 'CharacterBuilder._contentCharacters' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("prefab de personaje")]
+#pragma warning disable CS0649 // El campo 'CharacterBuilder._character' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _character;
+#pragma warning restore CS0649 // El campo 'CharacterBuilder._character' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private ConfigureRPG _configureRPG;
     public int NumberCharacters { get => _numberCharacters; set => _numberCharacters = value; }

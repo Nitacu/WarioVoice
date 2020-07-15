@@ -6,21 +6,37 @@ using UnityEngine.UI;
 public class TitoMoodController : MonoBehaviour
 {
     [Header("Mood Sprites")]
+#pragma warning disable CS0649 // El campo 'TitoMoodController._happy' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _happy;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._happy' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TitoMoodController._sad' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _sad;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._sad' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TitoMoodController._superHappy' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _superHappy;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._superHappy' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TitoMoodController._normal' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _normal;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._normal' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("Tito")]
+#pragma warning disable CS0649 // El campo 'TitoMoodController._titoHead' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _titoHead;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._titoHead' nunca se asigna y siempre tendrá el valor predeterminado null
     [Tooltip("Mood level goes from 0 - 100, indicating what is the current mood of Tito, Sad (0-25), Normal (26-50), Happy (51-75), SuperHappy (76-100)")]
     [Range(0,100)]
     [SerializeField] private float _moodlevel = 51;
     [Header("MoodBar")]
+#pragma warning disable CS0649 // El campo 'TitoMoodController._headIcon' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Image _headIcon;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._headIcon' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TitoMoodController._moodBar' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Image _moodBar;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._moodBar' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("UI")]
+#pragma warning disable CS0649 // El campo 'TitoMoodController._inputField' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private InputField _inputField;
+#pragma warning restore CS0649 // El campo 'TitoMoodController._inputField' nunca se asigna y siempre tendrá el valor predeterminado null
 
     public enum ENUM_TitoMood
     {

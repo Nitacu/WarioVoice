@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class EnemyTankWorms : EnemyWorms
 {
+#pragma warning disable CS0649 // El campo 'EnemyTankWorms._pointInFront' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointInFront;
+#pragma warning restore CS0649 // El campo 'EnemyTankWorms._pointInFront' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnemyTankWorms._pointInBack' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointInBack;
+#pragma warning restore CS0649 // El campo 'EnemyTankWorms._pointInBack' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnemyTankWorms._pointDown' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointDown;
+#pragma warning restore CS0649 // El campo 'EnemyTankWorms._pointDown' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnemyTankWorms._pointDownBack' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointDownBack;
+#pragma warning restore CS0649 // El campo 'EnemyTankWorms._pointDownBack' nunca se asigna y siempre tendrá el valor predeterminado null
     private bool _moveRight;
     private float _rate;
     private float _velocity = 0.5f;

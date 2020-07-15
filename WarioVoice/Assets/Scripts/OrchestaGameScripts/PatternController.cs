@@ -442,7 +442,7 @@ public class PatternController : MonoBehaviour
     private void winGame()
     {
         Debug.Log("Ganaste");
-        ControlMoney.EarnMoney();
+        ControlMoney.EarnMoney(Random.Range(5, 10));
         confetti.SetActive(true);
         GetComponent<AudioSource>().Play();
         cameraAudioSource.Stop();

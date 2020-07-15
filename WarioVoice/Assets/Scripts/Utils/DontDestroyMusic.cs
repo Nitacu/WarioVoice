@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroyMusic : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'DontDestroyMusic._music' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] GameObject _music;
+#pragma warning restore CS0649 // El campo 'DontDestroyMusic._music' nunca se asigna y siempre tendrá el valor predeterminado null
 
     void Awake()
     {

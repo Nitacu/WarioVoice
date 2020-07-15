@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RocketControl : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'RocketControl._smallExplotion' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] GameObject _smallExplotion;
+#pragma warning restore CS0649 // El campo 'RocketControl._smallExplotion' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

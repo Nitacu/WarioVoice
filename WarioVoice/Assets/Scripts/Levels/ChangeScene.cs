@@ -37,7 +37,9 @@ public class ChangeScene : MonoBehaviour
 
 
 
+#pragma warning disable CS0649 // El campo 'ChangeScene._nameScenes' nunca se asigna y siempre tendrá el valor predeterminado 
     [SerializeField] private nameScenes _nameScenes;
+#pragma warning restore CS0649 // El campo 'ChangeScene._nameScenes' nunca se asigna y siempre tendrá el valor predeterminado 
 
     public enum nameScenes
     {

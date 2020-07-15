@@ -7,8 +7,12 @@ using UnityEngine.SceneManagement;
 public class ConfigurationWorms : MonoBehaviour
 {
     private int _numberEnemys;
+#pragma warning disable CS0414 // El campo 'ConfigurationWorms._numberAmunition' está asignado pero su valor nunca se usa
     private int _numberAmunition = 0;
+#pragma warning restore CS0414 // El campo 'ConfigurationWorms._numberAmunition' está asignado pero su valor nunca se usa
+#pragma warning disable CS0649 // El campo 'ConfigurationWorms._conffeti' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _conffeti;
+#pragma warning restore CS0649 // El campo 'ConfigurationWorms._conffeti' nunca se asigna y siempre tendrá el valor predeterminado null
     void Start()
     {
         _numberEnemys = FindObjectsOfType<EnemyWorms>().Length;
@@ -36,7 +40,7 @@ public class ConfigurationWorms : MonoBehaviour
         if (_numberEnemys == 0)
         {
             FindObjectOfType<GuideControlWorm>().desactiveAll();
-            ControlMoney.EarnMoney();
+            ControlMoney.EarnMoney(Random.Range(5, 10));
             Instantiate(_conffeti);
             Invoke("exitScene", 2);
         }

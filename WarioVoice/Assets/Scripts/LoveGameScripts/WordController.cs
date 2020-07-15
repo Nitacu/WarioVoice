@@ -261,7 +261,7 @@ public class WordController : MonoBehaviour
                     audioController.playVictorySound();
                     disableSpeechButton();
                     //finalScreen.SetActive(true);
-                    ControlMoney.EarnMoney();
+                    ControlMoney.EarnMoney(Random.Range(5, 10));
                     confetti.Play();
                     loveMetter.GetComponent<LoveMeterController>().updateLoveBar();
                     women.GetComponent<WomanController>().playLoveAnimation();

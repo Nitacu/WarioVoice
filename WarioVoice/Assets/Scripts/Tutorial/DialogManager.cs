@@ -7,17 +7,33 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {
     public Queue<string> sentences = new Queue<string>();
+#pragma warning disable CS0649 // El campo 'DialogManager._text' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TMP_Text _text;
+#pragma warning restore CS0649 // El campo 'DialogManager._text' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'DialogManager._dialogue' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Dialogue _dialogue;
+#pragma warning restore CS0649 // El campo 'DialogManager._dialogue' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'DialogManager._buttonNextDialogue' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _buttonNextDialogue;
+#pragma warning restore CS0649 // El campo 'DialogManager._buttonNextDialogue' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'DialogManager._buttonSound' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _buttonSound;
+#pragma warning restore CS0649 // El campo 'DialogManager._buttonSound' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private List<bool> _showButtonNextDialogue = new List<bool>();
     [SerializeField] private List<AudioClip> _sentenses = new List<AudioClip>();
     [SerializeField] private List<bool> _showButtonSentenses= new List<bool>();
+#pragma warning disable CS0649 // El campo 'DialogManager._destroyInstruccion' nunca se asigna y siempre tendrá el valor predeterminado false
     [SerializeField] private bool _destroyInstruccion;
+#pragma warning restore CS0649 // El campo 'DialogManager._destroyInstruccion' nunca se asigna y siempre tendrá el valor predeterminado false
+#pragma warning disable CS0649 // El campo 'DialogManager._instruccion' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _instruccion;
+#pragma warning restore CS0649 // El campo 'DialogManager._instruccion' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'DialogManager._enemy' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _enemy;
+#pragma warning restore CS0649 // El campo 'DialogManager._enemy' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'DialogManager._faceObj' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _faceObj;
+#pragma warning restore CS0649 // El campo 'DialogManager._faceObj' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private int _cont = -1;
     private int _numerdialogue = 0;

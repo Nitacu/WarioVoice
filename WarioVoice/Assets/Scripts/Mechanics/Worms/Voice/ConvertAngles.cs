@@ -13,7 +13,9 @@ public class ConvertAngles : CommandParser
     private GuideControlWorm _controlWorm;
     private bool _allowPoint = false;
     private bool _allowShoot = false;
+#pragma warning disable CS0649 // El campo 'ConvertAngles._inputField' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TMP_InputField _inputField;
+#pragma warning restore CS0649 // El campo 'ConvertAngles._inputField' nunca se asigna y siempre tendrá el valor predeterminado null
     public bool AllowPoint { get => _allowPoint; set => _allowPoint = value; }
     public bool AllowShoot { get => _allowShoot; set => _allowShoot = value; }
 

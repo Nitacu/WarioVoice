@@ -5,16 +5,34 @@ using UnityEngine;
 public class TutorialKoalaRoomControl : MonoBehaviour
 {
     [Header("UI")]
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._welcomePanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _welcomePanel;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._welcomePanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._firstPanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _firstPanel;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._firstPanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._secondPanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _secondPanel;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._secondPanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._thirdPanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _thirdPanel;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._thirdPanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._fourthPanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _fourthPanel;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._fourthPanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._tutorialButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _tutorialButton;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._tutorialButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("AntiPressPanels")]
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._antiPressEat' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _antiPressEat;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._antiPressEat' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._antiPressShower' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _antiPressShower;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._antiPressShower' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'TutorialKoalaRoomControl._antiPressPlay' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _antiPressPlay;
+#pragma warning restore CS0649 // El campo 'TutorialKoalaRoomControl._antiPressPlay' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private int _currentActivePanel = 0;
     private List<GameObject> _tutorialPanels = new List<GameObject>();

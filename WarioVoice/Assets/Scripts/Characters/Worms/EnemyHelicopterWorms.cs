@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyHelicopterWorms : EnemyWorms
 {
+#pragma warning disable CS0649 // El campo 'EnemyHelicopterWorms._pointInFront' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointInFront;
+#pragma warning restore CS0649 // El campo 'EnemyHelicopterWorms._pointInFront' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnemyHelicopterWorms._pointDown' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointDown;
+#pragma warning restore CS0649 // El campo 'EnemyHelicopterWorms._pointDown' nunca se asigna y siempre tendrá el valor predeterminado null
     private GameObject _player;
     private bool _moveRight;
     private float _rate;

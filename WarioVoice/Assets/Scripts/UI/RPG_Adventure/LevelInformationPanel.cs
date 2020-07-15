@@ -8,7 +8,9 @@ public class LevelInformationPanel : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _attacks;
     [SerializeField] private List<GameObject> _images;
+#pragma warning disable CS0649 // El campo 'LevelInformationPanel._panelAttacks' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _panelAttacks;
+#pragma warning restore CS0649 // El campo 'LevelInformationPanel._panelAttacks' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _fatherText;
     [SerializeField] private List<GameObject> _newText = new List<GameObject>();
     [SerializeField] private List<GameObject> _listTexts = new List<GameObject>();

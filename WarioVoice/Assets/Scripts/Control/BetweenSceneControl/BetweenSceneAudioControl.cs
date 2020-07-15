@@ -6,9 +6,15 @@ public class BetweenSceneAudioControl : MonoBehaviour
 {
     private AudioSource _source;
 
+#pragma warning disable CS0649 // El campo 'BetweenSceneAudioControl._goClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _goClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneAudioControl._goClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneAudioControl._gameOverClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _gameOverClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneAudioControl._gameOverClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneAudioControl._greatAudioClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _greatAudioClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneAudioControl._greatAudioClip' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [SerializeField] float _normalVelocity = 1;
     [SerializeField] float _fasterVelocity = 2;

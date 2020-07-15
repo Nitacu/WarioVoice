@@ -64,49 +64,71 @@ public class ConfigureRPG : MonoBehaviour
         {
             case 1:
                 return 2;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 2:
                 return 3;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 3:
                 return 3;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 4:
                 return 3;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 5:
                 return 3;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 6:
                 return 1;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 7:
                 return 1;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 8:
                 return 1;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 9:
                 return 1;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
             case 10:
                 return 1;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
 
 
             default:
                 Debug.Log("no cuadran los niveles de dificultad");
                 return 1;
+#pragma warning disable CS0162 // Se detectó código inaccesible
                 break;
+#pragma warning restore CS0162 // Se detectó código inaccesible
         }
     }
 

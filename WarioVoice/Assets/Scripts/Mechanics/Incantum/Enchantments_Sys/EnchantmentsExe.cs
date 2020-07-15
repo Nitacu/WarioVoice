@@ -6,22 +6,40 @@ using TMPro;
 public class EnchantmentsExe : MonoBehaviour
 {
     [SerializeField] private GameObject _objTextTags;
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._magicRabbit' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _magicRabbit;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._magicRabbit' nunca se asigna y siempre tendrá el valor predeterminado null
     [Header("sistemas de particulas")]
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._objSpark' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _objSpark;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._objSpark' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._objMagicCloud' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _objMagicCloud;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._objMagicCloud' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._objSnowflake' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _objSnowflake;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._objSnowflake' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _objFire;
 
     private List<GameObject> _listEnchantableObj;
     private LevelManager _levelManager;
 
     [Header("efectos de sonido")]
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._audioSource' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioSource _audioSource;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._audioSource' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._gravityBreak' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _gravityBreak;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._gravityBreak' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._ignite' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _ignite;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._ignite' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._magic' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _magic;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._magic' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantmentsExe._magicTags' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _magicTags;
+#pragma warning restore CS0649 // El campo 'EnchantmentsExe._magicTags' nunca se asigna y siempre tendrá el valor predeterminado null
 
     void Start()
     {

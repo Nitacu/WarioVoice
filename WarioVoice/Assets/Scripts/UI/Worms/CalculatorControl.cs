@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class CalculatorControl : MonoBehaviour
 {
+#pragma warning disable CS0649 // El campo 'CalculatorControl._text' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TMP_Text _text;
+#pragma warning restore CS0649 // El campo 'CalculatorControl._text' nunca se asigna y siempre tendrá el valor predeterminado null
     
     private Animator _anim;
 

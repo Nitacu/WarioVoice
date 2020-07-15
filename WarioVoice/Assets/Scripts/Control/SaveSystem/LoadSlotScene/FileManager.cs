@@ -21,17 +21,35 @@ public class FileManager : MonoBehaviour
     #endregion
 
     [Header("TEXTS")]
+#pragma warning disable CS0649 // El campo 'FileManager._mainTextEnglish' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _mainTextEnglish;
+#pragma warning restore CS0649 // El campo 'FileManager._mainTextEnglish' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._mainTextSpanish' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _mainTextSpanish;
+#pragma warning restore CS0649 // El campo 'FileManager._mainTextSpanish' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("UI ELEMENTS")]
+#pragma warning disable CS0649 // El campo 'FileManager._fadeAppearClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AnimationClip _fadeAppearClip;
+#pragma warning restore CS0649 // El campo 'FileManager._fadeAppearClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._slotContainer' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _slotContainer;
+#pragma warning restore CS0649 // El campo 'FileManager._slotContainer' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._createASlotUI' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _createASlotUI;
+#pragma warning restore CS0649 // El campo 'FileManager._createASlotUI' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._showDataUI' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _showDataUI;
+#pragma warning restore CS0649 // El campo 'FileManager._showDataUI' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._deleteConfirmationUI' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _deleteConfirmationUI;
+#pragma warning restore CS0649 // El campo 'FileManager._deleteConfirmationUI' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._moreDataUI' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _moreDataUI;
+#pragma warning restore CS0649 // El campo 'FileManager._moreDataUI' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FileManager._vocabulary' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _vocabulary;
+#pragma warning restore CS0649 // El campo 'FileManager._vocabulary' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private float _timeToHideSlots;
     private float _trackTimeToHide;

@@ -5,7 +5,9 @@ using UnityEngine;
 public class UnderwaterWorms : EnemyWorms
 {
     [SerializeField] private Vector3 _pointStart;
+#pragma warning disable CS0649 // El campo 'UnderwaterWorms._pointDown' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _pointDown;
+#pragma warning restore CS0649 // El campo 'UnderwaterWorms._pointDown' nunca se asigna y siempre tendrá el valor predeterminado null
     private Vector3 _vecDown;
     private GameObject _player;
     private bool _moveRight;

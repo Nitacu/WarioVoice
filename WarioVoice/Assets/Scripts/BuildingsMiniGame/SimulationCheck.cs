@@ -14,9 +14,13 @@ public class SimulationCheck : MonoBehaviour, IPointerDownHandler
 
     public SimulationAction _action;
 
+#pragma warning disable CS0649 // El campo 'SimulationCheck._buildManager' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private BuildingsManager _buildManager;
+#pragma warning restore CS0649 // El campo 'SimulationCheck._buildManager' nunca se asigna y siempre tendrá el valor predeterminado null
     //[SerializeField] private Text _text;
+#pragma warning disable CS0649 // El campo 'SimulationCheck._text' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _text;
+#pragma warning restore CS0649 // El campo 'SimulationCheck._text' nunca se asigna y siempre tendrá el valor predeterminado null
 
     public void OnPointerDown(PointerEventData eventData)
     {

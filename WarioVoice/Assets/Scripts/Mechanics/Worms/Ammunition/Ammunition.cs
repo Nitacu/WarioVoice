@@ -7,8 +7,12 @@ public class Ammunition : MonoBehaviour
 {
     [SerializeField] private int _amnunition = 0;
     [Header("Donde se vera la municon")]
+#pragma warning disable CS0649 // El campo 'Ammunition._ammoContent' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField]private GameObject _ammoContent;
+#pragma warning restore CS0649 // El campo 'Ammunition._ammoContent' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'Ammunition._ammoPicture' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _ammoPicture;
+#pragma warning restore CS0649 // El campo 'Ammunition._ammoPicture' nunca se asigna y siempre tendrá el valor predeterminado null
     private List<GameObject> _rockets = new List<GameObject>();
     private PointingGun _pointingGun;
     private const float FORCE_SHOOT = 15;

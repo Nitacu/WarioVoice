@@ -14,7 +14,9 @@ public class OcelotProperties : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         _anim.enabled = false;
+#pragma warning disable CS0618 // 'ParticleSystem.duration' está obsoleto: 'duration property is deprecated. Use main.duration instead.'
         Invoke("activeCat",GetComponent<ParticleSystem>().duration);
+#pragma warning restore CS0618 // 'ParticleSystem.duration' está obsoleto: 'duration property is deprecated. Use main.duration instead.'
     }
 
     private void activeCat()

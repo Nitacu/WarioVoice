@@ -13,23 +13,41 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Animator _anim;
     private const string ANIMATION_APPEAR = "PMAppear";
     private const string ANIMATION_DESAPPEAR = "PMDesappear";
+#pragma warning disable CS0649 // El campo 'PauseMenu._appearAnimation' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AnimationClip _appearAnimation;
+#pragma warning restore CS0649 // El campo 'PauseMenu._appearAnimation' nunca se asigna y siempre tendrá el valor predeterminado null
 
     public static bool _gameIsPaused;
 
+#pragma warning disable CS0649 // El campo 'PauseMenu.pauseContainer' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject pauseContainer;
+#pragma warning restore CS0649 // El campo 'PauseMenu.pauseContainer' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("Audio")]
+#pragma warning disable CS0649 // El campo 'PauseMenu._musicButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _musicButton;
+#pragma warning restore CS0649 // El campo 'PauseMenu._musicButton' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PauseMenu._musicButtonNormalSprite' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _musicButtonNormalSprite;
+#pragma warning restore CS0649 // El campo 'PauseMenu._musicButtonNormalSprite' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PauseMenu._musicButtonPressedSprite' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _musicButtonPressedSprite;
+#pragma warning restore CS0649 // El campo 'PauseMenu._musicButtonPressedSprite' nunca se asigna y siempre tendrá el valor predeterminado null
 
+#pragma warning disable CS0649 // El campo 'PauseMenu._sfxButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _sfxButton;
+#pragma warning restore CS0649 // El campo 'PauseMenu._sfxButton' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PauseMenu._sfxButtonNormalSprite' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _sfxButtonNormalSprite;
+#pragma warning restore CS0649 // El campo 'PauseMenu._sfxButtonNormalSprite' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'PauseMenu._sfxButtonPressedSprite' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _sfxButtonPressedSprite;
+#pragma warning restore CS0649 // El campo 'PauseMenu._sfxButtonPressedSprite' nunca se asigna y siempre tendrá el valor predeterminado null
 
     #region AUDIO
+#pragma warning disable CS0649 // El campo 'PauseMenu._mixer' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioMixer _mixer;
+#pragma warning restore CS0649 // El campo 'PauseMenu._mixer' nunca se asigna y siempre tendrá el valor predeterminado null
     public const string MUSICPARAMETER = "musicVol";
     public const string SFXPARAMETER = "sfxVol";
 

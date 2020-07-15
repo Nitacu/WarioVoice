@@ -9,16 +9,36 @@ public class VocabularyData : MonoBehaviour
     private const string NOWORDS = "NO WORDS";
 
     [Header("UI Texts")]
+#pragma warning disable CS0649 // El campo 'VocabularyData._loveWords' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _loveWords;
+#pragma warning restore CS0649 // El campo 'VocabularyData._loveWords' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._questionmarkLove' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _questionmarkLove;
+#pragma warning restore CS0649 // El campo 'VocabularyData._questionmarkLove' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._paintWords' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _paintWords;
+#pragma warning restore CS0649 // El campo 'VocabularyData._paintWords' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._questionmarkpaint' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _questionmarkpaint;
+#pragma warning restore CS0649 // El campo 'VocabularyData._questionmarkpaint' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._orquestsWords' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _orquestsWords;
+#pragma warning restore CS0649 // El campo 'VocabularyData._orquestsWords' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._questionmarkOrquesta' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _questionmarkOrquesta;
+#pragma warning restore CS0649 // El campo 'VocabularyData._questionmarkOrquesta' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._wormsWords' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _wormsWords;
+#pragma warning restore CS0649 // El campo 'VocabularyData._wormsWords' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._questionmarkWorms' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _questionmarkWorms;
+#pragma warning restore CS0649 // El campo 'VocabularyData._questionmarkWorms' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._bossWords' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _bossWords;
+#pragma warning restore CS0649 // El campo 'VocabularyData._bossWords' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'VocabularyData._questionmarkBoss' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _questionmarkBoss;
+#pragma warning restore CS0649 // El campo 'VocabularyData._questionmarkBoss' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private List<string> sortListAlphabetic(List<string> _list)
     {

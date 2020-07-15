@@ -12,14 +12,18 @@ using UnityEngine.UI;
 
 public class ChatWindowExamplePC : MonoBehaviour
 {
+#pragma warning disable CS0246 // El nombre del tipo o del espacio de nombres 'ChatbotPC' no se encontró (¿falta una directiva using o una referencia de ensamblado?)
     private ChatbotPC bot;
+#pragma warning restore CS0246 // El nombre del tipo o del espacio de nombres 'ChatbotPC' no se encontró (¿falta una directiva using o una referencia de ensamblado?)
     public InputField inputField;
     public Text robotOutput;
 
     // Use this for initialization
     void Start()
     {
+#pragma warning disable CS0246 // El nombre del tipo o del espacio de nombres 'ChatbotPC' no se encontró (¿falta una directiva using o una referencia de ensamblado?)
         bot = new ChatbotPC();
+#pragma warning restore CS0246 // El nombre del tipo o del espacio de nombres 'ChatbotPC' no se encontró (¿falta una directiva using o una referencia de ensamblado?)
         bot.LoadBrain();
     }
 

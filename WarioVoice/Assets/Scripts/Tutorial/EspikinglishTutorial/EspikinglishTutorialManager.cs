@@ -22,31 +22,61 @@ public class EspikinglishTutorialManager : CommandParser
     public const string GOODJOB_ESP = "Excelente, empecemos";
     #endregion
 
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._inputFieldTest' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TMP_InputField _inputFieldTest;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._inputFieldTest' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._confetti' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _confetti;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._confetti' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [SerializeField] private List<GameObject> _developerModeObjects = new List<GameObject>();
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._sourceEffect' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioSource _sourceEffect;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._sourceEffect' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._sourceVoice' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioSource _sourceVoice;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._sourceVoice' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("UI Vars")]
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._textGuideEng' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _textGuideEng;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._textGuideEng' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._textGuideEsp' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _textGuideEsp;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._textGuideEsp' nunca se asigna y siempre tendrá el valor predeterminado null
     //[SerializeField] private GameObject _pressButtonPanel;
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._pointer' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _pointer;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._pointer' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._startButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _startButton;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._startButton' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._speechButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _speechButton;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._speechButton' nunca se asigna y siempre tendrá el valor predeterminado null
 
+#pragma warning disable CS0414 // El campo 'EspikinglishTutorialManager.tutorialComplete' está asignado pero su valor nunca se usa
     private bool tutorialComplete = false;
+#pragma warning restore CS0414 // El campo 'EspikinglishTutorialManager.tutorialComplete' está asignado pero su valor nunca se usa
 
     [Header("Timers")]
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager.welcomteTime' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float welcomteTime;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager.welcomteTime' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._startGameTime' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _startGameTime;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._startGameTime' nunca se asigna y siempre tendrá el valor predeterminado 0
 
     [Header("AudioClips")]
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._welcomeClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _welcomeClip;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._welcomeClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager._sayGoClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _sayGoClip;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager._sayGoClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EspikinglishTutorialManager.greatClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip greatClip;
+#pragma warning restore CS0649 // El campo 'EspikinglishTutorialManager.greatClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] AudioClip _greatLetsStart;
 
 

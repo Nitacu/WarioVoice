@@ -23,38 +23,76 @@ public class BetweenSceneControl : MonoBehaviour
 
     [SerializeField] private List<GameObject> _lives = new List<GameObject>();
     [SerializeField] private Sprite liveDOWN;
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._fallingClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AnimationClip _fallingClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._fallingClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._confetti' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _confetti;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._confetti' nunca se asigna y siempre tendrá el valor predeterminado null
 
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._timeToLaunchNextMinigame' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _timeToLaunchNextMinigame;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._timeToLaunchNextMinigame' nunca se asigna y siempre tendrá el valor predeterminado 0
     private float _timeTracking;
 
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._timeTextENG' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _timeTextENG;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._timeTextENG' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._timeTextESP' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _timeTextESP;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._timeTextESP' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._timerNormalText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _timerNormalText;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._timerNormalText' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("Game Lossed Vars")]
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._gameCompletedPanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _gameCompletedPanel;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._gameCompletedPanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._sourceMusic' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioSource _sourceMusic;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._sourceMusic' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("Game Lossed Vars")]
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._continuePanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _continuePanel;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._continuePanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._timeToLaunchToMainMenu' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private int _timeToLaunchToMainMenu;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._timeToLaunchToMainMenu' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._timerDownText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _timerDownText;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._timerDownText' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("AudioClips")]
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._sourceVoice' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioSource _sourceVoice;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._sourceVoice' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._gameOverClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _gameOverClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._gameOverClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._thanksForPlayingClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _thanksForPlayingClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._thanksForPlayingClip' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("AudioClipsEffects")]
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._gameOverEffect' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _gameOverEffect;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._gameOverEffect' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._gameCompleteEffect' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AudioClip _gameCompleteEffect;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._gameCompleteEffect' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("Publicity")]
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._videoPublicity' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _videoPublicity;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._videoPublicity' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._videoClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private VideoClip _videoClip;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._videoClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'BetweenSceneControl._titles' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _titles;
+#pragma warning restore CS0649 // El campo 'BetweenSceneControl._titles' nunca se asigna y siempre tendrá el valor predeterminado null
 
     private bool _gameCompleted;
     private bool _gameLossed;

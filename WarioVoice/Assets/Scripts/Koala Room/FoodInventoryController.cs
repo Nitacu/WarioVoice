@@ -6,11 +6,19 @@ using UnityEngine.UI;
 public class FoodInventoryController : MonoBehaviour
 {
     [Header("UI")]
+#pragma warning disable CS0649 // El campo 'FoodInventoryController._foodCanvas' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _foodCanvas;
+#pragma warning restore CS0649 // El campo 'FoodInventoryController._foodCanvas' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FoodInventoryController._eatButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Button _eatButton;
+#pragma warning restore CS0649 // El campo 'FoodInventoryController._eatButton' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'FoodInventoryController._playToGetMoreText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _playToGetMoreText;
+#pragma warning restore CS0649 // El campo 'FoodInventoryController._playToGetMoreText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Button _closeButton;
+#pragma warning disable CS0649 // El campo 'FoodInventoryController._leavesCount' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Text _leavesCount;
+#pragma warning restore CS0649 // El campo 'FoodInventoryController._leavesCount' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Text _moodGiverText;
 
     private MoodActionsController _moodControllerScript;

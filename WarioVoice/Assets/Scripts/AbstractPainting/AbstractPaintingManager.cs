@@ -9,13 +9,17 @@ using Random = UnityEngine.Random;
 [System.Serializable]
 public class PaintingLevel
 {
+#pragma warning disable CS0649 // El campo 'PaintingLevel._referencePaint' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _referencePaint;
+#pragma warning restore CS0649 // El campo 'PaintingLevel._referencePaint' nunca se asigna y siempre tendrá el valor predeterminado null
     public GameObject ReferencePaint
     {
         get { return _referencePaint; }
     }
 
+#pragma warning disable CS0649 // El campo 'PaintingLevel._splashSizeScale' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _splashSizeScale;
+#pragma warning restore CS0649 // El campo 'PaintingLevel._splashSizeScale' nunca se asigna y siempre tendrá el valor predeterminado 0
     public float SplashSizeScale
     {
         get { return _splashSizeScale; }
@@ -119,47 +123,97 @@ public class AbstractPaintingManager : CommandParser
         get { return _levels; }
     }
 
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._canvasMask' nunca se asigna y siempre tendrá el valor predeterminado 
     [SerializeField] private LayerMask _canvasMask;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._canvasMask' nunca se asigna y siempre tendrá el valor predeterminado 
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._brush' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _brush;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._brush' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._splashBasePrefab' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _splashBasePrefab;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._splashBasePrefab' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._wrongPaintPrefab' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _wrongPaintPrefab;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._wrongPaintPrefab' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._referenceCanvasTransform' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _referenceCanvasTransform;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._referenceCanvasTransform' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._myCanvasTransform' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Transform _myCanvasTransform;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._myCanvasTransform' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._critiqueAppearClip' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private AnimationClip _critiqueAppearClip;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._critiqueAppearClip' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._prefabConffeti' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _prefabConffeti;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._prefabConffeti' nunca se asigna y siempre tendrá el valor predeterminado null
     //[SerializeField] private List<HelpButton> _helpButtons = new List<HelpButton>();
 
     [Header("Critique Sprites")]
     [SerializeField] private Sprite _normalCritique;
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._analyzingCritique' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _analyzingCritique;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._analyzingCritique' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._correctCritique' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _correctCritique;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._correctCritique' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._wrongCritique' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _wrongCritique;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._wrongCritique' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [Header("UI Control")]
     [SerializeField] private List<GameObject> _developermodeObjects = new List<GameObject>();
     [SerializeField] private List<GameObject> _buttonsToDeactivate = new List<GameObject>();
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._microphoneButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _microphoneButton;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._microphoneButton' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _level;
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._guideText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _guideText;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._guideText' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._initPanel' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _initPanel;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._initPanel' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._plallete' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private SetBottles _plallete;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._plallete' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._timeToDeactivateInitPanel' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _timeToDeactivateInitPanel;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._timeToDeactivateInitPanel' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _inactivityTime = 90;
     private float _inactivityTimeTracker;
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._palleteCompleted' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _palleteCompleted;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._palleteCompleted' nunca se asigna y siempre tendrá el valor predeterminado null
 
 
     [Header("Win Parameters")]
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._minCoincidencesPercentage' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _minCoincidencesPercentage;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._minCoincidencesPercentage' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._paintedSplashMargin' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private int _paintedSplashMargin;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._paintedSplashMargin' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._analyzingTime' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private int _analyzingTime;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._analyzingTime' nunca se asigna y siempre tendrá el valor predeterminado 0
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._analyzerBand' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _analyzerBand;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._analyzerBand' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._paintCritique' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _paintCritique;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._paintCritique' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._critiqueSpeechBublle' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _critiqueSpeechBublle;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._critiqueSpeechBublle' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._analyzeResultText' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private TextMeshProUGUI _analyzeResultText;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._analyzeResultText' nunca se asigna y siempre tendrá el valor predeterminado null
     private float _coindencePercentage;
     private float _splashCoincidencesCount;
+#pragma warning disable CS0649 // El campo 'AbstractPaintingManager._timeTochangeLevel' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private float _timeTochangeLevel;
+#pragma warning restore CS0649 // El campo 'AbstractPaintingManager._timeTochangeLevel' nunca se asigna y siempre tendrá el valor predeterminado 0
     [SerializeField] private AudioSource _backgroundMusic;
 
 
@@ -637,7 +691,7 @@ public class AbstractPaintingManager : CommandParser
 
         if (Success)
         {
-            ControlMoney.EarnMoney(1);
+            ControlMoney.EarnMoney(Random.Range(5,10));
             GameObject confetti = Instantiate(_prefabConffeti);
             confetti.transform.position = Vector3.zero;
             FindObjectOfType<PaintingSoundManager>().playGreatTada();

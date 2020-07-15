@@ -6,13 +6,19 @@ using TMPro;
 public class EnchantableObj : MonoBehaviour
 {
     [Header("como se ve quemandose")]
+#pragma warning disable CS0649 // El campo 'EnchantableObj._sprBurn' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Sprite _sprBurn;
+#pragma warning restore CS0649 // El campo 'EnchantableObj._sprBurn' nunca se asigna y siempre tendrá el valor predeterminado null
+#pragma warning disable CS0649 // El campo 'EnchantableObj._light' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private Light _light;
+#pragma warning restore CS0649 // El campo 'EnchantableObj._light' nunca se asigna y siempre tendrá el valor predeterminado null
     private Sprite _sprNormal;
 
     [Header("cosas para hacer saltar al gatos")]
     [SerializeField] private Transform _topPoint;
+#pragma warning disable CS0649 // El campo 'EnchantableObj._closeness' nunca se asigna y siempre tendrá el valor predeterminado null
     [SerializeField] private GameObject _closeness;
+#pragma warning restore CS0649 // El campo 'EnchantableObj._closeness' nunca se asigna y siempre tendrá el valor predeterminado null
 
     [SerializeField] private EnchantableObjTags.Tags _enchantableObjTag;
 

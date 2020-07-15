@@ -131,6 +131,11 @@ public class speechContoller : MonoBehaviour {
     }
 
 
+    public void PlaySound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
      public static speechContoller getInstance(){
         
     {

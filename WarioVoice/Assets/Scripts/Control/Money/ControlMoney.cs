@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ControlMoney : MonoBehaviour
 {
+    public static bool _earnedMoney = false ;
+    public static int _lastMoney = 0;
+
     public static void EarnMoney(int earnedMoney = 0)
     {
         GameManager.GetInstance().Money += earnedMoney;
+        _lastMoney = earnedMoney;
         PlayerPrefs.SetInt(PlayerPrefsKeys.KEY_MONEY, GameManager.GetInstance().Money);
+        _earnedMoney = true;
     }
 
     public static void LoseMoney(int lostMoney)
