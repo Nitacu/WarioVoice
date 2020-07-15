@@ -329,6 +329,7 @@ public class MoodActionsController : MonoBehaviour
         Vector3 position = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight, cam.nearClipPlane));
         GameObject rain = Instantiate(_rainPrefab);
         rain.transform.position = position;
+        rain.transform.position = new Vector3(0, rain.transform.position.y, rain.transform.position.z);
         _lastShowerAction = (ulong)System.DateTime.Now.Ticks;
         PlayerPrefs.SetString(LAST_SHOWER_KEY, _lastShowerAction.ToString());
         _titoMood.addMoodPoints(_showerPoints);
