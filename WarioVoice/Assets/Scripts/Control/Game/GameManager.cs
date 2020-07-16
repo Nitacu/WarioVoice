@@ -109,22 +109,22 @@ public class GameManager
         if (_moodlevel <= 100 && _moodlevel > 75)
         {
             GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.SUPERHAPPY;
-            GameManager.GetInstance().maxNumberOfLives = 5;
+            GameManager.GetInstance().maxNumberOfLives = 1;
         }
         else if (_moodlevel <= 75 && _moodlevel > 50)
         {
             GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.HAPPY;
-            GameManager.GetInstance().maxNumberOfLives = 4;
+            GameManager.GetInstance().maxNumberOfLives = 1;
         }
         else if (_moodlevel <= 50 && _moodlevel > 25)
         {
             GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.NORMAL;
-            GameManager.GetInstance().maxNumberOfLives = 3;
+            GameManager.GetInstance().maxNumberOfLives = 1;
         }
         else if (_moodlevel <= 25 && _moodlevel >= 0)
         {
             GameManager.GetInstance().TitoMood = TitoMoodController.ENUM_TitoMood.SAD;
-            GameManager.GetInstance().maxNumberOfLives = 2;
+            GameManager.GetInstance().maxNumberOfLives = 1;
         }
     }
 

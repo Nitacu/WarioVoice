@@ -118,7 +118,7 @@ public class BetweenSceneControl : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time tracking start gamelossed and completed)");            
+                Debug.Log("Time tracking start gamelossed and completed)");
 
                 if (GameManager.GetInstance().GameCompleted)
                 {
@@ -160,7 +160,6 @@ public class BetweenSceneControl : MonoBehaviour
         else if (GameManager.GetInstance().GameLossed)
         {
             _timerDownText.text = timeToshow.ToString();
-
         }
     }
 
@@ -174,9 +173,9 @@ public class BetweenSceneControl : MonoBehaviour
 
         //disableFlags();
 
-       
+
         _gameCompleted = GameManager.GetInstance().GameCompleted;
-        _gameLossed = GameManager.GetInstance().GameLossed;        
+        _gameLossed = GameManager.GetInstance().GameLossed;
 
 
         if (_gameLossed)
@@ -226,7 +225,7 @@ public class BetweenSceneControl : MonoBehaviour
         }
 
         int _currentLives = GameManager.GetInstance().Lives;
-        
+
 
         for (int i = 0; i < _lives.Count; i++)
         {
@@ -281,14 +280,14 @@ public class BetweenSceneControl : MonoBehaviour
     }
 
     public void continueGame(bool wantContinue)
-    {       
+    {
 
         if (wantContinue)
         {
             Debug.Log("Quiere continuar juego start");
 
             StartCoroutine(playPublicity());
-            
+
             Debug.Log("Quiere continuar juego end");
 
         }
@@ -296,7 +295,8 @@ public class BetweenSceneControl : MonoBehaviour
         {
             Debug.Log("No quiere continuar juego start");
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
+            if (_timeTracking <= 0)
+                UnityEngine.SceneManagement.SceneManager.LoadScene(ChangeScene.SPIKINGLISHMENU);
 
             Debug.Log("No quiere continuar juego end");
 
@@ -305,10 +305,12 @@ public class BetweenSceneControl : MonoBehaviour
 
     IEnumerator playPublicity()
     {
+        _timeTracking = 100;
         _titles.SetActive(false);
         _continuePanel.SetActive(false);
         _videoPublicity.SetActive(true);
-        yield return new WaitForSeconds((float)_videoClip.frameCount+1f);
+        yield return new WaitForSeconds((float)_videoClip.length + 1f);
+        _timeTracking = _timeToLaunchNextMinigame;
         _titles.SetActive(true);
         _videoPublicity.SetActive(false);
         GameManager.GetInstance().Lives = 1;
