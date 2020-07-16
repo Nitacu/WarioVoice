@@ -35,7 +35,7 @@ public class FoodInventoryController : MonoBehaviour
     {
         _foodCanvas.SetActive(true);
         _leavesCount.text = "Leaves: " + GameManager.GetInstance().Money;
-        if(GameManager.GetInstance().Money == 0)
+        if(GameManager.GetInstance().Money < 30)
         {
             _eatButton.gameObject.SetActive(false);
             _playToGetMoreText.gameObject.SetActive(true);
@@ -49,7 +49,7 @@ public class FoodInventoryController : MonoBehaviour
 
     public void eatLeaf()
     {
-        ControlMoney.LoseMoney(1);
+        ControlMoney.LoseMoney(30);
         _moodControllerScript.eatWithTito();
         backToGarden();
     }
