@@ -53,7 +53,7 @@ public class TitoMoodController : MonoBehaviour
     private const string HAPPY_ANIMATION = "Happy_Tito";
     private const string NORMAL_ANIMATION = "Normal_Tito";
     private const string SAD_ANIMATION = "Sad_Tito";
-    private const string TITO_MOOD_KEY = "MoodValue";
+    public static string TITO_MOOD_KEY = "MoodValue";
 
     // Start is called before the first frame update
     void Start()

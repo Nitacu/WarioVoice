@@ -46,6 +46,29 @@ public class GameManager
     #endregion
 
     private TitoMoodController.ENUM_TitoMood _titoMood;
+    public int _titoMoodPercent = 0;
+
+    public void initializeTiToMood()
+    {
+        _titoMoodPercent = PlayerPrefs.GetInt(TitoMoodController.TITO_MOOD_KEY);
+
+        if (_titoMoodPercent <= 100 && _titoMoodPercent > 75)
+        {
+            _titoMood = TitoMoodController.ENUM_TitoMood.SUPERHAPPY;
+        }
+        else if (_titoMoodPercent <= 75 && _titoMoodPercent > 50)
+        {
+            _titoMood = TitoMoodController.ENUM_TitoMood.HAPPY;
+        }
+        else if (_titoMoodPercent <= 50 && _titoMoodPercent > 25)
+        {
+            _titoMood = TitoMoodController.ENUM_TitoMood.NORMAL;
+        }
+        else if (_titoMoodPercent <= 25 && _titoMoodPercent >= 0)
+        {
+            _titoMood = TitoMoodController.ENUM_TitoMood.SAD;
+        }
+    }
 
     private int _lives;
     public int Lives

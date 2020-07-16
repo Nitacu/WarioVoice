@@ -310,6 +310,7 @@ public class MoodActionsController : MonoBehaviour
     #region button click actions
     public void playWithTito()
     {
+        GetComponent<KoalaRoomAudios>().playPlayClip();
         FindObjectOfType<BallDragNDrop>().CanBallBeDragged = false;
         _lastPlayAction = (ulong)System.DateTime.Now.Ticks;
         PlayerPrefs.SetString(LAST_PLAY_KEY, _lastPlayAction.ToString());
@@ -318,6 +319,7 @@ public class MoodActionsController : MonoBehaviour
     }
     public void eatWithTito()
     {
+        GetComponent<KoalaRoomAudios>().playEatClip();
         _lastEatAction = (ulong)System.DateTime.Now.Ticks;
         PlayerPrefs.SetString(LAST_EAT_KEY, _lastEatAction.ToString());
         _titoMood.addMoodPoints(_foodPoints);
@@ -325,6 +327,7 @@ public class MoodActionsController : MonoBehaviour
     }
     public void showerWithTito()
     {
+        GetComponent<KoalaRoomAudios>().playRainClip();
         Camera cam = Camera.main;
         Vector3 position = cam.ScreenToWorldPoint(new Vector3(0, cam.pixelHeight, cam.nearClipPlane));
         GameObject rain = Instantiate(_rainPrefab);
