@@ -21,6 +21,18 @@ public class MoneyInScreen : MonoBehaviour
         }
         else
             _text.text = (PlayerPrefs.GetInt(PlayerPrefsKeys.KEY_MONEY)).ToString();
+
+        ControlMoney.UpdateMoney += handlerUpdateMoney;
+    }
+
+    private void OnDisable()
+    {
+        ControlMoney.UpdateMoney -= handlerUpdateMoney;
+    }
+
+    private void handlerUpdateMoney()
+    {
+        _text.text = (PlayerPrefs.GetInt(PlayerPrefsKeys.KEY_MONEY)).ToString();
     }
 
     IEnumerator feeckBackEarnsLeafs()

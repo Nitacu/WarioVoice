@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class ControlMoney : MonoBehaviour
 {
     public static bool _earnedMoney = false ;
     public static int _lastMoney = 0;
+    public static Action UpdateMoney;
 
     public static void EarnMoney(int earnedMoney = 0)
     {
@@ -23,6 +25,8 @@ public class ControlMoney : MonoBehaviour
             GameManager.GetInstance().Money = 0;
         }
         PlayerPrefs.SetInt(PlayerPrefsKeys.KEY_MONEY, GameManager.GetInstance().Money);
+
+        UpdateMoney.Invoke();
     }
 
 }
